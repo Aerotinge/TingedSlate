@@ -1515,7 +1515,7 @@ spriteTypes = {
 	
 	# Tibetan Feudal Government
 	
-	priteType = {
+	spriteType = {
 		name = "GFX_charframe_150_tibetanfeudal"
 		texturefile = "gfx\\interface\\charframe_150_tibetanfeudal.tga"
 		noOfFrames = 6
