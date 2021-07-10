@@ -2,7 +2,7 @@
 
 750.1.1 = {
 	holder = 244001 # GUO Xin (under Tang)
-	government = confucian_bureaucracy
+	government = chinese_protectorate_government
 }
 
 787.9.16 = {

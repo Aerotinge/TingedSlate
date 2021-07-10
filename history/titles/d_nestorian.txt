@@ -1,5 +1,6 @@
 35.1.1 = {
 	holder = 166236
+	government = theocracy_government
 }
 
 52.1.1 = {
