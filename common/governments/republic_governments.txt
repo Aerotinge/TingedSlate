@@ -136,11 +136,10 @@ republic_governments = {
 		## Modifiers
 		court_size_modifier = 5
 	}
-
-	confucian_bureaucracy = {
+	
+	chinese_protectorate_government = {
 		offmap_power = offmap_china
 		preferred_holdings = {
-			CASTLE
 			CITY
 		}
 		allowed_holdings = {
@@ -188,5 +187,44 @@ republic_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
+	}
+	
+	mexikhan_colonial_government = {
+		offmap_power = offmap_mexikha
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			CITY
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+
+		frame_suffix = "_order"
+		title_prefix = "order_"
+		color = { 94 187 185 }
+
+		potential = {
+			is_offmap_tag = offmap_mexikha
+		}
+
+		can_create_empires = no
+		can_create_kingdoms = no
+		can_build_tribal = no
+		can_grant_kingdoms_and_empires_to_other_government = no
+		can_inherit = no
+		vassal_government_opinion_penalties = no
+		ignores_de_jure_laws = yes
+		uses_decadence = yes # Test
+
+		capital_move_delay = 600
+		aggression = 0 # AI only attacks by script
 	}
 }

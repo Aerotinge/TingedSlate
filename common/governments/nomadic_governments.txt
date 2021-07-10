@@ -32,7 +32,10 @@ nomadic_governments = {
 		color = { 201 179 36 }
 
 		potential = {
-			NOT = { is_government_allowed = theocracy_government }
+			NOR = {
+				is_government_allowed = theocracy_government
+				#is_government_allowed = confucian_bureaucracy
+			}
 
 			is_patrician = no
 			mercenary = no
