@@ -1,0 +1,22 @@
+defined_text = {
+	name = GetOffmapDeath
+	use_first_valid = yes
+
+	text = {
+		trigger = {
+			is_offmap_tag_including_dead = offmap_china
+		}
+		localisation_key = china_china
+	}
+	text = {
+		trigger = {
+			is_offmap_tag_including_dead = offmap_mexikha
+		}
+		localisation_key = mexikha_mexikha
+	}
+	text = {
+		trigger = {
+		}
+		localisation_key = offmap_offmap
+	}
+}

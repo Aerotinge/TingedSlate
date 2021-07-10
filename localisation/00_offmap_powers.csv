@@ -1,0 +1,3 @@
+DEATH_OFFMAP_NO_KILLER;died in [GetOffmapDeath];est mort[Get_E] en [GetOffmapDeath];ist in [GetOffmapDeath] gestorben;;murió en [GetOffmapDeath];;;;;;;;;x
+DEATH_OFFMAP;died in [GetOffmapDeath] at the hands of $KILLER$;a été tué[Root.Get_E] en [GetOffmapDeath] par $KILLER$;wurde in [GetOffmapDeath] von $KILLER$ ermordet;;murió en [GetOffmapDeath] a manos de $KILLER$;;;;;;;;;
+offmap_offmap;a distance land;une terre lointaine;ein Fernland;;una tierra lejana;;;;;;;;;x

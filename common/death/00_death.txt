@@ -1296,7 +1296,7 @@ death_went_to_china = {
 # This needs to exist if you have offmap powers! Anyone who dies to this is assumed to have been an offmap ruler
 death_offmap = {
 	can_nokiller = yes
-	long_desc = "DEATH_IN_CHINA"
+	long_desc = "DEATH_OFFMAP"
 	icon = 1
 	killer_icon = 1
 }
