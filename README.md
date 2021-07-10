@@ -7,6 +7,7 @@ CleanSlate Beta 2.5 [KRYN]
 ```
 name="TingedSlate"
 path="mod/TingedSlate"
+dependencies = { "CleanSlate" }
 tags=
 {
 }
