@@ -1419,6 +1419,41 @@ spriteTypes = {
 		name = "GFX_icon_order_government"
 		textureFile = "gfx\\interface\\government_icon_order.dds"
 	}
+	
+	spriteType = {
+		name = "GFX_icon_timar_government"
+		texturefile = "gfx\\interface\\government_icon_timar.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_tibetan_feudal_government"
+		texturefile = "gfx\\interface\\government_icon_tibetan_feudal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_insular_feudal_government"
+		texturefile = "gfx\\interface\\government_icon_insular_feudal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_spiritual_feudal_government"
+		texturefile = "gfx\\interface\\government_icon_spiritual_feudal.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_sacred_confederacy_government"
+		texturefile = "gfx\\interface\\government_icon_sacred_confederacy.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_mexikhan_colonial_government"
+		texturefile = "gfx\\interface\\government_icon_nogovernment.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_icon_nomadic_tribal_government"
+		texturefile = "gfx\\interface\\government_icon_nomadic.dds"
+	}
 
 	spriteType = {
 		name = "GFX_icon_nogovernment"
@@ -1476,5 +1511,116 @@ spriteTypes = {
 		textureFile = "gfx\\interface\\charframe_34_romanimperial.dds"
 		noOfFrames = 6
 		alwaysTransparent = yes
+	}
+	
+	# Tibetan Feudal Government
+	
+	priteType = {
+		name = "GFX_charframe_150_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_150_tibetanfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_100_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_100_tibetanfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_75_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_75_tibetanfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_50_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_50_tibetanfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_34_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_34_tibetanfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	# Insular Feudal Government
+	
+	spriteType = {
+		name = "GFX_charframe_150_insularfeudal"
+		texturefile = "gfx\\interface\\charframe_150_insularfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_100_insularfeudal"
+		texturefile = "gfx\\interface\\charframe_100_insularfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_75_insularfeudal"
+		texturefile = "gfx\\interface\\charframe_75_insularfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_50_insularfeudal"
+		texturefile = "gfx\\interface\\charframe_50_insularfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_34_insularfeudal"
+		texturefile = "gfx\\interface\\charframe_34_insularfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	# Spiritual Feudal Government
+	
+	spriteType = {
+		name = "GFX_charframe_150_spiritualfeudal"
+		texturefile = "gfx\\interface\\charframe_150_spiritualfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_100_spiritualfeudal"
+		texturefile = "gfx\\interface\\charframe_100_spiritualfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_75_spiritualfeudal"
+		texturefile = "gfx\\interface\\charframe_75_spiritualfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_50_spiritualfeudal"
+		texturefile = "gfx\\interface\\charframe_50_spiritualfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+	
+	spriteType = {
+		name = "GFX_charframe_34_spiritualfeudal"
+		texturefile = "gfx\\interface\\charframe_34_spiritualfeudal.tga"
+		noOfFrames = 6
+		allwaystransparent = yes
 	}
 }
