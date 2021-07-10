@@ -30,12 +30,24 @@ succession_laws = {
 					is_tribal = yes
 				}
 
+				trigger_if = {
+					limit = {
+						is_feudal = yes
+						tier = BARON
+					}
+					
+					# Titles revert back to the liege on death
+					NOT = { is_law_potential = succ_appointment }
+				}
+
 				NOR = {
 					is_vice_royalty = yes
 					religion_group = muslim
+					government = chinese_imperial_government
 					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = nomadic_tribal_government
 				}
 			}
 		}
@@ -136,6 +148,16 @@ succession_laws = {
 					is_tribal = yes
 				}
 
+				trigger_if = {
+					limit = {
+						is_feudal = yes
+						tier = BARON
+					}
+					
+					# Titles revert back to the liege on death
+					NOT = { is_law_potential = succ_appointment }
+				}
+
 				NOR = {
 					is_vice_royalty = yes
 					religion_group = muslim
@@ -143,6 +165,7 @@ succession_laws = {
 					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = nomadic_tribal_government
 				}
 			}
 		}
@@ -244,6 +267,16 @@ succession_laws = {
 					has_religion_feature = religion_feature_west_african
 				}
 
+				trigger_if = {
+					limit = {
+						is_feudal = yes
+						tier = BARON
+					}
+					
+					# Titles revert back to the liege on death
+					NOT = { is_law_potential = succ_appointment }
+				}
+
 				NOR = {
 					is_vice_royalty = yes
 					religion_group = muslim
@@ -251,6 +284,7 @@ succession_laws = {
 					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = nomadic_tribal_government
 					has_religion_feature = religion_matriarchal
 					has_religion_feature = religion_patriarchal
 				}
@@ -350,6 +384,16 @@ succession_laws = {
 				}
 
 				trigger_if = {
+					limit = {
+						is_feudal = yes
+						tier = BARON
+					}
+					
+					# Titles revert back to the liege on death
+					NOT = { is_law_potential = succ_appointment }
+				}
+
+				trigger_if = {
 					limit = { religion_group = pagan_group }
 
 					OR = {
@@ -361,6 +405,8 @@ succession_laws = {
 
 				NOR = {
 					is_vice_royalty = yes
+					religion_group = muslim
+					government = chinese_imperial_government
 					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
@@ -461,12 +507,39 @@ succession_laws = {
 			}
 
 			holder_scope = {
-				is_feudal = yes
+				OR = {
+					is_feudal = yes
+					is_tribal = yes
+				}
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+					
+					religion_group = muslim
+				}
+				
+				trigger_if = {
+					limit = {
+						is_feudal = yes
+						tier = BARON
+					}
+					
+					# Titles revert back to the liege on death
+					NOT = { is_law_potential = succ_appointment }
+				}
+				
+				trigger_if = {
+					limit = {
+						government = confucian_bureaucracy
+					}
+					
+					any_demesne_title = { is_vice_royalty = yes }
+				}
 
 				NOR = {
-					religion_group = muslim
-					government = confucian_bureaucracy
+					government = timar_government
 					government = order_government
+					government = nomadic_tribal_government
 					government = roman_imperial_government
 				}
 
@@ -506,7 +579,7 @@ succession_laws = {
 				has_law = centralization_4
 			}
 
-			# Viceroyalties can always have primogeniture if not muslim
+			# Viceroyalties can always have primogeniture
 			trigger_if = {
 				limit = {
 					has_dlc = "Charlemagne"
@@ -540,6 +613,10 @@ succession_laws = {
 			trigger_else_if = {
 				limit = {
 					NOT = { has_law = succ_hre_elective }
+					
+					holder_scope = {
+						NOT = { religion_group = muslim }
+					}
 				}
 
 				crownlaw_title = {
@@ -790,6 +867,7 @@ succession_laws = {
 					government = chinese_imperial_government
 					government = confucian_bureaucracy
 					government = order_government
+					government = nomadic_tribal_government
 				}
 			}
 		}
@@ -948,15 +1026,29 @@ succession_laws = {
 
                     OR = {
                         culture = mongol
+                        culture = jurchen
+                        culture = kirghiz
+                        culture = uyghur
                         religion = bon_pagan
                         religion = hellenic_pagan
                         is_reformed_religion = yes
                     }
                 }
 
+                trigger_if = {
+                    limit = {
+                        is_feudal = yes
+                        tier = BARON
+                    }
+					
+                    # Titles revert back to the liege on death
+                    NOT = { is_law_potential = succ_appointment }
+                }
+
                 NOR = {
                     is_vice_royalty = yes
-					religion_group = muslim
+                    religion_group = muslim
+                    government = chinese_imperial_government
                     government = confucian_bureaucracy
                     government = order_government
                     government = roman_imperial_government
@@ -1074,12 +1166,13 @@ succession_laws = {
 				}
 
 				OR = {
-					religion_group = muslim
+					government = timar_government
 					has_religion_feature = religion_patriarchal
 					has_religion_feature = religion_matriarchal
 				}
 
 				NOR = {
+					government = chinese_imperial_government
 					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
@@ -1128,8 +1221,22 @@ succession_laws = {
 	succ_appointment = {
 		potential = {
 			holder_scope = {
-				government = order_government
-				holy_order = no
+				OR = {
+					AND = {
+						government = order_government
+						holy_order = no
+					}
+					AND = {
+						liege = {
+							OR = {
+								government = roman_imperial_government
+								government = timar_government
+								government = muslim_government
+							}
+						}
+						tier = BARON
+					}
+				}
 			}
 		}
 
@@ -1270,7 +1377,16 @@ succession_laws = {
 	succ_nomad_succession = {
 		potential = {
 			holder_scope = {
-				is_nomadic = yes
+				trigger_if = {
+					limit = {
+						has_dlc = "Horse Lords"
+					}
+					
+					is_nomadic = yes
+				}
+				trigger_else = {
+					government = nomadic_tribal_government
+				}
 			}
 		}
 
@@ -1288,9 +1404,9 @@ succession_laws = {
 
 	succ_offmap_succession = {
 		potential = {
-			holder_scope = {
-				top_liege = { is_offmap_governor = yes }
-				government = confucian_bureaucracy # To use this with future offmap powers, use an OR clause here with the new government types
+			is_primary_type_title = yes
+			offmap_power = {
+				always = yes
 			}
 		}
 
