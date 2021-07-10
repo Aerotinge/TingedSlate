@@ -533,7 +533,7 @@ succession_laws = {
 						government = confucian_bureaucracy
 					}
 					
-					any_demesne_title = { is_vice_royalty = yes }
+					is_vice_royalty = yes
 				}
 
 				NOR = {
