@@ -167,13 +167,11 @@ decisions = {
 			is_incapable = no
 			prisoner = no
 			capital_scope = {
-				NOR = {
-					county = {
-						is_occupied = yes
-					}
-					any_province_holding = {
-						has_siege = yes
-					}
+				county = {
+					is_occupied = no
+				}
+				capital_holding = {
+					has_siege = no
 				}
 			}
 		}

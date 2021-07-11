@@ -1,24 +1,4 @@
 namespace = NT
-character_event = {
-    id = NT.1
-    hide_window = yes
-
-    is_triggered_only = yes
-
-    trigger = {
-        is_save_game = no
-		is_tributary = {
-			type = nomadic
-		}
-    }
-
-	immediate = {
-		suzerain = {
-			remove_tributary = PREV
-			make_tributary = { who = ROOT tributary_type = permanent } 
-		}
-	}
-}
 
 #on_yearly_pulse
 #max_regiment_num should below 35
