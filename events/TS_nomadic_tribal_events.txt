@@ -15,7 +15,7 @@ character_event = {
 	immediate = {
 		suzerain = {
 			remove_tributary = PREV
-			make_tributary = { who = ROOT tributary_type = nomadic_tribal } 
+			make_tributary = { who = ROOT tributary_type = permanent } 
 		}
 	}
 }

@@ -516,10 +516,6 @@ free_tributary_cb = {
 				limit = { is_decision_potential = tributary_independence_normal }
 				NOT = { is_decision_allowed = tributary_independence_normal }
 			}
-			trigger_else_if = {
-				limit = { is_decision_potential = tributary_independence_nomadic }
-				NOT = { is_decision_allowed = tributary_independence_nomadic }
-			}
 		}
 	}
 
@@ -538,30 +534,17 @@ free_tributary_cb = {
 
 				trigger_if = {
 					limit = {
-						OR = {
-							is_tributary = { type = nomadic }
-							is_tributary = { type = default }
-						}
+						is_tributary = { type = nomadic }
 					}
 
 					has_dlc = "Horse Lords"
 				}
 				trigger_else_if = {
 					limit = {
-						OR = {
-							is_tributary = { type = permanent }
-							is_tributary = { type = offmap }
-						}
+						is_tributary = { type = offmap }
 					}
 
 					has_dlc = "Jade Dragon"
-				}
-				trigger_else_if = {
-					limit = {
-						is_tributary = { type = nomadic_tribal }
-					}
-
-					NOT = { has_dlc = "Horse Lords" }
 				}
 			}
 			trigger_else = {
@@ -570,30 +553,17 @@ free_tributary_cb = {
 
 					trigger_if = {
 						limit = {
-							OR = {
-								is_tributary = { type = nomadic }
-								is_tributary = { type = default }
-							}
+							is_tributary = { type = nomadic }
 						}
 
 						has_dlc = "Horse Lords"
 					}
 					trigger_else_if = {
 						limit = {
-							OR = {
-								is_tributary = { type = permanent }
-								is_tributary = { type = offmap }
-							}
+							is_tributary = { type = offmap }
 						}
 
 						has_dlc = "Jade Dragon"
-					}
-					trigger_else_if = {
-						limit = {
-							is_tributary = { type = nomadic_tribal }
-						}
-
-						NOT = { has_dlc = "Horse Lords" }
 					}
 
 					suzerain = {
