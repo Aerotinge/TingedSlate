@@ -531,40 +531,10 @@ free_tributary_cb = {
 						is_vassal_or_below_of = FROM
 					}
 				}
-
-				trigger_if = {
-					limit = {
-						is_tributary = { type = nomadic }
-					}
-
-					has_dlc = "Horse Lords"
-				}
-				trigger_else_if = {
-					limit = {
-						is_tributary = { type = offmap }
-					}
-
-					has_dlc = "Jade Dragon"
-				}
 			}
 			trigger_else = {
 				any_vassal = {
 					is_tributary = yes
-
-					trigger_if = {
-						limit = {
-							is_tributary = { type = nomadic }
-						}
-
-						has_dlc = "Horse Lords"
-					}
-					trigger_else_if = {
-						limit = {
-							is_tributary = { type = offmap }
-						}
-
-						has_dlc = "Jade Dragon"
-					}
 
 					suzerain = {
 						OR = {
