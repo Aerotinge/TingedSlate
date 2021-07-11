@@ -280,12 +280,24 @@ kingdom_of_turkish;Sultanate of;Sultanat de;Sultanat von;;Sultanato de;;;;;;;;;x
 kingdom_turkish;Sultanate;Sultanat;Sultanat;;Sultanato;;;;;;;;;x
 nomadic_emperor;Khagan;Khagan;Khagan;;Khagan;;;;;;;;;x
 nomadic_emperor_female;Khatun;Khatoun;Khatun;;Khatun;;;;;;;;;x
+nomadic_emperor_chinese_group;Tengri-Khagan;Tengri-Khagan;Tengri-Khagan;;Tengri-Khagan;;;;;;;;;x
+nomadic_emperor_uyghur;Tengri-Khagan;Tengri-Khagan;Tengri-Khagan;;Tengri-Khagan;;;;;;;;;x
 nomadic_empire;Khaganate;Khaganat;Khaganat;;Khaganato;;;;;;;;;x
 nomadic_empire_of;Khaganate of;Khaganat de;Großkhanat von;;Kaganato de;;;;;;;;;x
 nomadic_king;Khan;Khan;Khan;;Kan;;;;;;;;;x
 nomadic_king_female;Khanum;Khanoum;Khanum;;Khanum;;;;;;;;;x
 nomadic_kingdom;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
 nomadic_kingdom_of;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
+nomadic_duke;Khan;Khan;Khan;;Kan;;;;;;;;;x
+nomadic_duke_female;Khanum;Khanoum;Khanum;;Khanum;;;;;;;;;x
+nomadic_duke_altaic;Tarkhan;Tarkhan;Tarkhan;;Tarkhan;;;;;;;;;x
+nomadic_duke_khazar;Elteber;Elteber;Elteber;;Elteber;;;;;;;;;x
+nomadic_duchy;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
+nomadic_duchy_of;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
+nomadic_count;Chief;Chef;Häuptling;;Mandatario;;;;;;;;;x
+nomadic_count_female;Chieftess;Cheffesse;Stammesführerin;;Jefa;;;;;;;;;x
+nomadic_county;Chiefdom;Chefferie;Häuptlingstum;;Cacicazgo;;;;;;;;;x
+nomadic_county_of;Chiefdom of;Chefferie de;Ländereien des Häuptlings von;;Cacicazgo de;;;;;;;;;x
 order_baron;Knight;Sieur;Ritter;;Caballero;;;;;x
 order_baron_female;Dame;Dame;Ritterin;;Dama;;;;;x
 order_barony_of;Garrison Town of;Ville de garnison de;Garnisonsstadt von;;Pueblo guarnicionado de;;;;;x
