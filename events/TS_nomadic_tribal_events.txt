@@ -1,0 +1,6514 @@
+namespace = NT
+character_event = {
+    id = NT.1
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+        is_save_game = no
+		is_tributary = {
+			type = nomadic
+		}
+    }
+
+	immediate = {
+		suzerain = {
+			remove_tributary = PREV
+			make_tributary = { who = ROOT tributary_type = nomadic_tribal } 
+		}
+	}
+}
+
+#on_yearly_pulse
+#max_regiment_num should below 35
+character_event = {
+    id = NT.2
+    hide_window = yes
+	lacks_dlc = "Horse Lords"
+	
+    is_triggered_only = yes
+
+    trigger = {
+        government = nomadic_tribal_government
+    }
+
+	immediate = {
+		set_variable = { which = "max_regiment_num" value = 0 }
+		if = {
+			limit = {
+				capital_scope = {
+					location = {
+						TECH_RECRUITMENT >= 2
+					}
+				}
+			}
+			trigger_switch = {
+				on_trigger = tier
+				emperor = { change_variable = { which = "max_regiment_num" value = 5 } }
+				king = { change_variable = { which = "max_regiment_num" value = 4 } }
+				duke = { change_variable = { which = "max_regiment_num" value = 3 } }
+				count = { change_variable = { which = "max_regiment_num" value = 2 } }
+				fallback = {}
+			}
+		}
+		else_if = {
+			limit = {
+				capital_scope = {
+					location = {
+						TECH_RECRUITMENT >= 1
+					}
+				}
+			}
+			trigger_switch = {
+				on_trigger = tier
+				emperor = { change_variable = { which = "max_regiment_num" value = 4 } }
+				king = { change_variable = { which = "max_regiment_num" value = 3 } }
+				duke = { change_variable = { which = "max_regiment_num" value = 2 } }
+				count = { change_variable = { which = "max_regiment_num" value = 2 } }
+				fallback = {}
+			}
+		}
+		else = {
+			trigger_switch = {
+				on_trigger = tier
+				emperor = { change_variable = { which = "max_regiment_num" value = 2 } }
+				king = { change_variable = { which = "max_regiment_num" value = 2 } }
+				duke = { change_variable = { which = "max_regiment_num" value = 2 } }
+				count = { change_variable = { which = "max_regiment_num" value = 2 } }
+				fallback = {}
+			}
+		}
+		trigger_switch = {
+			on_trigger = num_of_count_titles_in_realm
+			96 = { change_variable = { which = "max_regiment_num" value = 12 } }
+			80 = { change_variable = { which = "max_regiment_num" value = 10 } }
+			64 = { change_variable = { which = "max_regiment_num" value = 8 } }
+			48 = { change_variable = { which = "max_regiment_num" value = 6 } }
+			32 = { change_variable = { which = "max_regiment_num" value = 4 } }
+			24 = { change_variable = { which = "max_regiment_num" value = 3 } }
+			16 = { change_variable = { which = "max_regiment_num" value = 2 } }
+			8 = { change_variable = { which = "max_regiment_num" value = 1 } }
+			fallback = {}
+		}
+		trigger_switch = {
+			on_trigger = demesne_size
+			9 = { change_variable = { which = "max_regiment_num" value = 9 } }
+			8 = { change_variable = { which = "max_regiment_num" value = 8 } }
+			7 = { change_variable = { which = "max_regiment_num" value = 7 } }
+			6 = { change_variable = { which = "max_regiment_num" value = 6 } }
+			5 = { change_variable = { which = "max_regiment_num" value = 5 } }
+			4 = { change_variable = { which = "max_regiment_num" value = 4 } }
+			3 = { change_variable = { which = "max_regiment_num" value = 3 } }
+			2 = { change_variable = { which = "max_regiment_num" value = 2 } }
+			1 = { change_variable = { which = "max_regiment_num" value = 1 } }
+			fallback = {}
+		}
+		trigger_switch = {
+			on_trigger = over_max_demesne_size
+			9 = { change_variable = { which = "max_regiment_num" value = -9 } }
+			8 = { change_variable = { which = "max_regiment_num" value = -8 } }
+			7 = { change_variable = { which = "max_regiment_num" value = -7 } }
+			6 = { change_variable = { which = "max_regiment_num" value = -6 } }
+			5 = { change_variable = { which = "max_regiment_num" value = -5 } }
+			4 = { change_variable = { which = "max_regiment_num" value = -4 } }
+			3 = { change_variable = { which = "max_regiment_num" value = -3 } }
+			2 = { change_variable = { which = "max_regiment_num" value = -2 } }
+			1 = { change_variable = { which = "max_regiment_num" value = -1 } }
+			fallback = {}
+		}
+		trigger_switch = {
+			on_trigger = martial
+			19 = { change_variable = { which = "max_regiment_num" value = 1 } }
+			13 = { change_variable = { which = "max_regiment_num" value = 0 } }
+			7 = { change_variable = { which = "max_regiment_num" value = -1 } }
+			fallback = { change_variable = { which = "max_regiment_num" value = -2 } }
+		}
+	}
+}
+
+character_event = {
+    id = NT.3
+    hide_window = yes
+	
+	is_triggered_only = yes
+	
+	lacks_dlc = "Horse Lords"
+	lacks_dlc = "Legacy of Rome"
+
+    trigger = {
+		government = nomadic_tribal_government
+    }
+
+	immediate = {
+		capital_scope = {
+			ROOT = {
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_35 }
+						check_variable = { which = max_regiment_num value = 35 }
+					}
+					# ST 35% for altaic; 6% for magyar&jurchen; 
+					# HC 20% for jurchen;
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_35
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_35
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_35
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_35
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_34 }
+						check_variable = { which = max_regiment_num value = 34 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_34
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_34
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_34
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_34
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_33 }
+						check_variable = { which = max_regiment_num value = 33 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_33
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_33
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_33
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_33
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_32 }
+						check_variable = { which = max_regiment_num value = 32 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_32
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_32
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_32
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_32
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_31 }
+						check_variable = { which = max_regiment_num value = 31 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_31
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_31
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_31
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_31
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_30 }
+						check_variable = { which = max_regiment_num value = 30 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_30
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_30
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_30
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_30
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_29 }
+						check_variable = { which = max_regiment_num value = 29 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_29
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_29
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_29
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_29
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_28 }
+						check_variable = { which = max_regiment_num value = 28 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_28
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_28
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_28
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_28
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_27 }
+						check_variable = { which = max_regiment_num value = 27 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_27
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_27
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_27
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_27
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_26 }
+						check_variable = { which = max_regiment_num value = 26 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_26
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_26
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_26
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_26
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_25 }
+						check_variable = { which = max_regiment_num value = 25 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_25
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_25
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_25
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_25
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_24 }
+						check_variable = { which = max_regiment_num value = 24 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_24
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_24
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_24
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_24
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_23 }
+						check_variable = { which = max_regiment_num value = 23 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_23
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_23
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_23
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_23
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_22 }
+						check_variable = { which = max_regiment_num value = 22 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_22
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_22
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_22
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_22
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_21 }
+						check_variable = { which = max_regiment_num value = 21 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_21
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_21
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_21
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_21
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_20 }
+						check_variable = { which = max_regiment_num value = 20 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_20
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_20
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_20
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_20
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_19 }
+						check_variable = { which = max_regiment_num value = 19 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_19
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_19
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_19
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_19
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_18 }
+						check_variable = { which = max_regiment_num value = 18 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_18
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_18
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_18
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_18
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_17 }
+						check_variable = { which = max_regiment_num value = 17 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_17
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_17
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_17
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_17
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_16 }
+						check_variable = { which = max_regiment_num value = 16 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_16
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_16
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_16
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_16
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_15 }
+						check_variable = { which = max_regiment_num value = 15 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_15
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_15
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_15
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_15
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_14 }
+						check_variable = { which = max_regiment_num value = 14 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_14
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_14
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_14
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_14
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_13 }
+						check_variable = { which = max_regiment_num value = 13 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_13
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_13
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_13
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_13
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_12 }
+						check_variable = { which = max_regiment_num value = 12 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_12
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_12
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_12
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_12
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_11 }
+						check_variable = { which = max_regiment_num value = 11 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_11
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_11
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_11
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_11
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_10 }
+						check_variable = { which = max_regiment_num value = 10 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_10
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_10
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_10
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_10
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_9 }
+						check_variable = { which = max_regiment_num value = 9 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_9
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_9
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_9
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_9
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_8 }
+						check_variable = { which = max_regiment_num value = 8 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_8
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_8
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_8
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_8
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_7 }
+						check_variable = { which = max_regiment_num value = 7 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_7
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_7
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_7
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_7
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_6 }
+						check_variable = { which = max_regiment_num value = 6 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_6
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_6
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_6
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_6
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_5 }
+						check_variable = { which = max_regiment_num value = 5 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_5
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_5
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_5
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_5
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_4 }
+						check_variable = { which = max_regiment_num value = 4 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_4
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_4
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_4
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_4
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_3 }
+						check_variable = { which = max_regiment_num value = 3 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_3
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_3
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_3
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_3
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_2 }
+						check_variable = { which = max_regiment_num value = 2 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_2
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_2
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_2
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_2
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_1 }
+						check_variable = { which = max_regiment_num value = 1 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_1
+								troops = {
+									light_cavalry = { 200 200 }
+									horse_archers = { 50 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_1
+								troops = {
+									light_cavalry = { 125 125 }
+									horse_archers = { 125 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_1
+								troops = {
+									light_cavalry = { 250 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_1
+								troops = {
+									light_cavalry = { 175 175 }
+									knights = { 75 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				add_character_modifier = { name = launched_subjugation duration = -1 hidden = yes } # Dirty trick for disable subjugation cb for nomadic tribal
+			}
+		}
+	}
+}
+
+character_event = {
+    id = NT.4
+    hide_window = yes
+	
+	is_triggered_only = yes
+
+	lacks_dlc = "Horse Lords"
+	lacks_dlc = "Legacy of Rome"
+	
+    trigger = {
+		government = nomadic_tribal_government
+    }
+
+	immediate = {
+		capital_scope = {
+			ROOT = {
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_35 }
+						check_variable = { which = max_regiment_num value = 35 }
+					}
+					# ST 35% for altaic; 6% for magyar&jurchen; 
+					# HC 20% for jurchen;
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_35
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_35
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_35
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_35
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_34 }
+						check_variable = { which = max_regiment_num value = 34 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_34
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_34
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_34
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_34
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_33 }
+						check_variable = { which = max_regiment_num value = 33 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_33
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_33
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_33
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_33
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_32 }
+						check_variable = { which = max_regiment_num value = 32 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_32
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_32
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_32
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_32
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_31 }
+						check_variable = { which = max_regiment_num value = 31 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_31
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_31
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_31
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_31
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_30 }
+						check_variable = { which = max_regiment_num value = 30 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_30
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_30
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_30
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_30
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_29 }
+						check_variable = { which = max_regiment_num value = 29 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_29
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_29
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_29
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_29
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_28 }
+						check_variable = { which = max_regiment_num value = 28 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_28
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_28
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_28
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_28
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_27 }
+						check_variable = { which = max_regiment_num value = 27 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_27
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_27
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_27
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_27
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_26 }
+						check_variable = { which = max_regiment_num value = 26 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_26
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_26
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_26
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_26
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_25 }
+						check_variable = { which = max_regiment_num value = 25 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_25
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_25
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_25
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_25
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_24 }
+						check_variable = { which = max_regiment_num value = 24 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_24
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_24
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_24
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_24
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_23 }
+						check_variable = { which = max_regiment_num value = 23 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_23
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_23
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_23
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_23
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_22 }
+						check_variable = { which = max_regiment_num value = 22 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_22
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_22
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_22
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_22
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_21 }
+						check_variable = { which = max_regiment_num value = 21 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_21
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_21
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_21
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_21
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_20 }
+						check_variable = { which = max_regiment_num value = 20 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_20
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_20
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_20
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_20
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_19 }
+						check_variable = { which = max_regiment_num value = 19 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_19
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_19
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_19
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_19
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_18 }
+						check_variable = { which = max_regiment_num value = 18 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_18
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_18
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_18
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_18
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_17 }
+						check_variable = { which = max_regiment_num value = 17 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_17
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_17
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_17
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_17
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_16 }
+						check_variable = { which = max_regiment_num value = 16 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_16
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_16
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_16
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_16
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_15 }
+						check_variable = { which = max_regiment_num value = 15 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_15
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_15
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_15
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_15
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_14 }
+						check_variable = { which = max_regiment_num value = 14 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_14
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_14
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_14
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_14
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_13 }
+						check_variable = { which = max_regiment_num value = 13 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_13
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_13
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_13
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_13
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_12 }
+						check_variable = { which = max_regiment_num value = 12 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_12
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_12
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_12
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_12
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_11 }
+						check_variable = { which = max_regiment_num value = 11 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_11
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_11
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_11
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_11
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_10 }
+						check_variable = { which = max_regiment_num value = 10 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_10
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_10
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_10
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_10
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_9 }
+						check_variable = { which = max_regiment_num value = 9 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_9
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_9
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_9
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_9
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_8 }
+						check_variable = { which = max_regiment_num value = 8 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_8
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_8
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_8
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_8
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_7 }
+						check_variable = { which = max_regiment_num value = 7 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_7
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_7
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_7
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_7
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_6 }
+						check_variable = { which = max_regiment_num value = 6 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_6
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_6
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_6
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_6
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_5 }
+						check_variable = { which = max_regiment_num value = 5 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_5
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_5
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_5
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_5
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_4 }
+						check_variable = { which = max_regiment_num value = 4 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_4
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_4
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_4
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_4
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_3 }
+						check_variable = { which = max_regiment_num value = 3 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_3
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_3
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_3
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_3
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_2 }
+						check_variable = { which = max_regiment_num value = 2 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_2
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_2
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_2
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_2
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_earmarked_regiments = horde_regiments_1 }
+						check_variable = { which = max_regiment_num value = 1 }
+					}
+					random_list = {
+						50 = {
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_1
+								troops = {
+									light_cavalry = { 1 200 }
+									horse_archers = { 1 50 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						50 = {
+							modifier = { 
+								factor = 0
+								OR = {
+									culture_group = magyar
+									culture = jurchen
+								}
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_1
+								troops = {
+									light_cavalry = { 1 125 }
+									horse_archers = { 1 125 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture_group = magyar }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_1
+								troops = {
+									light_cavalry = { 1 250 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+						100 = {
+							modifier = { 
+								factor = 0
+								NOT = { culture = jurchen }
+							}
+							spawn_unit = {
+								province = PREV
+								owner = ROOT
+								earmark = horde_regiments_1
+								troops = {
+									light_cavalry = { 1 175 }
+									knights = { 1 75 }
+								}
+								attrition = 0.5
+								merge = yes
+								reinforces = yes
+								reinforce_rate_multiplier = 0.33
+								can_toggle_looting = yes
+								cannot_inherit = yes
+							}
+						}
+					}
+				}
+				add_character_modifier = { name = launched_subjugation duration = -1 hidden = yes } # Dirty trick for disable subjugation cb for nomadic tribal
+			}
+		}
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+character_event = {
+    id = NT.6
+    hide_window = yes
+	
+    is_triggered_only = yes
+	
+	lacks_dlc = "Horse Lords"
+
+    trigger = {
+        government = nomadic_tribal_government
+		FROM = {
+			higher_tier_than = BARON
+		}
+    }
+
+	immediate = {
+		character_event = { id = NT.2 days = 1 }
+	}
+}
+
+character_event = {
+    id = NT.8
+    hide_window = yes
+	
+    is_triggered_only = yes
+	
+	lacks_dlc = "Horse Lords"
+
+    trigger = {
+		check_variable = { which = "max_regiment_num" value = 1 }
+    }
+
+	immediate = {
+		set_variable = { which = "max_regiment_num" value = 0 }
+	}
+}

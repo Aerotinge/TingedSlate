@@ -2425,8 +2425,16 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		is_nomadic = yes
-		independent = yes
+		OR = {
+			AND = {
+				is_nomadic = yes
+				independent = yes
+			}
+			AND = {
+				government = nomadic_tribal_government
+				higher_real_tier_than = KING
+			}
+		}
 	}
 }
 
@@ -2436,8 +2444,16 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		is_nomadic = yes
-		independent = no
+		OR = {
+			AND = {
+				is_nomadic = yes
+				independent = no
+			}
+			AND = {
+				government = nomadic_tribal_government
+				NOT = { higher_real_tier_than = KING }
+			}
+		}
 	}
 }
 
@@ -2979,7 +2995,10 @@ government_flavor = {
 
 	trigger = {
 		has_landed_title = e_mongol_empire
-		is_nomadic = yes
+		OR = {
+			is_nomadic = yes
+			nomadic_tribal_government
+		}
 	}
 }
 

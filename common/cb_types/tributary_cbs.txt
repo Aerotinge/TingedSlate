@@ -516,6 +516,10 @@ free_tributary_cb = {
 				limit = { is_decision_potential = tributary_independence_normal }
 				NOT = { is_decision_allowed = tributary_independence_normal }
 			}
+			trigger_else_if = {
+				limit = { is_decision_potential = tributary_independence_nomadic }
+				NOT = { is_decision_allowed = tributary_independence_nomadic }
+			}
 		}
 	}
 
@@ -552,6 +556,13 @@ free_tributary_cb = {
 
 					has_dlc = "Jade Dragon"
 				}
+				trigger_else_if = {
+					limit = {
+						is_tributary = { type = nomadic_tribal }
+					}
+
+					NOT = { has_dlc = "Horse Lords" }
+				}
 			}
 			trigger_else = {
 				any_vassal = {
@@ -576,6 +587,13 @@ free_tributary_cb = {
 						}
 
 						has_dlc = "Jade Dragon"
+					}
+					trigger_else_if = {
+						limit = {
+							is_tributary = { type = nomadic_tribal }
+						}
+
+						NOT = { has_dlc = "Horse Lords" }
 					}
 
 					suzerain = {
@@ -920,9 +938,17 @@ free_tributary_cb = {
 				attacker = {
 					is_nomadic = yes
 				}
+				
+				attacker = {
+					government = nomadic_tribal_government
+				}
 
 				defender = {
 					is_nomadic = no
+				}
+				
+				defender = {
+					NOT = { government = nomadic_tribal_government }
 				}
 			}
 		}

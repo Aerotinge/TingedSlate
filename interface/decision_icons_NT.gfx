@@ -1,0 +1,7 @@
+spriteTypes = {
+	
+	spriteType = {
+		name = "GFX_create_nomad_horde"
+		texturefile = "gfx\\interface\\decision_icon_raise_tribal_army.dds"
+	}
+}
