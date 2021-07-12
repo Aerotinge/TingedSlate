@@ -1,6 +1,11 @@
 tribal = {
 	tb_hillfort_1 = {
 		desc = tb_hillfort_1_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CASTLE_CONSTRUCTION >= 0 }
 		gold_cost = 25
 		build_time = 365
@@ -17,6 +22,11 @@ tribal = {
 
 	tb_hillfort_2 = {
 		desc = tb_hillfort_2_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CASTLE_CONSTRUCTION >= 0 }
 		upgrades_from = tb_hillfort_1
 		gold_cost = 50
@@ -36,6 +46,11 @@ tribal = {
 
 	tb_hillfort_3 = {
 		desc = tb_hillfort_3_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CASTLE_CONSTRUCTION >= 1 }
 		upgrades_from = tb_hillfort_2
 		gold_cost = 75
@@ -52,6 +67,11 @@ tribal = {
 
 	tb_hillfort_4 = {
 		desc = tb_hillfort_4_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CASTLE_CONSTRUCTION >= 1 }
 		upgrades_from = tb_hillfort_3
 		gold_cost = 100
@@ -71,6 +91,11 @@ tribal = {
 
 	tb_market_town_1 = {
 		desc = tb_market_town_1_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CITY_CONSTRUCTION >= 0 }
 		gold_cost = 25
 		build_time = 365
@@ -86,6 +111,11 @@ tribal = {
 
 	tb_market_town_2 = {
 		desc = tb_market_town_2_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CITY_CONSTRUCTION >= 0 }
 		upgrades_from = tb_market_town_1
 		gold_cost = 50
@@ -104,6 +134,11 @@ tribal = {
 
 	tb_market_town_3 = {
 		desc = tb_market_town_3_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CITY_CONSTRUCTION >= 1 }
 		upgrades_from = tb_market_town_2
 		gold_cost = 75
@@ -120,6 +155,11 @@ tribal = {
 
 	tb_market_town_4 = {
 		desc = tb_market_town_4_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CITY_CONSTRUCTION >= 1 }
 		upgrades_from = tb_market_town_3
 		gold_cost = 100
@@ -139,6 +179,11 @@ tribal = {
 
 	tb_defensive_fortifications_1 = {
 		desc = tb_defensive_fortifications_1_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CASTLE_CONSTRUCTION >= 0 }
 		piety_cost = 100
 		build_time = 365
@@ -167,6 +212,11 @@ tribal = {
 
 	tb_defensive_fortifications_2 = {
 		desc = tb_defensive_fortifications_2_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CASTLE_CONSTRUCTION >= 0 }
 		upgrades_from = tb_defensive_fortifications_1
 		piety_cost = 150
@@ -199,6 +249,11 @@ tribal = {
 
 	tb_defensive_fortifications_3 = {
 		desc = tb_defensive_fortifications_3_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CASTLE_CONSTRUCTION >= 1 }
 		upgrades_from = tb_defensive_fortifications_2
 		piety_cost = 200
@@ -228,6 +283,11 @@ tribal = {
 
 	tb_defensive_fortifications_4 = {
 		desc = tb_defensive_fortifications_4_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_CASTLE_CONSTRUCTION >= 1 }
 		upgrades_from = tb_defensive_fortifications_3
 		piety_cost = 250
@@ -260,6 +320,11 @@ tribal = {
 
 	tb_shipyard_1 = {
 		desc = shipyard_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		port = yes
 		trigger = { TECH_NAVAL >= 1 }
 		prestige_cost = 100
@@ -276,6 +341,11 @@ tribal = {
 
 	tb_shipyard_2 = {
 		desc = shipyard_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		port = yes
 		trigger = { TECH_NAVAL >= 2 }
 		upgrades_from = tb_shipyard_1
@@ -293,6 +363,11 @@ tribal = {
 
 	tb_shipyard_3 = {
 		desc = shipyard_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		port = yes
 		trigger = { TECH_NAVAL >= 3 }
 		upgrades_from = tb_shipyard_2
@@ -310,6 +385,11 @@ tribal = {
 
 	tb_shipyard_4 = {
 		desc = shipyard_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		port = yes
 		trigger = { TECH_NAVAL >= 4 }
 		upgrades_from = tb_shipyard_3
@@ -327,6 +407,11 @@ tribal = {
 
 	tb_training_grounds_1 = {
 		desc = tb_training_grounds_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION >= 0 }
 		prestige_cost = 100
 		build_time = 547
@@ -339,6 +424,11 @@ tribal = {
 
 	tb_training_grounds_2 = {
 		desc = tb_training_grounds_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION >= 0 }
 		upgrades_from = tb_training_grounds_1
 		prestige_cost = 200
@@ -355,6 +445,11 @@ tribal = {
 
 	tb_training_grounds_3 = {
 		desc = tb_training_grounds_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION >= 0 }
 		upgrades_from = tb_training_grounds_2
 		prestige_cost = 300
@@ -368,6 +463,11 @@ tribal = {
 
 	tb_training_grounds_4 = {
 		desc = tb_training_grounds_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION >= 0 }
 		upgrades_from = tb_training_grounds_3
 		prestige_cost = 400
@@ -384,6 +484,11 @@ tribal = {
 
 	tb_war_camp_1 = {
 		desc = tb_war_camp_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_INFANTRY >= 0 }
 		prestige_cost = 100
 		build_time = 365
@@ -395,6 +500,11 @@ tribal = {
 
 	tb_war_camp_2 = {
 		desc = tb_war_camp_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_INFANTRY >= 0 }
 		upgrades_from = tb_war_camp_1
 		prestige_cost = 200
@@ -410,6 +520,11 @@ tribal = {
 
 	tb_war_camp_3 = {
 		desc = tb_war_camp_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_INFANTRY >= 0 }
 		upgrades_from = tb_war_camp_2
 		prestige_cost = 300
@@ -422,6 +537,11 @@ tribal = {
 
 	tb_war_camp_4 = {
 		desc = tb_war_camp_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_INFANTRY >= 0 }
 		upgrades_from = tb_war_camp_3
 		prestige_cost = 400
@@ -437,6 +557,11 @@ tribal = {
 
 	tb_practice_range_1 = {
 		desc = tb_practice_range_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_INFANTRY >= 0 }
 		prestige_cost = 100
 		build_time = 365
@@ -448,6 +573,11 @@ tribal = {
 
 	tb_practice_range_2 = {
 		desc = tb_practice_range_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_INFANTRY >= 0 }
 		upgrades_from = tb_practice_range_1
 		prestige_cost = 200
@@ -463,6 +593,11 @@ tribal = {
 
 	tb_practice_range_3 = {
 		desc = tb_practice_range_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_INFANTRY >= 0 }
 		upgrades_from = tb_practice_range_2
 		prestige_cost = 300
@@ -475,6 +610,11 @@ tribal = {
 
 	tb_practice_range_4 = {
 		desc = tb_practice_range_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_INFANTRY >= 0 }
 		upgrades_from = tb_practice_range_3
 		prestige_cost = 400
@@ -615,8 +755,8 @@ tribal = {
 		desc = ca_steppe_stable_desc
 		potential = {
 			OR = {
-			terrain = plains
-			terrain = steppe
+				terrain = plains
+				terrain = steppe
 			}
 			FROM = {
 				OR = {
@@ -645,8 +785,8 @@ tribal = {
 		desc = ca_steppe_stable_desc
 		potential = {
 			OR = {
-			terrain = plains
-			terrain = steppe
+				terrain = plains
+				terrain = steppe
 			}
 			FROM = {
 				OR = {
@@ -672,8 +812,8 @@ tribal = {
 		desc = ca_steppe_stable_desc
 		potential = {
 			OR = {
-			terrain = plains
-			terrain = steppe
+				terrain = plains
+				terrain = steppe
 			}
 			FROM = {
 				OR = {
@@ -700,6 +840,11 @@ tribal = {
 
 	tb_arsenal_1 = {
 		desc = tb_arsenal_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_RECRUITMENT >= 0 }
 		prestige_cost = 100
 		build_time = 547
@@ -713,6 +858,11 @@ tribal = {
 
 	tb_arsenal_2 = {
 		desc = tb_arsenal_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_RECRUITMENT >= 0 }
 		upgrades_from = tb_arsenal_1
 		prestige_cost = 200
@@ -730,6 +880,11 @@ tribal = {
 
 	tb_arsenal_3 = {
 		desc = tb_arsenal_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_RECRUITMENT >= 0 }
 		upgrades_from = tb_arsenal_2
 		prestige_cost = 300
@@ -744,6 +899,11 @@ tribal = {
 
 	tb_arsenal_4 = {
 		desc = tb_arsenal_desc
+		potential = {
+			FROM = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
 		trigger = { TECH_RECRUITMENT >= 0 }
 		upgrades_from = tb_arsenal_3
 		prestige_cost = 400
