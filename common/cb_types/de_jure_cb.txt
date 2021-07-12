@@ -21,6 +21,11 @@ dejure_county_claim = {
 
 	can_use_gui = {
 		check_if_crusader_trigger = yes
+		
+		# Attacker
+		ROOT = {
+			NOT = { government = nomadic_tribal_government }
+		}
 	}
 
 	can_use_title = {
@@ -415,6 +420,8 @@ dejure_duchy_claim = {
 				limit = { tier = EMPEROR }
 				prestige >= 1000
 			}
+			
+			NOT = { government = nomadic_tribal_government }
 		}
 	}
 
@@ -648,6 +655,11 @@ other_dejure_county_claim = {
 
 	can_use_gui = {
 		check_if_crusader_trigger = yes
+		
+		# Attacker
+		ROOT = {
+			NOT = { government = nomadic_tribal_government }
+		}
 	}
 
 	# Starting scope is attacker
