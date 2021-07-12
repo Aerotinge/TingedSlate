@@ -721,8 +721,15 @@ decisions = {
 		only_playable = yes
 
 		potential = {
-			is_tributary = {
-				type = offmap
+			offmap_china = {
+				governor = {
+					ROOT = {
+						is_tributary = {
+							suzerain = PREV
+							type = offmap
+						}
+					}
+				}
 			}
 		}
 

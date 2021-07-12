@@ -120,7 +120,7 @@ offmap = {
 		value = 0
 	}
 
-	prestige_to_tributary = { #Update GetChineseOffmapTributaryPrestigeCost for tooltip
+	prestige_to_tributary = {
 		value = 0
 
 		additive_modifier = {
@@ -162,7 +162,6 @@ offmap = {
 	}
 
 	modifier = {
-		monthly_grace = 2
 	}
 }
 
