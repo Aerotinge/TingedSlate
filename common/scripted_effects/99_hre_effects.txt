@@ -1,0 +1,197 @@
+print_hre_ruler_update_effect = {
+	log = "----------------"
+	log = "Ruler of HRE died at the age of [From.GetAgeYears]."
+	log = "New Ruler of HRE is [Root.GetBestName]."
+	log = "----------------"
+}
+
+print_hre_government_update_effect = {
+	log = "----------------"
+	log = "[From.GetBestName] is no longer holder of HRE."
+	log = "New Governmenor of HRE is [Root.GetBestName]."
+	log = "----------------"
+}
+
+# make sure ROOT is the governor
+offmap_hre_government_de_facto_maintain_effect = {
+	any_vassal = {
+		limit = {
+			higher_tier_than = BARON
+			is_landed = yes
+		}
+		set_defacto_liege = THIS
+		offmap_hre_tributaries_join_effect = yes
+	}
+	any_demesne_title = {
+		limit = {
+			OR = {
+				tier = DUKE
+				tier = KING
+			}
+		}
+		any_de_jure_vassal = {
+			limit = {
+				is_member_of_hre = yes
+				NOT = {
+					is_tributary = {
+						type = hre_free_imp_city
+						suzerain = ROOT
+					}
+				}
+				lower_tier_than = PREV
+			}
+			set_defacto_liege = ROOT
+		}
+	}
+}
+
+offmap_hre_ruler_name_sync_effect = {
+	e_hre = {
+		holder_scope = {
+			offmap_hre = {
+				offmap_ruler = {
+					dynasty = none
+					#set_name = PREVPREV
+					set_name = HRE_RULER_NAME
+				}
+			}
+		}
+	}
+}
+
+offmap_hre_tributaries_join_effect = {
+	if = {
+		limit = {
+			NOT = { is_republic = yes }
+		}
+		offmap_hre = {
+			if = {
+				limit = { has_offmap_flag = ewiger_landfriede }
+				governor = {
+					make_tributary = { who = PREVPREV tributary_type = hre_prince_1 }
+				}
+			}
+			else = {
+				governor = {
+					make_tributary = { who = PREVPREV tributary_type = hre_prince_0 }
+				}
+			}
+		}
+	}
+	else = {
+		offmap_hre = {
+			governor = {
+				make_tributary = { who = PREVPREV tributary_type = hre_free_imp_city }
+			}
+		}
+	}
+}
+
+# Usage offmap_hre = { governor = { offmap_hre_tributaries_sync_effect = yes } }
+# Or	e_hre = { holder_scope = { offmap_hre_tributaries_sync_effect = yes } }
+# the tribute percentage is caculated once, so sync is used whenever a tax rate is changed
+# Or a Imperial Reformation changes tributary obligations
+offmap_hre_tributaries_sync_effect = {
+	hidden_tooltip = {
+		any_tributary = {
+			limit = {
+				OR = {
+					is_tributary = {
+						type = hre_prince_0
+						suzerain = PREV
+					}
+					is_tributary = {
+						type = hre_prince_1
+						suzerain = PREV
+					}
+					is_tributary = {
+						type = hre_free_imp_city
+						suzerain = PREV
+					}
+				}
+			}
+			if = {	# Free Imp City
+				limit = {
+					is_tributary = {
+						type = hre_free_imp_city
+						suzerain = PREV
+					}
+				}
+				suzerain = {
+					make_tributary = {
+						who = PREV
+						tributary_type = hre_free_imp_city
+					}
+				}
+			}
+			else_if = {	# Ewiger Landfriede
+				limit = {
+					offmap_hre = {
+						has_offmap_flag = ewiger_landfriede
+					}
+				}
+				suzerain = {
+					make_tributary = {
+						who = PREV
+						tributary_type = hre_prince_1
+					}
+				}
+			}
+			else = { # Default
+				suzerain = {
+					make_tributary = {
+						who = PREV
+						tributary_type = hre_prince_0
+					}
+				}
+			}
+		}
+	}
+}
+
+hre_hold_election_effect = {
+	e_hre = {
+		current_heir = {
+			e_hre = {
+				gain_title = PREV
+			}
+			save_event_target_as = hre_new_holder
+		}
+	}
+	any_tributary = {
+		limit = {
+			is_tributary = {
+				type = hre_prince_0
+				suzerain = ROOT
+			}
+		}			
+		remove_tributary = ROOT
+		event_target:hre_new_holder = {
+			make_tributary = { who = PREV tributary_type = hre_prince_0 }
+		}
+	}
+	any_tributary = {
+		limit = {
+			is_tributary = {
+				type = hre_prince_1
+				suzerain = ROOT
+			}
+		}			
+		remove_tributary = ROOT
+		event_target:hre_new_holder = {
+			make_tributary = { who = PREV tributary_type = hre_prince_1 }
+		}
+	}
+	any_tributary = {
+		limit = {
+			is_tributary = {
+				type = hre_free_imp_city
+				suzerain = ROOT
+			}
+		}			
+		remove_tributary = ROOT
+		event_target:hre_new_holder = {
+			make_tributary = { who = PREV tributary_type = hre_free_imp_city }
+		}
+	}
+}

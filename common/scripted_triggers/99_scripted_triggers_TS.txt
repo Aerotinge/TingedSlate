@@ -1,0 +1,14 @@
+is_member_of_hre = {
+	offmap_hre = {
+		governor = {
+			any_tributary = {
+				character = PREVPREVPREV
+				OR = {
+					is_tributary = { type = hre_prince_0 suzerain = PREV }
+					is_tributary = { type = hre_prince_1 suzerain = PREV }
+					is_tributary = { type = hre_free_imp_city suzerain = PREV }
+				}
+			}
+		}
+	}
+}

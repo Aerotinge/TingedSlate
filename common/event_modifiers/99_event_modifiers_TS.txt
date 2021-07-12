@@ -1,0 +1,6 @@
+hre_prince_elector = {
+	icon = 10
+	is_visible = {
+		always = yes
+	}
+}

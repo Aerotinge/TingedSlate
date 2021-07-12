@@ -161,6 +161,17 @@ offmap_china = {
 				}
 			}
 		}
+		
+		tributary_of_WP = {
+			value = 2
+			
+			FROM = {
+				is_tributary = {
+					suzerain = ROOT
+					type = offmap
+				}
+			}
+		}
 
 		vassal_of_WP = {
 			value = 2

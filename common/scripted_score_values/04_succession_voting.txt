@@ -685,7 +685,7 @@ elector_candidate_gender_vote = {
 	}
 }
 
-# Used in Feudal Elective, Imperial Elective and Princely Elective
+# Used in Feudal Elective, Imperial Elective
 elector_candidate_culture_vote = {
 	additive_modifier = {
 		value = 10
