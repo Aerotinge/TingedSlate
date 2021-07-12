@@ -413,14 +413,14 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_tribal_turkishgfx"
-		textureFile = "gfx\\interface\\placeholder_tribal_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_nomad.tga"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_tribal_mongolgfx"
-		textureFile = "gfx\\interface\\placeholder_tribal_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_nomad.tga"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -476,7 +476,14 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_tribal_empty_mongolgfx"
-		textureFile = "gfx\\interface\\placeholder_empty_tribal_mongol.dds"
+		textureFile = "gfx\\interface\\placeholder_empty_nomad.dds"
+		noOfFrames = 1
+		noRefCount = yes
+	}
+
+	spriteType = {
+		name = "GFX_settlement_tribal_empty_turkishgfx"
+		textureFile = "gfx\\interface\\placeholder_empty_nomad.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2060,14 +2067,14 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_tribal_turkishgfx_looted"
-		textureFile = "gfx\\interface\\placeholder_tribal_mongol_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_nomad_looted.tga"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_tribal_mongolgfx_looted"
-		textureFile = "gfx\\interface\\placeholder_tribal_mongol_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_nomad_looted.tga"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -3879,7 +3886,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_new_mongolgfx"
-		textureFile = "gfx\\interface\\province_new_settlement_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_empty_nomad.tga"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -3893,7 +3900,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_new_turkishgfx"
-		textureFile = "gfx\\interface\\province_new_settlement_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_empty_nomad.tga"
 		noOfFrames = 1
 		noRefCount = yes
 	}
