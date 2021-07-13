@@ -3,7 +3,7 @@ offmap_hre = {
 	window_name = domestic_offmaps_germany_window
 	button_name = icon_offmaps_germany_entry
 	currency_name = TXT_GRACE_HRE
-	currency_gain = monthly_hre_grace
+	currency_gain = monthly_offmap_hre_currency
 	currency_reset_on_dynasty_change = yes
 
 	holder_title = title_hre_emperor			# minor title used to identify a character as holder of this offmap power
@@ -17,10 +17,10 @@ offmap_hre = {
 	sound = china_interaction_interface
 
 	display_trigger = {
-		FROM = {
-			is_within_diplo_range = ROOT
-		}
-		has_status = hre_shattered
+		#FROM = {
+		#	is_within_diplo_range = ROOT
+		#}
+		#has_status = hre_shattered
 	}
 
 	policies = {
