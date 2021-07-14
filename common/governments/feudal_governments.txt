@@ -795,18 +795,11 @@ feudal_governments = {
 		color = { 91 133 207 }
 
 		potential = {
-			trigger_if = {
-				limit = { offmap_power = { always = yes } } # Using flags to maximize compatibilities, as for now
-				offmap_power = {
-					has_offmap_flag = hre_diet_metz_enacted
-					NOR = {
-						has_offmap_flag = revoke_the_privilegia
-						has_offmap_flag = hre_dismantled
-					}
+			offmap_hre = {
+				governor = {
+					character = PREVPREV
 				}
-			}
-			trigger_else = {
-				always = no
+				has_status = hre_shattered
 			}
 		}
 
