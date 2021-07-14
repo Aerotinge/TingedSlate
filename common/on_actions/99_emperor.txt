@@ -1,0 +1,76 @@
+#character
+on_startup = {
+	events = {
+		# Nomadic tribal
+		EMP.11002
+		EMP.11003
+	}
+}
+
+on_yearly_pulse = {
+	events = {
+		# Nomadic tribal
+		EMP.11002
+	}
+}
+
+on_death = {
+	events = {
+		EMP.12010
+		EMP.12011
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder = {
+	events = {
+		# Nomadic tribal
+		EMP.11006
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_inheritance = {
+	events = {
+		EMP.12020	#
+		EMP.12021
+		# Nomadic tribal
+		EMP.11006
+	}
+}
+
+# ROOT is the character, FROM is the title, FROMFROM is the old holder
+on_new_holder_usurpation = {
+	events = {
+		EMP.12030	#
+		# Nomadic tribal
+		EMP.11006
+	}
+}
+
+# An offmap power changes its governor. Triggers for the new governor
+# Root = New governor
+# From = Old governor
+# FromFrom = Offmap
+on_offmap_governor_changed = {
+	events = {
+		EMP.12040
+	}
+}
+
+# An offmap power changes its ruler. Triggers for the new ruler
+# Root = New ruler
+# From = Old ruler
+# FromFrom = Offmap
+on_offmap_ruler_changed = {
+	events = {
+		EMP.12050
+	}
+}
+
+on_unlanded = {
+	events = {
+		# Nomadic tribal
+		EMP.11008 #Landless nomad clean-up
+	}
+}

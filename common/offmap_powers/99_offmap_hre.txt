@@ -17,10 +17,10 @@ offmap_hre = {
 	sound = china_interaction_interface
 
 	display_trigger = {
-		#FROM = {
-		#	is_within_diplo_range = ROOT
-		#}
-		#has_status = hre_shattered
+		FROM = {
+			is_within_diplo_range = ROOT
+		}
+		has_status = hre_shattered
 	}
 
 	policies = {

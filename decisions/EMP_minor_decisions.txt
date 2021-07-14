@@ -1,8 +1,3 @@
-###TS Decisions###
-
-#Written by:
-#Sergei Ivanov
-
 decisions = {
 	
 	create_nomad_horde = {
@@ -12,9 +7,8 @@ decisions = {
 		ai_check_interval = 12
 
 		potential = {
-			NOR = {
+			NOT = {
 				has_dlc = "Horse Lords"
-				has_dlc = "Legacy of Rome"
 			}
 			government = nomadic_tribal_government
 		}
@@ -24,143 +18,143 @@ decisions = {
 				OR = {
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_35 }
-						check_variable = { which = max_regiment_num value = 35 }
+						check_variable = { which = empty_holdings_total value = 35 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_34 }
-						check_variable = { which = max_regiment_num value = 34 }
+						check_variable = { which = empty_holdings_total value = 34 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_33 }
-						check_variable = { which = max_regiment_num value = 33 }
+						check_variable = { which = empty_holdings_total value = 33 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_32 }
-						check_variable = { which = max_regiment_num value = 32 }
+						check_variable = { which = empty_holdings_total value = 32 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_31 }
-						check_variable = { which = max_regiment_num value = 31 }
+						check_variable = { which = empty_holdings_total value = 31 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_30 }
-						check_variable = { which = max_regiment_num value = 30 }
+						check_variable = { which = empty_holdings_total value = 30 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_29 }
-						check_variable = { which = max_regiment_num value = 29 }
+						check_variable = { which = empty_holdings_total value = 29 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_28 }
-						check_variable = { which = max_regiment_num value = 28 }
+						check_variable = { which = empty_holdings_total value = 28 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_27 }
-						check_variable = { which = max_regiment_num value = 27 }
+						check_variable = { which = empty_holdings_total value = 27 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_26 }
-						check_variable = { which = max_regiment_num value = 26 }
+						check_variable = { which = empty_holdings_total value = 26 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_25 }
-						check_variable = { which = max_regiment_num value = 25 }
+						check_variable = { which = empty_holdings_total value = 25 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_24 }
-						check_variable = { which = max_regiment_num value = 24 }
+						check_variable = { which = empty_holdings_total value = 24 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_23 }
-						check_variable = { which = max_regiment_num value = 23 }
+						check_variable = { which = empty_holdings_total value = 23 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_22 }
-						check_variable = { which = max_regiment_num value = 22 }
+						check_variable = { which = empty_holdings_total value = 22 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_21 }
-						check_variable = { which = max_regiment_num value = 21 }
+						check_variable = { which = empty_holdings_total value = 21 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_20 }
-						check_variable = { which = max_regiment_num value = 20 }
+						check_variable = { which = empty_holdings_total value = 20 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_19 }
-						check_variable = { which = max_regiment_num value = 19 }
+						check_variable = { which = empty_holdings_total value = 19 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_18 }
-						check_variable = { which = max_regiment_num value = 18 }
+						check_variable = { which = empty_holdings_total value = 18 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_17 }
-						check_variable = { which = max_regiment_num value = 17 }
+						check_variable = { which = empty_holdings_total value = 17 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_16 }
-						check_variable = { which = max_regiment_num value = 16 }
+						check_variable = { which = empty_holdings_total value = 16 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_15 }
-						check_variable = { which = max_regiment_num value = 15 }
+						check_variable = { which = empty_holdings_total value = 15 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_14 }
-						check_variable = { which = max_regiment_num value = 14 }
+						check_variable = { which = empty_holdings_total value = 14 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_13 }
-						check_variable = { which = max_regiment_num value = 13 }
+						check_variable = { which = empty_holdings_total value = 13 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_12 }
-						check_variable = { which = max_regiment_num value = 12 }
+						check_variable = { which = empty_holdings_total value = 12 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_11 }
-						check_variable = { which = max_regiment_num value = 11 }
+						check_variable = { which = empty_holdings_total value = 11 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_10 }
-						check_variable = { which = max_regiment_num value = 10 }
+						check_variable = { which = empty_holdings_total value = 10 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_9 }
-						check_variable = { which = max_regiment_num value = 9 }
+						check_variable = { which = empty_holdings_total value = 9 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_8 }
-						check_variable = { which = max_regiment_num value = 8 }
+						check_variable = { which = empty_holdings_total value = 8 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_7 }
-						check_variable = { which = max_regiment_num value = 7 }
+						check_variable = { which = empty_holdings_total value = 7 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_6 }
-						check_variable = { which = max_regiment_num value = 6 }
+						check_variable = { which = empty_holdings_total value = 6 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_5 }
-						check_variable = { which = max_regiment_num value = 5 }
+						check_variable = { which = empty_holdings_total value = 5 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_4 }
-						check_variable = { which = max_regiment_num value = 4 }
+						check_variable = { which = empty_holdings_total value = 4 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_3 }
-						check_variable = { which = max_regiment_num value = 3 }
+						check_variable = { which = empty_holdings_total value = 3 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_2 }
-						check_variable = { which = max_regiment_num value = 2 }
+						check_variable = { which = empty_holdings_total value = 2 }
 					}
 					AND = {
 						NOT = { has_earmarked_regiments = horde_regiments_1 }
-						check_variable = { which = max_regiment_num value = 1 }
+						check_variable = { which = empty_holdings_total value = 1 }
 					}
 				}
 			}
@@ -181,14 +175,16 @@ decisions = {
 					NOT = { has_character_flag = been_raised_horde_regiments }
 				}
 				set_character_flag = been_raised_horde_regiments
-				character_event = { id = NT.3 }
+				character_event = { id = EMP.11003 }
 			}
 			else = {
-				character_event = { id = NT.4 }
+				character_event = { id = EMP.11004 }
 			}
 		}
 		ai_will_do = {
 			factor = 0 # decisions with the "is_mercenary" will not be calculated from the script
 		}
 	}
+	
+	# over_vassal_limit nomad vassal release as a nomad tribute khanate
 }

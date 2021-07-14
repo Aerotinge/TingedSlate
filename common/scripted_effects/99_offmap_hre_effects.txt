@@ -65,16 +65,8 @@ offmap_hre_tributaries_join_effect = {
 			NOT = { is_republic = yes }
 		}
 		offmap_hre = {
-			if = {
-				limit = { has_offmap_flag = ewiger_landfriede }
-				governor = {
-					make_tributary = { who = PREVPREV tributary_type = hre_prince_1 }
-				}
-			}
-			else = {
-				governor = {
-					make_tributary = { who = PREVPREV tributary_type = hre_prince_0 }
-				}
+			governor = {
+				make_tributary = { who = PREVPREV tributary_type = hre_prince }
 			}
 		}
 	}
@@ -97,11 +89,7 @@ offmap_hre_tributaries_sync_effect = {
 			limit = {
 				OR = {
 					is_tributary = {
-						type = hre_prince_0
-						suzerain = PREV
-					}
-					is_tributary = {
-						type = hre_prince_1
+						type = hre_prince
 						suzerain = PREV
 					}
 					is_tributary = {
@@ -124,24 +112,11 @@ offmap_hre_tributaries_sync_effect = {
 					}
 				}
 			}
-			else_if = {	# Ewiger Landfriede
-				limit = {
-					offmap_hre = {
-						has_offmap_flag = ewiger_landfriede
-					}
-				}
-				suzerain = {
-					make_tributary = {
-						who = PREV
-						tributary_type = hre_prince_1
-					}
-				}
-			}
 			else = { # Default
 				suzerain = {
 					make_tributary = {
 						who = PREV
-						tributary_type = hre_prince_0
+						tributary_type = hre_prince
 					}
 				}
 			}
@@ -161,25 +136,13 @@ hre_hold_election_effect = {
 	any_tributary = {
 		limit = {
 			is_tributary = {
-				type = hre_prince_0
+				type = hre_prince
 				suzerain = ROOT
 			}
 		}			
 		remove_tributary = ROOT
 		event_target:hre_new_holder = {
-			make_tributary = { who = PREV tributary_type = hre_prince_0 }
-		}
-	}
-	any_tributary = {
-		limit = {
-			is_tributary = {
-				type = hre_prince_1
-				suzerain = ROOT
-			}
-		}			
-		remove_tributary = ROOT
-		event_target:hre_new_holder = {
-			make_tributary = { who = PREV tributary_type = hre_prince_1 }
+			make_tributary = { who = PREV tributary_type = hre_prince }
 		}
 	}
 	any_tributary = {

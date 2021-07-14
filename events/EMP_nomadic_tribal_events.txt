@@ -1,9 +1,14 @@
-namespace = NT
+####################################################
+# EMPEROR events
+# By Sergei Ivanov
+####################################################
+# EMP.11000-EMP.11999
+
+namespace = EMP
 
 #on_yearly_pulse
-#max_regiment_num should below 35
 character_event = {
-    id = NT.2
+    id = EMP.11002
     hide_window = yes
 	lacks_dlc = "Horse Lords"
 	
@@ -14,107 +19,139 @@ character_event = {
     }
 
 	immediate = {
-		set_variable = { which = "max_regiment_num" value = 0 }
-		if = {
+		set_variable = { which = "empty_holdings_total" value = 0 } # empty_holdings_total cap at 35
+		# calc empty holding in realm
+		any_realm_province = {
 			limit = {
-				capital_scope = {
-					location = {
-						TECH_RECRUITMENT >= 2
-					}
+				OR = {
+					terrain = steppe
+					terrain = plains
+					terrain = desert
+					terrain = farmlands
+				}
+				owner = {
+					government = nomadic_tribal_government
 				}
 			}
-			trigger_switch = {
-				on_trigger = tier
-				emperor = { change_variable = { which = "max_regiment_num" value = 5 } }
-				king = { change_variable = { which = "max_regiment_num" value = 4 } }
-				duke = { change_variable = { which = "max_regiment_num" value = 3 } }
-				count = { change_variable = { which = "max_regiment_num" value = 2 } }
-				fallback = {}
-			}
-		}
-		else_if = {
-			limit = {
-				capital_scope = {
-					location = {
-						TECH_RECRUITMENT >= 1
-					}
+			ROOT = {
+				export_to_variable = {
+					which = empty_holdings
+					value = num_of_empty_holdings
+					who = PREV
+				}
+				change_variable = {
+					which = empty_holdings_total
+					which = empty_holdings
+					who = ROOT
 				}
 			}
-			trigger_switch = {
-				on_trigger = tier
-				emperor = { change_variable = { which = "max_regiment_num" value = 4 } }
-				king = { change_variable = { which = "max_regiment_num" value = 3 } }
-				duke = { change_variable = { which = "max_regiment_num" value = 2 } }
-				count = { change_variable = { which = "max_regiment_num" value = 2 } }
-				fallback = {}
+		}
+		ROOT = {
+			# over demesne penalty
+			export_to_variable = {
+				which = over_prov_total
+				value = over_max_demesne_size
 			}
-		}
-		else = {
-			trigger_switch = {
-				on_trigger = tier
-				emperor = { change_variable = { which = "max_regiment_num" value = 2 } }
-				king = { change_variable = { which = "max_regiment_num" value = 2 } }
-				duke = { change_variable = { which = "max_regiment_num" value = 2 } }
-				count = { change_variable = { which = "max_regiment_num" value = 2 } }
-				fallback = {}
+			multiply_variable = {
+				which = over_prov_total
+				value = 5
 			}
-		}
-		trigger_switch = {
-			on_trigger = num_of_count_titles_in_realm
-			96 = { change_variable = { which = "max_regiment_num" value = 12 } }
-			80 = { change_variable = { which = "max_regiment_num" value = 10 } }
-			64 = { change_variable = { which = "max_regiment_num" value = 8 } }
-			48 = { change_variable = { which = "max_regiment_num" value = 6 } }
-			32 = { change_variable = { which = "max_regiment_num" value = 4 } }
-			24 = { change_variable = { which = "max_regiment_num" value = 3 } }
-			16 = { change_variable = { which = "max_regiment_num" value = 2 } }
-			8 = { change_variable = { which = "max_regiment_num" value = 1 } }
-			fallback = {}
-		}
-		trigger_switch = {
-			on_trigger = demesne_size
-			9 = { change_variable = { which = "max_regiment_num" value = 9 } }
-			8 = { change_variable = { which = "max_regiment_num" value = 8 } }
-			7 = { change_variable = { which = "max_regiment_num" value = 7 } }
-			6 = { change_variable = { which = "max_regiment_num" value = 6 } }
-			5 = { change_variable = { which = "max_regiment_num" value = 5 } }
-			4 = { change_variable = { which = "max_regiment_num" value = 4 } }
-			3 = { change_variable = { which = "max_regiment_num" value = 3 } }
-			2 = { change_variable = { which = "max_regiment_num" value = 2 } }
-			1 = { change_variable = { which = "max_regiment_num" value = 1 } }
-			fallback = {}
-		}
-		trigger_switch = {
-			on_trigger = over_max_demesne_size
-			9 = { change_variable = { which = "max_regiment_num" value = -9 } }
-			8 = { change_variable = { which = "max_regiment_num" value = -8 } }
-			7 = { change_variable = { which = "max_regiment_num" value = -7 } }
-			6 = { change_variable = { which = "max_regiment_num" value = -6 } }
-			5 = { change_variable = { which = "max_regiment_num" value = -5 } }
-			4 = { change_variable = { which = "max_regiment_num" value = -4 } }
-			3 = { change_variable = { which = "max_regiment_num" value = -3 } }
-			2 = { change_variable = { which = "max_regiment_num" value = -2 } }
-			1 = { change_variable = { which = "max_regiment_num" value = -1 } }
-			fallback = {}
-		}
-		trigger_switch = {
-			on_trigger = martial
-			19 = { change_variable = { which = "max_regiment_num" value = 1 } }
-			13 = { change_variable = { which = "max_regiment_num" value = 0 } }
-			7 = { change_variable = { which = "max_regiment_num" value = -1 } }
-			fallback = { change_variable = { which = "max_regiment_num" value = -2 } }
+			trigger_if = {
+				limit = {
+					total_years_played > 1
+				}
+				subtract_variable = {
+					which = empty_holdings_total
+					which = over_prov_total
+				}
+			}
+			# Base coefficient
+			divide_variable = {
+				which = empty_holdings_total
+				value = 2
+			}
+			# and modified by martial of ROOT
+			export_to_variable = {
+				which = character_martial
+				value = martial
+			}
+			trigger_if = {
+				limit = {
+					check_variable = {
+						which = character_martial
+						value > 20
+					}
+				}
+				set_variable = {
+					which = character_martial
+					value = 20
+				}
+			}
+			change_variable = {
+				which = character_martial
+				value = -10
+			}
+			divide_variable = {
+				which = character_martial
+				value = 50
+			}
+			change_variable = {
+				which = character_martial
+				value = 1
+			}
+			multiply_variable = {
+				which = empty_holdings_total
+				which = character_martial
+			}
+			# Boundary check
+			if = {
+				limit = {
+					check_variable = {
+						which = empty_holdings_total
+						value > 35
+					}
+				}
+				set_variable = {
+					which = empty_holdings_total
+					value = 35
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = empty_holdings_total
+						value < 1
+					}
+				}
+				set_variable = {
+					which = empty_holdings_total
+					value = 1
+				}
+			}
+			# cleanup
+			set_variable = {
+				which = empty_holdings
+				value = 0
+			}
+			set_variable = {
+				which = character_martial
+				value = 0
+			}
+			set_variable = {
+				which = over_prov_total
+				value = 0
+			}
 		}
 	}
 }
 
 character_event = {
-    id = NT.3
+    id = EMP.11003
     hide_window = yes
 	
 	is_triggered_only = yes
 	
 	lacks_dlc = "Horse Lords"
-	lacks_dlc = "Legacy of Rome"
 
     trigger = {
 		government = nomadic_tribal_government
@@ -126,7 +163,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_35 }
-						check_variable = { which = max_regiment_num value = 35 }
+						check_variable = { which = empty_holdings_total value = 35 }
 					}
 					# ST 35% for altaic; 6% for magyar&jurchen; 
 					# HC 20% for jurchen;
@@ -218,7 +255,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_34 }
-						check_variable = { which = max_regiment_num value = 34 }
+						check_variable = { which = empty_holdings_total value = 34 }
 					}
 					random_list = {
 						50 = {
@@ -308,7 +345,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_33 }
-						check_variable = { which = max_regiment_num value = 33 }
+						check_variable = { which = empty_holdings_total value = 33 }
 					}
 					random_list = {
 						50 = {
@@ -398,7 +435,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_32 }
-						check_variable = { which = max_regiment_num value = 32 }
+						check_variable = { which = empty_holdings_total value = 32 }
 					}
 					random_list = {
 						50 = {
@@ -488,7 +525,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_31 }
-						check_variable = { which = max_regiment_num value = 31 }
+						check_variable = { which = empty_holdings_total value = 31 }
 					}
 					random_list = {
 						50 = {
@@ -578,7 +615,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_30 }
-						check_variable = { which = max_regiment_num value = 30 }
+						check_variable = { which = empty_holdings_total value = 30 }
 					}
 					random_list = {
 						50 = {
@@ -668,7 +705,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_29 }
-						check_variable = { which = max_regiment_num value = 29 }
+						check_variable = { which = empty_holdings_total value = 29 }
 					}
 					random_list = {
 						50 = {
@@ -758,7 +795,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_28 }
-						check_variable = { which = max_regiment_num value = 28 }
+						check_variable = { which = empty_holdings_total value = 28 }
 					}
 					random_list = {
 						50 = {
@@ -848,7 +885,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_27 }
-						check_variable = { which = max_regiment_num value = 27 }
+						check_variable = { which = empty_holdings_total value = 27 }
 					}
 					random_list = {
 						50 = {
@@ -938,7 +975,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_26 }
-						check_variable = { which = max_regiment_num value = 26 }
+						check_variable = { which = empty_holdings_total value = 26 }
 					}
 					random_list = {
 						50 = {
@@ -1028,7 +1065,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_25 }
-						check_variable = { which = max_regiment_num value = 25 }
+						check_variable = { which = empty_holdings_total value = 25 }
 					}
 					random_list = {
 						50 = {
@@ -1118,7 +1155,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_24 }
-						check_variable = { which = max_regiment_num value = 24 }
+						check_variable = { which = empty_holdings_total value = 24 }
 					}
 					random_list = {
 						50 = {
@@ -1208,7 +1245,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_23 }
-						check_variable = { which = max_regiment_num value = 23 }
+						check_variable = { which = empty_holdings_total value = 23 }
 					}
 					random_list = {
 						50 = {
@@ -1298,7 +1335,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_22 }
-						check_variable = { which = max_regiment_num value = 22 }
+						check_variable = { which = empty_holdings_total value = 22 }
 					}
 					random_list = {
 						50 = {
@@ -1388,7 +1425,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_21 }
-						check_variable = { which = max_regiment_num value = 21 }
+						check_variable = { which = empty_holdings_total value = 21 }
 					}
 					random_list = {
 						50 = {
@@ -1478,7 +1515,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_20 }
-						check_variable = { which = max_regiment_num value = 20 }
+						check_variable = { which = empty_holdings_total value = 20 }
 					}
 					random_list = {
 						50 = {
@@ -1568,7 +1605,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_19 }
-						check_variable = { which = max_regiment_num value = 19 }
+						check_variable = { which = empty_holdings_total value = 19 }
 					}
 					random_list = {
 						50 = {
@@ -1658,7 +1695,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_18 }
-						check_variable = { which = max_regiment_num value = 18 }
+						check_variable = { which = empty_holdings_total value = 18 }
 					}
 					random_list = {
 						50 = {
@@ -1748,7 +1785,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_17 }
-						check_variable = { which = max_regiment_num value = 17 }
+						check_variable = { which = empty_holdings_total value = 17 }
 					}
 					random_list = {
 						50 = {
@@ -1838,7 +1875,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_16 }
-						check_variable = { which = max_regiment_num value = 16 }
+						check_variable = { which = empty_holdings_total value = 16 }
 					}
 					random_list = {
 						50 = {
@@ -1928,7 +1965,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_15 }
-						check_variable = { which = max_regiment_num value = 15 }
+						check_variable = { which = empty_holdings_total value = 15 }
 					}
 					random_list = {
 						50 = {
@@ -2018,7 +2055,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_14 }
-						check_variable = { which = max_regiment_num value = 14 }
+						check_variable = { which = empty_holdings_total value = 14 }
 					}
 					random_list = {
 						50 = {
@@ -2108,7 +2145,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_13 }
-						check_variable = { which = max_regiment_num value = 13 }
+						check_variable = { which = empty_holdings_total value = 13 }
 					}
 					random_list = {
 						50 = {
@@ -2198,7 +2235,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_12 }
-						check_variable = { which = max_regiment_num value = 12 }
+						check_variable = { which = empty_holdings_total value = 12 }
 					}
 					random_list = {
 						50 = {
@@ -2288,7 +2325,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_11 }
-						check_variable = { which = max_regiment_num value = 11 }
+						check_variable = { which = empty_holdings_total value = 11 }
 					}
 					random_list = {
 						50 = {
@@ -2378,7 +2415,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_10 }
-						check_variable = { which = max_regiment_num value = 10 }
+						check_variable = { which = empty_holdings_total value = 10 }
 					}
 					random_list = {
 						50 = {
@@ -2468,7 +2505,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_9 }
-						check_variable = { which = max_regiment_num value = 9 }
+						check_variable = { which = empty_holdings_total value = 9 }
 					}
 					random_list = {
 						50 = {
@@ -2558,7 +2595,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_8 }
-						check_variable = { which = max_regiment_num value = 8 }
+						check_variable = { which = empty_holdings_total value = 8 }
 					}
 					random_list = {
 						50 = {
@@ -2648,7 +2685,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_7 }
-						check_variable = { which = max_regiment_num value = 7 }
+						check_variable = { which = empty_holdings_total value = 7 }
 					}
 					random_list = {
 						50 = {
@@ -2738,7 +2775,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_6 }
-						check_variable = { which = max_regiment_num value = 6 }
+						check_variable = { which = empty_holdings_total value = 6 }
 					}
 					random_list = {
 						50 = {
@@ -2828,7 +2865,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_5 }
-						check_variable = { which = max_regiment_num value = 5 }
+						check_variable = { which = empty_holdings_total value = 5 }
 					}
 					random_list = {
 						50 = {
@@ -2918,7 +2955,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_4 }
-						check_variable = { which = max_regiment_num value = 4 }
+						check_variable = { which = empty_holdings_total value = 4 }
 					}
 					random_list = {
 						50 = {
@@ -3008,7 +3045,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_3 }
-						check_variable = { which = max_regiment_num value = 3 }
+						check_variable = { which = empty_holdings_total value = 3 }
 					}
 					random_list = {
 						50 = {
@@ -3098,7 +3135,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_2 }
-						check_variable = { which = max_regiment_num value = 2 }
+						check_variable = { which = empty_holdings_total value = 2 }
 					}
 					random_list = {
 						50 = {
@@ -3188,7 +3225,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_1 }
-						check_variable = { which = max_regiment_num value = 1 }
+						check_variable = { which = empty_holdings_total value = 1 }
 					}
 					random_list = {
 						50 = {
@@ -3275,20 +3312,18 @@ character_event = {
 						}
 					}
 				}
-				add_character_modifier = { name = launched_subjugation duration = -1 hidden = yes } # Dirty trick for disable subjugation cb for nomadic tribal
 			}
 		}
 	}
 }
 
 character_event = {
-    id = NT.4
+    id = EMP.11004
     hide_window = yes
 	
 	is_triggered_only = yes
 
 	lacks_dlc = "Horse Lords"
-	lacks_dlc = "Legacy of Rome"
 	
     trigger = {
 		government = nomadic_tribal_government
@@ -3300,7 +3335,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_35 }
-						check_variable = { which = max_regiment_num value = 35 }
+						check_variable = { which = empty_holdings_total value = 35 }
 					}
 					# ST 35% for altaic; 6% for magyar&jurchen; 
 					# HC 20% for jurchen;
@@ -3392,7 +3427,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_34 }
-						check_variable = { which = max_regiment_num value = 34 }
+						check_variable = { which = empty_holdings_total value = 34 }
 					}
 					random_list = {
 						50 = {
@@ -3482,7 +3517,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_33 }
-						check_variable = { which = max_regiment_num value = 33 }
+						check_variable = { which = empty_holdings_total value = 33 }
 					}
 					random_list = {
 						50 = {
@@ -3572,7 +3607,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_32 }
-						check_variable = { which = max_regiment_num value = 32 }
+						check_variable = { which = empty_holdings_total value = 32 }
 					}
 					random_list = {
 						50 = {
@@ -3662,7 +3697,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_31 }
-						check_variable = { which = max_regiment_num value = 31 }
+						check_variable = { which = empty_holdings_total value = 31 }
 					}
 					random_list = {
 						50 = {
@@ -3752,7 +3787,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_30 }
-						check_variable = { which = max_regiment_num value = 30 }
+						check_variable = { which = empty_holdings_total value = 30 }
 					}
 					random_list = {
 						50 = {
@@ -3842,7 +3877,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_29 }
-						check_variable = { which = max_regiment_num value = 29 }
+						check_variable = { which = empty_holdings_total value = 29 }
 					}
 					random_list = {
 						50 = {
@@ -3932,7 +3967,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_28 }
-						check_variable = { which = max_regiment_num value = 28 }
+						check_variable = { which = empty_holdings_total value = 28 }
 					}
 					random_list = {
 						50 = {
@@ -4022,7 +4057,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_27 }
-						check_variable = { which = max_regiment_num value = 27 }
+						check_variable = { which = empty_holdings_total value = 27 }
 					}
 					random_list = {
 						50 = {
@@ -4112,7 +4147,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_26 }
-						check_variable = { which = max_regiment_num value = 26 }
+						check_variable = { which = empty_holdings_total value = 26 }
 					}
 					random_list = {
 						50 = {
@@ -4202,7 +4237,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_25 }
-						check_variable = { which = max_regiment_num value = 25 }
+						check_variable = { which = empty_holdings_total value = 25 }
 					}
 					random_list = {
 						50 = {
@@ -4292,7 +4327,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_24 }
-						check_variable = { which = max_regiment_num value = 24 }
+						check_variable = { which = empty_holdings_total value = 24 }
 					}
 					random_list = {
 						50 = {
@@ -4382,7 +4417,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_23 }
-						check_variable = { which = max_regiment_num value = 23 }
+						check_variable = { which = empty_holdings_total value = 23 }
 					}
 					random_list = {
 						50 = {
@@ -4472,7 +4507,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_22 }
-						check_variable = { which = max_regiment_num value = 22 }
+						check_variable = { which = empty_holdings_total value = 22 }
 					}
 					random_list = {
 						50 = {
@@ -4562,7 +4597,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_21 }
-						check_variable = { which = max_regiment_num value = 21 }
+						check_variable = { which = empty_holdings_total value = 21 }
 					}
 					random_list = {
 						50 = {
@@ -4652,7 +4687,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_20 }
-						check_variable = { which = max_regiment_num value = 20 }
+						check_variable = { which = empty_holdings_total value = 20 }
 					}
 					random_list = {
 						50 = {
@@ -4742,7 +4777,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_19 }
-						check_variable = { which = max_regiment_num value = 19 }
+						check_variable = { which = empty_holdings_total value = 19 }
 					}
 					random_list = {
 						50 = {
@@ -4832,7 +4867,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_18 }
-						check_variable = { which = max_regiment_num value = 18 }
+						check_variable = { which = empty_holdings_total value = 18 }
 					}
 					random_list = {
 						50 = {
@@ -4922,7 +4957,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_17 }
-						check_variable = { which = max_regiment_num value = 17 }
+						check_variable = { which = empty_holdings_total value = 17 }
 					}
 					random_list = {
 						50 = {
@@ -5012,7 +5047,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_16 }
-						check_variable = { which = max_regiment_num value = 16 }
+						check_variable = { which = empty_holdings_total value = 16 }
 					}
 					random_list = {
 						50 = {
@@ -5102,7 +5137,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_15 }
-						check_variable = { which = max_regiment_num value = 15 }
+						check_variable = { which = empty_holdings_total value = 15 }
 					}
 					random_list = {
 						50 = {
@@ -5192,7 +5227,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_14 }
-						check_variable = { which = max_regiment_num value = 14 }
+						check_variable = { which = empty_holdings_total value = 14 }
 					}
 					random_list = {
 						50 = {
@@ -5282,7 +5317,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_13 }
-						check_variable = { which = max_regiment_num value = 13 }
+						check_variable = { which = empty_holdings_total value = 13 }
 					}
 					random_list = {
 						50 = {
@@ -5372,7 +5407,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_12 }
-						check_variable = { which = max_regiment_num value = 12 }
+						check_variable = { which = empty_holdings_total value = 12 }
 					}
 					random_list = {
 						50 = {
@@ -5462,7 +5497,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_11 }
-						check_variable = { which = max_regiment_num value = 11 }
+						check_variable = { which = empty_holdings_total value = 11 }
 					}
 					random_list = {
 						50 = {
@@ -5552,7 +5587,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_10 }
-						check_variable = { which = max_regiment_num value = 10 }
+						check_variable = { which = empty_holdings_total value = 10 }
 					}
 					random_list = {
 						50 = {
@@ -5642,7 +5677,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_9 }
-						check_variable = { which = max_regiment_num value = 9 }
+						check_variable = { which = empty_holdings_total value = 9 }
 					}
 					random_list = {
 						50 = {
@@ -5732,7 +5767,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_8 }
-						check_variable = { which = max_regiment_num value = 8 }
+						check_variable = { which = empty_holdings_total value = 8 }
 					}
 					random_list = {
 						50 = {
@@ -5822,7 +5857,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_7 }
-						check_variable = { which = max_regiment_num value = 7 }
+						check_variable = { which = empty_holdings_total value = 7 }
 					}
 					random_list = {
 						50 = {
@@ -5912,7 +5947,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_6 }
-						check_variable = { which = max_regiment_num value = 6 }
+						check_variable = { which = empty_holdings_total value = 6 }
 					}
 					random_list = {
 						50 = {
@@ -6002,7 +6037,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_5 }
-						check_variable = { which = max_regiment_num value = 5 }
+						check_variable = { which = empty_holdings_total value = 5 }
 					}
 					random_list = {
 						50 = {
@@ -6092,7 +6127,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_4 }
-						check_variable = { which = max_regiment_num value = 4 }
+						check_variable = { which = empty_holdings_total value = 4 }
 					}
 					random_list = {
 						50 = {
@@ -6182,7 +6217,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_3 }
-						check_variable = { which = max_regiment_num value = 3 }
+						check_variable = { which = empty_holdings_total value = 3 }
 					}
 					random_list = {
 						50 = {
@@ -6272,7 +6307,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_2 }
-						check_variable = { which = max_regiment_num value = 2 }
+						check_variable = { which = empty_holdings_total value = 2 }
 					}
 					random_list = {
 						50 = {
@@ -6362,7 +6397,7 @@ character_event = {
 				if = {
 					limit = {
 						NOT = { has_earmarked_regiments = horde_regiments_1 }
-						check_variable = { which = max_regiment_num value = 1 }
+						check_variable = { which = empty_holdings_total value = 1 }
 					}
 					random_list = {
 						50 = {
@@ -6449,7 +6484,6 @@ character_event = {
 						}
 					}
 				}
-				add_character_modifier = { name = launched_subjugation duration = -1 hidden = yes } # Dirty trick for disable subjugation cb for nomadic tribal
 			}
 		}
 	}
@@ -6457,7 +6491,7 @@ character_event = {
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 character_event = {
-    id = NT.6
+    id = EMP.11006
     hide_window = yes
 	
     is_triggered_only = yes
@@ -6467,17 +6501,17 @@ character_event = {
     trigger = {
         government = nomadic_tribal_government
 		FROM = {
-			higher_tier_than = BARON
+			real_tier = COUNT
 		}
     }
 
 	immediate = {
-		character_event = { id = NT.2 days = 1 }
+		character_event = { id = EMP.11002 days = 1 }
 	}
 }
 
 character_event = {
-    id = NT.8
+    id = EMP.11008
     hide_window = yes
 	
     is_triggered_only = yes
@@ -6485,10 +6519,10 @@ character_event = {
 	lacks_dlc = "Horse Lords"
 
     trigger = {
-		check_variable = { which = "max_regiment_num" value = 1 }
+		check_variable = { which = "empty_holdings_total" value = 1 }
     }
 
 	immediate = {
-		set_variable = { which = "max_regiment_num" value = 0 }
+		set_variable = { which = "empty_holdings_total" value = 0 }
 	}
 }

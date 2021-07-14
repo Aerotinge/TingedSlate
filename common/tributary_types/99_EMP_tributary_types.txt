@@ -1,0 +1,80 @@
+#Princes
+#Free Imperial Cities
+
+hre_prince = {
+	tributary_name = HRE_PRINCE_NAME
+	tributary_plural = HRE_PRINCE_NAME_PLURAL
+	suzerain_name = HRE_LIEGE_NAME
+	tribute_name = HRE_FEALTY_TRIBUTE
+	breaks_at_suzerain_death = no
+	breaks_at_tributary_death = no
+	suzerain_can_be_called = yes
+	suzerain_must_defend = no
+	tributary_can_be_summoned = no
+	tributary_must_defend = no
+	tributaries_can_infight = yes
+	suzerain_can_join_infighting = no
+	tributaries_can_unite = yes
+	breaks_on_realm_change = yes
+	icon = 10
+	cbs_against_suzerain = {
+		# princely_independent
+	}
+	income_tribute_percentage = {
+		value = 0
+	}
+	reinforce_tribute_percentage = {
+		value = 0.01
+	}
+	prestige_to_suzerain = {
+		value = 0
+	}
+	prestige_to_tributary = {
+		value = 0
+	}
+	piety_to_suzerain = {
+		value = 0
+	}
+	piety_to_tributary = {
+		value = 0
+	}
+}
+
+hre_free_imp_city = {
+	tributary_name = HRE_FREECITY_NAME
+	tributary_plural = HRE_FREECITY_PLURAL
+	suzerain_name = HRE_LIEGE_NAME
+	tribute_name = HRE_TAX_TRIBUTE
+	breaks_at_suzerain_death = no
+	breaks_at_tributary_death = no
+	suzerain_can_be_called = no
+	suzerain_must_defend = no
+	tributary_can_be_summoned = no
+	tributary_must_defend = no
+	tributaries_can_infight = no
+	suzerain_can_join_infighting = no
+	tributaries_can_unite = yes
+	breaks_on_realm_change = yes
+	icon = 7
+	cbs_against_suzerain = {
+		# princely_independent
+	}
+	income_tribute_percentage = {
+		value = 0.05
+	}
+	reinforce_tribute_percentage = {
+		value = 0
+	}
+	prestige_to_suzerain = {
+		value = 0
+	}
+	prestige_to_tributary = {
+		value = 0
+	}
+	piety_to_suzerain = {
+		value = 0
+	}
+	piety_to_tributary = {
+		value = 0
+	}
+}
