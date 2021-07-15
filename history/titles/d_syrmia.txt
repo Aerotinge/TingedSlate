@@ -1,0 +1,4 @@
+936.1.1 = {
+	liege = k_magyar
+	holder = 260650
+}

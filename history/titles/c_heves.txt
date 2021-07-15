@@ -48,8 +48,11 @@
 	liege = d_nyitra
 }
 
-1066.1.1 = {
+1000.12.25 = {
 	liege = k_hungary
+}
+
+1066.1.1 = {
 	holder = 476
 }
 

@@ -1,6 +1,6 @@
 997.2.1 = {
-	name = k_magyar
-	adjective = k_magyar_adj
+	#name = k_magyar
+	#adjective = k_magyar_adj
 	effect = {
 		insert_title_history = k_magyar
 		set_coa = k_magyar
