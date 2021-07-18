@@ -26,6 +26,7 @@ on_new_holder = {
 	events = {
 		# Nomadic tribal
 		EMP.11006
+		EMP.11009
 	}
 }
 

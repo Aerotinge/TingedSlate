@@ -52,7 +52,6 @@ theocracy_governments = {
 
 				NOR = {
 					religion_group = muslim
-					religion = japanese_buddhist # In case a abdicated/urusped Tenno become theocracy_government
 					has_religion_feature = religion_temporal_head
 
 					trigger_if = {

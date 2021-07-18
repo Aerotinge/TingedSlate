@@ -46,9 +46,19 @@ tribal_governments = {
 		}
 
 		allow = {
-			NOR = { 
+			trigger_if = {
+				limit = {
+					NOT = { has_dlc = "Horse Lords" }
+					has_game_started = no
+				}
+				
+				NOR = {
+					culture_group = altaic
+					culture_group = magyar
+				}
+			}
+			NOT = { 
 				is_government_allowed = theocracy_government
-				is_government_potential = nomadic_tribal_government
 			}
 		}
 
@@ -99,28 +109,27 @@ tribal_governments = {
 		color = { 201 179 36 }
 
 		potential = {
+			holy_order = no
 			trigger_if = {
 				limit = { has_game_started = yes }
 				is_feudal = no
 			}
 			NOT = { has_dlc = "Horse Lords" }
 			higher_tier_than = BARON
-			OR = {
-				culture_group = altaic
-				culture_group = magyar
-				AND = {
-					has_character_flag = nomadic_tribal_government_preserve
-					primary_title = { has_title_flag = nomadic_tribal_government_title }
-				}
-			}
-			top_liege = { # Becomes tribal_government if liege is_feudal/is_republic/is_theocracy
-				is_feudal = no
-				is_republic = no
-				is_theocracy = no
-			}
+			NOT = { is_government_potential = order_government }
 		}
 		
 		allow = {
+			trigger_if = {
+				limit = {
+					has_game_started = no
+				}
+				
+				OR = {
+					culture_group = altaic
+					culture_group = magyar
+				}
+			}
 			NOT = {
 				is_government_allowed = theocracy_government
 			}
@@ -153,6 +162,7 @@ tribal_governments = {
 		## Modifiers
 		character_modifier = {
 			global_levy_size = -3 # 300%
+			global_garrison_size = -3 # 300%
 			tech_growth_modifier = -1
 		}
 		vassal_limit = -10

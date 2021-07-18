@@ -502,6 +502,19 @@ laws = {
 
 		pass_effect = {
 			log = "tribal_organization_1 pass ([This.GetFullBaseName])"
+			
+			
+			if = {
+				limit = {
+					OR = {
+						has_law = centralization_2
+						has_law = centralization_3
+						has_law = centralization_4
+					}
+				}
+
+				add_law = centralization_1
+			}
 
 			revoke_law = tribal_organization_0
 			revoke_law = tribal_organization_2
@@ -516,17 +529,6 @@ laws = {
 			revoke_law = tribal_tax_2
 			revoke_law = tribal_tax_3
 
-			if = {
-				limit = {
-					OR = {
-						has_law = centralization_2
-						has_law = centralization_3
-						has_law = centralization_4
-					}
-				}
-
-				add_law = centralization_1
-			}
 
 			if = {
 				limit = { has_law = tribal_organization_0 }
@@ -813,6 +815,17 @@ laws = {
 				has_law = tribal_organization_2
 				has_law = tribal_organization_4
 			}
+			trigger_if = {
+				limit = {
+					holder_scope = {
+						government = nomadic_tribal_government
+					}
+				}
+				
+				holder_scope = {
+					NOT = { government = nomadic_tribal_government }
+				}
+			}
 		}
 
 		pass_effect = {
@@ -961,6 +974,17 @@ laws = {
 
 		allow = {
 			has_law = tribal_organization_3
+			trigger_if = {
+				limit = {
+					holder_scope = {
+						government = nomadic_tribal_government
+					}
+				}
+				
+				holder_scope = {
+					NOT = { government = nomadic_tribal_government }
+				}
+			}
 		}
 
 		pass_effect = {

@@ -56,7 +56,7 @@ character_event = {
 				which = over_prov_total
 				value = 5
 			}
-			trigger_if = {
+			if = {
 				limit = {
 					total_years_played > 1
 				}
@@ -75,7 +75,7 @@ character_event = {
 				which = character_martial
 				value = martial
 			}
-			trigger_if = {
+			if = {
 				limit = {
 					check_variable = {
 						which = character_martial
@@ -6524,5 +6524,32 @@ character_event = {
 
 	immediate = {
 		set_variable = { which = "empty_holdings_total" value = 0 }
+	}
+}
+
+# on_new_holder_* test
+character_event = {
+    id = EMP.11009
+    hide_window = yes
+	
+    is_triggered_only = yes
+	
+	lacks_dlc = "Horse Lords"
+
+    trigger = {
+		is_tribal = yes
+		NOT = { government = nomadic_tribal_government }
+		OR = {
+			culture_group = altaic
+			culture_group = magyar
+			culture = FROMFROM
+		}
+		FROMFROM = {
+			government = nomadic_tribal_government
+		}
+    }
+
+	immediate = {
+		set_government_type = nomadic_tribal_government
 	}
 }

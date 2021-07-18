@@ -1,0 +1,65 @@
+decisions = {
+
+	convert_to_tribalism_indep = {
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		only_playable = yes
+
+		potential = {
+			independent = yes
+			government = nomadic_tribal_government
+		}
+
+		allow = {
+			higher_real_tier_than = COUNT
+			
+			primary_title = { has_law = tribal_organization_2 }
+			
+			war = no
+		}
+
+		effect = {
+			set_government_type = tribal_government
+
+			hidden_effect = {
+				any_realm_lord = {
+					limit = {
+						government = nomadic_tribal_government
+					}
+					set_government_type = tribal_government
+				}
+			}
+
+			custom_tooltip = {
+				text = renounce_nomad_tooltip
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			
+			trigger = {
+				any_neighbor_independent_ruler = {
+					NOT = { government = nomadic_tribal_government }
+				}
+			}
+			
+			mult_modifier = {
+				factor = 0.01
+
+				any_realm_province = {
+					count > 5
+
+					OR = {
+						region = world_steppe
+						terrain = steppe
+						terrain = plains
+						terrain = desert
+						terrain = farmlands
+					}
+				}
+			}
+		}
+	}
+}

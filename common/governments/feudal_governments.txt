@@ -15,6 +15,8 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			muslim_government
 			theocratic_feudal_government
+			secular_feudal_government
+			insular_feudal_government
 			#chinese_imperial_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
@@ -32,10 +34,9 @@ feudal_governments = {
 			NOR = {
 				is_government_potential = insular_feudal_government
 				is_government_potential = muslim_government
-				is_government_potential = timar_government
 				is_government_potential = theocratic_feudal_government
 				is_government_potential = tibetan_feudal_government
-				is_government_potential = spiritual_feudal_government
+				is_government_potential = secular_feudal_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = order_government
 				is_government_potential = sacred_confederacy_government
@@ -83,15 +84,17 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
 			muslim_government
 			theocratic_feudal_government
 			chinese_imperial_government
 		}
 
 		frame_suffix = "_insularfeudal"
-		color = { 92 82 115 }
+		color = { 66 41 168 }
 
 		potential = {
+			always = no
 			higher_tier_than = BARON
 			has_concubinage = no
 			#is_senior_consort_party = yes
@@ -100,6 +103,7 @@ feudal_governments = {
 			NOR = {
 				is_government_potential = muslim_government
 				is_government_potential = theocratic_feudal_government
+				is_government_allowed = theocracy_government
 			}
 		}
 		
@@ -110,7 +114,6 @@ feudal_governments = {
 				is_government_potential = roman_imperial_government
 				is_government_potential = order_government
 				is_government_potential = sacred_confederacy_government
-				is_government_allowed = theocracy_government
 				trigger_if = {
 					limit = {
 						is_offmap_governor = yes
@@ -162,13 +165,11 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_iqta"
+		title_prefix = "iqta_"
 		color = { 10 138 57 }
 
 		potential = {
 			religion_group = muslim
-			NOT = {
-				is_government_potential = timar_government
-			}
 		}
 
 		allow = {
@@ -203,97 +204,6 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
-	}
-	
-	timar_government = {
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			TEMPLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			theocratic_feudal_government
-			chinese_imperial_government
-		}
-		free_revoke_on_tiers = {
-			DUKE
-			BARON
-		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
-		}
-		forced_contract = {
-			muslim_government
-			feudal_government
-		}
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
-
-		frame_suffix = "_iqta"
-		color = { 10 138 57 }
-
-		potential = {
-			culture = turkish
-			religion_group = muslim
-			OR = {
-				has_landed_title = k_tekke
-				has_landed_title = k_ottoman
-				has_landed_title = k_mentese
-				has_landed_title = k_karaman
-				has_landed_title = k_germiyan
-				has_landed_title = k_eretnid
-				has_landed_title = k_aydin
-				has_landed_title = k_candar
-				AND = {
-					has_landed_title = k_rum
-					k_rum = {
-						has_title_flag = anatolian_rum
-					}
-				}
-			}
-		}
-
-		allow = {
-			is_patrician = no
-			
-			NOR = {
-				is_government_potential = roman_imperial_government
-				is_government_potential = order_government
-				is_government_potential = sacred_confederacy_government
-				trigger_if = {
-					limit = {
-						is_offmap_governor = yes
-					}
-					governor_title = {
-						is_primary_type_title = yes
-					}
-				}
-			}
-		}
-
-		allows_matrilineal_marriage = no
-		barons_need_dynasty = yes
-		can_build_tribal = no
-		free_retract_vassalage = yes
-		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
-		have_gender_laws = no
-		uses_decadence = yes
-		uses_piety_for_law_change = yes
-		vassal_government_opinion_penalties = no
-
-		capital_move_delay = 600
-
-		## Modifiers
-		court_size_modifier = 15
 	}
 	
 	theocratic_feudal_government = { # Patrimonial Theocracy
@@ -486,6 +396,7 @@ feudal_governments = {
 		}
 
 		allow = {
+			always = no # disabled, as for now
 			is_patrician = no
 			
 			trigger_if = {
@@ -818,7 +729,7 @@ feudal_governments = {
 		court_size_modifier = 10
 	}
 	
-	spiritual_feudal_government = { # Cathar, Waldensian, Lollard, Messalian, Bogomilist and 769 start Orthodox.
+	secular_feudal_government = {
 		preferred_holdings = {
 			CASTLE
 		}
@@ -843,15 +754,33 @@ feudal_governments = {
 			tribal_government
 		}
 
-		frame_suffix = "_spiritualfeudal"
-		color = { 192 192 192 }
+		frame_suffix = "_secularfeudal"
+		color = { 7 143 180 }
 
 		potential = {
 			higher_tier_than = BARON
-			religion_group = christian
-			NOT = {
-				religion_head = {
-					controls_religion = yes
+			OR = {
+				# Christian without head e.g Cathar, Waldensian, Lollard, Messalian, Bogomilist and 769 start Orthodox.
+				AND = {
+					religion_group = christian
+					OR = {
+						religion = cathar
+						religion = waldensian
+						religion = lollard	# To be subdivided later
+						religion = messalian
+						religion = iconoclast	# To be subdivided later
+						religion = bogomilist
+					}
+				}
+				# Eastern religion but hindu
+				AND = {
+					religion_group = indian_group
+					NOT = { religion = hindu }
+				}
+				# Mazdaki
+				AND = {
+					religion_group = zoroastrian_group
+					religion = mazdaki
 				}
 			}
 			#religion_allows_female_temple_holders = yes

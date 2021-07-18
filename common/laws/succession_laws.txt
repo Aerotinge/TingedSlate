@@ -1072,6 +1072,7 @@ succession_laws = {
                     government = confucian_bureaucracy
                     government = order_government
                     government = roman_imperial_government
+					government = nomadic_tribal_government
                 }
             }
         }

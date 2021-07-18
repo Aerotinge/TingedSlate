@@ -70,6 +70,23 @@ pagan_county_conquest = {
 				location = { is_coastal = yes }
 				has_global_flag = viking_age_started
 			}
+			# Special condition for Nomadic Tribal
+			trigger_if = {
+				limit = {
+					ROOT = {
+						government = nomadic_tribal_government
+					}
+				}
+
+				location = {
+					OR = {
+						terrain = steppe
+						terrain = plains
+						terrain = desert
+						terrain = farmlands
+					}
+				}
+			}
 
 			# Otherwise any county neighbouring attacker's subrealm
 			location = {
@@ -461,6 +478,7 @@ pagan_subjugation = {
 	defender_unoccupied_warscore = yes
 
 	can_use = {
+		always = no # disabled
 		# Attacker
 		ROOT = {
 			religion_group = pagan_group
