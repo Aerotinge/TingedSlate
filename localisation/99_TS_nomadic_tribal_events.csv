@@ -1,3 +1,2 @@
 create_nomad_horde;Create Nomadic Horde;;;;;;;;;;;;;x
 create_nomad_horde_desc;We can create [Root.GetTitledFirstName]'s Horde. Your Horde is your personal retinue and standing army ready to do as you order at all times. Your Horde is always on the map and reinforce slowly. The maximum number of Horde regiments you can field depends on your §YDemesne Size§! and §YTitle Tier§!.;;;;;;;;;;;;;x
-has_regiments_unraised;Is Able to Raise More Horde Troops;;;;;;;;;;;;;x

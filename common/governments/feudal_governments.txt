@@ -14,10 +14,10 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			muslim_government
-			theocratic_feudal_government
 			secular_feudal_government
 			insular_feudal_government
-			#chinese_imperial_government
+			tibetan_feudal_government
+			sacred_confederacy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -70,71 +70,6 @@ feudal_governments = {
 		## Modifiers
 		court_size_modifier = 10
 	}
-	
-	insular_feudal_government = {
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			muslim_government
-			theocratic_feudal_government
-			chinese_imperial_government
-		}
-
-		frame_suffix = "_insularfeudal"
-		color = { 66 41 168 }
-
-		potential = {
-			always = no
-			higher_tier_than = BARON
-			has_concubinage = no
-			#is_senior_consort_party = yes
-			culture_group = celtic
-			
-			NOR = {
-				is_government_potential = muslim_government
-				is_government_potential = theocratic_feudal_government
-				is_government_allowed = theocracy_government
-			}
-		}
-		
-		allow = {
-			is_patrician = no
-
-			NOR = {
-				is_government_potential = roman_imperial_government
-				is_government_potential = order_government
-				is_government_potential = sacred_confederacy_government
-				trigger_if = {
-					limit = {
-						is_offmap_governor = yes
-					}
-					governor_title = {
-						is_primary_type_title = yes
-					}
-				}
-			}
-		}
-
-		barons_need_dynasty = yes
-		can_build_tribal = no
-		dukes_called_kings = yes
-		max_consorts = 3
-
-		capital_move_delay = 600
-
-		## Modifiers
-		vassal_limit = -10
-	}
 
 	muslim_government = {
 		preferred_holdings = {
@@ -151,8 +86,10 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
-			theocratic_feudal_government
-			chinese_imperial_government
+			secular_feudal_government
+			insular_feudal_government
+			tibetan_feudal_government
+			sacred_confederacy_government
 		}
 		free_revoke_on_tiers = {
 			DUKE
@@ -206,6 +143,119 @@ feudal_governments = {
 		court_size_modifier = 10
 	}
 	
+	secular_feudal_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			muslim_government
+			insular_feudal_government
+			tibetan_feudal_government
+			sacred_confederacy_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_secularfeudal"
+		color = { 7 143 180 }
+
+		potential = {
+			higher_tier_than = BARON
+			OR = {
+				# Christian with universal priesthood
+				AND = {
+					religion_group = christian
+					OR = {
+						religion = cathar
+						religion = waldensian
+						religion = lollard
+						religion = messalian
+						religion = iconoclast
+						religion = bogomilist
+					}
+				}
+				# indian_group without Sramana practice
+				# Taoist
+				AND = {
+					religion_group = indian_group
+					religion = taoist
+				}
+				# zoroastrian_group without clergy practice
+				# Mazdaki
+				AND = {
+					religion_group = zoroastrian_group
+					religion = mazdaki
+				}
+				# jewish_group without rabbinic halakha
+				# Karaite
+				AND = {
+					religion_group = jewish_group
+					religion = karaite
+				}
+				# Reformed Pagan, excluding Bon
+				# with Autonomous & Cosmopolitan/Civilized doctrine
+				AND = {
+					religion_group = pagan_group
+					is_reformed_religion = yes
+					AND = {
+						has_religion_feature = religion_no_leader
+						OR = {
+							has_religion_feature = religion_cosmopolitan
+							has_religion_feature = religion_feature_hellenic
+						}
+					}
+				}
+			}
+			NOR = {
+				is_government_potential = tibetan_feudal_government
+				is_government_potential = insular_feudal_government
+			}
+		}
+		
+		allow = {
+			is_patrician = no
+			
+			NOR = {
+				is_government_potential = roman_imperial_government
+				is_government_potential = order_government
+				is_government_potential = sacred_confederacy_government
+				is_government_allowed = theocracy_government
+				trigger_if = {
+					limit = {
+						is_offmap_governor = yes
+					}
+					governor_title = {
+						is_primary_type_title = yes
+					}
+				}
+			}
+		}
+
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		dukes_called_kings = yes
+		uses_piety_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
+	}
+	
 	theocratic_feudal_government = { # Patrimonial Theocracy
 		preferred_holdings = {
 			CASTLE
@@ -220,26 +270,26 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			muslim_government
-			theocracy_government
 			feudal_government
-			chinese_imperial_government
+			secular_feudal_government
+			insular_feudal_government
+			tibetan_feudal_government
+			sacred_confederacy_government
+			theocracy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			theocracy_government
 			tribal_government
 		}
 		free_revoke_on_governments = {
 			#theocracy_government
-		}
-		forced_contract = {
-			theocracy_government
 		}
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
 
 		frame_suffix = "_theocraticfeudal"
-		color = { 192 192 192 }
+		color = { 157 222 242 }
 
 		potential = {
 			controls_religion = yes
@@ -286,6 +336,71 @@ feudal_governments = {
 		## Modifiers
 		court_size_modifier = 10
 	}
+	
+	insular_feudal_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			muslim_government
+			secular_feudal_government
+			tibetan_feudal_government
+			sacred_confederacy_government
+		}
+
+		frame_suffix = "_insularfeudal"
+		color = { 66 41 168 }
+
+		potential = {
+			higher_tier_than = BARON
+			#has_concubinage = no
+			has_polygamy = no
+			culture_group = celtic
+			
+			NOR = {
+				is_government_potential = muslim_government
+				is_government_potential = theocratic_feudal_government
+				is_government_allowed = theocracy_government
+			}
+		}
+		
+		allow = {
+			is_patrician = no
+
+			NOR = {
+				is_government_potential = roman_imperial_government
+				is_government_potential = order_government
+				is_government_potential = sacred_confederacy_government
+				trigger_if = {
+					limit = {
+						is_offmap_governor = yes
+					}
+					governor_title = {
+						is_primary_type_title = yes
+					}
+				}
+			}
+		}
+
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		dukes_called_kings = yes
+		max_consorts = 3
+
+		capital_move_delay = 600
+
+		## Modifiers
+		vassal_limit = -10
+	}
 
 	tibetan_feudal_government = {
 		preferred_holdings = {
@@ -301,10 +416,13 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			muslim_government
-			theocracy_government
 			feudal_government
-			chinese_imperial_government
+			muslim_government
+			secular_feudal_government
+			theocratic_feudal_government
+			insular_feudal_government
+			sacred_confederacy_government
+			theocracy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -369,9 +487,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			muslim_government
-			theocratic_feudal_government
 		}
 		free_revoke_on_tiers = {
 			DUKE
@@ -450,7 +565,6 @@ feudal_governments = {
 	}
 	
 	confucian_bureaucracy = {
-		#offmap_power = offmap_china
 		preferred_holdings = {
 			CASTLE
 		}
@@ -552,12 +666,15 @@ feudal_governments = {
 			FORT
 			HOSPITAL
 		}
-		accepts_liege_governments = {
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
 			muslim_government
-			theocracy_government
+			secular_feudal_government
 			theocratic_feudal_government
-			chinese_imperial_government
+			insular_feudal_government
+			tibetan_feudal_government
+			sacred_confederacy_government
+			theocracy_government
 		}
 		free_revoke_on_governments = {
 			order_government
@@ -626,9 +743,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			republic_government
-			merchant_republic_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -691,9 +805,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			republic_government
-			merchant_republic_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -722,96 +833,6 @@ feudal_governments = {
 		can_create_empires = no
 		can_grant_kingdoms_and_empires_to_other_government_group = yes
 		can_usurp_kingdoms_and_empires = no
-
-		capital_move_delay = 600
-
-		## Modifiers
-		court_size_modifier = 10
-	}
-	
-	secular_feudal_government = {
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			TEMPLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			muslim_government
-			theocratic_feudal_government
-			chinese_imperial_government
-		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
-		}
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
-
-		frame_suffix = "_secularfeudal"
-		color = { 7 143 180 }
-
-		potential = {
-			higher_tier_than = BARON
-			OR = {
-				# Christian without head e.g Cathar, Waldensian, Lollard, Messalian, Bogomilist and 769 start Orthodox.
-				AND = {
-					religion_group = christian
-					OR = {
-						religion = cathar
-						religion = waldensian
-						religion = lollard	# To be subdivided later
-						religion = messalian
-						religion = iconoclast	# To be subdivided later
-						religion = bogomilist
-					}
-				}
-				# Eastern religion but hindu
-				AND = {
-					religion_group = indian_group
-					NOT = { religion = hindu }
-				}
-				# Mazdaki
-				AND = {
-					religion_group = zoroastrian_group
-					religion = mazdaki
-				}
-			}
-			#religion_allows_female_temple_holders = yes
-			NOT = {
-				is_government_potential = insular_feudal_government
-			}
-		}
-		
-		allow = {
-			is_patrician = no
-			
-			NOR = {
-				is_government_potential = roman_imperial_government
-				is_government_potential = order_government
-				is_government_potential = sacred_confederacy_government
-				is_government_allowed = theocracy_government
-				trigger_if = {
-					limit = {
-						is_offmap_governor = yes
-					}
-					governor_title = {
-						is_primary_type_title = yes
-					}
-				}
-			}
-		}
-
-		barons_need_dynasty = yes
-		can_build_tribal = no
-		dukes_called_kings = yes
-		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
 
