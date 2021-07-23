@@ -919,24 +919,30 @@ decisions = {
 		}
 	}
 
-	create_hungary = {
+	nomadic_settlement_of_pannonian_basin = {
 		is_high_prio = yes
 		ai_check_interval = 24
 
 		only_playable = yes
 
 		potential = {
-			always = no
-			has_landed_title = k_magyar
-			culture = hungarian
-			NOT = { has_dlc = "Horse Lords" }
-
 			k_hungary = {
+				ROOT = {
+					num_of_realm_counties = { # Too bad CK2 have no percentage_of_realm_counties
+						value = 12
+						title = PREV
+					}
+				}
 				has_holder = no
 			}
 
-			k_magyar = {
+			government = nomadic_tribal_government
+			NOT = { has_dlc = "Horse Lords" }
+
+			primary_title = {
+				is_titular = yes
 				is_vice_royalty = no
+				NOT = { higher_real_tier_than = KING }
 			}
 		}
 
@@ -949,73 +955,56 @@ decisions = {
 				completely_controls = d_ungvar
 				completely_controls = d_nyitra
 			}
+			
+			primary_title = { has_law = tribal_organization_2 }
 		}
 
 		effect = {
-			set_global_flag = avar_khaganate_renamed
-			reset_coa = k_hungary
+			set_government_type = tribal_government
 
-			if = {
-				limit = { has_nickname = no }
-				give_nickname = nick_the_great
-			}
-
-			set_government_type = feudal_government
-
-			spawn_unit = {
-				province = 522 # Pest
-				owner = ROOT
-				attrition = 0.5
-
-				troops = {
-					light_infantry = { 2700 2700 }
-					heavy_infantry = { 180 180 }
-					light_cavalry = { 420 420 }
-					archers = { 600 600 }
+			hidden_effect = {
+				any_realm_lord = {
+					limit = {
+						any_demesne_province = {
+							NOT = { region = world_steppe }
+						}
+						government = nomadic_tribal_government
+					}
+					set_government_type = tribal_government
 				}
 			}
 
-			spawn_unit = {
-				province = 522 # Pest
-				owner = ROOT
-				attrition = 0.5
+			prestige = 400
+			
+			add_character_modifier = {
+				name = levy_reinforcements
+				years = 1
+			}
 
-				troops = {
-					light_infantry = { 2700 2700 }
-					heavy_infantry = { 180 180 }
-					light_cavalry = { 420 420 }
-					archers = { 600 600 }
+			primary_title = {
+				k_hungary = {
+					copy_title_laws = PREV
+					grant_title = ROOT
 				}
-			}
-
-			spawn_unit = {
-				province = 522 # Pest
-				owner = ROOT
-				attrition = 0.5
-
-				troops = {
-					light_infantry = { 2700 2700 }
-					heavy_infantry = { 180 180 }
-					light_cavalry = { 420 420 }
-					archers = { 600 600 }
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = k_hungary
 				}
-			}
 
-			custom_tooltip = {
-				text = EVTOPTA62910_CUSTOM
-			}
-
-			prestige = 1000
-			wealth = 1000
-
-			narrative_event = {
-				id = 62910
-				tooltip = EVTTOOLTIP62910
+				destroy_landed_title = THIS
+				activate_title = {
+					title = THIS
+					status = no
+				}
 			}
 		}
 
 		ai_will_do = {
 			factor = 1
+			
+			mult_modifier = {
+				factor = 0.05
+				culture_group = altaic
+			}
 		}
 	}
 
