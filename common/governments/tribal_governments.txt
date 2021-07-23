@@ -57,6 +57,10 @@ tribal_governments = {
 				NOR = {
 					culture_group = altaic
 					culture_group = magyar
+					any_liege = {
+						government = nomadic_tribal_government
+						culture_group = ROOT
+					}
 				}
 			}
 			NOT = { 
@@ -125,6 +129,10 @@ tribal_governments = {
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
+					any_liege = {
+						government = nomadic_tribal_government
+						culture_group = ROOT
+					}
 				}
 			}
 			NOT = {

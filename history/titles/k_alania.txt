@@ -1,0 +1,44 @@
+# k_alania
+
+20.1.1 = {
+	historical_nomad = yes
+	government = nomadic_tribal_government
+}
+
+654.1.1 = {
+	set_tribute_suzerain = {
+		who = k_khazaria
+		type = nomadic
+	}
+	holder = 74004
+}
+
+682.1.1 = {
+	holder = 74007
+}
+
+715.1.1 = {
+	holder = 74008
+}
+
+731.1.1 = {
+	holder = 74009
+}
+
+741.1.1 = {
+	holder = 146205
+}
+
+777.1.1 = {
+	clear_tribute_suzerain = k_khazaria
+	liege = k_khazaria
+	holder = 146206
+}
+
+805.1.1 = {
+	holder = 146209
+}
+
+827.1.1 = {
+	holder = 0
+}
