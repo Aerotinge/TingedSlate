@@ -24,7 +24,7 @@ offmap_hre = {
 	}
 
 	policies = {
-		hre_policy_placeholder
+		policy_placeholder
 	}
 
 	statuses = {
