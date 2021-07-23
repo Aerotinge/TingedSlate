@@ -10,11 +10,11 @@ offmap_hre = {
 	governor_title = e_hre
 	tier = emperor
 
-	non_aggression_modifier = hre_prince_elector
+	non_aggression_modifier = peace_deal_with_hre
 	coa_religion = orthodox # catholic
 	government = feudal_government
 	beginning_of_history = 962.2.2
-	sound = china_interaction_interface
+	sound = land
 
 	display_trigger = {
 		FROM = {
