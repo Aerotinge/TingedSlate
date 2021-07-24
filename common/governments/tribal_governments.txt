@@ -53,7 +53,7 @@ tribal_governments = {
 					NOT = { has_dlc = "Horse Lords" }
 					has_game_started = no
 				}
-				
+
 				NOR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -135,7 +135,7 @@ tribal_governments = {
 					}
 				}
 			}
-			NOT = {
+			NOT = { 
 				is_government_allowed = theocracy_government
 			}
 		}

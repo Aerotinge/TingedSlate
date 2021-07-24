@@ -1,0 +1,68 @@
+####################################################
+# EMPEROR events
+# By Sergei Ivanov
+####################################################
+# EMP.13000-EMP.13999
+
+namespace = EMP
+
+character_event = {
+    id = EMP.13010
+    hide_window = yes
+
+    is_triggered_only = yes # on_death
+
+    trigger = {
+		primary_title = {
+			title = e_francia
+			OR = {
+				has_law = succ_gavelkind
+				has_law = succ_elective_gavelkind
+			}
+		}
+    }
+
+	immediate = {
+		log = "[This.GetBestName] fired EMP.13010"
+		add_artifact = ingredient_animal4
+		new_artifact = {
+			set_name = "nothing" # TODO: i18n
+			set_artifact_flag = psuedo_carolingian_regalia
+		}
+	}
+}
+
+character_event = {
+    id = EMP.13020
+    hide_window = yes
+
+    is_triggered_only = yes # on_artifact_inheritance
+
+    trigger = {
+		FROM = { has_artifact_flag = psuedo_carolingian_regalia }
+	}
+	
+	immediate = {
+		log = "[This.GetBestName] fired EMP.13020"
+		
+		e_francia = {
+			any_pretender = {
+				limit = { sibling = ROOT }
+				
+				set_defacto_liege = THIS
+				ROOT = {
+					log = "[This.GetBestName] is suzerain for [Prev.GetBestName]"
+					make_tributary = {
+						who = PREV
+						percentage = 0.01
+						tributary_type = default
+					}
+				}
+			}
+		}
+		
+		FROM = {
+			destroy_artifact = yes
+		}
+	}
+}

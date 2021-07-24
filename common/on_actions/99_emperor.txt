@@ -18,6 +18,15 @@ on_death = {
 	events = {
 		EMP.12010
 		EMP.12011
+		# Carolingian
+		EMP.13010
+	}
+}
+
+on_artifact_inheritance = {
+	events = {
+		# Carolingian
+		EMP.13020
 	}
 }
 

@@ -15,43 +15,57 @@
 	holder = 0
 }
 
-764.1.1 = {
-	liege = d_etelkoz
-	holder = 146214
+716.1.1 = {
+	liege = d_crimea
+	holder = 74006
 }
 
-803.1.1 = {
-	holder = 146215
+745.1.1 = {
+	holder = 74011
 }
 
-826.1.1 = {
-	holder = 146230
+761.1.1 = {
+	holder = 146204
 }
 
-845.1.1 = {
-	liege = k_magyar
-	holder = 159137
+777.1.1 = {
+	holder = 74013
 }
 
-896.1.1 = {
-	liege = 0
+810.1.1 = {
+	holder = 74014
+}
+
+825.1.1 = {
+	holder = 74015
+}
+
+830.1.1 = {
+	holder = 74016
+}
+
+833.1.1 = {
+	liege = k_khazaria
+}
+
+861.1.1 = {
+	holder = 74017
 }
 
 936.1.1 = {
-	holder = 260695
-	liege = d_etelkoz
+	holder = 260694
+	liege = k_pechenegs
 }
 
 1066.1.1 = {
-	liege = d_moldau
+	liege = d_crimea
 }
 
 1066.1.1 = {
-	holder = 20635
+	holder = 34854
 }
 
 1091.1.1 = {
-	liege = d_crimea
 	holder = 34845
 }
 
@@ -88,7 +102,7 @@
 }
 
 1286.1.2 = {
-	holder = 125518
+	holder = 34855
 }
 
 1299.1.2 = {

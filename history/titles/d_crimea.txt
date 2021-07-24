@@ -1,6 +1,9 @@
+20.1.1 = {
+	historical_nomad = yes
+}
+
 632.1.1 = {
 	holder = 159117
-	liege = d_crimea
 }
 
 665.1.1 = {
@@ -8,50 +11,58 @@
 }
 
 668.1.1 = {
-	liege = k_khazaria
-}
-
-701.1.1 = {
 	holder = 0
 }
 
-764.1.1 = {
-	liege = d_etelkoz
-	holder = 146214
+691.1.1 = {
+	liege = k_khazaria
+	holder = 74005
 }
 
-803.1.1 = {
-	holder = 146215
+709.1.1 = {
+	holder = 74006
 }
 
-826.1.1 = {
-	holder = 146230
+745.1.1 = {
+	holder = 74011
 }
 
-845.1.1 = {
-	liege = k_magyar
-	holder = 159137
+761.1.1 = {
+	holder = 146204
 }
 
-896.1.1 = {
+777.1.1 = {
+	holder = 74013
+}
+
+810.1.1 = {
+	holder = 74014
+}
+
+825.1.1 = {
+	holder = 74015
+}
+
+830.1.1 = {
+	holder = 74016
+}
+
+833.1.1 = {
 	liege = 0
+	holder = 0
 }
 
-936.1.1 = {
-	holder = 260695
-	liege = d_etelkoz
-}
-
-1066.1.1 = {
-	liege = d_moldau
+861.1.1 = {
+	holder = 74017
+	liege = k_khazaria
 }
 
 1066.1.1 = {
-	holder = 20635
+	liege = k_cuman
+	holder = 34854
 }
 
 1091.1.1 = {
-	liege = d_crimea
 	holder = 34845
 }
 
@@ -76,6 +87,7 @@
 }
 
 1238.1.1 = {
+	liege = e_golden_horde
 	holder = 34850
 }
 
