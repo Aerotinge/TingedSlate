@@ -232,7 +232,16 @@ nomadic_group_potential_trigger = {
 		temporal_religious_head_trigger = yes
 	}
 }
-nomadic_group_allow_trigger = {}
+nomadic_group_allow_trigger = {
+	trigger_if = { # Prevents spontaneous Nomad Spread
+		limit = { has_game_started = yes }
+
+		is_nomadic = yes
+	}
+	trigger_else = {
+		is_tribal = no # Keeps Nomads from showing up in Tribal areas on ruler selection
+	}
+}
 
 # Nomad Government
 nomadic_government_potential_trigger = {
@@ -361,14 +370,7 @@ tribal_group_potential_trigger = {
 	is_patrician = no
 	is_nomadic = no # Shouldn't be necessary, stop nomads from becoming Tribal without the decision
 }
-tribal_group_allow_trigger = {}
-
-# Tribal Government
-tribal_government_potential_trigger = {
-	order_government_potential_trigger = no
-	mercenary = no
-}
-tribal_government_allow_trigger = {
+tribal_group_allow_trigger = {
 	trigger_if = {
 		limit = {
 			has_game_started = no
@@ -385,7 +387,7 @@ tribal_government_allow_trigger = {
 		}
 	}
 	trigger_else = {
-		is_feudal = no
+		is_tribal = yes
 	}
 }
 
@@ -411,6 +413,6 @@ nomadic_tribal_government_allow_trigger = {
 		}
 	}
 	trigger_else = {
-		is_feudal = no
+		is_tribal = yes
 	}
 }
