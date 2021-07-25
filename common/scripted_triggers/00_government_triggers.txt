@@ -66,7 +66,7 @@ muslim_government_allow_trigger = {}
 
 # Secular Feudal
 secular_feudal_government_potential_trigger = {
-	higher_real_tier_than = BARON
+	higher_real_tier_than = BARON # barons should use Theocracy instead
 
 	trigger_if = { # christian with universal priesthood
 		limit = { religion_group = christian }
@@ -106,6 +106,7 @@ secular_feudal_government_potential_trigger = {
 		}
 	}
 
+	insular_feudal_government_potential_trigger = no
 	tibetan_feudal_government_potential_trigger = no
 	order_government_potential_trigger = no
 	roman_imperial_government_potential_trigger = no
@@ -120,7 +121,6 @@ insular_feudal_government_potential_trigger = {
 	has_polygamy = no
 	culture_group = celtic
 
-	secular_feudal_government_potential_trigger = no
 	theocratic_feudal_government_potential_trigger = no
 	order_government_potential_trigger = no
 	roman_imperial_government_potential_trigger = no
@@ -337,6 +337,7 @@ theocratic_group_allow_trigger = {}
 theocratic_government_potential_trigger = {
 	muslim_government_potential_trigger = no
 	order_government_potential_trigger = no
+	tibetan_feudal_government_potential_trigger = no
 	theocratic_feudal_government_potential_trigger = no
 
 	trigger_if = {
