@@ -43,10 +43,10 @@ succession_laws = {
 				NOR = {
 					is_vice_royalty = yes
 					religion_group = muslim
-					government = chinese_imperial_government
-					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = chinese_imperial_government
+					government = confucian_bureaucracy
 					government = nomadic_tribal_government
 				}
 			}
@@ -161,10 +161,10 @@ succession_laws = {
 				NOR = {
 					is_vice_royalty = yes
 					religion_group = muslim
-					government = chinese_imperial_government
-					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = chinese_imperial_government
+					government = confucian_bureaucracy
 					government = nomadic_tribal_government
 				}
 			}
@@ -280,10 +280,10 @@ succession_laws = {
 				NOR = {
 					is_vice_royalty = yes
 					religion_group = muslim
-					government = chinese_imperial_government
-					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = chinese_imperial_government
+					government = confucian_bureaucracy
 					government = nomadic_tribal_government
 					has_religion_feature = religion_matriarchal
 					has_religion_feature = religion_patriarchal
@@ -406,10 +406,10 @@ succession_laws = {
 				NOR = {
 					is_vice_royalty = yes
 					religion_group = muslim
-					government = chinese_imperial_government
-					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = chinese_imperial_government
+					government = confucian_bureaucracy
 				}
 			}
 		}
@@ -537,10 +537,9 @@ succession_laws = {
 				}
 
 				NOR = {
-					government = timar_government
 					government = order_government
-					government = nomadic_tribal_government
 					government = roman_imperial_government
+					government = nomadic_tribal_government
 				}
 
 				trigger_if = {
@@ -717,10 +716,10 @@ succession_laws = {
 
 				NOR = {
 					is_vice_royalty = yes
-					government = chinese_imperial_government
-					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = chinese_imperial_government
+					government = confucian_bureaucracy
 				}
 			}
 		}
@@ -884,9 +883,9 @@ succession_laws = {
 
 				NOR = {
 					religion_group = muslim
+					government = order_government
 					government = chinese_imperial_government
 					government = confucian_bureaucracy
-					government = order_government
 					government = nomadic_tribal_government
 				}
 			}
@@ -948,10 +947,11 @@ succession_laws = {
 				NOR = {
 					is_vice_royalty = yes
 					religion_group = muslim
-					government = chinese_imperial_government
-					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = chinese_imperial_government
+					government = confucian_bureaucracy
+					government = nomadic_tribal_government
 				}
 			}
 		}
@@ -1068,10 +1068,10 @@ succession_laws = {
                 NOR = {
                     is_vice_royalty = yes
                     religion_group = muslim
-                    government = chinese_imperial_government
-                    government = confucian_bureaucracy
                     government = order_government
-                    government = roman_imperial_government
+					government = roman_imperial_government
+					government = chinese_imperial_government
+					government = confucian_bureaucracy
 					government = nomadic_tribal_government
                 }
             }
@@ -1185,18 +1185,28 @@ succession_laws = {
 					is_feudal = yes
 					is_tribal = yes
 				}
+				
+				OR = {
+					culture_group = altaic
+					NOR = {
+						culture = avar
+						culture = bolghar
+						culture = khitan
+						culture = jurchen
+					}
+				}
 
 				OR = {
-					government = timar_government
 					has_religion_feature = religion_patriarchal
 					has_religion_feature = religion_matriarchal
 				}
 
 				NOR = {
-					government = chinese_imperial_government
-					government = confucian_bureaucracy
 					government = order_government
 					government = roman_imperial_government
+					government = chinese_imperial_government
+					government = confucian_bureaucracy
+					government = nomadic_tribal_government
 				}
 			}
 		}
@@ -1251,7 +1261,6 @@ succession_laws = {
 						liege = {
 							OR = {
 								government = roman_imperial_government
-								government = timar_government
 								government = muslim_government
 							}
 						}
