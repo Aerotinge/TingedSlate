@@ -341,7 +341,7 @@ decisions = {
 			}
 
 			prestige >= 1000
-			realm_size >= 70
+			realm_size >= 75
 		}
 
 		effect = {

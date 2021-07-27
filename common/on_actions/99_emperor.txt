@@ -30,6 +30,11 @@ on_artifact_inheritance = {
 	}
 }
 
+on_create_title = {
+	events = {
+	}
+}
+
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder = {
 	events = {
