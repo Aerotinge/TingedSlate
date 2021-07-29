@@ -657,6 +657,17 @@ laws = {
 				has_law = tribal_organization_1
 				has_law = tribal_organization_3
 			}
+			trigger_if = {
+				limit = {
+					holder_scope = {
+						government = nomadic_tribal_government
+					}
+				}
+				
+				holder_scope = {
+					NOT = { government = nomadic_tribal_government }
+				}
+			}
 		}
 
 		pass_effect = {
