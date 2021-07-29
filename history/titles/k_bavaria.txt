@@ -79,10 +79,6 @@
 	holder = 42018 #Carloman
 }
 
-867.1.1 = {
-	de_jure_liege = e_hre
-}
-
 880.9.29 = {
 	holder = 42019  #Louis III the Younger
 }

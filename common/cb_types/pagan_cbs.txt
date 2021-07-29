@@ -1063,14 +1063,14 @@ pagan_holy_war = {
 				primary_title = {
 					OR = {
 						title = k_hungary
-						title = e_carpathia
+						title = e_danubia
 					}
 				}
 			}
 
 			empire = {
 				OR = {
-					title = e_tartaria
+					title = e_turk
 					title = e_russia
 				}
 			}
@@ -1828,14 +1828,14 @@ tribal_invasion = {
 				primary_title = {
 					OR = {
 						title = k_hungary
-						title = e_carpathia
+						title = e_danubia
 					}
 				}
 			}
 
 			empire = {
 				OR = {
-					title = e_tartaria
+					title = e_turk
 					title = e_russia
 				}
 			}
