@@ -212,7 +212,11 @@ roman_imperial_government_allow_trigger = {}
 chinese_imperial_government_potential_trigger = {
 	always = no
 }
-chinese_imperial_government_allow_trigger = {}
+chinese_imperial_government_allow_trigger = {
+	primary_title = {
+		has_title_flag = adopted_chinese_tradition
+	}
+}
 
 # Sacred Confederacy
 sacred_confederacy_government_potential_trigger = {
@@ -349,9 +353,9 @@ republic_government_allow_trigger = {}
 theocratic_group_potential_trigger = {
 	# Universal Rules
 	is_patrician = no
+	holy_order = no
 	muslim_government_potential_trigger = no
 	theocratic_feudal_government_potential_trigger = no
-	order_government_potential_trigger = no
 
 	# Gender Considerations
 	trigger_if = {

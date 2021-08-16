@@ -1,0 +1,12 @@
+rename_pannonia_by_THIS_effect = {
+	k_hungary = {
+		set_name = PREV
+		set_coa = PREV
+		insert_title_history = PREV
+		copy_title_laws = PREV
+		hidden_effect = {
+			make_primary_title = THIS
+		}
+	}
+	destroy_landed_title = ROOT
+}

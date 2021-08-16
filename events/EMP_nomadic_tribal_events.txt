@@ -66,9 +66,13 @@ character_event = {
 				}
 			}
 			# Base coefficient
+			#multiply_variable = {
+			#	which = empty_holdings_total
+			#	value = 1
+			#}
 			divide_variable = {
 				which = empty_holdings_total
-				value = 2
+				value = 3
 			}
 			# and modified by martial of ROOT
 			export_to_variable = {
@@ -165,8 +169,6 @@ character_event = {
 						NOT = { has_earmarked_regiments = horde_regiments_35 }
 						check_variable = { which = empty_holdings_total value = 35 }
 					}
-					# ST 35% for altaic; 6% for magyar&jurchen; 
-					# HC 20% for jurchen;
 					random_list = {
 						50 = {
 							spawn_unit = {
@@ -174,37 +176,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_35
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_35
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -212,6 +209,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -219,33 +217,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_35
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_35
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -264,37 +241,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_34
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_34
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -302,6 +274,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -309,33 +282,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_34
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_34
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -354,37 +306,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_33
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_33
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -392,6 +339,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -399,33 +347,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_33
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_33
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -444,37 +371,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_32
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_32
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -482,6 +404,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -489,33 +412,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_32
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_32
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -534,37 +436,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_31
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_31
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -572,6 +469,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -579,33 +477,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_31
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_31
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -624,37 +501,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_30
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_30
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -662,6 +534,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -669,33 +542,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_30
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_30
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -714,37 +566,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_29
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_29
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -752,6 +599,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -759,33 +607,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_29
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_29
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -804,37 +631,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_28
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_28
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -842,6 +664,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -849,33 +672,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_28
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_28
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -894,37 +696,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_27
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_27
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -932,6 +729,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -939,33 +737,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_27
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_27
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -984,37 +761,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_26
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_26
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1022,6 +794,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1029,33 +802,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_26
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_26
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1074,37 +826,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_25
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_25
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1112,6 +859,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1119,33 +867,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_25
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_25
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1164,37 +891,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_24
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_24
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1202,6 +924,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1209,33 +932,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_24
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_24
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1254,37 +956,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_23
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_23
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1292,6 +989,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1299,33 +997,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_23
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_23
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1344,37 +1021,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_22
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_22
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1382,6 +1054,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1389,33 +1062,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_22
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_22
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1434,37 +1086,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_21
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_21
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1472,6 +1119,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1479,33 +1127,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_21
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_21
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1524,37 +1151,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_20
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_20
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1562,6 +1184,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1569,33 +1192,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_20
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_20
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1614,37 +1216,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_19
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_19
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1652,6 +1249,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1659,33 +1257,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_19
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_19
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1704,37 +1281,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_18
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_18
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1742,6 +1314,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1749,33 +1322,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_18
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_18
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1794,37 +1346,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_17
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_17
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1832,6 +1379,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1839,33 +1387,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_17
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_17
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1884,37 +1411,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_16
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_16
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1922,6 +1444,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -1929,33 +1452,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_16
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_16
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -1974,37 +1476,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_15
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_15
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2012,6 +1509,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2019,33 +1517,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_15
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_15
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2064,37 +1541,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_14
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_14
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2102,6 +1574,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2109,33 +1582,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_14
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_14
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2154,37 +1606,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_13
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_13
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2192,6 +1639,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2199,33 +1647,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_13
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_13
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2244,37 +1671,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_12
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_12
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2282,6 +1704,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2289,33 +1712,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_12
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_12
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2334,37 +1736,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_11
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_11
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2372,6 +1769,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2379,33 +1777,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_11
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_11
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2424,37 +1801,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_10
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_10
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2462,6 +1834,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2469,33 +1842,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_10
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_10
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2514,37 +1866,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_9
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_9
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2552,6 +1899,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2559,33 +1907,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_9
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_9
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2604,37 +1931,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_8
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_8
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2642,6 +1964,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2649,33 +1972,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_8
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_8
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2694,37 +1996,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_7
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_7
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2732,6 +2029,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2739,33 +2037,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_7
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_7
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2784,37 +2061,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_6
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_6
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2822,6 +2094,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2829,33 +2102,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_6
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_6
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2874,37 +2126,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_5
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_5
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2912,6 +2159,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -2919,33 +2167,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_5
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_5
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -2964,37 +2191,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_4
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_4
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3002,6 +2224,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3009,33 +2232,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_4
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_4
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3054,37 +2256,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_3
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_3
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3092,6 +2289,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3099,33 +2297,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_3
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_3
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3144,37 +2321,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_2
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_2
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3182,6 +2354,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3189,33 +2362,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_2
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_2
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3234,37 +2386,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_1
 								troops = {
-									light_cavalry = { 200 200 }
-									horse_archers = { 50 50 }
+									light_cavalry = { 225 225 }
+									horse_archers = { 25 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_1
 								troops = {
-									light_cavalry = { 125 125 }
-									horse_archers = { 125 125 }
+									horse_archers = { 250 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3272,6 +2419,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3279,33 +2427,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_1
 								troops = {
-									light_cavalry = { 250 250 }
+									light_cavalry = { 130 130 }
+									horse_archers = { 120 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_1
-								troops = {
-									light_cavalry = { 175 175 }
-									knights = { 75 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3337,8 +2464,6 @@ character_event = {
 						NOT = { has_earmarked_regiments = horde_regiments_35 }
 						check_variable = { which = empty_holdings_total value = 35 }
 					}
-					# ST 35% for altaic; 6% for magyar&jurchen; 
-					# HC 20% for jurchen;
 					random_list = {
 						50 = {
 							spawn_unit = {
@@ -3346,37 +2471,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_35
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_35
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3384,6 +2504,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3391,33 +2512,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_35
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_35
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3436,37 +2536,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_34
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_34
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3474,6 +2569,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3481,33 +2577,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_34
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_34
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3526,37 +2601,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_33
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_33
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3564,6 +2634,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3571,33 +2642,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_33
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_33
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3616,37 +2666,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_32
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_32
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3654,6 +2699,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3661,33 +2707,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_32
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_32
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3706,37 +2731,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_31
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_31
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3744,6 +2764,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3751,33 +2772,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_31
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_31
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3796,37 +2796,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_30
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_30
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3834,6 +2829,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3841,33 +2837,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_30
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_30
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3886,37 +2861,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_29
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_29
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3924,6 +2894,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -3931,33 +2902,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_29
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_29
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -3976,37 +2926,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_28
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_28
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4014,6 +2959,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4021,33 +2967,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_28
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_28
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4066,37 +2991,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_27
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_27
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4104,6 +3024,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4111,33 +3032,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_27
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_27
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4156,37 +3056,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_26
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_26
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4194,6 +3089,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4201,33 +3097,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_26
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_26
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4246,37 +3121,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_25
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_25
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4284,6 +3154,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4291,33 +3162,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_25
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_25
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4336,37 +3186,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_24
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_24
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4374,6 +3219,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4381,33 +3227,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_24
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_24
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4426,37 +3251,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_23
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_23
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4464,6 +3284,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4471,33 +3292,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_23
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_23
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4516,37 +3316,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_22
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_22
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4554,6 +3349,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4561,33 +3357,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_22
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_22
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4606,37 +3381,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_21
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_21
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4644,6 +3414,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4651,33 +3422,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_21
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_21
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4696,37 +3446,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_20
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_20
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4734,6 +3479,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4741,33 +3487,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_20
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_20
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4786,37 +3511,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_19
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_19
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4824,6 +3544,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4831,33 +3552,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_19
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_19
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4876,37 +3576,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_18
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_18
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4914,6 +3609,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -4921,33 +3617,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_18
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_18
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -4966,37 +3641,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_17
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_17
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5004,6 +3674,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5011,33 +3682,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_17
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_17
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5056,37 +3706,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_16
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_16
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5094,6 +3739,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5101,33 +3747,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_16
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_16
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5146,37 +3771,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_15
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_15
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5184,6 +3804,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5191,33 +3812,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_15
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_15
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5236,37 +3836,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_14
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_14
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5274,6 +3869,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5281,33 +3877,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_14
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_14
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5326,37 +3901,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_13
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_13
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5364,6 +3934,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5371,33 +3942,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_13
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_13
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5416,37 +3966,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_12
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_12
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5454,6 +3999,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5461,33 +4007,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_12
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_12
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5506,37 +4031,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_11
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_11
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5544,6 +4064,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5551,33 +4072,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_11
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_11
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5596,37 +4096,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_10
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_10
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5634,6 +4129,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5641,33 +4137,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_10
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_10
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5686,37 +4161,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_9
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_9
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5724,6 +4194,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5731,33 +4202,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_9
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_9
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5776,37 +4226,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_8
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_8
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5814,6 +4259,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5821,33 +4267,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_8
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_8
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5866,37 +4291,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_7
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_7
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5904,6 +4324,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -5911,33 +4332,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_7
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_7
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5956,37 +4356,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_6
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_6
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -5994,6 +4389,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -6001,33 +4397,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_6
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_6
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6046,37 +4421,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_5
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_5
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6084,6 +4454,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -6091,33 +4462,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_5
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_5
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6136,37 +4486,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_4
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_4
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6174,6 +4519,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -6181,33 +4527,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_4
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_4
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6226,37 +4551,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_3
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_3
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6264,6 +4584,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -6271,33 +4592,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_3
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_3
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6316,37 +4616,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_2
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_2
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6354,6 +4649,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -6361,33 +4657,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_2
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_2
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6406,37 +4681,32 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_1
 								troops = {
-									light_cavalry = { 1 200 }
-									horse_archers = { 1 50 }
+									light_cavalry = { 1 225 }
+									horse_archers = { 1 25 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
 						}
 						50 = {
-							modifier = { 
+							modifier = {
 								factor = 0
-								OR = {
-									culture_group = magyar
-									culture = jurchen
-								}
+
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
 								owner = ROOT
 								earmark = horde_regiments_1
 								troops = {
-									light_cavalry = { 1 125 }
-									horse_archers = { 1 125 }
+									horse_archers = { 1 250 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
@@ -6444,6 +4714,7 @@ character_event = {
 						100 = {
 							modifier = { 
 								factor = 0
+
 								NOT = { culture_group = magyar }
 							}
 							spawn_unit = {
@@ -6451,33 +4722,12 @@ character_event = {
 								owner = ROOT
 								earmark = horde_regiments_1
 								troops = {
-									light_cavalry = { 1 250 }
+									light_cavalry = { 1 130 }
+									horse_archers = { 1 120 }
 								}
-								attrition = 0.5
 								merge = yes
 								reinforces = yes
-								reinforce_rate_multiplier = 0.33
-								can_toggle_looting = yes
-								cannot_inherit = yes
-							}
-						}
-						100 = {
-							modifier = { 
-								factor = 0
-								NOT = { culture = jurchen }
-							}
-							spawn_unit = {
-								province = PREV
-								owner = ROOT
-								earmark = horde_regiments_1
-								troops = {
-									light_cavalry = { 1 175 }
-									knights = { 1 75 }
-								}
-								attrition = 0.5
-								merge = yes
-								reinforces = yes
-								reinforce_rate_multiplier = 0.33
+								reinforce_rate_multiplier = 0.25
 								can_toggle_looting = yes
 								cannot_inherit = yes
 							}
