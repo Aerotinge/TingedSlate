@@ -48,9 +48,6 @@ tribal_governments = {
 
 		allow = {
 			trigger_if = {
-			}
-			
-			trigger_if = {
 				limit = {
 					has_game_started = no
 					NOT = { has_dlc = "Horse Lords" }
@@ -111,11 +108,19 @@ tribal_governments = {
 		color = { 201 179 36 }
 
 		potential = {
-			#mercenary = no
 			NOT = { has_dlc = "Horse Lords" }
+			holy_order = no
+			NOT = { is_government_potential = order_government }
+
+			trigger_if = {
+				limit = { has_game_started = yes }
+				is_feudal = no
+			}
+
+			could_be_temporal_religious_head_trigger = yes
 		}
 
-		allow = {		
+		allow = {
 			trigger_if = {
 				limit = { has_game_started = no }
 				
