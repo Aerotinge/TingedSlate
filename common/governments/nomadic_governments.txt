@@ -32,12 +32,18 @@ nomadic_governments = {
 		color = { 201 179 36 }
 
 		potential = {
-			nomadic_group_potential_trigger = yes
-			nomadic_government_potential_trigger = yes
+			could_be_temporal_religious_head_trigger = yes
+			is_patrician = no
+			mercenary = no
+			holy_order = no
 		}
+
 		allow = {
-			nomadic_group_allow_trigger = yes
-			nomadic_government_allow_trigger = yes
+			trigger_if = {
+				limit = { has_game_started = no }
+
+				capital_scope = { has_tribal = no } # To keep Tribals from showing up as Nomads
+			}
 		}
 
 		allow_looting = yes

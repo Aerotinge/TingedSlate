@@ -27,14 +27,22 @@ feudal_governments = {
 		color = { 91 133 207 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			feudal_government_potential_trigger = yes
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+
+			NOR = {
+				is_government_potential = muslim_government
+				is_government_potential = secular_feudal_government
+				is_government_potential = tibetan_feudal_government
+				is_government_potential = theocratic_feudal_government
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
 		}
 
-		allow = {
-			feudal_group_allow_trigger = yes
-			feudal_government_allow_trigger = yes
-		}
+		allow = {}
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
@@ -78,14 +86,18 @@ feudal_governments = {
 		color = { 10 138 57 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			muslim_government_potential_trigger = yes
+			religion_group = muslim
+			is_patrician = no
+
+			NOR = {
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
 		}
 
-		allow = {
-			feudal_group_allow_trigger = yes
-			muslim_government_allow_trigger = yes
-		}
+		allow = {}
 
 		allows_matrilineal_marriage = no
 		barons_need_dynasty = yes
@@ -119,7 +131,6 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
 			muslim_government
-			insular_feudal_government
 			tibetan_feudal_government
 			sacred_confederacy_government
 		}
@@ -134,14 +145,53 @@ feudal_governments = {
 		color = { 7 143 180 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			secular_feudal_government_potential_trigger = yes
+			higher_real_tier_than = BARON # barons should use Theocracy instead
+			is_patrician = no
+
+			trigger_if = { # christian with universal priesthood
+				limit = { religion_group = christian }
+
+				OR = {
+					religion = cathar		# I don't think Cathar practice universal priesthood, but it's no head in game.
+					religion = waldensian
+					religion = lollard
+					religion = messalian
+					religion = bogomilist
+				}
+			}
+			trigger_else_if = { # indian_group without Sramana practice
+				limit = { religion_group = indian_group }
+
+				religion = taoist
+			}
+			trigger_else_if = {	# zoroastrian_group without clergy practice
+				limit = { religion_group = zoroastrian_group }
+
+				religion = mazdaki
+			}
+			trigger_else_if = { # jewish_group without rabbinic halakha
+				limit = { religion_group = jewish_group }
+
+				religion = karaite
+			}
+			trigger_else = { # Reformed Pagan, Bon exclusive
+				is_reformed_religion = yes
+				AND = { # with Autonomous & Cosmopolitan/Civilized doctrine
+					has_religion_feature = religion_no_leader
+					has_religion_feature = religion_proselytizing
+				}
+			}
+
+			NOR = {
+				is_government_potential = tibetan_feudal_government
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
 		}
 
-		allow = {
-			feudal_group_allow_trigger = yes
-			secular_feudal_government_allow_trigger = yes
-		}
+		allow = {}
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
@@ -152,51 +202,6 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
-	}
-
-	insular_feudal_government = {
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			TEMPLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			muslim_government
-			secular_feudal_government
-			tibetan_feudal_government
-			sacred_confederacy_government
-		}
-
-		frame_suffix = "_insularfeudal"
-		color = { 66 41 168 }
-
-		potential = {
-			feudal_group_potential_trigger = yes
-			insular_feudal_government_potential_trigger = yes
-		}
-
-		allow = {
-			feudal_group_allow_trigger = yes
-			insular_feudal_government_allow_trigger = yes
-		}
-
-		barons_need_dynasty = yes
-		can_build_tribal = no
-		dukes_called_kings = yes
-		max_consorts = 3
-
-		capital_move_delay = 600
-
-		## Modifiers
-		court_size_modifier = -10
 	}
 
 	tibetan_feudal_government = {
@@ -217,7 +222,6 @@ feudal_governments = {
 			muslim_government
 			secular_feudal_government
 			theocratic_feudal_government
-			insular_feudal_government
 			sacred_confederacy_government
 			theocracy_government
 		}
@@ -232,14 +236,25 @@ feudal_governments = {
 		color = { 207 145 90 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			tibetan_feudal_government_potential_trigger = yes
+			culture_group = tibetan_group
+			higher_real_tier_than = BARON
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+
+			OR = {
+				religion_openly_bon_or_reformed_trigger = yes
+				religion = buddhist
+			}
+
+			NOR = {
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
 		}
 
-		allow = {
-			feudal_group_allow_trigger = yes
-			tibetan_feudal_government_allow_trigger = yes
-		}
+		allow = {}
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
@@ -268,7 +283,6 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
 			secular_feudal_government
-			insular_feudal_government
 			tibetan_feudal_government
 			sacred_confederacy_government
 			theocracy_government
@@ -285,14 +299,28 @@ feudal_governments = {
 		color = { 157 222 242 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			theocratic_feudal_government_potential_trigger = yes
+			controls_religion = yes
+			trigger_if = {
+				limit = { has_religion_features = yes }
+
+				has_religion_feature = religion_temporal_head
+				has_religion_feature = religion_dogmatic
+			}
+			trigger_else = {
+				religion = norse_pagan_reformed
+			}
+			is_patrician = no
+
+			NOR = {
+				is_government_potential = tibetan_feudal_government
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
 		}
 
-		allow = {
-			feudal_group_allow_trigger = yes
-			theocratic_feudal_government_allow_trigger = yes
-		}
+		allow = {}
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
@@ -338,14 +366,21 @@ feudal_governments = {
 		color = { 169 169 169 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			order_government_potential_trigger = yes
+			trigger_if = {
+				limit = { holy_order = no }
+
+				ai = yes
+
+				any_liege = {
+					holy_order = yes
+					religion = ROOT
+				}
+
+				NOT = { is_government_potential = merchant_republic_government }
+			}
 		}
 
-		allow = {
-			feudal_group_allow_trigger = yes
-			order_government_allow_trigger = yes
-		}
+		allow = {}
 
 		barons_need_dynasty = yes
 		can_be_granted_kingdoms_and_empires_by_other_government = no
@@ -391,14 +426,26 @@ feudal_governments = {
 		color = { 143 12 125 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			roman_imperial_government_potential_trigger = yes
+			primary_title = {
+				OR = {
+					title = e_byzantium
+					title = e_roman_empire
+				}
+
+				trigger_if = {
+					limit = {
+						NOT = { has_law = succ_byzantine_elective }
+					}
+
+					is_save_game = no
+					has_game_started = no
+				}
+			}
+
+			could_be_temporal_religious_head_trigger = yes
 		}
 
-		allow = {
-			feudal_group_allow_trigger = yes
-			roman_imperial_government_allow_trigger = yes
-		}
+		allow = {}
 
 		barons_need_dynasty = yes
 		can_be_granted_kingdoms_and_empires_by_other_government = no
@@ -449,13 +496,11 @@ feudal_governments = {
 		color = { 118 255 163 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			chinese_imperial_government_potential_trigger = yes
+			always = no
 		}
 
 		allow = {
-			feudal_group_allow_trigger = yes
-			chinese_imperial_government_allow_trigger = yes
+			always = no
 		}
 
 		barons_need_dynasty = yes
@@ -509,14 +554,13 @@ feudal_governments = {
 		color = { 91 133 207 }
 
 		potential = {
-			feudal_group_potential_trigger = yes
-			sacred_confederacy_government_potential_trigger = yes
+			is_offmap_tag = offmap_hre
+			offmap_hre = {
+				has_status = hre_shattered
+			}
 		}
 
-		allow = {
-			feudal_group_allow_trigger = yes
-			sacred_confederacy_government_allow_trigger = yes
-		}
+		allow = {}
 
 		barons_need_dynasty = yes
 		can_be_granted_kingdoms_and_empires_by_other_government = no

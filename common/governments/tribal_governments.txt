@@ -35,13 +35,36 @@ tribal_governments = {
 		color = { 92 31 23 }
 
 		potential = {
-			tribal_group_potential_trigger = yes
-			tribal_government_potential_trigger = yes
+			holy_order = no
+			NOT = { is_government_potential = order_government }
+
+			trigger_if = {
+				limit = { has_game_started = yes }
+				is_feudal = no
+			}
+
+			could_be_temporal_religious_head_trigger = yes
 		}
 
 		allow = {
-			tribal_group_allow_trigger = yes
-			tribal_government_allow_trigger = yes
+			trigger_if = {
+			}
+			
+			trigger_if = {
+				limit = {
+					has_game_started = no
+					NOT = { has_dlc = "Horse Lords" }
+				}
+				
+				NOR = {
+					culture_group = altaic
+					culture_group = magyar
+					any_liege = {
+						government = nomadic_tribal_government
+						culture_group = ROOT
+					}
+				}
+			}
 		}
 
 		allow_looting = yes
@@ -88,13 +111,23 @@ tribal_governments = {
 		color = { 201 179 36 }
 
 		potential = {
-			tribal_group_potential_trigger = yes
-			nomadic_tribal_government_potential_trigger = yes
+			#mercenary = no
+			NOT = { has_dlc = "Horse Lords" }
 		}
 
-		allow = {
-			tribal_group_allow_trigger = yes
-			nomadic_tribal_government_allow_trigger = yes
+		allow = {		
+			trigger_if = {
+				limit = { has_game_started = no }
+				
+				OR = {
+					culture_group = altaic
+					culture_group = magyar
+					any_liege = {
+						government = nomadic_tribal_government
+						culture_group = ROOT
+					}
+				}
+			}
 		}
 
 		allow_looting = yes

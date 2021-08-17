@@ -1298,27 +1298,27 @@ succession_laws = {
 				}
 			}
 
-			holder_scope = {
-				trigger_if = {
-					limit = { is_offmap_governor = yes }
-
-					# Use Offmap succession instead
-					NOT = { is_law_potential = succ_offmap_succession }
+			trigger_if = {
+				limit = {
+					holder_scope = { is_offmap_governor = yes }
 				}
 
-				trigger_if = {
-					limit = { is_theocracy = yes }
+				# Use Offmap succession instead
+				NOT = { is_law_potential = succ_offmap_succession }
+			}
 
-					# Use Investiture and Papal succession instead
-					NOR = {
-						is_law_potential = succ_papal_succession
-						is_law_potential = succ_catholic_bishopric
-					}
+			trigger_if = {
+				limit = { is_theocracy = yes }
+
+				# Use Investiture and Papal succession instead
+				NOR = {
+					is_law_potential = succ_papal_succession
+					is_law_potential = succ_catholic_bishopric
 				}
-				trigger_else_if = {
-					limit = { is_republic = yes }
-					is_patrician = no
-				}
+			}
+			trigger_else_if = {
+				limit = { is_republic = yes }
+				is_patrician = no
 			}
 
 			trigger_if = {
