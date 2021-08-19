@@ -111,6 +111,15 @@ republic_governments = {
 						}
 					}
 				}
+				
+				trigger_if = {
+					limit = {
+						primary_title = { holding_type = family_palace }
+					}
+
+					is_save_game = no
+					has_game_started = no
+				}
 			}
 
 			could_be_temporal_religious_head_trigger = yes

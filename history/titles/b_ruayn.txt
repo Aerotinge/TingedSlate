@@ -1,0 +1,6 @@
+936.1.1 = {
+	government = merchant_republic_government
+	holding_dynasty = 1062603
+	liege = d_pechina
+	holder = 261369
+}

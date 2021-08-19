@@ -10,6 +10,8 @@ succession_laws = {
 		potential = {
 			rebel = no
 
+			NOT = { has_law = succ_byzantine_elective }
+
 			trigger_if = {
 				limit = { is_primary_type_title = yes }
 				NOT = { is_law_potential = succ_open_elective }
@@ -128,6 +130,8 @@ succession_laws = {
 		potential = {
 			rebel = no
 
+			NOT = { has_law = succ_byzantine_elective }
+
 			trigger_if = {
 				limit = { is_primary_type_title = yes }
 				NOT = { is_law_potential = succ_open_elective }
@@ -231,6 +235,8 @@ succession_laws = {
 		potential = {
 			has_dlc = "Holy Fury"
 			rebel = no
+
+			NOT = { has_law = succ_byzantine_elective }
 
 			trigger_if = {
 				limit = { is_primary_type_title = yes }
@@ -505,6 +511,8 @@ succession_laws = {
 
 				NOT = { is_law_potential = succ_open_elective }
 			}
+
+			NOT = { has_law = succ_byzantine_elective }
 
 			holder_scope = {
 				OR = {
@@ -874,7 +882,10 @@ succession_laws = {
 			real_tier = EMPEROR
 
 			holder_scope = {
-				is_feudal = yes
+				OR = {
+					is_feudal = yes
+					is_tribal = yes
+				}
 
 				OR = {
 					has_landed_title = e_byzantium
@@ -883,7 +894,6 @@ succession_laws = {
 
 				NOR = {
 					religion_group = muslim
-					government = order_government
 					government = chinese_imperial_government
 					government = confucian_bureaucracy
 					government = nomadic_tribal_government
@@ -929,6 +939,8 @@ succession_laws = {
 
 				NOT = { is_law_potential = succ_open_elective }
 			}
+
+			NOT = { has_law = succ_byzantine_elective }
 
 			holder_scope = {
 				OR = {
@@ -1026,6 +1038,8 @@ succession_laws = {
 
 				NOT = { is_law_potential = succ_open_elective }
 			}
+
+			NOT = { has_law = succ_byzantine_elective }
 
 			holder_scope = {
 				trigger_if = {
@@ -1178,6 +1192,7 @@ succession_laws = {
 			NOR = { # Has special elective law instead
 				title = e_hre
 				has_title_flag = alternate_hre
+				has_law = succ_byzantine_elective
 			}
 
 			holder_scope = {
@@ -1187,16 +1202,15 @@ succession_laws = {
 				}
 				
 				OR = {
-					culture_group = altaic
-					NOR = {
-						culture = avar
-						culture = bolghar
-						culture = khitan
-						culture = jurchen
+					AND = {
+						culture_group = altaic
+						NOR = {
+							culture = avar
+							culture = bolghar
+							culture = khitan
+							culture = jurchen
+						}
 					}
-				}
-
-				OR = {
 					has_religion_feature = religion_patriarchal
 					has_religion_feature = religion_matriarchal
 				}
@@ -1298,27 +1312,13 @@ succession_laws = {
 				}
 			}
 
-			trigger_if = {
-				limit = {
-					holder_scope = { is_offmap_governor = yes }
+			NOR = {
+				is_law_potential = succ_papal_succession
+				is_law_potential = succ_catholic_bishopric
+				is_law_potential = succ_offmap_succession
+				holder_scope = {
+					is_patrician = yes
 				}
-
-				# Use Offmap succession instead
-				NOT = { is_law_potential = succ_offmap_succession }
-			}
-
-			trigger_if = {
-				limit = { is_theocracy = yes }
-
-				# Use Investiture and Papal succession instead
-				NOR = {
-					is_law_potential = succ_papal_succession
-					is_law_potential = succ_catholic_bishopric
-				}
-			}
-			trigger_else_if = {
-				limit = { is_republic = yes }
-				is_patrician = no
 			}
 
 			trigger_if = {
