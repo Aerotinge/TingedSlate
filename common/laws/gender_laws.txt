@@ -24,11 +24,11 @@ gender_laws = {
 		}
 
 		pass_effect = {
-			log = "agnatic_succession pass ([This.GetFullBaseName])"
+			# log = "agnatic_succession pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "agnatic_succession ([This.GetFullBaseName])"
+			# log = "agnatic_succession ([This.GetFullBaseName])"
 			gender_succ = agnatic
 			law_set_allow_matrilineal_marriage = no
 		}
@@ -167,11 +167,11 @@ gender_laws = {
 		}
 
 		pass_effect = {
-			log = "cognatic_succession pass ([This.GetFullBaseName])"
+			# log = "cognatic_succession pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "cognatic_succession ([This.GetFullBaseName])"
+			# log = "cognatic_succession ([This.GetFullBaseName])"
 			gender_succ = cognatic
 			law_set_allow_matrilineal_marriage = yes
 		}
@@ -288,11 +288,11 @@ gender_laws = {
 		}
 
 		pass_effect = {
-			log = "true_cognatic_succession pass ([This.GetFullBaseName])"
+			# log = "true_cognatic_succession pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "true_cognatic_succession ([This.GetFullBaseName])"
+			# log = "true_cognatic_succession ([This.GetFullBaseName])"
 			gender_succ = true_cognatic
 			law_set_allow_matrilineal_marriage = yes
 		}
@@ -356,11 +356,11 @@ gender_laws = {
 		}
 
 		pass_effect = {
-			log = "enatic_cognatic_succession pass ([This.GetFullBaseName])"
+			# log = "enatic_cognatic_succession pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "enatic_cognatic_succession ([This.GetFullBaseName])"
+			# log = "enatic_cognatic_succession ([This.GetFullBaseName])"
 			gender_succ = enatic_cognatic
 		}
 
@@ -388,11 +388,11 @@ gender_laws = {
 		}
 
 		pass_effect = {
-			log = "enatic_succession pass ([This.GetFullBaseName])"
+			# log = "enatic_succession pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "enatic_succession ([This.GetFullBaseName])"
+			# log = "enatic_succession ([This.GetFullBaseName])"
 			gender_succ = enatic
 		}
 

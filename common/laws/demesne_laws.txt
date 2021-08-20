@@ -78,11 +78,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "centralization_0 pass ([This.GetFullBaseName])"
+			# log = "centralization_0 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "centralization_0 ([This.GetFullBaseName])"
+			# log = "centralization_0 ([This.GetFullBaseName])"
 			hidden_effect = {
 				revoke_centralization_effect = yes
 			}
@@ -144,11 +144,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "centralization_1 pass ([This.GetFullBaseName])"
+			# log = "centralization_1 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "centralization_1 ([This.GetFullBaseName])"
+			# log = "centralization_1 ([This.GetFullBaseName])"
 			hidden_effect = {
 				revoke_centralization_effect = yes
 			}
@@ -204,11 +204,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "centralization_2 pass ([This.GetFullBaseName])"
+			# log = "centralization_2 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "centralization_2 ([This.GetFullBaseName])"
+			# log = "centralization_2 ([This.GetFullBaseName])"
 			hidden_effect = {
 				revoke_centralization_effect = yes
 			}
@@ -262,11 +262,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "centralization_3 pass ([This.GetFullBaseName])"
+			# log = "centralization_3 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "centralization_3 ([This.GetFullBaseName])"
+			# log = "centralization_3 ([This.GetFullBaseName])"
 			hidden_effect = {
 				revoke_centralization_effect = yes
 			}
@@ -315,11 +315,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "centralization_4 pass ([This.GetFullBaseName])"
+			# log = "centralization_4 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "centralization_4 ([This.GetFullBaseName])"
+			# log = "centralization_4 ([This.GetFullBaseName])"
 			hidden_effect = {
 				revoke_centralization_effect = yes
 			}
@@ -372,13 +372,13 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "tribal_organization_0 pass ([This.GetFullBaseName])"
+			# log = "tribal_organization_0 pass ([This.GetFullBaseName])"
 
 			decreased_tribal_organization_effect = yes
 		}
 
 		effect = {
-			log = "tribal_organization_0 ([This.GetFullBaseName])"
+			# log = "tribal_organization_0 ([This.GetFullBaseName])"
 
 			if = {
 				limit = { has_dlc = "Conclave" }
@@ -489,7 +489,7 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "tribal_organization_1 pass ([This.GetFullBaseName])"
+			# log = "tribal_organization_1 pass ([This.GetFullBaseName])"
 
 			if = {
 				limit = { has_law = tribal_organization_0 }
@@ -501,7 +501,7 @@ laws = {
 		}
 
 		effect = {
-			log = "tribal_organization_1 ([This.GetFullBaseName])"
+			# log = "tribal_organization_1 ([This.GetFullBaseName])"
 
 			if = {
 				limit = { has_dlc = "Conclave" }
@@ -649,7 +649,7 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "tribal_organization_2 pass ([This.GetFullBaseName])"
+			# log = "tribal_organization_2 pass ([This.GetFullBaseName])"
 
 			if = {
 				limit = { has_law = tribal_organization_1 }
@@ -661,7 +661,7 @@ laws = {
 		}
 
 		effect = {
-			log = "tribal_organization_2 ([This.GetFullBaseName])"
+			# log = "tribal_organization_2 ([This.GetFullBaseName])"
 
 			if = {
 				limit = { has_dlc = "Conclave" }
@@ -810,7 +810,7 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "tribal_organization_3 pass ([This.GetFullBaseName])"
+			# log = "tribal_organization_3 pass ([This.GetFullBaseName])"
 
 			if = {
 				limit = { has_law = tribal_organization_2 }
@@ -822,7 +822,7 @@ laws = {
 		}
 
 		effect = {
-			log = "tribal_organization_3 ([This.GetFullBaseName])"
+			# log = "tribal_organization_3 ([This.GetFullBaseName])"
 
 			if = {
 				limit = { has_dlc = "Conclave" }
@@ -968,13 +968,13 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "tribal_organization_4 pass ([This.GetFullBaseName])"
+			# log = "tribal_organization_4 pass ([This.GetFullBaseName])"
 
 			increased_tribal_organization_effect = yes
 		}
 
 		effect = {
-			log = "tribal_organization_4 ([This.GetFullBaseName])"
+			# log = "tribal_organization_4 ([This.GetFullBaseName])"
 
 			if = {
 				limit = { NOT = { has_dlc = "Conclave" } }
@@ -1071,11 +1071,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "vice_royalty_0 pass ([This.GetFullBaseName])"
+			# log = "vice_royalty_0 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "vice_royalty_0 ([This.GetFullBaseName])"
+			# log = "vice_royalty_0 ([This.GetFullBaseName])"
 
 			hidden_effect = {
 				revoke_vice_royalty_effect = yes
@@ -1099,11 +1099,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "vice_royalty_1 pass ([This.GetFullBaseName])"
+			# log = "vice_royalty_1 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "vice_royalty_1 ([This.GetFullBaseName])"
+			# log = "vice_royalty_1 ([This.GetFullBaseName])"
 
 			hidden_effect = {
 				revoke_vice_royalty_effect = yes
@@ -1133,11 +1133,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "vice_royalty_2 pass ([This.GetFullBaseName])"
+			# log = "vice_royalty_2 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "vice_royalty_2 ([This.GetFullBaseName])"
+			# log = "vice_royalty_2 ([This.GetFullBaseName])"
 
 			hidden_effect = {
 				revoke_vice_royalty_effect = yes
@@ -1179,11 +1179,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "feudal_administration pass ([This.GetFullBaseName])"
+			# log = "feudal_administration pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "feudal_administration ([This.GetFullBaseName])"
+			# log = "feudal_administration ([This.GetFullBaseName])"
 			revoke_law = imperial_administration
 
 			if = {
@@ -1215,11 +1215,11 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "imperial_administration pass ([This.GetFullBaseName])"
+			# log = "imperial_administration pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
-			log = "imperial_administration ([This.GetFullBaseName])"
+			# log = "imperial_administration ([This.GetFullBaseName])"
 			revoke_law = feudal_administration
 
 			if = {
@@ -1620,7 +1620,7 @@ laws = {
 		}
 
 		pass_effect = {
-			log = "city_contract_0 pass ([This.GetFullBaseName])"
+			# log = "city_contract_0 pass ([This.GetFullBaseName])"
 		}
 
 		effect = {
