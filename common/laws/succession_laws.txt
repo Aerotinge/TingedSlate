@@ -490,17 +490,13 @@ succession_laws = {
 			NOT = { has_law = succ_byzantine_elective }
 
 			holder_scope = {
-				OR = {
-					is_feudal = yes
-					is_tribal = yes
-				}
-
 				trigger_if = {
-					limit = { is_tribal = yes }
-					
+					limit = { is_feudal = no }
+
+					is_tribal = yes
 					religion_group = muslim
 				}
-				
+
 				trigger_if = {
 					limit = {
 						government = confucian_bureaucracy
@@ -1011,25 +1007,30 @@ succession_laws = {
 
 			holder_scope = {
 				trigger_if = {
-					limit = { is_feudal = no }
+                    limit = { is_feudal = no }
 
 					is_tribal = yes
-
 					OR = {
-						has_landed_title = e_mongol_empire
-						has_landed_title = e_golden_horde
-						has_landed_title = e_il-khanate
-						has_landed_title = e_chagatai
-					}
+						culture = avar
+						culture = bolghar
+						culture = khitan
+						culture = kirghiz
+                        culture = mongol
+                        culture = jurchen
+                        culture = uyghur
+                    }
 				}
 
-                trigger_if = {
+				trigger_if = {
                     limit = { religion_group = pagan_group }
 
                     OR = {
+						culture = avar
+						culture = bolghar
+						culture = khitan
+						culture = kirghiz
                         culture = mongol
                         culture = jurchen
-                        culture = kirghiz
                         culture = uyghur
                         religion = bon_pagan
                         religion = hellenic_pagan
@@ -1152,13 +1153,16 @@ succession_laws = {
 				has_title_flag = alternate_hre
 				has_law = succ_byzantine_elective
 			}
+			
+			# Titles revert back to the liege on death
+			NOT = { is_law_potential = succ_appointment }
 
 			holder_scope = {
 				OR = {
 					is_feudal = yes
 					is_tribal = yes
 				}
-				
+
 				OR = {
 					AND = {
 						culture_group = altaic
@@ -1166,7 +1170,10 @@ succession_laws = {
 							culture = avar
 							culture = bolghar
 							culture = khitan
+							culture = kirghiz
+							culture = mongol
 							culture = jurchen
+							culture = uyghur
 						}
 					}
 					has_religion_feature = religion_patriarchal
@@ -1174,6 +1181,7 @@ succession_laws = {
 				}
 
 				NOR = {
+					religion_group = muslim
 					government = order_government
 					government = roman_imperial_government
 					government = chinese_imperial_government
