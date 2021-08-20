@@ -26,20 +26,13 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Titles revert back to the liege on death
+			NOT = { is_law_potential = succ_appointment }
+
 			holder_scope = {
 				OR = {
 					is_feudal = yes
 					is_tribal = yes
-				}
-
-				trigger_if = {
-					limit = {
-						is_feudal = yes
-						tier = BARON
-					}
-					
-					# Titles revert back to the liege on death
-					NOT = { is_law_potential = succ_appointment }
 				}
 
 				NOR = {
@@ -146,20 +139,13 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Titles revert back to the liege on death
+			NOT = { is_law_potential = succ_appointment }
+
 			holder_scope = {
 				OR = {
 					is_feudal = yes
 					is_tribal = yes
-				}
-
-				trigger_if = {
-					limit = {
-						is_feudal = yes
-						tier = BARON
-					}
-					
-					# Titles revert back to the liege on death
-					NOT = { is_law_potential = succ_appointment }
 				}
 
 				NOR = {
@@ -252,6 +238,9 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Titles revert back to the liege on death
+			NOT = { is_law_potential = succ_appointment }
+
 			holder_scope = {
 				OR = {
 					is_feudal = yes
@@ -271,16 +260,6 @@ succession_laws = {
 					has_religion_feature = religion_beatification
 					has_religion_feature = religion_feature_baltic
 					has_religion_feature = religion_feature_west_african
-				}
-
-				trigger_if = {
-					limit = {
-						is_feudal = yes
-						tier = BARON
-					}
-					
-					# Titles revert back to the liege on death
-					NOT = { is_law_potential = succ_appointment }
 				}
 
 				NOR = {
@@ -373,6 +352,9 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Titles revert back to the liege on death
+			NOT = { is_law_potential = succ_appointment }
+
 			holder_scope = {
 				trigger_if = {
 					limit = { is_merchant_republic = yes }
@@ -387,16 +369,6 @@ succession_laws = {
 						religion_group = muslim
 						religion_group = indian_group
 					}
-				}
-
-				trigger_if = {
-					limit = {
-						is_feudal = yes
-						tier = BARON
-					}
-					
-					# Titles revert back to the liege on death
-					NOT = { is_law_potential = succ_appointment }
 				}
 
 				trigger_if = {
@@ -512,6 +484,9 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Titles revert back to the liege on death
+			NOT = { is_law_potential = succ_appointment }
+
 			NOT = { has_law = succ_byzantine_elective }
 
 			holder_scope = {
@@ -524,16 +499,6 @@ succession_laws = {
 					limit = { is_tribal = yes }
 					
 					religion_group = muslim
-				}
-				
-				trigger_if = {
-					limit = {
-						is_feudal = yes
-						tier = BARON
-					}
-					
-					# Titles revert back to the liege on death
-					NOT = { is_law_potential = succ_appointment }
 				}
 				
 				trigger_if = {
@@ -1039,6 +1004,9 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Titles revert back to the liege on death
+			NOT = { is_law_potential = succ_appointment }
+
 			NOT = { has_law = succ_byzantine_elective }
 
 			holder_scope = {
@@ -1067,16 +1035,6 @@ succession_laws = {
                         religion = hellenic_pagan
                         is_reformed_religion = yes
                     }
-                }
-
-                trigger_if = {
-                    limit = {
-                        is_feudal = yes
-                        tier = BARON
-                    }
-					
-                    # Titles revert back to the liege on death
-                    NOT = { is_law_potential = succ_appointment }
                 }
 
                 NOR = {
@@ -1272,6 +1230,7 @@ succession_laws = {
 						holy_order = no
 					}
 					AND = {
+						is_feudal = yes
 						liege = {
 							OR = {
 								government = roman_imperial_government
