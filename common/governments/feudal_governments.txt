@@ -430,6 +430,7 @@ feudal_governments = {
 				OR = {
 					title = e_byzantium
 					title = e_roman_empire
+					title = e_nicaea
 				}
 
 				trigger_if = {
