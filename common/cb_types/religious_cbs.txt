@@ -1339,9 +1339,14 @@ new_crusade = {
 
 					# Find a King for Trebizond
 					e_byzantium = {
-						owner = {
+						holder_scope = {
 							if = {
 								limit = {
+									capital_scope = {
+										kingdom = {
+											NOT = { title = k_trebizond }
+										}
+									}
 									k_trebizond = {
 										has_holder = no
 									}
@@ -1362,17 +1367,63 @@ new_crusade = {
 									grant_title_no_opinion = k_trebizond
 								}
 							}
-
 						}
 					}
 
 					# Set vassals for Trebizond
 					k_trebizond = {
-						owner = {
+						holder_scope = {
 							e_byzantium = {
-								owner = {
+								holder_scope = {
 									any_vassal = {
 										limit = { de_jure_liege = k_trebizond }
+										set_defacto_liege = PREVPREVPREV
+									}
+								}
+							}
+						}
+					}
+					
+					# Find a King for Epirus
+					e_byzantium = {
+						holder_scope = {
+							if = {
+								limit = {
+									capital_scope = {
+										kingdom = {
+											NOT = { title = k_epirus }
+										}
+									}
+									k_epirus = {
+										has_holder = no
+									}
+								}
+
+								random_vassal = {
+									limit = {
+										OR = {
+											has_landed_title = d_epirus
+											has_landed_title = d_ohrid
+										}
+									}
+
+									preferred_limit = {
+										has_landed_title = d_epirus
+									}
+
+									grant_title_no_opinion = k_epirus
+								}
+							}
+						}
+					}
+
+					# Set vassals for Epirus
+					k_epirus = {
+						holder_scope = {
+							e_byzantium = {
+								holder_scope = {
+									any_vassal = {
+										limit = { de_jure_liege = k_epirus }
 										set_defacto_liege = PREVPREVPREV
 									}
 								}
@@ -1384,18 +1435,16 @@ new_crusade = {
 					if = {
 						limit = {
 							c_famagusta = {
-								owner = {
-									religion = defender
-									culture = defender
+								holder_scope = {
 									ai = yes
+									is_vassal_or_below_of = defender
 								}
 							}
 
 							c_limisol = {
-								owner = {
-									religion = defender
-									culture = defender
+								holder_scope = {
 									ai = yes
+									is_vassal_or_below_of = defender
 								}
 							}
 
@@ -1416,7 +1465,7 @@ new_crusade = {
 							crusade_beneficiary = {
 								grant_title_no_opinion = c_famagusta
 								grant_title_no_opinion = c_limisol
-								grant_title_no_opinion = d_cyprus
+								#grant_title_no_opinion = d_cyprus
 								grant_title_no_opinion = k_cyprus
 
 								d_cyprus = {
@@ -1447,151 +1496,20 @@ new_crusade = {
 						}
 					}
 
-					distribute_crusade_target_title = yes
-
-					# The Crusader King becomes an Emperor and gets a bloodline
-					crusader_king = {
-						grant_title_no_opinion = e_latin_empire
-					}
-
-					# Find random vassal and make a king out of them
-					e_byzantium = {
-						holder_scope = {
-							random_vassal = {
-								limit = {
-									real_tier = DUKE
-									ai = yes
-								}
-
-								preferred_limit = {
-									de_jure_liege = k_greece
-								}
-
-								preferred_limit = {
-									de_jure_liege = k_anatolia
-								}
-
-								preferred_limit = {
-									de_jure_liege = k_sicily
-								}
-
-								primary_title = {
-									create_title = {
-										tier = KING
-										landless = no
-										temporary = no
-										name = fourth_crusade_greek_kingdom_name
-										holder = PREV
-										culture = PREV
-										custom_created = yes
-										base_title = THIS
-										copy_title_laws = yes
-									}
-								}
-							}
-						}
-					}
-
-					# All Byzantine vassals go independent except those neighboring the old Emperor, and he/she gets an inferior Empire title while the Byzantine title is broken
-					e_byzantium = {
-						owner = {
-							any_vassal = {
-								limit = { higher_real_tier_than = BARON }
-								set_defacto_liege = THIS
-							}
-
-							if = {
-								limit = {
-									primary_title = {
-										title = e_byzantium
-									}
-
-									has_landed_title = c_nikaea
-								}
-
-								grant_title = e_nicaea
-
-								e_nicaea = {
-									copy_title_laws = e_byzantium
-									copy_title_history = e_byzantium
-									make_primary_title = yes
-								}
-
-								any_demesne_title = {
-									limit = {
-										real_tier = EMPEROR
-										NOT = { title = e_nicaea }
-									}
-
-									destroy_landed_title = THIS
-								}
-
-								any_neighbor_independent_ruler = {
-									limit = {
-										ai = yes
-										culture = PREV
-										religion = PREV
-										lower_real_tier_than = KING
-									}
-
-									set_defacto_liege = PREV
-								}
-							}
-							else_if = {
-								limit = {
-									primary_title = {
-										title = e_byzantium
-									}
-								}
-
-								capital_scope = {
-									create_title = {
-										tier = EMPEROR
-										landless = no
-										temporary = no
-										name = fourth_crusade_greek_empire_name
-										holder = PREV
-										culture = PREV
-										custom_created = yes
-										base_title = THIS
-									}
-								}
-
-								any_demesne_title = {
-									limit = {
-										real_tier = EMPEROR
-										is_titular = no
-									}
-
-									destroy_landed_title = THIS
-								}
-							}
-
-							any_neighbor_independent_ruler = {
-								limit = {
-									ai = yes
-									culture = PREV
-									religion = PREV
-									lower_real_tier_than = KING
-								}
-
-								set_defacto_liege = PREV
-							}
-						}
-					}
-
 					# Crete is taken by a Merchant Lord
 					if = {
 						limit = {
 							c_kaneia = {
 								holder_scope = {
 									ai = yes
+									is_vassal_or_below_of = defender
 								}
 							}
 
 							c_chandax = {
 								holder_scope = {
 									ai = yes
+									is_vassal_or_below_of = defender
 								}
 							}
 
@@ -1626,6 +1544,110 @@ new_crusade = {
 							grant_title_no_opinion = d_krete
 							grant_title_no_opinion = c_kaneia
 							grant_title_no_opinion = c_chandax
+						}
+					}
+
+					distribute_crusade_target_title = yes
+
+					# The Crusader King becomes an Emperor and gets a bloodline
+					crusader_king = {
+						grant_title_no_opinion = e_latin_empire
+					}
+
+					# Find random vassal and make tributary state out of them
+					e_byzantium = {
+						holder_scope = {
+							random_vassal = {
+								limit = {
+									real_tier = DUKE
+									ai = yes
+									any_neighbor_independent_ruler = {
+										has_landed_title = e_latin_empire
+									}
+								}
+
+								preferred_limit = {
+									has_landed_title = d_thessalonika
+								}
+
+								set_defacto_liege = THIS
+								random_neighbor_independent_ruler = {
+									limit = { has_landed_title = e_latin_empire }
+
+									make_tributary = {
+										who = PREV
+										tributary_type = default
+									}
+								}
+							}
+						}
+					}
+
+					# All Byzantine vassals go independent except those neighboring the old Emperor, and he/she gets an inferior Empire title while the Byzantine title is broken
+					e_byzantium = {
+						holder_scope = {
+							capital_scope = {
+								kingdom = {
+									save_event_target_as = metropolitan_kingdom
+								}
+							}
+							any_vassal = {
+								limit = {
+									higher_real_tier_than = BARON
+
+									NAND = { # These stay part of the empire
+										ai = yes
+										lower_real_tier_than = KING
+
+										OR = {
+											any_demesne_province = {
+												any_neighbor_province = {
+													owned_by = PREVPREVPREV
+												}
+											}
+											primary_title = {
+												de_jure_liege = event_target:metropolitan_kingdom
+											}
+										}
+									}
+								}
+
+								set_defacto_liege = THIS
+							}
+
+							grant_title = e_nicaea
+
+							if = {
+								limit = {
+									NOT = { has_landed_title = c_nikaea }
+								}
+
+								capital_scope = {
+									county = {
+										e_nicaea = {
+											set_name = PREV_NAME
+											set_short_name = no
+											adjective = PREV_ADJ
+											set_preferred_capital = PREV
+										}
+									}
+								}
+							}
+
+							e_nicaea = {
+								copy_title_laws = e_byzantium
+								copy_title_history = e_byzantium
+								make_primary_title = yes
+							}
+
+							any_demesne_title = {
+								limit = {
+									real_tier = EMPEROR
+									NOT = { title = e_nicaea }
+								}
+
+								destroy_landed_title = THIS
+							}
 						}
 					}
 
