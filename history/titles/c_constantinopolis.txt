@@ -1,16 +1,53 @@
+196.1.1 = {
+	liege = e_byzantium
+}
+
+324.9.19 = {
+	holder = 70523
+}
+
+330.1.1 = {
+	liege = d_thrace
+}
+
+337.5.22 = {
+	holder = 70520
+}
+
+340.4.1 = {
+	holder = 70522
+}
+
+350.2.1 = {
+	holder = 70521
+}
+
+361.11.3 = {
+	holder = 145237
+}
+
+363.6.26 = {
+	holder = 145235
+}
+
+364.2.17 = {
+	holder = 145231
+}
+
+364.3.28 = {
+	holder = 145232
+}
+
+378.8.9 = {
+	holder = 145233
+}
+
+379.1.19 = {
+	holder = 70534
+}
+
 395.1.17 = {
-	pentarch = b_hagiasophia
-	law = crown_authority_2
-	law = succ_byzantine_elective
-	law = centralization_3
-	law = imperial_administration
-	law = ze_administration_laws_2
-	law = vice_royalty_2
-	law = revoke_title_law_1
 	holder = 70519
-	effect = {
-		insert_title_history = e_roman_empire
-	}
 }
 
 408.5.1 = {
@@ -26,10 +63,9 @@
 }
 
 450.7.28 = {
-	holder = 145229
+	holder = 70531
 }
 
-# Valentinian III
 450.8.25 = {
 	holder = 70518
 }
@@ -278,12 +314,10 @@
 	holder = 1733
 }
 
-# Eudokia Makrembolites
 1068.1.1 = {
 	holder = 1734
 }
 
-# Romanos IV Diogenes
 1071.8.26 = {
 	holder = 1736
 }
@@ -329,5 +363,46 @@
 }
 
 1204.5.16 = {
-	holder = 0
+	liege = e_latin_empire
 }
+
+1204.5.16 = {
+	holder = 205523 #Baudouin I van Vlaanderen
+}
+
+1205.6.1 = {
+	holder = 205525 #Henry I van Vlaanderen
+}
+
+1216.6.11 = {
+	holder = 205725 #Pierre I de Courtenay
+}
+
+1219.1.1 = {
+	holder = 205526 #Yolande van Vlaanderen (regent)
+}
+
+1219.8.1 = {
+	holder = 91062 #Robert de Courtenay
+}
+
+1228.1.30 = {
+	holder = 461742 #Jean de Brienne (regent)
+}
+
+1237.1.11 = {
+	holder = 91068 #Baudouin II de Courtenay
+}
+
+1261.7.25 = {
+	holder = 465527
+}
+
+1282.12.11 = {
+	holder = 465521
+}
+
+1328.5.24 = {
+	holder = 465500
+}
+

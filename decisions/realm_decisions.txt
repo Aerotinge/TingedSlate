@@ -399,7 +399,21 @@ decisions = {
 		only_independent = yes
 
 		potential = {
-			has_landed_title = e_byzantium
+			OR = {
+				has_landed_title = e_byzantium
+				has_landed_title = e_nicaea
+			}
+
+			trigger_if = {
+				limit = {
+					has_landed_title = e_nicaea
+				}
+
+				e_nicaea = {
+					is_titular = no
+				}
+			}
+
 			has_dlc = "Legacy of Rome"
 
 			OR = {
@@ -422,7 +436,16 @@ decisions = {
 		}
 
 		allow = {
-			primary_title = { title = e_byzantium }
+			trigger_if = {
+				limit = {
+					has_landed_title = e_byzantium
+				}
+
+				primary_title = { title = e_byzantium }
+			}
+			trigger_else = {
+				primary_title = { title = e_nicaea }
+			}
 			prestige >= 3000
 
 			completely_controls = d_latium
@@ -465,6 +488,7 @@ decisions = {
 			OR = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
+				has_landed_title = e_nicaea
 			}
 
 			has_dlc = "Legacy of Rome"
@@ -835,6 +859,7 @@ decisions = {
 			OR = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
+				has_landed_title = e_nicaea
 			}
 
 			has_global_flag = viking_age_started

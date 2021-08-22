@@ -175,15 +175,10 @@ e_nicaea = {
 
 	has_top_de_jure_capital = yes
 
+	purple_born_heirs = yes
+
 	allow = {
-		can_create_empire = yes
-
-		FROM = {
-			show_scope_change = no
-			show_only_failed_conditions = yes
-
-			is_titular = no
-		}
+		always = no # Only created through special decisions
 	}
 }
 

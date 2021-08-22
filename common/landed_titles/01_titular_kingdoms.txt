@@ -1,0 +1,149 @@
+# Titular kingdom titles
+
+k_al-murabitids = {
+	color = { 10 105 56 }
+}
+
+k_almohad = {
+	color = { 0 105 56 }
+}
+
+k_avaria = {
+	color = { 250 120 90 } # Only for the CoA
+	culture = avar
+
+	capital = 707 # Esztergom
+
+	allow = {
+		always = no
+	}
+}
+
+k_beni_helal = {
+	color = { 128 163 56 }
+}
+
+k_hammadid = {
+	color = { 149 180 17 }
+}
+
+k_kafsid = {
+	color = { 109 130 20 }
+}
+
+k_marinid = {
+	color = { 46 255 5 }
+}
+
+k_liao = {
+	color = { 33 202 156 }
+	color2 = { 255 255 255 }
+
+	culture = khitan
+}
+
+k_lombardy = {
+	color = { 234 217 110 } # Only for the CoA
+	culture = lombard
+
+	capital = 441 # Pavia
+
+	allow = {
+		always = no
+	}
+}
+
+k_pechenegs = {
+	color = { 173 150 43 }
+	color2 = { 0 128 128 }
+
+	capital = 645 # Oleshye
+
+	# tribe = yes
+	culture = pecheneg
+
+	allow = {
+		always = no
+	}
+}
+
+k_sakya_trizin = {
+	color = { 95 190 50 }
+}
+
+k_zenata = {
+	color = { 0 71 189 }
+}
+
+k_zirid = {
+	color = { 90 195 49 }
+}
+
+k_ziyanids = {
+	color = { 5 76 194 }
+}
+
+k_aydin = {
+	color = { 238 43 172 }
+
+	culture = turkish
+}
+
+k_candar = {
+	color = { 238 79 182 }
+
+	culture = turkish
+}
+
+k_eretnid = {
+	color = { 253 182 182 }
+
+	culture = turkish
+}
+
+k_germiyan = {
+	color = { 255 180 180 }
+
+	culture = turkish
+}
+
+k_karaman = {
+	color = { 120 41 92 }
+
+	culture = turkish
+}
+
+k_mentese = {
+	color = { 60 130 20 }
+
+	culture = turkish
+}
+
+k_ottoman = {
+	color = { 247 145 30 }
+
+	culture = turkish
+}
+
+k_rum = {
+	color = { 144 182 161 }
+
+	culture = turkish
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+
+	allow = {
+		always = no
+	}
+}
+
+k_saruhan = {
+	color = { 144 171 225 }
+
+	culture = turkish
+}
+
+k_tekke = {
+	color = { 244 153 189 }
+
+	culture = turkish
+}

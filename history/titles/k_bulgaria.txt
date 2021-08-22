@@ -101,7 +101,7 @@
 }
 
 1041.1.1 = {
-	holder = -
+	holder = 0
 }
 
 1071.8.26 = {
@@ -109,7 +109,7 @@
 }
 
 1073.1.1 = {
-	holder = -
+	holder = 0
 }
 
 1185.1.1 = {
@@ -152,6 +152,10 @@
 	holder = 31187 #Konstandin
 }
 
+1261.7.25 = {
+	de_jure_liege = e_nicaea
+}
+
 1277.9.1 = {
 	holder = 465551 #Ivan III
 }
@@ -191,4 +195,3 @@
 1331.3.1 = {
 	holder = 467500 #Ivan Aleksandr
 }
-

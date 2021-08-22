@@ -2,6 +2,7 @@
 	effect = {
 		insert_title_history = e_byzantium
 	}
+	pentarch = b_hagiasophia
 	law = crown_authority_2
 	law = succ_byzantine_elective
 	law = centralization_3
@@ -25,5 +26,16 @@
 }
 
 1261.7.25 = {
-	holder = 0
+	name = e_byzantium
+	adjective = e_byzantium_adj
+	capital = 541 # Constantinople
+	holder = 465527
+}
+
+1282.12.11 = {
+	holder = 465521
+}
+
+1328.5.24 = {
+	holder = 465500
 }

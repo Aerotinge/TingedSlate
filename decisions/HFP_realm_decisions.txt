@@ -1592,6 +1592,7 @@ decisions = {
 			NOR = {
 				has_landed_title = e_byzantium
 				has_landed_title = e_roman_empire
+				has_landed_title = e_nicaea
 				has_landed_title = e_hre
 			}
 
@@ -1721,10 +1722,27 @@ decisions = {
 		potential = {
 			e_byzantium = {
 				has_holder = no
+				is_titular = no
+			}
+
+			e_roman_empire = {
+				has_holder = no
+				is_titular = yes
+			}
+			
+			trigger_if = {
+				limit = {
+					NOT = { has_landed_title = e_nicaea }
+				}
+				
+				e_roman_empire = {
+					has_holder = no
+					is_titular = yes
+				}
 			}
 
 			culture_group = byzantine
-			higher_tier_than = DUKE
+			higher_real_tier_than = DUKE
 
 			OR = {
 				religion_group = christian
@@ -1734,11 +1752,6 @@ decisions = {
 			NOR = {
 				has_landed_title = e_hre
 				has_landed_title = e_latin_empire
-			}
-
-			e_roman_empire = {
-				has_holder = no
-				is_titular = yes
 			}
 
 			NOR = {
@@ -1796,16 +1809,21 @@ decisions = {
 				e_byzantium = {
 					copy_title_laws = event_target:current_primary_title
 					add_law = succ_byzantine_elective
-					if = {
-						limit = {
-							event_target:current_primary_title = { title = e_nicaea }
-						}
+					grant_title = ROOT
+					make_primary_title = yes
+				}
+
+				capital = c_constantinopolis
+
+				if = {
+					limit = {
+						has_landed_title = e_nicaea
+					}
+
+					primary_title = {
 						copy_title_history = e_nicaea
 					}
 				}
-
-				grant_title = e_byzantium
-				capital = c_constantinopolis
 
 				any_demesne_title = {
 					limit = {
@@ -1818,17 +1836,6 @@ decisions = {
 
 				k_thrace = {
 					de_jure_liege = e_byzantium
-				}
-
-				if = {
-					limit = { religion = orthodox }
-
-					k_orthodox = {
-						holder_scope = {
-							grant_title_no_opinion = b_hagiasophia
-						}
-						set_defacto_liege = e_byzantium
-					}
 				}
 
 				any_player = {
