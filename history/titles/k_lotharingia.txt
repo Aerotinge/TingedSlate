@@ -131,10 +131,6 @@
 	set_global_flag = middle_francia_renamed
 }
 
-867.1.1 = {
-	de_jure_liege = e_germania
-}
-
 869.8.8 = {
 	clear_tribute_suzerain = e_francia
 	holder = 90104 #Charles I the Bald
@@ -166,4 +162,8 @@
 
 923.1.1 = {
 	holder = 0
+}
+
+962.2.2 = {
+	de_jure_liege = e_hre
 }
