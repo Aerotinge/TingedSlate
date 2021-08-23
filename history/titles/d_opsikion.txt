@@ -80,15 +80,11 @@
 
 #The Ottomans arrive
 1310.1.1 = {
-	liege = k_ottoman
+	liege = 0
 	vice_royalty = no
+	holder = 476501
 }
 
-1310.1.1 = {
-	holder = 71841
-}
-
-1332.1.1 = {
+1324.1.1 = {
 	holder = 476500
 }
-
