@@ -26,9 +26,6 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
-			# Titles revert back to the liege on death
-			NOT = { is_law_potential = succ_appointment }
-
 			holder_scope = {
 				OR = {
 					is_feudal = yes
@@ -139,9 +136,6 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
-			# Titles revert back to the liege on death
-			NOT = { is_law_potential = succ_appointment }
-
 			holder_scope = {
 				OR = {
 					is_feudal = yes
@@ -237,9 +231,6 @@ succession_laws = {
 
 				NOT = { is_law_potential = succ_open_elective }
 			}
-
-			# Titles revert back to the liege on death
-			NOT = { is_law_potential = succ_appointment }
 
 			holder_scope = {
 				OR = {
@@ -351,9 +342,6 @@ succession_laws = {
 
 				NOT = { is_law_potential = succ_open_elective }
 			}
-
-			# Titles revert back to the liege on death
-			NOT = { is_law_potential = succ_appointment }
 
 			holder_scope = {
 				trigger_if = {
@@ -483,9 +471,6 @@ succession_laws = {
 
 				NOT = { is_law_potential = succ_open_elective }
 			}
-
-			# Titles revert back to the liege on death
-			NOT = { is_law_potential = succ_appointment }
 
 			NOT = { has_law = succ_byzantine_elective }
 
@@ -1001,9 +986,6 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
-			# Titles revert back to the liege on death
-			NOT = { is_law_potential = succ_appointment }
-
 			NOT = { has_law = succ_byzantine_elective }
 
 			holder_scope = {
@@ -1154,9 +1136,6 @@ succession_laws = {
 				has_title_flag = alternate_hre
 				has_law = succ_byzantine_elective
 			}
-			
-			# Titles revert back to the liege on death
-			NOT = { is_law_potential = succ_appointment }
 
 			holder_scope = {
 				OR = {
@@ -1233,21 +1212,9 @@ succession_laws = {
 	succ_appointment = {
 		potential = {
 			holder_scope = {
-				OR = {
-					AND = {
-						government = order_government
-						holy_order = no
-					}
-					AND = {
-						is_feudal = yes
-						liege = {
-							OR = {
-								government = roman_imperial_government
-								government = muslim_government
-							}
-						}
-						tier = BARON
-					}
+				AND = {
+					government = order_government
+					holy_order = no
 				}
 			}
 		}
