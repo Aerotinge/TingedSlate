@@ -36,16 +36,12 @@ e_persia = {
 		allow = {
 			can_create_kingdom = yes
 			
-			allow = {
-				can_create_kingdom = yes
-				
-				trigger_if = {
-					limit = { ai = yes }
+			trigger_if = {
+				limit = { ai = yes }
 
-					OR = {
-						culture_group = iranian
-						culture_group = indo_aryan_group
-					}
+				OR = {
+					culture_group = iranian
+					culture_group = indo_aryan_group
 				}
 			}
 		}
