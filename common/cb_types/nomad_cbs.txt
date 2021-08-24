@@ -16,7 +16,6 @@ cb_install_khan = {
 	is_revolt_cb = no
 	can_call_vassals = yes
 	attacker_can_call_allies = no
-	major_revolt = yes
 
 	can_use_gui = {
 		check_if_crusader_trigger = yes
