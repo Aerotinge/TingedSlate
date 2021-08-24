@@ -2,7 +2,7 @@
 # EMPEROR events
 # By Sergei Ivanov
 ####################################################
-# EMP.11000-EMP.11999
+# EMP.11000-EMP.11099
 
 namespace = EMP
 

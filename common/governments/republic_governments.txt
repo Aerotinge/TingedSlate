@@ -149,7 +149,6 @@ republic_governments = {
 		offmap_power = offmap_china
 		preferred_holdings = {
 			CASTLE
-			CITY
 		}
 		allowed_holdings = {
 			CASTLE
