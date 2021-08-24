@@ -436,8 +436,6 @@ feudal_governments = {
 					has_game_started = yes
 				}
 
-				mercenary = no
-
 				liege_before_war = {
 					OR = {
 						government = thema_government
@@ -451,10 +449,6 @@ feudal_governments = {
 					primary_title = { is_vice_royalty = yes }
 					
 				}
-			}
-
-			NOT = {
-				is_government_potential = order_government
 			}
 		}
 
@@ -493,8 +487,6 @@ feudal_governments = {
 				}
 			}
 			trigger_else = {
-				mercenary = no
-
 				liege_before_war = {
 					OR = {
 						government = thema_government
