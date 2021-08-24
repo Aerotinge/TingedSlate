@@ -428,7 +428,7 @@ feudal_governments = {
 
 		frame_suffix = "_thema"
 		title_prefix = "thema_"
-		color = { 169 169 169 }
+		color = { 66 41 168 }
 
 		potential = {
 			trigger_if = {
