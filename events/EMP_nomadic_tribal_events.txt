@@ -4777,7 +4777,7 @@ character_event = {
 	}
 }
 
-# on_new_holder_* test
+# on_new_holder
 character_event = {
     id = EMP.11009
     hide_window = yes
@@ -4793,6 +4793,9 @@ character_event = {
 			culture_group = altaic
 			culture_group = magyar
 			culture = FROMFROM
+		}
+		primary_title = {
+			title = FROM
 		}
 		FROMFROM = {
 			government = nomadic_tribal_government
