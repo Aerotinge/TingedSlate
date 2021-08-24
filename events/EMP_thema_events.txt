@@ -14,8 +14,10 @@ character_event = {
     is_triggered_only = yes
 
     trigger = {
-		ai = yes
-		is_feudal = yes
+		OR = {
+			is_feudal = yes
+			is_tribal = yes
+		}
 		NOT = { government = thema_government }
 		trigger_if = {
 			limit = {
@@ -27,28 +29,10 @@ character_event = {
 		primary_title = {
 			title = FROM
 		}
-		OR = {
-			culture_group = byzantine
-			culture = FROMFROM
-		}
 		FROMFROM = {
 			OR = {
 				government = thema_government
-				AND = {
-					OR = {
-						has_landed_title = e_byzantium
-						has_landed_title = e_roman_empire
-						has_landed_title = e_nicaea
-					}
-					trigger_if = {
-						limit = { has_dlc = "Zeus" }
-
-						has_law = ze_administration_laws_2
-					}
-					trigger_else = {
-						has_law = imperial_administration
-					}
-				}
+				government = roman_imperial_government
 			}
 		}
     }

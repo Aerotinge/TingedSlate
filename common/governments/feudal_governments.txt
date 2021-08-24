@@ -53,6 +53,7 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
+		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -116,6 +117,7 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
+		vassal_limit = -2
 		court_size_modifier = 10
 	}
 	
@@ -207,6 +209,7 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
+		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -272,6 +275,7 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
+		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -340,6 +344,7 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
+		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -418,11 +423,7 @@ feudal_governments = {
 			HOSPITAL
 		}
 		accepts_liege_governments = {
-			feudal_government
-			muslim_government
-			theocracy_government
-			theocratic_feudal_government
-			chinese_imperial_government
+			roman_imperial_government
 		}
 
 		frame_suffix = "_thema"
@@ -430,6 +431,31 @@ feudal_governments = {
 		color = { 169 169 169 }
 
 		potential = {
+			trigger_if = {
+				limit = {
+					has_game_started = yes
+				}
+
+				mercenary = no
+
+				liege_before_war = {
+					OR = {
+						government = thema_government
+						government = roman_imperial_government
+					}
+				}
+
+				trigger_if = {
+					limit = { higher_real_tier_than = COUNT }
+
+					primary_title = { is_vice_royalty = yes }
+					
+				}
+			}
+
+			NOT = {
+				is_government_potential = order_government
+			}
 		}
 
 		allow = {
@@ -440,7 +466,9 @@ feudal_governments = {
 				
 				# For DUKE tier
 				trigger_if = {
-					limit = { is_vice_royalty = yes }
+					limit = {
+						primary_title = { is_vice_royalty = yes }
+					}
 
 					any_liege = {
 						OR = {
@@ -458,40 +486,33 @@ feudal_governments = {
 							has_landed_title = e_byzantium
 							has_landed_title = e_roman_empire
 							has_landed_title = e_nicaea
-							is_vice_royalty = yes
+							primary_title = { is_vice_royalty = yes }
 						}
 					}
 					culture_group = byzantine
 				}
 			}
 			trigger_else = {
-				top_liege = {
-					OR = {
-						has_landed_title = e_byzantium
-						has_landed_title = e_roman_empire
-						has_landed_title = e_nicaea
-					}
-					trigger_if = {
-						limit = { has_dlc = "Conclave" }
+				mercenary = no
 
-						has_law = ze_administration_laws_2
-					}
-					trigger_else = {
-						has_law = imperial_administration
+				liege_before_war = {
+					OR = {
+						government = thema_government
+						government = roman_imperial_government
 					}
 				}
 
-				# MR check (is_merchant_republic/is_patrician) is only valid in the pre-game character selection screen, on the fly.
-				# It somehow breakup normal check in the pre-game character selection screen
-				NOR = {
-					is_government_potential = merchant_republic_government
-					is_government_potential = order_government
+				trigger_if = {
+					limit = { higher_real_tier_than = COUNT }
+
+					primary_title = { is_vice_royalty = yes }
 				}
 			}
 		}
 
 		barons_need_dynasty = yes
 		can_be_granted_kingdoms_and_empires_by_other_government = no
+		can_build_tribal = no
 		can_create_kingdoms = no
 		can_create_empires = no
 		can_grant_kingdoms_and_empires_to_other_government = no
@@ -505,7 +526,6 @@ feudal_governments = {
 	roman_imperial_government = {
 		preferred_holdings = {
 			CASTLE
-			CITY
 		}
 		allowed_holdings = {
 			CASTLE
@@ -521,11 +541,17 @@ feudal_governments = {
 			republic_government
 			merchant_republic_government
 		}
+		free_revoke_on_tiers = {
+			DUKE
+		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
 		}
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
+		}
+		forced_contract = {
+			thema_government
 		}
 
 		frame_suffix = "_romanimperial"
@@ -568,7 +594,6 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 15
-		vassal_limit = 10
 	}
 
 	chinese_imperial_government = {
@@ -632,7 +657,6 @@ feudal_governments = {
 		}
 
 		court_size_modifier = 15
-		vassal_limit = 10
 	}
 	
 	sacred_confederacy_government = {
