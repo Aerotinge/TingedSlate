@@ -1,0 +1,56 @@
+# SCANDINAVIA
+
+technology = {
+	titles = {
+		d_bergslagen
+		d_gotland
+		d_halsingland
+		d_ostergotland
+		d_smaland
+		d_tioharad
+		d_uppland
+		d_vastergotland
+		d_holstein
+		d_sjaelland
+		d_skane
+		d_jylland
+		d_agder
+		d_iceland
+		d_jamtland
+		d_oppland
+		d_orkney
+		d_viken
+		d_nidaros
+		d_vestlandet
+		d_finland
+		d_karelia
+		d_ostrobothnia
+		d_savonia
+		d_estonia
+		d_kola
+		d_finnmark
+		d_lappland
+	}
+
+	769 = {
+		military = 0.35
+		economy = 0.20
+		culture = 0.10
+
+		TECH_NAVAL = 0.1
+	}
+
+	867 = {
+		military = 1.0
+		economy = 0.6
+		culture = 0.6
+
+		TECH_NAVAL = 2.0
+	}
+
+	1337 = {
+		military = 3.5
+		economy = 3.5
+		culture = 3.5
+	}
+}

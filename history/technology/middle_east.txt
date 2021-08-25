@@ -1,0 +1,90 @@
+# MIDDLE EAST
+
+technology = {
+	titles = {
+		# Arabia - without d_medina
+		d_al_bahrein
+		d_arabia
+		d_nefoud
+		d_oman
+		d_fars
+		d_jibal
+		d_kerman
+		d_khozistan
+		d_kurdistan
+		d_mafaza
+		d_makran
+		d_sistan
+		d_kabulistan
+		d_zabulistan
+		d_balkh
+		d_herat
+		d_khorasan
+		d_azerbaijan
+		d_gilan
+		d_tabaristan
+		d_tabriz
+		d_hadramut
+		d_socotra
+		d_sinai
+	}
+
+	769 = {
+		military = 0.8
+		economy = 1
+		culture = 1
+		TECH_CASTLE_CONSTRUCTION = 1.2
+		TECH_CITY_CONSTRUCTION = 2
+		TECH_FORTIFICATIONS_CONSTRUCTION = 1.2
+		TECH_CONSTRUCTION = 1.2
+		TECH_RELIGIOUS_CUSTOMS = 1.4
+		TECH_CAVALRY = 1.5
+	}
+
+	1337 = {
+		military = 4
+		economy = 4
+		culture = 4
+	}
+}
+
+technology = {
+	titles = {
+		d_jazira
+		d_mosul
+		d_mudar
+		d_baghdad
+		d_basra
+		d_samarra
+		d_sanaa
+		d_taizz
+		d_ascalon
+		d_galilee
+		d_jerusalem
+		d_oultrejourdain
+		d_aleppo
+		d_antioch
+		d_tripoli
+		d_damascus
+		d_palmyra
+		d_hijaz
+	}
+
+	769 = {
+		military = 1.0
+		economy = 1.5
+		culture = 1.5
+		TECH_CASTLE_CONSTRUCTION = 1.9
+		TECH_CITY_CONSTRUCTION = 3.0
+		TECH_FORTIFICATIONS_CONSTRUCTION = 2.2
+		TECH_CONSTRUCTION = 2
+		TECH_RELIGIOUS_CUSTOMS = 1.75
+		TECH_CAVALRY = 2.0
+	}
+
+	1337 = {
+		military = 4.5
+		economy = 4.5
+		culture = 4.5
+	}
+}

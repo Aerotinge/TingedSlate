@@ -1,0 +1,109 @@
+# EASTERN EUROPE
+
+technology = {
+	titles = {
+		d_greater_poland
+		d_kuyavia
+		d_lesser_poland
+		d_mazovia
+		d_silesia
+		d_brandenburg
+		d_mecklemburg
+		d_pomeralia
+		d_pomerania
+		d_rugen
+
+		# Lithuania		
+		d_courland
+		d_latgale
+		d_lithuania
+		d_livonia
+		d_prussia
+		d_samogitia
+		d_yatvingia
+
+		d_novgorod
+		d_pskov
+		d_moskva
+		d_rostov
+		d_tver
+		d_vladimir
+		d_yaroslavl 			# Vologda
+		d_cherven_cities
+		d_galich
+		d_volhynia
+		d_kiev
+		d_minsk
+		d_pereyaslavl
+		d_polotsk
+		d_smolensk
+		d_turov
+		d_chernigov
+		d_karachev
+		d_murom
+
+		d_bryansk
+		d_novosil
+		d_ryazan
+		d_moldau
+		d_esztergom
+		d_nyitra
+		d_pecs
+		d_pest
+		d_temes
+		d_transylvania
+		d_ungvar
+		d_mari
+		d_mordva
+		d_sakala
+	}
+
+	769 = {
+		military = 0.2
+		economy = 0.1
+		culture = 0.15
+
+	}
+
+	1337 = {
+		military = 3.5
+		economy = 3.5
+		culture = 3.5
+	}
+}
+
+# Bulgaria and Balkans
+technology = {
+	titles = {
+		d_bessarabia
+		d_oltenia
+		d_muntenia
+		c_turnu
+		d_vidin			# Bononia
+		d_dioclea
+		d_rashka
+		d_bosnia
+		d_croatia
+		d_hum
+		d_slavonia
+		d_syrmia
+	}
+
+	769 = {
+		military = 0.6
+		economy = 0.6
+		culture = 0.6
+		TECH_RECRUITMENT = 2
+		TECH_CASTLE_CONSTRUCTION = 2
+		TECH_CITY_CONSTRUCTION = 2
+		TECH_CONSTRUCTION = 2
+		TECH_MAJESTY = 1
+		TECH_LEGALISM = 1
+	}
+
+	1337 = {
+		military = 4
+		economy = 4
+		culture = 4
+	}
+}

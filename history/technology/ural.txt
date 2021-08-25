@@ -1,0 +1,56 @@
+# URAL & NENETSIA
+
+technology = {
+	titles = {
+		d_bashkirs
+		d_komi
+		d_perm
+		d_ural
+		d_veliky_ustug
+		d_votyaki
+		d_zyriane
+		d_bjarmia
+		d_velsk
+		d_kargopol
+		d_mezen
+		d_pechora
+		d_zavarot
+
+		# Sibir, minus d_sibir, d_tobol
+		d_om
+		d_vasyugan
+		d_yugra
+	}
+
+	769 = {
+		military = 0.1
+		economy = 0.1
+		culture = 0.1
+		TECH_CAVALRY = 2
+		TECH_SKIRMISH = 2
+	}
+
+	867 = {
+		military = 0.8
+		economy = 0.5
+		culture = 0.5
+		TECH_CAVALRY = 2.5
+		TECH_SKIRMISH = 2.5
+	}
+
+	1066 = {
+		military = 1.5
+		economy = 0.8
+		culture = 1
+		TECH_CAVALRY = 3
+		TECH_SKIRMISH = 3
+	}
+
+	1337 = {
+		military = 2.5
+		economy = 2.5
+		culture = 2.5
+		TECH_CAVALRY = 3.5
+		TECH_SKIRMISH = 3.5
+	}
+}
