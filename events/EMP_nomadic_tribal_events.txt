@@ -4739,6 +4739,25 @@ character_event = {
 	}
 }
 
+character_event = {
+    id = EMP.11005
+    hide_window = yes
+	
+    is_triggered_only = yes
+	
+	lacks_dlc = "Horse Lords"
+
+    trigger = {
+        government = nomadic_tribal_government
+    }
+
+	immediate = {
+		economy_techpoints = -50
+		culture_techpoints = -50
+		military_techpoints = -50
+	}
+}
+
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 character_event = {
     id = EMP.11006
