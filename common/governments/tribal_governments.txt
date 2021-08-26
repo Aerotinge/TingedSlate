@@ -52,7 +52,7 @@ tribal_governments = {
 					has_game_started = no
 					NOT = { has_dlc = "Horse Lords" }
 				}
-				
+
 				NOR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -71,6 +71,7 @@ tribal_governments = {
 		can_build_temple = yes
 		can_build_tribal = yes
 		can_change_to_nomad_on_start = yes
+		can_create_empires = no
 		dukes_called_kings = yes
 		ignores_de_jure_laws = yes
 		uses_decadence = yes
@@ -123,7 +124,7 @@ tribal_governments = {
 		allow = {
 			trigger_if = {
 				limit = { has_game_started = no }
-				
+
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -144,6 +145,7 @@ tribal_governments = {
 		can_build_temple = no
 		can_build_tribal = no
 		can_change_to_nomad_on_start = yes
+		can_create_empires = no
 		can_demand_religious_conversion = no
 		can_grant_kingdoms_and_empires_to_other_government = no
 		can_be_granted_kingdoms_and_empires_by_other_government = no
@@ -163,7 +165,6 @@ tribal_governments = {
 		character_modifier = {
 			global_levy_size = -3 # -300%
 			global_garrison_size = -3 # -300%
-			#tech_growth_modifier = -1
 		}
 		vassal_limit = -10
 		commander_limit = -4
