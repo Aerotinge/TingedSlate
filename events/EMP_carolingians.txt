@@ -14,55 +14,36 @@ character_event = {
 
     trigger = {
 		primary_title = {
-			title = e_francia
-			OR = {
-				has_law = succ_gavelkind
-				has_law = succ_elective_gavelkind
-			}
+			has_title_flag = is_gavelkind_title
+			has_law = succ_gavelkind
+			is_law_potential = succ_elective_gavelkind
 		}
-    }
+	}
 
 	immediate = {
-		log = "[This.GetBestName] fired EMP.13010"
-		add_artifact = ingredient_animal4
-		new_artifact = {
-			set_name = "nothing" # TODO: i18n
-			set_artifact_flag = psuedo_carolingian_regalia
+		primary_title = {
+			add_law = succ_elective_gavelkind # For invoking on_elective_gavelkind_succession event 63103
+			# Will failed if the successor is banned from succ_elective_gavelkind, e.g Muslim
+			set_title_flag = is_temporary_elective_gavelkind
+			# So it requires a fallback cleanup event...(sigh
+			event_target:pulse_province = {
+				save_persistent_event_target = { name = temporary_elective_gavelkind_title scope = PREV }
+				province_event = { id = EMP.13020 days = 1 }
+			}
 		}
 	}
 }
 
-character_event = {
-    id = EMP.13020
+province_event = {
+	id = EMP.13020
     hide_window = yes
 
-    is_triggered_only = yes # on_artifact_inheritance
+	is_triggered_only = yes
 
-    trigger = {
-		FROM = { has_artifact_flag = psuedo_carolingian_regalia }
-	}
-	
 	immediate = {
-		log = "[This.GetBestName] fired EMP.13020"
-		
-		e_francia = {
-			any_pretender = {
-				limit = { sibling = ROOT }
-				
-				set_defacto_liege = THIS
-				ROOT = {
-					log = "[This.GetBestName] is suzerain for [Prev.GetBestName]"
-					make_tributary = {
-						who = PREV
-						percentage = 0.01
-						tributary_type = default
-					}
-				}
-			}
+		persistent_event_target:temporary_elective_gavelkind_title = {
+			clr_title_flag = is_temporary_elective_gavelkind
 		}
-		
-		FROM = {
-			destroy_artifact = yes
-		}
+		clear_persistent_event_target = temporary_elective_gavelkind_title
 	}
 }
