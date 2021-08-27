@@ -1757,135 +1757,8 @@ decisions = {
 		only_independent = yes
 
 		potential = {
-			independent = yes
+			is_feudal = yes # I've seen Pope take this decision in a vanilla game, Holy christ!
 
-			OR = {
-				culture = german
-				culture = dutch
-			}
-
-			OR = {
-				religion = catholic
-				religion = fraticelli
-			}
-
-			NOT = { has_global_flag = hre_removed }
-			has_global_flag = charlemagne_hre
-
-			e_hre = {
-				has_holder = no
-			}
-
-			e_francia = {
-				has_holder = no
-			}
-
-			is_alternate_start = no
-		}
-
-		allow = {
-			has_landed_title = k_germany
-
-			trigger_if = {
-				limit = { start_date >= 936.8.7 }
-				has_landed_title = k_italy
-			}
-			trigger_else = {
-				custom_tooltip = {
-					text = FORM_THE_HRE_TT
-
-					any_demesne_title = {
-						tier = KING
-						NOT = { title = k_germany }
-					}
-				}
-			}
-
-			prestige >= 1000
-			realm_size >= 180
-
-			trigger_if = {
-				limit = { ai = no }
-				scaled_wealth = 2
-			}
-
-			is_adult = yes
-			prisoner = no
-			is_incapable = no
-		}
-
-		effect = {
-			if = {
-				limit = { ai = no }
-				scaled_wealth = -2
-			}
-
-			if = {
-				limit = { has_nickname = no }
-				give_nickname = nick_the_great
-			}
-
-			if = {
-				limit = { has_character_flag = is_otto 	}
-
-				narrative_event = { id = LT.40015 }
-
-				any_player = {
-					limit = {
-						is_within_diplo_range = ROOT
-						NOT = { character = ROOT }
-					}
-
-					narrative_event = { id = LT.40015 }
-				}
-
-				create_bloodline = {
-					type = otto
-				}
-			}
-
-			add_artifact = crown_hre
-
-			primary_title = {
-				show_scope_change = no
-
-				e_hre = {
-					show_scope_change = no
-
-					grant_title = ROOT
-					copy_title_laws = PREV
-					add_law = succ_hre_elective
-				}
-			}
-
-			hidden_effect = {
-				princely_elective_german_elector_setup_effect = yes
-			}
-
-			any_demesne_title = {
-				show_scope_change = no
-
-				limit = {
-					higher_real_tier_than = DUKE
-					NOT = { title = e_hre }
-				}
-
-				destroy_landed_title = THIS
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	form_the_hre_early = {
-		is_high_prio = yes
-		ai_check_interval = 24
-
-		only_independent = yes
-
-		potential = {
 			OR = {
 				religion = catholic
 				religion = fraticelli
@@ -1893,139 +1766,141 @@ decisions = {
 
 			e_hre = {
 				has_holder = no
-			}
-
-			trigger_if = {
-				limit = { is_alternate_start = no }
-
-				NOR = {
-					has_global_flag = charlemagne_hre
-					is_title_active = e_hre
-				}
+				is_titular = yes
 			}
 
 			NOR = {
 				has_global_flag = rome_restored
 				has_landed_title = e_byzantium
+				has_landed_title = e_nicaea
 
-				has_alternate_start_parameter = {
-					key = religion_names
-					value = random
-				}
+				is_alternate_start = yes
 			}
 		}
 
 		allow = {
-			realm_size >= 220
+			realm_size >= 180
 			prestige >= 1000
 			is_adult = yes
 			prisoner = no
 			is_incapable = no
 
 			trigger_if = {
-				limit = { is_alternate_start = no }
-
-				custom_tooltip = {
-					text = form_the_hre_early_tooltip_1
-
-					OR = {
-						has_landed_title = k_italy
-						has_landed_title = e_italia
+				limit = {
+					primary_title = {
+						OR = {
+							title = e_italia
+							title = k_italy
+						}
 					}
 				}
 
-				custom_tooltip = {
-					text = form_the_hre_early_tooltip_2
-
-					any_demesne_title = {
+				any_demesne_title = {
+					tier = KING
+					empire = {
 						OR = {
 							title = e_francia
 							title = e_germania
 							title = e_britannia
 							title = e_hispania
+						}
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					real_tier = KING
+				}
 
-							trigger_if = {
-								limit = { real_tier = KING }
+				primary_title = {
+					empire = {
+						OR = {
+							title = e_francia
+							title = e_germania
+							title = e_britannia
+							title = e_hispania
+						}
+					}
+				}
 
-								empire = {
-									OR = {
-										title = e_francia
-										title = e_germania
-										title = e_britannia
-										title = e_hispania
-									}
-								}
+				has_landed_title = k_italy
+			}
+			trigger_else = {
+				primary_title = {
+					OR = {
+						title = e_francia
+						title = e_germania
+						title = e_britannia
+						title = e_hispania
+					}
+				}
 
-								NOT = {	title = k_italy	}
+				has_landed_title = k_italy
+			}
+
+			custom_tooltip = {
+				text = form_the_hre_early_tooltip_3
+
+				e_italia = {
+					trigger_if = {
+						limit = { has_holder = yes }
+
+						holder_scope = {
+							OR = {
+								character = ROOT
+								NOT = { religion_group = christian }
 							}
 						}
 					}
 				}
 
-				custom_tooltip = {
-					text = form_the_hre_early_tooltip_3
+				e_germania = {
+					trigger_if = {
+						limit = { has_holder = yes }
 
-					e_italia = {
-						trigger_if = {
-							limit = { has_holder = yes }
-
-							holder_scope = {
-								OR = {
-									character = ROOT
-									NOT = { religion_group = christian }
-								}
+						holder_scope = {
+							OR = {
+								character = ROOT
+								NOT = { religion_group = christian }
 							}
 						}
 					}
+				}
 
-					e_germania = {
-						trigger_if = {
-							limit = { has_holder = yes }
+				e_francia = {
+					trigger_if = {
+						limit = { has_holder = yes }
 
-							holder_scope = {
-								OR = {
-									character = ROOT
-									NOT = { religion_group = christian }
-								}
+						holder_scope = {
+							OR = {
+								character = ROOT
+								NOT = { religion_group = christian }
 							}
 						}
 					}
+				}
 
-					e_francia = {
-						trigger_if = {
-							limit = { has_holder = yes }
+				e_hispania = {
+					trigger_if = {
+						limit = { has_holder = yes }
 
-							holder_scope = {
-								OR = {
-									character = ROOT
-									NOT = { religion_group = christian }
-								}
+						holder_scope = {
+							OR = {
+								character = ROOT
+								NOT = { religion_group = christian }
 							}
 						}
 					}
+				}
 
-					e_hispania = {
-						trigger_if = {
-							limit = { has_holder = yes }
+				e_britannia = {
+					trigger_if = {
+						limit = { has_holder = yes }
 
-							holder_scope = {
-								OR = {
-									character = ROOT
-									NOT = { religion_group = christian }
-								}
-							}
-						}
-					}
-
-					e_britannia = {
-						trigger_if = {
-							limit = { has_holder = yes }
-
-							holder_scope = {
-								OR = {
-									character = ROOT
-									NOT = { religion_group = christian }
-								}
+						holder_scope = {
+							OR = {
+								character = ROOT
+								NOT = { religion_group = christian }
 							}
 						}
 					}
@@ -2048,8 +1923,6 @@ decisions = {
 
 		effect = {
 			hidden_effect = {
-				set_global_flag = charlemagne_hre
-
 				activate_title = {
 					title = e_hre
 					status = yes
@@ -2082,7 +1955,44 @@ decisions = {
 					grant_title = ROOT
 					copy_title_laws = PREV
 					set_coa = PREV
-					add_law = succ_hre_elective
+					set_preferred_capital = PREV
+					add_law = {
+						law = succ_feudal_elective
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+
+				if = {
+					limit = {
+						real_tier = KING
+						empire = {
+							has_holder = no
+						}
+					}
+
+					empire = {
+						any_direct_de_jure_vassal_title = {
+							de_jure_liege = e_hre
+						}
+						hidden_effect = {
+							activate_title = {
+								title = THIS
+								status = no
+							}
+						}
+					}
+				}
+				else = {
+					any_direct_de_jure_vassal_title = {
+						de_jure_liege = e_hre
+					}
+					hidden_effect = {
+						activate_title = {
+							title = THIS
+							status = no
+						}
+					}
 				}
 			}
 
@@ -2090,31 +2000,12 @@ decisions = {
 				show_scope_change = no
 
 				if = {
-					limit = { real_tier = KING }
-
-					de_jure_liege = e_hre
-					destroy_landed_title = THIS
-				}
-				else_if = {
 					limit = {
-						real_tier = EMPEROR
+						higher_real_tier_than = DUKE
 						NOT = { title = e_hre }
 					}
 
-					any_direct_de_jure_vassal_title = {
-						show_scope_change = no
-
-						de_jure_liege = e_hre
-					}
-
 					destroy_landed_title = THIS
-
-					hidden_effect = {
-						activate_title = {
-							title = THIS
-							status = no
-						}
-					}
 				}
 			}
 
@@ -2142,7 +2033,7 @@ decisions = {
 				grant_title = event_target:the_pope
 			}
 
-			e_byzantium = {
+			e_byzantium = { # Modified it into a flag on e_byz and handle it on_new_holder_*
 				show_scope_change = no
 
 				holder_scope = {
