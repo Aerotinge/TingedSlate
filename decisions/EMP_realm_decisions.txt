@@ -62,4 +62,144 @@ decisions = {
 			}
 		}
 	}
+
+	form_the_daneland = {
+		is_high_prio = yes
+		ai_check_interval = 120
+
+		only_playable = yes
+
+		potential = {
+			OR = {
+				has_landed_title = d_york
+				has_landed_title = d_northumberland
+				has_landed_title = d_cumbria
+			}
+
+			independent = yes
+
+			religion_openly_norse_or_reformed_trigger = yes
+			OR = {
+				culture = norse
+				culture = danish
+			}
+			real_tier = DUKE
+			is_adult = yes
+
+			k_daneland = {
+				has_holder = no
+				is_titular = yes
+			}
+
+			NOR = {
+				has_alternate_start_setting = {
+					setting = dejure
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random_including_duchies
+				}
+			}
+		}
+
+		allow = {
+			completely_controls = d_york
+			completely_controls = d_northumberland
+			completely_controls = d_cumbria
+
+			k_england = {
+				has_holder = no
+			}
+
+			is_adult = yes
+			war = no
+
+			trigger_if = {
+				limit = {
+					OR = {
+						dynasty = 490 # Knytling
+						dynasty = 502 # af Munsö
+						dynasty = 7514 # Hvitserk
+						dynasty = 7515 # Ubbing
+						dynasty = 20084 # Ivaring
+					}
+				}
+
+				prestige >= 3000
+			}
+			trigger_else = {
+				prestige >= 1500
+			}
+
+			wealth >= 500
+		}
+
+		effect = {
+			wealth = -500
+
+			custom_tooltip = {
+				text = form_the_daneland_TT
+
+				primary_title = {
+					k_daneland = {
+						copy_title_laws = PREV
+					}
+				}
+
+				grant_title_no_opinion = k_daneland
+
+				d_york = {
+					de_jure_liege = k_daneland
+				}
+
+				d_northumberland = {
+					de_jure_liege = k_daneland
+				}
+
+				d_cumbria = {
+					de_jure_liege = k_daneland
+				}
+
+				any_player = {
+					limit = {
+						primary_title = {
+							empire = {
+								OR = {
+									title = e_britannia
+									title = e_scandinavia
+								}
+							}
+						}
+					}
+
+					narrative_event = { id = EMP.40022 }
+				}
+			}
+
+			if = {
+				limit = { completely_controls = d_lancaster }
+
+				d_lancaster = {
+					show_scope_change = no
+
+					de_jure_liege = k_daneland
+				}
+			}
+
+			if = {
+				limit = { completely_controls = d_mercia }
+
+				d_mercia = {
+					show_scope_change = no
+
+					de_jure_liege = k_daneland
+				}
+			}
+		}
+	}
 }

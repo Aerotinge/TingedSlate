@@ -1,0 +1,35 @@
+####################################################
+# EMPEROR events
+# By Sergei Ivanov
+####################################################
+# EMP.40000-EMP.40099
+
+namespace = EMP
+
+# Kingdom of Danes
+narrative_event = {
+	id = EMP.40022
+	title = EVTTITLE_EMP_40022
+	picture = GFX_evt_vikings_arriving_oldgods
+	desc = EVTDESC_EMP_40022
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_EMP_40022
+
+		trigger = {
+			religion_group = pagan_group
+		}
+	}
+
+	option = {
+		name = EVTOPTB_EMP_40022
+
+		trigger = {
+			NOT = {
+				religion_group = pagan_group
+			}
+		}
+	}
+}

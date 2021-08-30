@@ -1,0 +1,7 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_form_the_daneland"
+		textureFile = "gfx\\interface\\decision_icon_form_the_daneland.dds"
+	}
+}
