@@ -1,0 +1,137 @@
+title_decisions = {
+
+	revoke_primary_status = {
+		filter = vassal_owned
+		ai_target_filter = vassal_owned
+		is_high_prio = yes
+		ai_check_interval = 6
+
+		only_playable = yes
+
+		from_potential = {
+			higher_real_tier_than = COUNT
+			is_nomadic = no
+			is_tribal = no
+		}
+
+		potential = {
+			real_tier = COUNT
+
+			OR = {
+				is_conquered = yes
+				is_recent_grant = yes
+			}
+
+			any_direct_de_jure_vassal_title = {
+				holder_scope = {
+					is_vassal_or_below_of = FROM
+				}
+				trigger_if = {
+					limit = {
+						FROM = { is_feudal = yes }
+					}
+					ROOT = {
+						NOT = { holding_type = castle }
+					}
+					holding_type = castle
+				}
+				trigger_else_if = {
+					limit = {
+						FROM = { is_republic = yes }
+					}
+					ROOT = {
+						NOT = { holding_type = city }
+					}
+					holding_type = city
+				}
+				trigger_else_if = {
+					limit = {
+						FROM = { is_theocracy = yes }
+					}
+					ROOT = {
+						NOT = { holding_type = temple }
+					}
+					holding_type = temple
+				}
+			}
+
+			holder_scope = {
+				ai = yes
+				is_merchant_republic = no
+			}
+		}
+
+		allow = {
+			FROM = {
+				war = no
+				is_inaccessible_or_incapable_trigger = no
+			}
+
+			has_siege = no
+			is_occupied = no
+			is_contested = no
+
+			any_direct_de_jure_vassal_title = {
+				has_siege = no
+				is_occupied = no
+				is_contested = no
+			}
+		}
+
+		effect = {
+			hidden_tooltip = {
+				holder_scope = {
+					ROOT = {
+						random_direct_de_jure_vassal_title = {
+							limit = {
+								trigger_if = {
+									limit = {
+										FROM = { is_feudal = yes }
+									}
+									holding_type = castle
+								}
+								trigger_else_if = {
+									limit = {
+										FROM = { is_republic = yes }
+									}
+									holding_type = city
+								}
+								trigger_else_if = {
+									limit = {
+										FROM = { is_theocracy = yes }
+									}
+									holding_type = temple
+								}
+								holder_scope = {
+									is_vassal_or_below_of = FROM
+								}
+							}
+							
+							holder_scope = {
+								save_event_target_as = origin_baron
+							}
+							grant_title_no_opinion = PREVPREV
+							make_capital_holding = yes
+							event_target:origin_baron = {
+								grant_title_no_opinion = ROOT
+								if = {
+									limit = {
+										lower_tier_than = PREVPREVPREV
+									}
+									set_defacto_liege = PREVPREVPREV
+								}
+								else = {
+									set_defacto_liege = FROM
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
