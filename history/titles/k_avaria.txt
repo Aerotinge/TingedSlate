@@ -1,6 +1,5 @@
 20.1.1 = {
 	historical_nomad = yes
-	government = nomadic_tribal_government
 }
 
 685.1.1 = {
