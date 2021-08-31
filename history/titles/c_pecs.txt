@@ -53,12 +53,12 @@
 }
 
 936.1.1 = {
-	liege = d_pecs
+	liege = d_ungvar
 	holder = 261321
 }
 
 1000.12.25 = {
-	liege = k_hungary
+	liege = k_magyar
 }
 
 1066.1.1 = {

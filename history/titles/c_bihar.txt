@@ -1,5 +1,5 @@
 685.1.1 = {
-	liege = k_avaria
+	liege = d_transylvania
 	holder = 146143
 }
 
@@ -31,40 +31,42 @@
 	holder = 146151
 }
 
-804.1.1 = {
-	liege = k_bulgaria
+805.1.1 = {
+	liege = d_pest
+	holder = 146172
 }
 
-812.1.1 = {
-	holder = 146152
+808.1.1 = {
+	holder = 146173
 }
 
-852.1.1 = {
-	holder = 168069
+813.1.1 = {
+	holder = 194000
 }
 
-1000.12.25 = {
-	de_jure_liege = k_magyar
+830.1.1 = {
+	holder = 168071
 }
 
-1003.1.1 = {
-	holder = 482
-	liege = k_magyar
+858.1.1 = {
+	holder = 168072
 }
 
-1038.8.15 = {
-	holder = 20371
+865.1.1 = {
+	holder = 168285
 }
 
-1046.1.1 = {
-	holder = 485
+895.1.1 = {
+	holder = 0
 }
 
-1047.1.1 = {
-	holder = 470
+936.1.1 = {
+	holder = 260660
+	liege = d_ungvar
 }
 
 1063.12.1 = {
+	liege = d_transylvania
 	holder = 474
 }
 
@@ -116,20 +118,11 @@
 	holder = 93752
 }
 
-1241.1.1 = {
-	liege = e_golden_horde
-}
-
 1276.1.1 = {
-	holder = 93754
+	holder = 470060
 }
 
-1288.1.1 = {
-	liege = 0
-}
-
-1315.1.1 = {
-	liege = k_hungary
-	holder = 470040
+1320.1.2 = {
+	holder = 470062
 }
 

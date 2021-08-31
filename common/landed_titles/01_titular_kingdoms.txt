@@ -147,3 +147,20 @@ k_tekke = {
 
 	culture = turkish
 }
+
+k_magyar = {
+	color = { 187 70 70 }
+	culture = hungarian
+
+	capital = 707 # Esztergom
+
+	allow = {
+		can_create_kingdom = yes
+
+		trigger_if = {
+			limit = { ai = yes}
+
+			always = no
+		}
+	}
+}

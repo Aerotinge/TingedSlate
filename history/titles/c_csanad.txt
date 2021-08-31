@@ -44,16 +44,16 @@
 }
 
 895.1.1 = {
-	liege = k_magyar
 	holder = 0
 }
 
 936.1.1 = {
 	holder = 159135
+	liege = d_ungvar
 }
 
 1000.12.25 = {
-	liege = k_hungary
+	liege = k_magyar
 }
 
 1066.1.1 = {

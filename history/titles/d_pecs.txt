@@ -30,17 +30,13 @@
 	holder = 0
 }
 
-936.1.1 = {
-	holder = 261321
-	liege = k_magyar
-}
-
 1000.12.25 = {
-	liege = k_hungary
+	de_jure_liege = k_magyar
 }
 
 1299.1.1 = {
 	holder = 470150
+	liege = k_magyar
 }
 
 1309.1.1 = {

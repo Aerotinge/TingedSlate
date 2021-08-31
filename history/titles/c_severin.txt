@@ -42,7 +42,7 @@
 
 935.1.1 = {
 	set_tribute_suzerain = {
-		who = k_magyar
+		who = d_ungvar
 		type = nomadic
 	}
 }
@@ -50,7 +50,7 @@
 937.1.1 = {
 	holder = 260685
 	liege = d_oltenia
-	clear_tribute_suzerain = k_magyar
+	clear_tribute_suzerain = d_ungvar
 }
 
 970.1.1 = {

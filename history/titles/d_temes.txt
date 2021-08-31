@@ -8,10 +8,9 @@
 }
 
 895.1.1 = {
-	liege = k_magyar
 	holder = 0
 }
 
-936.1.1 = {
-	holder = 260658
+1000.12.25 = {
+	de_jure_liege = k_magyar
 }
