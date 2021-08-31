@@ -111,6 +111,12 @@ decisions = {
 			completely_controls = d_york
 			completely_controls = d_northumberland
 			completely_controls = d_cumbria
+			AND = {
+				completely_controls = c_leicester
+				completely_controls = c_lincoln
+				completely_controls = c_warwick
+				completely_controls = c_worcester
+			}
 
 			k_england = {
 				has_holder = no
@@ -198,6 +204,31 @@ decisions = {
 					show_scope_change = no
 
 					de_jure_liege = k_daneland
+				}
+			}
+			else_if = {
+				limit = {
+					AND = {
+						completely_controls = c_leicester
+						completely_controls = c_lincoln
+						completely_controls = c_warwick
+						completely_controls = c_worcester
+					}
+				}
+				d_mercia = {
+					show_scope_change = no
+
+					de_jure_liege = k_daneland
+				}
+				c_shrewsbury = {
+					show_scope_change = no
+
+					de_jure_liege = d_powys
+				}
+				c_hereford = {
+					show_scope_change = no
+
+					de_jure_liege = d_powys
 				}
 			}
 		}

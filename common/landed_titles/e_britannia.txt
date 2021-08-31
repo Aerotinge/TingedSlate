@@ -2839,10 +2839,18 @@ e_britannia = {
 		culture = norse
 
 		pagan_coa = {
-			template = 0
+			template = 2
 			layer = {
 				texture = 2
-				texture_internal = 12 # 7
+				texture_internal = 12
+				emblem = 0
+				color = 0
+				color = 0
+				color = 0
+			}
+			layer = {
+				texture = 2
+				texture_internal = 7
 				emblem = 0
 				color = 0
 				color = 0
