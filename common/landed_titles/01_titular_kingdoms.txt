@@ -42,17 +42,6 @@ k_liao = {
 	culture = khitan
 }
 
-k_lombardy = {
-	color = { 234 217 110 } # Only for the CoA
-	culture = lombard
-
-	capital = 441 # Pavia
-
-	allow = {
-		always = no
-	}
-}
-
 k_pechenegs = {
 	color = { 173 150 43 }
 	color2 = { 0 128 128 }
@@ -157,10 +146,17 @@ k_magyar = {
 	allow = {
 		can_create_kingdom = yes
 
-		trigger_if = {
-			limit = { ai = yes}
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
 
-			always = no
+			is_titular = no
+		}
+
+		trigger_if = {
+			limit = { ai = yes }
+
+			culture_group = magyar
 		}
 	}
 }
