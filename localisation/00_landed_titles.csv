@@ -17110,6 +17110,8 @@ e_abyssinia;Abyssinia;Abyssinie;Abessinien;;Abisinia;;;;;;;;;x
 e_abyssinia_adj;Abyssinian;abyssinienne;Abessinisch;;Abisinia;;;;;;;;;x
 e_arabia;Arabian Empire;Empire arabe;Arabisches Reich;;Imperio árabe;;;;;;;;;x
 e_arabia_adj;Arabian;arabe;Arabisch;;Árabe;;;;;;;;;x
+e_baltia;Baltia;baltie;Baltien;;Bálticos;;;;;;;;;x
+e_baltia_adj;Baltian;balte;Baltisch;;Báltico;;;;;;;;;x
 e_bengal;Bengal Empire;Empire bengalais;Bengalreich;;Imperio de Bengala;;;;;;;;;x
 e_bengal_adj;Bengal;bengalaise;Bengalisch;;;;;;;;;;;x
 e_britannia;Britannia;Grande-Bretagne;Britannien;;Bretaña;;;;;;;;;x
@@ -17118,14 +17120,14 @@ e_bulgaria;Bulgaria;Bulgarie;Bulgarien;;Bulgaria;;;;;x
 e_bulgaria_adj;Bulgarian;bulgare;Bulgarisch;;búlgaro;;;;;x
 e_byzantium;Byzantine Empire;Empire byzantin;Byzantinisches Kaiserreich;;Imperio Bizantino;;;;;;;;;x
 e_byzantium_adj;Byzantine;byzantine;Byzantinisch;;Bizantina;;;;;;;;;x
-e_carpathia;Carpathia;Carpathie;Karpathen;;Cárpatos;;;;;;;;;x
-e_carpathia_adj;Carpathian;carpate;Karpathisch;;Cárpato;;;;;;;;;x
 e_chagatai;Chagatai;Tchaghataï;Chagatai;;Chagatai;;;;;;;;;x
 e_china;Empire of China;Empire de Chine;Kaiserreich von China;;Imperio de China;;;;;;;;;x
 e_china_west_governor;Western Protectorate;Protectorat des Régions de l'Ouest;Westliches Protektorat;;Protectorado occidental;;;;;;;;;x
 e_china_west_governor_adj;Chinese;chinoise;Chinesisch;;chino;;;;;;;;;x
 e_cordoba;Cordoba;Cordoue;Cordoba;;Córdoba;;;;;;;;;x
 e_cordoba_adj;Cordoban;cordouanne;Cordobanisch;;Cordobés;;;;;;;;;x
+e_danubia;Danubia;danubie;Donauen;;Danubios;;;;;;;;;x
+e_danubia_adj;Danubian;danube;Donauisch;;Danubio;;;;;;;;;x
 e_deccan;Deccan Empire;Empire Deccan;Deccanreich;;Imperio de Decán;;;;;;;;;x
 e_deccan_adj;Deccan;deccan;Deccanisch;;;;;;;;;;;x
 e_francia;Francia;France;Frankreich;;Francia;;;;;;;;;;x
@@ -17166,8 +17168,6 @@ e_outremer_adj;Latin;latine;Lateinisch;;latino;;;;;;;;;x
 e_persia;Persian Empire;Empire perse;Persisches Reich;;Imperio persa;;;;;;;;;x
 e_persia_adj;Persian;persanne;Persisch;;Persa;;;;;;;;;x
 e_pirates;Pirates;Pirates;Piraten;;Piratas;;;;;;;;;x
-e_pontic_steppe;Pontic Steppe;Steppe Pontique;Pontische Steppe;;Estepa póntica;;;;;;;;;x
-e_pontic_steppe_adj;Pontic;pontique;Pontisch;;póntico;;;;;;;;;x
 e_rajastan;Rajasthan;Rajasthan;Rajasthan;;Rajastán;;;;;;;;;x
 e_rebels;Rebels;Rebelles;Rebellen;;Rebeldes;;;;;;;;;x
 e_rebels_adj;Rebel;rebelle;Rebellen;;Rebelde;;;;;;;;;x
@@ -17185,16 +17185,16 @@ e_shiite_adj;Caliphal;califale;Kalifatisch;;Califal;;;;;;;;;x
 e_spain_allow_TT;No de jure Kingdom title is held by a non-[Root.Religion.GetGroupName];Aucun titre de royaume de jure n'est détenu par un non [Root.Religion.GetGroupName];Kein De-Jure-Königreich wird von einem nicht [Root.Religion.GetGroupName]en Herrscher gehalten;;Ningún no-[Root.Religion.GetGroupName] posee un título de reino de jure;;;;;x
 e_sunni;The Sunni Caliphate;Califat Sunnite;Sunni-Kalifat;;El Califato Suni;;;;;;;;;x
 e_sunni_adj;Caliphal;califale;Kalifatisch;;Califal;;;;;;;;;x
-e_tartaria;Tartaria;Tartarie;Tartarei;;Tartaria;;;;;;;;;x
-e_tartaria_adj;Tartar;tartare;Tartarisch;;Tártaro;;;;;;;;;x
+e_scythia;Scythia;scythie;Skythien;;Escitia;;;;;;;;;x
+e_scythia_adj;Scythian;scythe;Skythen;;Escita;;;;;;;;;x
 e_tibet;Tibet;Tibet;Tibet;;Tíbet;;;;;;;;;x
 e_tibet_adj;Tibetan;tibétaine;Tibetisch;;tibetano;;;;;;;;;x
 e_timurids;Timurids;Timourides;Timuriden;;Timúridas;;;;;;;;;x
 e_timurids_adj;Timurid;timouride;Timuridisch;;Timúrida;;;;;;;;;x
 e_turan;Turan;Touran;Turan;;Turán;;;;;x
 e_turan_adj;Turani;tourane;Turanisch;;turanio;;;;;x
-e_wendish_empire;Wendish Empire;Empire wende;Wendenreich;;Imperio Wendo;;;;;;;;;x
-e_wendish_empire_adj;Wendish;wende;Wendisch;;Wendo;;;;;;;;;x
+e_turk;Turkic Khaganate;Khaganat turc;Türk Kaganat;;Kanato túrquico;;;;;;;;;x
+e_turk_adj;Turkic;turc;Türkisch;;Túrquico;;;;;;;;;x
 k_abyssinia;Abyssinia;Abyssinie;Abessinien;;Abisinia;;;;;;;;;x
 k_abyssinia_adj;Abyssinian;abyssinienne;Abessinisch;;Abisinia;;;;;;;;;x
 k_africa;Africa;Ifriqiya;Afrika;;África;;;;;;;;;x
@@ -17265,6 +17265,8 @@ k_cuman;Cumania;Coumans;Kumanien;;Cumania;;;;;;;;;x
 k_cuman_adj;Cuman;coumane;Kumanisch;;Cumana;;;;;;;;;x
 k_cyprus;Cyprus;Chypre;Zypern;;Chipre;;;;;;;;;x
 k_cyprus_adj;Cypriote;chypriote;Zypriotisch;;Chipriota;;;;;;;;;x
+k_daneland;Daneland;Daneland;Dänenland;;Daneland;;;;;;;;;x
+k_daneland_adj;Anglo-Norse;anglo-nordique;Anglo-Nordisch;;Anglonórdico;;;;;;;;;x
 k_daylam;Daylam;Daylam;Daylam;;;;;;;;;;;x
 k_daylam_adj;Daylamian;daylamite;Daylamisch;;;;;;;;;;;x
 k_delhi;Delhi;Delhi;Delhi;;;;;;;;;;;x
@@ -17373,7 +17375,7 @@ k_marinid;Marinid;Marinide;Mariniden;;Emirato Meriní;;;;;;;;;x
 k_mentese;Mentese;Mentese;Mentese;;Mentese;;;;;;;;;x
 k_mongolia;Mongolia;Mongolie;Mongolei;;Mongolia;;;;;;;;;x
 k_mongolia_adj;Mongolian;mongole;Mongolisch;;Mongol;;;;;;;;;x
-k_moravia;Great Moravia;Grande Moravie;Großmähren;;Gran Moravia;;;;;;;;;x
+k_moravia;Moravia;Moravie;Mähren;;Moravia;;;;;;;;;x
 k_moravia_adj;Moravian;morave;Mährisch;;Moraviano;;;;;;;;;x
 k_naples;Naples;Naples;Neapel;;Nápoles;;;;;;;;;x
 k_naples_adj;Neapolitan;napolitaine;Neapolitanisch;;Napolitana;;;;;;;;;x
