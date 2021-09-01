@@ -45,7 +45,7 @@
 }
 
 1066.1.1 = {
-	liege = k_pechenegs
+	liege = d_pechenegs
 	holder = 256066
 	historical_nomad = yes
 }

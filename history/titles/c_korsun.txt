@@ -25,8 +25,8 @@
 }
 
 936.1.1 = {
-	liege = d_etelkoz
-	holder = 260695
+	holder = 260694
+	liege = d_pechenegs
 }
 
 945.1.2 = {
@@ -63,11 +63,8 @@
 }
 
 1066.1.1 = {
-	liege = d_moldau
-}
-
-1066.1.1 = {
 	holder = 20635
+	liege = d_pechenegs
 }
 
 1091.1.1 = {

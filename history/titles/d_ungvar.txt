@@ -40,7 +40,7 @@
 }
 
 907.7.4 = {
-	de_jure_liege = k_hungary
+	de_jure_liege = k_dacia
 }
 
 972.1.1 = {

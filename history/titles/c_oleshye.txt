@@ -65,7 +65,7 @@
 
 936.1.1 = {
 	holder = 260694
-	liege = k_pechenegs
+	liege = d_pechenegs
 }
 
 1066.1.1 = {

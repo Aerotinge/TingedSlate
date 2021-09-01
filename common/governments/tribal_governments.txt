@@ -145,6 +145,7 @@ tribal_governments = {
 		can_build_temple = no
 		can_build_tribal = no
 		can_change_to_nomad_on_start = yes
+		can_create_kingdoms = no
 		can_create_empires = no
 		can_demand_religious_conversion = no
 		can_grant_kingdoms_and_empires_to_other_government = no

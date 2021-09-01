@@ -25,7 +25,7 @@
 
 936.1.1 = {
 	holder = 260697
-	liege = d_pereyaslavl
+	liege = d_pechenegs
 }
 
 1066.1.1 = {

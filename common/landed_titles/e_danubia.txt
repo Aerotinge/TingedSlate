@@ -285,7 +285,7 @@ e_danubia = {
 		}
 	}
 
-	k_hungary = {
+	k_dacia = {
 		color = { 250 120 90 }
 		color2 = { 255 255 255 }
 
@@ -295,6 +295,7 @@ e_danubia = {
 			OR = {
 				culture_group = magyar
 				culture_group = altaic
+				culture_group = west_slavic
 			}
 		}
 

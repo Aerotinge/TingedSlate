@@ -41,6 +41,7 @@
 
 936.1.1 = {
 	holder = 260697
+	liege = d_pechenegs
 }
 
 969.1.1 = {

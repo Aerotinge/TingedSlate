@@ -1,0 +1,269 @@
+###########################################
+#										  #
+# Charlemagne Major Events				  #
+#										  #
+# ID CM.500-CM.999						  #
+#										  #
+###########################################
+
+# Written by Tobias Bodlund
+
+namespace = CM
+
+# Start of the Viking Age
+narrative_event = {
+	id = CM.503
+	title = EVTTITLE_CM_503
+	desc = EVTDESC_CM_503
+	picture = GFX_evt_vikings_arriving_oldgods
+	border = GFX_event_narrative_frame_war
+
+	is_triggered_only = yes # on_yearly_pulse
+	hide_from = yes
+	major = yes
+
+	only_playable = yes
+	has_global_flag = game_start_charlemagne
+
+	trigger = {
+		owns = event_target:pulse_province
+		NOT = { has_global_flag = viking_age_started }
+		year >= 800
+		year < 867
+
+		NOT = {
+			has_alternate_start_parameter = {
+				key = religion_names
+				value = random
+			}
+		}
+	}
+
+	immediate = {
+		set_global_flag = viking_age_started
+		enable_prepared_invasion = norse_pagan
+
+		if = {
+			limit = {
+				NOT = { has_dlc = "Holy Fury" }
+			}
+
+			enable_prepared_invasion = norse_pagan_reformed ## Important Viking age effect
+		}
+
+		any_playable_ruler = {
+			limit = {
+				culture = norse
+				vassal_of = THIS # 'independent = yes' and 'any_independent_ruler' exclude revolts
+			}
+
+			any_realm_province = {
+				if = {
+					limit = {
+						culture = norse
+						is_coastal = yes
+					}
+
+					change_tech = {
+						technology = TECH_NAVAL
+						value = 1
+					}
+				}
+			}
+
+			any_title_under = {
+				limit = {
+					real_tier = BARON
+
+					location = {
+						culture = norse
+						is_coastal = yes
+					}
+
+					holder_scope = {
+						culture = norse
+					}
+				}
+
+				if = {
+					limit = {
+						holding_type = castle
+						NOT = { has_building = ca_shipyard_1 }
+					}
+
+					add_building = ca_shipyard_1
+				}
+				else_if = {
+					limit = {
+						holding_type = city
+						NOT = { has_building = ct_shipyard_1 }
+					}
+
+					add_building = ct_shipyard_1
+				}
+				else_if = {
+					limit = {
+						holding_type = temple
+						NOT = { has_building = tp_shipyard_1 }
+					}
+
+					add_building = tp_shipyard_1
+				}
+				else_if = {
+					limit = {
+						holding_type = tribal
+						NOT = { has_building = tb_shipyard_1 }
+					}
+
+					add_building = tb_shipyard_1
+				}
+			}
+		}
+
+		any_player = {
+			limit = {
+				capital_scope = {
+					NOR = {
+						region = world_india
+						region = world_africa_west
+						region = world_africa_central
+						region = world_africa_east
+					}
+				}
+			}
+
+			chronicle = {
+				entry = CHRONICLE_VIKING_AGE_BEGINS
+				picture = GFX_evt_longships_at_sea_oldgods
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_CM_503
+
+		trigger = {
+			NOT = { culture = norse }
+
+			capital_scope = {
+				NOR = {
+					region = world_india
+					region = world_africa_west
+					region = world_africa_central
+					region = world_africa_east
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_CM_503
+
+		trigger = {
+			culture = norse
+		}
+	}
+
+	option = {
+		name = EVTOPTC_CM_503
+
+		trigger = {
+			capital_scope = {
+				OR = {
+					region = world_india
+					region = world_africa_west
+					region = world_africa_central
+					region = world_africa_east
+				}
+			}
+
+			NOT = { culture = norse }
+		}
+	}
+
+	after = {
+		custom_tooltip = { text = viking_age_shipyards_and_tech_tooltip }
+		custom_tooltip = { text = viking_age_cb_tooltip }
+	}
+}
+
+# Notification of founding of the HRE
+narrative_event = {
+	id = CM.510
+	title = EVTTITLE_CM_510
+	desc = EVTDESC_CM_510
+	picture = GFX_evt_found_hre
+
+	is_triggered_only = yes # realm_decisions.txt
+	major = yes
+
+	major_trigger = {
+		ai = no
+
+		capital_scope = {
+			e_hre = {
+				holder_scope = {
+					capital_scope = {
+						distance = {
+							where = PREVPREVPREV
+							distance < 1200
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_CM_510
+
+		trigger = {
+			OR = {
+				has_landed_title = e_hre
+
+				AND = {
+					dynasty = ROOT
+					NOT = { is_rival = ROOT }
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_CM_510
+
+		trigger = {
+			religion = ROOT
+
+			trigger_if = {
+				limit = { dynasty = ROOT }
+				is_rival = ROOT
+			}
+
+			NOR = {
+				has_landed_title = e_hre
+				has_landed_title = e_byzantium
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTC_CM_510
+
+		trigger = {
+			NOR = {
+				religion = ROOT
+				has_landed_title = e_byzantium
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTD_CM_510
+
+		trigger = {
+			has_landed_title = e_byzantium
+			NOT = { has_landed_title = e_hre }
+		}
+	}
+}

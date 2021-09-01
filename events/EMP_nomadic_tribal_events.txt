@@ -6,13 +6,12 @@
 
 namespace = EMP
 
-#on_yearly_pulse
 character_event = {
     id = EMP.11002
     hide_window = yes
 	lacks_dlc = "Horse Lords"
 	
-    is_triggered_only = yes
+    is_triggered_only = yes #on_yearly_pulse
 
     trigger = {
         government = nomadic_tribal_government
@@ -106,6 +105,20 @@ character_event = {
 			multiply_variable = {
 				which = empty_holdings_total
 				which = character_martial
+			}
+			# Base value for independent rulers
+			if = {
+				limit = {
+					independent = yes
+					check_variable = {
+						which = empty_holdings_total
+						value < 3
+					}
+				}
+				set_variable = {
+					which = empty_holdings_total
+					value = 3
+				}
 			}
 			# Boundary check
 			if = {

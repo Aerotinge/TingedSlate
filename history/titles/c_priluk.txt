@@ -24,12 +24,13 @@
 }
 
 936.1.1 = {
-	liege = d_pereyaslavl
+	liege = d_pechenegs
 	holder = 260697
 }
 
 1024.1.2 = {
 	holder = 618
+	liege = d_pereyaslavl
 }
 
 1036.1.2 = {

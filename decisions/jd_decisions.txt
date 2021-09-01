@@ -671,7 +671,14 @@ decisions = {
 
 				suzerain = {
 					OR = {
-						is_nomadic = no
+						trigger_if = {
+							limit = { has_dlc = "Horse Lords" }
+
+							is_nomadic = no
+						}
+						trigger_else = {
+							government = nomadic_tribal_government
+						}
 
 						AND = {
 							prestige < 0
