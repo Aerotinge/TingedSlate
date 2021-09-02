@@ -1426,11 +1426,6 @@ spriteTypes = {
 	}
 	
 	spriteType = {
-		name = "GFX_icon_thema_government"
-		texturefile = "gfx\\interface\\government_icon_thema.dds"
-	}
-	
-	spriteType = {
 		name = "GFX_icon_secular_feudal_government"
 		texturefile = "gfx\\interface\\government_icon_secular_feudal.dds"
 	}
@@ -1507,111 +1502,74 @@ spriteTypes = {
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
-	
+
 	# Tibetan Feudal Government
-	
+
 	spriteType = {
 		name = "GFX_charframe_150_tibetanfeudal"
 		texturefile = "gfx\\interface\\charframe_150_tibetanfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_charframe_100_tibetanfeudal"
 		texturefile = "gfx\\interface\\charframe_100_tibetanfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_charframe_75_tibetanfeudal"
 		texturefile = "gfx\\interface\\charframe_75_tibetanfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_charframe_50_tibetanfeudal"
 		texturefile = "gfx\\interface\\charframe_50_tibetanfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_charframe_34_tibetanfeudal"
 		texturefile = "gfx\\interface\\charframe_34_tibetanfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
-	# Thema Government
-	
-	spriteType = {
-		name = "GFX_charframe_150_thema"
-		texturefile = "gfx\\interface\\charframe_150_thema.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-	
-	spriteType = {
-		name = "GFX_charframe_100_thema"
-		texturefile = "gfx\\interface\\charframe_100_thema.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-	
-	spriteType = {
-		name = "GFX_charframe_75_thema"
-		texturefile = "gfx\\interface\\charframe_75_thema.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-	
-	spriteType = {
-		name = "GFX_charframe_50_thema"
-		texturefile = "gfx\\interface\\charframe_50_thema.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-	
-	spriteType = {
-		name = "GFX_charframe_34_thema"
-		texturefile = "gfx\\interface\\charframe_34_thema.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-	
+
 	# Spiritual Feudal Government
-	
+
 	spriteType = {
 		name = "GFX_charframe_150_secularfeudal"
 		texturefile = "gfx\\interface\\charframe_150_secularfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_charframe_100_secularfeudal"
 		texturefile = "gfx\\interface\\charframe_100_secularfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_charframe_75_secularfeudal"
 		texturefile = "gfx\\interface\\charframe_75_secularfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_charframe_50_secularfeudal"
 		texturefile = "gfx\\interface\\charframe_50_secularfeudal.tga"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
-	
+
 	spriteType = {
 		name = "GFX_charframe_34_secularfeudal"
 		texturefile = "gfx\\interface\\charframe_34_secularfeudal.tga"

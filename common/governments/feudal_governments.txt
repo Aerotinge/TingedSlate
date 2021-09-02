@@ -43,7 +43,6 @@ feudal_governments = {
 		}
 
 		allow = {
-			NOT = { is_government_allowed = thema_government }
 		}
 
 		barons_need_dynasty = yes
@@ -101,7 +100,6 @@ feudal_governments = {
 		}
 
 		allow = {
-			NOT = { is_government_allowed = thema_government }
 		}
 
 		allows_matrilineal_marriage = no
@@ -198,7 +196,6 @@ feudal_governments = {
 		}
 
 		allow = {
-			NOT = { is_government_allowed = thema_government }
 		}
 
 		barons_need_dynasty = yes
@@ -264,7 +261,6 @@ feudal_governments = {
 		}
 
 		allow = {
-			NOT = { is_government_allowed = thema_government }
 		}
 
 		barons_need_dynasty = yes
@@ -333,7 +329,6 @@ feudal_governments = {
 		}
 
 		allow = {
-			NOT = { is_government_allowed = thema_government }
 		}
 
 		barons_need_dynasty = yes
@@ -411,110 +406,6 @@ feudal_governments = {
 		have_gender_laws = no
 	}
 
-	thema_government = {
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			CITY
-			TRIBAL
-			FORT
-			HOSPITAL
-		}
-		accepts_liege_governments = {
-			roman_imperial_government
-		}
-
-		frame_suffix = "_thema"
-		title_prefix = "thema_"
-		color = { 66 41 168 }
-
-		potential = {
-			trigger_if = {
-				limit = {
-					has_game_started = yes
-				}
-
-				liege_before_war = {
-					OR = {
-						government = thema_government
-						government = roman_imperial_government
-					}
-				}
-
-				trigger_if = {
-					limit = { higher_real_tier_than = COUNT }
-
-					primary_title = { is_vice_royalty = yes }
-					
-				}
-			}
-		}
-
-		allow = {
-			# any_liege is buggy in the pre-game character selection screen
-			# condition was break up into two parts, one for Strategos and one for vassals of Strategos/Basileus
-			trigger_if = {
-				limit = { has_game_started = no }
-				
-				# For DUKE tier
-				trigger_if = {
-					limit = {
-						primary_title = { is_vice_royalty = yes }
-					}
-
-					any_liege = {
-						OR = {
-							has_landed_title = e_byzantium
-							has_landed_title = e_roman_empire
-							has_landed_title = e_nicaea
-						}
-					}
-				}
-				# For vassals of Strategos/Basileus
-				trigger_else = {
-					mercenary = no
-					any_liege = {
-						OR = {
-							has_landed_title = e_byzantium
-							has_landed_title = e_roman_empire
-							has_landed_title = e_nicaea
-							primary_title = { is_vice_royalty = yes }
-						}
-					}
-					culture_group = byzantine
-				}
-			}
-			trigger_else = {
-				liege_before_war = {
-					OR = {
-						government = thema_government
-						government = roman_imperial_government
-					}
-				}
-
-				trigger_if = {
-					limit = { higher_real_tier_than = COUNT }
-
-					primary_title = { is_vice_royalty = yes }
-				}
-			}
-		}
-
-		barons_need_dynasty = yes
-		can_be_granted_kingdoms_and_empires_by_other_government = no
-		can_build_tribal = no
-		can_create_kingdoms = no
-		can_create_empires = no
-		can_grant_kingdoms_and_empires_to_other_government = no
-		#can_inherit = no
-		can_imprison_without_reason = no
-		can_revoke_without_reason = no
-		can_usurp_kingdoms_and_empires = no
-		have_gender_laws = no
-	}
-
 	roman_imperial_government = {
 		preferred_holdings = {
 			CASTLE
@@ -541,9 +432,6 @@ feudal_governments = {
 		}
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
-		}
-		forced_contract = {
-			thema_government
 		}
 
 		frame_suffix = "_romanimperial"

@@ -39,8 +39,6 @@ on_new_holder = {
 		# Nomadic tribal
 		EMP.11006
 		EMP.11009
-		# Thema
-		EMP.11109
 	}
 }
 
@@ -51,7 +49,6 @@ on_new_holder_inheritance = {
 		EMP.12021
 		# Nomadic tribal
 		EMP.11006
-		# Thema
 	}
 }
 
