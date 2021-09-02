@@ -287,36 +287,36 @@ iqta_baron_turkish;Timariot;Timariote;Timariot;;Timariots;;;;;;;;;x
 iqta_baron_female_turkish;Timariota;Timariota;Timarota;;Timariota;;;;;;;;;x
 iqta_barony_of_turkish;Timar of;Timar de;Timar von;;Timariot de;;;;;;;;;x
 iqta_barony_turkish;Timar;Timar;Timar;;Timar;;;;;;;;;x
-nomadic_emperor;Khagan;Khagan;Khagan;;Khagan;;;;;;;;;x
-nomadic_emperor_female;Khatun;Khatoun;Khatun;;Khatun;;;;;;;;;x
+nomadic_emperor_altaic;Khagan;Khagan;Khagan;;Khagan;;;;;;;;;x
+nomadic_emperor_female_altaic;Khatun;Khatoun;Khatun;;Khatun;;;;;;;;;x
 nomadic_emperor_chinese_group;Tengri-Khagan;Tengri-Khagan;Tengri-Khagan;;Tengri-Khagan;;;;;;;;;x
+nomadic_emperor_female_chinese_group;Tengri-Khatun;Tengri-Khatoun;Tengri-Khatun;;Tengri-Khatun;;;;;;;;;x
 nomadic_emperor_uyghur;Tengri-Khagan;Tengri-Khagan;Tengri-Khagan;;Tengri-Khagan;;;;;;;;;x
-nomadic_empire;Khaganate;Khaganat;Khaganat;;Khaganato;;;;;;;;;x
-nomadic_empire_of;Khaganate of;Khaganat de;Großkhanat von;;Kaganato de;;;;;;;;;x
-nomadic_king;Khan;Khan;Khan;;Kan;;;;;;;;;x
-nomadic_king_female;Khanum;Khanoum;Khanum;;Khanum;;;;;;;;;x
-nomadic_king_magyar;Grand Prince;Grand prince;Großfürst;;Gran príncipe;;;;;;;;;x
-nomadic_king_female_magyar;Grand Princess;Grande princesse;Großfürstin;;Gran princesa;;;;;;;;;x
-nomadic_king_alan;King;Roi;König;;Rey;;;;;;;;;x
-nomadic_king_female_alan;Queen;Reine;Königin;;Reina;;;;;;;;;x
-nomadic_kingdom;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
-nomadic_kingdom_of;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
-nomadic_kingdom_of_hungarian;Principality of;Principauté de;Fürstentum;;Principado de;;;;;;;;;x
-nomadic_kingdom_of_alan;Kingdom of;Royaume de;Königreich;;Reino de;;;;;;;;;x
-nomadic_duke;Khan;Khan;Khan;;Kan;;;;;;;;;x
-nomadic_duke_female;Khanum;Khanoum;Khanum;;Khanum;;;;;;;;;x
-nomadic_duke_altaic;Tarkhan;Tarkhan;Tarkhan;;Tarkhan;;;;;;;;;x
+nomadic_emperor_female_uyghur;Tengri-Khatun;Tengri-Khatoun;Tengri-Khatun;;Tengri-Khatun;;;;;;;;;x
+nomadic_empire_altaic;Khaganate;Khaganat;Khaganat;;Khaganato;;;;;;;;;x
+nomadic_empire_of_altaic;Khaganate of;Khaganat de;Großkhanat von;;Kaganato de;;;;;;;;;x
+nomadic_king_altaic;Khan;Khan;Khan;;Kan;;;;;;;;;x
+nomadic_king_female_altaic;Khanum;Khanoum;Khanum;;Khanum;;;;;;;;;x
+nomadic_king_magyar;Kündü;Kündü;Kündü;;Kündü;;;;;;;;;x
+nomadic_king_female_magyar;Kündüm;Kündüm;Kündüm;;Kündüm;;;;;;;;;x
+nomadic_kingdom_altaic;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
+nomadic_kingdom_magyar;Confederation;Confédération;Eidgenossenschaft;;Confederación;;;;;;;;;x
+nomadic_kingdom_of_altaic;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
+nomadic_kingdom_of_magyar;Confederation of;Confédération de;Eidgenossenschaft von;;Confederación de;;;;;;;;;x
+nomadic_duke_altaic;Tarkhan;Tarkhan;Tarkhan;;Tarkan;;;;;;;;;x
+nomadic_duke_female_altaic;Tarkhanum;Tarkhanoum;Tarkhanum;;Tarkanum;;;;;;;;;x
 nomadic_duke_karluk;Yabgu;Yabgu;Yabgu;;Yabgu;;;;;;;;;x
 nomadic_duke_turkish;Yabgu;Yabgu;Yabgu;;Yabgu;;;;;;;;;x
 nomadic_duke_khazar;Elteber;Elteber;Elteber;;Elteber;;;;;;;;;x
-nomadic_duke_magyar;High Chief;Grand chef;Großhäuptling;;Alto mandatario;;;;;;;;;x
-nomadic_duke_female_magyar;High Chieftess;Grande cheffesse;Großhäuptling;;Alto mandataria;;;;;;;;;x
-nomadic_duke_alan;High Chief;Grand chef;Großhäuptling;;Alto mandatario;;;;;;;;;x
-nomadic_duke_female_alan;High Chieftess;Grande cheffesse;Großhäuptling;;Alto mandataria;;;;;;;;;x
-nomadic_duchy;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
-nomadic_duchy_of;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
+nomadic_duke_magyar;Grand Prince;Grand prince;Großfürst;;Gran príncipe;;;;;;;;;x
+nomadic_duke_mongol;Ilkhan;Ilkhan;Ilkhan;;Ilkan;;;;;;;;;x
+nomadic_duke_female_magyar;Grand Princess;Grande princesse;Großfürstin;;Gran princesa;;;;;;;;;x
+nomadic_duchy_altaic;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
+nomadic_duchy_of_altaic;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
+nomadic_duchy_magyar;High Chiefdom;Grande chefferie;Oberhäuptlingstum;;Gran cacicazgo;;;;;;;;;x
 nomadic_duchy_of_magyar;High Chiefdom of;Grande chefferie de;Großhäuptlingstum von;;Grande chefferie de;;;;;;;;;x
-nomadic_duchy_of_alan;High Chiefdom of;Grande chefferie de;Großhäuptlingstum von;;Grande chefferie de;;;;;;;;;x
+nomadic_duchy_mongol;Ilkhanate;Ilkhanat;Ilkhanat;;Ilkanato;;;;;;;;;x
+nomadic_duchy_of_mongol;Ilkhanate of;Ilkhanat de;Ilkhanat von;;Ilkanato de;;;;;;;;;x
 order_baron;Knight;Sieur;Ritter;;Caballero;;;;;x
 order_baron_female;Dame;Dame;Ritterin;;Dama;;;;;x
 order_barony_of;Garrison Town of;Ville de garnison de;Garnisonsstadt von;;Pueblo guarnicionado de;;;;;x

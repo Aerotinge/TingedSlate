@@ -22,9 +22,11 @@ tribal_governments = {
 		}
 		vassal_call_to_arms = {
 			tribal_government
+			nomadic_tribal_government
 		}
 		no_vassal_tax = {
 			tribal_government
+			nomadic_tribal_government
 		}
 		builds_with_prestige = {
 			TRIBAL
@@ -92,16 +94,16 @@ tribal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments_culture = { # Tribals have no opinion penalty towards their liege if of the same culture
+			tribal_government
 		}
 		accepts_liege_governments_culture_and_religion = { 	# Nomadic Tribals have no opinion penalty towards their liege if of the same culture and religion
-			tribal_government
 		}
 		vassal_call_to_arms = {
 			nomadic_tribal_government
 		}
 		no_vassal_tax = {
-			nomadic_tribal_government
 			tribal_government
+			nomadic_tribal_government
 		}
 
 		frame_suffix = "_nomadic"

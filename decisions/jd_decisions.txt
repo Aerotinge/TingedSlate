@@ -677,7 +677,7 @@ decisions = {
 							is_nomadic = no
 						}
 						trigger_else = {
-							government = nomadic_tribal_government
+							NOT = { government = nomadic_tribal_government }
 						}
 
 						AND = {
