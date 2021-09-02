@@ -17214,8 +17214,6 @@ k_anatolia_adj;Anatolian;anatolienne;Anatolisch;;Anatolio;;;;;;;;;x
 k_andalusia;Andalusia;Andalousie;Andalusien;;Andalucía;;;;;;;;;x
 k_andalusia_adj;Andalusian;andalouse;Andalusisch;;Andalusí;;;;;;;;;x
 k_andhra;Andhra;Andhra;Andhra;;;;;;;;;;;x
-k_antioch;Antioch;Antioche;Antiochia;;Antioquía;;;;;x
-k_antioch_adj;Antiochian;antiochienne;Antiochianisch;;antioqueno;;;;;x
 k_aquitaine;Aquitaine;Aquitaine;Aquitanien;;Aquitania;;;;;;;;;x
 k_aquitaine_adj;Aquitanian;aquitaine;Aquitanisch;;Aquitano;;;;;;;;;x
 k_arabia;Arabia;Arabie;Arabien;;Arabia;;;;;;;;;x
@@ -17292,8 +17290,6 @@ k_france;France;France;Frankreich;;Francia;;;;;;;;;x
 k_france_adj;French;française;Französisch;;Francesa;;;;;;;;;x
 k_franconia;Franconia;Franconie;Franken;;Franconia;;;;;x
 k_franconia_adj;Franconian;franconienne;Fränkisch;;franconio;;;;;x
-k_franconia_otto;Franconia;Franconie;Franken;;Franconia;;;;;x
-k_franconia_otto_adj;Franconian;franconienne;Fränkisch;;franconio;;;;;x
 k_frisia;Frisia;Frise;Friesland;;Frisia;;;;;;;;;x
 k_frisia_adj;Frisian;frisonne;Friesisch;;Frisio;;;;;;;;;x
 k_galicia-volhynia;Galicia-Volhynia;Galicie-Volhynie;Galicia-Volhynia;;Galitzia Volinia;;;;;;;;;x
@@ -17436,8 +17432,6 @@ k_sardinia;Sardinia and Corsica;Sardaigne et Corse;Sardinien und Korsika;;Cerdeñ
 k_sardinia_adj;Sardinian and Corsican;sardo-corse;Sardinischkorsisch;;Sarda y Corso;;;;;;;;;x
 k_saruhan;Saruhan;Saruhan;Saruhan;;Saruhan;;;;;;;;;x
 k_saruhan_adj;Saruhani;Saruhani;Saruhanisch;;Saruhaní;;;;;;;;;x
-k_saxon;Saxony;Saxe;Sachsen;;Sajonia;;;;;x
-k_saxon_adj;Saxon;saxonne;Sächsisch;;sajón;;;;;x
 k_saxony;Saxony;Saxe;Sachsen;;Sajonia;;;;;;;;;x
 k_saxony_adj;Saxon;saxonne;Sächsisch;;Sajona;;;;;;;;;x
 k_scotland;Scotland;Écosse;Schottland;;Escocia;;;;;;;;;x
@@ -17460,8 +17454,6 @@ k_spanish_galicia;Galicia;Galice;Galicien;;Galicia;;;;;;;;;x
 k_spanish_galicia_adj;Galician;galicienne;Galicisch;;Gallega;;;;;;;;;x
 k_swabia;Swabia;Souabe;Schwaben;;Suabia;;;;;x
 k_swabia_adj;Swabian;souabe;Schwäbisch;;suabo;;;;;x
-k_swabia_otto;Swabia;Souabe;Schwaben;;Suabia;;;;;x
-k_swabia_otto_adj;Swabian;souabienne;Schwäbisch;;suabio;;;;;x
 k_sweden;Sweden;Suède;Schweden;;Suecia;;;;;;;;;x
 k_sweden_adj;Swedish;suédoise;Schwedisch;;Sueca;;;;;;;;;x
 k_switzerland;Swiss Confederation;Confédération suisse;Schweizerische Eidgenossenschaft;;Confederación suiza;;;;;x
@@ -17477,8 +17469,6 @@ k_teutonic_state;Teutonic State;État teutonique;Deutscher Orden;;Estado teutónic
 k_teutonic_state_adj;Teutonics;teutonique;Teutonisch;;teutónicos;;;;;;;;;x
 k_thrace;Thrace;Thrace;Thrakien;;Tracia;;;;;x
 k_thrace_adj;Thracian;thrace;Thrakisch;;tracio;;;;;;;;;x
-k_thuringia_otto;Thuringia;Thuringe;Thüringen;;Turingia;;;;;x
-k_thuringia_otto_adj;Thuringian;thuringienne;Thüringisch;;turingio;;;;;x
 k_transoxiana;Transoxiana;Transoxiane;Transoxiana;;;;;;;;;;;x
 k_transoxiana_adj;Transoxianan;transoxianienne;Transoxianisch;;;;;;;;;;;x
 k_trebizond;Trebizond;Trébizonde;Trapezunt;;Trebisonda;;;;;;;;;x

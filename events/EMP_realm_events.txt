@@ -33,3 +33,32 @@ narrative_event = {
 		}
 	}
 }
+
+# Narrative Event - Germany Stamm
+narrative_event = {
+	id = EMP.40038
+	title = EVTTITLE_EMP_40038
+	desc = EVTDESC_EMP_40038
+	picture = GFX_evt_magnificent_castle
+
+	is_triggered_only = yes
+	major = yes
+
+	major_trigger = {
+		ai = no
+	}
+
+	option = {
+		name = INTERESTING
+
+		trigger = { character = ROOT }
+	}
+
+	option = {
+		name = EVTOPTB_HFP_40038
+
+		trigger = {
+			NOT = { character = ROOT }
+		}
+	}
+}

@@ -74,6 +74,8 @@ decisions = {
 				death_reason = death_execution_blood_eagle
 			}
 
+			NOT = { dynasty = 814 } # of Northumbria
+
 			OR = {
 				has_landed_title = d_york
 				has_landed_title = d_northumberland
@@ -87,8 +89,9 @@ decisions = {
 			OR = {
 				culture = norse
 				culture = danish
+				culture = anglo-saxon
 			}
-			real_tier = DUKE
+			lower_tier_than = KING
 			is_adult = yes
 
 			NOT = { is_title_active = k_daneland }
@@ -128,8 +131,13 @@ decisions = {
 				}
 			}
 
-			k_england = {
-				has_holder = no
+			d_york = {
+				kingdom = {
+					has_holder = no
+				}
+				empire = {
+					has_holder = no
+				}
 			}
 
 			is_adult = yes
@@ -187,12 +195,12 @@ decisions = {
 
 				any_player = {
 					limit = {
-						primary_title = {
-							empire = {
-								OR = {
-									title = e_britannia
-									title = e_scandinavia
-								}
+						capital_scope = {
+							OR = {
+								region = world_europe_west_british_isles
+								region = world_europe_north_danish_archipelago
+								region = world_europe_north_jutland
+								region = world_europe_north_sea
 							}
 						}
 					}
@@ -233,6 +241,417 @@ decisions = {
 					show_scope_change = no
 
 					de_jure_liege = d_powys
+				}
+			}
+		}
+	}
+	
+	restore_saxony = {
+		is_high_prio = yes
+		ai_check_interval = 120
+
+		only_playable = yes
+
+		potential = {
+			OR = {
+				has_landed_title = d_saxony
+				has_landed_title = d_munster_germany
+				has_landed_title = d_bremen
+				has_landed_title = d_angria
+			}
+
+			independent = yes
+
+			OR = {
+				culture = german
+				culture = saxon
+			}
+			lower_tier_than = KING
+			is_adult = yes
+
+			NOT = { is_title_active = k_saxony }
+
+			NOR = {
+				has_alternate_start_setting = {
+					setting = dejure
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random_including_duchies
+				}
+			}
+		}
+
+		allow = {
+			completely_controls = d_saxony
+			completely_controls = d_munster_germany
+			completely_controls = d_bremen
+			completely_controls = d_angria
+
+			d_saxony = {
+				kingdom = {
+					has_holder = no
+				}
+				empire = {
+					has_holder = no
+				}
+			}
+
+			is_adult = yes
+			war = no
+
+			prestige >= 3000
+			wealth >= 500
+		}
+
+		effect = {
+			wealth = -500
+
+			custom_tooltip = {
+				text = restore_saxony_TT
+
+				primary_title = {
+					d_saxony = {
+						empire = {
+							k_saxony = {
+								copy_title_laws = PREVPREVPREV
+								de_jure_liege = PREV
+							}
+						}
+					}
+				}
+
+				activate_title = {
+					title = k_saxony
+					status = yes
+				}
+				grant_title_no_opinion = k_saxony
+
+				d_saxony = {
+					de_jure_liege = k_saxony
+				}
+
+				d_bremen = {
+					de_jure_liege = k_saxony
+				}
+
+				d_angria = {
+					de_jure_liege = k_saxony
+				}
+
+				if = {
+					limit = { completely_controls = d_holstein }
+
+					d_holstein = {
+						show_scope_change = no
+
+						de_jure_liege = k_saxony
+					}
+				}
+
+				any_player = {
+					limit = {
+						capital_scope = {
+							OR = {
+								region = world_europe_east_baltic
+								region = world_europe_north_jutland
+								region = world_europe_west_germania
+							}
+						}
+					}
+
+					narrative_event = { id = EMP.40038 }
+				}
+			}
+		}
+	}
+
+	restore_franconia = {
+		is_high_prio = yes
+		ai_check_interval = 120
+
+		only_playable = yes
+
+		potential = {
+			OR = {
+				has_landed_title = d_franconia
+				has_landed_title = d_thuringia
+				has_landed_title = d_hesse
+				has_landed_title = d_rhine
+			}
+
+			independent = yes
+
+			culture = german
+			lower_tier_than = KING
+			is_adult = yes
+
+			NOT = { is_title_active = k_franconia }
+
+			OR = {
+				k_saxony = {
+					is_titular = no
+				}
+				k_swabia = {
+					is_titular = no
+				}
+			}
+
+			NOR = {
+				has_alternate_start_setting = {
+					setting = dejure
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random_including_duchies
+				}
+			}
+		}
+
+		allow = {
+			completely_controls = d_franconia
+			completely_controls = d_thuringia
+			completely_controls = d_hesse
+			completely_controls = d_rhine
+
+			d_franconia = {
+				kingdom = {
+					has_holder = no
+				}
+				empire = {
+					has_holder = no
+				}
+			}
+
+			is_adult = yes
+			war = no
+
+			prestige >= 3000
+			wealth >= 500
+		}
+
+		effect = {
+			wealth = -500
+
+			custom_tooltip = {
+				text = restore_franconia_TT
+
+				primary_title = {
+					d_franconia = {
+						empire = {
+							k_franconia = {
+								copy_title_laws = PREVPREVPREV
+								de_jure_liege = PREV
+							}
+						}
+					}
+				}
+
+				activate_title = {
+					title = k_franconia
+					status = yes
+				}
+				grant_title_no_opinion = k_franconia
+
+				d_franconia = {
+					de_jure_liege = k_franconia
+				}
+
+				d_thuringia = {
+					de_jure_liege = k_franconia
+				}
+
+				d_hesse = {
+					de_jure_liege = k_franconia
+				}
+
+				d_rhine = {
+					de_jure_liege = k_franconia
+				}
+
+				any_player = {
+					limit = {
+						capital_scope = {
+							OR = {
+								region = world_europe_west_germania
+							}
+						}
+					}
+
+					narrative_event = { id = EMP.40038 }
+				}
+			}
+		}
+	}
+
+	restore_swabia = {
+		is_high_prio = yes
+		ai_check_interval = 120
+
+		only_playable = yes
+
+		potential = {
+			OR = {
+				has_landed_title = d_swabia
+				has_landed_title = d_alsace
+				has_landed_title = d_baden
+				trigger_if = {
+					limit = {
+						d_raetia = {
+							is_titular = no
+						}
+					}
+					has_landed_title = d_raetia
+				}
+				trigger_if = {
+					limit = {
+						d_thurgau = {
+							is_titular = no
+						}
+					}
+					has_landed_title = d_thurgau
+				}
+			}
+
+			independent = yes
+
+			OR = {
+				culture = german
+				culture = suebi
+			}
+			lower_tier_than = KING
+			is_adult = yes
+
+			NOT = { is_title_active = k_swabia }
+
+			NOR = {
+				has_alternate_start_setting = {
+					setting = dejure
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random_including_duchies
+				}
+			}
+		}
+
+		allow = {
+			completely_controls = d_swabia
+			completely_controls = d_alsace
+			completely_controls = d_baden
+			trigger_if = {
+				limit = {
+					d_raetia = {
+						is_titular = no
+					}
+				}
+				completely_controls = d_raetia
+			}
+			trigger_if = {
+				limit = {
+					d_thurgau = {
+						is_titular = no
+					}
+				}
+				completely_controls = d_thurgau
+			}
+
+			d_swabia = {
+				kingdom = {
+					has_holder = no
+				}
+				empire = {
+					has_holder = no
+				}
+			}
+
+			is_adult = yes
+			war = no
+
+			prestige >= 3000
+			wealth >= 500
+		}
+
+		effect = {
+			wealth = -500
+
+			custom_tooltip = {
+				text = restore_swabia_TT
+
+				primary_title = {
+					d_swabia = {
+						empire = {
+							k_swabia = {
+								copy_title_laws = PREVPREVPREV
+								de_jure_liege = PREV
+							}
+						}
+					}
+				}
+
+				activate_title = {
+					title = k_swabia
+					status = yes
+				}
+				grant_title_no_opinion = k_swabia
+
+				d_swabia = {
+					de_jure_liege = k_swabia
+				}
+
+				d_alsace = {
+					de_jure_liege = k_swabia
+				}
+
+				d_baden = {
+					de_jure_liege = k_swabia
+				}
+
+				if = {
+					limit = { completely_controls = d_raetia }
+
+					d_raetia = {
+						show_scope_change = no
+
+						de_jure_liege = k_swabia
+					}
+				}
+
+				if = {
+					limit = { completely_controls = d_thurgau }
+
+					d_thurgau = {
+						show_scope_change = no
+
+						de_jure_liege = k_swabia
+					}
+				}
+
+				any_player = {
+					limit = {
+						capital_scope = {
+							OR = {
+								region = world_europe_west_germania
+							}
+						}
+					}
+
+					narrative_event = { id = EMP.40038 }
 				}
 			}
 		}

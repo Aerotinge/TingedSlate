@@ -398,7 +398,6 @@ imperial_reconquest = {
 			de_jure_liege_or_above = k_amalfi
 			de_jure_liege_or_above = k_anatolia
 			de_jure_liege_or_above = k_andalusia
-			de_jure_liege_or_above = k_antioch
 			de_jure_liege_or_above = k_aquitaine
 			de_jure_liege_or_above = k_aragon
 			de_jure_liege_or_above = k_armenia

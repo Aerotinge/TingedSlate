@@ -891,24 +891,6 @@ e_germania = {
 		}
 	}
 
-	k_franconia_otto = {
-		color = { 105 135 105 }
-		color2 = { 255 255 255 }
-
-		capital = 198 # Würzburg
-
-		allow = {
-			can_create_kingdom = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
-		}
-	}
-
 	k_germany = {
 		color = { 160 160 160 }
 		color2 = { 220 220 20 }
@@ -2133,7 +2115,25 @@ e_germania = {
 		}
 	}
 
-	k_swabia_otto = {
+	k_franconia = {
+		color = { 105 135 105 }
+		color2 = { 255 255 255 }
+
+		capital = 198 # Würzburg
+
+		allow = {
+			can_create_kingdom = yes
+
+			FROM = {
+				show_scope_change = no
+				show_only_failed_conditions = yes
+
+				is_titular = no
+			}
+		}
+	}
+	
+	k_swabia = {
 		color = { 173 186 255 }
 		color2 = { 255 255 255 }
 
@@ -2151,15 +2151,15 @@ e_germania = {
 		}
 	}
 
-	k_thuringia_otto = {
-		color = { 212 211 231 }
-		color2 = { 255 255 255 }
+	k_switzerland = {
+		color = { 255 80 80 }
+		color2 = { 200 50 50 }
 
-		capital = 190 # Thüringen
+		capital = 348 # Bern
+
+		short_name = yes
 
 		allow = {
-			can_create_kingdom = yes
-
 			FROM = {
 				show_scope_change = no
 				show_only_failed_conditions = yes
