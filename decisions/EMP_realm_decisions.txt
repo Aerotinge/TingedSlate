@@ -70,10 +70,15 @@ decisions = {
 		only_playable = yes
 
 		potential = {
+			c_163103 = { # Aella
+				death_reason = death_execution_blood_eagle
+			}
+
 			OR = {
 				has_landed_title = d_york
 				has_landed_title = d_northumberland
 				has_landed_title = d_cumbria
+				has_landed_title = d_lancaster
 			}
 
 			independent = yes
@@ -86,10 +91,7 @@ decisions = {
 			real_tier = DUKE
 			is_adult = yes
 
-			k_daneland = {
-				has_holder = no
-				is_titular = yes
-			}
+			NOT = { is_title_active = k_daneland }
 
 			NOR = {
 				has_alternate_start_setting = {
@@ -111,11 +113,19 @@ decisions = {
 			completely_controls = d_york
 			completely_controls = d_northumberland
 			completely_controls = d_cumbria
-			AND = {
-				completely_controls = c_leicester
-				completely_controls = c_lincoln
-				completely_controls = c_warwick
-				completely_controls = c_worcester
+			completely_controls = d_lancaster
+			trigger_if = {
+				limit = { completely_controls = d_mercia }
+
+				completely_controls = d_mercia
+			}
+			trigger_else = {
+				AND = {
+					completely_controls = c_leicester
+					completely_controls = c_lincoln
+					completely_controls = c_warwick
+					completely_controls = c_worcester
+				}
 			}
 
 			k_england = {
@@ -157,6 +167,10 @@ decisions = {
 					}
 				}
 
+				activate_title = {
+					title = k_daneland
+					status = yes
+				}
 				grant_title_no_opinion = k_daneland
 
 				d_york = {
@@ -184,16 +198,6 @@ decisions = {
 					}
 
 					narrative_event = { id = EMP.40022 }
-				}
-			}
-
-			if = {
-				limit = { completely_controls = d_lancaster }
-
-				d_lancaster = {
-					show_scope_change = no
-
-					de_jure_liege = k_daneland
 				}
 			}
 
