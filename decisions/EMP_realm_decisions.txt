@@ -184,13 +184,32 @@ decisions = {
 				d_york = {
 					de_jure_liege = k_daneland
 				}
-
 				d_northumberland = {
 					de_jure_liege = k_daneland
 				}
-
 				d_cumbria = {
 					de_jure_liege = k_daneland
+				}				
+				d_mercia = {
+					de_jure_liege = k_daneland
+				}
+
+				if = {
+					limit = { completely_controls = d_mercia }
+
+					# Nothing
+				}
+				else = {
+					c_shrewsbury = {
+						show_scope_change = no
+
+						de_jure_liege = d_powys
+					}
+					c_hereford = {
+						show_scope_change = no
+
+						de_jure_liege = d_powys
+					}
 				}
 
 				any_player = {
@@ -208,41 +227,6 @@ decisions = {
 					narrative_event = { id = EMP.40022 }
 				}
 			}
-
-			if = {
-				limit = { completely_controls = d_mercia }
-
-				d_mercia = {
-					show_scope_change = no
-
-					de_jure_liege = k_daneland
-				}
-			}
-			else_if = {
-				limit = {
-					AND = {
-						completely_controls = c_leicester
-						completely_controls = c_lincoln
-						completely_controls = c_warwick
-						completely_controls = c_worcester
-					}
-				}
-				d_mercia = {
-					show_scope_change = no
-
-					de_jure_liege = k_daneland
-				}
-				c_shrewsbury = {
-					show_scope_change = no
-
-					de_jure_liege = d_powys
-				}
-				c_hereford = {
-					show_scope_change = no
-
-					de_jure_liege = d_powys
-				}
-			}
 		}
 	}
 	
@@ -258,6 +242,14 @@ decisions = {
 				has_landed_title = d_munster_germany
 				has_landed_title = d_bremen
 				has_landed_title = d_angria
+				trigger_if = {
+					limit = {
+						d_brunswick = {
+							is_titular = no
+						}
+					}
+					has_landed_title = d_brunswick
+				}
 			}
 
 			independent = yes
@@ -292,6 +284,14 @@ decisions = {
 			completely_controls = d_munster_germany
 			completely_controls = d_bremen
 			completely_controls = d_angria
+			trigger_if = {
+				limit = {
+					d_brunswick = {
+						is_titular = no
+					}
+				}
+				completely_controls = d_brunswick
+			}
 
 			d_saxony = {
 				kingdom = {
@@ -335,12 +335,16 @@ decisions = {
 				d_saxony = {
 					de_jure_liege = k_saxony
 				}
-
+				d_munster_germany = {
+					de_jure_liege = k_saxony
+				}
 				d_bremen = {
 					de_jure_liege = k_saxony
 				}
-
 				d_angria = {
+					de_jure_liege = k_saxony
+				}
+				d_brunswick = {
 					de_jure_liege = k_saxony
 				}
 
@@ -466,15 +470,12 @@ decisions = {
 				d_franconia = {
 					de_jure_liege = k_franconia
 				}
-
 				d_thuringia = {
 					de_jure_liege = k_franconia
 				}
-
 				d_hesse = {
 					de_jure_liege = k_franconia
 				}
-
 				d_rhine = {
 					de_jure_liege = k_franconia
 				}
@@ -613,33 +614,17 @@ decisions = {
 				d_swabia = {
 					de_jure_liege = k_swabia
 				}
-
 				d_alsace = {
 					de_jure_liege = k_swabia
 				}
-
 				d_baden = {
 					de_jure_liege = k_swabia
 				}
-
-				if = {
-					limit = { completely_controls = d_raetia }
-
-					d_raetia = {
-						show_scope_change = no
-
-						de_jure_liege = k_swabia
-					}
+				d_raetia = {
+					de_jure_liege = k_swabia
 				}
-
-				if = {
-					limit = { completely_controls = d_thurgau }
-
-					d_thurgau = {
-						show_scope_change = no
-
-						de_jure_liege = k_swabia
-					}
+				d_thurgau = {
+					de_jure_liege = k_swabia
 				}
 
 				any_player = {
