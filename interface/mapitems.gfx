@@ -523,7 +523,7 @@ objectTypes = {
 	pdxMesh = {
 		name = "africangfx_duke_shield"
 		file = "gfx\models\Shields\hf_west_african_shield_duke.mesh"
-		scale = 1.2f
+		scale = 1.0f
 		cull_distance = 550.0f
 		scale_on_cull_distance = no
 	}
@@ -531,7 +531,7 @@ objectTypes = {
 	pdxMesh = {
 		name = "africangfx_king_shield"
 		file = "gfx\models\Shields\hf_west_african_shield_king.mesh"
-		scale = 1.2f
+		scale = 1.0f
 		cull_distance = 550.0f
 		scale_on_cull_distance = no
 	}
@@ -539,7 +539,7 @@ objectTypes = {
 	pdxMesh = {
 		name = "africangfx_emperor_shield"
 		file = "gfx\models\Shields\hf_west_african_shield_emperor.mesh"
-		scale = 1.2f
+		scale = 1.0f
 		cull_distance = 550.0f
 		scale_on_cull_distance = no
 	}

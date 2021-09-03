@@ -1371,6 +1371,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_icon_feudal_vassal_government"
+		textureFile = "gfx\\interface\\government_icon_feudal.dds"
+	}
+
+	spriteType = {
 		name = "GFX_icon_merchant_republic_government"
 		textureFile = "gfx\\interface\\government_icon_merchant_republic.dds"
 	}
@@ -1381,7 +1386,17 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_icon_muslim_vassal_government"
+		textureFile = "gfx\\interface\\government_icon_iqta.dds"
+	}
+
+	spriteType = {
 		name = "GFX_icon_theocratic_feudal_government"
+		textureFile = "gfx\\interface\\government_icon_theocratic_feudal.dds"
+	}
+
+	spriteType = {
+		name = "GFX_icon_theocratic_feudal_vassal_government"
 		textureFile = "gfx\\interface\\government_icon_theocratic_feudal.dds"
 	}
 
@@ -1424,12 +1439,22 @@ spriteTypes = {
 		name = "GFX_icon_tibetan_feudal_government"
 		texturefile = "gfx\\interface\\government_icon_tibetan_feudal.dds"
 	}
-	
+
+	spriteType = {
+		name = "GFX_icon_tibetan_feudal_vassal_government"
+		textureFile = "gfx\\interface\\government_icon_tibetan_feudal.dds"
+	}
+
 	spriteType = {
 		name = "GFX_icon_secular_feudal_government"
 		texturefile = "gfx\\interface\\government_icon_secular_feudal.dds"
 	}
-	
+
+	spriteType = {
+		name = "GFX_icon_secular_feudal_vassal_government"
+		textureFile = "gfx\\interface\\government_icon_secular_feudal.dds"
+	}
+
 	spriteType = {
 		name = "GFX_icon_sacred_confederacy_government"
 		texturefile = "gfx\\interface\\government_icon_sacred_confederacy.dds"

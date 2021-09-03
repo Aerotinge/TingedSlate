@@ -66,7 +66,7 @@ permanent = {
 	}
 
 	income_tribute_percentage = {
-		value = 0.20
+		value = 0.21	# rounded down and displayed as 20% in game
 	}
 
 	reinforce_tribute_percentage = {

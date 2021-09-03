@@ -28,6 +28,7 @@ feudal_governments = {
 
 		potential = {
 			is_patrician = no
+			independent = yes
 			could_be_temporal_religious_head_trigger = yes
 
 			NOR = {
@@ -47,6 +48,64 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
+		dukes_called_kings = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		vassal_limit = -2
+		court_size_modifier = 10
+	}
+	
+	feudal_vassal_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			muslim_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		color = { 91 133 207 }
+
+		potential = {
+			is_patrician = no
+			independent = no
+			could_be_temporal_religious_head_trigger = yes
+
+			NOR = {
+				is_government_potential = muslim_vassal_government
+				is_government_potential = secular_feudal_vassal_government
+				is_government_potential = tibetan_feudal_vassal_government
+				is_government_potential = theocratic_feudal_vassal_government
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		can_create_kingdoms = no
 		dukes_called_kings = yes
 
 		capital_move_delay = 600
@@ -90,6 +149,7 @@ feudal_governments = {
 		potential = {
 			religion_group = muslim
 			is_patrician = no
+			independent = yes
 
 			NOR = {
 				is_government_potential = order_government
@@ -118,7 +178,72 @@ feudal_governments = {
 		vassal_limit = -2
 		court_size_modifier = 10
 	}
-	
+
+	muslim_vassal_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			theocratic_feudal_government
+			chinese_imperial_government
+		}
+		free_revoke_on_tiers = {
+			DUKE
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_iqta"
+		color = { 10 138 57 }
+
+		potential = {
+			religion_group = muslim
+			is_patrician = no
+			independent = no
+
+			NOR = {
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
+		}
+
+		allow = {
+		}
+
+		allows_matrilineal_marriage = no
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		can_create_kingdoms = no
+		dukes_called_kings = yes
+		free_retract_vassalage = yes
+		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
+		have_gender_laws = no
+		uses_decadence = yes
+		uses_piety_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		vassal_limit = -2
+		court_size_modifier = 10
+	}
+
 	secular_feudal_government = {
 		preferred_holdings = {
 			CASTLE
@@ -151,6 +276,7 @@ feudal_governments = {
 		potential = {
 			higher_real_tier_than = BARON # barons should use Theocracy instead
 			is_patrician = no
+			independent = yes
 
 			trigger_if = { # christian with universal priesthood
 				limit = { religion_group = christian }
@@ -210,6 +336,99 @@ feudal_governments = {
 		court_size_modifier = 10
 	}
 
+	secular_feudal_vassal_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			muslim_government
+			tibetan_feudal_government
+			sacred_confederacy_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_secularfeudal"
+		color = { 7 143 180 }
+
+		potential = {
+			higher_real_tier_than = BARON # barons should use Theocracy instead
+			is_patrician = no
+			independent = no
+
+			trigger_if = { # christian with universal priesthood
+				limit = { religion_group = christian }
+
+				OR = {
+					religion = cathar		# I don't think Cathar practice universal priesthood, but it's no head in game.
+					religion = waldensian
+					religion = lollard
+					religion = messalian
+					religion = bogomilist
+				}
+			}
+			trigger_else_if = { # indian_group without Sramana practice
+				limit = { religion_group = indian_group }
+
+				religion = taoist
+			}
+			trigger_else_if = {	# zoroastrian_group without clergy practice
+				limit = { religion_group = zoroastrian_group }
+
+				religion = mazdaki
+			}
+			trigger_else_if = { # jewish_group without rabbinic halakha
+				limit = { religion_group = jewish_group }
+
+				religion = karaite
+			}
+			trigger_else = { # Reformed Pagan, Bon exclusive
+				is_reformed_religion = yes
+				AND = { # with Autonomous & Cosmopolitan/Civilized doctrine
+					has_religion_feature = religion_no_leader
+					has_religion_feature = religion_proselytizing
+				}
+			}
+
+			NOR = {
+				is_government_potential = tibetan_feudal_vassal_government
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		can_create_kingdoms = no
+		dukes_called_kings = yes
+		uses_piety_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		vassal_limit = -2
+		court_size_modifier = 10
+	}
+
 	tibetan_feudal_government = {
 		preferred_holdings = {
 			CASTLE
@@ -245,6 +464,7 @@ feudal_governments = {
 			culture_group = tibetan_group
 			higher_real_tier_than = BARON
 			is_patrician = no
+			independent = yes
 			could_be_temporal_religious_head_trigger = yes
 
 			OR = {
@@ -265,6 +485,73 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
+		dukes_called_kings = yes
+		uses_piety_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		vassal_limit = -2
+		court_size_modifier = 10
+	}
+
+	tibetan_feudal_vassal_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			muslim_government
+			secular_feudal_government
+			theocratic_feudal_government
+			sacred_confederacy_government
+			theocracy_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_tibetanfeudal"
+		color = { 207 145 90 }
+
+		potential = {
+			culture_group = tibetan_group
+			higher_real_tier_than = BARON
+			is_patrician = no
+			independent = no
+			could_be_temporal_religious_head_trigger = yes
+
+			OR = {
+				religion_openly_bon_or_reformed_trigger = yes
+				religion = buddhist
+			}
+
+			NOR = {
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		can_create_kingdoms = no
 		dukes_called_kings = yes
 		uses_piety_for_law_change = yes
 
@@ -318,6 +605,7 @@ feudal_governments = {
 				religion = norse_pagan_reformed
 			}
 			is_patrician = no
+			independent = yes
 
 			NOR = {
 				is_government_potential = tibetan_feudal_government
@@ -333,6 +621,76 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
+		dukes_called_kings = yes
+		uses_piety_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		vassal_limit = -2
+		court_size_modifier = 10
+	}
+
+	theocratic_feudal_vassal_government = { # Patrimonial Theocracy
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			secular_feudal_government
+			tibetan_feudal_government
+			sacred_confederacy_government
+			theocracy_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			theocracy_government
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_theocraticfeudal"
+		color = { 157 222 242 }
+
+		potential = {
+			controls_religion = yes
+			trigger_if = {
+				limit = { has_religion_features = yes }
+
+				has_religion_feature = religion_temporal_head
+				has_religion_feature = religion_dogmatic
+			}
+			trigger_else = {
+				religion = norse_pagan_reformed
+			}
+			is_patrician = no
+			independent = no
+
+			NOR = {
+				is_government_potential = tibetan_feudal_vassal_government
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = sacred_confederacy_government
+			}
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		can_create_kingdoms = no
 		dukes_called_kings = yes
 		uses_piety_for_law_change = yes
 

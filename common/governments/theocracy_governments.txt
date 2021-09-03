@@ -30,9 +30,11 @@ theocracy_governments = {
 		color = { 220 220 220 }
 
 		potential = {
-			holy_order = no
 			is_patrician = no
-			NOT = {	is_government_potential = muslim_government }
+			NOR = {
+				is_government_potential = muslim_government
+				is_government_potential = order_government
+			}
 
 			trigger_if = {
 				limit = { is_female = yes }
