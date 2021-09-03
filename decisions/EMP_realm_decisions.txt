@@ -312,9 +312,7 @@ decisions = {
 		effect = {
 			wealth = -500
 
-			custom_tooltip = {
-				text = restore_saxony_TT
-
+			hidden_effect = {
 				primary_title = {
 					d_saxony = {
 						empire = {
@@ -330,7 +328,6 @@ decisions = {
 					title = k_saxony
 					status = yes
 				}
-				grant_title_no_opinion = k_saxony
 
 				d_saxony = {
 					de_jure_liege = k_saxony
@@ -357,20 +354,21 @@ decisions = {
 						de_jure_liege = k_saxony
 					}
 				}
+			}
+			grant_title_no_opinion = k_saxony
 
-				any_player = {
-					limit = {
-						capital_scope = {
-							OR = {
-								region = world_europe_east_baltic
-								region = world_europe_north_jutland
-								region = world_europe_west_germania
-							}
+			any_player = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = world_europe_east_baltic
+							region = world_europe_north_jutland
+							region = world_europe_west_germania
 						}
 					}
-
-					narrative_event = { id = EMP.40038 }
 				}
+
+				narrative_event = { id = EMP.40038 }
 			}
 		}
 	}
@@ -447,9 +445,7 @@ decisions = {
 		effect = {
 			wealth = -500
 
-			custom_tooltip = {
-				text = restore_franconia_TT
-
+			hidden_effect = {
 				primary_title = {
 					d_franconia = {
 						empire = {
@@ -465,7 +461,6 @@ decisions = {
 					title = k_franconia
 					status = yes
 				}
-				grant_title_no_opinion = k_franconia
 
 				d_franconia = {
 					de_jure_liege = k_franconia
@@ -479,18 +474,19 @@ decisions = {
 				d_rhine = {
 					de_jure_liege = k_franconia
 				}
+			}
+			grant_title_no_opinion = k_franconia
 
-				any_player = {
-					limit = {
-						capital_scope = {
-							OR = {
-								region = world_europe_west_germania
-							}
+			any_player = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = world_europe_west_germania
 						}
 					}
-
-					narrative_event = { id = EMP.40038 }
 				}
+
+				narrative_event = { id = EMP.40038 }
 			}
 		}
 	}
@@ -591,9 +587,7 @@ decisions = {
 		effect = {
 			wealth = -500
 
-			custom_tooltip = {
-				text = restore_swabia_TT
-
+			hidden_effect = {
 				primary_title = {
 					d_swabia = {
 						empire = {
@@ -609,7 +603,6 @@ decisions = {
 					title = k_swabia
 					status = yes
 				}
-				grant_title_no_opinion = k_swabia
 
 				d_swabia = {
 					de_jure_liege = k_swabia
@@ -626,18 +619,19 @@ decisions = {
 				d_thurgau = {
 					de_jure_liege = k_swabia
 				}
+			}
+			grant_title_no_opinion = k_swabia
 
-				any_player = {
-					limit = {
-						capital_scope = {
-							OR = {
-								region = world_europe_west_germania
-							}
+			any_player = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = world_europe_west_germania
 						}
 					}
-
-					narrative_event = { id = EMP.40038 }
 				}
+
+				narrative_event = { id = EMP.40038 }
 			}
 		}
 	}

@@ -34,7 +34,7 @@ narrative_event = {
 	}
 }
 
-# Narrative Event - Germany Stamm
+# Narrative Event - Stämme Kingdoms
 narrative_event = {
 	id = EMP.40038
 	title = EVTTITLE_EMP_40038
@@ -51,14 +51,14 @@ narrative_event = {
 	option = {
 		name = INTERESTING
 
-		trigger = { character = ROOT }
+		trigger = {
+			NOT = { character = FROM }
+		}
 	}
 
 	option = {
-		name = EVTOPTB_HFP_40038
+		name = EVTOPTB_EMP_40038
 
-		trigger = {
-			NOT = { character = ROOT }
-		}
+		trigger = { character = FROM }
 	}
 }

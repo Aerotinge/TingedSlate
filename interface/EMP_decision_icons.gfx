@@ -4,4 +4,19 @@ spriteTypes = {
 		name = "GFX_form_the_daneland"
 		textureFile = "gfx\\interface\\decision_icon_form_the_daneland.dds"
 	}
+
+	spriteType = {
+		name = "GFX_restore_saxony"
+		textureFile = "gfx\\interface\\decision_icon_restore_saxony.dds"
+	}
+
+	spriteType = {
+		name = "GFX_restore_franconia"
+		textureFile = "gfx\\interface\\decision_icon_restore_franconia.dds"
+	}
+
+	spriteType = {
+		name = "GFX_restore_swabia"
+		textureFile = "gfx\\interface\\decision_icon_restore_swabia.dds"
+	}
 }
