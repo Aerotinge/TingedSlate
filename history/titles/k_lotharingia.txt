@@ -124,7 +124,10 @@
 }
 
 855.8.22 = {
-	set_tribute_suzerain = { who = e_francia type = permanent }
+	set_tribute_suzerain = {
+		who = e_francia
+		type = permanent
+	}
 	holder = 144998 #Lothair II
 	name = LOTHARINGIA
 	adjective = LOTHARINGIA_ADJ
