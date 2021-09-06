@@ -51,8 +51,6 @@ on_new_holder_inheritance = {
 		EMP.12021
 		# Nomadic tribal
 		EMP.11006
-		# Karling
-		EMP.13011
 	}
 }
 
