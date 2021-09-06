@@ -10,14 +10,12 @@ e_scythia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = { ai = yes }
-
-			trigger_if = {
-				limit = {
-					NOT = { has_dlc = "Horse Lord" }
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
 				}
-
-				government = nomadic_tribal_government
 			}
 
 			OR = {
@@ -38,7 +36,13 @@ e_scythia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture = alan
 			}
@@ -313,7 +317,13 @@ e_scythia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				OR = {
 					culture = khazar
@@ -566,12 +576,15 @@ e_scythia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
-
-				OR = {
-					culture = khazar
-					religion_group = jewish_group
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
 				}
+
+				culture = khazar
 			}
 		}
 

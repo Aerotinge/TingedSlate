@@ -255,7 +255,7 @@ decisions = {
 			independent = yes
 
 			OR = {
-				culture = german
+				culture = anglo-saxon
 				culture = saxon
 			}
 			lower_tier_than = KING

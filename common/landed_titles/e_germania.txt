@@ -10,7 +10,13 @@ e_germania = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = { ai = yes }
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
+				}
+			}
 
 			OR = {
 				culture_group = central_germanic
@@ -44,13 +50,6 @@ e_germania = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
 		}
 	}
 
@@ -500,9 +499,15 @@ e_germania = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
-				culture_group = south_slavic
+				culture = carantanian
 			}
 		}
 
@@ -709,24 +714,6 @@ e_germania = {
 		}
 	}
 
-	k_eastern_marches = {
-		color = { 240 240 240 }
-		color2 = { 255 255 255 }
-
-		capital = 213 # Wien
-
-		allow = {
-			can_create_kingdom = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
-		}
-	}
-
 	k_frisia = {
 		color = { 245 100 20 }
 		color2 = { 220 220 20 }
@@ -739,7 +726,13 @@ e_germania = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				OR = {
 					culture = dutch
@@ -909,6 +902,21 @@ e_germania = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				OR = {
+					culture = german
+					culture = frankish
+				}
+			}
 		}
 
 		d_alsace = {
@@ -1423,16 +1431,10 @@ e_germania = {
 
 		dignity = 200 # Never want the Hanseatic League to change primary title
 
-		allow = {
-			is_republic = yes
+		allow = {			
 			can_create_kingdom = yes
 
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
+			is_republic = yes
 		}
 	}
 
@@ -1803,7 +1805,13 @@ e_germania = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				OR = {
 					culture = saxon
@@ -2123,12 +2131,20 @@ e_germania = {
 
 		allow = {
 			can_create_kingdom = yes
+			
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
+				OR = {
+					culture = german
+					culture = frankish
+				}
 			}
 		}
 	}
@@ -2142,11 +2158,19 @@ e_germania = {
 		allow = {
 			can_create_kingdom = yes
 
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
-				is_titular = no
+				OR = {
+					culture = german
+					culture = suebi
+				}
 			}
 		}
 	}
@@ -2160,11 +2184,21 @@ e_germania = {
 		short_name = yes
 
 		allow = {
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
+			can_create_kingdom = yes
 
-				is_titular = no
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				OR = {
+					culture = german
+					culture = suebi
+				}
 			}
 		}
 	}

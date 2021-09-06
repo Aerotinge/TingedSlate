@@ -10,7 +10,13 @@ e_baltia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = { ai = yes }
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
+				}
+			}
 
 			OR = {
 				culture_group = baltic
@@ -34,11 +40,16 @@ e_baltia = {
 		allow = {
 			can_create_kingdom = yes
 
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
-				has_holder = no
+				culture = bohemian
 			}
 		}
 	}
@@ -60,6 +71,22 @@ e_baltia = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				OR = {
+					culture = lithuanian
+					culture = latgalian
+					culture = prussian
+				}
+			}
 		}
 
 		d_courland = {
@@ -660,6 +687,18 @@ e_baltia = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				culture = polish
+			}
 		}
 
 		d_greater_poland = {
@@ -1142,10 +1181,21 @@ e_baltia = {
 
 		allow = {
 			can_create_kingdom = yes
+			religion_group = pagan_group
 
 			trigger_if = {
-				limit = { ai = yes }
-				religion_group = pagan_group
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				OR = {
+					culture = pomeranian
+					culture = norse
+				}
 			}
 		}
 

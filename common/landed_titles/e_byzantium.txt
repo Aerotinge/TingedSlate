@@ -32,13 +32,6 @@ e_byzantium = {
 			can_create_kingdom = yes
 
 			is_republic = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
 		}
 	}
 
@@ -709,12 +702,7 @@ e_byzantium = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = { ai = yes }
-
-				religion_group = christian
-			}
+			religion_group = christian
 		}
 
 		d_armenia = {
@@ -959,6 +947,21 @@ e_byzantium = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				OR = {
+					culture = bolghar
+					culture = bulgarian
+				}
+			}
 		}
 
 		d_karvuna = {
@@ -1209,7 +1212,13 @@ e_byzantium = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture = greek
 			}
@@ -1551,19 +1560,7 @@ e_byzantium = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
-
-			trigger_if = {
-				limit = { ai = yes }
-
-				religion_group = christian
-			}
+			religion_group = christian
 		}
 	}
 
@@ -1832,6 +1829,18 @@ e_byzantium = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				culture = georgian
+			}
 		}
 
 		d_abkhazia = {
@@ -2065,13 +2074,6 @@ e_byzantium = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
 		}
 
 		d_abruzzo = {
@@ -2768,7 +2770,13 @@ e_byzantium = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture_group = byzantine
 			}
@@ -3071,6 +3079,21 @@ e_byzantium = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				OR = {
+					culture = croatian
+					culture = dalmatian
+				}
+			}
 		}
 
 		d_bosnia = {
@@ -3464,6 +3487,18 @@ e_byzantium = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				culture = serbian
+			}
 		}
 
 		d_dioclea = {
@@ -3662,11 +3697,18 @@ e_byzantium = {
 		capital = 676 # Vrhbosna
 
 		allow = {
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
+			can_create_kingdom = yes
 
-				is_titular = no
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				culture = bosnian
 			}
 		}
 	}

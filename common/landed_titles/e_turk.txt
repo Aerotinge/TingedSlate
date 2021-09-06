@@ -10,14 +10,12 @@ e_turk = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = { ai = yes }
-
-			trigger_if = {
-				limit = {
-					NOT = { has_dlc = "Horse Lord" }
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
 				}
-
-				government = nomadic_tribal_government
 			}
 
 			culture_group = altaic
@@ -53,7 +51,13 @@ e_turk = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture = cuman
 			}
@@ -511,6 +515,23 @@ e_turk = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
+
+				OR = {
+					culture = khitan
+					culture = mongol
+					culture = uyghur
+					culture = kirghiz
+				}
+			}
 		}
 
 		d_abakan = {

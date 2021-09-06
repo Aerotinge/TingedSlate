@@ -13,7 +13,13 @@ e_danubia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = { ai = yes }
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
+				}
+			}
 
 			culture_group = celtic
 		}
@@ -32,7 +38,13 @@ e_danubia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture = vlach
 			}
@@ -295,26 +307,20 @@ e_danubia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				OR = {
 					culture_group = magyar
 					culture_group = altaic
-					culture = bohemian
-					culture = bosnian
-					culture = carantanian
 					culture = croatian
-					culture = serbian
 					culture = slovien
-					culture = vlach
 				}
-			}
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
 			}
 		}
 
@@ -970,16 +976,15 @@ e_danubia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture = slovien
-			}
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
 			}
 		}
 

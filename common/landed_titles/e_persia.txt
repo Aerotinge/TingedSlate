@@ -14,7 +14,13 @@ e_persia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = { ai = yes }
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
+				}
+			}
 
 			culture_group = iranian
 		}
@@ -37,7 +43,13 @@ e_persia = {
 			can_create_kingdom = yes
 			
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				OR = {
 					culture_group = iranian
@@ -362,7 +374,13 @@ e_persia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				OR = {
 					culture_group = iranian
@@ -686,9 +704,15 @@ e_persia = {
 
 		allow = {
 			can_create_kingdom = yes
-			
+
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				OR = {
 					culture_group = iranian
@@ -929,7 +953,13 @@ e_persia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture_group = iranian
 			}
@@ -1232,7 +1262,13 @@ e_persia = {
 			can_create_kingdom = yes
 			
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				OR = {
 					culture_group = iranian
@@ -1426,7 +1462,13 @@ e_persia = {
 			can_create_kingdom = yes
 			
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture_group = iranian
 			}

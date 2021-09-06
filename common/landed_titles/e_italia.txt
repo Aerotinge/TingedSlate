@@ -10,7 +10,13 @@ e_italia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = { ai = yes }
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
+				}
+			}
 
 			culture = italian
 		}
@@ -176,8 +182,9 @@ e_italia = {
 		dignity = 200 # Never want the Republic of Genoa to change primary title
 
 		allow = {
-			is_republic = yes
 			can_create_kingdom = yes
+
+			is_republic = yes
 
 			k_genoa = {
 				show_scope_change = no
@@ -221,12 +228,7 @@ e_italia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = { ai = yes }
-
-				religion_group = christian
-			}
+			religion_group = christian
 		}
 
 		christian = 10000 # Crusade target weight
@@ -245,7 +247,13 @@ e_italia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = { ai = yes }
+				limit = {
+					ai = yes
+					has_game_rule = {
+						name = title_culture_requirement
+						value = ai_only
+					}
+				}
 
 				culture = lombard
 			}
@@ -703,13 +711,6 @@ e_italia = {
 		allow = {
 			can_create_kingdom = yes
 
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
-
 			trigger_if = {
 				limit = { ai = yes }
 
@@ -1032,15 +1033,9 @@ e_italia = {
 		dignity = 200 # Never want the Republic of Pisa to change primary title
 
 		allow = {
-			is_republic = yes
 			can_create_kingdom = yes
 
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
+			is_republic = yes
 		}
 	}
 
@@ -1056,13 +1051,6 @@ e_italia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
 		}
 	}
 
@@ -1282,15 +1270,9 @@ e_italia = {
 		dignity = 200 # Never want the Republic of Venice to change primary title
 
 		allow = {
-			is_republic = yes
 			can_create_kingdom = yes
 
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
+			is_republic = yes
 		}
 
 		d_venice = {
