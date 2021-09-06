@@ -173,19 +173,36 @@ nomad_dispute = {
 	}
 
 	can_use = {
-		has_dlc = "Horse Lords"
+		trigger_if = {
+			limit = { has_dlc = "Horse Lords" }
 
-		# Defender
-		FROM = {
-			is_nomadic = yes
+			# Defender
+			FROM = {
+				is_nomadic = yes
+			}
+
+			# Attacker
+			ROOT = {
+				is_nomadic = yes
+				has_feud_with = FROM
+				same_realm = FROM
+				mercenary = no
+			}
 		}
+		trigger_else = {
+			# Defender
+			FROM = {
+				government = nomadic_tribal_government
+			}
 
-		# Attacker
-		ROOT = {
-			is_nomadic = yes
-			has_feud_with = FROM
-			same_realm = FROM
-			mercenary = no
+			# Attacker
+			ROOT = {
+				government = nomadic_tribal_government
+				is_foe = FROM
+				NOT = { is_vassal_or_below_of = FROM }
+				same_realm = FROM
+				mercenary = no
+			}
 		}
 	}
 
@@ -193,16 +210,24 @@ nomad_dispute = {
 		tier = COUNT
 		holder = FROM
 
-		location = {
-			num_of_settlements < 1
+		trigger_if = {
+			limit = { has_dlc = "Horse Lords" }
+
+			location = {
+				num_of_settlements < 1
+			}
 		}
 	}
 
 	is_valid_title = {
 		holder = FROM
 
-		location = {
-			num_of_settlements < 1
+		trigger_if = {
+			limit = { has_dlc = "Horse Lords" }
+
+			location = {
+				num_of_settlements < 1
+			}
 		}
 	}
 
@@ -1485,7 +1510,7 @@ nomad_invasion = {
 
 				primary_title = {
 					OR = {
-						title = k_hungary
+						title = k_magyar
 						title = e_danubia
 					}
 				}

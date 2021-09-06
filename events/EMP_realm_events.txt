@@ -34,6 +34,130 @@ narrative_event = {
 	}
 }
 
+# Dacia / Avaria / Magyar / Penchenegs creation event
+character_event = {
+	id = EMP.40033
+
+	is_triggered_only = yes # on_create_title
+	hide_window = yes
+
+	trigger = {
+		FROM = { title = k_pannonia }
+		is_tribal = yes
+		lower_real_tier_than = EMPEROR
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_landed_title = d_pechenegs
+				culture = pecheneg
+			}
+
+			FROM = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = k_pechenegs
+				}
+				dejure_liege_title = {
+					k_pechenegs = {
+						de_jure_liege = PREV
+						set_preferred_capital = FROM
+						copy_title_laws = FROM
+						grant_title_no_opinion = ROOT
+						make_primary_title = yes
+					}
+				}
+			}
+			destroy_landed_title = d_pechenegs
+			destroy_landed_title = FROM
+
+			narrative_event = { id = EMP.40036 }
+		}
+		else_if = {
+			limit = {
+				has_landed_title = k_avaria
+				culture = avar
+			}
+
+			FROM = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = k_avaria
+				}
+				dejure_liege_title = {
+					k_avaria = {
+						de_jure_liege = PREV
+						set_preferred_capital = FROM
+						#copy_title_laws = FROM
+						#grant_title_no_opinion = ROOT
+						make_primary_title = yes
+					}
+				}
+			}
+			destroy_landed_title = FROM
+
+			narrative_event = { id = EMP.40036 }
+		}
+		else_if = {
+			limit = {
+				culture_group = magyar
+			}
+
+			FROM = {
+				any_direct_de_jure_vassal_title = {
+					de_jure_liege = k_magyar
+				}
+				dejure_liege_title = {
+					k_magyar = {
+						de_jure_liege = PREV
+						set_preferred_capital = FROM
+						copy_title_laws = FROM
+						grant_title_no_opinion = ROOT
+						make_primary_title = yes
+					}
+				}
+			}
+			destroy_landed_title = FROM
+
+			narrative_event = { id = EMP.40036 }
+		}
+	}
+}
+
+# Narrative Event - Kingdom of Pannonia
+narrative_event = {
+	id = EMP.40036
+	title = EVTTITLE_EMP_40036
+	desc = EVTDESC_EMP_40036
+	picture = GFX_evt_council
+
+	is_triggered_only = yes
+	major = yes
+
+	major_trigger = {
+		any_demesne_province = {
+			OR = {
+				region = world_europe_east_baltic
+				region = world_europe_east_pannonia
+				region = world_europe_west_germania
+				region = world_europe_south_east
+			}
+		}
+	}
+
+	option = {
+		name = {
+			text = INTERESTING
+			trigger = {
+				NOT = { character = ROOT }
+			}
+		}
+		name = {
+			text = EVTOPTB_HFP_40036
+			trigger = { character = ROOT }
+		}
+	}
+}
+
 # Narrative Event - Stämme Kingdoms
 narrative_event = {
 	id = EMP.40038

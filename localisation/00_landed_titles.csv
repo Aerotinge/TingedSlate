@@ -17318,8 +17318,6 @@ k_hausaland;Hausaland;Haoussa;Hausastaaten;;Hausalandia;;;;;;;;;x
 k_hausaland_adj;Hausan;haoussa;Hausanisch;;hausa;;;;;;;;;x
 k_hellenic_pagan_reformed;Collegium Pontificum;Collegium Pontificum;Kardinalskollegium;;Collegium pontificum;;;;;;;;;x
 k_hellenic_pagan_reformed_adj;Pontifical;pontificale;Päpstlich;;pontificio;;;;;;;;;x
-k_dacia;Dacia;Dacie;Dacia;;Dacia;;;;;;;;;x
-k_dacia_adj;Dacian;dace;Daker;;dacio;;;;;;;;;x
 k_iraq;Iraq;Irak;Irak;;;;;;;;;;;x
 k_iraq_adj;Iraqi;irakienne;Irakisch;;;;;;;;;;;x
 k_ireland;Ireland;Irlande;Irland;;Irlanda;;;;;;;;;x
@@ -17394,6 +17392,8 @@ k_orthodox;The Ecumenical Patriarchate;Patriarcat oecuménique;Ökumenische Patria
 k_orthodox_adj;Patriarchal;patriarcale;Patriarchisch;;Patriarcal;;;;;;;;;x
 k_ottoman;Ottoman Turks;Ottomans;Osmanisches Reich;;Imperio Otomano;;;;;;;;;x
 k_ottoman_adj;Ottoman;ottomane;Osmanisch;;Otomana;;;;;;;;;x
+k_pannonia;Pannonia;Pannonie;Pannonien;;Panonia;;;;;;;;;x
+k_pannonia_adj;Pannonian;pannonienne;Pannonisch;;Pannoniano;;;;;;;;;x
 k_papacy;The Papacy;Papauté;Kirchenstaat;;El Papado;;;;;;;;;x
 k_papacy_adj;Papal;papale;Vatikanisch;;Pontifícia;;;;;;;;;x
 k_papal_state;Papal States;États pontificaux;Kirchenstaat;;Estados Pontificios;;;;;x

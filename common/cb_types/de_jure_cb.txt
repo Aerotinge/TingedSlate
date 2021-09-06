@@ -21,11 +21,11 @@ dejure_county_claim = {
 
 	can_use_gui = {
 		check_if_crusader_trigger = yes
-		
+	}
+
+	can_use = {
 		# Attacker
-		ROOT = {
-			NOT = { government = nomadic_tribal_government }
-		}
+		NOT = { government = nomadic_tribal_government }
 	}
 
 	can_use_title = {
@@ -420,8 +420,6 @@ dejure_duchy_claim = {
 				limit = { tier = EMPEROR }
 				prestige >= 1000
 			}
-			
-			NOT = { government = nomadic_tribal_government }
 		}
 	}
 
@@ -434,6 +432,9 @@ dejure_duchy_claim = {
 				value = off
 			}
 		}
+
+		# Attacker
+		NOT = { government = nomadic_tribal_government }
 
 		# Defender
 		FROM = {
@@ -655,11 +656,6 @@ other_dejure_county_claim = {
 
 	can_use_gui = {
 		check_if_crusader_trigger = yes
-		
-		# Attacker
-		ROOT = {
-			NOT = { government = nomadic_tribal_government }
-		}
 	}
 
 	# Starting scope is attacker
@@ -668,7 +664,10 @@ other_dejure_county_claim = {
 	# FROMFROM is attacker
 	can_use = {
 		# Attacker
-		NOT = { character = ROOT } # Claimant
+		NOR = {
+			character = ROOT # Claimant
+			government = nomadic_tribal_government
+		}
 		mercenary = no
 
 		# Defender
@@ -701,6 +700,9 @@ other_dejure_county_claim = {
 				is_vassal_or_below_of = FROMFROM
 			}
 		}
+
+		# Attacker
+		
 	}
 
 	# Starting scope is target tile

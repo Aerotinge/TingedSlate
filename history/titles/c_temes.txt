@@ -107,7 +107,7 @@
 }
 
 1315.1.10 = {
-	liege = k_hungary
+	liege = k_magyar
 	holder = 470132
 }
 

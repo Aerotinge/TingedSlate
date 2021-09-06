@@ -15,8 +15,23 @@ k_avaria = {
 	capital = 707 # Esztergom
 
 	allow = {
-		always = no
+		can_create_kingdom = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+
+		trigger_if = {
+			limit = { ai = yes }
+
+			culture_group = magyar
+		}
 	}
+
+	catholic = 500 # Crusade target weight
 }
 
 k_beni_helal = {
@@ -159,4 +174,6 @@ k_magyar = {
 			culture_group = magyar
 		}
 	}
+
+	catholic = 500 # Crusade target weight
 }

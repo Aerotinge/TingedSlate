@@ -30,6 +30,8 @@ on_artifact_inheritance = {
 
 on_create_title = {
 	events = {
+		# Pannonia settlement
+		EMP.40033
 	}
 }
 

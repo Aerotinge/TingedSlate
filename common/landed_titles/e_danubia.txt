@@ -4,7 +4,7 @@ e_danubia = {
 
 	capital = 694 # Pest
 
-	culture = irish
+	culture = irish # Placeholder of Pannonian Celtics
 
 	tengri_pagan_reformed = 100
 	slavic_pagan_reformed = 50 # Crusade target weight
@@ -285,72 +285,40 @@ e_danubia = {
 		}
 	}
 
-	k_dacia = {
+	k_pannonia = {
 		color = { 250 120 90 }
 		color2 = { 255 255 255 }
 
-		capital = 707 # Esztergom
+		capital = 694 # Pest
 
 		allow = {
-			OR = {
-				culture_group = magyar
-				culture_group = altaic
-				culture_group = west_slavic
+			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = { ai = yes }
+
+				OR = {
+					culture_group = magyar
+					culture_group = altaic
+					culture = bohemian
+					culture = bosnian
+					culture = carantanian
+					culture = croatian
+					culture = serbian
+					culture = slovien
+					culture = vlach
+				}
+			}
+
+			FROM = {
+				show_scope_change = no
+				show_only_failed_conditions = yes
+
+				is_titular = no
 			}
 		}
 
-		gain_effect = {
-			# Have you considered replace this by a mega scripted_effect?
-			if = {
-				limit = {
-					has_landed_title = k_avaria
-				}
-
-				k_avaria = {
-					rename_pannonia_by_THIS_effect = yes
-				}
-			}
-			if = {
-				limit = {
-					has_landed_title = k_magyar
-				}
-
-				k_magyar = {
-					rename_pannonia_by_THIS_effect = yes
-				}
-			}
-			if = {
-				limit = {
-					has_landed_title = k_pechenegs
-				}
-
-				k_pechenegs = {
-					rename_pannonia_by_THIS_effect = yes
-				}
-			}
-
-			if = {
-				limit = {
-					government = nomadic_tribal_government
-				}
-				
-				set_government_type = tribal_government
-
-				hidden_effect = {
-					any_realm_lord = {
-						limit = {
-							any_demesne_province = {
-								NOT = { region = world_steppe }
-							}
-							government = nomadic_tribal_government
-						}
-						set_government_type = tribal_government
-					}
-				}
-			}
-		}
-
-		culture = hungarian
+		culture = croatian # White Croats, Slovien and Slavic Avarians
 
 		catholic = 500 # Crusade target weight
 
@@ -994,15 +962,17 @@ e_danubia = {
 
 		capital = 711 # Brno
 
-		culture = bohemian
+		culture = slovien
 
 		slavic_pagan_reformed = 100 # Crusade target weight
 
 		allow = {
 			can_create_kingdom = yes
 
-			hidden_trigger = {
-				ai = no
+			trigger_if = {
+				limit = { ai = yes }
+
+				culture = slovien
 			}
 
 			FROM = {

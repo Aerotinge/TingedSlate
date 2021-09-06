@@ -878,7 +878,7 @@ free_tributary_cb = {
 				attacker = {
 					is_nomadic = yes
 				}
-				
+
 				attacker = {
 					government = nomadic_tribal_government
 				}
@@ -886,7 +886,7 @@ free_tributary_cb = {
 				defender = {
 					is_nomadic = no
 				}
-				
+
 				defender = {
 					NOT = { government = nomadic_tribal_government }
 				}
@@ -1267,7 +1267,15 @@ tributary_nomad_cb = {
 	can_use = {
 		# Attacker
 		ROOT = {
-			is_nomadic = yes
+			trigger_if = {
+				limit = { has_dlc = "Horse Lords" }
+
+				is_nomadic = yes
+			}
+			trigger_else = {
+				government = nomadic_tribal_government
+			}
+
 			mercenary = no
 
 			trigger_if = {

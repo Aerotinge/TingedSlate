@@ -1242,10 +1242,10 @@ settlement_decisions = {
 						}
 
 						location = {
-							kingdom = { title = k_dacia }
+							kingdom = { title = k_pannonia }
 						}
 
-						k_dacia = {
+						k_pannonia = {
 							OR = {
 								has_holder = no
 								holder = FROM
@@ -1255,7 +1255,7 @@ settlement_decisions = {
 
 					set_global_flag = avar_khaganate_renamed
 
-					k_dacia = {
+					k_pannonia = {
 						reset_coa = THIS
 						set_name = ""
 						adjective = ""
@@ -1267,7 +1267,7 @@ settlement_decisions = {
 					limit = {
 						FROM = {
 							dynasty = 708 # Árpád
-							has_landed_title = k_dacia
+							has_landed_title = k_pannonia
 						}
 					}
 
@@ -1279,7 +1279,7 @@ settlement_decisions = {
 							religion = PREV
 						}
 
-						k_dacia = {
+						k_pannonia = {
 							any_direct_de_jure_vassal_title = {
 								limit = { tier = DUKE }
 
@@ -1643,10 +1643,10 @@ settlement_decisions = {
 						}
 
 						location = {
-							kingdom = { title = k_dacia }
+							kingdom = { title = k_pannonia }
 						}
 
-						k_dacia = {
+						k_pannonia = {
 							OR = {
 								has_holder = no
 								holder = FROM
@@ -1656,7 +1656,7 @@ settlement_decisions = {
 
 					set_global_flag = avar_khaganate_renamed
 
-					k_dacia = {
+					k_pannonia = {
 						reset_coa = THIS
 						set_name = ""
 						adjective = ""

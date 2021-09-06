@@ -36,7 +36,7 @@
 }
 
 907.7.4 = {
-	de_jure_liege = k_dacia
+	de_jure_liege = k_pannonia
 }
 
 972.1.1 = {

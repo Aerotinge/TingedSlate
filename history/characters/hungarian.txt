@@ -5641,7 +5641,7 @@
 		birth = yes
 	}
 	1097.1.2 = {
-		capital = k_hungary
+		capital = k_magyar
 	}
 	1097.1.2 = {
 		add_spouse = 98008
