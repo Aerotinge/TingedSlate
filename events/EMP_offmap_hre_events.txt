@@ -6,12 +6,11 @@
 
 namespace = EMP
 
-# on_death
 character_event = {
     id = EMP.12010
     hide_window = yes
 
-    is_triggered_only = yes
+    is_triggered_only = yes # on_death
 
     trigger = {
 		is_member_of_hre = yes
@@ -19,7 +18,7 @@ character_event = {
 
 	immediate = {
 		any_demesne_title = {
-			set_title_flag = temporarily_obligation
+			set_title_flag = hre_reichsfreiheit
 		}
 	}
 }
@@ -28,7 +27,7 @@ character_event = {
     id = EMP.12011
     hide_window = yes
 
-    is_triggered_only = yes
+    is_triggered_only = yes # on_death
 
     trigger = {
 		offmap_hre = {
@@ -45,39 +44,78 @@ character_event = {
 					#title = e_hre
 				}
 			}
-			set_title_flag = temporarily_obligation
-		}		
+			set_title_flag = hre_kronbesitz
+		}
 	}
 }
 
-# on_new_holder_inheritance
 character_event = {
     id = EMP.12020
     hide_window = yes
 
-    is_triggered_only = yes
+    is_triggered_only = yes # on_new_holder_inheritance
 
     trigger = {
 		offmap_hre = {
 			has_status = hre_shattered
 		}
 		FROM = {
-			has_title_flag = temporarily_obligation
+			has_title_flag = hre_reichsfreiheit
 		}
     }
 
 	immediate = {
-		if = { # inherit titles is not a primary_title, nothing happen
+		log = "EMP.12020 triggered [This.GetBestName]"
+		if = {
+			limit = {
+				primary_title = {
+					title = FROM
+				}
+				independent = yes
+				NOT = { # No suzerain, which breaks on stupid succ_gavelkind
+					suzerain = { always = yes }
+				}
+			}
+
+			offmap_hre_tributaries_join_effect = yes
+		}
+		FROM = {
+			clr_title_flag = hre_reichsfreiheit
+		}
+	}
+}
+
+character_event = {
+    id = EMP.12021
+    hide_window = yes
+
+    is_triggered_only = yes # on_new_holder_inheritance
+
+    trigger = {
+		offmap_hre = {
+			has_status = hre_shattered
+		}
+		FROM = {
+			has_title_flag = hre_kronbesitz
+		}
+    }
+
+	immediate = {
+		log = "EMP.12021 triggered [This.GetBestName]"
+		if = { # inherit titles is not the primary_title, nothing happen
 			limit = {
 				primary_title = {
 					FROM = {
-						tier = PREV
+						OR = {
+							tier = PREV
+							lower_tier_than = PREV
+						}
 						NOT = { title = PREV }
 					}
 				}
 			}
 		}
-		else_if = { # inherit titles is a primary_title and becomes direct vassal of emperor
+		else_if = { # inherit titles is the primary_title and becomes direct vassal of emperor
 			limit = {
 				primary_title = {
 					title = FROM
@@ -86,127 +124,23 @@ character_event = {
 					is_offmap_governor = offmap_hre
 				}
 			}
-			top_liege = {
-				ROOT = {
-					set_defacto_liege = THIS
-					offmap_hre_tributaries_join_effect = yes
-				}
-			}
-		}
-		else = { # inherited titles is a primary_title but not direct vassal of emperor
-		}
-		FROM = {
-			clr_title_flag = temporarily_obligation
-		}
-	}
-}
-
-# on_new_holder_inheritance
-character_event = {
-    id = EMP.12021
-    hide_window = yes
-
-    is_triggered_only = yes
-
-    trigger = {
-		offmap_hre = {
-			has_status = hre_shattered
-			governor = {
-				ROOT = {
-					liege = { character = PREVPREV }
-					primary_title = {
-						OR = {
-							tier = KING
-							dejure_liege_title = {
-								NOR = { 
-									has_holder = yes
-									holder_scope = {
-										character = PREVPREVPREVPREV
-									}
-								}
-							}
-						}						
-					}
-				}
-			}
-		}
-		FROM = { # for not death scenario only. e.g abdication
-			NOT = { has_title_flag = temporarily_obligation }
-		}
-    }
-
-	immediate = {
-		log = "----------------"
-		log = "[Root.GetBestName] ([From.GetName]) is now a direct vassal of HRE"
-		log = "Exception handled"
-		log = "----------------"
-		set_defacto_liege = THIS
-		offmap_hre_tributaries_join_effect = yes
-	}
-}
-
-# ROOT is the character, FROM is the title, FROMFROM is the old holder
-# on_new_holder_usurpation, transfer all hre tributaries to new holder
-character_event = {
-    id = EMP.12030
-    hide_window = yes
-
-    is_triggered_only = yes
-
-    trigger = {
-		offmap_hre = {
-			has_status = hre_shattered
-		}
-		FROM = {
-			title = e_hre
-		}
-	}
-	
-	immediate = {
-		FROMFROM = {
-			any_tributary = {
-				limit = {
-					is_tributary = {
-						type = hre_prince
-						suzerain = PREV
-					}
-				}			
-				remove_tributary = PREV
-				ROOT = {
-					make_tributary = { who = PREV tributary_type = hre_prince }
-				}
-			}
-			any_tributary = {
-				limit = {
-					is_tributary = {
-						type = hre_free_imp_city
-						suzerain = PREV
-					}
-				}			
-				remove_tributary = PREV
-				ROOT = {
-					make_tributary = { who = PREV tributary_type = hre_free_imp_city }
-				}
-			}
-			
-			# set_defacto_liege = THIS # Not working here
+			set_defacto_liege = THIS
 			offmap_hre_tributaries_join_effect = yes
-			offmap_hre_ruler_name_sync_effect = yes
+		}
+		else = { # inherited titles is the primary_title but not direct vassal of emperor
+		}
+		FROM = {
+			clr_title_flag = hre_kronbesitz
 		}
 	}
 }
 
-# An offmap power changes its governor. Triggers for the new governor
-# Root = New governor/ruler
-# From = Old governor/ruler
-# FromFrom = Offmap
-# on_offmap_governor_changed
 character_event = {
 	id = EMP.12040
 	
 	hide_window = yes
 	
-	is_triggered_only = yes
+	is_triggered_only = yes # on_offmap_governor_changed
 
 	trigger = {
 		FROMFROM = {
@@ -216,18 +150,15 @@ character_event = {
 	}
 	
 	immediate = {
-		# Exception handler
-		# In case of tributaries going with other titles
+		log = "EMP.12040 triggered [This.GetBestName]"
 		any_playable_ruler = {
 			limit = {
 				suzerain = {
 					NOT = { is_offmap_governor = offmap_hre }
-					PREV = {
-						OR = {
-							is_tributary = { type = hre_prince suzerain = THIS }
-							is_tributary = { type = hre_free_imp_city suzerain = THIS }
-						}
-					}
+				}
+				OR = {
+					is_tributary = { type = hre_prince }
+					is_tributary = { type = hre_free_imp_city }
 				}
 			}
 			suzerain = {
@@ -238,24 +169,19 @@ character_event = {
 	}
 	
 	after = {
-		print_hre_government_update_effect = yes
+		print_hre_governor_update_effect = yes
 		offmap_hre_government_de_facto_maintain_effect = yes
 		offmap_hre_ruler_name_sync_effect = yes
 	}
 }
 
-# An offmap power changes its ruler. Triggers for the new ruler
-# Root = New ruler
-# From = Old ruler
-# FromFrom = Offmap
-# on_offmap_ruler_changed
 character_event = {
 	id = EMP.12050
 	
 	hide_window = yes
 	offmap = only
 	
-	is_triggered_only = yes
+	is_triggered_only = yes # on_offmap_ruler_changed
 
 	trigger = { is_offmap_tag = offmap_hre }
     
@@ -265,31 +191,226 @@ character_event = {
 	}
 }
 
-# The HRE title being contested
-character_event = {
-	id = EMP.12060
 
-	is_triggered_only = yes
+character_event = {
+    id = EMP.12060
+    hide_window = yes
+
+    is_triggered_only = yes # on_new_holder_*
+
+    trigger = {
+		offmap_hre = {
+			has_status = hre_shattered
+			governor_title = {
+				OR = {
+					persistent_event_target:hre_title_1_per = {
+						title = FROM
+					}
+					persistent_event_target:hre_title_2_per = {
+						title = FROM
+					}
+					persistent_event_target:hre_title_3_per = {
+						title = FROM
+					}
+				}
+			}
+		}
+		is_theocracy = yes
+		# TODO: religious check
+    }
+
+	immediate = {
+		log = "EMP.12060 triggered [This.GetBestName]"
+		add_trait = hre_bishopelector
+	}
+}
+
+character_event = {
+	id = EMP.12110
+
+	is_triggered_only = yes # on_startup
 	
 	hide_window = yes
  
 	trigger = {
-		always = no # Disabled Intentionally
 		offmap_hre = {
-			NOT = { has_status = hre_shattered }
-		}
-		FROM = {
-			any_war = {
-				war_title = e_hre
+			governor = {
+				character = ROOT
 			}
+			NOT = { has_offmap_flag = hre_formed }
 		}
 	}
     
 	immediate = {
-		offmap_hre = {
-			set_offmap_flag = hre_title_contested
+		e_hre = {
+			e_pirates = {
+				copy_title_history = PREV
+			}
+			unsafe_destroy_landed_title = THIS
+			activate_title = {
+				title = e_hre
+				status = no
+			}
+			copy_title_history = e_pirates
 		}
 	}
+}
+
+character_event = {
+	id = EMP.12120
+
+	is_triggered_only = yes # on_unlanded
+	
+	hide_window = yes
+ 
+	trigger = {
+		has_landed_title = e_hre
+	}
+    
+	immediate = {
+		log = "EMP.12120 triggered"
+		# Shall if current_heir is_landed = NOT
+		offmap_hre = {
+			clr_offmap_flag = hre_formed
+		}
+		#e_hre = {
+		#	unsafe_destroy_landed_title = THIS
+		#}
+		# narrative_event
+	}
+}
+
+# Weak claim for all Princes of hre
+character_event = {
+	id = EMP.12220
+
+	is_triggered_only = yes # on_offmap_monthly_pulse
+
+	hide_window = yes
+
+	trigger = {
+		is_offmap_governor = offmap_hre
+		FROM = {
+			has_status = hre_shattered
+		}
+	}
+
+	immediate = {
+		log = "EMP.12220 triggered on [This.GetBestName]"
+		any_tributary = {
+			limit = {
+				is_tributary = {
+					type = hre_prince
+				}
+				is_feudal = yes
+				NOT = { has_claim = e_hre }
+			}
+
+			add_weak_claim = e_hre
+			character_event = {
+				id = EMP.12221
+				days = 30
+				random = 30
+			}
+		}
+	}
+}
+
+# Maintainace event for event generated weak claim
+character_event = {
+	id = EMP.12221
+
+	is_triggered_only = yes # EMP.12220
+
+	hide_window = yes
+
+	trigger = {
+		is_member_of_hre = yes
+		is_feudal = yes
+	}
+
+	fail_trigger_effect = {
+		if = {
+			limit = { has_weak_claim = e_hre }
+
+			remove_claim = e_hre
+		}
+		break = yes
+	}
+
+	immediate = {
+		repeat_event = {
+			id = EMP.12221
+			months = 1
+		}
+	}
+}
+
+
+# Maintainace event for event generated weak claim
+character_event = {
+	id = EMP.12222
+
+	is_triggered_only = yes # EMP.12220
+
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			# Counts
+			e_hre = {
+				persistent_event_target:hre_title_1_per = {
+					title = THIS
+					holder = ROOT
+				}
+			}
+
+			e_hre = {
+				persistent_event_target:hre_title_2_per = {
+					title = THIS
+					holder = ROOT
+				}
+			}
+
+			e_hre = {
+				persistent_event_target:hre_title_3_per = {
+					title = THIS
+					holder = ROOT
+				}
+			}
+
+			# Dukes
+			e_hre = {
+				persistent_event_target:hre_title_4_per = {
+					title = THIS
+					holder = ROOT
+				}
+			}
+
+			e_hre = {
+				persistent_event_target:hre_title_5_per = {
+					title = THIS
+					holder = ROOT
+				}
+			}
+
+			e_hre = {
+				persistent_event_target:hre_title_6_per = {
+					title = THIS
+					holder = ROOT
+				}
+			}
+
+			e_hre = {
+				persistent_event_target:hre_title_7_per = {
+					title = THIS
+					holder = ROOT
+				}
+			}
+		}
+	}
+
+	immediate = {}
 }
 
 narrative_event = {
@@ -336,21 +457,54 @@ narrative_event = {
 			offmap_hre = {
 				set_status = hre_shattered
 				set_offmap_flag = hre_diet_metz_enacted
+				governor_title = {
+					add_law = {
+						law = succ_hre_elective
+						opinion_effect = no
+					}
+					persistent_event_target:hre_title_1_per = {
+						holder_scope = {
+							if = {
+								limit = {
+									is_theocracy = yes
+								}
+
+								add_trait = hre_bishopelector
+							}
+						}
+					}
+					persistent_event_target:hre_title_2_per = {
+						holder_scope = {
+							if = {
+								limit = {
+									is_theocracy = yes
+								}
+
+								add_trait = hre_bishopelector
+							}
+						}
+					}
+					persistent_event_target:hre_title_3_per = {
+						holder_scope = {
+							if = {
+								limit = {
+									is_theocracy = yes
+								}
+
+								add_trait = hre_bishopelector
+							}
+						}
+					}
+				}
 			}
 			set_government_type = sacred_confederacy_government
-			e_hre = {
-				add_law = {
-					law = succ_hre_elective
-					opinion_effect = no
-				}
-				set_title_landless = { title = THIS status = yes }
-			}
 			offmap_hre_government_de_facto_maintain_effect = yes
 			offmap_hre_ruler_name_sync_effect = yes
 			export_to_variable = {
 				which = global_current_year
 				value = year
 			}
+			character_event = { id = EMP.12220 } # generate weak claim for all princes
 		}
 	}
 	

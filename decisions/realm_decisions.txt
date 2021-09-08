@@ -1763,7 +1763,6 @@ decisions = {
 
 			e_hre = {
 				has_holder = no
-				is_titular = yes
 			}
 
 			NOR = {
@@ -1959,38 +1958,6 @@ decisions = {
 						opinion_effect = no
 					}
 				}
-
-				if = {
-					limit = {
-						real_tier = KING
-						empire = {
-							has_holder = no
-						}
-					}
-
-					empire = {
-						any_direct_de_jure_vassal_title = {
-							de_jure_liege = e_hre
-						}
-						hidden_effect = {
-							activate_title = {
-								title = THIS
-								status = no
-							}
-						}
-					}
-				}
-				else = {
-					any_direct_de_jure_vassal_title = {
-						de_jure_liege = e_hre
-					}
-					hidden_effect = {
-						activate_title = {
-							title = THIS
-							status = no
-						}
-					}
-				}
 			}
 
 			any_demesne_title = {
@@ -2004,6 +1971,11 @@ decisions = {
 
 					destroy_landed_title = THIS
 				}
+			}
+
+			# offmap_powers setup
+			offmap_hre = {
+				set_offmap_flag = hre_formed
 			}
 
 			# Give lands to the Pope

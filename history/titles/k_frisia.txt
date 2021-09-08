@@ -29,7 +29,3 @@
 760.1.1 = {
 	holder = 0 # Death of last Frisian King
 }
-
-962.2.2 = {
-	de_jure_liege = e_hre
-}

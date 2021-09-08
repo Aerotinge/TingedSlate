@@ -1,0 +1,23 @@
+hre_bishopelector = { # For election
+	potential = {
+		e_hre = {
+			OR = {
+				persistent_event_target:hre_title_1_per = {
+					holder = ROOT
+				}
+				persistent_event_target:hre_title_2_per = {
+					holder = ROOT
+				}
+				persistent_event_target:hre_title_3_per = {
+					holder = ROOT
+				}
+			}
+		}
+		is_theocracy = yes
+	}
+
+	hidden = yes
+	random = no
+	customizer = no
+	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger
+}

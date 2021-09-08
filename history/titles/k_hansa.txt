@@ -5,9 +5,6 @@
 #b_vorrade
 #b_warendorp
 #b_wittenborg
-962.2.2 = {
-	de_jure_liege = e_hre
-}
 
 1227.1.1 = {
 	liege = e_hre

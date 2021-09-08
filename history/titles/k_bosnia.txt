@@ -2,6 +2,10 @@
 	active = no
 }
 
+1261.7.25 = {
+	de_jure_liege = e_nicaea
+}
+
 1322.1.1 = {
 	active = yes
 }

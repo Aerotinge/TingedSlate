@@ -5,7 +5,7 @@ print_hre_ruler_update_effect = {
 	log = "----------------"
 }
 
-print_hre_government_update_effect = {
+print_hre_governor_update_effect = {
 	log = "----------------"
 	log = "[From.GetBestName] is no longer holder of HRE."
 	log = "New Governmenor of HRE is [Root.GetBestName]."
@@ -27,6 +27,7 @@ offmap_hre_government_de_facto_maintain_effect = {
 			OR = {
 				tier = DUKE
 				tier = KING
+				tier = EMPEROR
 			}
 		}
 		any_de_jure_vassal = {
@@ -46,15 +47,10 @@ offmap_hre_government_de_facto_maintain_effect = {
 }
 
 offmap_hre_ruler_name_sync_effect = {
-	e_hre = {
-		holder_scope = {
-			offmap_hre = {
-				offmap_ruler = {
-					dynasty = none
-					#set_name = PREVPREV
-					set_name = HRE_RULER_NAME
-				}
-			}
+	offmap_hre = {
+		offmap_ruler = {
+			dynasty = none
+			set_name = HRE_RULER_NAME
 		}
 	}
 }
@@ -120,41 +116,6 @@ offmap_hre_tributaries_sync_effect = {
 					}
 				}
 			}
-		}
-	}
-}
-
-hre_hold_election_effect = {
-	e_hre = {
-		current_heir = {
-			e_hre = {
-				gain_title = PREV
-			}
-			save_event_target_as = hre_new_holder
-		}
-	}
-	any_tributary = {
-		limit = {
-			is_tributary = {
-				type = hre_prince
-				suzerain = ROOT
-			}
-		}			
-		remove_tributary = ROOT
-		event_target:hre_new_holder = {
-			make_tributary = { who = PREV tributary_type = hre_prince }
-		}
-	}
-	any_tributary = {
-		limit = {
-			is_tributary = {
-				type = hre_free_imp_city
-				suzerain = ROOT
-			}
-		}			
-		remove_tributary = ROOT
-		event_target:hre_new_holder = {
-			make_tributary = { who = PREV tributary_type = hre_free_imp_city }
 		}
 	}
 }

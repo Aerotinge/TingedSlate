@@ -15,13 +15,6 @@
 	liege = d_bavaria
 }
 
-935.1.1 = {
-	set_tribute_suzerain = {
-		who = d_ungvar
-		type = nomadic
-	}
-}
-
 937.1.1 = {
 	clear_tribute_suzerain = d_ungvar
 }

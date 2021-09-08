@@ -56,156 +56,91 @@ hre_elective = {
 			}
 		}
 
-	#	additive_modifier = { # Papal influence
-	#		value = 100
-	#
-	#		is_theocracy = yes
-	#		controls_religion = yes
-	#
-	#		FROMFROM = {
-	#			has_law = investiture_law_0 # Pope gets a vote if Papal Succession is in place
-	#
-	#			# Either title is higher than Duke-tier, or must be primary
-	#			OR = {
-	#				higher_tier_than = DUKE
-	#
-	#				holder_scope = {
-	#					primary_title = {
-	#						title = PREVPREV
-	#					}
-	#				}
-	#			}
-	#		}
-	#	}
-
-		additive_modifier = { # Prince-Electors
-			value = 75
-
-			is_alternate_start = no # Random worlds do whatever they want!
-
+		additive_modifier = { # Papal influence
+			value = 99
+	
+			is_theocracy = yes
+			controls_religion = yes
+	
 			FROMFROM = {
+				has_law = investiture_law_0 # Pope gets a vote if Papal Succession is in place
 				holder_scope = { religion = ROOT }
-
+	
 				# Either title is higher than Duke-tier, or must be primary
 				OR = {
-					higher_real_tier_than = DUKE
+					higher_tier_than = DUKE
 					is_primary_holder_title = yes
 				}
 			}
 
-			NOT = { has_landed_title = e_hre }
+			OR = {
+				suzerain = {
+					is_offmap_governor = offmap_hre
+				}
+				top_liege = {
+					OR = {
+						is_offmap_governor = offmap_hre
+						suzerain = {
+							is_offmap_governor = offmap_hre
+						}
+					}
+				}
+			}
+		}
 
-			OR = { # To make sure they are still de jure vassals of HRE
-				# Counts
-				e_hre = {
+		additive_modifier = { # Prince-Electors
+			value = 75
+
+			FROMFROM = {
+				holder_scope = { religion = ROOT }
+	
+				# Either title is higher than Duke-tier, or must be primary
+				OR = {
+					higher_tier_than = DUKE
+					is_primary_holder_title = yes
+				}
+
+				OR = {
 					persistent_event_target:hre_title_1_per = {
 						holder = ROOT
-
-						OR = {
-							any_dejure_liege = {
-								title = FROMFROM
-							}
-
-							ROOT = { # Popes need no de jure
-								controls_religion = yes
-							}
-						}
 					}
-				}
-
-				e_hre = {
 					persistent_event_target:hre_title_2_per = {
 						holder = ROOT
-
-						OR = {
-							any_dejure_liege = {
-								title = FROMFROM
-							}
-
-							ROOT = { # Popes need no de jure
-								controls_religion = yes
-							}
-						}
 					}
-				}
-
-				e_hre = {
 					persistent_event_target:hre_title_3_per = {
 						holder = ROOT
-
-						OR = {
-							any_dejure_liege = {
-								title = FROMFROM
-							}
-
-							ROOT = { # Popes need no de jure
-								controls_religion = yes
-							}
-						}
 					}
-				}
-
-				# Dukes
-				e_hre = {
 					persistent_event_target:hre_title_4_per = {
 						holder = ROOT
-
-						OR = {
-							any_dejure_liege = {
-								title = FROMFROM
-							}
-
-							ROOT = { # Popes need no de jure
-								controls_religion = yes
-							}
-						}
 					}
-				}
-
-				e_hre = {
 					persistent_event_target:hre_title_5_per = {
 						holder = ROOT
-
-						OR = {
-							any_dejure_liege = {
-								title = FROMFROM
-							}
-
-							ROOT = { # Popes need no de jure
-								controls_religion = yes
-							}
-						}
 					}
-				}
-
-				e_hre = {
 					persistent_event_target:hre_title_6_per = {
 						holder = ROOT
-
-						OR = {
-							any_dejure_liege = {
-								title = FROMFROM
-							}
-
-							ROOT = { # Popes need no de jure
-								controls_religion = yes
-							}
-						}
 					}
-				}
-
-				e_hre = {
 					persistent_event_target:hre_title_7_per = {
 						holder = ROOT
+					}
+				}
+			}
 
-						OR = {
-							any_dejure_liege = {
-								title = FROMFROM
-							}
+			NOT = { has_landed_title = FROMFROM }
 
-							ROOT = { # Popes need no de jure
-								controls_religion = yes
-							}
+			OR = {
+				is_feudal = yes
+				trait = hre_bishopelector
+			}
+
+			OR = {
+				suzerain = {
+					is_offmap_governor = offmap_hre
+				}
+				top_liege = {
+					OR = {
+						is_offmap_governor = offmap_hre
+						suzerain = {
+							is_offmap_governor = offmap_hre
 						}
 					}
 				}
@@ -225,28 +160,17 @@ hre_elective = {
 				}
 			}
 
-			# If the Elector Title is a Duchy, any vassal can be an elector, otherwise only Dukes and above
-			trigger_if = {
-				limit = { FROMFROM = { real_tier = DUKE } }
-				higher_real_tier_than = BARON
-			}
-			trigger_else = {
-				higher_real_tier_than = COUNT
-			}
-
-			OR = { # Either de facto direct vassal, or independent ruler who is de jure vassal
-				vassal_of = FROMFROM
-				independent = yes
-			}
-
-			# De jure vassal, or any vassal if title titular
-			trigger_if = {
-				limit = { FROMFROM = { is_titular = yes } }
-				vassal_of = FROMFROM
-			}
-			trigger_else = {
-				any_dejure_liege = {
-					title = FROMFROM
+			OR = {
+				suzerain = {
+					is_offmap_governor = offmap_hre
+				}
+				top_liege = {
+					OR = {
+						is_offmap_governor = offmap_hre
+						suzerain = {
+							is_offmap_governor = offmap_hre
+						}
+					}
 				}
 			}
 		}
@@ -268,78 +192,20 @@ hre_elective = {
 				}
 			}
 
-			# If the Elector Title is a Duchy, any vassal can be an elector, otherwise only Dukes and above
-			trigger_if = {
-				limit = { FROMFROM = { real_tier = DUKE } }
-				higher_real_tier_than = BARON
-			}
-			trigger_else = {
-				higher_real_tier_than = COUNT
-			}
-
-			OR = { # Either de facto direct vassal, or independent ruler who is de jure vassal
-				vassal_of = FROMFROM
-				independent = yes
-			}
-
-			# De jure vassal, or any vassal if title titular
-			trigger_if = {
-				limit = { FROMFROM = { is_titular = yes } }
-				vassal_of = FROMFROM
-			}
-			trigger_else = {
-				any_dejure_liege = {
-					title = FROMFROM
+			OR = {
+				suzerain = {
+					is_offmap_governor = offmap_hre
+				}
+				top_liege = {
+					OR = {
+						is_offmap_governor = offmap_hre
+						suzerain = {
+							is_offmap_governor = offmap_hre
+						}
+					}
 				}
 			}
 		}
-
-	#	additive_modifier = { # Fallback Electors (any religion)
-	#		value = 10
-	#
-	#		FROMFROM = {
-	#			# Tied to religion
-	#			holder_scope = {
-	#				NOT = { religion_group = ROOT }
-	#			}
-	#
-	#			# Either title is higher than Duke-tier, or must be primary
-	#			OR = {
-	#				higher_tier_than = DUKE
-	#
-	#				holder_scope = {
-	#					primary_title = {
-	#						title = PREVPREV
-	#					}
-	#				}
-	#			}
-	#		}
-	#
-	#		# If the Elector Title is a Duchy, any vassal can be an elector, otherwise only Dukes and above
-	#		trigger_if = {
-	#			limit = { FROMFROM = { real_tier = DUKE } }
-	#			higher_real_tier_than = BARON
-	#		}
-	#		trigger_else = {
-	#			higher_real_tier_than = COUNT
-	#		}
-	#
-	#		OR = { # Either de facto direct vassal, or independent ruler who is de jure vassal
-	#			vassal_of = FROMFROM
-	#			independent = yes
-	#		}
-	#
-	#		# De jure vassal, or any vassal if title titular
-	#		trigger_if = {
-	#			limit = { FROMFROM = { is_titular = yes } }
-	#			vassal_of = FROMFROM
-	#		}
-	#		trigger_else = {
-	#			any_dejure_liege = {
-	#				title = FROMFROM
-	#			}
-	#		}
-	#	}
 
 		additive_modifier = {
 			value = 4
@@ -385,32 +251,18 @@ hre_elective = {
 		}
 
 		FROM = {
-			# the candidate is in the "realm"
-			top_liege = {
-				OR = {
-					character = ROOT
-					is_member_of_hre = yes
-				}
-			}
-			
 			# If not a Prince of HRE, candidates must be a claimer
 			trigger_if = {
 				limit = { NOT = { is_member_of_hre = yes } }
 				has_claim = ROOT_FROMFROM
 			}
 
-			# If the title controls the religion, candidates must be of the same religion
-			trigger_if = {
-				limit = { ROOT = { controls_religion = yes } }
-				religion = ROOT
-			}
-
 			is_ascetic_trigger = no
 			is_theocracy = no
 			is_republic = no
+			is_landed = yes
 
 			NOR = {
-				is_landed = no
 				# Parent is a candidate for election
 				mother = {
 					is_alive = yes

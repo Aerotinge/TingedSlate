@@ -4,6 +4,8 @@ on_startup = {
 		# Nomadic tribal
 		EMP.11002
 		EMP.11003
+		# Holy Roman Empire setup
+		EMP.12110
 	}
 }
 
@@ -19,7 +21,6 @@ on_death = {
 	events = {
 		EMP.12010
 		EMP.12011
-		EMP.13010	# Early Feudal Gavelkind
 	}
 }
 
@@ -30,7 +31,7 @@ on_artifact_inheritance = {
 
 on_create_title = {
 	events = {
-		# Pannonia settlement
+		# Pannonia Kingdom
 		EMP.40033
 	}
 }
@@ -38,6 +39,8 @@ on_create_title = {
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder = {
 	events = {
+		# Holy Roman Empire
+		EMP.12060	# Bishop Elector
 		# Nomadic tribal
 		EMP.11006
 		EMP.11009
@@ -47,17 +50,21 @@ on_new_holder = {
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder_inheritance = {
 	events = {
-		EMP.12020	#
-		EMP.12021
+		# Holy Roman Empire
+		EMP.12020
+		EMP.12021	#
+		EMP.12060	# Bishop Elector
 		# Nomadic tribal
 		EMP.11006
+		
 	}
 }
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder_usurpation = {
 	events = {
-		EMP.12030	#
+		# Holy Roman Empire
+		EMP.12060	# Bishop Elector
 		# Nomadic tribal
 		EMP.11006
 	}
@@ -83,9 +90,20 @@ on_offmap_ruler_changed = {
 	}
 }
 
+# Happens once a month on a random day. Triggers for the governor
+# ROOT is governor
+# FROM is offmap
+on_offmap_monthly_pulse = {
+	events = {
+		EMP.12220 # pulse event for princes, for giving/revoking their weak claim of e_hre
+	}
+}
+
 on_unlanded = {
 	events = {
 		# Nomadic tribal
 		EMP.11008 #Landless nomad clean-up
+		# Holy Roman Empire
+		EMP.12120
 	}
 }

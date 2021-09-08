@@ -491,7 +491,7 @@ guiTypes = {
 				textureFile = ""
 				font = "vic_22"
 				borderSize = { x = 0 y = 0 }
-				text = "OFFMAP_HRE_TITLE"
+				text = "String_empty_space"
 				format = centre
 				maxWidth = 200
 				maxHeight = 50
@@ -512,38 +512,6 @@ guiTypes = {
 				pdx_tooltip = "OFFMAP_HRE_NUM_MEMBERS"
 				pdx_tooltip_delayed = "OFFMAP_HRE_NUM_MEMBERS_DELAYED"
 			}
-
-			iconType = {
-				name = "leave_hre_disabled"
-				spriteType = "GFX_standard_button_112_disabled"
-				position = { x = 60 y = 541 }
-				orientation = "UPPER_LEFT"
-			}
-
-			instantTextBoxType = {
-				name = "leave_hre_disabled_text"
-				position = { x = 16 y = 547 }
-				textureFile = ""
-				font = "vic_18"
-				borderSize = { x = 0 y = 0 }
-				text = "OFFMAP_HRE_LEAVE"
-				format = centre
-				maxWidth = 200
-				maxHeight = 24
-				fixedSize = yes
-				pdx_tooltip = "OFFMAP_HRE_LEAVE"
-			}
-
-			guiButtonType = {
-				name = "leave_hre"
-				position = { x = 60 y = 540 }
-				quadTextureSprite ="GFX_standard_button_112"
-				buttonText = "OFFMAP_HRE_LEAVE"
-				buttonFont = "vic_18"
-				orientation = "UPPER_LEFT"
-				pdx_tooltip = "OFFMAP_HRE_LEAVE"
-			}
-			
 		}
 	}
 

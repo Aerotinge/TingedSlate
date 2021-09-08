@@ -49,10 +49,6 @@
 	law = succ_feudal_elective
 }
 
-962.2.2 = {
-	de_jure_liege = e_hre
-}
-
 973.5.7 = {
 	holder = 1286 #Otto II
 }
