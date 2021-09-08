@@ -32,7 +32,7 @@ theocracy_governments = {
 		potential = {
 			is_patrician = no
 			NOR = {
-				is_government_potential = muslim_government
+				religion_group = muslim
 				is_government_potential = order_government
 			}
 
