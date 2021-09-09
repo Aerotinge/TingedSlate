@@ -10,7 +10,7 @@ offmap_hre = {
 	governor_title = e_hre
 	tier = emperor
 
-	non_aggression_modifier = peace_deal_with_hre
+	non_aggression_modifier = hre_elector_modifier
 	coa_religion = orthodox # catholic
 	government = feudal_government
 	beginning_of_history = 962.2.2

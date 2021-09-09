@@ -13,7 +13,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_offmap_bottom_embellishment_germany"
-		texturefile = "gfx\\interface\\offmap_screen\\germany_lionmonsterdragon.dds"
+		texturefile = "gfx\\interface\\offmap_screen\\china_lionmonsterdragon.dds"
 	}
 	spriteType = {
 		name = "GFX_offmap_ruler_banner_germany"
@@ -21,7 +21,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_offmap_ruler_portrait_border_germany"
-		texturefile = "gfx\\interface\\offmap_screen\\germany_emperor_portrait_ring.dds"
+		texturefile = "gfx\\interface\\offmap_screen\\china_emperor_portrait_ring.dds"
 	}
 	spriteType = {
 		name = "GFX_offmap_gift_button_germany"
@@ -71,7 +71,7 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_offmap_germany_dynasty_frame"
-		texturefile = "gfx\\interface\\offmap_screen\\germany_dynasty_frame.dds"
+		texturefile = "gfx\\interface\\offmap_screen\\china_dynasty_frame.dds"
 	}
 	spriteType = {
 		name = "GFX_offmap_germany_mapmode_button"
@@ -88,37 +88,5 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_offmap_germany_close_button"
 		texturefile = "gfx\\interface\\offmap_screen\\round_close_button.dds"
-	}
-	spriteType = {
-		name = "GFX_offmap_germany_italian_elector"
-		texturefile = "gfx\\interface\\offmap_screen\\icons\\italian_elector.dds"
-	}
-	spriteType = {
-		name = "GFX_offmap_germany_french_elector"
-		texturefile = "gfx\\interface\\offmap_screen\\icons\\french_elector.dds"
-	}
-	spriteType = {
-		name = "GFX_offmap_germany_german_elector"
-		texturefile = "gfx\\interface\\offmap_screen\\icons\\german_elector.dds"
-	}
-	spriteType = {
-		name = "GFX_offmap_germany_spain_elector"
-		texturefile = "gfx\\interface\\offmap_screen\\icons\\spain_elector.dds"
-	}
-	spriteType = {
-		name = "GFX_offmap_germany_britannia_elector"
-		texturefile = "gfx\\interface\\offmap_screen\\icons\\britannia_elector.dds"
-	}
-	spriteType = {
-		name = "GFX_offmap_germany_bg_elector"
-		texturefile = "gfx\\interface\\offmap_screen\\icons\\bg_elector.dds"
-	}
-	spriteType = {
-		name = "GFX_standard_button_148_disabled"
-		texturefile = "gfx\\interface\\standard_button_148_disabled.dds"
-	}
-	spriteType = {
-		name = "GFX_standard_button_112_disabled"
-		texturefile = "gfx\\interface\\standard_button_112_disabled.dds"
 	}
 }

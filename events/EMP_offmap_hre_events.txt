@@ -221,7 +221,7 @@ character_event = {
 
 	immediate = {
 		log = "EMP.12060 triggered [This.GetBestName]"
-		add_trait = hre_bishopelector
+		add_trait = hre_spiritual_elector
 	}
 }
 
@@ -347,7 +347,8 @@ character_event = {
 }
 
 
-# Maintainace event for event generated weak claim
+# Monthly update - Elector modifier
+# Since triggered_modifiers is not working at all
 character_event = {
 	id = EMP.12222
 
@@ -356,61 +357,28 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
-		OR = {
-			# Counts
-			e_hre = {
-				persistent_event_target:hre_title_1_per = {
-					title = THIS
-					holder = ROOT
-				}
-			}
+		is_offmap_governor = offmap_hre
+		FROM = {
+			has_status = hre_shattered
+		}
+	}
 
-			e_hre = {
-				persistent_event_target:hre_title_2_per = {
-					title = THIS
-					holder = ROOT
-				}
-			}
-
-			e_hre = {
-				persistent_event_target:hre_title_3_per = {
-					title = THIS
-					holder = ROOT
-				}
-			}
-
-			# Dukes
-			e_hre = {
-				persistent_event_target:hre_title_4_per = {
-					title = THIS
-					holder = ROOT
-				}
-			}
-
-			e_hre = {
-				persistent_event_target:hre_title_5_per = {
-					title = THIS
-					holder = ROOT
-				}
-			}
-
-			e_hre = {
-				persistent_event_target:hre_title_6_per = {
-					title = THIS
-					holder = ROOT
-				}
-			}
-
-			e_hre = {
-				persistent_event_target:hre_title_7_per = {
-					title = THIS
-					holder = ROOT
+	immediate = {
+		FROM = {
+			governor_title = {
+				any_elector_character = {
+					limit = {
+						NOT = { character = ROOT }
+					}
+					remove_character_modifier = hre_elector_modifier
+					add_character_modifier = {
+						name = hre_elector_modifier
+						months = 2
+					}
 				}
 			}
 		}
 	}
-
-	immediate = {}
 }
 
 narrative_event = {
@@ -469,7 +437,7 @@ narrative_event = {
 									is_theocracy = yes
 								}
 
-								add_trait = hre_bishopelector
+								add_trait = hre_spiritual_elector
 							}
 						}
 					}
@@ -480,7 +448,7 @@ narrative_event = {
 									is_theocracy = yes
 								}
 
-								add_trait = hre_bishopelector
+								add_trait = hre_spiritual_elector
 							}
 						}
 					}
@@ -491,7 +459,7 @@ narrative_event = {
 									is_theocracy = yes
 								}
 
-								add_trait = hre_bishopelector
+								add_trait = hre_spiritual_elector
 							}
 						}
 					}

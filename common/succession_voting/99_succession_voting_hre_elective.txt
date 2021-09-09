@@ -56,43 +56,16 @@ hre_elective = {
 			}
 		}
 
-		additive_modifier = { # Papal influence
-			value = 99
-	
-			is_theocracy = yes
-			controls_religion = yes
-	
-			FROMFROM = {
-				has_law = investiture_law_0 # Pope gets a vote if Papal Succession is in place
-				holder_scope = { religion = ROOT }
-	
-				# Either title is higher than Duke-tier, or must be primary
-				OR = {
-					higher_tier_than = DUKE
-					is_primary_holder_title = yes
-				}
-			}
-
-			OR = {
-				suzerain = {
-					is_offmap_governor = offmap_hre
-				}
-				top_liege = {
-					OR = {
-						is_offmap_governor = offmap_hre
-						suzerain = {
-							is_offmap_governor = offmap_hre
-						}
-					}
-				}
-			}
-		}
-
 		additive_modifier = { # Prince-Electors
 			value = 75
 
 			FROMFROM = {
-				holder_scope = { religion = ROOT }
+				holder_scope = {
+					religion = ROOT
+					any_tributary = {
+						character = ROOT
+					}
+				}
 	
 				# Either title is higher than Duke-tier, or must be primary
 				OR = {
@@ -129,21 +102,7 @@ hre_elective = {
 
 			OR = {
 				is_feudal = yes
-				trait = hre_bishopelector
-			}
-
-			OR = {
-				suzerain = {
-					is_offmap_governor = offmap_hre
-				}
-				top_liege = {
-					OR = {
-						is_offmap_governor = offmap_hre
-						suzerain = {
-							is_offmap_governor = offmap_hre
-						}
-					}
-				}
+				trait = hre_spiritual_elector
 			}
 		}
 
@@ -151,26 +110,17 @@ hre_elective = {
 			value = 30
 
 			FROMFROM = {
-				holder_scope = { religion = ROOT } # Tied to religion
+				holder_scope = {
+					religion = ROOT # Tied to religion
+					any_tributary = {
+						character = ROOT
+					}
+				}
 
 				# Either title is higher than Duke-tier, or must be primary
 				OR = {
 					higher_real_tier_than = DUKE
 					is_primary_holder_title = yes
-				}
-			}
-
-			OR = {
-				suzerain = {
-					is_offmap_governor = offmap_hre
-				}
-				top_liege = {
-					OR = {
-						is_offmap_governor = offmap_hre
-						suzerain = {
-							is_offmap_governor = offmap_hre
-						}
-					}
 				}
 			}
 		}
@@ -183,6 +133,9 @@ hre_elective = {
 				holder_scope = {
 					NOT = { religion = ROOT }
 					religion_group = ROOT
+					any_tributary = {
+						character = ROOT
+					}
 				}
 
 				# Either title is higher than Duke-tier, or must be primary
@@ -191,30 +144,22 @@ hre_elective = {
 					is_primary_holder_title = yes
 				}
 			}
-
-			OR = {
-				suzerain = {
-					is_offmap_governor = offmap_hre
-				}
-				top_liege = {
-					OR = {
-						is_offmap_governor = offmap_hre
-						suzerain = {
-							is_offmap_governor = offmap_hre
-						}
-					}
-				}
-			}
 		}
 
-		additive_modifier = {
+		additive_modifier = { # Papal influence
 			value = 4
-
+	
 			is_theocracy = yes
-
+			controls_religion = yes
+	
 			FROMFROM = {
-				holder_scope = {
-					religion = ROOT
+				has_law = investiture_law_0 # Pope gets a vote if Papal Succession is in place
+				holder_scope = { religion = ROOT }
+	
+				# Either title is higher than Duke-tier, or must be primary
+				OR = {
+					higher_tier_than = DUKE
+					is_primary_holder_title = yes
 				}
 			}
 		}

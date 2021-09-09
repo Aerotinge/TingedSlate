@@ -33,56 +33,6 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 			position = { x = 7 y = 75 }
 
-			# HRE INTERFACE BG
-			
-			iconType = {
-				name = "offmap_hre_elector_bg"
-				spriteType = "GFX_offmap_germany_bg_elector"
-				position = { x = 20 y = 75 }
-				orientation = "UPPER_LEFT"
-				alwaysTransparent = yes
-			}
-
-			guiButtonType = {
-				name = "offmap_hre_elector_italian"
-				quadTextureSprite = "GFX_offmap_germany_italian_elector"
-				position = { x = 20 y = 75 }
-				orientation = "UPPER_LEFT"
-				alwaysTransparent = yes
-			}
-
-			guiButtonType = {
-				name = "offmap_hre_elector_french"
-				quadTextureSprite = "GFX_offmap_germany_french_elector"
-				position = { x = 20 y = 75 }
-				orientation = "UPPER_LEFT"
-				alwaysTransparent = yes
-			}
-
-			guiButtonType = {
-				name = "offmap_hre_elector_german"
-				quadTextureSprite = "GFX_offmap_germany_german_elector"
-				position = { x = 20 y = 75 }
-				orientation = "UPPER_LEFT"
-				alwaysTransparent = yes
-			}
-
-			guiButtonType = {
-				name = "offmap_hre_elector_spain"
-				quadTextureSprite = "GFX_offmap_germany_spain_elector"
-				position = { x = 20 y = 75 }
-				orientation = "UPPER_LEFT"
-				alwaysTransparent = yes
-			}
-
-			guiButtonType = {
-				name = "offmap_hre_elector_britannia"
-				quadTextureSprite = "GFX_offmap_germany_britannia_elector"
-				position = { x = 20 y = 75 }
-				orientation = "UPPER_LEFT"
-				alwaysTransparent = yes
-			}
-
 			iconType = {
 				name = "label_bg"
 				spriteType = "GFX_offmap_banner_germany"
@@ -93,7 +43,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "offmap_label"
-				position = { x = 210 y = -13 }
+				position = { x = 213 y = -13 }
 				textureFile = ""
 				font = "vic_36"
 				borderSize = { x = 0 y = 0 }
@@ -137,7 +87,7 @@ guiTypes = {
 			iconType = {
 				name = "ruler_portrait_banner"
 				quadTextureSprite = "GFX_offmap_ruler_banner_germany"
-				position = { x = 240 y = 300 }
+				position = { x = 204 y = 288 }
 				orientation = "UPPER_LEFT"
 			}
 
@@ -152,7 +102,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "ruler_label"
-				position = { x = 250 y = 302 }
+				position = { x = 255 y = 287 }
 				textureFile = ""
 				font = "vic_22"
 				borderSize = { x = 0 y = 0 }
@@ -190,7 +140,7 @@ guiTypes = {
 			guiButtonType = {
 				name = "governor_portrait"
 				quadTextureSprite = "GFX_char_150"
-				position = { x = 277 y = 152 }
+				position = { x = 279 y = 130 }
 				orientation = "UPPER_LEFT"
 				pdx_tooltip = "CHARACTER_TOOLTIP"
 				pdx_tooltip_delayed = "CHARACTER_TOOLTIP_DELAYED"
@@ -199,7 +149,7 @@ guiTypes = {
 			guiButtonType = {
 				name = "governor_portrait_frame"
 				quadTextureSprite = "GFX_charframe_150"
-				position = { x = 266 y = 138 }
+				position = { x = 268 y = 116 }
 				orientation = "UPPER_LEFT"
 			}
 
@@ -320,7 +270,7 @@ guiTypes = {
 			iconType = {
 				name = "divider_icon"
 				spriteType = "GFX_offmap_germany_divider"
-				position = { x = 60 y = 485 }
+				position = { x = 74 y = 351 }
 				orientation = "UPPER_LEFT"
 			}
 
@@ -401,7 +351,7 @@ guiTypes = {
 
 			overlappingElementsBoxType = {
 				name = "tributaries"
-				position = { x = 35 y = 450 }
+				position = { x = 30 y = 486 }
 				size = { x = 635 y = 35 }
 				format = centre
 			}
@@ -421,8 +371,8 @@ guiTypes = {
 
 			overlappingElementsBoxType = {
 				name = "naps"
-				position = { x = 355 y = 530 }
-				size = { x = 280 y = 32 }
+				position = { x = 35 y = 392 }
+				size = { x = 635 y = 35 }
 				format = centre
 			}
 
@@ -444,7 +394,7 @@ guiTypes = {
 				name = "bottom_embellishment"
 				spriteType = "GFX_offmap_bottom_embellishment_germany"
 				#position = { x = 230 y = 595 }
-				position = { x = 5230 y = 595 } # Removed, for imperial authority identicator
+				position = { x = 5230 y = 595 }
 				orientation = "UPPER_LEFT"
 				alwaysTransparent = yes
 			}
@@ -479,28 +429,42 @@ guiTypes = {
 			# HRE INTERFACE
 
 			iconType = {
-				name = "rex_title_label_bg"
+				name = "elector_label_bg"
 				spriteType = "GFX_offmap_currency_background_germany"
-				position = { x = 205 y = 335 }
+				position = { x = 244 y = 333 }
 				orientation = "UPPER_LEFT"
 			}
 
 			instantTextBoxType = {
-				name = "rex_title_label"
-				position = { x = 250 y = 348 }
+				name = "elector_label"
+				position = { x = 254 y = 344 }
 				textureFile = ""
 				font = "vic_22"
 				borderSize = { x = 0 y = 0 }
-				text = "String_empty_space"
+				text = "ELECTORS"
 				format = centre
 				maxWidth = 200
 				maxHeight = 50
 				fixedSize = yes
 			}
 
+			iconType = {
+				name = "divider_icon_low"
+				spriteType = "GFX_offmap_germany_divider"
+				position = { x = 74 y = 445 }
+				orientation = "UPPER_LEFT"
+			}
+
+			iconType = {
+				name = "princes_banner"
+				quadTextureSprite = "GFX_offmap_ruler_banner_germany"
+				position = { x = 204 y = 427 }
+				orientation = "UPPER_LEFT"
+			}
+
 			instantTextBoxType = {
 				name = "princes_label"
-				position = { x = 255 y = 420 }
+				position = { x = 254 y = 438 }
 				textureFile = ""
 				font = "vic_22"
 				borderSize = { x = 0 y = 0 }

@@ -58,7 +58,10 @@ offmap_hre_ruler_name_sync_effect = {
 offmap_hre_tributaries_join_effect = {
 	if = {
 		limit = {
-			NOT = { is_republic = yes }
+			NOR = {
+				is_republic = yes
+				is_merchant_republic = yes
+			}
 		}
 		offmap_hre = {
 			governor = {

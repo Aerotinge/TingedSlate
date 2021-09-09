@@ -96,6 +96,7 @@ on_offmap_ruler_changed = {
 on_offmap_monthly_pulse = {
 	events = {
 		EMP.12220 # pulse event for princes, for giving/revoking their weak claim of e_hre
+		EMP.12222 # Elector
 	}
 }
 

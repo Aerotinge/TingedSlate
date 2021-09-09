@@ -1,6 +1,6 @@
-peace_deal_with_hre = {
-	icon = 10
+hre_elector_modifier = {
 	is_visible = {
 		always = no
 	}
+	icon = 10
 }

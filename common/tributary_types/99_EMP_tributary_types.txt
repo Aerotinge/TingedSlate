@@ -5,7 +5,7 @@ hre_prince = {
 	tributary_name = HRE_PRINCE_NAME
 	tributary_plural = HRE_PRINCE_NAME_PLURAL
 	suzerain_name = HRE_LIEGE_NAME
-	tribute_name = HRE_FEALTY_TRIBUTE
+	tribute_name = TRIBUTARY_DEFAULT_TRIBUTE
 	breaks_at_suzerain_death = no
 	breaks_at_tributary_death = no
 	suzerain_can_be_called = yes
@@ -44,7 +44,7 @@ hre_free_imp_city = {
 	tributary_name = HRE_FREECITY_NAME
 	tributary_plural = HRE_FREECITY_PLURAL
 	suzerain_name = HRE_LIEGE_NAME
-	tribute_name = HRE_TAX_TRIBUTE
+	tribute_name = LEDGER_TAX
 	breaks_at_suzerain_death = no
 	breaks_at_tributary_death = no
 	suzerain_can_be_called = no
@@ -60,7 +60,7 @@ hre_free_imp_city = {
 		# princely_independent
 	}
 	income_tribute_percentage = {
-		value = 0.05
+		value = 0.06
 	}
 	reinforce_tribute_percentage = {
 		value = 0

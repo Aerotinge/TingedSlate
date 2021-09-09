@@ -1,4 +1,4 @@
-hre_bishopelector = { # For election
+hre_spiritual_elector = { # For election
 	potential = {
 		e_hre = {
 			OR = {

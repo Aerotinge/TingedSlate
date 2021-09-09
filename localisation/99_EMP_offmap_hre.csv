@@ -2,3 +2,8 @@ HRE_RULER_NAME;[e_hre.Holder.GetDynName];[e_hre.Holder.GetDynName];[e_hre.Holder
 OFFMAP_PRINCES;Princes and Free Imperial Cities;Princes et cités impériales libres ;Fürsten und freie Reichsstädte;;Príncipes y ciudades imperiales libres;;;;;;;;;x
 OFFMAP_HRE_NUM_MEMBERS;These are the member states of the Empire.;Ce sont les États membres de l'Empire.;Dies sind die Mitgliedsstaaten des Reiches.;;Son estados miembros del Imperio.;;;;;;;;;x
 OFFMAP_HRE_NUM_MEMBERS_DELAYED;More countries might join the Holy Roman Empire if they are threatened by outside powers, and have a friendly attitude towards the Emperor.;D'autres pays pourraient intégrer le Saint-Empire s'ils se sentent menacés par des puissances extérieures, et adopter une attitude amicale envers l'Empereur. Une autorité impériale élevée est plus susceptible de les convaincre.;Mehr Nationen können dem Heiligen Römischen Reich beitreten, wenn sie von äußeren Mächten bedroht sind und eine freundliche Haltung zum Kaiser haben.;;Más países se unirían al Sacro Imperio Romano si se vieran amenazados por potencias externas y tuvieran una actitud amistosa hacia el emperador.;;;;;;;;;x
+HRE_LIEGE_NAME;Liege;Seigneur;Lehnsherr;;Señor;;;;;;;;;x
+HRE_PRINCE_NAME;Prince;Prince;Fürst;;Príncipe;;;;;x
+HRE_PRINCE_PLURAL;Princes;Princes;Fürsten;;Príncipes;;;;;;;;;x
+HRE_FREECITY_NAME;Free Imperial City;Ville libre d'Empire;Freie Reichsstadt;;Ciudad imperial libre;;;;;;;;;x
+HRE_FREECITY_PLURAL;Free Imperial Cities;Villes libres d'Empire;Freie Reichsstädte;;Ciudades Imperiales Libres;;;;;;;;;x
