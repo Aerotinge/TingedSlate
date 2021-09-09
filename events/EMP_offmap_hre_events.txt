@@ -237,21 +237,33 @@ character_event = {
 			governor = {
 				character = ROOT
 			}
-			NOT = { has_offmap_flag = hre_formed }
 		}
 	}
     
 	immediate = {
-		e_hre = {
-			e_pirates = {
-				copy_title_history = PREV
+		offmap_hre = {
+			governor_title = {
+				# Suppress auto-generated governor if there's one. It is an offmap_power hardcoded behaviour and no way to stop it from spawning everytime.
+				if = {
+					limit = {
+						holder_scope = {
+							is_landed = no
+						}
+					}
+
+					log = "EMP.12110 triggered"
+					e_pirates = {
+						copy_title_history = PREV
+					}
+					unsafe_destroy_landed_title = THIS
+					activate_title = {
+						title = e_hre
+						status = no
+					}
+					copy_title_history = e_pirates
+				}
+				# Else, congrat you're a normal HRE holder. Have fun.
 			}
-			unsafe_destroy_landed_title = THIS
-			activate_title = {
-				title = e_hre
-				status = no
-			}
-			copy_title_history = e_pirates
 		}
 	}
 }
@@ -269,14 +281,16 @@ character_event = {
     
 	immediate = {
 		log = "EMP.12120 triggered"
-		# Shall if current_heir is_landed = NOT
+		# narrative_event first
 		offmap_hre = {
-			clr_offmap_flag = hre_formed
+			governor_title = {
+				unsafe_destroy_landed_title = THIS
+				activate_title = {
+					title = THIS
+					status = no
+				}
+			}
 		}
-		#e_hre = {
-		#	unsafe_destroy_landed_title = THIS
-		#}
-		# narrative_event
 	}
 }
 

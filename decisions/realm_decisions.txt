@@ -1973,11 +1973,6 @@ decisions = {
 				}
 			}
 
-			# offmap_powers setup
-			offmap_hre = {
-				set_offmap_flag = hre_formed
-			}
-
 			# Give lands to the Pope
 			any_title_under = {
 				show_scope_change = no
