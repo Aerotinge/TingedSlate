@@ -165,9 +165,13 @@ character_event = {
 			}
 			offmap_hre_tributaries_join_effect = yes
 		}
-	}
-	
-	after = {
+		if = {
+			limit = {
+				has_character_modifier = hre_elector_modifier
+			}
+
+			remove_character_modifier = hre_elector_modifier
+		}
 		print_hre_governor_update_effect = yes
 		offmap_hre_government_de_facto_maintain_effect = yes
 		offmap_hre_ruler_name_sync_effect = yes

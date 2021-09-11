@@ -27,7 +27,10 @@ e_germania = {
 		trigger_if = {
 			limit = {
 				e_hre = {
-					is_title_active = no
+					OR = {
+						is_title_active = no
+						has_holder = yes
+					}
 				}
 			}
 
