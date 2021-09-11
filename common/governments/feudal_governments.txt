@@ -13,9 +13,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			muslim_government
-			theocratic_feudal_government
-			chinese_imperial_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -70,9 +67,17 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			#feudal_vassal_government
 			muslim_government
+			muslim_vassal_government
+			secular_feudal_government
+			secular_feudal_vassal_government
 			theocratic_feudal_government
-			chinese_imperial_government
+			theocratic_feudal_vassal_government
+			tibetan_feudal_government
+			tibetan_feudal_vassal_government
+			sacred_confederacy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -129,9 +134,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			theocratic_feudal_government
-			chinese_imperial_government
 		}
 		free_revoke_on_tiers = {
 			DUKE
@@ -194,8 +196,16 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
+			feudal_vassal_government
+			muslim_government
+			#muslim_vassal_government
+			secular_feudal_government
+			secular_feudal_vassal_government
 			theocratic_feudal_government
-			chinese_imperial_government
+			theocratic_feudal_vassal_government
+			tibetan_feudal_government
+			tibetan_feudal_vassal_government
+			sacred_confederacy_government
 		}
 		free_revoke_on_tiers = {
 			DUKE
@@ -258,10 +268,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			muslim_government
-			tibetan_feudal_government
-			sacred_confederacy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -351,8 +357,15 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
+			feudal_vassal_government
 			muslim_government
+			muslim_vassal_government
+			secular_feudal_government
+			#secular_feudal_vassal_government
+			theocratic_feudal_government
+			theocratic_feudal_vassal_government
 			tibetan_feudal_government
+			tibetan_feudal_vassal_government
 			sacred_confederacy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
@@ -443,12 +456,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			muslim_government
-			secular_feudal_government
-			theocratic_feudal_government
-			sacred_confederacy_government
-			theocracy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -510,9 +517,15 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
+			feudal_vassal_government
 			muslim_government
+			muslim_vassal_government
 			secular_feudal_government
+			secular_feudal_vassal_government
 			theocratic_feudal_government
+			theocratic_feudal_vassal_government
+			tibetan_feudal_government
+			#tibetan_feudal_vassal_government
 			sacred_confederacy_government
 			theocracy_government
 		}
@@ -576,11 +589,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			secular_feudal_government
-			tibetan_feudal_government
-			sacred_confederacy_government
-			theocracy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			theocracy_government
@@ -646,8 +654,15 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
+			feudal_vassal_government
+			muslim_government
+			muslim_vassal_government
 			secular_feudal_government
+			secular_feudal_vassal_government
+			theocratic_feudal_government
+			#theocratic_feudal_vassal_government
 			tibetan_feudal_government
+			tibetan_feudal_vassal_government
 			sacred_confederacy_government
 			theocracy_government
 		}
@@ -714,10 +729,17 @@ feudal_governments = {
 		}
 		accepts_liege_governments = {
 			feudal_government
+			feudal_vassal_government
 			muslim_government
-			theocracy_government
+			muslim_vassal_government
+			secular_feudal_government
+			secular_feudal_vassal_government
 			theocratic_feudal_government
-			chinese_imperial_government
+			theocratic_feudal_vassal_government
+			tibetan_feudal_government
+			tibetan_feudal_vassal_government
+			sacred_confederacy_government
+			theocracy_government
 		}
 		free_revoke_on_governments = {
 			order_government
@@ -778,9 +800,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			republic_government
-			merchant_republic_government
 		}
 		free_revoke_on_tiers = {
 			DUKE
@@ -849,9 +868,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			muslim_government
-			theocratic_feudal_government
 		}
 		free_revoke_on_tiers = {
 			DUKE
@@ -910,9 +926,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			muslim_government
-			theocratic_feudal_government
-			chinese_imperial_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government

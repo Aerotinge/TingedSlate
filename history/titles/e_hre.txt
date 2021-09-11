@@ -7,6 +7,18 @@
 	law = succ_feudal_elective
 	law = agnatic_succession
 	law = investiture_law_1
+	effect = {
+		catholic = {
+			ROOT = {
+				offmap_power = {
+					save_persistent_event_target = {
+						name = official_faith
+						scope = PREVPREV
+					}
+				}
+			}
+		}
+	}
 }
 
 973.5.7 = {

@@ -10,12 +10,19 @@ tribal_governments = {
 		}
 		accepts_liege_governments_culture = { # Tribals have no opinion penalty towards their liege if of the same culture
 			feudal_government
+			feudal_vassal_government
+			muslim_government
+			muslim_vassal_government
+			secular_feudal_government
+			secular_feudal_vassal_government
+			theocratic_feudal_government
+			theocratic_feudal_vassal_government
+			tibetan_feudal_government
+			tibetan_feudal_vassal_government
+			sacred_confederacy_government
 			republic_government
 			merchant_republic_government
 			theocracy_government
-			muslim_government
-			theocratic_feudal_government
-			chinese_imperial_government
 		}
 		accepts_liege_governments_culture_and_religion = { 	# Tribals have no opinion penalty towards their liege if of the same culture and religion
 			order_government

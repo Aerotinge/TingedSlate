@@ -1939,9 +1939,6 @@ decisions = {
 				give_nickname = nick_the_great
 			}
 
-			# Create Electors, depending on capital location:
-			princely_elective_apply_elector_setup_effect = yes
-
 			primary_title = {
 				show_scope_change = no
 
@@ -1957,6 +1954,16 @@ decisions = {
 						cooldown = no
 						opinion_effect = no
 					}
+				}
+			}
+
+			religion_scope = {
+				offmap_hre = {
+					save_persistent_event_target = {
+						name = official_faith
+						scope = PREV
+					}
+					set_policy = hre_dominant
 				}
 			}
 
@@ -1997,7 +2004,7 @@ decisions = {
 				grant_title = event_target:the_pope
 			}
 
-			e_byzantium = { # Modified it into a flag on e_byz and handle it on_new_holder_*
+			e_byzantium = {
 				show_scope_change = no
 
 				holder_scope = {

@@ -2774,8 +2774,8 @@ convert_religion_failsafe_effect = {
 		if = {
 			limit = { government = temporary_fake_theocracy_government }
 
-			set_correct_theocratic_government_type_effect = yes
 			clr_character_flag = needs_temporary_fake_theocracy_government
+			set_correct_theocratic_government_type_effect = yes
 		}
 	}
 }

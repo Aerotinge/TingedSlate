@@ -18,11 +18,19 @@ theocracy_governments = {
 		}
 		accepts_liege_governments = {
 			feudal_government
+			feudal_vassal_government
 			muslim_government
+			muslim_vassal_government
+			secular_feudal_government
+			secular_feudal_vassal_government
+			theocratic_feudal_government
+			theocratic_feudal_vassal_government
+			tibetan_feudal_government
+			tibetan_feudal_vassal_government
+			sacred_confederacy_government
+			order_government
 			republic_government
 			merchant_republic_government
-			theocratic_feudal_government
-			chinese_imperial_government
 		}
 
 		frame_suffix = "_theocracy"
@@ -31,9 +39,9 @@ theocracy_governments = {
 
 		potential = {
 			is_patrician = no
-			NOR = {
+			holy_order = no
+			NOT = {
 				religion_group = muslim
-				is_government_potential = order_government
 			}
 
 			trigger_if = {

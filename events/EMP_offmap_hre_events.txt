@@ -145,7 +145,6 @@ character_event = {
 	trigger = {
 		FROMFROM = {
 			is_offmap_tag = offmap_hre
-			has_status = hre_shattered
 		}
 	}
 	
@@ -243,7 +242,7 @@ character_event = {
 	immediate = {
 		offmap_hre = {
 			governor_title = {
-				# Suppress auto-generated governor if there's one. It is an offmap_power hardcoded behaviour and no way to stop it from spawning everytime.
+				# Suppress auto-generated governor if there's one. It is an offmap_power hardcoded behaviour and no way to stop it from spawning every startup.
 				if = {
 					limit = {
 						holder_scope = {
@@ -257,12 +256,12 @@ character_event = {
 					}
 					unsafe_destroy_landed_title = THIS
 					activate_title = {
-						title = e_hre
+						title = THIS
 						status = no
 					}
 					copy_title_history = e_pirates
 				}
-				# Else, congrat you're a normal HRE holder. Have fun.
+				# Else, congrat you're a valid HRE holder. Have fun.
 			}
 		}
 	}
@@ -281,13 +280,32 @@ character_event = {
     
 	immediate = {
 		log = "EMP.12120 triggered"
-		# narrative_event first
-		offmap_hre = {
-			governor_title = {
-				unsafe_destroy_landed_title = THIS
-				activate_title = {
-					title = THIS
-					status = no
+		if = {
+			limit = {
+				e_hre = {
+					current_heir = {
+						is_landed = yes
+					}
+				}
+			}
+			e_hre = {
+				current_heir = {
+					gain_title = {
+						target = PREV
+						type = faction_demand
+					}
+				}
+			}
+		}
+		else = {
+			# narrative_event first: GG HRE
+			offmap_hre = {
+				governor_title = {
+					unsafe_destroy_landed_title = THIS
+					activate_title = {
+						title = THIS
+						status = no
+					}
 				}
 			}
 		}
@@ -395,55 +413,269 @@ character_event = {
 	}
 }
 
+# Monthly - Wicked Kaiser
 narrative_event = {
-	id = EMP.12350
-	title = EVTNAME_HRE_1350
-	desc = EVTDESC_HRE_1350
-
-	#major = yes
-	
-	#hide_from = yes
-	
+	id = EMP.12330
+	title = EVTNAME_EMP_12330
+	desc = EVTDESC_EMP_12330
 	picture = "GFX_evt_bloodlines"
 	border = "GFX_event_narrative_frame_diplomacy"
-	
-	only_playable = yes
-	religion = catholic
-	
+
+	major = yes
+
+	#only_playable = yes
+	only_independent = yes
+
 	trigger = {
-		e_hre = {
-			holder_scope = {
-				character = ROOT
-				war = no
+		always = no
+		is_offmap_governor = offmap_hre
+		FROM = {
+			# policies: hre_dominant, hre_peace, hre_communion
+			# official_faith: catholic, fraticelli
+			# hre_peace: +waldensian, +cathar, +lollard(triggered relative events)
+			# hre_communion: +orthodox
+			# Public Satan check?
+			trigger_if = {
+				limit = {
+					has_policy = hre_dominant
+				}
+
+				persistent_event_target:official_faith = {
+					ROOT = {
+						NOT = { religion = PREV }
+					}
+				}
 			}
-			has_law = succ_feudal_elective
+			trigger_else_if = {
+				limit = {
+					has_policy = hre_peace
+				}
+
+				persistent_event_target:official_faith = {
+					ROOT = {
+						NOR = {
+							religion = PREV
+							is_heresy_of = PREV
+						}
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					has_policy = hre_communion
+				}
+
+				persistent_event_target:official_faith = {
+					ROOT = {
+						NOR = {
+							religion = PREV
+							religion = orthodox
+						}
+					}
+				}
+			}
 		}
+	}
+
+	major_trigger = {
+		ai = no
+	}
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					has_policy = hre_dominant
+					persistent_event_target:official_faith = {
+						ROOT_FROM = {
+							governor_title = {
+								current_heir = {
+									religion = PREVPREVPREV
+								}
+							}
+						}
+					}
+				}
+
+				governor_title = {
+					current_heir = {
+						gain_title = {
+							target = PREV
+							type = faction_demand
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_policy = hre_peace
+					persistent_event_target:official_faith = {
+						ROOT_FROM = {
+							governor_title = {
+								current_heir = {
+									OR = {
+										religion = PREVPREVPREV
+										is_heresy_of = PREVPREVPREV
+									}
+								}
+							}
+						}
+					}
+				}
+
+				governor_title = {
+					current_heir = {
+						gain_title = {
+							target = PREV
+							type = faction_demand
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_policy = hre_peace
+					persistent_event_target:official_faith = {
+						ROOT_FROM = {
+							governor_title = {
+								current_heir = {
+									OR = {
+										religion = PREVPREVPREV
+										religion = orthodox
+									}
+								}
+							}
+						}
+					}
+				}
+
+				governor_title = {
+					current_heir = {
+						gain_title = {
+							target = PREV
+							type = faction_demand
+						}
+					}
+				}
+			}
+			else = {
+				governor_title = {
+					unsafe_destroy_landed_title = THIS
+					activate_title = {
+						title = THIS
+						status = no
+					}
+				}
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = EMP.12350
+	title = EVTNAME_EMP_12350
+	desc = EVTDESC_EMP_12350
+	picture = "GFX_evt_bloodlines"
+	border = "GFX_event_narrative_frame_diplomacy"
+
+	major = yes
+
+	#only_playable = yes
+	only_independent = yes
+	religion_group = christian
+	war = no
+
+	trigger = {
 		offmap_hre = {
-			AND = {
-				always = no
-				year = 1350
+			governor = {
+				character = ROOT
+			}
+			governor_title = {
+				has_law = succ_feudal_elective
+			}
+			trigger_if = {
+				limit = { has_dlc = "Conclave" }
+
+				governor = {
+					primary_title = {
+						calc_true_if = {
+							amount >= 2
+
+							has_law = law_voting_power_1
+							has_law = banish_voting_power_1
+							has_law = execution_voting_power_1
+							has_law = revoke_title_voting_power_1
+							has_law = grant_title_voting_power_1
+							has_law = imprison_voting_power_1
+							has_law = war_voting_power_1
+						}
+					}
+				}
+			}
+			trigger_else = {
+				governor_title = {
+					OR = {
+						has_law = crown_authority_0
+						has_law = crown_authority_1
+						has_law = crown_authority_2
+						AND = {
+							has_law = crown_authority_3
+							has_law = investiture_law_0
+						}
+					}
+				}
+			}
+		}
+
+		OR = {
+			total_years_played >= 500
+			year >= 1350
+		}
+	}
+
+	major_trigger = {
+		ai = no
+		OR = {
+			top_liege = {
+				OR = {
+					has_landed_title = e_hre
+					is_member_of_hre = yes
+				}
+			}
+			any_neighbor_independent_ruler = {
+				OR = {
+					has_landed_title = e_hre
+					is_member_of_hre = yes
+				}
 			}
 		}
 	}
-	
+
 	mean_time_to_happen = {
-		months = 36
+		years = 5
+
+		mult_modifier = {
+			factor = 0.5
+
+			year >= 1355
+		}
 	}
-	
-	#major_trigger = {
-	#	religion = ROOT
-	#}
-	
+
 	immediate = {
 		hidden_tooltip = {
+			# Create Electors, depending on capital location:
+			princely_elective_apply_elector_setup_effect = yes
+
 			offmap_hre = {
 				set_status = hre_shattered
 				set_offmap_flag = hre_diet_metz_enacted
 				governor_title = {
 					add_law = {
 						law = succ_hre_elective
-						opinion_effect = no
+						cooldown = no
+						#opinion_effect = no # Anger all current electors
 					}
+
 					persistent_event_target:hre_title_1_per = {
 						holder_scope = {
 							if = {
@@ -482,56 +714,33 @@ narrative_event = {
 			set_government_type = sacred_confederacy_government
 			offmap_hre_government_de_facto_maintain_effect = yes
 			offmap_hre_ruler_name_sync_effect = yes
-			export_to_variable = {
-				which = global_current_year
-				value = year
-			}
 			character_event = { id = EMP.12220 } # generate weak claim for all princes
 		}
 	}
 	
 	option = {
-		name = EVTOPTA8000 # I guess I have no choice...
+		name = EVTOPTA_HF_16002 # I... I have to do something about this.
 		trigger = {
-			any_realm_title = {
-				title = e_hre
-			}
+			has_landed_title = e_hre
 		}
 	}
 	option = {
-		name = CURSES
+		name = EVTOPTA62800 # Probably a wise move.
 		trigger = {
-			NOT = {
-				any_realm_title = {
-					title = e_hre
-				}
-			}
+			NOT = { has_landed_title = e_hre }
 			OR = {
-				has_claim = e_hre
-				is_heir = e_hre
+				same_realm = ROOT
+				is_member_of_hre = yes
 			}
 		}
 	}
 	option = {
-		name = EVTOPTA_MNM_4610 # EVTOPTB_HRE_1350;That's nice, I guess.;C'est bien, je suppose.;Das ist ganz nett, denke ich.;;Está bien, supongo.;;;;;;;;;x
+		name = EVTOPTA_MNM_4610 # That's nice, I guess.
 		trigger = {
-			NOT = {
-				any_realm_title = {
-					title = e_hre
-				}
-			}
 			NOR = {
-				has_claim = e_hre
-				is_heir = e_hre
-			}
-		}
-	}
-	
-	after = {
-		hidden_tooltip = {
-			set_variable = {
-				which = global_current_year
-				value = 0
+				has_landed_title = e_hre
+				same_realm = ROOT
+				is_member_of_hre = yes
 			}
 		}
 	}

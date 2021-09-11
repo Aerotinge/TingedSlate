@@ -1,0 +1,186 @@
+# FROM is the decision taker, ROOT is the targeted character
+targetted_decisions = {
+	
+	join_the_hre = {
+		only_playable = yes
+		
+		filter = independent_rulers
+		ai_target_filter = independent_rulers
+		ai_check_interval = 60
+		
+		from_potential = {
+			religion = ROOT
+			independent = yes
+			trigger_if = {
+				limit = { ai = no }
+
+				is_feudal = yes
+			}
+			is_merchant_republic = no
+			is_republic = no
+			is_tributary = no
+			lower_real_tier_than = EMPEROR
+			higher_real_tier_than = BARON
+			any_neighbor_independent_ruler = {
+				OR = {
+					character = ROOT
+					is_member_of_hre = yes
+				}
+			}
+		}
+
+		potential = {
+			offmap_hre = {
+				governor = { character = ROOT }
+				has_status = hre_shattered
+			}
+		}
+
+		allow = {
+			ROOT = {
+				#war = no
+				#NOT = { is_inaccessible_or_incapable_trigger = yes }
+			}
+			FROM = {
+				#war = no
+				#NOT = { is_inaccessible_or_incapable_trigger = yes }
+				capital_scope = {
+					custom_tooltip = {
+						text = MUST_NEIGHBOR_HRE
+
+						any_neighbor_province = {
+							owner = {
+								OR = {
+									same_realm = ROOT
+									is_member_of_hre = yes
+									any_liege = {
+										is_member_of_hre = yes
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		
+		effect = { # TODO: Re-write in diploresponse_event eventchains
+			FROM = {
+				offmap_hre_tributaries_join_effect = yes
+			}
+		}
+		
+		revoke_allowed = {
+			always = no
+		}
+		
+		ai_will_do = {
+			factor = 1
+
+			mult_modifier = {
+				factor = 0.2
+
+				NOT = { culture = FROM }
+			}
+			mult_modifier = {
+				factor = 0.2
+
+				NOT = { culture_group = FROM }
+			}
+			mult_modifier = {
+				factor = 0.1
+
+				FROM = { higher_real_tier_than = COUNT }
+			}
+			mult_modifier = {
+				factor = 0
+
+				FROM = { higher_real_tier_than = DUKE } # I'm a KING
+			}
+			mult_modifier = {
+				factor = 1.1
+
+				FROM = {
+					any_neighbor_independent_ruler = {
+						count >= 2
+
+						OR = {
+							character = ROOT
+							is_member_of_hre = yes
+						}
+					}
+				}
+			}
+			mult_modifier = {
+				factor = 1.1
+
+				FROM = {
+					any_neighbor_independent_ruler = {
+						count >= 3
+
+						OR = {
+							character = ROOT
+							is_member_of_hre = yes
+						}
+					}
+				}
+			}
+			mult_modifier = {
+				factor = 1.1
+
+				FROM = {
+					any_neighbor_independent_ruler = {
+						count >= 4
+
+						OR = {
+							character = ROOT
+							is_member_of_hre = yes
+						}
+					}
+				}
+			}
+			mult_modifier = {
+				factor = 1.1
+
+				FROM = {
+					any_neighbor_independent_ruler = {
+						count >= 5
+
+						OR = {
+							character = ROOT
+							is_member_of_hre = yes
+						}
+					}
+				}
+			}
+			mult_modifier = {
+				factor = 1.1
+
+				FROM = {
+					any_neighbor_independent_ruler = {
+						count >= 6
+
+						OR = {
+							character = ROOT
+							is_member_of_hre = yes
+						}
+					}
+				}
+			}
+			mult_modifier = {
+				factor = 1.2
+
+				FROM = {
+					any_neighbor_independent_ruler = {
+						count >= 7
+
+						OR = {
+							character = ROOT
+							is_member_of_hre = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}
