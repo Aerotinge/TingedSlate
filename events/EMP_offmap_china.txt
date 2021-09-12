@@ -1,0 +1,36 @@
+namespace = EMP
+
+# An offmap power changes its ruler. Triggers for the new ruler
+# Root = New ruler
+# From = Old ruler
+# FromFrom = Offmap
+character_event = {
+	id = EMP.14010
+
+	offmap = only
+	hide_window = yes
+	
+	is_triggered_only = yes # on_offmap_ruler_changed
+
+	trigger = {
+		FROM = {
+			is_offmap_tag_including_dead = offmap_china
+			is_alive = no
+		}
+	}
+	
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					is_female = no
+				}
+
+				set_special_character_title = title_china_emperor
+			}
+			else = {
+				set_special_character_title = title_china_emperor_female
+			}
+		}
+	}
+}

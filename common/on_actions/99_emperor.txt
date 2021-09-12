@@ -59,7 +59,6 @@ on_new_holder_inheritance = {
 		EMP.12060	# Bishop Elector
 		# Nomadic tribal
 		EMP.11006
-		
 	}
 }
 
@@ -92,6 +91,8 @@ on_offmap_governor_changed = {
 # FromFrom = Offmap
 on_offmap_ruler_changed = {
 	events = {
+		# offmap_china
+		EMP.14010 # Fix for dead Emperor has no title
 		# offmap_hre
 		EMP.12050
 		# offmap_papacy

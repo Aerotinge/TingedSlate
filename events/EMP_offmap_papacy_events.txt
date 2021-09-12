@@ -1,3 +1,5 @@
+namespace = EMP
+
 character_event = {
 	id = EMP.13040
 	

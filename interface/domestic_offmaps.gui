@@ -20,4 +20,26 @@ guiTypes = {
 			orientation = "UPPER_LEFT"
 		}
 	}
+
+	windowType = {
+		name = "domestic_offmaps_window"
+		backGround = "bg_offmaps"
+		position = { x = -345 y = -330 }
+		size = { x = 605 y = 675 }
+		moveable = 1
+		dontRender = ""
+		horizontalBorder = "0"
+		verticalBorder = ""
+		upSound = ""
+		downSound = ""
+		fullScreen = no
+		orientation = "CENTER"
+
+		guiButtonType = {
+			name = "bg_offmaps"
+			quadTextureSprite = "GFX_offmap_bg_china"
+			position = { x = 0 y = 0 }
+			orientation = "UPPER_LEFT"
+		}
+	}
 }

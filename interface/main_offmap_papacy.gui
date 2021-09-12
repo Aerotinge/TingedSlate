@@ -1,7 +1,7 @@
 guiTypes = {
 	windowType = {
 		name = "icon_offmaps_entry_offmap_papacy"
-		backGround =""
+		backGround = ""
 		position = { x = 0 y = 0 }
 		size = { x = 50 y = 50 }
 		moveable = 0
@@ -9,13 +9,13 @@ guiTypes = {
 		horizontalBorder = "0"
 		verticalBorder = ""
 		fullScreen = no
-		Orientation = "UPPER_LEFT"
-		
-		guiButtonType =	{
+		orientation = "UPPER_LEFT"
+
+		guiButtonType = {
 			name = "icon_offmaps"
-			position = { x=0 y=0 }
-			quadTextureSprite ="GFX_italia_screen_button"
-			clicksound = generic_click_02
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_italia_screen_button"
+			clickSound = generic_click_02
 		}
 	}
 }

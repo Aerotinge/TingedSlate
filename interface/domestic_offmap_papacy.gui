@@ -183,13 +183,6 @@ guiTypes = {
 				pdx_tooltip_delayed = "OFFMAP_HOSTILE_DESC"
 			}
 
-			guiButtonType = {
-				name = "offmap_hostility2"
-				quadTextureSprite = "GFX_offmap_hostile_button_china"
-				position = { x = 550 y = 340 }
-				clickSound = click_default_china
-			}
-
 			overlappingElementsBoxType = {
 				name = "status_icons_left"
 				position = { x = -1 y = 358 }
@@ -217,7 +210,7 @@ guiTypes = {
 				textureFile = ""
 				font = "vic_18_black"
 				borderSize = { x = 0 y = 0 }
-				text = "EMPEROR_LIKES_LABEL"
+				text = "POPE_LIKES_LABEL"
 				maxWidth = 220
 				maxHeight = 24
 				format = left
@@ -252,7 +245,7 @@ guiTypes = {
 				textureFile = ""
 				font = "vic_18_black"
 				borderSize = { x = 0 y = 0 }
-				text = "EMPEROR_DISLIKES_LABEL"
+				text = "POPE_DISLIKES_LABEL"
 				maxWidth = 220
 				maxHeight = 24
 				format = left

@@ -7,6 +7,8 @@ HRE_PRINCE_NAME;Prince;Prince;Fürst;;Príncipe;;;;;x
 HRE_PRINCE_PLURAL;Princes;Princes;Fürsten;;Príncipes;;;;;;;;;x
 HRE_FREECITY_NAME;Free Imperial City;Ville libre d'Empire;Freie Reichsstadt;;Ciudad imperial libre;;;;;;;;;x
 HRE_FREECITY_PLURAL;Free Imperial Cities;Villes libres d'Empire;Freie Reichsstädte;;Ciudades Imperiales Libres;;;;;;;;;x
+hre_hre;Holy Roman Empire;Saint-Empire romain;Heiliges Römisches Reich;;Sacro Imperio;;;;;;;;;x
+hre_hre_full;Holy Roman Empire;Saint-Empire romain;Heiliges Römisches Reich;;Sacro Imperio;;;;;;;;;x
 # Decisions
 join_the_hre;Joining [offmap_hre.GovernorTitle.GetName];Rejoindre [offmap_hre.GovernorTitle.GetName];Beitritt [offmap_hre.GovernorTitle.GetName];;Uniéndose [offmap_hre.GovernorTitle.GetName];;;;;;;;;x
 join_the_hre_desc;We can ask to become a prince of [offmap_hre.GovernorTitle.GetName]. They are unlikely to refuse.;Nous pouvons demander à devenir prince du [offmap_hre.GovernorTitle.GetName]. Il est peu probable qu'il refuse.;Wir können jeden Fürst, ein Prinz des [offmap_hre.GovernorTitle.GetName] zu werden bitten. Diesem Gesuch wird nur selten nicht stattgegeben.;;Podemos solicitar convertirnos en un príncipe del [offmap_hre.GovernorTitle.GetName]. No suelen rechazar estas ofertas.;;;;;;;;;x

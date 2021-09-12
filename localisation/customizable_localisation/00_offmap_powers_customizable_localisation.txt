@@ -20,3 +20,20 @@ defined_text = {
 		localisation_key = offmap_offmap
 	}
 }
+
+defined_text = {
+	name = GetOffmapLikeAndDislikeDesc
+	use_first_valid = yes
+
+	text = {
+		trigger = {
+			is_offmap_tag_including_dead = offmap_china
+		}
+		localisation_key = OFFMAP_CHINA_LIKES_AND_DISLIKES_DESC
+	}
+	text = {
+		trigger = {
+		}
+		localisation_key = OFFMAP_OFFMAP_LIKES_AND_DISLIKES_DESC
+	}
+}

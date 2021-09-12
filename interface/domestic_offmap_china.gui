@@ -1,7 +1,7 @@
 guiTypes = {
 
 	windowType = {
-		name = "domestic_offmaps_window"
+		name = "domestic_offmaps_window_offmap_china"
 		backGround = "bg_offmaps"
 		position = { x = -345 y = -330 }
 		size = { x = 605 y = 675 }

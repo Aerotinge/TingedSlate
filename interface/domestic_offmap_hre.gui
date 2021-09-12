@@ -43,7 +43,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "offmap_label"
-				position = { x = 213 y = -13 }
+				position = { x = 5213 y = -13 }
 				textureFile = ""
 				font = "vic_36"
 				borderSize = { x = 0 y = 0 }
@@ -175,12 +175,6 @@ guiTypes = {
 				position = { x = 555 y = 255 }
 				pdx_tooltip = "OFFMAP_HOSTILE"
 				pdx_tooltip_delayed = "OFFMAP_HOSTILE_DESC"
-			}
-
-			guiButtonType = {
-				name = "offmap_hostility2"
-				quadTextureSprite = "GFX_offmap_hostile_button_germany"
-				position = { x = 550 y = 340 }
 			}
 
 			overlappingElementsBoxType = {
@@ -427,6 +421,21 @@ guiTypes = {
 			}
 
 			# HRE INTERFACE
+
+			instantTextBoxType = {
+				name = "offmap_label"
+				position = { x = 213 y = -13 }
+				textureFile = ""
+				font = "vic_36"
+				borderSize = { x = 0 y = 0 }
+				text = "e_hre"
+				maxWidth = 280
+				maxHeight = 24
+				format = centre
+				fixedSize = yes
+				orientation = "UPPER_LEFT"
+				alwaysTransparent = yes
+			}
 
 			iconType = {
 				name = "elector_label_bg"

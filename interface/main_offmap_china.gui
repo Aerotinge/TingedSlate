@@ -1,6 +1,6 @@
 guiTypes = {
 	windowType = {
-		name = "icon_offmaps_germany_entry"
+		name = "icon_offmaps_entry_offmap_china"
 		backGround = ""
 		position = { x = 0 y = 0 }
 		size = { x = 50 y = 50 }
@@ -14,7 +14,7 @@ guiTypes = {
 		guiButtonType = {
 			name = "icon_offmaps"
 			position = { x = 0 y = 0 }
-			quadTextureSprite = "GFX_germany_screen_button"
+			quadTextureSprite = "GFX_china_screen_button"
 			clickSound = click_default_china
 		}
 	}

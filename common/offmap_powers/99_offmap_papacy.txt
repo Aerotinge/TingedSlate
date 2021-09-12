@@ -1,10 +1,11 @@
 offmap_papacy = {
-	name = k_papacy_adj
+	name = papacy_papacy
 	window_name = domestic_offmaps_window_offmap_papacy
 	button_name = icon_offmaps_entry_offmap_papacy
 	currency_name = TXT_SALVATION
 	currency_gain = monthly_salvation
 	currency_reset_on_dynasty_change = no
+	currency_below_zero = no
 
 	holder_title = title_papacy_pope			# minor title used to identify a character as holder of this offmap power
 	governor_title = k_papacy
@@ -17,17 +18,13 @@ offmap_papacy = {
 	sound = italia_interaction_interface
 
 	display_trigger = {
-		# Root is the governor
-		# From is the player
 		FROM = {
-			#is_within_diplo_range = ROOT
-			rightful_religious_head_scope = {
-				character = ROOT
+			OR = {
+				is_within_diplo_range = ROOT
+				rightful_religious_head_scope = {
+					character = ROOT
+				}
 			}
-			
-		}
-		governor_title = {
-			has_holder = yes
 		}
 	}
 
@@ -66,22 +63,15 @@ offmap_papacy = {
 				always = no
 			}
 		}
-
-		offmap_hostility2 = {
-			is_active_trigger = {
-				always = no
-			}
-			display_trigger = {
-				always = no
-			}
-		}
 	}
 
 	#These conditions only effect the appearance of the button, it does not actually disable them from being clickable. The same triggers are used in all tribute/boon decisions respectively
 
-	icon_triggers = {}
+	icon_triggers = {
+	}
 	
-	monthly_currency_gain = {}
+	monthly_currency_gain = {
+	}
 
 	temple_names = {
 		{ # Founder names
@@ -182,6 +172,8 @@ offmap_papacy = {
 	}
 
 	diplomatic_range = { # Already includes the Papacy's "normal" diplo range
-		religion = FROM
+		rightful_religious_head_scope = {
+			character = FROM
+		}
 	}
 }

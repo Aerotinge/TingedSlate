@@ -1,5 +1,5 @@
 offmap_hre = {
-	name = e_hre_adj
+	name = hre_hre
 	window_name = domestic_offmaps_germany_window
 	button_name = icon_offmaps_germany_entry
 	currency_name = TXT_GRACE_HRE
@@ -59,97 +59,15 @@ offmap_hre = {
 				always = no
 			}
 		}
-
-		offmap_hostility2 = {
-			is_active_trigger = {
-				always = no
-			}
-			display_trigger = {
-				always = no
-			}
-		}
-
-		offmap_hre_elector_italian = {
-			is_active_trigger = {
-				hidden_tooltip = {
-					always = yes
-				}
-			}
-			display_trigger = {
-				governor_title = {
-					persistent_event_target:hre_title_1_per = {
-						title = c_roma
-					}
-				}
-			}
-		}
-
-		offmap_hre_elector_french = {
-			is_active_trigger = {
-				hidden_tooltip = {
-					always = yes
-				}
-			}
-			display_trigger = {
-				governor_title = {
-					persistent_event_target:hre_title_1_per = {
-						title = c_amiens
-					}
-				}
-			}
-		}
-
-		offmap_hre_elector_german = {
-			is_active_trigger = {
-				hidden_tooltip = {
-					always = yes
-				}
-			}
-			display_trigger = {
-				governor_title = {
-					persistent_event_target:hre_title_1_per = {
-						title = c_koln
-					}
-				}
-			}
-		}
-
-		offmap_hre_elector_spain = {
-			is_active_trigger = {
-				hidden_tooltip = {
-					always = yes
-				}
-			}
-			display_trigger = {
-				governor_title = {
-					persistent_event_target:hre_title_1_per = {
-						title = c_santiago
-					}
-				}
-			}
-		}
-
-		offmap_hre_elector_britannia = {
-			is_active_trigger = {
-				hidden_tooltip = {
-					always = yes
-				}
-			}
-			display_trigger = {
-				governor_title = {
-					persistent_event_target:hre_title_1_per = {
-						title = c_kent
-					}
-				}
-			}
-		}
 	}
 
 	#These conditions only effect the appearance of the button, it does not actually disable them from being clickable. The same triggers are used in all tribute/boon decisions respectively
 
-	icon_triggers = {}
+	icon_triggers = {
+	}
 	
-	monthly_currency_gain = {}
+	monthly_currency_gain = {
+	}
 
 	temple_names = {
 		{ # Founder names
@@ -163,23 +81,15 @@ offmap_hre = {
 		# If the total is >= 100, the new holder will always be female
 		# If the total is <= 0, the new holder will always be male
 		is_female = {
-			value = 5
-
-			additive_modifier = {
-				value = 45
-				has_game_rule = {
-					name = gender
-					value = all
-				}
-			}
+			value = 0
 		}
 
 		culture = {
-			german = { 		# Default culture for new kaiser
+			german = { 		# Default culture for new emperor
 				value = 99	# If any other value reaches 100, it will be picked instead
 			}
 
-			FROM = {		# Default culture for new kaiser
+			FROM = {		# Default culture for new emperor
 							# the left side here (and for culture, religion, graphical_culture and dynasty)
 							# can be a right hand side value (FROM, ROOT, a culture name, etc)
 							# The right hand side / inside the brackets is a standard MTTH evaluation
@@ -187,9 +97,9 @@ offmap_hre = {
 							# If there's a tie, one of the tied values is picked at random
 				value = 0
 
-				additive_modifier = { #the new kaiser will keep current culture if things are great
+				additive_modifier = { #the new emperor will keep current culture if things are great
 					value = 100
-					FROM = { # Essentially a check that the previous kaiser actually exists
+					FROM = { # Essentially a check that the previous emperor actually exists
 						culture_scope = {
 							always = yes
 						}
@@ -217,21 +127,21 @@ offmap_hre = {
 		}
 
 		religion = {
-			catholic = {	# Default religion for new kaiser
+			catholic = {	# Default religion for new emperor
 				value = 99	# If any other value reaches 100, it will be picked instead (unless equal, then it will randomize)
 			}
 
 			FROM = {
 				value = 0
-				additive_modifier = { # The new kaiser will keep current religion if things are great
+				additive_modifier = { # The new emperor will keep current religion if things are great
 					value = 100
-					FROM = { religion_scope = { always = yes } } # Essentially a check that the previous kaiser actually exists
+					FROM = { religion_scope = { always = yes } } # Essentially a check that the previous emperor actually exists
 				}
 			}
 		}
 
 		dynasty = {
-			0 = {		 	# Default dynasty for new kaiser
+			0 = {		 	# Default dynasty for new emperor
 				value = 100	# Might drop from modifiers -- highest value will be picked instead (unless equal, then it will randomize)
 			}
 		}

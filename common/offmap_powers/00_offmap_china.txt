@@ -1,7 +1,7 @@
 offmap_china = {
 	name = china_china
-	window_name = domestic_offmaps_window
-	button_name = icon_offmaps_entry
+	window_name = domestic_offmaps_window_offmap_china
+	button_name = icon_offmaps_entry_offmap_china
 	currency_name = TXT_GRACE
 	currency_gain = monthly_grace
 	currency_reset_on_dynasty_change = yes
@@ -196,71 +196,12 @@ offmap_china = {
 	}
 
 	temple_names = {
-		{ # Founder names
-			Gaozu
-			Taizu
-			Shizu
-			Zhaozu
-			Jingzu
-			Xianzu
-			Liezu
-			Chengzu
+		# Paradox history, giving a living Emperor temple name as if he's long dead.
+		# More, this mechanism is pretty primitive and crude, without modifier or trigger. It'd better be disabled.
+		{
 		}
 
-		{ # Successor names
-			Zhenzong
-			Renzong
-			Zhongzong
-			Yingzong
-			Shenzong
-			Zhezhong
-			Huizong
-			Qinzong
-			Xiaozong
-			Guangzong
-			Ningzong
-			Lizong
-			Duzong
-			Duanzong
-			Xuanzong
-			Suzong
-			Daizong
-			Muzong
-			Jingzong
-			Wenzong
-			Wuzong
-			Zhaozong
-			Xizong
-			Shizong
-			Zhangzong
-			Ruizong
-			Dingzong
-			Xianzong
-			Chengzong
-			Mingzong
-			Jinzong
-			Yizong
-			Xiangzong
-			Huanzong
-			Chongzong
-			Daozong
-			Liezong
-			Aizong
-			Dezong
-			Shengzong
-			Xingzong
-			Kangzong
-			Zhuangzong
-			Pingzong
-			Sizong
-			Anzong
-			Yangzong
-			Shangzong
-			Shunzong
-			Zhizong
-			Chuangzong
-			Shaozong
-			Gongzong
+		{
 		}
 	}
 

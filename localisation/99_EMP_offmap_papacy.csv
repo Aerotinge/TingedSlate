@@ -1,2 +1,6 @@
 PAPACY_RULER_NAME;[k_papacy.Holder.GetTitledFirstName];[k_papacy.Holder.GetTitledFirstName];[k_papacy.Holder.GetTitledFirstName];;[k_papacy.Holder.GetTitledFirstName];;;;;;;;;x
 VICAR_OF_CHRIST;Vicar of Christ;Vicaire du Christ;Stellvertreter Christi;;Vicario de Cristo;;;;;;;;;x
+papacy_papacy;Papacy;Papauté;Pontifikat;;Papado;;;;;;;;;x
+papacy_papacy_full;The Holy See;Le Saint-Siège;Der Heilige Stuhl;;La Santa Sede;;;;;;;;;x
+POPE_DISLIKES_LABEL;The Pope Dislikes;L'pape déteste;Der Papst mag keine;;Al Papa le disgustan;;;;;;;;;x
+POPE_LIKES_LABEL;The Pope Likes;L'pape aime;Der Papst mag;;Al Papa le gustan;;;;;;;;;x
