@@ -1,0 +1,34 @@
+character_event = {
+	id = EMP.13040
+	
+	hide_window = yes
+	
+	is_triggered_only = yes # on_offmap_governor_changed
+
+	trigger = {
+		FROMFROM = {
+			is_offmap_tag = offmap_papacy
+		}
+	}
+	
+	immediate = {
+		print_papacy_governor_update_effect = yes
+		offmap_papacy_ruler_name_sync_effect = yes
+	}
+}
+
+character_event = {
+	id = EMP.13050
+	
+	hide_window = yes
+	offmap = only
+	
+	is_triggered_only = yes # on_offmap_ruler_changed
+
+	trigger = { is_offmap_tag = offmap_papacy }
+    
+	immediate = {
+		print_papacy_ruler_update_effect = yes
+		offmap_papacy_ruler_name_sync_effect = yes
+	}
+}

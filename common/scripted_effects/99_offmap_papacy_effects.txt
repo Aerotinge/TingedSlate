@@ -1,0 +1,22 @@
+print_papacy_ruler_update_effect = {
+	log = "----------------"
+	log = "Ruler of papacy died at the age of [From.GetAgeYears]."
+	log = "New Ruler of papacy is [Root.GetBestName]."
+	log = "----------------"
+}
+
+print_papacy_governor_update_effect = {
+	log = "----------------"
+	log = "[From.GetBestName] is no longer holder of papacy."
+	log = "New Governmenor of papacy is [Root.GetBestName]."
+	log = "----------------"
+}
+
+offmap_papacy_ruler_name_sync_effect = {
+	offmap_papacy = {
+		offmap_ruler = {
+			dynasty = none
+			set_name = PAPACY_RULER_NAME
+		}
+	}
+}

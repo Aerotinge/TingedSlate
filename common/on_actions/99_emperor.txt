@@ -1,5 +1,8 @@
 #character
 on_startup = {
+	effect = {
+		offmap_papacy_ruler_name_sync_effect = yes
+	}
 	events = {
 		# Nomadic tribal
 		EMP.11002
@@ -76,7 +79,10 @@ on_new_holder_usurpation = {
 # FromFrom = Offmap
 on_offmap_governor_changed = {
 	events = {
+		# offmap_hre
 		EMP.12040
+		# offmap_papacy
+		EMP.13040
 	}
 }
 
@@ -86,7 +92,10 @@ on_offmap_governor_changed = {
 # FromFrom = Offmap
 on_offmap_ruler_changed = {
 	events = {
+		# offmap_hre
 		EMP.12050
+		# offmap_papacy
+		EMP.13050
 	}
 }
 

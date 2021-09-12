@@ -1,0 +1,187 @@
+offmap_papacy = {
+	name = k_papacy_adj
+	window_name = domestic_offmaps_window_offmap_papacy
+	button_name = icon_offmaps_entry_offmap_papacy
+	currency_name = TXT_SALVATION
+	currency_gain = monthly_salvation
+	currency_reset_on_dynasty_change = no
+
+	holder_title = title_papacy_pope			# minor title used to identify a character as holder of this offmap power
+	governor_title = k_papacy
+	tier = king
+
+	non_aggression_modifier = def_of_faith_modifier
+	coa_religion = orthodox # catholic
+	government = theocracy_government
+	beginning_of_history = 42.1.1
+	sound = italia_interaction_interface
+
+	display_trigger = {
+		# Root is the governor
+		# From is the player
+		FROM = {
+			#is_within_diplo_range = ROOT
+			rightful_religious_head_scope = {
+				character = ROOT
+			}
+			
+		}
+		governor_title = {
+			has_holder = yes
+		}
+	}
+
+	policies = {
+		policy_placeholder
+	}
+
+	statuses = {
+		status_placeholder
+	}
+	
+	buttons = {
+		offmap_gifts = {
+			is_active_trigger = {
+				always = no
+			}
+			display_trigger = {
+				always = no
+			}
+		}
+
+		offmap_boons = {
+			is_active_trigger = {
+				always = no
+			}
+			display_trigger = {
+				always = no
+			}
+		}
+
+		offmap_hostility = {
+			is_active_trigger = {
+				always = no
+			}
+			display_trigger = {
+				always = no
+			}
+		}
+
+		offmap_hostility2 = {
+			is_active_trigger = {
+				always = no
+			}
+			display_trigger = {
+				always = no
+			}
+		}
+	}
+
+	#These conditions only effect the appearance of the button, it does not actually disable them from being clickable. The same triggers are used in all tribute/boon decisions respectively
+
+	icon_triggers = {}
+	
+	monthly_currency_gain = {}
+
+	temple_names = {
+		{ # Founder names
+		}
+		{ # Successor names
+		}
+	}
+
+	holder_succession = {
+		# Chances of getting a female holder, as a percentage:
+		# If the total is >= 100, the new holder will always be female
+		# If the total is <= 0, the new holder will always be male
+		is_female = {
+			value = 0
+		}
+
+		culture = {
+			italian = { 		# Default culture for new Pope
+				value = 99	# If any other value reaches 100, it will be picked instead
+			}
+
+			FROM = {		# Default culture for new Pope
+							# the left side here (and for culture, religion, graphical_culture and dynasty)
+							# can be a right hand side value (FROM, ROOT, a culture name, etc)
+							# The right hand side / inside the brackets is a standard MTTH evaluation
+							# Only the one with the highest weight will be used
+							# If there's a tie, one of the tied values is picked at random
+				value = 0
+
+				additive_modifier = { #the new Pope will keep current culture if things are great
+					value = 100
+					FROM = { # Essentially a check that the previous Pope actually exists
+						culture_scope = {
+							always = yes
+						}
+					}
+				}
+			}
+
+			horse = {
+				value = 0
+
+				additive_modifier = {
+					value = 100
+					has_alternate_start_parameter = {
+						key = special_culture
+						value = animal_world
+					}
+				}
+			}
+		}
+
+		graphical_culture = { # FROM scope is not working. Do not waste your time here.
+			FROM = {
+				value = 100
+			}
+		}
+
+		religion = {
+			catholic = {	# Default religion for new Pope
+				value = 99	# If any other value reaches 100, it will be picked instead (unless equal, then it will randomize)
+			}
+
+			FROM = {
+				value = 0
+				additive_modifier = { # The new Pope will keep current religion if things are great
+					value = 100
+					FROM = { religion_scope = { always = yes } } # Essentially a check that the previous Pope actually exists
+				}
+			}
+		}
+
+		dynasty = {
+			0 = {		 	# Default dynasty for new Pope
+				value = 100	# Might drop from modifiers -- highest value will be picked instead (unless equal, then it will randomize)
+			}
+		}
+
+		likes = {
+			likes_wealth = {
+				value = 300
+			}
+
+			likes_tributaries = {
+				value = 100
+			}
+		}
+
+		dislikes = {
+			likes_tributaries = {
+				value = 100
+			}
+
+			likes_wealth = {
+				value = 100
+			}
+		}
+	}
+
+	diplomatic_range = { # Already includes the Papacy's "normal" diplo range
+		religion = FROM
+	}
+}
