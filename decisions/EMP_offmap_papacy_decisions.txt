@@ -1,0 +1,520 @@
+offmap_decisions = {
+
+	buy_indulgence_for_sins = {
+		button_name = papacy_donation
+		ai_check_interval = 6
+
+		only_playable = yes
+
+		from_potential = {
+			religion = ROOT
+			is_landed = yes
+			is_adult = yes
+
+			NOR = {
+				has_character_flag = ask_for_indulgence
+				trait = excommunicated
+			}
+		}
+
+		potential = {
+			offmap_papacy = {
+				governor_title = {
+					holder = PREVPREV
+				}
+			}
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+
+			FROM = {
+				scaled_wealth = {
+					value = 1.0
+					min = 25
+				}
+
+				is_heretic = no
+				prisoner = no
+				is_incapable = no
+				is_inaccessible_trigger = no
+			}
+		}
+
+		effect = {
+			FROM = {
+				set_character_flag = ask_for_indulgence
+
+				character_event = { id = EMP.13511 } # ping event
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			trigger = {
+				FROM = {
+					piety < 0
+					NOT = { scaled_wealth = 10.0 }
+				}
+			}
+		}
+	}
+
+	ask_pope_coronation = {
+		button_name = papacy_prayer
+		ai_check_interval = 8
+
+		only_playable = yes
+
+		from_potential = {
+			religion = ROOT
+
+			higher_real_tier_than = DUKE
+			is_feudal = yes
+			is_landed = yes
+			age >= 11
+			is_vice_royalty = no
+
+			NOR = {
+				trait = crowned_by_priest
+				trait = crowned_by_bishop
+				trait = crowned_by_pope
+				trait = crowned_by_myself
+				trait = crowned_by_priest_rd
+				trait = crowned_by_bishop_rd
+				trait = crowned_by_pope_rd
+				government = order_government
+				government = chinese_imperial_government
+			}
+		}
+
+		potential = {
+			offmap_papacy = {
+				governor_title = {
+					holder = PREVPREV
+				}
+			}
+		}
+
+		allow = {
+			show_only_failed_conditions = yes
+
+			FROM = {
+				scaled_wealth = {
+					value = 1.0
+					min = 25
+				}
+
+				is_heretic = no
+				prisoner = no
+				is_incapable = no
+				is_inaccessible_trigger = no
+
+				trigger_if = {
+					limit = { war = yes }
+
+					custom_tooltip = {
+						text = tooltip_maxed_uncrowned
+
+						has_instances_of_character_modifier = {
+							name = uncrowned_modifier
+							amount >= 30
+						}
+					}
+				}
+
+				trigger_if = {
+					limit = {
+						real_tier = EMPEROR
+						trait = excommunicated
+						has_law = investiture_law_0
+					}
+
+					OR = {
+						NOT = { trait = excommunicated }
+						has_law = investiture_law_1
+					}
+				}
+
+				trigger_if = {
+					limit = { is_inaccessible_trigger = yes }
+
+					custom_tooltip = {
+						text = inaccessible_tooltip
+						is_inaccessible_trigger = no
+					}
+				}
+
+				trigger_if = {
+					trigger = { is_adult = no }
+
+					# Either is an adult, or the child is liked by the regent and has assertive traits
+					OR = {
+						is_adult = yes
+
+						AND = {
+							age >= 11
+
+							custom_tooltip = {
+								text = TT_CHILD_IS_ASSERTIVE
+
+								OR = {
+									trait = ambitious
+									trait = quick
+									trait = genius
+									trait = willful
+								}
+							}
+
+							trigger_if = {
+								limit = { has_regent = yes }
+
+								custom_tooltip = {
+									text = TT_REGENT_LIKES_CHILD
+
+									regent = {
+										opinion = {
+											who = liege
+											value >= 0
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+
+				trigger_if = {
+					limit = { has_character_flag = do_not_disturb }
+
+					custom_tooltip = {
+						text = TT_NOT_OTHERWISE_OCCUPIED
+						NOT = { has_character_flag = do_not_disturb }
+					}
+				}
+
+				trigger_if = {
+					limit = { has_character_flag = flag_preparing_coronation }
+
+					custom_tooltip = {
+						text = TT_NOT_PREPARING_CORONATION
+						NOT = { has_character_flag = flag_preparing_coronation }
+					}
+				}
+
+				trigger_if = {
+					limit = { has_character_modifier = coronation_request_cooldown }
+
+					custom_tooltip = {
+						text = TT_NOT_RECENTLY_ASKED_CORONATION
+						NOT = { has_character_modifier = coronation_request_cooldown }
+					}
+				}
+
+				# In a war against an Excommunicated ruler/liege of an Antipope as part of a deal to be crowned
+				custom_tooltip = {
+					text = TT_NOT_FULFILLING_WAR_CORONATION
+
+					NOR = {
+						has_character_flag = flag_antipope_for_coronation
+						has_character_flag = flag_excommunicated_for_coronation
+						has_character_flag = flag_pepin_for_coronation
+					}
+				}
+			}
+		}
+
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					name = coronation_request_cooldown
+					months = 5
+					hidden = yes
+				}
+
+				character_event = { id = EMP.13521 } # ping event
+			}
+		}
+
+		ai_will_do = {
+			factor = 0.7
+
+			trigger = {
+				block_general_event_trigger = no
+
+				trigger_if = {
+					limit = {
+						has_game_rule = {
+							name = charlemagne_story
+							value = on
+						}
+					}
+
+					FROM = {
+						# Have their own event chain
+						NOR = {
+							has_character_flag = is_charlemagne
+							has_character_flag = is_carloman
+						}
+					}
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.1
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value < -80
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.5
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value < -60
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.6
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value < -40
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.7
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value < -20
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.8
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value < 0
+				}
+			}
+
+			mult_modifier = {
+				factor = 1.5
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value >= 20
+				}
+			}
+
+			mult_modifier = {
+				factor = 1.5
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value >= 40
+				}
+			}
+
+			mult_modifier = {
+				factor = 1.5
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value >= 60
+				}
+			}
+
+			mult_modifier = {
+				factor = 2
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value >= 80
+				}
+			}
+
+			mult_modifier = {
+				factor = 5
+
+				FROM = {
+					real_tier = EMPEROR
+					has_law = investiture_law_0
+				}
+				opinion = {
+					who = FROM
+					value >= 100
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.5
+				FROM = { piety < 100 }
+			}
+
+			mult_modifier = {
+				factor = 0.5
+				FROM = { piety < 0 }
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { piety >= 250 }
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { piety >= 500 }
+			}
+
+			mult_modifier = {
+				factor = 1.75
+				FROM = { piety >= 750 }
+			}
+
+			mult_modifier = {
+				factor = 2
+				FROM = { piety >= 1000 }
+			}
+
+			mult_modifier = {
+				factor = 2
+				FROM = { piety >= 2000 }
+			}
+
+			mult_modifier = {
+				factor = 5
+				vassal_of = FROM
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { trait = zealous }
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { trait = crusader }
+			}
+
+			mult_modifier = {
+				factor = 0.5
+				FROM = { trait = cynical }
+			}
+
+			mult_modifier = {
+				factor = 5
+				FROM = { has_landed_title = e_hre }
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { dynasty = 25061 # Karlings will be more likely to request it }
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { ruled_years >= 2 }
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { ruled_years >= 4 }
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { ruled_years >= 6 }
+			}
+
+			mult_modifier = {
+				factor = 1.5
+				FROM = { ruled_years >= 8 }
+			}
+
+			mult_modifier = {
+				factor = 1.75
+				FROM = { ruled_years >= 10 }
+			}
+
+			mult_modifier = {
+				factor = 1.75
+				FROM = { ruled_years >= 12 }
+			}
+
+			mult_modifier = {
+				factor = 2
+				FROM = { ruled_years >= 14 }
+			}
+
+			mult_modifier = {
+				factor = 2
+				FROM = { ruled_years >= 16 }
+			}
+
+			mult_modifier = {
+				factor = 3
+				FROM = { ruled_years >= 18 }
+			}
+
+			mult_modifier = {
+				factor = 3
+				FROM = { ruled_years = 20 }
+			}
+
+			mult_modifier = {
+				factor = 3
+				FROM = { ruled_years = 25 }
+			}
+
+			mult_modifier = {
+				factor = 4
+				FROM = { ruled_years = 30 }
+			}
+		}
+	}
+}

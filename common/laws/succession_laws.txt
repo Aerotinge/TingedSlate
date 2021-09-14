@@ -679,10 +679,6 @@ succession_laws = {
 			# Has special elective law instead
 			trigger_if = {
 				limit = {
-					OR = {
-						title = e_hre
-						has_title_flag = alternate_hre
-					}
 					offmap_power = {
 						always = yes
 					}
@@ -781,7 +777,10 @@ succession_laws = {
 			real_tier = EMPEROR
 
 			# Title bound
-			title = e_hre
+			#title = e_hre
+			offmap_power = {
+				is_offmap_tag = offmap_hre
+			}
 			
 			trigger_if = {
 				limit = {
@@ -1178,12 +1177,6 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
-			NOR = { # Has special elective law instead
-				title = e_hre
-				has_title_flag = alternate_hre
-				has_law = succ_byzantine_elective
-			}
-
 			holder_scope = {
 				OR = {
 					is_feudal = yes
@@ -1295,8 +1288,13 @@ succession_laws = {
 			}
 
 			trigger_if = {
-				limit = { title = e_hre }
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
 
+				NOT = { is_law_potential = succ_offmap_succession }
 				holder_scope = {
 					NOR = {
 						is_feudal = yes
@@ -1305,14 +1303,19 @@ succession_laws = {
 				}
 			}
 
-			NOR = {
-				is_law_potential = succ_hre_elective
-				is_law_potential = succ_appointment
-				is_law_potential = succ_papal_succession
-				is_law_potential = succ_catholic_bishopric
-				is_law_potential = succ_offmap_succession
-				holder_scope = {
-					is_patrician = yes
+			holder_scope = {
+				trigger_if = {
+					limit = { is_theocracy = yes }
+
+					# Use Investiture and Papal succession instead
+					NOR = {
+						is_law_potential = succ_papal_succession
+						is_law_potential = succ_catholic_bishopric
+					}
+				}
+				trigger_else_if = {
+					limit = { is_republic = yes }
+					is_patrician = no
 				}
 			}
 

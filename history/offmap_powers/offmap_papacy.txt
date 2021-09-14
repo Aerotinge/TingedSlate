@@ -1,0 +1,16 @@
+42.1.1 = {
+	policy = ppc_communio
+	status = ppc_pax_dei
+}
+1054.1.1 = {
+	status = ppc_great_schism
+}
+1075.1.1 = {
+	policy = ppc_dictatus_papae
+}
+1231.1.1 = {
+	policy = ppc_inquisitionis
+}
+#1378.1.1 = {
+#	status = ppc_papal_schism
+#}

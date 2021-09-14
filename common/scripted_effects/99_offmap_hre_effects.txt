@@ -8,7 +8,7 @@ print_hre_ruler_update_effect = {
 print_hre_governor_update_effect = {
 	log = "----------------"
 	log = "[From.GetBestName] is no longer holder of HRE."
-	log = "New Governmenor of HRE is [Root.GetBestName]."
+	log = "New Governor of HRE is [Root.GetBestName]."
 	log = "----------------"
 }
 

@@ -47,18 +47,24 @@ on_new_holder = {
 		# Nomadic tribal
 		EMP.11006
 		EMP.11009
+		# Papacy
+		EMP.13140
 	}
 }
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder_inheritance = {
 	events = {
+		# landless title new holder dynasty fix
+		EMP.10010
 		# Holy Roman Empire
 		EMP.12020
 		EMP.12021	#
 		EMP.12060	# Bishop Elector
 		# Nomadic tribal
 		EMP.11006
+		# Papacy
+		EMP.13140
 	}
 }
 
@@ -69,6 +75,8 @@ on_new_holder_usurpation = {
 		EMP.12060	# Bishop Elector
 		# Nomadic tribal
 		EMP.11006
+		# Papacy
+		EMP.13140
 	}
 }
 
@@ -79,9 +87,9 @@ on_new_holder_usurpation = {
 on_offmap_governor_changed = {
 	events = {
 		# offmap_hre
-		EMP.12040
-		# offmap_papacy
-		EMP.13040
+		EMP.12140
+		# Papacy
+		# EMP.13140 # Not working for k_papacy for some damn hardcoded quirks, using on_new_holder_* instead
 	}
 }
 
@@ -91,12 +99,12 @@ on_offmap_governor_changed = {
 # FromFrom = Offmap
 on_offmap_ruler_changed = {
 	events = {
+		# offmap_hre
+		EMP.12150
 		# offmap_china
 		EMP.14010 # Fix for dead Emperor has no title
-		# offmap_hre
-		EMP.12050
-		# offmap_papacy
-		EMP.13050
+		# Papacy
+		EMP.13150
 	}
 }
 
@@ -107,7 +115,24 @@ on_offmap_monthly_pulse = {
 	events = {
 		EMP.12220 # pulse event for princes, for giving/revoking their weak claim of e_hre
 		EMP.12222 # Elector
-		EMP.12330 # Wicked Kaiser
+	}
+}
+
+# Happens once a year during a random monthly update. Triggers for the governor (once for each offmap governor, if there's more than one)
+# ROOT is governor
+# FROM is offmap
+on_offmap_yearly_pulse = {
+	events = {
+	}
+
+	random_events = {
+		# Papacy
+		papal_investiture = {
+			550 = 0
+			100 = 67000
+			100 = 67010
+			100 = 67020
+		}
 	}
 }
 
@@ -117,5 +142,16 @@ on_unlanded = {
 		EMP.11008 #Landless nomad clean-up
 		# Holy Roman Empire
 		EMP.12120
+	}
+}
+
+# Triggers when a player renames a character. Note that the player is not provided as a scope. This includes the "newborn" event
+# ROOT is the renamed character
+on_character_renamed = {
+	events = {
+		# offmap_hre
+		EMP.12130
+		# Papacy
+		EMP.13130
 	}
 }

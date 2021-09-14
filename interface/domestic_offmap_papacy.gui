@@ -232,13 +232,6 @@ guiTypes = {
 				orientation = "UPPER_LEFT"
 			}
 
-			iconType = {
-				name = "dislikes_icon"
-				spriteType = "GFX_offmap_italia_dislikes"
-				position = { x = 60 y = 516 }
-				orientation = "UPPER_LEFT"
-			}
-
 			instantTextBoxType = {
 				name = "dislikes_label"
 				position = { x = 110 y = 516 }
@@ -264,6 +257,13 @@ guiTypes = {
 				maxHeight = 48
 				format = left
 				fixedSize = yes
+				orientation = "UPPER_LEFT"
+			}
+
+			iconType = {
+				name = "dislikes_icon"
+				spriteType = "GFX_offmap_italia_dislikes"
+				position = { x = 60 y = 516 }
 				orientation = "UPPER_LEFT"
 			}
 
@@ -439,6 +439,24 @@ guiTypes = {
 				maxWidth = 315
 				maxHeight = 50
 				fixedSize = yes
+			}
+
+			guiButtonType = {
+				name = "papacy_donation"
+				quadTextureSprite = "GFX_offmap_gift_button_china"
+				position = { x = 235 y = 250 }
+				clickSound = click_default_china
+				#pdx_tooltip = "OFFMAP_GIFTS"
+				#pdx_tooltip_delayed = "OFFMAP_GIFTS_DESC"
+			}
+
+			guiButtonType = {
+				name = "papacy_prayer"
+				quadTextureSprite = "GFX_offmap_boon_button_china"
+				position = { x = 425 y = 250 }
+				clickSound = click_default_china
+				#pdx_tooltip = "OFFMAP_GIFTS"
+				#pdx_tooltip_delayed = "OFFMAP_GIFTS_DESC"
 			}
 		}
 	}

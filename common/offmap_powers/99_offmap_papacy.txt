@@ -29,11 +29,16 @@ offmap_papacy = {
 	}
 
 	policies = {
-		policy_placeholder
+		ppc_pax_dei				# set_pacifist = yes
+		ppc_dictatus_papae		# can call crusade, controls investure
+		ppc_inquisitionis		# heresies can be formed/asserted
+		# ppc_contrareformatio	# Seriously, not CK2 timeframe
 	}
 
 	statuses = {
-		status_placeholder
+		ppc_communio			# great_schism can be mended with basic requirement
+		ppc_great_schism		# great_schism can be mended with additional requirement
+		ppc_papal_schism		# disable most of function of papacy, e.g crusade
 	}
 	
 	buttons = {
@@ -63,6 +68,24 @@ offmap_papacy = {
 				always = no
 			}
 		}
+
+		papacy_donation = {
+			is_active_trigger = {
+				always = yes
+			}
+			display_trigger = {
+				always = yes
+			}
+		}
+
+		papacy_prayer = {
+			is_active_trigger = {
+				always = yes
+			}
+			display_trigger = {
+				always = yes
+			}
+		}
 	}
 
 	#These conditions only effect the appearance of the button, it does not actually disable them from being clickable. The same triggers are used in all tribute/boon decisions respectively
@@ -89,7 +112,7 @@ offmap_papacy = {
 		}
 
 		culture = {
-			italian = { 		# Default culture for new Pope
+			italian = {		# Default culture for new Pope
 				value = 99	# If any other value reaches 100, it will be picked instead
 			}
 

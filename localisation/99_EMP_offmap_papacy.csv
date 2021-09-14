@@ -1,6 +1,11 @@
+TXT_SALVATION;Salvation;salut;Erlösung;;Salvación;;;;;;;;;x
 PAPACY_RULER_NAME;[k_papacy.Holder.GetTitledFirstName];[k_papacy.Holder.GetTitledFirstName];[k_papacy.Holder.GetTitledFirstName];;[k_papacy.Holder.GetTitledFirstName];;;;;;;;;x
 VICAR_OF_CHRIST;Vicar of Christ;Vicaire du Christ;Stellvertreter Christi;;Vicario de Cristo;;;;;;;;;x
 papacy_papacy;Papacy;Papauté;Pontifikat;;Papado;;;;;;;;;x
 papacy_papacy_full;The Holy See;Le Saint-Siège;Der Heilige Stuhl;;La Santa Sede;;;;;;;;;x
 POPE_DISLIKES_LABEL;The Pope Dislikes;L'pape déteste;Der Papst mag keine;;Al Papa le disgustan;;;;;;;;;x
 POPE_LIKES_LABEL;The Pope Likes;L'pape aime;Der Papst mag;;Al Papa le gustan;;;;;;;;;x
+
+# UI
+String_PRIMUS_TP;The Primus inter pares is the Pope's highest-ranking council and elects the papal successor.;Le Primus inter pares est le conseil le plus élevé du pape et élit le successeur papal.;Der Primus inter pares ist der höchste Rat des Papstes und wählt den päpstlichen Nachfolger.;;El Primus inter pares es el consejo de más alto rango del Papa y elige al sucesor papal.;;;;;;;;;x
+String_PREFERATI_TP;The Primus inter pares, as known as Preferatus, is the Cardinal expected to succeed the current Pope.;Le primus inter pares, connu sous le nom de Preferatus, est le cardinal favori pour succéder au pape actuel.;Der Primus inter pares, bekannt als Preferatus, ist der Kardinal, dem die größten Chancen für die Wahl zum Papst eingeräumt werden.;;El Primus inter pares, conocido como Preferatus, es el cardenal que se espera que suceda al Papa actual.;;;;;;;;;x

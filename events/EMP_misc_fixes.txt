@@ -1,0 +1,45 @@
+namespace = EMP
+
+# Landless title new holder fix
+character_event = {
+    id = EMP.10010
+    hide_window = yes
+
+    is_triggered_only = yes # on_new_holder_inheritance
+
+    trigger = {
+		FROM = {
+			is_landless_type_title = yes
+		}
+		dynasty = FROMFROM
+		NOT = {
+			mother_even_if_dead = {
+				always = yes
+			}
+			father_even_if_dead = {
+				always = yes
+			}
+		}
+    }
+
+	immediate = {
+		dynasty = none
+	}
+
+	after = { # on_new_holder_inheritance has yet claim/vassalage processed. Claims have to be processed it in two steps.
+		character_event = { id = EMP.10011 days = 1 }
+	}
+}
+
+character_event = {
+    id = EMP.10011
+    hide_window = yes
+
+    is_triggered_only = yes # EMP.10010
+
+	immediate = {
+		any_claim = { # Careless, but can't be better
+			remove_claim = PREV
+		}
+	}
+}

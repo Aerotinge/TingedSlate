@@ -1,0 +1,12 @@
+###EMPEROR MINOR TITLES###
+
+# This title is not granted by a character to another, it is automatically obtained
+# when one character becomes dummy Pope of Papacy. It is used solely to identify them as such
+title_papacy_pope = {
+	is_offmap_holder = yes
+	show_as_title = yes
+
+	offmap_power = offmap_papacy
+
+	dignity = 1000 # This should always be higher than 0, or it won't be applied in all cases
+}

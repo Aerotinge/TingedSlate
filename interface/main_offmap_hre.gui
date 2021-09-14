@@ -1,6 +1,6 @@
 guiTypes = {
 	windowType = {
-		name = "icon_offmaps_germany_entry"
+		name = "icon_offmaps_entry_offmap_hre"
 		backGround = ""
 		position = { x = 0 y = 0 }
 		size = { x = 50 y = 50 }

@@ -2,4 +2,14 @@
 # however they are not applied to a character but to the offmap_power
 # they can also have flags that can be tested from the offmap_power scope
 
-# Dummy
+ppc_communio = {
+	frame = 1
+}
+
+ppc_great_schism = {
+	frame = 2
+}
+
+ppc_papal_schism = {
+	frame = 2
+}

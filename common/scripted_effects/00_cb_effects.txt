@@ -5,7 +5,8 @@ anger_china_effect = {
 	if = {
 		limit = {
 			defender = {
-				is_offmap_governor = offmap_china
+				is_offmap_governor = yes
+				offmap_power = { is_offmap_tag = offmap_china }
 			}
 		}
 

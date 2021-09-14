@@ -136,66 +136,6 @@ character_event = {
 }
 
 character_event = {
-	id = EMP.12040
-	
-	hide_window = yes
-	
-	is_triggered_only = yes # on_offmap_governor_changed
-
-	trigger = {
-		FROMFROM = {
-			is_offmap_tag = offmap_hre
-		}
-	}
-	
-	immediate = {
-		log = "EMP.12040 triggered [This.GetBestName]"
-		any_playable_ruler = {
-			limit = {
-				suzerain = {
-					NOT = { is_offmap_governor = offmap_hre }
-				}
-				OR = {
-					is_tributary = { type = hre_prince }
-					is_tributary = { type = hre_free_imp_city }
-				}
-			}
-			suzerain = {
-				remove_tributary = PREV
-			}
-			offmap_hre_tributaries_join_effect = yes
-		}
-		if = {
-			limit = {
-				has_character_modifier = hre_elector_modifier
-			}
-
-			remove_character_modifier = hre_elector_modifier
-		}
-		print_hre_governor_update_effect = yes
-		offmap_hre_government_de_facto_maintain_effect = yes
-		offmap_hre_ruler_name_sync_effect = yes
-	}
-}
-
-character_event = {
-	id = EMP.12050
-	
-	hide_window = yes
-	offmap = only
-	
-	is_triggered_only = yes # on_offmap_ruler_changed
-
-	trigger = { is_offmap_tag = offmap_hre }
-    
-	immediate = {
-		print_hre_ruler_update_effect = yes
-		offmap_hre_ruler_name_sync_effect = yes
-	}
-}
-
-
-character_event = {
     id = EMP.12060
     hide_window = yes
 
@@ -316,6 +256,92 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = EMP.12130
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_character_renamed
+
+	trigger = {
+		# Do not scope offmap_power directly, for a character could have multiple offmap titles
+		offmap_hre = {
+			governor = {
+				character = ROOT
+			}
+		}
+	}
+
+	immediate = {
+		offmap_hre_ruler_name_sync_effect = yes
+	}
+}
+
+character_event = {
+	id = EMP.12140
+	
+	hide_window = yes
+	
+	is_triggered_only = yes # on_offmap_governor_changed
+
+	trigger = {
+		FROMFROM = {
+			is_offmap_tag = offmap_hre
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				FROMFROM = {
+					has_status = hre_shattered
+				}
+			}
+			any_playable_ruler = {
+				limit = {
+					suzerain = {
+						NOT = { is_offmap_governor = offmap_hre }
+					}
+					OR = {
+						is_tributary = { type = hre_prince }
+						is_tributary = { type = hre_free_imp_city }
+					}
+				}
+				suzerain = {
+					remove_tributary = PREV
+				}
+				offmap_hre_tributaries_join_effect = yes
+			}
+			if = {
+				limit = {
+					has_character_modifier = hre_elector_modifier
+				}
+
+				remove_character_modifier = hre_elector_modifier
+			}
+			offmap_hre_government_de_facto_maintain_effect = yes
+		}
+		print_hre_governor_update_effect = yes
+		offmap_hre_ruler_name_sync_effect = yes
+	}
+}
+
+character_event = {
+	id = EMP.12150
+
+	hide_window = yes
+	offmap = only
+
+	is_triggered_only = yes # on_offmap_ruler_changed
+
+	trigger = { is_offmap_tag = offmap_hre }
+
+	immediate = {
+		print_hre_ruler_update_effect = yes
+		offmap_hre_ruler_name_sync_effect = yes
+	}
+}
+
 # Weak claim for all Princes of hre
 character_event = {
 	id = EMP.12220
@@ -410,164 +436,6 @@ character_event = {
 					add_character_modifier = {
 						name = hre_elector_modifier
 						months = 2
-					}
-				}
-			}
-		}
-	}
-}
-
-# Monthly - Wicked Kaiser
-narrative_event = {
-	id = EMP.12330
-	title = EVTNAME_EMP_12330
-	desc = EVTDESC_EMP_12330
-	picture = "GFX_evt_bloodlines"
-	border = "GFX_event_narrative_frame_diplomacy"
-
-	major = yes
-
-	#only_playable = yes
-	only_independent = yes
-
-	trigger = {
-		always = no
-		is_offmap_governor = offmap_hre
-		FROM = {
-			# policies: hre_dominant, hre_peace, hre_communion
-			# official_faith: catholic, fraticelli
-			# hre_peace: +waldensian, +cathar, +lollard(triggered relative events)
-			# hre_communion: +orthodox
-			# Public Satan check?
-			trigger_if = {
-				limit = {
-					has_policy = hre_dominant
-				}
-
-				persistent_event_target:official_faith = {
-					ROOT = {
-						NOT = { religion = PREV }
-					}
-				}
-			}
-			trigger_else_if = {
-				limit = {
-					has_policy = hre_peace
-				}
-
-				persistent_event_target:official_faith = {
-					ROOT = {
-						NOR = {
-							religion = PREV
-							is_heresy_of = PREV
-						}
-					}
-				}
-			}
-			trigger_else_if = {
-				limit = {
-					has_policy = hre_communion
-				}
-
-				persistent_event_target:official_faith = {
-					ROOT = {
-						NOR = {
-							religion = PREV
-							religion = orthodox
-						}
-					}
-				}
-			}
-		}
-	}
-
-	major_trigger = {
-		ai = no
-	}
-
-	immediate = {
-		FROM = {
-			if = {
-				limit = {
-					has_policy = hre_dominant
-					persistent_event_target:official_faith = {
-						ROOT_FROM = {
-							governor_title = {
-								current_heir = {
-									religion = PREVPREVPREV
-								}
-							}
-						}
-					}
-				}
-
-				governor_title = {
-					current_heir = {
-						gain_title = {
-							target = PREV
-							type = faction_demand
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_policy = hre_peace
-					persistent_event_target:official_faith = {
-						ROOT_FROM = {
-							governor_title = {
-								current_heir = {
-									OR = {
-										religion = PREVPREVPREV
-										is_heresy_of = PREVPREVPREV
-									}
-								}
-							}
-						}
-					}
-				}
-
-				governor_title = {
-					current_heir = {
-						gain_title = {
-							target = PREV
-							type = faction_demand
-						}
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_policy = hre_peace
-					persistent_event_target:official_faith = {
-						ROOT_FROM = {
-							governor_title = {
-								current_heir = {
-									OR = {
-										religion = PREVPREVPREV
-										religion = orthodox
-									}
-								}
-							}
-						}
-					}
-				}
-
-				governor_title = {
-					current_heir = {
-						gain_title = {
-							target = PREV
-							type = faction_demand
-						}
-					}
-				}
-			}
-			else = {
-				governor_title = {
-					unsafe_destroy_landed_title = THIS
-					activate_title = {
-						title = THIS
-						status = no
 					}
 				}
 			}

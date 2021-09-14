@@ -1,15 +1,38 @@
 namespace = EMP
 
 character_event = {
-	id = EMP.13040
+	id = EMP.13130
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_character_renamed
+
+	trigger = {
+		# Do not scope offmap_power directly, for a character could have multiple offmap titles
+		offmap_papacy = {
+			governor = {
+				character = ROOT
+			}
+		}
+	}
+
+	immediate = {
+		offmap_papacy_ruler_name_sync_effect = yes
+	}
+}
+
+character_event = {
+	id = EMP.13140
 	
 	hide_window = yes
 	
-	is_triggered_only = yes # on_offmap_governor_changed
+	is_triggered_only = yes # on_new_holder
 
 	trigger = {
-		FROMFROM = {
-			is_offmap_tag = offmap_papacy
+		offmap_papacy = {
+			governor_title = {
+				title = FROM
+			}
 		}
 	}
 	
@@ -20,7 +43,7 @@ character_event = {
 }
 
 character_event = {
-	id = EMP.13050
+	id = EMP.13150
 	
 	hide_window = yes
 	offmap = only
@@ -32,5 +55,52 @@ character_event = {
 	immediate = {
 		print_papacy_ruler_update_effect = yes
 		offmap_papacy_ruler_name_sync_effect = yes
+	}
+}
+
+# ping event for decision
+
+character_event = {
+	id = EMP.13511
+	
+	hide_window = yes
+	
+	is_triggered_only = yes # decision: buy_indulgence_for_sins
+
+	trigger = {
+		has_character_flag = ask_for_indulgence
+	}
+
+	immediate = {
+		FROM = {
+			character_event = {
+				id = 39250
+				days = 5
+				random = 12
+				tooltip = indulgence_ask
+			}
+		}
+	}
+}
+
+character_event = {
+	id = EMP.13521
+	
+	hide_window = yes
+	
+	is_triggered_only = yes # decision: ask_pope_coronation
+
+	trigger = {
+		has_character_modifier = coronation_request_cooldown
+	}
+
+	immediate = {
+		FROM = {
+			letter_event = {
+				id = HF.20201
+				days = 30
+				random = 5
+			}
+		}
 	}
 }

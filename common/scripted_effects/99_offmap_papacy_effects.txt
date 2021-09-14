@@ -7,8 +7,9 @@ print_papacy_ruler_update_effect = {
 
 print_papacy_governor_update_effect = {
 	log = "----------------"
-	log = "[From.GetBestName] is no longer holder of papacy."
-	log = "New Governmenor of papacy is [Root.GetBestName]."
+	#log = "[From.GetBestName] is no longer holder of papacy."
+	log = "[FromFrom.GetBestName] is no longer holder of papacy."
+	log = "New Governor of papacy is [Root.GetBestName]."
 	log = "----------------"
 }
 

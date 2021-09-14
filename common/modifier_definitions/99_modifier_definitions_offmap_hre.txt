@@ -1,4 +1,4 @@
-monthly_offmap_hre_currency = {
+monthly_pfennig = {
 	show_as_percent = no
 	is_good = yes
 	is_monthly = yes
