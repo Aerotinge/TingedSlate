@@ -883,7 +883,30 @@ feudal_governments = {
 		color = { 118 255 163 }
 
 		potential = {
-			always = no
+			primary_title = {
+				OR = {
+					title = e_sui
+					title = e_tang
+					title = e_sung
+					title = e_jin
+				}
+
+				trigger_if = {
+					limit = {
+						NOT = { has_title_flag = chinese_dynasty }
+					}
+
+					is_save_game = no
+					has_game_started = no
+				}
+				trigger_else = {
+					ROOT = {
+						government = chinese_imperial_government
+					}
+				}
+			}
+
+			could_be_temporal_religious_head_trigger = yes
 		}
 
 		allow = {

@@ -1,0 +1,13 @@
+581.3.4 = {
+	government = chinese_imperial_government
+	holder = 247725
+}
+604.8.13 = {
+	holder = 247726
+}
+617.12.18 = {
+	holder = 247728
+}
+619.9.14 = {
+	holder = 0
+}

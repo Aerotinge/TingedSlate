@@ -1,0 +1,21 @@
+guiTypes = {
+	windowType = {
+		name = "icon_offmaps_entry_offmap_sina"
+		backGround = ""
+		position = { x = 0 y = 0 }
+		size = { x = 50 y = 50 }
+		moveable = 0
+		dontRender = ""
+		horizontalBorder = "0"
+		verticalBorder = ""
+		fullScreen = no
+		orientation = "UPPER_LEFT"
+
+		guiButtonType = {
+			name = "icon_offmaps"
+			position = { x = 0 y = 0 }
+			quadTextureSprite = "GFX_china_screen_button"
+			clickSound = click_default_china
+		}
+	}
+}

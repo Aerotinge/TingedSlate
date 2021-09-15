@@ -111,7 +111,7 @@ republic_governments = {
 						}
 					}
 				}
-				
+
 				trigger_if = {
 					limit = {
 						primary_title = { holding_type = family_palace }

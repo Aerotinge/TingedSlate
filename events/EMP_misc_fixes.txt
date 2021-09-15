@@ -36,6 +36,15 @@ character_event = {
     hide_window = yes
 
     is_triggered_only = yes # EMP.10010
+	
+	trigger = {
+		c_217725 = {
+			is_alive = no
+			offmap_power = {
+				is_offmap_tag_including_dead = offmap_sina
+			}
+		}
+	}
 
 	immediate = {
 		any_claim = { # Careless, but can't be better

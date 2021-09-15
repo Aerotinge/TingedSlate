@@ -283,3 +283,40 @@ e_timurids = {
 	culture = mongol
 	religion = sunni
 }
+
+k_sina = { #placeholder for the Chinese Empire itself, for V4 map is yet prepared
+	color = { 245 240 10 }
+	color2 = { 220 220 0 }
+
+	#capital = 1753 # pseudo-province
+
+	dignity = 10
+
+	culture = han # test
+	religion = taoist # test
+	
+
+	assimilate = no # Duchies cannot de jure drift IN or OUT of this title
+
+	short_name = yes
+
+	# Always exists
+	landless = yes
+
+	allow = {
+		always = no
+	}
+
+	# Cannot be vassalized
+	independent = yes
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+
+	can_be_claimed = no
+	can_be_usurped = no
+
+	extra_ai_eval_troops = 7500
+}

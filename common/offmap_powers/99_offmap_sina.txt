@@ -1,0 +1,196 @@
+offmap_sina = {
+	name = sina_sina
+	window_name = domestic_offmaps_window_offmap_sina
+	button_name = icon_offmaps_entry_offmap_sina
+	currency_name = TXT_GRACE
+	currency_gain = monthly_grace
+	currency_reset_on_dynasty_change = yes
+
+	holder_title = title_sina_emperor			# minor title used to identify a character as holder of this offmap power
+	governor_title = k_sina
+	tier = KING
+
+	non_aggression_modifier = peace_deal_with_sina
+	coa_religion = taoist
+	government = chinese_imperial_government
+	beginning_of_history = 618.6.18
+	sound = china_interaction_interface
+
+	display_trigger = {
+		is_landed = yes
+		FROM = {
+			is_within_diplo_range = ROOT
+		}
+	}
+
+	policies = {
+		policy_placeholder
+	}
+
+	statuses = {
+		status_placeholder
+	}
+
+	buttons = {
+		offmap_gifts = {
+			is_active_trigger = {
+				always = no
+			}
+			display_trigger = {
+				always = no
+			}
+		}
+
+		offmap_boons = {
+			is_active_trigger = {
+				always = no
+			}
+			display_trigger = {
+				always = no
+			}
+		}
+
+		offmap_hostility = {
+			is_active_trigger = {
+				always = no
+			}
+			display_trigger = {
+				always = no
+			}
+		}
+
+	}
+
+	#These conditions only effect the appearance of the button, it does not actually disable them from being clickable. The same triggers are used in all tribute/boon decisions respectively
+
+	icon_triggers = {
+	}
+
+	monthly_currency_gain = {
+	}
+
+	temple_names = {
+		{ # Founder names
+		}
+		{ # Successor names
+		}
+	}
+
+	holder_succession = {
+		# Chances of getting a female holder, as a percentage:
+		# If the total is >= 100, the new holder will always be female
+		# If the total is <= 0, the new holder will always be male
+		is_female = {
+			value = 5
+
+			additive_modifier = {
+				value = 45
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+			}
+		}
+
+		culture = {
+			han = { 		# Default culture for new emperor
+				value = 99	# If any other value reaches 100, it will be picked instead
+			}
+
+			FROM = {		# Default culture for new emperor
+							# the left side here (and for culture, religion, graphical_culture and dynasty)
+							# can be a right hand side value (FROM, ROOT, a culture name, etc)
+							# The right hand side / inside the brackets is a standard MTTH evaluation
+							# Only the one with the highest weight will be used
+							# If there's a tie, one of the tied values is picked at random
+				value = 0
+
+				additive_modifier = { #the new emperor will keep current culture if things are great
+					value = 100
+					#china_is_fine_trigger = yes
+					FROM = { # Essentially a check that the previous emperor actually exists
+						character = yes
+					}
+				}
+			}
+
+			red_panda = {
+				value = 0
+
+				additive_modifier = {
+					value = 100
+
+					has_alternate_start_parameter = {
+						key = special_culture
+						value = animal_world
+					}
+				}
+			}
+		}
+
+		graphical_culture = {
+			FROM = {
+				value = 100
+			}
+		}
+
+		religion = {
+			taoist = { 		# Default religion for new emperor
+				value = 99	# If any other value reaches 100, it will be picked instead (unless equal, then it will randomize)
+			}
+
+			FROM = {
+				value = 0
+				additive_modifier = { # The new emperor will keep current religion if things are great
+					value = 100
+					#china_is_fine_trigger = yes
+					FROM = { religion_scope = { always = yes } } # Essentially a check that the previous emperor actually exists
+				}
+			}
+		}
+
+		dynasty = {
+			FROM = { 		# Default dynasty for new emperor
+				value = 99  # Might drop from modifiers -- highest value will be picked instead (unless equal, then it will randomize)
+			}
+
+			actually_culture = {
+				value = 0
+
+				additive_modifier = {
+					value = 100
+					NOT = { FROM = { character = yes } }
+				}
+
+				additive_modifier = { # Fix for simulating Chinese history on old save boot-up
+					value = 100
+					random < 12
+					has_game_started = no
+				}
+			}
+		}
+
+		likes = {
+			likes_wealth = {
+				value = 300
+			}
+
+			likes_tributaries = {
+				value = 100
+			}
+		}
+
+		dislikes = {
+			likes_tributaries = {
+				value = 100
+			}
+
+			likes_wealth = {
+				value = 100
+			}
+		}
+	}
+
+	diplomatic_range = { # Already includes the Emperor's "normal" diplo range
+	}
+}
