@@ -1,0 +1,94 @@
+20.1.1 = {
+	active = no
+	historical_nomad = yes
+}
+
+1066.1.1 = {
+	law = agnatic_succession
+	law = succ_ultimogeniture
+}
+
+1206.1.1 = {
+	holder = 125501
+	active = yes
+	set_global_flag = mongol_empire_arrival
+	set_global_flag = mongol_horde_united
+}
+
+1227.12.2 = {
+	holder = 125520
+}
+
+1232.1.1 = {
+	holder = 172005 # Ögedei Khan
+}
+
+1241.12.11 = {
+	holder = 172007 # Güyük Khan
+}
+
+1248.4.20 = {
+	holder = 217265 # Möngke Khan
+}
+
+1259.8.11 = {
+	holder = 125526 # Ariq Böke Khan
+	# war against king_tier_adventure Kublai Khan
+}
+# Overtaken k_sina
+1264.8.21 = {
+	holder = 217266 # Kublai Khan
+	government = chinese_imperial_government
+	law = succ_primogeniture
+	law = crown_authority_2
+	law = centralization_3
+	law = ze_administration_laws_2
+	law = revoke_title_law_1
+	name = "yuan_china"
+	adjective = "yuan_china_ADJ"
+	# defend war against e_chagatai for e_mongol_empire
+	# defend war e_golden_horde for free tributary
+}
+
+1294.2.18 = {
+	holder = 217269 # Temür Khan 
+}
+
+# 1303 end war e_golden_horde for free tributary
+# 1303 end war against e_chagatai for e_mongol_empire
+
+1307.2.10 = {
+	holder = 217271 # Külüg Khan 
+}
+
+1311.1.27 = {
+	holder = 217272 # Buyantu Khan 
+}
+
+1320.3.1 = {
+	holder = 217274 # Gegeen Khan
+}
+
+1323.9.4 = {
+	holder = 217279 # Yesün Temür Khan
+}
+
+1328.8.15 = {
+	holder = 217281 # Jayaatu Khan 
+}
+
+1329.4.3 = {
+	holder = 217282 # Khutughtu Khan Kusala
+}
+
+1329.9.8 = { 
+	holder = 217281 # Jayaatu Khan (again)
+}
+
+1332.9.2 = {
+	holder = 217283 # Rinchinbal Khan
+}
+
+1332.12.14 = {
+	holder = 217284 # Toghon Temür Khan
+}

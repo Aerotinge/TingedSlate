@@ -14,10 +14,7 @@
 		add_spouse = 247831
 	}
 	635.6.25 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -56,10 +53,7 @@
 		effect = { add_consort = c_247868 } # Xu Cairen
 	}
 	649.7.10 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -94,10 +88,7 @@
 		add_spouse = 217704 # Wu Zetian made Empress Consort
 	}
 	683.12.27 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -122,10 +113,7 @@
 		effect = { add_consort = c_247927 } # Shangguan Wan'er
 	}
 	710.7.3 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		} # Has to die this way to count as a previous emperor
+		death = { death_reason = death_in_china_historic } # Has to die this way to count as a previous emperor
 		#death = {
 			#death_reason = death_murder_unknown_poison
 			#killer = Spouse Empress Wei
@@ -160,10 +148,7 @@
 		effect = { add_consort = c_247945 } # Consort Doulu (really 676)
 	}
 	716.7.16 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -193,10 +178,7 @@
 		name = "Zhao"
 	}
 	705.12.16 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -211,10 +193,7 @@
 		birth = yes
 	}
 	714.9.5 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -249,10 +228,7 @@
 		effect = { add_consort = c_247972 } # Consort Yang Guifei
 	}
 	762.5.3 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -292,10 +268,7 @@
 		add_spouse = 247991 # Empress Zhang
 	}
 	762.5.16 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -323,10 +296,7 @@
 		name = "Yu"
 	}
 	779.5.23 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -352,10 +322,7 @@
 	}
 	# Consort Zhang declared Empress three days before her death
 	805.2.25 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -372,10 +339,7 @@
 		birth = yes
 	}
 	806.2.11 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -390,10 +354,7 @@
 		birth = yes
 	}
 	820.2.14 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -408,10 +369,7 @@
 		birth = yes
 	}
 	824.2.25 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -425,10 +383,7 @@
 		birth = yes
 	}
 	827.1.9 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		} # Has to die this way to count as a previous emperor
+		death = { death_reason = death_in_china_historic } # Has to die this way to count as a previous emperor
 		#death = {
 		#	death_reason = death_murder_unknown
 		#}
@@ -446,10 +401,7 @@
 		birth = yes
 	}
 	840.2.10 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -464,10 +416,7 @@
 		birth = yes
 	}
 	846.4.22 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -482,10 +431,7 @@
 		birth = yes
 	}
 	859.9.7 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -500,10 +446,7 @@
 		birth = yes
 	}
 	873.8.15 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -518,10 +461,7 @@
 		birth = yes
 	}
 	888.4.20 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -536,10 +476,7 @@
 		birth = yes
 	}
 	904.9.22 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -554,10 +491,7 @@
 		birth = yes
 	}
 	908.3.26 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -585,10 +519,7 @@
 		birth = yes
 	}
 	976.11.14 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -603,10 +534,7 @@
 		birth = yes
 	}
 	997.5.8 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -621,10 +549,7 @@
 		birth = yes
 	}
 	1022.3.23 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -639,10 +564,7 @@
 		birth = yes
 	}
 	1063.3.30 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -661,10 +583,7 @@
 		father = 217724 # Adopted by Emperor Renzong
 	}
 	1069.1.25 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -679,10 +598,7 @@
 		birth = yes
 	}
 	1085.4.1 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -697,10 +613,7 @@
 		birth = yes
 	}
 	1100.2.23 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -1578,10 +1491,7 @@
 		effect = { add_lover = c_247742 }
 	}
 	604.8.13 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -1605,10 +1515,7 @@
 		add_spouse = 247754
 	}
 	618.4.11 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -1639,10 +1546,7 @@
 		birth = yes
 	}
 	619.9.14 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -7045,10 +6949,7 @@
 		birth = yes
 	}
 	908.1.1 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -7062,10 +6963,7 @@
 		birth = yes
 	}
 	926.1.1 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -7079,10 +6977,7 @@
 		birth = yes
 	}
 	933.1.1 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -7096,10 +6991,7 @@
 		birth = yes
 	}
 	934.1.1 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -7113,10 +7005,7 @@
 		birth = yes
 	}
 	937.1.1 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 

@@ -1,0 +1,84 @@
+20.1.1 = {
+	historical_nomad = yes
+}
+
+768.1.1 = {
+	liege = d_sibir
+	holder = 258106
+}
+
+850.1.1 = {
+	liege = k_cuman
+	holder = 180273
+}
+
+936.1.1 = {
+	holder = 261073
+	liege = d_sibir
+}
+
+1066.1.1 = {
+	liege = d_yaik
+	holder = 34963
+}
+
+1095.1.1 = {
+	holder = 34964
+}
+
+1130.1.1 = {
+	holder = 34965
+}
+
+1160.1.1 = {
+	holder = 34966
+}
+
+1190.1.1 = {
+	holder = 34967
+}
+
+1220.1.1 = {
+	holder = 161735
+}
+
+1221.1.1 = {
+	holder = 125502
+}
+
+1225.1.1 = {
+	holder = 125502
+}
+
+1227.1.2 = {
+	liege = e_mongol_empire
+	holder = 34912
+}
+
+1227.12.2 = {
+	liege = e_golden_horde
+}
+
+1251.1.1 = {
+	holder = 34919
+}
+
+1280.1.1 = {
+	holder = 34913
+}
+
+1301.1.1 = {
+	holder = 34914
+}
+
+1309.1.1 = {
+	holder = 34915
+}
+
+1315.1.1 = {
+	holder = 34916
+}
+
+1320.1.1 = {
+	holder = 34917
+}

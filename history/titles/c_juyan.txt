@@ -59,7 +59,7 @@
 
 1227.2.1 = {
 	liege = d_ikh_bogd
-	holder = 217246
+	holder = 206810
 }
 
 1257.4.16 = {

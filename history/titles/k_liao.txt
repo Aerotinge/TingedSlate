@@ -3,19 +3,10 @@
 	government = tribal_government
 	holder = 194325
 }
-
 926.1.1 = {
 	holder = 194326
 }
-
-1040.1.1 = {
-	holder = 194332
-}
-
-1055.8.28 = {
-	holder = 194333
-}
-
-1101.2.12 = {
-	holder = 194334
+936.1.1 = {
+	holder = 0
+	active = no
 }

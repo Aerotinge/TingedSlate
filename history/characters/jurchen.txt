@@ -46,10 +46,7 @@
 		birth = yes
 	}
 	1135.2.9 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -64,10 +61,7 @@
 		birth = yes
 	}
 	1150.1.9 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -112,10 +106,7 @@
 		birth = yes
 	}
 	1161.12.15 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -145,10 +136,7 @@
 		birth = yes
 	}
 	1189.1.20 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -178,10 +166,7 @@
 		birth = yes
 	}
 	1208.12.29 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -196,10 +181,7 @@
 		birth = yes
 	}
 	1213.9.11 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		} # Has to die this way to count as a previous emperor
+		death = { death_reason = death_in_china_historic } # Has to die this way to count as a previous emperor
 		#death = {
 			#death_reason = death_murder_unknown
 		#}
@@ -217,10 +199,7 @@
 		birth = yes
 	}
 	1224.1.14 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -235,10 +214,7 @@
 		birth = yes
 	}
 	1234.2.9 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 
@@ -254,10 +230,7 @@
 		birth = yes
 	}
 	1234.2.9 = {
-		death = { death_reason = death_offmap }
-		effect_even_if_dead = {
-			set_special_character_title = title_china_emperor
-		}
+		death = { death_reason = death_in_china_historic }
 	}
 }
 

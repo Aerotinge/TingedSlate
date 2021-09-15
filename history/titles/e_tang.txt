@@ -1,5 +1,10 @@
 618.6.18 = {
 	government = chinese_imperial_government
+	law = succ_primogeniture
+	law = crown_authority_2
+	law = centralization_3
+	law = ze_administration_laws_2
+	law = revoke_title_law_1
 	holder = 217700
 }
 626.9.4 = {
