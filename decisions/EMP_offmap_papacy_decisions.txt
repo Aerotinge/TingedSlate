@@ -453,7 +453,7 @@ offmap_decisions = {
 
 			mult_modifier = {
 				factor = 1.5
-				FROM = { dynasty = 25061 # Karlings will be more likely to request it }
+				FROM = { dynasty = 25061 } # Karlings will be more likely to request it
 			}
 
 			mult_modifier = {
