@@ -53,6 +53,8 @@ k_marinid = {
 k_liao = {
 	color = { 33 202 156 }
 	color2 = { 255 255 255 }
+	
+	dignity = 100
 
 	culture = khitan
 }

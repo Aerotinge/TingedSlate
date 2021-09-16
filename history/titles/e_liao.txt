@@ -3,6 +3,7 @@
 		insert_title_history = k_liao
 	}
 }
+
 936.1.1 = {
 	law = succ_primogeniture
 	law = crown_authority_2
@@ -11,39 +12,24 @@
 	law = revoke_title_law_1
 	holder = 194326
 }
+
+946.2.24 = {
+	name = "liao_china"
+	adjective = "liao_china_ADJ"
+}
+
 1040.1.1 = {
 	holder = 194332
 }
+
 1055.8.28 = {
 	holder = 194333
 }
+
 1101.2.12 = {
 	holder = 194334
 }
-1128.6.6 = {
-	holder = 0
-}
-## Kara-Khitan
-1141.1.1 = {
-	holder = 188905 # Yelü-Dashi
-}
 
-1143.1.1 = {
-	holder = 188907 # Yelü-Yilie
-}
-
-1163.1.1 = {
-	holder = 188908 # Pusuwan
-}
-
-1177.1.1 = {
-	holder = 188912 # Yelü-Zhilugu
-}
-
-1211.1.1 = {
-	holder = 188914 # Kuchlug (de facto)
-}
-
-1212.1.1 = {
+1125.3.26 = {
 	holder = 0
 }

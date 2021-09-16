@@ -78,7 +78,7 @@
 }
 
 1137.1.1 = {
-	liege = d_samarkand # Kara Khitan conquest
+	liege = k_liao # Kara Khitan conquest
 }
 
 1160.1.1 = {

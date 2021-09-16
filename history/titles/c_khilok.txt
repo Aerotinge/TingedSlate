@@ -58,36 +58,31 @@
 
 1055.8.28 = {
 	holder = 258101
-	liege = k_mongolia
+	liege = e_liao
 }
 
-1092.5.12 = {
-	liege = d_khangai
-	holder = 217335
+1087.1.1 = {
+	holder = 244013
 }
 
-1110.6.5 = {
-	holder = 217336
+# Merkit Mongol Horde
+1121.12.10 = {
+	holder = 244010
 }
 
-# Khalka Mongol Horde
 1125.3.26 = {
-	holder = 217223
-	liege = d_khangai
+	liege = d_baygal
 }
 
-1148.2.3 = {
-	holder = 217224
+1152.12.10 = {
+	holder = 166905
 }
 
-1183.3.6 = {
-	holder = 217225
+1181.1.1 = {
+	holder = 244014
 }
 
-#1205.4.17 = {
-#	holder = 217226
-#}
-
+# Ghengis Conquest on the Merkits
 1196.1.1 = {
 	holder = 125501
 }

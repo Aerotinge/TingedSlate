@@ -165,6 +165,7 @@ e_mongol_empire = {
 	culture = mongol
 	religion = tengri_pagan
 
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 	short_name = yes
 
 	landless = yes

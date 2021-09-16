@@ -9,37 +9,54 @@
 }
 
 936.1.1 = {
-	holder = 261079
-	liege = k_liao
-}
-
-# Liao Khitan
-1055.8.28 = {
-	holder = 217185
-	liege = k_mongolia
-}
-
-1093.2.17 = {
-	holder = 217337
-}
-
-1106.6.8 = {
-	holder = 217338
-}
-
-# Naiman Mongol Horde
-1125.3.26 = {
-	historical_nomad = yes
-	holder = 217213
 	liege = 0
-	clear_tribute_suzerain = e_china_west_governor
+	holder = 261079
+	set_tribute_suzerain = {
+		who = e_liao
+		type = offmap
+	}
 }
 
-1165.2.7 = {
-	holder = 217214
+937.1.1 = {
+	clear_tribute_suzerain = e_liao
 }
 
-1197.5.24 = {
+# Kereyid Mongol Horde under Liao
+1055.8.28 = {
+	historical_nomad = yes
+	liege = e_liao
+	holder = 166883
+}
+
+1090.1.1 = {
+	holder = 166884
+}
+
+1100.1.1 = {
+	holder = 166887
+}
+
+1125.3.26 = {	
+	liege = 0
+	set_tribute_suzerain = {
+		who = k_liao
+		type = nomadic
+	}
+}
+
+1132.1.1 = {
+	holder = 166888
+}
+
+1153.1.1 = {
+	holder = 166890
+}
+
+1163.1.1 = {
+	clear_tribute_suzerain = k_liao
+}
+
+1203.1.1 = {
 	holder = 217215
 }
 
@@ -47,19 +64,6 @@
 	holder = 125501 # Genghis Khan
 }
 
-1225.1.1 = {
-	holder = 172005 # Ögedei Khan
-	liege = k_mongolia
-}
-
-1257.4.16 = {
-	holder = 217259
-}
-
-1272.4.7 = {
-	holder = 217260
-}
-
-1304.12.14 = {
-	holder = 217261
+1206.1.1 = {
+	holder = 0
 }

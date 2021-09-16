@@ -1,6 +1,6 @@
 916.1.1 = {
 	historical_nomad = yes
-	government = tribal_government
+	law = centralization_1
 	holder = 194325
 }
 926.1.1 = {
@@ -9,4 +9,27 @@
 936.1.1 = {
 	holder = 0
 	active = no
+}
+
+## Kara-Khitan
+
+#1132.1.1 = {
+1125.3.26 = {
+	holder = 188905 # Yelü-Dashi
+}
+
+1143.1.1 = {
+	holder = 188907 # Yelü-Yilie
+}
+
+1163.1.1 = {
+	holder = 188908 # Pusuwan
+}
+
+1177.1.1 = {
+	holder = 188912 # Yelü-Zhilugu
+}
+
+1211.1.1 = {
+	holder = 0
 }

@@ -52,48 +52,44 @@
 }
 
 936.1.1 = {
-	holder = 194326
-	liege = e_liao
+	liege = d_ikh_bogd
+	holder = 261079
 }
 
 1055.8.28 = {
-	holder = 217178
-	liege = d_khangai
+	liege = e_liao
+	holder = 194333
 }
 
-1092.5.12 = {
-	holder = 217335
+1101.2.12 = {
+	holder = 194334
 }
 
-1110.6.5 = {
-	holder = 217336
-}
-
-# Khalka Mongol Horde
+# Kereyid Mongol Horde
 1125.3.26 = {
-	holder = 217223
-	liege = d_khangai
+	liege = d_ikh_bogd
+	holder = 166887
 }
 
-1148.2.3 = {
-	holder = 217224
+1132.1.1 = {
+	holder = 166888
 }
 
-1183.3.6 = {
-	holder = 217225
+1153.1.1 = {
+	holder = 166890
 }
 
-#1205.4.17 = {
-#	holder = 217226
-#}
+1203.1.1 = {
+	holder = 217215
+}
 
-1196.1.1 = {
-	holder = 125501
+1204.1.1 = {
+	holder = 125501 # Genghis Khan
+	liege = e_mongol_empire
 }
 
 1227.12.2 = {
 	holder = 125520 # Tolui
-	liege = e_mongol_empire
 }
 
 1232.1.1 = {

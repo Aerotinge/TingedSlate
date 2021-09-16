@@ -3222,7 +3222,7 @@
 	1136.1.1 = {
 		effect = { add_friend = c_166890 } # Becomes blood brothers with Wang Khan
 	}
-	1155.1.1 = {
+	1153.1.1 = {
 		effect = { # Becomes rivals with Yehe Chiledu
 			add_consort = c_166851
 			add_rival = c_166905
@@ -7160,10 +7160,11 @@
 	dynasty = 1051139 #Merkit
 	religion = tengri_pagan
 	culture = mongol
-	1128.1.1 = {
+	father = 244010 # fictional
+	1134.1.1 = {
 		birth = yes
 	}
-	1155.1.1 = {
+	1153.1.1 = {
 		effect = { add_rival = c_93055 } # Becomes rivals with Yesügei
 	}
 	1157.1.1 = {
@@ -8383,6 +8384,89 @@
 	}
 }
 
+# Placeholder for 10~12C mongol tribes under Liao
+244010 = { # fictitious mongol
+	name = "Targutai"
+	dynasty = 1051139 # Merkit
+	religion = tengri_pagan
+	culture = mongol
+	father = 244013
+	1102.2.10 = {
+		birth = yes
+	}
+	1152.12.10 = {
+		death = yes
+	}
+}
+
+244011 = { # fictitious mongol
+	dynasty = 1051138 # Bayad
+	name = "Nakhu"
+	religion = tengri_pagan
+	culture = mongol
+	1154.1.1 = {
+		birth = yes
+	}
+	1207.1.1 = {
+		death = yes
+	}
+}
+
+244012 = { # fictitious mongol --- Holds k_mongola, etc
+	dynasty = 1040079 # Chonos
+	name = "Menggei"
+	religion = tengri_pagan
+	culture = mongol
+	1310.1.1 = {
+		birth = yes
+	}
+	1399.1.1 = {
+		death = yes
+	}
+}
+
+244013 = { # fictitious mongol
+	dynasty = 1051139 # Merkit
+	name = "Megetu"
+	religion = tengri_pagan
+	culture = mongol
+	1063.2.10 = {
+		birth = yes
+	}
+	1121.12.10 = {
+		death = yes
+	}
+}
+
+244014 = { # historical mongol, who rob Genghis Khan's wife as a revenge
+	dynasty = 1051139 # Merkit
+	name = "Toghta"
+	religion = tengri_pagan
+	culture = mongol
+	father = 244010
+	1131.1.1 = {
+		birth = yes
+	}
+	1205.1.1 = {
+		death = {
+			death_reason = death_battle
+		}
+	}
+}
+
+244015 = { # fictitious mongol
+	dynasty = 1051120 # Buryat
+	name = "Jamugha"
+	religion = tengri_pagan
+	culture = mongol
+	1310.1.1 = {
+		birth = yes
+	}
+	1399.1.1 = {
+		death = yes
+	}
+}
+
 248137 = {
 	name = "Khia"
 	dynasty = 1059021
@@ -8396,6 +8480,19 @@
 		birth = yes
 	}
 	1292.1.1 = {
+		death = yes
+	}
+}
+
+258101 = {
+	name = "Chakha"
+	dynasty = 1100023
+	religion = tengri_pagan
+	culture = mongol
+	1033.1.1 = {
+		birth = yes
+	}
+	1087.1.1 = {
 		death = yes
 	}
 }

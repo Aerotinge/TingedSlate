@@ -58,37 +58,34 @@
 
 1055.8.28 = {
 	holder = 258101
-	liege = k_mongolia
+	liege = e_liao
 }
 
-1092.5.12 = {
-	liege = d_khangai
-	holder = 217335
+1087.1.1 = {
+	holder = 194333
 }
 
-1110.6.5 = {
-	holder = 217336
+1101.2.12 = {
+	holder = 194334
 }
 
-# Khalka Mongol Horde
+# Buryat Mongol Horde
 1125.3.26 = {
-	holder = 217223
-	liege = d_khangai
+	holder = 217218
+	liege = d_otuken
 }
 
-1148.2.3 = {
-	holder = 217224
+1161.4.19 = {
+	holder = 217219
 }
 
+# Bayad Mongol Horde
 1183.3.6 = {
-	holder = 217225
+	holder = 244011
 }
 
-#1205.4.17 = {
-#	holder = 217226
-#}
-
-1196.1.1 = {
+# Jochi Conquest of Buryat
+1207.1.1 = {
 	holder = 125501
 }
 

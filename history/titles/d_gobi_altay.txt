@@ -1,0 +1,34 @@
+1100.1.1 = {
+	historical_nomad = yes
+	holder = 166885
+	liege = e_liao
+}
+
+1125.3.26 = {
+	liege = 0
+	set_tribute_suzerain = {
+		who = k_liao
+		type = nomadic
+	}
+}
+
+1131.1.1 = {
+	holder = 217213
+}
+
+1163.1.1 = {
+	clear_tribute_suzerain = k_liao
+}
+
+1165.2.7 = {
+	holder = 217214
+}
+
+1197.5.24 = {
+	holder = 217215
+}
+
+1204.1.1 = {
+	holder = 0
+	liege = 0
+}

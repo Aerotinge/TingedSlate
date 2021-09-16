@@ -8,48 +8,55 @@
 }
 
 936.1.1 = {
-	holder = 261084
+	liege = d_otuken
+	holder = 261078
 }
 
 # Liao Dynasty
 1040.1.1 = {
 	holder = 194332
-	liege = k_mongolia
+	liege = e_liao
 }
 
 1055.8.28 = {
-	holder = 258100
+	holder = 194333
 }
 
 1101.2.12 = {
 	holder = 194334
 }
 
-1125.1.1 = {
-	holder = 194201
-	liege = d_kirghiz
+# Kara-Khitai
+
+1125.3.26 = {
+	holder = 188905
+	liege = k_liao
 }
 
-1150.1.1 = {
-	holder = 194202
+1143.1.1 = {
+	holder = 188907 # Yelü-Yilie
 }
 
-1180.1.1 = {
-	holder = 194203
+1163.1.1 = {
+	holder = 188908 # Pusuwan
 }
 
-1200.1.1 = {
-	holder = 194204
+1177.1.1 = {
+	holder = 188912 # Yelü-Zhilugu
+}
+
+1211.1.1 = {
+	holder = 188914 # Kuchlug (de facto)
 }
 
 # Mongol conquest
-1221.1.1 = {
+1218.1.1 = {
 	liege = e_mongol_empire
 	holder = 125502
 }
 
 1225.1.1 = {
-	holder = 125502
+	holder = 172005
 }
 
 1227.1.2 = {

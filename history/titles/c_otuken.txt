@@ -7,19 +7,14 @@
 	holder = 217169
 }
 
-#1200.1.1 = {
-#	holder = 125501
-#}
-
-# Liao Dynasty
 936.1.1 = {
-	holder = 194326
-	liege = e_liao
+	holder = 261078
 }
 
+# Liao Dynasty
 1040.1.1 = {
+	liege = e_liao
 	holder = 194332
-	liege = d_otuken
 }
 
 1055.8.28 = {

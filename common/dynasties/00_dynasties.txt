@@ -40229,13 +40229,13 @@
 }
 
 214009 = {
-	name = "Kara-Khitai"
+	name = "Yelü"
 	culture = khitan
 	religion = buddhist
 }
 
 214010 = {
-	name = "Xiaokhitai"
+	name = "Xiao"
 	culture = khitan
 	religion = buddhist
 }
@@ -40395,7 +40395,7 @@
 }
 
 1045082 = {
-	name = "Liao"
+	name = "Yelü"
 	culture = khitan
 	religion = buddhist
 }
@@ -40472,19 +40472,19 @@
 }
 
 1051111 = {
-	name = "Yuzhi"
+	name = "Yuzhi" # This is a khitan first name dude... Yelü Yuzhi.
 	culture = khitan
 	religion = buddhist
 }
 
 1051112 = {
 	name = "Wanyan"
-	culture = khitan
+	culture = jurchen
 	religion = buddhist
 }
 
 1045084 = {
-	name = "Yuwen"
+	name = "Yuwen" # Qay Clan, Hsien Pei origin
 	culture = khitan
 }
 
@@ -49312,13 +49312,13 @@
 
 1062516 = {
 	name = "Naiman"
-	culture = khitan
+	culture = uyghur
 	religion = tengri_pagan
 }
 
 1062517 = {
 	name = "Zubu"
-	culture = khitan
+	culture = uyghur
 	religion = tengri_pagan
 }
 

@@ -2287,6 +2287,7 @@ GENERATING_COAS;Generating Coats of Arms;Création des armoiries;Wappen wird erst
 GENERIC_DISCONTENT_REASON;Made a decision that the Council had voted no for;A pris une décision refusée par le conseil;Traf eine Entscheidung, für die der Rat mit "Nein" gestimmt hatte;;Tomaste una decisión que el Consejo había votado en contra.;;;;;;;;;x
 GENERIC_REPUBLIC_NAME;[target_merchant_republic.GetFirstName]'s Republic;République de [target_merchant_republic.GetFirstName];[target_merchant_republic.GetFirstName]s Republik;;República de [target_merchant_republic.GetFirstName];;;;;;;;;x
 GENGHIS_KHAN;Genghis Khan;Genghis Khan;Dschingis Khan;;Gengis Kan;;;;;;;;;x
+GUR_KHAN;Gur Khan;Gur Khan;Gur Khan;;Gur Kan;;;;;;;;;x
 GERMAN;German;Allemand;Deutsch;;Alemán;;;;;;;;;x
 GERMAN_SUPPORTED;Yes;Oui;Ja;;Sí;;;;;;;;;x
 GETISVALIDDESC;[GetIsValidDesc];[GetIsValidDesc];[GetIsValidDesc];;[GetIsValidDesc];;;;;;;;;x
