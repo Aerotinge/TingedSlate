@@ -1,14 +1,20 @@
+# race flag is broken, culture have to be saved with the birth day.
+# The Li dynasty of Tang is both culturally and enthenically turkic-sino mixture, there're at least Yenisei Kyrgyz/Xianbei/Qay/Northern Chinese Jin elements and possibly Qocho Uyghur
+# When Li Shimin(217701) was young, He's still an able bilingual user.
+# So I'd better make he and his ancestors sinicized kirghiz. Due to more deeply marriage with enthinic han wives.
+# And then childrens of Li Zhi(217702) and Empress Wende(247866) modeled as khitan because both of them are half-Xianbei/Qay, making their Xianbei elements highest(>4/8)
 217700 = { # Emperor Gaozu of Tang (lived 566-635)(reigned 617-626)
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Yuan"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	add_trait = grey_eminence
 	father = 247763 #Li Bing
 	mother = 247744 #Lady Dugu
 	# spouse = Empress Dou
 	556.4.8 = {
 		birth = yes
+		culture = han
 	}
 	586.1.1 = {
 		add_spouse = 247831
@@ -22,7 +28,7 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Shimin"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	add_trait = fortune_builder
 	add_trait = genius
 	add_trait = erudite
@@ -30,13 +36,14 @@
 	mother = 247831 # Empress Dou
 	598.1.28 = {
 		birth = yes
+		culture = han
 	}
 	617.1.1 = { # 613 - real date
 		add_spouse = 247866 # Empress Wende
 	}
-	617.6.1 = {
-		effect = { add_consort = c_247770 } # Consort Yin
-	}
+	#617.6.1 = { # Wrong person 247770
+	#	effect = { add_consort = c_247770 } # Consort Yin
+	#}
 	618.6.18 = {
 		effect = { add_consort = c_247757 } # Consort Yang
 	}
@@ -61,13 +68,14 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Zhi"
 	religion = taoist
-	culture = han
+	culture = khitan
 	add_trait = weak
 	add_trait = naive_appeaser
 	father = 217701 # Emperor Taizong
 	mother = 247866 # Empress Wende
 	628.7.21 = {
 		birth = yes
+		culture = han
 	}
 	644.1.1 = {
 		add_spouse = 247903 # Empress Wang
@@ -1758,11 +1766,12 @@
 	dynasty = 1055114 # Dugu
 	name = "Qieluo"
 	religion = taoist
-	culture = han
+	culture = khitan # Xianbei/Qay, khitan is the most related culture in CK2
 	father = 247743 #General Dugu Xin
 	# mother = Lady Cui
 	544.1.1 = {
 		birth = yes
+		culture = han
 	}
 	602.9.10 = {
 		death = { death_reason = death_in_china_historic }
@@ -1773,11 +1782,12 @@
 	dynasty = 1055114 # Dugu
 	name = "Xin"
 	religion = taoist
-	culture = han
+	culture = khitan # Xianbei/Qay, khitan is the most related culture in CK2
 	# father = Dugu Ku
 	# spouses = Lady Cui and Lady Guo
 	502.1.1 = {
 		birth = yes
+		culture = han
 	}
 	557.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -1789,11 +1799,12 @@
 	dynasty = 1055114 # Dugu
 	name = "Shi"
 	religion = taoist
-	culture = han
+	culture = khitan # Xianbei/Qay, khitan is the most related culture in CK2
 	father = 247743 #General Dugu Xin
 	# mother = Lady Cui
 	530.1.1 = {
 		birth = yes
+		culture = han
 	}
 	608.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2084,11 +2095,12 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Hu"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	# father = #Li Tianxi
 	# mother = #Lady Gu
 	504.1.1 = {
 		birth = yes
+		culture = han
 	}
 	551.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2099,10 +2111,11 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Bing"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247762 #Li Hu
 	528.1.1 = {
 		birth = yes
+		culture = han
 	}
 	546.1.1 = {
 		add_spouse = 247744 #Lady Dugu
@@ -2116,11 +2129,12 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Cheng"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247763 #Li Bing
 	mother = 247744 #Lady Dugu
 	547.1.1 = {
 		birth = yes
+		culture = han
 	}
 	593.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2131,11 +2145,12 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Zhan"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247763 #Li Bing
 	mother = 247744 #Lady Dugu
 	549.1.1 = {
 		birth = yes
+		culture = han
 	}
 	608.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2150,6 +2165,7 @@
 	father = 247765 #Li Zhan
 	592.1.1 = {
 		birth = yes
+		culture = han
 	}
 	671.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2164,6 +2180,7 @@
 	father = 247765 #Li Zhan
 	595.1.1 = {
 		birth = yes
+		culture = han
 	}
 	664.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2174,11 +2191,12 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Hong"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247763 #Li Bing
 	mother = 247744 #Lady Dugu
 	553.1.1 = {
 		birth = yes
+		culture = han
 	}
 	618.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2190,12 +2208,13 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Tong'an"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247763 #Li Bing
 	mother = 247744 #Lady Dugu
 	# spouse = Wang Yu
 	559.1.1 = {
 		birth = yes
+		culture = han
 	}
 	612.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2206,10 +2225,11 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Zhang"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247762 #Li Hu
 	532.1.1 = {
 		birth = yes
+		culture = han
 	}
 	580.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2220,10 +2240,11 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Shao"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247770 #Li Zhang
 	572.1.1 = {
 		birth = yes
+		culture = han
 	}
 	615.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2248,10 +2269,11 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Hui"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247762 #Li Hu
 	545.1.1 = {
 		birth = yes
+		culture = han
 	}
 	600.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2262,10 +2284,11 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Zhi"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247773 #Li Hui
 	574.1.1 = {
 		birth = yes
+		culture = han
 	}
 	620.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2318,10 +2341,11 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Wei"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247762 #Li Hu
 	548.1.1 = {
 		birth = yes
+		culture = han
 	}
 	598.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -2332,10 +2356,11 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "An"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 247778 #Li Wei
 	570.1.1 = {
 		birth = yes
+		culture = han
 	}
 	623.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -3115,7 +3140,7 @@
 	dynasty = 1055047 # Dou
 	name = "Taimu"
 	religion = taoist
-	culture = han
+	culture = khitan
 	#father = #Dou Yi
 	#mother = #Princess Xiangyang of Northern Zhou
 	#spouse = Emperor Gaozu of Tang
@@ -3131,12 +3156,13 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Jiancheng"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 217700 # Emperor Gaozu
 	mother = 247831 # Empress Dou
 	# spouse = Zheng Guanyin
 	589.1.1 = {
 		birth = yes
+		culture = han
 	}
 	614.1.1 = {
 		add_spouse = 247833
@@ -3274,11 +3300,12 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Xuanba"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 217700 # Emperor Gaozu
 	mother = 247831 # Empress Dou
 	599.1.1 = {
 		birth = yes
+		culture = han
 	}
 	614.1.1 = {
 		death = { death_reason = death_in_china_historic }
@@ -3289,12 +3316,13 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Yuanji"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 217700 # Emperor Gaozu
 	mother = 247831 # Empress Dou
 	# spouse = Princess Yang
 	603.1.1 = {
 		birth = yes
+		culture = han
 	}
 	617.1.1 = {
 		add_spouse = 247843
@@ -3431,12 +3459,13 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Pingyang"
 	religion = taoist
-	culture = han
+	culture = kirghiz
 	father = 217700 # Emperor Gaozu
 	mother = 247831 # Empress Dou
 	# spouse = Chai Shao (588–638)
 	598.1.1 = {
 		birth = yes
+		culture = han
 	}
 	623.3.14 = {
 		death = { death_reason = death_in_china_historic }
@@ -3673,12 +3702,13 @@
 	dynasty = 1055110 # Zhangsun
 	name = "Wende"
 	religion = taoist
-	culture = han
+	culture = khitan # Half-Xianbei/Qay
 	father = 247860 # Zhangsun Sheng
 	# mother = # Lady Gao, daughter of Gao Jingde
 	# spouse = Emperor Taizong of Tang
 	601.1.1 = {
 		birth = yes
+		culture = han
 	}
 	636.7.28 = {
 		death = { death_reason = death_in_china_historic }
@@ -3764,12 +3794,13 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Chengqian"
 	religion = taoist
-	culture = han
+	culture = khitan
 	father = 217701 # Emperor Taizong
 	mother = 247866 # Empress Wende
 	# spouse = Lady Su
 	618.1.1 = {
 		birth = yes
+		culture = han
 	}
 	645.1.5 = {
 		death = { death_reason = death_in_china_historic }
@@ -3916,12 +3947,13 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Tai"
 	religion = taoist
-	culture = han
+	culture = khitan
 	father = 217701 # Emperor Taizong
 	mother = 247866 # Empress Wende
 	# spouse = # Yan Wan (622-690)
 	620.1.1 = {
 		birth = yes
+		culture = han
 	}
 	653.1.20 = {
 		death = { death_reason = death_in_china_historic }
@@ -4106,12 +4138,13 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Lizhi"
 	religion = taoist
-	culture = han
+	culture = khitan
 	father = 217701 # Emperor Taizong
 	mother = 247866 # Empress Wende
 	# spouse = # Zhangsun Chong
 	621.1.1 = {
 		birth = yes
+		culture = han
 	}
 	643.9.28 = {
 		death = { death_reason = death_in_china_historic }
@@ -4140,12 +4173,13 @@
 	dynasty = 1051150 # Li - ruling Tang dynasty
 	name = "Chengyang"
 	religion = taoist
-	culture = han
+	culture = khitan
 	father = 217701 # Emperor Taizong
 	mother = 247866 # Empress Wende
 	# spouses = # Du He and Xue Yao
 	626.1.1 = {
 		birth = yes
+		culture = han
 	}
 	671.5.16 = {
 		death = { death_reason = death_in_china_historic }
@@ -4969,7 +5003,7 @@
 
 247946 = { # Consort Dou
 	female = yes
-	dynasty = 1055047 # Dou
+	#dynasty = 1055047 # Dou
 	name = "Shi"
 	religion = taoist
 	culture = han
@@ -5872,7 +5906,7 @@
 
 247997 = { # Consort Dugu (Daizong)
 	female = yes
-	dynasty = 1055114 # Dugu
+	#dynasty = 1055114 # Dugu
 	name = "Shi"
 	religion = taoist
 	culture = han
@@ -7196,5 +7230,55 @@
 	}
 	1030.1.1 = {
 		death = yes # Tanguts defeat Guiyi Circuit
+	}
+}
+
+1059740 = {
+	name = "Hulji"
+	dynasty = 1055034 # Shi
+	religion = taoist
+	culture = han # uyghur
+	868.1.1 = {
+		birth = yes # Fictional date
+	}
+	900.1.1 = {
+		name = "Shaoyong"
+	}
+	924.1.1 = {
+		death = { death_reason = death_in_china_historic }
+	}
+}
+
+1059741 = {
+	name = "Jintang"
+	dynasty = 1055034 # Shi
+	religion = taoist
+	culture = han
+	father = 1059740
+	892.3.30 = {
+		birth = yes # Fictional date
+	}
+	936.11.28 = {
+		effect_even_if_dead = {
+			set_special_character_title = PETTY_EMPEROR
+		}
+	}
+	942.7.28 = {
+		death = { death_reason = death_in_china_historic }
+	}
+}
+
+1059742 = {
+	name = "Chonggwei"
+	dynasty = 1055034 # Shi
+	religion = taoist
+	culture = han
+	father = 1059741
+	914.1.1 = {
+		birth = yes
+	}
+	# lost k_sina in 947
+	974.6.18 = {
+		death = { death_reason = death_in_china_historic }
 	}
 }

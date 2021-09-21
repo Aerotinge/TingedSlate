@@ -17,7 +17,6 @@ offmap_sina = {
 	sound = china_interaction_interface
 
 	display_trigger = {
-		is_landed = yes
 		FROM = {
 			is_within_diplo_range = ROOT
 		}

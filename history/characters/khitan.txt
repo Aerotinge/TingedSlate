@@ -148,11 +148,13 @@
 	dynasty = 214009
 	religion = buddhist
 	culture = khitan
-	father = 188910
-	mother = 188908
+	father = 188907
 	add_trait = mahayana_buddhist
 	1165.1.1 = {
 		birth = yes
+	}
+	1177.1.1 = {
+		add_trait = tribal_kinslayer
 	}
 	1213.1.1 = {
 		death = yes

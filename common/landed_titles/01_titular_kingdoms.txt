@@ -56,6 +56,9 @@ k_liao = {
 	
 	dignity = 100
 
+	# Always exists
+	landless = yes
+
 	culture = khitan
 }
 

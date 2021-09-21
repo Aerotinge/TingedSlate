@@ -16,14 +16,14 @@
 }
 
 936.1.1 = {
-	holder = 261080
 	set_tribute_suzerain = {
-		who = e_liao
-		type = offmap
+		who = k_liao
+		type = nomadic
 	}
+	holder = 261080
 }
 
 937.1.1 = {
-	clear_tribute_suzerain = e_liao
+	clear_tribute_suzerain = k_liao
 	holder = 0
 }

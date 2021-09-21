@@ -11,14 +11,6 @@
 936.1.1 = {
 	liege = 0
 	holder = 261079
-	set_tribute_suzerain = {
-		who = e_liao
-		type = offmap
-	}
-}
-
-937.1.1 = {
-	clear_tribute_suzerain = e_liao
 }
 
 # Kereyid Mongol Horde under Liao

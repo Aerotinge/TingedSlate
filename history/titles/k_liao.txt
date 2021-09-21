@@ -1,12 +1,26 @@
+# Hulji Khitan Gur a.k.a Grand Khitan Khanate
+20.1.1 = {
+	active = no
+}
+
 916.1.1 = {
 	historical_nomad = yes
+	government = nomadic_tribal_government
 	law = centralization_1
 	holder = 194325
 }
+
 926.1.1 = {
 	holder = 194326
 }
-936.1.1 = {
+
+936.8.7 = {
+	effect = {
+		set_title_flag = is_offmap_sina_title
+	}
+}
+
+947.1.1 = {
 	holder = 0
 	active = no
 }
@@ -15,6 +29,13 @@
 
 #1132.1.1 = {
 1125.3.26 = {
+	effect = {
+		set_title_landless = {
+			title = THIS
+			status = no
+		}
+		set_title_flag = offmap_sina_exiled
+	}
 	holder = 188905 # Yelü-Dashi
 }
 
@@ -32,4 +53,5 @@
 
 1211.1.1 = {
 	holder = 0
+	active = no
 }

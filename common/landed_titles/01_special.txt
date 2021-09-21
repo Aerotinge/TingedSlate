@@ -289,13 +289,12 @@ k_sina = { #placeholder for the Chinese Empire itself, for V4 map is yet prepare
 	color = { 245 240 10 }
 	color2 = { 220 220 0 }
 
-	#capital = 1753 # pseudo-province
+	capital = 1153 # Dunhuang
 
-	dignity = 10
+	dignity = 200
 
 	culture = han # test
 	religion = taoist # test
-	
 
 	assimilate = no # Duchies cannot de jure drift IN or OUT of this title
 
@@ -320,4 +319,5 @@ k_sina = { #placeholder for the Chinese Empire itself, for V4 map is yet prepare
 	can_be_usurped = no
 
 	extra_ai_eval_troops = 7500
+	monthly_income = 12 # (Must be an integer between 1 and 512)
 }

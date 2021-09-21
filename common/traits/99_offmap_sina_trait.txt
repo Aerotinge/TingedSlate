@@ -1,0 +1,5 @@
+child_of_adoption = {
+	diplomacy = -1
+
+	customizer = no
+}

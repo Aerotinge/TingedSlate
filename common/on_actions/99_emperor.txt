@@ -1,14 +1,13 @@
 #character
 on_startup = {
-	effect = {
-		offmap_papacy_ruler_name_sync_effect = yes
-	}
 	events = {
 		# Nomadic tribal
 		EMP.11002
 		EMP.11003
 		# Holy Roman Empire setup
 		EMP.12110
+		# Sina setup
+		EMP.14010
 	}
 }
 
@@ -101,8 +100,6 @@ on_offmap_ruler_changed = {
 	events = {
 		# offmap_hre
 		EMP.12150
-		# offmap_china
-		EMP.14010 # Fix for dead Emperor has no title
 		# Papacy
 		EMP.13150
 	}

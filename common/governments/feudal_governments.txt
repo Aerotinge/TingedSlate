@@ -893,13 +893,12 @@ feudal_governments = {
 					OR = {
 						title = e_sui
 						title = e_tang
-						title = e_liao
 						title = e_sung
-						title = e_jin
+						title = e_jinn
 						title = e_mongol_empire
 					}
 				}
-				has_landed_title = k_sina
+				is_feudal = yes
 			}
 			trigger_else = {
 				government = chinese_imperial_government

@@ -1,10 +1,21 @@
-1127.1.9 = {
+20.1.1 = {
+	active = no
+}
+
+1122.1.1 = {
 	government = chinese_imperial_government
 	law = succ_primogeniture
 	law = crown_authority_2
 	law = centralization_3
 	law = ze_administration_laws_2
 	law = revoke_title_law_1
+	holder = 217730
+	effect = {
+		set_title_flag = is_offmap_sina_title
+		insert_title_history = k_manchuria
+	}
+}
+1123.9.19 = {
 	holder = 217731
 }
 1135.2.9 = {
@@ -32,5 +43,6 @@
 	holder = 217740
 }
 1234.2.9 = {
+	active = no
 	holder = 0
 }

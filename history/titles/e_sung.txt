@@ -1,3 +1,7 @@
+20.1.1 = {
+	active = no
+}
+
 960.2.1 = {
 	government = chinese_imperial_government
 	law = succ_primogeniture
@@ -6,6 +10,9 @@
 	law = ze_administration_laws_2
 	law = revoke_title_law_1
 	holder = 217721
+	effect = {
+		set_title_flag = is_offmap_sina_title
+	}
 }
 976.11.14 = {
 	holder = 217722
@@ -30,5 +37,6 @@
 }
 # Sounthern Sung(1135~1279), but I'd leave it alone...
 1135.6.4 = {
+	active = no
 	holder = 0
 }

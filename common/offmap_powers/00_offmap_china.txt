@@ -17,6 +17,7 @@ offmap_china = {
 	sound = china_interaction_interface
 
 	display_trigger = {
+		#always = no
 		has_dlc = "Jade Dragon"
 		FROM = {
 			is_within_diplo_range = ROOT

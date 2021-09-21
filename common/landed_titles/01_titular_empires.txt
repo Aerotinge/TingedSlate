@@ -103,6 +103,8 @@ e_sui = {
 	color = { 217 166 161 } # Mellow Rose
 	color2 = { 255 255 255 }
 
+	capital = 1153 # Dunhuang
+
 	short_name = yes
 
 	culture = han
@@ -110,6 +112,9 @@ e_sui = {
 
 	assimilate = no # Duchies cannot de jure drift IN or OUT of this title
 	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+
+	# Always exists
+	landless = yes
 
 	allow = {
 		always = no
@@ -120,6 +125,8 @@ e_tang = {
 	color = { 231 96 158 } # Botan
 	color2 = { 255 255 255 }
 
+	capital = 1153 # Dunhuang
+
 	short_name = yes
 
 	culture = han
@@ -127,6 +134,9 @@ e_tang = {
 
 	assimilate = no # Duchies cannot de jure drift IN or OUT of this title
 	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
+
+	# Always exists
+	landless = yes
 
 	allow = {
 		always = no
@@ -136,6 +146,8 @@ e_tang = {
 e_liao = {
 	color = { 36 67 68 } # Iron Green
 	color2 = { 255 255 255 }
+
+	capital = 1153 # Dunhuang
 
 	short_name = yes
 
@@ -148,11 +160,15 @@ e_liao = {
 	allow = {
 		always = no
 	}
+
+	han = "Liao"
 }
 
 e_sung = {
 	color = { 42 139 190 } # B&W porcelain
 	color2 = { 255 255 255 }
+
+	capital = 1153 # Dunhuang
 
 	short_name = yes
 
@@ -162,14 +178,19 @@ e_sung = {
 	assimilate = no # Duchies cannot de jure drift IN or OUT of this title
 	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 
+	# Always exists
+	landless = yes
+
 	allow = {
 		always = no
 	}
 }
 
-e_jin = {
+e_jinn = {
 	color = { 64 94 92 } # Mallard Green
 	color2 = { 255 255 255 }
+
+	capital = 1153 # Dunhuang
 
 	short_name = yes
 
@@ -179,7 +200,12 @@ e_jin = {
 	assimilate = no # Duchies cannot de jure drift IN or OUT of this title
 	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 
+	# Always exists
+	landless = yes
+
 	allow = {
 		always = no
 	}
+
+	han = "Jinn"
 }

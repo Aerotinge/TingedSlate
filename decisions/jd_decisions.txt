@@ -126,7 +126,7 @@ decisions = {
 							1 = {
 								trigger = { NOT = { offmap_china = { has_offmap_name = jin_china } } }
 								set_name = "Jin Empire"
-								set_title_flag = china_name_Jin
+								set_title_flag = china_name_jinn
 							}
 							1 = {
 								trigger = { NOT = { offmap_china = { has_offmap_name = wei_china } } }
