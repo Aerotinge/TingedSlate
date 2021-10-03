@@ -260,12 +260,14 @@ feudal_governments = {
 		}
 		allowed_holdings = {
 			CASTLE
-			TEMPLE
 			FORT
 			HOSPITAL
 		}
 		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
 			TRIBAL
+		}
+		allowed_holdings_religion = { # Will not get the wrong government type penalty for temples of the same religion
+			TEMPLE
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 		}
@@ -348,12 +350,14 @@ feudal_governments = {
 		}
 		allowed_holdings = {
 			CASTLE
-			TEMPLE
 			FORT
 			HOSPITAL
 		}
 		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
 			TRIBAL
+		}
+		allowed_holdings_religion = { # Will not get the wrong government type penalty for temples of the same religion
+			TEMPLE
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
@@ -527,6 +531,8 @@ feudal_governments = {
 			tibetan_feudal_government
 			#tibetan_feudal_vassal_government
 			sacred_confederacy_government
+		}
+		accepts_liege_governments_religion = {
 			theocracy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
@@ -591,7 +597,6 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			theocracy_government
 			tribal_government
 		}
 		ignore_in_vassal_limit_calculation = {
@@ -664,10 +669,11 @@ feudal_governments = {
 			tibetan_feudal_government
 			tibetan_feudal_vassal_government
 			sacred_confederacy_government
+		}
+		accepts_liege_governments_religion = {
 			theocracy_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			theocracy_government
 			tribal_government
 		}
 		ignore_in_vassal_limit_calculation = {
@@ -739,12 +745,14 @@ feudal_governments = {
 			tibetan_feudal_government
 			tibetan_feudal_vassal_government
 			sacred_confederacy_government
+		}
+		accepts_liege_governments_religion = {
 			theocracy_government
 		}
 		free_revoke_on_governments = {
 			order_government
 		}
-		free_revoke_on_tiers = {
+		free_revoke_on_tiers_religion = {
 			BARON
 		}
 		forced_contract = {
@@ -782,7 +790,7 @@ feudal_governments = {
 		can_revoke_without_reason = no
 		can_usurp_kingdoms_and_empires = no
 		dukes_called_kings = yes
-		free_retract_vassalage = yes
+		#free_retract_vassalage = yes
 		have_gender_laws = no
 	}
 
@@ -860,12 +868,14 @@ feudal_governments = {
 		allowed_holdings = {
 			CASTLE
 			CITY
-			TEMPLE
 			FORT
 			HOSPITAL
 		}
 		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
 			TRIBAL
+		}
+		allowed_holdings_culture_and_religion = { # Will not get the wrong government type penalty for temples of the same culture and religion
+			TEMPLE
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 		}
