@@ -932,274 +932,6 @@ e_byzantium = {
 		}
 	}
 
-	k_bulgaria = {
-		color = { 113 88 101 }
-		color2 = { 255 255 255 }
-
-		culture = bulgarian
-
-		capital = 530 # Tyrnovo
-
-		orthodox = 300 # Crusade target weight
-		catholic = 100 # Crusade target weight
-		slavic_pagan_reformed = 50 # Crusade target weight
-		tengri_pagan_reformed = 50
-
-		allow = {
-			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture = bolghar
-					culture = bulgarian
-				}
-			}
-		}
-
-		d_karvuna = {
-			color = { 227 79 190 }
-			color2 = { 255 255 255 }
-
-			capital = 533 # Karvuna
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			c_constantia = {
-				color = { 213 98 253 }
-				color2 = { 255 255 255 }
-
-				b_constantia = {}
-				b_carachioi = {}
-				b_adamclisi = {}
-				b_mesgidia = {}
-				b_cobadin = {}
-				b_cogealac = {}
-				b_mangalia = {}
-				b_topraisar = {}
-			}
-
-			c_karvuna = {
-				color = { 210 95 253 }
-				color2 = { 255 255 255 }
-
-				greek = "Krounoi"
-
-				b_karvuna = {
-					greek = "Krounoi"
-				}
-				b_kaliakra = {
-					greek = "Akrai"
-				}
-				b_silistria = {}
-				b_dobrich = { # Balchik
-					greek = "Dionysopolis"
-				}
-				b_prezlav = {}
-				b_venets = {}
-				b_varbitsz = {}
-				b_smyadovo = {}
-			}
-
-			c_mesembria = {
-				color = { 207 92 250 }
-				color2 = { 255 255 255 }
-
-				b_mesembria = {}
-				b_varna = {}
-				b_anchilios = {}
-				b_aetos = {}
-				b_sozopolis = {}
-				b_odessos = {}
-				b_bourgas = {}
-				b_valchidol = {}
-			}
-		}
-
-		d_strymon = {
-			color = { 175 50 170 }
-			color2 = { 255 255 255 }
-
-			capital = 527 # Strymon
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			c_astibus = {
-				color = { 140 10 120 }
-				color2 = { 255 255 20 }
-
-				b_astibus = {}
-				b_veles = {}
-				b_skopje = {}
-				b_zegligovo = {}
-				b_presevo = {}
-				b_dukena = {}
-				b_stobi = {}
-			}
-
-			c_strymon = {
-				color = { 139 29 101 }
-				color2 = { 255 255 20 }
-
-				b_strumica = {}
-				b_prilep = {}
-				b_prosek = {}
-				b_trikves = {}
-				b_kocane = {}
-				b_kratovo = {}
-				b_radovish = {}
-			}
-		}
-
-		d_moesia = {
-			color = { 197 39 154 }
-			color2 = { 255 255 255 }
-
-			capital = 530 # Tyrnovo
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			c_dorostotum = {
-				color = { 162 47 205 }
-				color2 = { 255 255 255 }
-
-				b_dorosturum = {}
-				b_rusi = {}
-				b_shumen = {}
-				b_borovo = {}
-				b_byaladve = {}
-				b_slivopole = {}
-				b_tsenovo = {}
-				b_samuil = {}
-			}
-
-			c_nikopolis = {
-				color = { 160 45 203 }
-				color2 = { 255 255 255 }
-
-				b_nikopolis = {}
-				b_pleven = {}
-				b_oescus = {}
-				b_belene = {}
-				b_iskar = {}
-				b_pordim = {}
-				b_knezha = {}
-				b_dolnidabknik = {}
-			}
-
-			c_serdica = {
-				color = { 158 43 201 }
-				color2 = { 255 255 255 }
-
-				bulgarian = "Sofia"
-				serbian = "Sofia"
-				croatian = "Sofia"
-				bosnian = "Sofia"
-				russian = "Sofia"
-				polish = "Sofia"
-
-				b_serdica = {
-					bulgarian = "Sofia"
-					serbian = "Sofia"
-					croatian = "Sofia"
-					bosnian = "Sofia"
-					russian = "Sofia"
-					polish = "Sofia"
-				}
-				b_velbazhd = {}
-				b_rila = {}
-				b_etropole = {}
-				b_pernik = {}
-				b_breznik = {}
-				b_pravets = {}
-				b_samundzhievo = {}
-			}
-
-			c_tyrnovo = {
-				color = { 156 41 199 }
-				color2 = { 255 255 255 }
-
-				greek = "Moesia"
-
-				b_tyrnovo = {
-					greek = "Noba" # Roman Novae
-				}
-				b_irinopolis = {}
-				b_kilifarevski = {}
-				b_hisarya = {}
-				b_opan = {}
-				b_chirpan = {}
-				b_maglizh = {}
-				b_kazanlak = {}
-			}
-		}
-
-		d_vidin = {
-			color = { 122 103 58 }
-			color2 = { 255 255 255 }
-
-			capital = 524 # Vidin
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			greek = "Bononia"
-
-			c_naissos = {
-				color = { 126 107 62 }
-				color2 = { 255 255 255 }
-
-				serbian = "Nish"
-				croatian = "Nish"
-				bosnian = "Nish"
-				bulgarian = "Nish"
-
-				b_nish = {
-					greek = "Naissos"
-				}
-				b_kumanovo = {}
-				b_koprijan = {}
-				b_brdo = {}
-				b_vranje = {}
-				b_lesnovo = {}
-				b_kambelevac = {}
-				b_knjazevac = {}
-			}
-
-			c_vidin = {
-				color = { 124 105 60 }
-				color2 = { 255 255 255 }
-
-				greek = "Bononia"
-
-				b_vidin = {
-					greek = "Bononia"
-				}
-				b_viseslav = {}
-				b_kula = {}
-				b_srvljig = {}
-				b_pirot = {}
-				b_bolvan = {}
-				b_kucevo = {}
-				b_zajecar = {}
-			}
-		}
-	}
-
 	k_greece = {
 		color = { 135 30 125 }
 		color2 = { 255 255 23 }
@@ -3059,6 +2791,241 @@ e_byzantium = {
 				b_deleus = {}
 				b_aulaeitichus = {}
 				b_phinopolis = {}
+			}
+		}
+
+		d_karvuna = {
+			color = { 227 79 190 }
+			color2 = { 255 255 255 }
+
+			capital = 533 # Karvuna
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			c_constantia = {
+				color = { 213 98 253 }
+				color2 = { 255 255 255 }
+
+				b_constantia = {}
+				b_carachioi = {}
+				b_adamclisi = {}
+				b_mesgidia = {}
+				b_cobadin = {}
+				b_cogealac = {}
+				b_mangalia = {}
+				b_topraisar = {}
+			}
+
+			c_karvuna = {
+				color = { 210 95 253 }
+				color2 = { 255 255 255 }
+
+				greek = "Krounoi"
+
+				b_karvuna = {
+					greek = "Krounoi"
+				}
+				b_kaliakra = {
+					greek = "Akrai"
+				}
+				b_silistria = {}
+				b_dobrich = { # Balchik
+					greek = "Dionysopolis"
+				}
+				b_prezlav = {}
+				b_venets = {}
+				b_varbitsz = {}
+				b_smyadovo = {}
+			}
+
+			c_mesembria = {
+				color = { 207 92 250 }
+				color2 = { 255 255 255 }
+
+				b_mesembria = {}
+				b_varna = {}
+				b_anchilios = {}
+				b_aetos = {}
+				b_sozopolis = {}
+				b_odessos = {}
+				b_bourgas = {}
+				b_valchidol = {}
+			}
+		}
+
+		d_strymon = {
+			color = { 175 50 170 }
+			color2 = { 255 255 255 }
+
+			capital = 527 # Strymon
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			c_astibus = {
+				color = { 140 10 120 }
+				color2 = { 255 255 20 }
+
+				b_astibus = {}
+				b_veles = {}
+				b_skopje = {}
+				b_zegligovo = {}
+				b_presevo = {}
+				b_dukena = {}
+				b_stobi = {}
+			}
+
+			c_strymon = {
+				color = { 139 29 101 }
+				color2 = { 255 255 20 }
+
+				b_strumica = {}
+				b_prilep = {}
+				b_prosek = {}
+				b_trikves = {}
+				b_kocane = {}
+				b_kratovo = {}
+				b_radovish = {}
+			}
+		}
+
+		d_moesia = {
+			color = { 197 39 154 }
+			color2 = { 255 255 255 }
+
+			capital = 530 # Tyrnovo
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			c_dorostotum = {
+				color = { 162 47 205 }
+				color2 = { 255 255 255 }
+
+				b_dorosturum = {}
+				b_rusi = {}
+				b_shumen = {}
+				b_borovo = {}
+				b_byaladve = {}
+				b_slivopole = {}
+				b_tsenovo = {}
+				b_samuil = {}
+			}
+
+			c_nikopolis = {
+				color = { 160 45 203 }
+				color2 = { 255 255 255 }
+
+				b_nikopolis = {}
+				b_pleven = {}
+				b_oescus = {}
+				b_belene = {}
+				b_iskar = {}
+				b_pordim = {}
+				b_knezha = {}
+				b_dolnidabknik = {}
+			}
+
+			c_serdica = {
+				color = { 158 43 201 }
+				color2 = { 255 255 255 }
+
+				bulgarian = "Sofia"
+				serbian = "Sofia"
+				croatian = "Sofia"
+				bosnian = "Sofia"
+				russian = "Sofia"
+				polish = "Sofia"
+
+				b_serdica = {
+					bulgarian = "Sofia"
+					serbian = "Sofia"
+					croatian = "Sofia"
+					bosnian = "Sofia"
+					russian = "Sofia"
+					polish = "Sofia"
+				}
+				b_velbazhd = {}
+				b_rila = {}
+				b_etropole = {}
+				b_pernik = {}
+				b_breznik = {}
+				b_pravets = {}
+				b_samundzhievo = {}
+			}
+
+			c_tyrnovo = {
+				color = { 156 41 199 }
+				color2 = { 255 255 255 }
+
+				greek = "Moesia"
+
+				b_tyrnovo = {
+					greek = "Noba" # Roman Novae
+				}
+				b_irinopolis = {}
+				b_kilifarevski = {}
+				b_hisarya = {}
+				b_opan = {}
+				b_chirpan = {}
+				b_maglizh = {}
+				b_kazanlak = {}
+			}
+		}
+
+		d_vidin = {
+			color = { 122 103 58 }
+			color2 = { 255 255 255 }
+
+			capital = 524 # Vidin
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			greek = "Bononia"
+
+			c_naissos = {
+				color = { 126 107 62 }
+				color2 = { 255 255 255 }
+
+				serbian = "Nish"
+				croatian = "Nish"
+				bosnian = "Nish"
+				bulgarian = "Nish"
+
+				b_nish = {
+					greek = "Naissos"
+				}
+				b_kumanovo = {}
+				b_koprijan = {}
+				b_brdo = {}
+				b_vranje = {}
+				b_lesnovo = {}
+				b_kambelevac = {}
+				b_knjazevac = {}
+			}
+
+			c_vidin = {
+				color = { 124 105 60 }
+				color2 = { 255 255 255 }
+
+				greek = "Bononia"
+
+				b_vidin = {
+					greek = "Bononia"
+				}
+				b_viseslav = {}
+				b_kula = {}
+				b_srvljig = {}
+				b_pirot = {}
+				b_bolvan = {}
+				b_kucevo = {}
+				b_zajecar = {}
 			}
 		}
 	}

@@ -58,7 +58,11 @@
 	holder = 159123
 }
 
+# Not later than this year had the Bulgaria feudalized
 814.1.1 = {
+	de_jure_liege = e_byzantium
+	law = agnatic_succession
+	law = succ_primogeniture
 	holder = 159124
 }
 
@@ -87,13 +91,40 @@
 	holder = 712 #Simeon
 }
 
-# Changed into Bulgarian Empire
-914.1.1 = {
-	holder = 0
+913.8.1 = {
+	# Tsardom of Bulgaria
+}
+
+927.5.27 = {
+	holder = 714 #Petar I
+}
+
+969.1.30 = {
+	holder = 716 #Boris II
+}
+
+986.1.1 = {
+	holder = 718 #Roman I
+}
+
+998.1.1 = {
+	holder = 728 #Samuil
+}
+
+1014.10.6 = {
+	holder = 730 #Gavril Radomir
+}
+
+1015.10.1 = {
+	holder = 722 #Ivan Vladislav
+}
+
+1018.2.1 = {
+	holder = 70380 #Fruzin
 }
 
 1018.6.1 = {
-	de_jure_liege = e_byzantium
+	holder = 0
 }
 
 1040.1.1 = {

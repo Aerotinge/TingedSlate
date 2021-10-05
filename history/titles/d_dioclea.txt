@@ -1,0 +1,120 @@
+330.1.1 = {
+	liege = e_byzantium
+	vice_royalty = yes
+}
+
+640.1.1 = {
+	liege = 0
+	vice_royalty = no
+}
+
+768.1.1 = {
+	holder = 167858
+}
+
+865.1.1 = {
+	holder = 145119
+}
+
+897.1.1 = {
+	liege = 0
+	vice_royalty = no
+}
+
+936.1.1 = {
+	holder = 260648
+}
+
+992.1.1 = {
+	holder = 40530
+}
+
+997.1.1 = {
+	liege = k_bulgaria
+}
+
+1016.1.1 = {
+	liege = e_byzantium
+	vice_royalty = yes
+}
+
+1018.1.1 = {
+	holder = 20490
+}
+
+1050.1.1 = {
+	holder = 20491
+	liege = 0
+	vice_royalty = no
+}
+
+1082.1.1 = {
+	holder = 20493
+}
+
+1101.1.1 = {
+	holder = 70356
+}
+
+1102.1.1 = {
+	holder = 70360
+}
+
+1103.1.1 = {
+	holder = 70350
+}
+
+1113.1.1 = {
+	holder = 34124
+}
+
+1118.1.1 = {
+	holder = 34131
+}
+
+1125.1.1 = {
+	holder = 34124
+}
+
+1131.1.1 = {
+	holder = 34132
+}
+
+1146.1.1 = {
+	holder = 34140
+}
+
+1148.1.1 = {
+	holder = 34071
+	set_tribute_suzerain = {
+		who = d_rashka
+		type = permanent
+	}
+}
+
+1150.1.1 = {
+	liege = e_byzantium
+	clear_tribute_suzerain = d_rashka
+}
+
+1148.1.1 = {
+	holder = 34071
+}
+
+1162.1.1 = {
+	holder = 34141 #Mihajlo
+}
+
+1165.1.1 = {
+	vice_royalty = yes
+}
+
+1183.9.24 = {
+	liege = 0
+	vice_royalty = no
+}
+
+#conquered by Stefan Nemanja
+1189.1.1 = {
+	holder = 0
+}

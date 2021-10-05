@@ -1,0 +1,26 @@
+name = "War of the two Stephan"
+
+casus_belli={
+	casus_belli = claim_on_liege_plot
+	actor = 218506
+	recipient = 218507
+	landed_title = d_rashka
+	date = 1199.2.13
+}
+
+# In civil wars defender MUST be added before attacker!
+1199.2.13 = {
+	add_defender = 218507
+	add_attacker = 218506
+	start_war = yes
+	vassal_liege = {
+		vassal = 218506
+		liege = 218507
+	}
+}
+
+1205.1.1 = {
+	end_war = yes
+	rem_attacker = 218506
+	rem_defender = 218507
+}

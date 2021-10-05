@@ -1,0 +1,29 @@
+name = "Dardanian independence war"
+
+casus_belli = {
+	casus_belli = bid_for_independence
+	actor = 218500
+	recipient = 215530
+	date = 1170.1.1
+}
+
+# On war start, vassal_liege must manually setup again in the title history
+# In civil wars defender MUST be added before attacker!
+1170.1.1 = {
+	add_defender = 215530
+	add_attacker = 218500
+	add_attacker = 32118
+	start_war = yes
+	vassal_liege = {
+		vassal = 218500
+		liege = 215530
+	}
+}
+
+# On war end, vassal_liege must manually setup again in the title history
+1172.1.1 = {
+	end_war = yes
+	rem_attacker = 218500
+	rem_attacker = 32118
+	rem_defender = 215530
+}

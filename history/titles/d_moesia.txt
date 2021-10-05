@@ -1,13 +1,12 @@
 330.1.1 = {
-	liege = d_moesia
-}
-
-680.1.1 = {
-	holder = 159118
+	liege = e_byzantium
+	vice_royalty = yes
 }
 
 681.1.1 = {
 	liege = k_bulgaria
+	vice_royalty = no
+	holder = 159118
 }
 
 700.1.1 = {
@@ -67,6 +66,7 @@
 }
 
 814.1.1 = {
+	de_jure_liege = k_bulgaria
 	holder = 159124
 }
 
@@ -74,31 +74,52 @@
 	holder = 159125
 }
 
+836.1.1 = {
+	holder = 70384
+}
+
 852.1.1 = {
-	holder = 70382 #Boris
+	holder = 70382
 }
 
-860.1.1 = {
-	holder = 168288
+893.1.1 = {
+	holder = 712
 }
 
-927.5.27 = {
-	holder = 714 #Petar I
+927.5.2 = {
+	holder = 714
 }
 
-936.1.1 = {
-	holder = 70381
+969.1.30 = {
+	holder = 716
+}
+
+986.1.1 = {
+	holder = 720
+}
+
+1018.1.1 = {
+	holder = 20486
+}
+
+1041.1.1 = {
+	holder = 0
+}
+
+1041.1.1 = {
+	liege = 0
 }
 
 1066.1.1 = {
-	liege = d_moesia
+	liege = e_byzantium
+	vice_royalty = yes
 }
 
 1066.1.1 = {
-	holder = 34464
+	holder = 1748
 }
 
-1073.1.1 = {
+1077.10.14 = {
 	holder = 1782
 }
 
@@ -126,17 +147,17 @@
 	holder = 232506
 }
 
-#1185.1.1 =
-#{
-#	liege = k_bulgaria
-#}
-
 1185.1.1 = {
-	holder = 215004 #Dobromir
+	liege = k_bulgaria
+	vice_royalty = no
 }
 
 1185.1.1 = {
-	liege = d_moesia
+	holder = 217502 #Kaloyan
+}
+
+1196.1.1 = {
+	holder = 215004 #Dobromir
 }
 
 1200.1.1 = {

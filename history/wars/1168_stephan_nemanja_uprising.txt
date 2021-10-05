@@ -1,0 +1,26 @@
+name = "Arsanian War of the Grand Principality of Dardania"
+
+casus_belli = {
+	casus_belli = claim_on_liege_plot
+	actor = 218500
+	recipient = 34073
+	landed_title = d_rashka
+	date = 1168.1.1
+}
+
+# In civil wars defender MUST be added before attacker!
+1168.1.1 = {
+	add_defender = 34073
+	add_attacker = 218500
+	start_war = yes
+	vassal_liege = {
+		vassal = 218500
+		liege = 34073
+	}
+}
+
+1170.1.1 = {
+	end_war = yes
+	rem_attacker = 218500
+	rem_defender = 34073
+}

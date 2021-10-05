@@ -1,0 +1,24 @@
+936.1.1 = {
+	holder = 262700
+}
+
+1066.1.1 = {
+	holder = 0
+}
+
+1082.1.1 = {
+	holder = 20558 # Placeholder for Stephan Vojislavljevic, cousin of Constantine Bodin
+	set_tribute_suzerain = {
+		who = d_dioclea
+		type = permanent
+	}
+}
+
+1105.1.1 = {
+	clear_tribute_suzerain = d_dioclea
+	holder = 0
+}
+
+1322.1.1 = {
+	de_jure_liege = k_bosnia
+}

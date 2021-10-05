@@ -8,7 +8,7 @@
 }
 
 936.1.1 = {
-	liege = e_bulgaria
+	liege = k_bulgaria
 	holder = 260693
 }
 

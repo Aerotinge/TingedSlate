@@ -9,10 +9,31 @@ k_almohad = {
 }
 
 k_avaria = {
-	color = { 250 120 90 } # Only for the CoA
+	color = { 250 120 90 }
+	color2 = { 255 255 255 }
+
 	culture = avar
 
 	capital = 707 # Esztergom
+
+	catholic = 500 # Crusade target weight
+	tengri_pagan_reformed = 50
+
+	slovien = "Pannonia"
+	french = "Pannonia"
+	bulgarian = "Pannonia"
+	bohemian = "Pannonia"
+	german = "Pannonia"
+	carantanian = "Pannonia"
+	hungarian = "Magyar"
+	croatian = "Pannonia"
+	polish = "Pannonia"
+	russian = "Pannonia"
+	vlach = "Pannonia"
+	serbian = "Pannonia"
+	greek = "Pannonia"
+	roman = "Pannonia"
+	bosnian = "Pannonia"
 
 	allow = {
 		can_create_kingdom = yes
@@ -25,13 +46,59 @@ k_avaria = {
 		}
 
 		trigger_if = {
-			limit = { ai = yes }
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
+				}
+			}
 
-			culture_group = magyar
+			culture = avar
 		}
 	}
 
 	catholic = 500 # Crusade target weight
+}
+
+k_bulgaria = {
+	color = { 113 88 101 }
+	color2 = { 255 255 255 }
+
+	culture = bulgarian
+
+	capital = 530 # Tyrnovo
+
+	orthodox = 300 # Crusade target weight
+	catholic = 100 # Crusade target weight
+	slavic_pagan_reformed = 50 # Crusade target weight
+	tengri_pagan_reformed = 50
+
+	allow = {
+		can_create_kingdom = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+
+		trigger_if = {
+			limit = {
+				ai = yes
+				has_game_rule = {
+					name = title_culture_requirement
+					value = ai_only
+				}
+			}
+
+			OR = {
+				culture = bolghar
+				culture = bulgarian
+			}
+		}
+	}
 }
 
 k_beni_helal = {
@@ -162,6 +229,25 @@ k_magyar = {
 	culture = hungarian
 
 	capital = 707 # Esztergom
+
+	catholic = 500 # Crusade target weight
+	tengri_pagan_reformed = 50
+
+	slovien = "Pannonia"
+	french = "Pannonia"
+	bulgarian = "Pannonia"
+	bohemian = "Pannonia"
+	german = "Pannonia"
+	carantanian = "Pannonia"
+	avar = "Avaria"
+	croatian = "Pannonia"
+	polish = "Pannonia"
+	russian = "Pannonia"
+	vlach = "Pannonia"
+	serbian = "Pannonia"
+	greek = "Pannonia"
+	roman = "Pannonia"
+	bosnian = "Pannonia"
 
 	allow = {
 		can_create_kingdom = yes
