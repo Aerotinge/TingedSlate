@@ -440,7 +440,9 @@ succession_laws = {
 							has_law = succ_feudal_elective
 							is_offmap_tag = offmap_hre
 						}
-						is_patrician = yes
+						holder_scope = {
+							is_patrician = yes
+						}
 					}
 
 					has_crown_law_title = yes

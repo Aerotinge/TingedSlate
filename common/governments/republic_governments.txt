@@ -97,28 +97,23 @@ republic_governments = {
 				AND = {
 					is_patrician = yes
 
-					# Liege must be MR
-					liege_before_war = {
-						is_merchant_republic = yes
+					OR = {
+						# Liege must be MR
+						liege_before_war = {
+							is_merchant_republic = yes
 
-						# MR can't be under MR
-						trigger_if = {
-							limit = { independent = no }
+							# MR can't be under MR
+							trigger_if = {
+								limit = { independent = no }
 
-							liege_before_war = {
-								is_merchant_republic = no
+								liege_before_war = {
+									is_merchant_republic = no
+								}
 							}
 						}
-					}
-				}
 
-				trigger_if = {
-					limit = {
-						primary_title = { holding_type = family_palace }
+						has_game_started = no
 					}
-
-					is_save_game = no
-					has_game_started = no
 				}
 			}
 
