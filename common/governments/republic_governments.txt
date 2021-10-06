@@ -95,7 +95,10 @@ republic_governments = {
 
 				# Patrician requirements
 				AND = {
-					is_patrician = yes
+					OR = {
+						is_patrician = yes
+						government = merchant_republic_government
+					}
 
 					OR = {
 						# Liege must be MR
