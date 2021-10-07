@@ -53,7 +53,7 @@ feudal_governments = {
 		vassal_limit = -2
 		court_size_modifier = 10
 	}
-	
+
 	feudal_vassal_government = {
 		preferred_holdings = {
 			CASTLE
@@ -943,7 +943,7 @@ feudal_governments = {
 
 		court_size_modifier = 15
 	}
-	
+
 	sacred_confederacy_government = {
 		preferred_holdings = {
 			CASTLE

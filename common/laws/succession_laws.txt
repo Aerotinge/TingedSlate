@@ -863,10 +863,7 @@ succession_laws = {
 			}
 
 			holder_scope = {
-				OR = {
-					is_feudal = yes
-					is_tribal = yes
-				}
+				is_feudal = yes
 
 				NOR = {
 					religion_group = muslim
