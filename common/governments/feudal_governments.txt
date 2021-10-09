@@ -146,6 +146,7 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_iqta"
+		title_prefix = "iqta_"
 		color = { 10 138 57 }
 
 		potential = {
@@ -167,7 +168,7 @@ feudal_governments = {
 		allows_matrilineal_marriage = no
 		barons_need_dynasty = yes
 		can_build_tribal = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		free_retract_vassalage = yes
 		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
 		have_gender_laws = no
@@ -218,6 +219,7 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_iqta"
+		title_prefix = "iqta_"
 		color = { 10 138 57 }
 
 		potential = {
@@ -240,7 +242,7 @@ feudal_governments = {
 		barons_need_dynasty = yes
 		can_build_tribal = no
 		can_create_kingdoms = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		free_retract_vassalage = yes
 		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
 		have_gender_laws = no
@@ -334,7 +336,7 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
@@ -436,7 +438,7 @@ feudal_governments = {
 		barons_need_dynasty = yes
 		can_build_tribal = no
 		can_create_kingdoms = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
@@ -496,7 +498,7 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
@@ -571,7 +573,7 @@ feudal_governments = {
 		barons_need_dynasty = yes
 		can_build_tribal = no
 		can_create_kingdoms = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
@@ -634,7 +636,7 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
@@ -712,7 +714,7 @@ feudal_governments = {
 		barons_need_dynasty = yes
 		can_build_tribal = no
 		can_create_kingdoms = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
@@ -789,7 +791,7 @@ feudal_governments = {
 		can_imprison_without_reason = no
 		can_revoke_without_reason = no
 		can_usurp_kingdoms_and_empires = no
-		dukes_called_kings = yes
+		dukes_called_kings = no
 		#free_retract_vassalage = yes
 		have_gender_laws = no
 	}

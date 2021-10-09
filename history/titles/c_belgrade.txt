@@ -82,40 +82,46 @@
 	holder = 93768
 }
 
-1248.1.1 = {
+# Duke of Macsó under Hungary
+
+1247.1.1 = {
 	liege = d_belgrade
 	holder = 98015
 }
 
 1262.1.2 = {
-	holder = 125058
-}
-
-1270.1.2 = {
 	holder = 125057
 }
 
 1272.9.9 = {
-	liege = k_serbia
+	liege = k_magyar
+	holder = 93768
 }
 
-1272.9.9 = {
+# Ernye Ákos, but placeholder here
+
+1274.1.1 = {
+	holder = 470150
+}
+
+# Oblast Stefana Dragutina
+
+1282.1.1 = {
+	liege = d_belgrade
 	holder = 34117
 }
 
-1282.1.1 = {
-	holder = 468505
+1316.3.12 = {
+	holder = 34118
 }
 
-1321.10.29 = {
-	holder = 34122
-}
+# Conquest by Decanski, King of Serbia
 
 1322.6.1 = {
+	liege = k_serbia
 	holder = 468510
 }
 
 1331.11.3 = {
 	holder = 468500
 }
-
