@@ -54,8 +54,6 @@ on_new_holder = {
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder_inheritance = {
 	events = {
-		# landless title new holder dynasty fix
-		EMP.10010
 		# Holy Roman Empire
 		EMP.12020
 		EMP.12021	#
