@@ -1,0 +1,28 @@
+name = "Liberation of Bulgaria"
+
+casus_belli = {
+	casus_belli = bid_for_independence
+	actor = 34463
+	recipient = 1736
+	#landed_title = k_bulgaria
+	date = 1071.8.26
+}
+
+# In civil wars defender MUST be added before attacker!
+1071.8.26 = {
+	add_defender = 1736
+	add_attacker = 34463
+	add_attacker = 20491
+	start_war = yes
+	vassal_liege = {
+		vassal = 34463
+		liege = 1736
+	}
+}
+
+1073.1.1 = {
+	end_war = yes
+	rem_attacker = 34463
+	rem_attacker = 20491
+	rem_defender = 1736
+}

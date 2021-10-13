@@ -38,11 +38,6 @@
 	holder = 34463
 }
 
-1071.8.26 = {
-	liege = k_bulgaria
-	holder = 20493
-}
-
 1073.1.1 = {
 	liege = d_vidin
 	holder = 41537

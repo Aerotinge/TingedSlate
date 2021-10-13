@@ -135,14 +135,6 @@
 	holder = 0
 }
 
-1071.8.26 = {
-	holder = 20493 #Petar III (Konstantin Bodin)
-}
-
-1073.1.1 = {
-	holder = 0
-}
-
 1185.1.1 = {
 	holder = 217501 #Petar III
 }

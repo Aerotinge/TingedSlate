@@ -44,19 +44,13 @@
 1066.1.1 = {
 	liege = e_byzantium
 	vice_royalty = yes
-}
-
-1066.1.1 = {
 	holder = 1736
 }
 
 1071.8.26 = {
-	holder = 34463
-}
-
-1071.8.26 = {
-	liege = k_bulgaria
+	liege = 0
 	vice_royalty = no
+	holder = 34463
 }
 
 1073.1.1 = {
