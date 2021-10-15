@@ -10,7 +10,6 @@ baron_female_iranian;Wâlia;Walia;Wâlia;;Valía;;;;;;;;;x
 baron_female_nahuatl;Teuctli;Teuhtli;Teuctli;;Teuctli;;;;;;;;;x
 baron_female_nepali;Damapatni;Damapatni;Damapatni;;Damapatní;;;;;;;;;x
 baron_female_roman;Legata;Legata;Legata;;Legada;;;;;;;;;x
-baron_female_turkish;Timariota;Timariota;Timarota;;Timariota;;;;;;;;;x
 baron_hellenic_pagan;Legatus;Legatus;Legatus;;Legado;;;;;;;;;x
 baron_hellenic_pagan_reformed;Legatus;Legatus;Legatus;;Legado;;;;;;;;;x
 baron_indo_aryan_group;Damapati;Damapati;Damapati;;Damapati;;;;;;;;;x
@@ -23,7 +22,6 @@ baron_norse_pagan;Þegn;Þegn;Þegn;;Þegn;;;;;;;;;x
 baron_norse_pagan_reformed;Þegn;Þegn;Þegn;;Þegn;;;;;;;;;x
 baron_pagan_group;Hetman;Hetman;Hetman;;Hetman;;;;;;;;;x
 baron_roman;Legatus;Legatus;Legatus;;Legado;;;;;;;;;x
-baron_turkish;Timariot;Timariote;Timariot;;Timariots;;;;;;;;;x
 barony_arabic;Wilayah;Wilaya;Wilayah;;Vilayato;;;;;;;;;x
 barony_dravidian_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_indo_aryan_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
@@ -35,8 +33,6 @@ barony_of_indo_aryan_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
 barony_of_iranian;Arg of;Arg de;Arg von;;Arg de;;;;;;;;;x
 barony_of_mongol;Taishi of;Taishi de;Taishi von;;Taishi de;;;;;;;;;x
 barony_of_roman;Fortress of;Forteresse de;Festung von;;Fortaleza de;;;;;;;;;x
-barony_of_turkish;Timar of;Timar de;Timar von;;Timariot de;;;;;;;;;x
-barony_turkish;Timar;Timar;Timar;;Timar;;;;;;;;;x
 city_baron;Mayor;Bourgmestre;Bürgermeister;;Alcalde;;;;;;;;;x
 city_baron_female;Mayor;Bourgmestre;Bürgermeisterin;;Alcalde;;;;;;;;;x
 city_baron_female_roman;Magistra;Magistra;Magistra;;Magistra;;;;;;;;;x
@@ -238,7 +234,6 @@ emperor_tangut;Thu Ghu;Thu Ghu;Thu Ghu;;Thu Ghu;;;;;;;;;x
 emperor_title_queen_mother_female;Empress Dowager;Impératrice douairière;Kaiserinwitwe;;Emperatriz viuda;;;;;;;;;x
 emperor_title_queen_mother_female_german;Kaiserin;Kaiserin;Kaiserin;;Emperatriz Viuda;;;;;;;;;x
 emperor_turkish;Padishah;Padishah;Padishah;;Emperador Padishah;;;;;;;;;x
-empire_altaic;Khaganate;Khaganat;Khaganat;;Khaganato;;;;;;;;;x
 empire_of_altaic;Empire of;Empire de;Reich von;;Imperio de;;;;;;;;;x
 empire_of_roman;Empire of;Empire de;Reich von;;Imperio de;;;;;;;;;x
 family_palace;Palace;Palais familial;Palast;;Palacio;;;;;;;;;x
@@ -249,6 +244,9 @@ iqta_king;Sultan;Sultan;Sultan;;Sultán;;;;;;;;;x
 iqta_king_female;Sultana;Sultane;Sultana;;Sultana;;;;;;;;;x
 iqta_kingdom;Sultanate;Sultanat;Sultanat;;Sultanato;;;;;;;;;x
 iqta_kingdom_of;Sultanate of;Sultanat de;Sultanat von;;Sultanato de;;;;;;;;;x
+iqta_baron;Muqta';Muqta';Muqta';;Muqta';;;;;;;;;x
+iqta_barony;Iqta';Iqta';Iqta';;Iqta';;;;;;;;;x
+iqta_barony_of;Iqta' of;Iqta' de;Iqta' von;;Iqta' de;;;;;;;;;x
 king_altaic;Khan;Khan;Khan;;Kan;;;;;;;;;x
 king_arabic;Malik;Malik;Malik;;Malik;;;;;;;;;x
 king_bodpa;Gyalpo;Gyalpo;Gyalpo;;Gyalpo;;;;;;;;;x
