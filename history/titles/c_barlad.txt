@@ -97,8 +97,7 @@
 	holder = 34830
 }
 
-1320.1.1 = {
-	liege = d_muntenia
-	holder = 475550
+1325.1.1 = {
+	holder = 34831
 }
 
