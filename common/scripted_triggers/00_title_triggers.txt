@@ -8,54 +8,16 @@ can_create_title = {
 can_create_duchy = {
 	can_create_title = yes
 	# empty for vanilla
-	# empty for vanilla
-	# Game rule - allow creating titular title
-	trigger_if = {
-		limit = {
-			has_game_rule = {
-				name = titular_creation
-				value = restricted
-			}
-		}
-
-		has_titular_requirements = yes # Titular Kingdom or above cannot be created
-	}
 }
 
 can_create_kingdom = {
 	can_create_title = yes
 	# empty for vanilla
-	# Game rule - allow creating titular title
-	trigger_if = {
-		limit = {
-			NOT = {
-				has_game_rule = {
-					name = titular_creation
-					value = unrestricted
-				}
-			}
-		}
-
-		has_titular_requirements = yes # Titular Kingdom or above cannot be created
-	}
 }
 
 can_create_empire = {
 	can_create_title = yes
 	# empty for vanilla
-	# Game rule - allow creating titular title
-	trigger_if = {
-		limit = {
-			NOT = {
-				has_game_rule = {
-					name = titular_creation
-					value = unrestricted
-				}
-			}
-		}
-
-		has_titular_requirements = yes # Titular Kingdom or above cannot be created
-	}
 }
 
 can_usurp_religion_head = {

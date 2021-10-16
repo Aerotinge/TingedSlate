@@ -1,24 +1,3 @@
-titular_creation = {
-	name = "RULE_TITULAR_CREATION"
-	group = "RULE_GROUP_VARIOUS"
-
-	option = {
-		name = default
-		text = "RULE_OPTION_DEFAULT"
-		desc = "RULE_RULE_TITULAR_CREATION_DEFAULT_DESC"
-	}
-	option = {
-		name = restricted
-		text = "RULE_OPTION_RESTRICTED"
-		desc = "RULE_RULE_TITULAR_CREATION_RESTRICTED_DESC"
-	}
-	option = {
-		name = unrestricted
-		text = "RULE_OPTION_UNRESTRICTED"
-		desc = "RULE_RULE_TITULAR_CREATION_UNRESTRICTED_DESC"
-	}
-}
-
 title_culture_requirement = {
 	name = "RULE_TITLE_CULTURE_REQUIREMENT"
 	group = "RULE_GROUP_VARIOUS"

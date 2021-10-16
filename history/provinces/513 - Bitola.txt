@@ -1,0 +1,21 @@
+# 513 - Bitola
+
+# County Title
+title = c_bitola
+
+# Settlements
+max_settlements = 3
+b_bitola = tribal
+#b_lyncestis = temple
+
+# Misc
+culture = serbian
+religion = orthodox
+
+# History
+800.1.1 = {
+	b_bitola = castle
+	b_lyncestis = temple
+}
+930.1.1 = { culture = bulgarian }
+1066.1.1 = { culture = serbian }
