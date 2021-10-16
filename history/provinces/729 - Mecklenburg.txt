@@ -21,6 +21,9 @@ religion = slavic_pagan
 # History
 1160.8.2 = {
 	religion = catholic
+}
+
+1167.1.1 = {
 	b_mecklemburg = castle
 	b_wismar = city
 	b_gevezin = temple
@@ -33,8 +36,9 @@ religion = slavic_pagan
 	b_gevezin = tp_barracks_1
 }
 
-1167.1.1 = { b_schwerin = castle }
-
-1200.1.1 = { culture = german }
+1200.1.1 = {
+	culture = german
+	b_schwerin = castle
+}
 
 1235.1.1 = { trade_post = b_bardewik }

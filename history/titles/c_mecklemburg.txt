@@ -60,15 +60,11 @@
 }
 
 1129.7.1 = {
-	holder = 201513 #Knud Lavard
-}
-
-1131.1.13 = {
 	holder = 452005 #Niklot
 }
 
 1160.8.2 = {
-	holder = 452004 #Przybys	law Niklotid
+	holder = 452004 #Przybyslaw Niklotid
 }
 
 1178.12.1 = {
@@ -79,9 +75,7 @@
 	holder = 452001 #Johann I Niklotid
 }
 
-1264.8.1 =
-
-{
+1264.8.1 = {
 	holder = 452000 #Heinrich I Niklotid
 }
 

@@ -21,8 +21,7 @@ religion = slavic_pagan
 
 # History
 
-# Christianity only arrived with the Danish king Valdemar I
-1168.1.1 = {
+1167.1.1 = {
 	religion = catholic
 	b_waren = castle
 	b_stralsund = city
