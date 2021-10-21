@@ -185,8 +185,8 @@ e_nicaea = {
 
 	short_name = yes
 
-	title = BASILEUS_TITLE
-	title_female = BASILEUS_TITLE_FEMALE
+	#title = BASILEUS_TITLE
+	#title_female = BASILEUS_TITLE_FEMALE
 
 	has_top_de_jure_capital = yes
 

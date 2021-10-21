@@ -1,5 +1,3 @@
-# k_alania
-
 20.1.1 = {
 	historical_nomad = yes
 	government = nomadic_tribal_government

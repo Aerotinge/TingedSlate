@@ -6,8 +6,8 @@ e_byzantium = {
 
 	short_name = yes
 
-	title = BASILEUS_TITLE
-	title_female = BASILEUS_TITLE_FEMALE
+	#title = BASILEUS_TITLE
+	#title_female = BASILEUS_TITLE_FEMALE
 
 	dignity = 10
 
@@ -2741,7 +2741,10 @@ e_byzantium = {
 					turkish = "Kostantiniyye"
 				}
 				b_hagiasophia = {
-					pentarchy = yes
+					pentarchy = orthodox
+					pentarchy = iconoclast
+					pentarchy = monothelite
+					pentarchy = paulician
 					turkish = "Ayasofya"
 				}
 				b_galata = {}

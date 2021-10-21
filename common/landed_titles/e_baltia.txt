@@ -24,6 +24,277 @@ e_baltia = {
 			}
 		}
 	}
+	
+	
+	k_estonia = {			# new with HF
+		color = { 125 75 75 }
+		color2 = { 255 255 255 }
+
+		culture = estonian
+
+		capital = 787 # Kalevan
+
+		catholic = 50 # Crusade target weight
+		finnish_pagan_reformed = 300 # Crusade target weight
+		baltic_pagan_reformed = 250 # Crusade target weight
+
+		allow = {
+			can_create_kingdom = yes
+		}
+
+		d_estonia = {
+			color = { 150 75 75 }
+			color2 = { 255 255 255 }
+
+			capital = 787 # Kalevan
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			culture = estonian
+
+			c_laanemaa = {
+				color = { 170 50 50 }
+				color2 = { 255 255 255 }
+
+				swedish = "Lääne"
+				danish = "Lääne"
+
+				b_livs = {		# placeholder
+				}
+				b_haapsalu = {}
+				b_lihula = {
+					german = "Leal"
+				}
+				b_parnu = {
+					estonian = "Pärnu"
+					german = "Pernau"
+					polish = "Parnawa"
+					lithuanian = "Pernu"
+				}
+				b_martna = {}
+				b_kullamaa = {}
+				b_karuse = {}
+				b_pooravere = {}
+				b_piirsalu = {}
+			}
+
+			c_narva = {
+				color = { 175 55 55 }
+				color2 = { 255 255 255 }
+
+				b_narva = {}
+				b_agelinde = {}
+				b_wesenberg = {}
+				b_telsborg = {}
+				b_pudiviru = {}
+				b_askala = {}
+				b_repel = {}
+				b_alentagh = {}
+			}
+
+			c_saaremaa = {
+				color = { 101 48 48 }
+				color2 = { 255 255 255 }
+
+				swedish = "Ösel"
+				norse = "Ösel"
+				danish = "Øsel"
+				norwegian = "Øsel"
+				german = "Ösel"
+
+				holy_site = finnish_pagan
+				holy_site = finnish_pagan_reformed
+
+				b_kuressare = {
+					swedish = "Arensborg"
+					norse = "Arensborg"
+					danish = "Arensborg"
+					norwegian = "Arensborg"
+					german = "Arensburg"
+				}
+				b_hiiumaa = {
+					swedish = "Dagö"
+					norse = "Dagö"
+					danish = "Dagø"
+					norwegian = "Dagø"
+					german = "Dagö"
+				}
+				b_muhu = {
+					swedish = "Moon"
+					norse = "Moon"
+					danish = "Moon"
+					norwegian = "Moon"
+					german = "Mohn"
+				}
+				b_valjala = {}
+				b_poide = {}
+				b_leisi = {}
+				b_orisaare = {}
+				b_kaarma = {}
+			}
+
+			c_kalevan = {
+				color = { 160 85 85 }
+				color2 = { 255 255 255 }
+
+				swedish = "Reval"
+				danish = "Reval"
+				norwegian = "Reval"
+				german = "Reval"
+				norse = "Reval"
+
+				b_reval = { # Kalevan
+					swedish = "Reval"
+					danish = "Reval"
+					norwegian = "Reval"
+					german = "Reval"
+					norse = "Reval"
+				}
+				b_hapsal = { # Haapsalu
+					swedish = "Hapsal"
+					danish = "Hapsal"
+					norwegian = "Hapsal"
+					german = "Hapsal"
+					norse = "Hapsal"
+				}
+				b_toompea = {
+					swedish = "Domberg"
+					danish = "Domberg"
+					norwegian = "Domberg"
+					german = "Domberg"
+					norse = "Domberg"
+				}
+				b_leal = { # Lihula
+					swedish = "Lehal"
+					danish = "Lehal"
+					norwegian = "Lehal"
+					german = "Leal"
+					norse = "Leal"
+				}
+				b_borpeal = {}
+				b_laane = {}
+				b_pades = {}
+				b_parnaw = {}
+			}
+		}
+
+		d_sakala = {		# New with HF
+			color = { 140 60 60 }
+			color2 = { 255 255 255 }
+
+			capital = 784 # Liivimaa
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			culture = estonian
+
+			c_tartu = {		# Moved here with HF
+				color = { 115 5 5 }
+				color2 = { 255 255 255 }
+
+				swedish = "Dorpat"
+				norse = "Dorpat"
+				danish = "Dorpat"
+				norwegian = "Dorpat"
+				german = "Dorpat"
+
+				b_tartu = {
+					swedish = "Dorpat"
+					norse = "Dorpat"
+					danish = "Dorpat"
+					norwegian = "Dorpat"
+					german = "Dorpat"
+				}
+				b_jarva = {}
+				b_fellin = {}
+				b_odenpah = {}
+				b_lais = {}
+				b_vastseliina = {}
+				b_kirrumpa = {}
+				b_vanakastre = {}
+			}
+
+			c_jarva = {
+				color = { 98 40 40 }
+				color2 = { 255 255 255 }
+
+				swedish = "Järvamaa"
+				danish = "Järvamaa"
+
+				b_viljandi = {}
+				b_alempois = {}
+				b_vaiga = {}
+				b_mohu = {}
+				b_nurmekund = {}
+				b_jogentagana = {}
+				b_sackal = {}
+			}
+
+			c_liivimaa = {
+				color = { 125 50 50 }
+				color2 = { 255 255 255 }
+
+				swedish = "Livland"
+				norse = "Livland"
+				danish = "Livland"
+				norwegian = "Livland"
+				german = "Livland"
+
+				b_gaujiena = {
+					estonian = "Atsela"
+					german = "Adsel"
+					lithuanian = "Atzeles"
+				}
+				b_kokenois = {
+					estonian = "Koknese"
+					german = "Kokenhusen"
+					polish = "Koknese"
+					lithuanian = "Koknese"
+				}
+				b_uxkull = { # Ikskila
+					swedish = "Yxkull"
+					norse = "Yxkull"
+					danish = "Yxkull"
+					norwegian = "Yxkull"
+					german = "Üxküll"
+					estonian = Ikškila
+					polish = Ikškile
+					lithuanian = Ikškile
+				}
+				b_wenden = {
+					estonian = "Võnnu"
+					polish = "Kies"
+					lithuanian = "Cesys"
+				}
+				b_wolmer = {
+					estonian = "Valmiera"
+					german = "Wolmar"
+					polish = "Valmiera"
+					lithuanian = "Valmiera"
+				}
+				b_lemisele = {
+					swedish = "Lemsal"
+					norse = "Lemsal"
+					danish = "Lemsal"
+					norwegian = "Lemsal"
+					estonian = "Lemsalu"
+					german = "Lemsal"
+					polish = "Limbaži"
+					lithuanian = "Limbažiai"
+				}
+				b_seswegen = {
+					estonian = "Cesvaine"
+					german = "Sesswegen"
+					polish = "Cesvaine"
+					lithuanian = "Cesvaine"
+				}
+			}
+		}
+	}
 
 	k_bohemia = {
 		color = { 176 110 32 }

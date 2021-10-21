@@ -1408,7 +1408,7 @@
 }
 
 145290 = {
-	name = "Augustus"
+	name = "Gaius"
 	# Gaius Iulius Caesar Octavianus Divi Filius Augustus
 	dynasty = 8648
 	dna = dgbdfhhcaap

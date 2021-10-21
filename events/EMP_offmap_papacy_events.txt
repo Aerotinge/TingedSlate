@@ -1,5 +1,26 @@
 namespace = EMP
 
+
+character_event = {
+	id = EMP.13110
+
+	is_triggered_only = yes # on_startup
+	
+	hide_window = yes
+ 
+	trigger = {
+		offmap_papacy = {
+			governor = {
+				character = ROOT
+			}
+		}
+	}
+    
+	immediate = {
+		offmap_papacy_ruler_name_sync_effect = yes
+	}
+}
+
 character_event = {
 	id = EMP.13130
 
@@ -23,9 +44,9 @@ character_event = {
 
 character_event = {
 	id = EMP.13140
-	
+
 	hide_window = yes
-	
+
 	is_triggered_only = yes # on_new_holder
 
 	trigger = {
@@ -35,7 +56,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		print_papacy_governor_update_effect = yes
 		offmap_papacy_ruler_name_sync_effect = yes
@@ -44,14 +65,14 @@ character_event = {
 
 character_event = {
 	id = EMP.13150
-	
+
 	hide_window = yes
 	offmap = only
-	
+
 	is_triggered_only = yes # on_offmap_ruler_changed
 
 	trigger = { is_offmap_tag = offmap_papacy }
-    
+
 	immediate = {
 		print_papacy_ruler_update_effect = yes
 		offmap_papacy_ruler_name_sync_effect = yes

@@ -1,5 +1,4 @@
 62.1.1 = {
-	pentarch = b_antioch
 	holder = 214059 # Tiridates
 }
 
@@ -103,6 +102,20 @@
 
 661.1.1 = {
 	liege = e_arabia
+}
+
+692.1.1 = {
+	pentarch = b_antioch
+	effect = {
+		b_antioch = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
 }
 
 732.1.1 = {

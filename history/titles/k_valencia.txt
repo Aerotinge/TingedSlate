@@ -1,0 +1,17 @@
+692.1.1 = {
+	pentarch = b_roma
+	effect = {
+		b_roma = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
+}
+
+1212.7.16 = {
+	active = no
+}

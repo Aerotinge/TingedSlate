@@ -1,13 +1,23 @@
-100.1.1 = {
-	pentarch = b_roma
-}
-
 646.1.1 = {
 	holder = 131727 #Aldgisl
 }
 
 680.1.1 = {
 	holder = 131725 #Radbod
+}
+
+692.1.1 = {
+	pentarch = b_roma
+	effect = {
+		b_roma = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
 }
 
 719.1.1 = {

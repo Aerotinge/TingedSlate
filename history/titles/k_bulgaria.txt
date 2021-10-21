@@ -64,6 +64,17 @@
 	law = agnatic_succession
 	law = succ_primogeniture
 	holder = 159124
+	pentarch = b_hagiasophia
+	effect = {
+		b_hagiasophia = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
 }
 
 831.1.1 = {
@@ -76,7 +87,6 @@
 
 852.1.1 = {
 	holder = 70382 #Boris
-	pentarch = b_roma
 }
 
 889.1.1 = {
@@ -97,6 +107,15 @@
 
 927.5.27 = {
 	holder = 714 #Petar I
+	pentarch = 0
+	effect = {
+		# Already had autocephaly established in 927
+		set_pentarch_title = none
+		save_persistent_event_target = {
+			name = pentarch_title
+			scope = ROOT
+		}
+	}
 }
 
 969.1.30 = {

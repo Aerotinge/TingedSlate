@@ -1,3 +1,14 @@
+692.1.1 = {
+	#pentarch = b_antioch
+	effect = {
+		# Already had autocephaly established in 466
+		save_persistent_event_target = {
+			name = pentarch_title
+			scope = ROOT
+		}
+	}
+}
+
 809.1.1 = {
 	holder = 41540
 #	law = zcognatic_succession

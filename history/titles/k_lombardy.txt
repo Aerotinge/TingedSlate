@@ -1,5 +1,4 @@
 565.1.1 = {
-	pentarch = b_roma
 	holder = 190124 #Alboin
 	law = succ_elective_gavelkind
 }
@@ -66,6 +65,20 @@
 
 689.6.1 = {
 	holder = 190188 #Cunipert
+}
+
+692.1.1 = {
+	pentarch = b_roma
+	effect = {
+		b_roma = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
 }
 
 700.1.1 = {

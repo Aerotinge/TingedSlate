@@ -6,6 +6,8 @@ on_startup = {
 		EMP.11003
 		# Holy Roman Empire setup
 		EMP.12110
+		# Papacy setup
+		EMP.13110
 		# Sina setup
 		EMP.14010
 	}
@@ -110,6 +112,7 @@ on_offmap_monthly_pulse = {
 	events = {
 		EMP.12220 # pulse event for princes, for giving/revoking their weak claim of e_hre
 		EMP.12222 # Elector
+		#EMP.13160 # Patriachate setup
 	}
 }
 

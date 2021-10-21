@@ -1,8 +1,44 @@
+692.1.1 = {
+	pentarch = b_hagiasophia
+	effect = {
+		b_hagiasophia = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
+
+	effect = {
+		b_roma = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
+}
+
 1204.5.16 = {
 	effect = {
 		insert_title_history = e_byzantium
 	}
 	pentarch = b_hagiasophia
+	effect = {
+		b_hagiasophia = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
+
 	law = crown_authority_2
 	law = succ_byzantine_elective
 	law = centralization_3

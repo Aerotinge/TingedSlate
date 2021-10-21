@@ -1,10 +1,21 @@
 10.1.1 = {
 	liege = e_byzantium
-	government = theocracy_government
+	#government = theocracy_government
 }
 
 38.1.1 = {
 	holder = 70599
+	pentarch = b_hagiasophia
+	effect = {
+		b_hagiasophia = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
 }
 
 38.12.1 = {
