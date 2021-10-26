@@ -520,9 +520,11 @@ can_be_spiritual_trigger = {
 
 			trigger_if = {
 				limit = {
-					has_landed_title = k_orthodox
 					liege = {
 						government = roman_imperial_government
+						any_vassal = {
+							has_landed_title = k_orthodox
+						}
 					}
 				}
 
@@ -530,13 +532,15 @@ can_be_spiritual_trigger = {
 			}
 			trigger_else_if = {
 				limit = {
-					has_landed_title = k_papacy
 					liege = {
 						has_landed_title = e_hre
+						any_vassal = {
+							has_landed_title = k_papacy
+						}
 					}
 				}
 
-				has_landed_title = k_orthodox
+				has_landed_title = k_papacy
 			}
 			trigger_else_if = {
 				limit = {

@@ -110,7 +110,6 @@
 	pentarch = 0
 	effect = {
 		# Already had autocephaly established in 927
-		set_pentarch_title = none
 		save_persistent_event_target = {
 			name = pentarch_title
 			scope = ROOT

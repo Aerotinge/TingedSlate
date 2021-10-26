@@ -6,9 +6,6 @@ e_byzantium = {
 
 	short_name = yes
 
-	#title = BASILEUS_TITLE
-	#title_female = BASILEUS_TITLE_FEMALE
-
 	dignity = 10
 
 	culture = greek

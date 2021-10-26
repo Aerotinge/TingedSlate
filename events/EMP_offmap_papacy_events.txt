@@ -79,7 +79,7 @@ character_event = {
 	}
 }
 
-# ping event for decision
+# ping events for decision
 
 character_event = {
 	id = EMP.13511

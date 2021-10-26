@@ -510,12 +510,21 @@ job_spiritual = {
 				religion = ROOT
 			}
 
-			# Byzantine Emperor can't fire Patriarch of Constantinople
+			# Autocephaly lords can't fire their Patriarch while holding seat of the patriarchate
 			NAND = {
 				has_pentarchy = yes
 				religion = ROOT
-				ROOT = {
-					has_landed_title = k_orthodox
+				OR = {
+					primary_title = {
+						persistent_event_target:pentarch_title = {
+							holder_scope = {
+								character = ROOT
+							}
+						}
+					}
+					rightful_religious_head_scope = {
+						character = ROOT
+					}
 				}
 			}
 
@@ -538,23 +547,16 @@ job_spiritual = {
 	}
 
 	gain_effect = {
-		if = {
+		if = { # Update pentarch whenever a job_spiritual of has_pentarchy religion was there
 			limit = {
 				FROM = {
-					#higher_tier_than = DUKE
 					real_tier = KING
 					has_pentarchy = yes
+					is_heretic = no
+					# King with autocephaly is not going to setup pentarchy in his realm
 					primary_title = {
-						NOT = {
-							persistent_event_target:pentarch_title = {
-								always = yes
-							}
-						}
-						# unequal to has_pentarchy = no 
-						NOT = {
-							empire = {
-								has_pentarchy = yes
-							}
+						persistent_event_target:pentarch_title = {
+							NOT = { title = PREV }
 						}
 					}
 				}
@@ -570,8 +572,15 @@ job_spiritual = {
 								}
 							}
 						}
+						# unequal to has_pentarchy = no
+						empire = {
+							NOT = {
+								has_pentarchy = yes
+							}
+						}
 					}
 
+					#log = "[This.GetID] - [This.GetName] is going to trigger set_pentarch_title_effect"
 					kingdom = {
 						save_event_target_as = pentarchy_assignment
 						set_pentarch_title_effect = yes

@@ -23,262 +23,279 @@ offmap_papacy_ruler_name_sync_effect = {
 }
 
 set_pentarch_title_effect = {
-	capital_scope = {
-		location = {
-			if = {
-				limit = {
+	if = {
+		limit = {
+			persistent_event_target:pentarch_title = {
+				always = yes
+			}
+		}
+		#log = "[This.GetName] had [pentarch_title.GetName] as pentarch_title, aborting"
+	}
+	else = {
+		capital_scope = {
+			location = {
+				if = {
+					limit = {
+						b_roma = {
+							owner = {
+								has_pentarchy = yes
+								religion = FROMFROM
+							}
+						}
+						OR = {
+							region = world_europe_west
+							AND = {
+								region = world_europe_south
+								NOT = { region = world_europe_south_east }
+							}
+							AND = {
+								region = world_europe_north
+								NOT = { region = custom_eastern_baltic }
+							}
+							region = world_europe_east_pannonia
+						}
+					}
+
 					b_roma = {
-						owner = {
-							has_pentarchy = yes
-						}
-					}
-					OR = {
-						region = world_europe_west
-						AND = {
-							region = world_europe_south
-							NOT = { region = world_europe_south_east }
-						}
-						AND = {
-							region = world_europe_north
-							NOT = { region = custom_eastern_baltic }
+						event_target:pentarchy_assignment = {
+							log = "Pentarch of [Prev.GetName] was assigned the [This.GetFullBaseName]"
+							set_pentarch_title = PREV
+							save_persistent_event_target = {
+								name = pentarch_title
+								scope = PREV
+							}
 						}
 					}
 				}
-
-				b_roma = {
-					event_target:pentarchy_assignment = {
-						set_pentarch_title = PREV
-						save_persistent_event_target = {
-							name = pentarch_title
-							scope = PREV
+				else_if = {
+					limit = {
+						b_alexandria = {
+							owner = {
+								has_pentarchy = yes
+								religion = FROMFROM
+							}
 						}
-						log = "[This.GetName] had [pentarch_title.GetName] as pentarch seat"
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					b_alexandria = {
-						owner = {
-							has_pentarchy = yes
-						}
-					}
-					region = world_africa
-					NOR = {
-						province_id = 1612
-						province_id = 1613
-						province_id = 1614
-						province_id = 1615
-					}
-				}
-
-				b_alexandria = {
-					event_target:pentarchy_assignment = {
-						set_pentarch_title = PREV
-						save_persistent_event_target = {
-							name = pentarch_title
-							scope = PREV
-						}
-						log = "[This.GetName] had [pentarch_title.GetName] as pentarch seat"
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					b_antioch = {
-						owner = {
-							has_pentarchy = yes
-						}
-					}
-					OR = {
-						region = world_india
-						region = world_middle_east
-						region = world_himalayas
-						region = world_steppe_tarim
-						region = world_steppe_east
-					}
-					NOR = {
-						region = world_middle_east_asia_minor
-						province_id = 1509
-						province_id = 1510
-						province_id = 1511
-						province_id = 1512
-						province_id = 1513
-						province_id = 1514
-						province_id = 1515
-						province_id = 1516
-						province_id = 1517
-						province_id = 1518
-						province_id = 1519
-						province_id = 1520
-						province_id = 1521
-						province_id = 1522
-						province_id = 1523
-						province_id = 1524
-						province_id = 1525
-						province_id = 1526
-						province_id = 1527
-						province_id = 1528
-						province_id = 1529
-						province_id = 1530
-						province_id = 1531
-						province_id = 1532
-						province_id = 1533
-						province_id = 1534
-						province_id = 1535
-						province_id = 1536
-						province_id = 1537
-						province_id = 1538
-						province_id = 1539
-						province_id = 1540
-						province_id = 1541
-						province_id = 1542
-						province_id = 1543
-						province_id = 1544
-						province_id = 1545
-						province_id = 1546
-						province_id = 1547
-						province_id = 1548
-						province_id = 1549
-						province_id = 1550
-						province_id = 1551
-						province_id = 1552
-						province_id = 1553
-						province_id = 1554
-						province_id = 1555
-						province_id = 1556
-						province_id = 1557
-						province_id = 1558
-						province_id = 1559
-					}
-				}
-
-				b_antioch = {
-					event_target:pentarchy_assignment = {
-						set_pentarch_title = PREV
-						save_persistent_event_target = {
-							name = pentarch_title
-							scope = PREV
-						}
-						log = "[This.GetName] had [pentarch_title.GetName] as pentarch seat"
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					b_jerusalem = {
-						owner = {
-							has_pentarchy = yes
-						}
-					}
-					OR = { # Jerusalem/Arabia/Yemen plus Sinai
-						province_id = 1509
-						province_id = 1510
-						province_id = 1511
-						province_id = 1512
-						province_id = 1513
-						province_id = 1514
-						province_id = 1515
-						province_id = 1516
-						province_id = 1517
-						province_id = 1518
-						province_id = 1519
-						province_id = 1520
-						province_id = 1521
-						province_id = 1522
-						province_id = 1523
-						province_id = 1524
-						province_id = 1525
-						province_id = 1526
-						province_id = 1527
-						province_id = 1528
-						province_id = 1529
-						province_id = 1530
-						province_id = 1531
-						province_id = 1532
-						province_id = 1533
-						province_id = 1534
-						province_id = 1535
-						province_id = 1536
-						province_id = 1537
-						province_id = 1538
-						province_id = 1539
-						province_id = 1540
-						province_id = 1541
-						province_id = 1542
-						province_id = 1543
-						province_id = 1544
-						province_id = 1545
-						province_id = 1546
-						province_id = 1547
-						province_id = 1548
-						province_id = 1549
-						province_id = 1550
-						province_id = 1551
-						province_id = 1552
-						province_id = 1553
-						province_id = 1554
-						province_id = 1555
-						province_id = 1556
-						province_id = 1557
-						province_id = 1558
-						province_id = 1559
-						province_id = 1612
-						province_id = 1613
-						province_id = 1614
-						province_id = 1615
-					}
-				}
-
-				b_jerusalem = {
-					event_target:pentarchy_assignment = {
-						set_pentarch_title = PREV
-						save_persistent_event_target = {
-							name = pentarch_title
-							scope = PREV
-						}
-						log = "[This.GetName] had [pentarch_title.GetName] as pentarch seat"
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					b_hagiasophia = {
-						owner = {
-							has_pentarchy = yes
-						}
-					}
-					NOR = {
-						region = world_europe_west
-						AND = {
-							region = world_europe_south
-							NOT = { region = world_europe_south_east }
-						}
-						AND = {
-							region = world_europe_north
-							NOT = { region = custom_eastern_baltic }
-						}
-						# alexdaria+jerusalem
 						region = world_africa
-						# antioch+jerusalem
-						region = world_india
-						region = world_himalayas
-						region = world_steppe_tarim
-						region = world_steppe_east
-						region = world_middle_east_persia
-						region = world_middle_east_arabia
-						region = world_middle_east_levant
+						NOR = {
+							province_id = 1612
+							province_id = 1613
+							province_id = 1614
+							province_id = 1615
+						}
+					}
+
+					b_alexandria = {
+						event_target:pentarchy_assignment = {
+							log = "Pentarch of [Prev.GetName] was assigned the [This.GetFullBaseName]"
+							set_pentarch_title = PREV
+							save_persistent_event_target = {
+								name = pentarch_title
+								scope = PREV
+							}
+						}
 					}
 				}
-
-				b_hagiasophia = {
-					event_target:pentarchy_assignment = {
-						set_pentarch_title = PREV
-						save_persistent_event_target = {
-							name = pentarch_title
-							scope = PREV
+				else_if = {
+					limit = {
+						b_antioch = {
+							owner = {
+								has_pentarchy = yes
+								religion = FROMFROM
+							}
 						}
-						log = "[This.GetName] had [pentarch_title.GetName] as pentarch seat"
+						OR = {
+							region = world_india
+							region = world_middle_east
+							region = world_himalayas
+							region = world_steppe_tarim
+							region = world_steppe_east
+						}
+						NOR = {
+							region = world_middle_east_asia_minor
+							province_id = 1509
+							province_id = 1510
+							province_id = 1511
+							province_id = 1512
+							province_id = 1513
+							province_id = 1514
+							province_id = 1515
+							province_id = 1516
+							province_id = 1517
+							province_id = 1518
+							province_id = 1519
+							province_id = 1520
+							province_id = 1521
+							province_id = 1522
+							province_id = 1523
+							province_id = 1524
+							province_id = 1525
+							province_id = 1526
+							province_id = 1527
+							province_id = 1528
+							province_id = 1529
+							province_id = 1530
+							province_id = 1531
+							province_id = 1532
+							province_id = 1533
+							province_id = 1534
+							province_id = 1535
+							province_id = 1536
+							province_id = 1537
+							province_id = 1538
+							province_id = 1539
+							province_id = 1540
+							province_id = 1541
+							province_id = 1542
+							province_id = 1543
+							province_id = 1544
+							province_id = 1545
+							province_id = 1546
+							province_id = 1547
+							province_id = 1548
+							province_id = 1549
+							province_id = 1550
+							province_id = 1551
+							province_id = 1552
+							province_id = 1553
+							province_id = 1554
+							province_id = 1555
+							province_id = 1556
+							province_id = 1557
+							province_id = 1558
+							province_id = 1559
+						}
+					}
+
+					b_antioch = {
+						event_target:pentarchy_assignment = {
+							log = "Pentarch of [Prev.GetName] was assigned the [This.GetFullBaseName]"
+							set_pentarch_title = PREV
+							save_persistent_event_target = {
+								name = pentarch_title
+								scope = PREV
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						b_jerusalem = {
+							owner = {
+								has_pentarchy = yes
+								religion = FROMFROM
+							}
+						}
+						OR = { # Jerusalem/Arabia/Yemen plus Sinai
+							province_id = 1509
+							province_id = 1510
+							province_id = 1511
+							province_id = 1512
+							province_id = 1513
+							province_id = 1514
+							province_id = 1515
+							province_id = 1516
+							province_id = 1517
+							province_id = 1518
+							province_id = 1519
+							province_id = 1520
+							province_id = 1521
+							province_id = 1522
+							province_id = 1523
+							province_id = 1524
+							province_id = 1525
+							province_id = 1526
+							province_id = 1527
+							province_id = 1528
+							province_id = 1529
+							province_id = 1530
+							province_id = 1531
+							province_id = 1532
+							province_id = 1533
+							province_id = 1534
+							province_id = 1535
+							province_id = 1536
+							province_id = 1537
+							province_id = 1538
+							province_id = 1539
+							province_id = 1540
+							province_id = 1541
+							province_id = 1542
+							province_id = 1543
+							province_id = 1544
+							province_id = 1545
+							province_id = 1546
+							province_id = 1547
+							province_id = 1548
+							province_id = 1549
+							province_id = 1550
+							province_id = 1551
+							province_id = 1552
+							province_id = 1553
+							province_id = 1554
+							province_id = 1555
+							province_id = 1556
+							province_id = 1557
+							province_id = 1558
+							province_id = 1559
+							province_id = 1612
+							province_id = 1613
+							province_id = 1614
+							province_id = 1615
+						}
+					}
+
+					b_jerusalem = {
+						event_target:pentarchy_assignment = {
+							log = "Pentarch of [Prev.GetName] was assigned the [This.GetFullBaseName]"
+							set_pentarch_title = PREV
+							save_persistent_event_target = {
+								name = pentarch_title
+								scope = PREV
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = {
+						b_hagiasophia = {
+							owner = {
+								has_pentarchy = yes
+								religion = FROMFROM
+							}
+						}
+						NOR = {
+							region = world_europe_west
+							AND = {
+								region = world_europe_south
+								NOT = { region = world_europe_south_east }
+							}
+							AND = {
+								region = world_europe_north
+								NOT = { region = custom_eastern_baltic }
+							}
+							region = world_europe_east_pannonia
+							# alexdaria+jerusalem
+							region = world_africa
+							# antioch+jerusalem
+							region = world_india
+							region = world_himalayas
+							region = world_steppe_tarim
+							region = world_steppe_east
+							region = world_middle_east_persia
+							region = world_middle_east_arabia
+							region = world_middle_east_levant
+						}
+					}
+
+					b_hagiasophia = {
+						event_target:pentarchy_assignment = {
+							log = "Pentarch of [Prev.GetName] was assigned the [This.GetFullBaseName]"
+							set_pentarch_title = PREV
+							save_persistent_event_target = {
+								name = pentarch_title
+								scope = PREV
+							}
+						}
 					}
 				}
 			}
