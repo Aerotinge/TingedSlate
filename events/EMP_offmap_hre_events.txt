@@ -65,7 +65,6 @@ character_event = {
     }
 
 	immediate = {
-		log = "EMP.12020 triggered [This.GetBestName]"
 		if = {
 			limit = {
 				primary_title = {
@@ -101,7 +100,6 @@ character_event = {
     }
 
 	immediate = {
-		log = "EMP.12021 triggered [This.GetBestName]"
 		if = { # inherit titles is not the primary_title, nothing happen
 			limit = {
 				primary_title = {
@@ -163,7 +161,6 @@ character_event = {
     }
 
 	immediate = {
-		log = "EMP.12060 triggered [This.GetBestName]"
 		add_trait = hre_spiritual_elector
 	}
 }
@@ -194,7 +191,6 @@ character_event = {
 						}
 					}
 
-					log = "EMP.12110 triggered"
 					e_pirates = {
 						copy_title_history = PREV
 					}
@@ -223,7 +219,6 @@ character_event = {
 	}
     
 	immediate = {
-		log = "EMP.12120 triggered"
 		if = {
 			limit = {
 				e_hre = {
@@ -358,7 +353,6 @@ character_event = {
 	}
 
 	immediate = {
-		log = "EMP.12220 triggered on [This.GetBestName]"
 		any_tributary = {
 			limit = {
 				is_tributary = {
