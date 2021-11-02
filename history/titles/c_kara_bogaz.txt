@@ -1,6 +1,6 @@
 752.1.1 = {
-	liege = d_pechenegs
-	holder = 258090
+	liege = d_turkestan
+	holder = 188824
 }
 
 854.1.1 = {
@@ -9,6 +9,7 @@
 }
 
 936.1.1 = {
+	liege = d_turkestan
 	holder = 261027
 }
 

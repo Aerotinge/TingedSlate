@@ -3,22 +3,26 @@
 }
 
 768.1.1 = {
-	liege = d_sibir
+	liege = d_kipchak
 	holder = 258106
 }
 
 850.1.1 = {
-	liege = k_cuman
+	liege = d_kimak
 	holder = 180273
 }
 
 936.1.1 = {
+	liege = d_kipchak
 	holder = 260700
 }
 
 1066.1.1 = {
-	liege = d_yaik
-	holder = 34963
+	holder = 20651
+}
+
+1089.1.1 = {
+	holder = 20652
 }
 
 1095.1.1 = {
@@ -38,7 +42,7 @@
 }
 
 1220.1.1 = {
-	holder = 161735
+	holder = 34949
 }
 
 1221.1.1 = {

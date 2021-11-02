@@ -1,0 +1,21 @@
+# 976 - Or
+
+# County Title
+title = c_or
+
+# Settlements
+max_settlements = 2
+b_or = tribal
+
+# Misc
+culture = pecheneg
+religion = tengri_pagan
+terrain = steppe
+
+# History
+867.1.1 = {
+	culture = cuman
+}
+1227.1.1 = { culture = mongol }
+1227.1.1 = { religion = tengri_pagan }
+1313.1.1 = { religion = sunni }

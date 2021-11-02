@@ -1,0 +1,36 @@
+# 1068 - Chach
+
+# County Title
+title = c_chach
+
+# Settlements
+max_settlements = 4
+
+b_chach = castle
+
+#b_navekat = city
+#b_sayram = temple
+
+#b_isbijab = city
+#b_shymkent = castle
+#b_pskent = city
+#b_turbat = city
+
+# Misc
+culture = sogdian
+religion = khurmazta
+
+# History
+936.1.1 = {
+	b_chach = tribal
+	culture = karluk
+	religion = manichaean
+}
+
+1052.1.1 = {
+	culture = turkish
+	religion = khurmazta
+	b_chach = castle
+}
+
+1230.1.1 = { culture = mongol }

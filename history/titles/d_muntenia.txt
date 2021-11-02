@@ -54,7 +54,11 @@
 }
 
 1238.1.1 = {
-	liege = e_golden_horde
+	liege = 0
+	set_tribute_suzerain = {
+		who = e_golden_horde
+		type = nomadic
+	}
 	holder = 125516
 }
 
@@ -71,6 +75,6 @@
 }
 
 1310.1.1 = {
-	liege = 0
+	clear_tribute_suzerain = e_golden_horde
 	holder = 475550
 }

@@ -3,7 +3,6 @@
 }
 
 743.1.1 = {
-	liege = k_mongolia
 	holder = 188779
 }
 

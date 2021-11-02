@@ -2,30 +2,51 @@
 	historical_nomad = yes
 }
 
+743.1.1 = {
+	set_tribute_suzerain = {
+		who = d_kimak
+		type = nomadic
+	}
+}
+
 750.1.1 = {
-	law = succ_tanistry
-	holder = 188814
-}
-
-762.1.1 = {
-	holder = 188762
-}
-
-799.1.1 = {
-	holder = 188761
-}
-
-825.1.1 = {
-	holder = 180173
+	holder = 188800
 }
 
 850.1.1 = {
-	liege = k_cuman
 	holder = 34870
 }
 
-890.1.1 = {
-	holder = 0
+936.1.1 = {
+	holder = 260700
+}
+
+1066.1.1 = {
+	holder = 20651
+}
+
+1089.1.1 = {
+	holder = 20652
+}
+
+1095.1.1 = {
+	holder = 34964
+}
+
+1130.1.1 = {
+	holder = 34965
+}
+
+1160.1.1 = {
+	holder = 34966
+}
+
+1190.1.1 = {
+	holder = 34967
+}
+
+1220.1.1 = {
+	holder = 34949
 }
 
 1221.1.1 = {

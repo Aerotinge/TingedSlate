@@ -1,0 +1,15 @@
+# 1080 - Kusbulak
+
+# County Title
+title = c_kusbulak
+
+# Settlements
+max_settlements = 2
+b_kusbulak = tribal
+
+# Misc
+culture = turkish
+religion = tengri_pagan
+
+# History
+960.1.1 = { religion = sunni }

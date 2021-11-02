@@ -1,5 +1,6 @@
 680.1.1 = {
 	holder = 159118
+	historical_nomad = yes
 }
 
 700.1.1 = {
@@ -64,6 +65,7 @@
 	law = agnatic_succession
 	law = succ_primogeniture
 	holder = 159124
+	historical_nomad = no
 	pentarch = b_hagiasophia
 	effect = {
 		b_hagiasophia = {

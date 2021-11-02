@@ -1,0 +1,30 @@
+# 950 - Tobol
+
+# County Title
+title = c_tobol
+
+# Settlements
+max_settlements = 3
+b_tobol = tribal
+b_isilkul = temple
+
+#b_tara = city
+
+#b_kalachinsk = castle
+#b_tyukalinsk = castle
+#b_krasnyyar = castle
+#b_sargatka = castle
+#b_cherlak = castle
+
+# Misc
+culture = khanty
+religion = finnish_pagan
+
+# History
+936.1.1 = {
+	culture = cuman
+	religion = tengri_pagan
+}
+
+1218.1.1 = { culture = mongol }
+

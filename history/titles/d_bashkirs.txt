@@ -1,0 +1,57 @@
+768.1.1 = {
+	holder = 188789
+	historical_nomad = yes
+}
+
+850.1.1 = {
+	holder = 258083
+	set_tribute_suzerain = {
+		who = d_bolghar
+		type = nomadic
+	}
+}
+
+936.1.1 = {
+	holder = 260705
+}
+
+963.1.1 = {
+	holder = 260801
+}
+
+986.1.1 = {
+	holder = 260802
+}
+
+1127.1.1 = {
+	holder = 260803
+}
+
+1051.1.1 = {
+	holder = 260804
+}
+
+1080.1.1 = {
+	holder = 260805
+}
+
+1114.1.1 = {
+	holder = 260806
+}
+
+1146.1.2 = {
+	holder = 260807
+}
+
+1178.1.2 = {
+	holder = 260808
+}
+
+1210.1.2 = {
+	holder = 260809
+}
+
+1236.1.2 = {
+	clear_tribute_suzerain = d_bolghar
+	holder = 0
+}

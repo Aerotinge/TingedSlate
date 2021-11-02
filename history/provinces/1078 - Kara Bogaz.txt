@@ -1,0 +1,15 @@
+# 1078 - Kara Bogaz
+
+# County Title
+title = c_kara_bogaz
+
+# Settlements
+max_settlements = 2
+b_kara_bogaz = tribal
+
+# Misc
+culture = turkish
+religion = tengri_pagan
+
+# History
+960.1.1 = { religion = sunni }

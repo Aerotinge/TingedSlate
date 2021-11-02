@@ -7,38 +7,37 @@
 }
 
 850.1.1 = {
-	liege = k_cuman
+	liege = d_kimak
 	holder = 180273
 }
 
 936.1.1 = {
 	holder = 261074
-	liege = d_ishim
 }
 
 1066.1.1 = {
-	liege = d_yaik
-	holder = 34963
+	liege = d_tobol
+	holder = 20646
 }
 
-1095.1.1 = {
-	holder = 34964
+1089.1.1 = {
+	holder = 228056
 }
 
-1130.1.1 = {
-	holder = 34965
+1115.1.1 = {
+	holder = 479210
 }
 
-1160.1.1 = {
-	holder = 34966
+1150.1.1 = {
+	holder = 34863
 }
 
-1190.1.1 = {
-	holder = 34967
+1180.1.1 = {
+	holder = 34883
 }
 
-1220.1.1 = {
-	holder = 161735
+1210.1.1 = {
+	holder = 34884
 }
 
 1221.1.1 = {

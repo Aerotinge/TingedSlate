@@ -16,9 +16,8 @@ b_bacau = tribal
 #b_bistrita_bacau = temple
 
 # Misc
-culture = volhynian
-religion = slavic_pagan
+culture = bolghar
+religion = tengri_pagan
 
 # History
-867.1.1 = { culture = russian }
-988.1.1 = { religion = orthodox }
+900.1.1 = { religion = orthodox }

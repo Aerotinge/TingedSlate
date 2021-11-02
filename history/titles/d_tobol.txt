@@ -1,0 +1,36 @@
+20.1.1 = {
+	historical_nomad = yes
+}
+
+1066.1.1 = {
+	holder = 20646
+	set_tribute_suzerain = {
+		who = d_kimak
+		type = nomadic
+	}
+}
+
+1089.1.1 = {
+	holder = 228056
+}
+
+1115.1.1 = {
+	holder = 479210
+}
+
+1150.1.1 = {
+	holder = 34863
+}
+
+1180.1.1 = {
+	holder = 34883
+}
+
+1210.1.1 = {
+	holder = 34884
+}
+
+1227.1.1 = {
+	clear_tribute_suzerain = d_kimak
+	holder = 0
+}

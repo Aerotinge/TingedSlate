@@ -1,53 +1,39 @@
-20.1.1 = {
-	historical_nomad = yes
+765.1.1 = {
+	holder = 188795
 }
 
-768.1.1 = {
-	liege = d_sibir
-	holder = 258106
-}
-
-850.1.1 = {
-	liege = k_cuman
-	holder = 180273
+860.1.1 = {
+	holder = 159735
 }
 
 936.1.1 = {
+	liege = d_kimak
 	holder = 261073
-	liege = d_sibir
 }
 
 1066.1.1 = {
-	liege = d_yaik
-	holder = 34963
+	liege = d_tobol
+	holder = 20646
 }
 
-1095.1.1 = {
-	holder = 34964
+1089.1.1 = {
+	holder = 228056
 }
 
-1130.1.1 = {
-	holder = 34965
+1115.1.1 = {
+	holder = 479210
 }
 
-1160.1.1 = {
-	holder = 34966
+1150.1.1 = {
+	holder = 34863
 }
 
-1190.1.1 = {
-	holder = 34967
+1180.1.1 = {
+	holder = 34883
 }
 
-1220.1.1 = {
-	holder = 161735
-}
-
-1221.1.1 = {
-	holder = 125502
-}
-
-1225.1.1 = {
-	holder = 125502
+1210.1.1 = {
+	holder = 34884
 }
 
 1227.1.2 = {

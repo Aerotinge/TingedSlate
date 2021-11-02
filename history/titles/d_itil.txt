@@ -1,3 +1,7 @@
+20.1.1 = {
+	historical_nomad = yes
+}
+
 654.1.1 = {
 	liege = k_khazaria
 	holder = 74004
@@ -46,33 +50,23 @@
 }
 
 1089.1.1 = {
-	clear_tribute_suzerain = k_cuman
-	liege = k_cuman
-	holder = 806
+	holder = 34954
 }
 
-1110.1.1 = {
-	holder = 90143
+1095.1.1 = {
+	holder = 34955
 }
 
-1120.1.1 = {
-	holder = 125401
+1130.1.1 = {
+	holder = 34956
 }
 
-1146.1.1 = {
-	holder = 125402
+1160.1.1 = {
+	holder = 34957
 }
 
-1183.1.1 = {
-	holder = 228030
-}
-
-1203.1.1 = {
-	holder = 125403
-}
-
-1223.1.1 = {
-	holder = 125404
+1190.1.1 = {
+	holder = 34958
 }
 
 1227.1.1 = {
@@ -80,6 +74,7 @@
 }
 
 1227.12.2 = {
+	clear_tribute_suzerain = k_cuman
 	holder = 125503
 }
 

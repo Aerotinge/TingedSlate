@@ -1,0 +1,33 @@
+# 1069 - Otrar
+
+# County Title
+title = c_otrar
+
+# Settlements
+max_settlements = 3
+
+b_otrar = tribal
+
+#b_shaulder = city
+#b_shoshkakoi = temple
+
+#b_birlik = {}
+#b_chernak = {}
+#b_kentau = {}
+#b_turtkul = {}
+
+# Misc
+culture = karluk
+religion = tengri_pagan
+
+# History
+936.1.1 = {
+	culture = cuman
+}
+
+1052.1.1 = {
+	culture = turkish
+	religion = sunni
+}
+
+1230.1.1 = { culture = mongol }

@@ -1,0 +1,41 @@
+# 649 - Korchev
+
+# County Title
+title = c_korchev
+
+# Settlements
+max_settlements = 4
+
+b_bosphoros = tribal
+b_cherco = temple
+
+#b_panticapea = city
+
+
+#b_chystopillia = castle
+#b_nymphaion = castle
+#b_vosporo = castle
+#b_baherove = castle
+#b_zavitne = castle
+
+# Misc
+culture = crimean_gothic
+religion = orthodox
+
+# History
+769.1.1 = {
+	culture = khazar
+	religion = tengri_pagan
+}
+
+936.1.1 = {
+	culture = pecheneg
+}
+
+1050.1.1 = {
+	culture = crimean_gothic
+	religion = orthodox
+}
+
+#1214.1.1 = { culture = greek }
+1250.1.1 = { trade_post = b_grimaldi }

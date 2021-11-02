@@ -1,49 +1,54 @@
 768.1.1 = {
-	liege = d_bashkirs
-	holder = 258087
+	holder = 188817
+}
+
+770.1.1 = {
+	holder = 188818
+}
+
+802.1.1 = {
+	holder = 180233
+}
+
+825.1.1 = {
+	holder = 180236
 }
 
 850.1.1 = {
-	liege = k_cuman
+	liege = d_kipchak
 	holder = 180262
 }
 
 936.1.1 = {
 	holder = 260701
-	liege = d_aqtobe
 }
 
 1066.1.1 = {
-	liege = d_yaik
-	holder = 34963
+	holder = 20651
 }
 
-1067.1.1 = {
-	liege = d_sibir
+1089.1.1 = {
+	holder = 20652
 }
 
-1067.1.1 = {
-	holder = 161730
+1095.1.1 = {
+	holder = 34964
 }
 
-1110.1.1 = {
-	holder = 161731
+1130.1.1 = {
+	holder = 34965
 }
 
-1140.1.1 = {
-	holder = 161732
+1160.1.1 = {
+	holder = 34966
 }
 
-1170.1.1 = {
-	holder = 161733
-}
-
-1200.1.1 = {
-	holder = 161734
+1190.1.1 = {
+	holder = 34967
 }
 
 1220.1.1 = {
-	holder = 161735
+	holder = 34949
 }
 
 1227.2.1 = {
