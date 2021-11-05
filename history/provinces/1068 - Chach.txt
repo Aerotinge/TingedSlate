@@ -22,14 +22,12 @@ religion = khurmazta
 
 # History
 936.1.1 = {
-	b_chach = tribal
 	culture = karluk
 	religion = manichaean
 }
 
 1052.1.1 = {
 	culture = turkish
-	religion = khurmazta
 	b_chach = castle
 }
 

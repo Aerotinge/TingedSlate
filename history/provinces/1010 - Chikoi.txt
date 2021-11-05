@@ -1,0 +1,17 @@
+# 1010 - Chikoi
+
+# County Title
+title = c_chikoi
+
+# Settlements
+max_settlements = 2
+b_chikoi = tribal
+
+# Misc
+culture = uyghur
+religion = manichaean
+
+# History
+840.1.1 = { religion = tengri_pagan }
+
+1196.1.1 = { culture = mongol }

@@ -1,0 +1,24 @@
+# 989 - Ulungur
+
+# County Title
+title = c_ulungur
+
+# Settlements
+max_settlements = 3
+
+b_altay = tribal
+
+#b_qinggil =
+#b_koktokay =
+#b_burqin =
+#b_burultokay =
+#b_kokagax =
+#b_jeminay =
+
+# Misc
+culture = uyghur
+religion = manichaean
+
+# History
+900.1.1 = { religion = tengri_pagan }
+1227.1.1 = { culture = mongol }

@@ -17,10 +17,10 @@ b_kizlyar = tribal
 #b_babayurt = city
 
 culture = alan
-religion = tengri_pagan
+religion = khurmazta
 
 # History
-900.1.1 = { religion = orthodox }
+860.1.1 = { religion = tengri_pagan }
 
 936.1.1 = {
 	culture = khazar

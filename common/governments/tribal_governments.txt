@@ -121,6 +121,7 @@ tribal_governments = {
 
 		potential = {
 			NOT = { has_dlc = "Horse Lords" }
+			higher_real_tier_than = BARON
 			holy_order = no
 			NOT = { is_government_potential = order_government }
 

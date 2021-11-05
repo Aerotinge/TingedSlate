@@ -21,5 +21,7 @@ religion = tengri_pagan
 terrain = marsh
 
 # History
-892.1.1 = { culture = vlach }
-900.1.1 = { religion = orthodox }
+892.1.1 = {
+	culture = vlach
+	religion = orthodox
+}

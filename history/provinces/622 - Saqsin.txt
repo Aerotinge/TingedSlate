@@ -1,0 +1,27 @@
+# 622 - Saqsin
+
+# County title
+title = c_saqsin
+
+# Settlements
+max_settlements = 4
+
+b_saqsin = tribal
+
+# Misc
+culture = khazar
+religion = tengri_pagan
+
+# History
+936.1.1 = {
+	religion = jewish
+}
+
+1089.1.1 = {
+	religion = tengri_pagan
+}
+#Mongol invasion
+
+1227.1.1 = { culture = mongol }
+
+1313.1.1 = { religion = sunni }

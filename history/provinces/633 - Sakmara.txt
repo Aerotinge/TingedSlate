@@ -17,3 +17,4 @@ religion = tengri_pagan
 
 1218.1.1 = { culture = mongol }
 
+1313.1.1 = { religion = sunni }
