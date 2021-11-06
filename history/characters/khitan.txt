@@ -28,14 +28,6 @@
 		}
 	}
 	1132.1.1 = {
-		effect_even_if_dead = {
-			set_special_character_title = GUR_KHAN
-
-			add_character_modifier = {
-				name = greatest_of_khans
-				duration = -1
-			}
-		}
 		add_trait = sympathy_islam
 		add_spouse = 188906
 	}
