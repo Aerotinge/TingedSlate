@@ -305,6 +305,7 @@ decisions = {
 		only_independent = yes
 
 		potential = {
+			is_feudal = yes
 			has_landed_title = k_bulgaria
 			lower_real_tier_than = EMPEROR
 
@@ -321,6 +322,18 @@ decisions = {
 				has_alternate_start_setting = {
 					setting = dejure
 					option = random
+				}
+			}
+
+			OR = {
+				AND = {
+					religion = bogomilist
+					is_heresy = no
+				}
+				k_bulgaria = {
+					persistent_event_target:pentarch_title = {
+						title = PREV
+					}
 				}
 			}
 		}
@@ -352,6 +365,10 @@ decisions = {
 					e_bulgaria = {
 						copy_title_laws = PREV
 						copy_title_history = PREV
+						save_persistent_event_target = {
+							name = pentarch_title
+							scope = THIS
+						}
 					}
 				}
 			}

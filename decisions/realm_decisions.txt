@@ -94,13 +94,13 @@ decisions = {
 			custom_tooltip = {
 				text = tooltip_issued_decla_repentance_recently
 
-				NOT = { has_character_modifier = asked_repentance_from_sins_cooldown }
+				NOT = { has_character_modifier = asked_repentance_k_pannonia_sins_cooldown }
 			}
 		}
 
 		effect = {
 			add_character_modifier = {
-				name = asked_repentance_from_sins_cooldown
+				name = asked_repentance_k_pannonia_sins_cooldown
 				years = 4
 				hidden = yes
 			}
@@ -893,6 +893,317 @@ decisions = {
 		}
 	}
 
+	pannonia_settlement = {
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		only_playable = yes
+
+		potential = {
+			NOT = { has_dlc = "Horse Lords" }
+
+			independent = yes
+			lower_real_tier_than = EMPEROR
+			government = nomadic_tribal_government
+
+			trigger_if = {
+				limit = {
+					culture = pecheneg
+				}
+				has_landed_title = d_pechenegs
+				k_pechenegs = { is_titular = yes }
+			}
+			trigger_else_if = {
+				limit = {
+					culture = avar
+				}
+				has_landed_title = k_avaria
+				k_avaria = { is_titular = yes }
+			}
+			trigger_else_if = {
+				limit = {
+					culture = bolghar
+				}
+				has_landed_title = k_bulgaria
+				k_bulgaria = { is_titular = yes }
+			}
+			trigger_else = {
+				culture = magyar
+				k_magyar = { is_titular = yes }
+			}
+
+			is_adult = yes
+
+			capital_scope = {
+				region = world_europe_east_pannonia
+			}
+
+			k_pannonia = {
+				has_holder = no
+				is_titular = no
+			}
+
+			NOR = {
+				has_alternate_start_setting = {
+					setting = dejure
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random_including_duchies
+				}
+			}
+		}
+
+		allow = {
+			war = no
+			primary_title = {
+				has_law = tribal_organization_1
+			}
+
+			completely_controls = d_pest
+			completely_controls = d_transylvania
+			completely_controls = d_ungvar
+			completely_controls = d_nyitra
+		}
+
+		effect = {
+			if = {
+				limit = {
+					has_landed_title = d_pechenegs
+					culture = pecheneg
+				}
+
+				tooltip = {
+					k_pechenegs = {
+						grant_title_no_opinion = ROOT
+					}
+				}
+				k_pannonia = {
+					any_direct_de_jure_vassal_title = {
+						show_scope_change = no
+						de_jure_liege = k_pechenegs
+					}
+					hidden_effect = {
+						dejure_liege_title = {
+							k_pechenegs = {
+								de_jure_liege = PREV
+								set_preferred_capital = PREVPREV
+								copy_title_laws = PREVPREV
+								grant_title_no_opinion = ROOT
+								make_primary_title = yes
+							}
+						}
+					}
+				}
+				destroy_landed_title = d_pechenegs
+			}
+			else_if = {
+				limit = {
+					has_landed_title = k_avaria
+					culture = avar
+				}
+
+				k_pannonia = {
+					any_direct_de_jure_vassal_title = {
+						show_scope_change = no
+						de_jure_liege = k_avaria
+					}
+					hidden_effect = {
+						dejure_liege_title = {
+							k_avaria = {
+								de_jure_liege = PREV
+								set_preferred_capital = PREVPREV
+								#copy_title_laws = PREVPREV
+								#grant_title_no_opinion = ROOT
+								make_primary_title = yes
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_landed_title = k_bulgaria
+					culture = bolghar
+				}
+
+				k_pannonia = {
+					any_direct_de_jure_vassal_title = {
+						show_scope_change = no
+						de_jure_liege = k_bulgaria
+					}
+					hidden_effect = {
+						dejure_liege_title = {
+							k_bulgaria = {
+								de_jure_liege = PREV
+								set_preferred_capital = PREVPREV
+								#copy_title_laws = PREVPREV
+								#grant_title_no_opinion = ROOT
+								make_primary_title = yes
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					culture_group = magyar
+				}
+
+				tooltip = {
+					k_magyar = {
+						grant_title_no_opinion = ROOT
+					}
+				}
+				k_pannonia = {
+					any_direct_de_jure_vassal_title = {
+						show_scope_change = no
+						de_jure_liege = k_magyar
+					}
+					hidden_effect = {
+						dejure_liege_title = {
+							k_magyar = {
+								de_jure_liege = PREV
+								set_preferred_capital = PREVPREV
+								copy_title_laws = PREVPREV
+								grant_title_no_opinion = ROOT
+								make_primary_title = yes
+							}
+						}
+					}
+				}
+			}
+
+			set_government_type = tribal_government
+			narrative_event = { id = EMP.40036 }
+			any_realm_lord = {
+				limit = {
+					culture = ROOT
+					government = nomadic_tribal_government
+				}
+
+				set_government_type = tribal_government
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	thracia_settlement = {
+		is_high_prio = yes
+		ai_check_interval = 24
+
+		only_playable = yes
+
+		potential = {
+			NOT = { has_dlc = "Horse Lords" }
+
+			independent = yes
+			lower_real_tier_than = EMPEROR
+			government = nomadic_tribal_government
+
+			has_landed_title = k_bulgaria
+
+			OR = {
+				culture = bolghar
+				culture = bulgarian
+			}
+
+			is_adult = yes
+			k_bulgaria = { is_titular = yes }
+
+			capital_scope = {
+				kingdom = {
+					title = k_thrace
+				}
+			}
+
+			k_thrace = {
+				has_holder = no
+				de_jure_vassal_or_below = d_karvuna
+				de_jure_vassal_or_below = d_moesia
+				de_jure_vassal_or_below = d_strymon
+				de_jure_vassal_or_below = d_vidin
+			}
+
+			NOR = {
+				has_alternate_start_setting = {
+					setting = dejure
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random
+				}
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random_including_duchies
+				}
+			}
+		}
+
+		allow = {
+			war = no
+			primary_title = {
+				has_law = tribal_organization_1
+			}
+
+			completely_controls = d_karvuna
+			completely_controls = d_moesia
+			completely_controls = d_strymon
+			completely_controls = d_vidin
+		}
+
+		effect = {
+			d_karvuna = {
+				de_jure_liege = k_bulgaria
+			}
+			d_moesia = {
+				de_jure_liege = k_bulgaria
+			}
+			d_strymon = {
+				de_jure_liege = k_bulgaria
+			}
+			d_vidin = {
+				de_jure_liege = k_bulgaria
+			}
+			k_thrace = {
+				empire = {
+					k_bulgaria = {
+						de_jure_liege = PREV
+					}
+				}
+			}
+
+			set_government_type = tribal_government
+			narrative_event = { id = EMP.40036 }
+			any_realm_lord = {
+				limit = {
+					culture = ROOT
+					government = nomadic_tribal_government
+					primary_title = {
+						kingdom = {
+							title = k_bulgaria
+						}
+					}
+				}
+
+				set_government_type = tribal_government
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	become_saoshyant = {
 		is_high_prio = yes
 		ai_check_interval = 24
@@ -1439,14 +1750,14 @@ decisions = {
 			if = {
 				limit = {
 					NOT = { trait = arbitrary }
-					has_character_modifier = borrowed_from_jews
+					has_character_modifier = borrowed_k_pannonia_jews
 				}
 				add_trait = arbitrary
 			}
 
 			if = {
-				limit = { has_character_modifier = borrowed_from_jews }
-				remove_character_modifier = borrowed_from_jews
+				limit = { has_character_modifier = borrowed_k_pannonia_jews }
+				remove_character_modifier = borrowed_k_pannonia_jews
 			}
 
 			add_character_modifier = {
@@ -1481,7 +1792,7 @@ decisions = {
 					trait = kind
 
 					trigger_if = {
-						limit = { has_character_modifier = borrowed_from_jews }
+						limit = { has_character_modifier = borrowed_k_pannonia_jews }
 						trait = just
 					}
 
@@ -1516,7 +1827,7 @@ decisions = {
 
 			mult_modifier = {
 				factor = 2
-				has_character_modifier = borrowed_from_jews
+				has_character_modifier = borrowed_k_pannonia_jews
 				trait = greedy
 			}
 		}
