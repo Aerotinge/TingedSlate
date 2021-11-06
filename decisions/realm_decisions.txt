@@ -94,13 +94,13 @@ decisions = {
 			custom_tooltip = {
 				text = tooltip_issued_decla_repentance_recently
 
-				NOT = { has_character_modifier = asked_repentance_k_pannonia_sins_cooldown }
+				NOT = { has_character_modifier = asked_repentance_from_sins_cooldown }
 			}
 		}
 
 		effect = {
 			add_character_modifier = {
-				name = asked_repentance_k_pannonia_sins_cooldown
+				name = asked_repentance_from_sins_cooldown
 				years = 4
 				hidden = yes
 			}
@@ -972,6 +972,7 @@ decisions = {
 		}
 
 		effect = {
+			set_government_type = tribal_government
 			if = {
 				limit = {
 					has_landed_title = d_pechenegs
@@ -1079,7 +1080,6 @@ decisions = {
 				}
 			}
 
-			set_government_type = tribal_government
 			narrative_event = { id = EMP.40036 }
 			any_realm_lord = {
 				limit = {
@@ -1162,6 +1162,7 @@ decisions = {
 		}
 
 		effect = {
+			set_government_type = tribal_government
 			d_karvuna = {
 				de_jure_liege = k_bulgaria
 			}
@@ -1194,8 +1195,6 @@ decisions = {
 						}
 					}
 				}
-
-				set_government_type = tribal_government
 			}
 		}
 
@@ -1750,14 +1749,14 @@ decisions = {
 			if = {
 				limit = {
 					NOT = { trait = arbitrary }
-					has_character_modifier = borrowed_k_pannonia_jews
+					has_character_modifier = borrowed_from_jews
 				}
 				add_trait = arbitrary
 			}
 
 			if = {
-				limit = { has_character_modifier = borrowed_k_pannonia_jews }
-				remove_character_modifier = borrowed_k_pannonia_jews
+				limit = { has_character_modifier = borrowed_from_jews }
+				remove_character_modifier = borrowed_from_jews
 			}
 
 			add_character_modifier = {
@@ -1792,7 +1791,7 @@ decisions = {
 					trait = kind
 
 					trigger_if = {
-						limit = { has_character_modifier = borrowed_k_pannonia_jews }
+						limit = { has_character_modifier = borrowed_from_jews }
 						trait = just
 					}
 
@@ -1827,7 +1826,7 @@ decisions = {
 
 			mult_modifier = {
 				factor = 2
-				has_character_modifier = borrowed_k_pannonia_jews
+				has_character_modifier = borrowed_from_jews
 				trait = greedy
 			}
 		}
@@ -2825,7 +2824,7 @@ decisions = {
 
 		potential = {
 			independent = yes
-			is_tribal = yes
+			government = tribal_government
 		}
 
 		allow = {
@@ -2864,47 +2863,7 @@ decisions = {
 				set_character_flag = achievement_not_a_tribe
 			}
 
-			if = {
-				limit = { is_government_potential = muslim_government}
-
-				set_government_type = muslim_government
-
-				if = {
-					limit = { ai = no }
-
-					chronicle = {
-						entry = CHRONICLE_ADOPTED_IQTA
-						picture = GFX_evt_castle_construction
-					}
-				}
-			}
-			else_if = {
-				limit = { is_government_potential = theocratic_feudal_government }
-
-				set_government_type = theocratic_feudal_government
-
-
-				if = {
-					limit = { ai = no }
-
-					chronicle = {
-						entry = CHRONICLE_ADOPTED_FEUDALISM
-						picture = GFX_evt_castle_construction
-					}
-				}
-			}
-			else = {
-				set_government_type = feudal_government
-
-				if = {
-					limit = { ai = no }
-
-					chronicle = {
-						entry = CHRONICLE_ADOPTED_FEUDALISM
-						picture = GFX_evt_castle_construction
-					}
-				}
-			}
+			set_government_type = feudal_government # It will switch to right govenment type automatically
 
 			if = {
 				limit = {
@@ -2993,7 +2952,7 @@ decisions = {
 		only_playable = yes
 
 		potential = {
-			is_tribal = yes
+			government = tribal_government
 			independent = no
 		}
 
@@ -3066,47 +3025,7 @@ decisions = {
 				set_character_flag = achievement_not_a_tribe
 			}
 
-			if = {
-				limit = { is_government_potential = muslim_government}
-
-				set_government_type = muslim_government
-
-				if = {
-					limit = { ai = no }
-
-					chronicle = {
-						entry = CHRONICLE_ADOPTED_IQTA
-						picture = GFX_evt_castle_construction
-					}
-				}
-			}
-			else_if = {
-				limit = { is_government_potential = theocratic_feudal_government }
-
-				set_government_type = theocratic_feudal_government
-
-
-				if = {
-					limit = { ai = no }
-
-					chronicle = {
-						entry = CHRONICLE_ADOPTED_FEUDALISM
-						picture = GFX_evt_castle_construction
-					}
-				}
-			}
-			else = {
-				set_government_type = feudal_government
-
-				if = {
-					limit = { ai = no }
-
-					chronicle = {
-						entry = CHRONICLE_ADOPTED_FEUDALISM
-						picture = GFX_evt_castle_construction
-					}
-				}
-			}
+			set_government_type = feudal_government # It will switch to right govenment type automatically
 
 			hidden_effect = {
 				if = {
@@ -3275,7 +3194,7 @@ decisions = {
 
 		potential = {
 			independent = yes
-			is_tribal = yes
+			government = tribal_government
 			has_dlc = "The Republic"
 		}
 
@@ -3491,7 +3410,6 @@ decisions = {
 			factor = 0
 		}
 	}
-
 }
 
 targeted_decisions = {

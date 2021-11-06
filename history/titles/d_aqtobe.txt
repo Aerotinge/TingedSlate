@@ -1,3 +1,7 @@
+20.1.1 = {
+	historical_nomad = yes
+}
+
 1060.1.1 = {
 	set_tribute_suzerain = {
 		who = k_cuman

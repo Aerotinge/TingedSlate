@@ -19,4 +19,24 @@ spriteTypes = {
 		name = "GFX_restore_swabia"
 		textureFile = "gfx\\interface\\decision_icon_restore_swabia.dds"
 	}
+
+	spriteType = {
+		name = "GFX_thracia_settlement"
+		textureFile = "gfx\\interface\\decision_icon_adopt_tribalism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_pannonia_settlement"
+		textureFile = "gfx\\interface\\decision_icon_adopt_tribalism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_convert_to_tribalism_indep"
+		textureFile = "gfx\\interface\\decision_icon_adopt_tribalism.dds"
+	}
+
+	spriteType = {
+		name = "GFX_convert_to_tribalism_vassal"
+		textureFile = "gfx\\interface\\decision_icon_adopt_tribalism.dds"
+	}
 }

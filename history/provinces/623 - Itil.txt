@@ -30,7 +30,7 @@ religion = tengri_pagan
 #	b_saqsin = tp_town_1
 #}
 
-808.1.1 = { religion = jewish }
+808.1.1 = { religion = karaite }
 
 1087.1.1 = {
 	religion = tengri_pagan

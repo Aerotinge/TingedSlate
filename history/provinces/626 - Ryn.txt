@@ -16,7 +16,7 @@ religion = tengri_pagan
 
 936.1.1 = {
 	culture = khazar
-	religion = jewish
+	religion = karaite
 }
 
 1060.1.1 = {

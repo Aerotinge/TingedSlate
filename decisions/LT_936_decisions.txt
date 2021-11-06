@@ -328,7 +328,7 @@ decisions = {
 			OR = {
 				AND = {
 					religion = bogomilist
-					is_heresy = no
+					is_heretic = no
 				}
 				k_bulgaria = {
 					persistent_event_target:pentarch_title = {

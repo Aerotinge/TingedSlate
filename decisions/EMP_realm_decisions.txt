@@ -9,13 +9,17 @@ decisions = {
 		potential = {
 			independent = yes
 			government = nomadic_tribal_government
+			NOR = {
+				is_decision_potential = pannonia_settlement
+				is_decision_potential = thracia_settlement
+			}
 		}
 
 		allow = {
 			higher_real_tier_than = COUNT
-			
-			primary_title = { has_law = tribal_organization_2 }
-			
+
+			primary_title = { has_law = tribal_organization_1 }
+
 			war = no
 		}
 
@@ -25,6 +29,7 @@ decisions = {
 			hidden_effect = {
 				any_realm_lord = {
 					limit = {
+						culture = ROOT
 						government = nomadic_tribal_government
 					}
 					set_government_type = tribal_government
@@ -38,27 +43,89 @@ decisions = {
 
 		ai_will_do = {
 			factor = 1
-			
-			trigger = {
-				any_neighbor_independent_ruler = {
-					NOT = { government = nomadic_tribal_government }
-				}
-			}
-			
-			mult_modifier = {
-				factor = 0.01
 
+			trigger = {
 				any_realm_province = {
 					count > 5
 
+					NOT = { region = world_steppe }
+				}
+			}
+
+			mult_modifier = {
+				factor = 0.1
+
+				any_realm_province = {
 					OR = {
-						region = world_steppe
 						terrain = steppe
 						terrain = plains
 						terrain = desert
 						terrain = farmlands
 					}
 				}
+			}
+		}
+	}
+
+	convert_to_tribalism_vassal = {
+		is_high_prio = yes
+		ai_check_interval = 12
+
+		only_playable = yes
+
+		potential = {
+			government = nomadic_tribal_government
+			independent = no
+		}
+
+		allow = {
+			war = no
+
+			liege = {
+				NOT = { government = nomadic_tribal_government }
+			}
+		}
+
+		effect = {
+			set_government_type = tribal_government
+
+			hidden_effect = {
+				any_realm_lord = {
+					limit = {
+						culture = ROOT
+						government = nomadic_tribal_government
+					}
+					set_government_type = tribal_government
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+
+			mult_modifier = {
+				factor = 0.1
+
+				any_realm_province = {
+					region = world_steppe
+				}
+			}
+			mult_modifier = {
+				factor = 0.1
+
+				any_realm_province = {
+					OR = {
+						terrain = steppe
+						terrain = plains
+						terrain = desert
+						terrain = farmlands
+					}
+				}
+			}
+			mult_modifier = {
+				factor = 0.1
+
+				NOT = { culture = liege }
 			}
 		}
 	}

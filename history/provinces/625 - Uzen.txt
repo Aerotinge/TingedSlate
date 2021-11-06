@@ -23,7 +23,7 @@ religion = tengri_pagan
 
 # History
 936.1.1 = {
-	religion = jewish
+	religion = karaite
 }
 
 1060.1.1 = {
