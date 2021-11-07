@@ -182,14 +182,6 @@ tribal = {
 		potential = {
 			FROM = {
 				NOT = { government = nomadic_tribal_government }
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION >= 0 }
-		piety_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
 				OR = {
 					religion_openly_bon_or_reformed_trigger = yes
 					religion_openly_baltic_or_reformed_trigger = yes
@@ -199,6 +191,9 @@ tribal = {
 				}
 			}
 		}
+		trigger = { TECH_CASTLE_CONSTRUCTION >= 0 }
+		piety_cost = 100
+		build_time = 365
 
 		fort_level = 0.20
 		garrison_size = 0.15
@@ -215,15 +210,6 @@ tribal = {
 		potential = {
 			FROM = {
 				NOT = { government = nomadic_tribal_government }
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION >= 0 }
-		upgrades_from = tb_defensive_fortifications_1
-		piety_cost = 150
-		build_time = 365
-
-		potential = {
-			FROM = {
 				OR = {
 					religion_openly_bon_or_reformed_trigger = yes
 					religion_openly_baltic_or_reformed_trigger = yes
@@ -233,6 +219,10 @@ tribal = {
 				}
 			}
 		}
+		trigger = { TECH_CASTLE_CONSTRUCTION >= 0 }
+		upgrades_from = tb_defensive_fortifications_1
+		piety_cost = 150
+		build_time = 365
 
 		fort_level = 0.20
 		garrison_size = 0.15
@@ -252,15 +242,6 @@ tribal = {
 		potential = {
 			FROM = {
 				NOT = { government = nomadic_tribal_government }
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION >= 1 }
-		upgrades_from = tb_defensive_fortifications_2
-		piety_cost = 200
-		build_time = 365
-
-		potential = {
-			FROM = {
 				OR = {
 					religion_openly_bon_or_reformed_trigger = yes
 					religion_openly_baltic_or_reformed_trigger = yes
@@ -270,6 +251,10 @@ tribal = {
 				}
 			}
 		}
+		trigger = { TECH_CASTLE_CONSTRUCTION >= 1 }
+		upgrades_from = tb_defensive_fortifications_2
+		piety_cost = 200
+		build_time = 365
 
 		fort_level = 0.20
 		garrison_size = 0.15
@@ -286,15 +271,6 @@ tribal = {
 		potential = {
 			FROM = {
 				NOT = { government = nomadic_tribal_government }
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION >= 1 }
-		upgrades_from = tb_defensive_fortifications_3
-		piety_cost = 250
-		build_time = 365
-
-		potential = {
-			FROM = {
 				OR = {
 					religion_openly_bon_or_reformed_trigger = yes
 					religion_openly_baltic_or_reformed_trigger = yes
@@ -304,6 +280,10 @@ tribal = {
 				}
 			}
 		}
+		trigger = { TECH_CASTLE_CONSTRUCTION >= 1 }
+		upgrades_from = tb_defensive_fortifications_3
+		piety_cost = 250
+		build_time = 365
 
 		fort_level = 0.20
 		garrison_size = 0.15
@@ -633,6 +613,7 @@ tribal = {
 		potential = {
 			terrain = steppe
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -655,6 +636,7 @@ tribal = {
 		potential = {
 			terrain = steppe
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -681,6 +663,7 @@ tribal = {
 		potential = {
 			terrain = steppe
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -704,6 +687,7 @@ tribal = {
 		potential = {
 			terrain = steppe
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -733,6 +717,7 @@ tribal = {
 				terrain = steppe
 			}
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -759,6 +744,7 @@ tribal = {
 				terrain = steppe
 			}
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -789,6 +775,7 @@ tribal = {
 				terrain = steppe
 			}
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -816,6 +803,7 @@ tribal = {
 				terrain = steppe
 			}
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = altaic
 					culture_group = magyar
@@ -924,6 +912,7 @@ tribal = {
 		potential = {
 			terrain = desert
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = east_african
 					culture_group = west_african
@@ -948,6 +937,7 @@ tribal = {
 		potential = {
 			terrain = desert
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = east_african
 					culture_group = west_african
@@ -976,6 +966,7 @@ tribal = {
 		potential = {
 			terrain = desert
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = east_african
 					culture_group = west_african
@@ -1001,6 +992,7 @@ tribal = {
 		potential = {
 			terrain = desert
 			FROM = {
+				NOT = { government = nomadic_tribal_government }
 				OR = {
 					culture_group = east_african
 					culture_group = west_african
