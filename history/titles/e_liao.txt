@@ -1,5 +1,6 @@
 20.1.1 = {
 	active = no
+	historical_nomad = yes
 }
 
 947.1.1 = {

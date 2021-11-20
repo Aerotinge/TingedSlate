@@ -364,9 +364,6 @@
 
 1204.5.16 = {
 	liege = e_latin_empire
-}
-
-1204.5.16 = {
 	holder = 205523 #Baudouin I van Vlaanderen
 }
 
@@ -395,6 +392,7 @@
 }
 
 1261.7.25 = {
+	liege = e_byzantium
 	holder = 465527
 }
 

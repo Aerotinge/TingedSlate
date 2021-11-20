@@ -5246,6 +5246,7 @@ RENAME_ADJECTIVE;Adjective:;Adjectif :;Adjektiv:;;Adjetivo:;;;;;;;;x
 RENAME_ARTIFACT_BUTTON;§YRename [From.GetName]§!;§YRenommer '[From.GetName]'§!;§Y[From.GetName] umbenennen§!;;§YRenombrar [From.GetName]§!;;;;;;;;x
 RENAME_ARTIFACT_MESSAGE_LOG;Rename [This.GetName];Renommer [This.GetName];[This.GetName] umbenennen;;Renombrar [This.GetName];;;;;;;;x
 RENAME_CHARACTER_MESSAGE_LOG;Rename [This.GetFirstName];Rebaptiser [This.GetFirstName];[This.GetFirstName] umbenennen;;Renombrar [This.GetFirstName];;;;;;;;x
+RENAME_HORSE_MESSAGE_LOG;Rename [This.GetFirstName];Rebaptiser [This.GetFirstName];[This.GetFirstName] umbenennen;;Renombrar [This.GetFirstName];;;;;;;;x
 RENAME_TITLE_SHORT_NAME_CHECKBOX;§YToggle Short Name§!;§YBasculer sur le nom court§!;§YKurze Namen umschalten§!;;§YNavega por nombres cortos§!;;;;;;;;;x
 RENAME_TITLE_SHORT_NAME_CHECKBOX_DELAYED;Enable to make the title follow the short name naming convention and be presented without the "tier of" prefix.;Permet que le titre suive la convention des noms courts et soit présenté sans le préfixe « rang de ».;Aktivieren, damit der Titel der Namenskonvention für Kurznamen folgt und ohne Präfix "Stufe von" angezeigt wird.;;Activa para que el título siga la convención de nombres cortos y se presente sin el prefijo "nivel…".;;;;;;;;;x
 RENAME_TITLE_TOOLTIP;Rename Title;Renommer titre;Titel umbenennen;;Renombrar Título;;;;;;;;;x

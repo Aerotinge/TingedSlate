@@ -1,0 +1,27 @@
+#Fetches the name of your warhorse
+defined_text = {
+	name = GetPetWarhorseName
+	use_first_valid = yes
+
+	text = {
+		trigger = {
+			NOT = {
+				persistent_event_target:pet_warhorse_placeholder = {
+					always = yes
+				}
+			}
+		}
+		localisation_key = WARHORSE_DEFAULT_NAME
+	}
+	text = {
+		trigger = {
+			persistent_event_target:pet_warhorse_placeholder = {
+				always = yes
+			}
+		}
+		localisation_key = WARHORSE_CUSTOM_NAME
+	}
+	fallback_text = {
+		localisation_key = WARHORSE_DEFAULT_NAME
+	}
+}

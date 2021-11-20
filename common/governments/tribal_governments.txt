@@ -121,7 +121,11 @@ tribal_governments = {
 
 		potential = {
 			NOT = { has_dlc = "Horse Lords" }
-			higher_real_tier_than = BARON
+			trigger_if = {
+				limit = { rebel = no }
+
+				higher_real_tier_than = BARON
+			}
 			holy_order = no
 			NOT = { is_government_potential = order_government }
 
@@ -180,6 +184,5 @@ tribal_governments = {
 			global_garrison_size = -3 # -300%
 		}
 		vassal_limit = -10
-		commander_limit = -4
 	}
 }

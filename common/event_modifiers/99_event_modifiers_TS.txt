@@ -4,3 +4,20 @@ hre_elector_modifier = {
 	}
 	icon = 10
 }
+
+nomad_population = {
+	icon = 57
+	tribal_tax_modifier = -1
+	supply_limit = -5
+	#tribal_levy_size = -1
+}
+
+pet_warhorse = {
+	icon = 56
+	combat_rating = 6
+	command_modifier = {
+		speed = 0.01
+		pursue = 0.02
+		retreat = 0.05
+	}
+}

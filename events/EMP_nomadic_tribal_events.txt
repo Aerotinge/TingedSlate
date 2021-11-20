@@ -6,6 +6,7 @@
 
 namespace = EMP
 
+# Nomadic Horde event troops mechanism
 character_event = {
     id = EMP.11002
     hide_window = yes
@@ -4761,6 +4762,7 @@ character_event = {
 	lacks_dlc = "Horse Lords"
 
     trigger = {
+		always = no # Disabled
         government = nomadic_tribal_government
     }
 
@@ -4809,9 +4811,10 @@ character_event = {
 	}
 }
 
+# Create New Nomadic government vassal
 # on_new_holder
 character_event = {
-    id = EMP.11009
+    id = EMP.11011
     hide_window = yes
 	
     is_triggered_only = yes
@@ -4836,5 +4839,935 @@ character_event = {
 
 	immediate = {
 		set_government_type = nomadic_tribal_government
+	}
+}
+
+# Nomadic population province mechanism
+# on_startup
+character_event = {
+    id = EMP.11021
+    hide_window = yes
+
+    is_triggered_only = yes
+
+	lacks_dlc = "Horse Lords"
+
+    is_triggered_only = yes #on_startup
+
+    trigger = {
+        government = nomadic_tribal_government
+    }
+
+	immediate = {
+		any_demesne_province = {
+			limit = {
+				culture_group = ROOT
+			}
+			add_province_modifier = {
+				name = nomad_population
+				duration = -1
+			}
+			province_event = { # init
+				id = EMP.11022
+				days = 100
+				random = 100
+			}
+		}
+	}
+}
+
+province_event = {
+    id = EMP.11022
+    hide_window = yes
+	
+    is_triggered_only = yes
+	
+	lacks_dlc = "Horse Lords"
+
+    trigger = {
+        has_province_modifier = nomad_population
+    }
+
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NOT = {
+						government = nomadic_tribal_government
+					}
+				}
+			}
+
+			random_list = { # Nomadic pop outcome tombola
+				10 = { # Nomadic population keep wandering in next 10 years
+					mult_modifier = {
+						factor = 1.5
+						owner = {
+							culture = ROOT
+							religion = ROOT
+						}
+					}
+				}
+				10 = {
+					trigger = {
+						capital_holding = {
+							num_of_buildings >= 1
+						}
+					}
+					mult_modifier = {
+						factor = 1.1
+						num_of_settlements >= 2
+					}
+					mult_modifier = {
+						factor = 1.25
+						capital_holding = {
+							num_of_buildings >= 4
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 10
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 12
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 14
+						}
+					}
+
+					remove_province_modifier = rampaging_nomads
+					remove_province_modifier = nomad_population
+					break = yes
+				}
+				10 = {
+					trigger = {
+						revolt_risk >= 0.02
+					}
+
+					mult_modifier = {
+						factor = 1.1
+						any_neighbor_province = {
+							culture = ROOT
+							religion = ROOT
+							has_province_modifier = nomad_population
+						}
+					}
+					mult_modifier = {
+						factor = 1.3
+						revolt_risk >= 0.05
+					}
+					mult_modifier = {
+						factor = 1.25
+						owner = {
+							diplomacy < 8
+						}
+					}
+					mult_modifier = {
+						factor = 1.25
+						owner = {
+							diplomacy < 6
+						}
+					}
+					mult_modifier = {
+						factor = 1.25
+						owner = {
+							diplomacy < 4
+						}
+					}
+
+					add_province_modifier = {
+						name = rampaging_nomads
+						years = 10
+					}
+				}
+			}
+		}
+		else = { # Nomad
+			random_list = { # Nomadic pop outcome tombola
+				10 = { # Nothing
+				}
+				10 = { # Going to have bad winter events
+					trigger = {
+						total_years_played > 1 # Not going to happened in 1st year init run
+						OR = {
+							climate = mild_winter
+							climate = normal_winter
+							climate = severe_winter
+						}
+					}
+
+					mult_modifier = {
+						factor = 0.01
+
+						owner = {
+							job_chancellor = {
+								has_job_action = action_conciliate_herdsman
+							}
+						}
+					}
+
+					mult_modifier = {
+						factor = 1.15
+
+						climate = normal_winter
+					}
+
+					mult_modifier = {
+						factor = 1.5
+
+						climate = severe_winter
+					}
+
+					if = {
+						limit = {
+							OR = {
+								month >= 12
+								month < 3
+							}
+						}
+						province_event = {
+							id = EMP.11023 # bad winter
+						}
+					}
+					else_if = {
+						limit = {
+							month >= 9
+						}
+						province_event = {
+							id = EMP.11023 # bad winter
+							months = 3
+						}
+					}
+					else_if = {
+						limit = {
+							month >= 6
+						}
+						province_event = {
+							id = EMP.11023 # bad winter
+							months = 6
+						}
+					}
+					else = {
+						province_event = {
+							id = EMP.11023 # bad winter
+							months = 9
+						}
+					}
+				}
+				10 = { # Culture asslimate
+					trigger = {
+						total_years_played > 1 # Not going to happened in 1st year init run
+						owner = {
+							NOT = { culture = ROOT }
+						}
+					}
+
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							culture_group = ROOT
+						}
+					}
+					mult_modifier = {
+						factor = 1.25
+						owner = {
+							OR = {
+								any_spouse = { culture = ROOT }
+								any_consort = { culture = ROOT }
+								any_close_relative = { culture = ROOT }
+								any_friend = { culture = ROOT }
+							}
+						}
+					}
+					mult_modifier = {
+						factor = 1.5
+						owner = {
+							OR = {
+								has_character_modifier = greatest_of_khans
+								job_treasurer = {
+									OR = {
+										culture = ROOT
+										culture = PREV
+									}
+									location = {
+										province = ROOT
+									}
+									has_job_action = action_settle_tribe
+									stewardship >= 10
+								}
+							}
+						}
+					}
+					mult_modifier = {
+						factor = 0.85
+						owner = {
+							diplomacy < 4
+						}
+					}
+					mult_modifier = {
+						factor = 0.85
+						owner = {
+							diplomacy < 6
+						}
+					}
+					mult_modifier = {
+						factor = 0.85
+						owner = {
+							diplomacy < 8
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 10
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 12
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 14
+						}
+					}
+					mult_modifier = {
+						factor = 0.75
+						owner = {
+							OR = {
+								trait = shy
+								trait = stutter
+								trait = slow
+								trait = slothful
+								trait = craven
+								trait = stubborn
+								trait = dull
+								trait = paranoid
+							}
+						}
+					}
+					mult_modifier = {
+						factor = 1.25
+						owner = {
+							OR = {
+								trait = gregarious
+								trait = patient
+								trait = quick
+								trait = diligent
+								trait = brave
+								trait = socializer
+								trait = shrewd
+								trait = scholar
+							}
+						}
+					}
+
+					owner = {
+						reverse_culture = ROOT
+						# notify event
+					}
+				}
+				10 = { # religion asslimate
+					trigger = {
+						total_years_played > 1 # Not going to happened in 1st year init run
+						owner = {
+							NOT = {
+								religion = ROOT
+							}
+						}
+					}
+
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							religion_group = ROOT
+						}
+					}
+					mult_modifier = {
+						factor = 1.25
+						owner = {
+							OR = {
+								any_spouse = {
+									religion = ROOT
+								}
+								any_consort = {
+									religion = ROOT
+								}
+								any_close_relative = {
+									religion = ROOT
+								}
+								any_friend = {
+									religion = ROOT
+								}
+							}
+						}
+					}
+					mult_modifier = {
+						factor = 1.5
+						trigger_if = {
+							limit = { religion_group = christian }
+							owner = {
+								trait = sympathy_christendom
+							}
+						}
+						trigger_else_if = {
+							limit = { religion_group = indian_group }
+							owner = {
+								trait = sympathy_indian
+							}
+						}
+						trigger_else_if = {
+							limit = { religion_group = muslim }
+							owner = {
+								trait = sympathy_islam
+							}
+						}
+						trigger_else_if = {
+							limit = { religion_group = jewish_group }
+							owner = {
+								trait = sympathy_judaism
+							}
+						}
+						trigger_else_if = {
+							limit = { religion_group = pagan_group }
+							owner = {
+								trait = sympathy_pagans
+							}
+						}
+						trigger_else_if = {
+							limit = { religion_group = zoroastrian_group }
+							owner = {
+								trait = sympathy_zoroastrianism
+							}
+						}
+					}
+					mult_modifier = {
+						factor = 0.85
+						owner = {
+							diplomacy < 4
+						}
+					}
+					mult_modifier = {
+						factor = 0.85
+						owner = {
+							diplomacy < 6
+						}
+					}
+					mult_modifier = {
+						factor = 0.85
+						owner = {
+							diplomacy < 8
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 10
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 12
+						}
+					}
+					mult_modifier = {
+						factor = 1.15
+						owner = {
+							diplomacy >= 14
+						}
+					}
+					mult_modifier = {
+						factor = 0.75
+						owner = {
+							OR = {
+								trait = shy
+								trait = stutter
+								trait = slow
+								trait = slothful
+								trait = craven
+								trait = stubborn
+								trait = dull
+								trait = paranoid
+							}
+						}
+					}
+					mult_modifier = {
+						factor = 1.25
+						owner = {
+							OR = {
+								trait = gregarious
+								trait = patient
+								trait = quick
+								trait = diligent
+								trait = brave
+								trait = socializer
+								trait = shrewd
+								trait = scholar
+							}
+						}
+					}
+
+					owner = {
+						reverse_religion = ROOT
+						# notify event
+					}
+				}
+			}
+		}
+
+		repeat_event = {
+			id = EMP.11022
+			#years = 15
+			years = 2
+		}
+	}
+}
+
+province_event = {
+	id = EMP.11023
+	desc = EVTDESC_EMP_11023
+	picture = GFX_evt_dead_body_hf
+	border = GFX_event_normal_frame_diplomacy
+
+	is_triggered_only = yes
+
+	trigger = {
+		owner = {
+			government = nomadic_tribal_government
+			NOT = {
+				had_character_flag = { # not going to have it again within 5 years
+					flag = bad_winter_cd
+					years <= 5
+				}
+			}
+		}
+		has_province_modifier = nomad_population
+		is_winter = yes
+	}
+
+	immediate = {
+		owner = {
+			clr_character_flag = bad_winter_cd # reset the timer
+			set_character_flag = bad_winter_cd
+			log = "EMP.11023 - [This.GetBestName] going to lost prestige"
+		}
+	}
+
+	option = {
+		name = EVTOPTA86164 # It can't be helped...
+
+		owner = {
+			if = {
+				limit = {
+					prestige >= 500
+				}
+
+				prestige = -500
+			}
+			else_if = {
+				limit = {
+					prestige >= 300
+				}
+
+				prestige = -300
+			}
+			else_if = {
+				limit = {
+					prestige >= 100
+				}
+
+				prestige = -100
+			}
+			else_if = {
+				limit = {
+					prestige >= 50
+				}
+
+				prestige = -50
+			}
+			else = {
+				prestige = -1
+			}
+			
+
+			any_courtier = {
+				count = 3
+				limit = {
+					is_vassal_or_below_of = ROOT
+					prisoner = no
+				}
+
+				opinion = {
+					name = opinion_lost_respect
+					who = PREV
+					years = 1
+				}
+			}
+		}
+	}
+}
+
+# Nomadic Rebels rise up (temporary rebel title created, with a leader and a war)
+# Triggered from "on_rebel_revolt"
+province_event = {
+	id = EMP.11030
+	desc = EVTDESC_EMP_11030
+	picture = GFX_evt_steppe_mercenaries
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	lacks_dlc = "Horse Lords"
+
+	trigger = {
+		# Will get clan rebels instead
+		trigger_if = {
+			limit = { has_empty_holding = yes }
+
+			owner = {
+				is_nomadic = no
+			}
+		}
+
+		any_province_holding = {
+			NOT = { holding_type = nomad }
+		}
+
+		has_province_modifier = nomad_population
+
+		owner = {
+			top_liege = {
+				# Not if there is already an ongoing revolt for this province
+				NOT = {
+					any_war = {
+						defender = { character = PREV }
+						attacker = {
+							culture = ROOT # Province
+						}
+						using_cb = nomadic_revolt
+					}
+				}
+			}
+		}
+	}
+
+	immediate = {
+		add_province_modifier = {
+			name = recent_county_uprising
+			years = 5 # 100% revolt risk in this county
+		}
+
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = random
+			religion = ROOT
+			culture = ROOT
+			female = no
+			age = 35
+			health = 7
+			fertility = 0.7
+			add_trait = brave
+			add_trait = ambitious
+			add_trait = cavalry_leader
+			add_trait = skilled_tactician
+
+			attributes = {
+				martial = 8
+				diplomacy = 9
+			}
+		}
+		new_character = {
+			create_title = {
+				tier = DUKE
+				landless = yes
+				temporary = yes
+				rebel = yes
+				culture = ROOT
+				name = NOMADIC_REVOLT
+				holder = THIS
+			}
+			
+			# Two sons
+			while = {
+				count = 2
+
+				create_character = {
+					random_traits = yes
+					dynasty = THIS
+					religion = THIS
+					culture = THIS
+					female = no
+					#min_age = 16
+					#max_age = 17
+					age = 17
+					add_trait = cavalry_leader
+					add_trait = skilled_tactician
+
+					attributes = {
+						martial = 7
+					}
+				}
+				new_character = {
+					set_father = PREV
+					give_minor_title = title_commander
+					random_list = {
+						60 = {}
+						10 = { add_trait = aggressive_leader }
+						10 = { add_trait = flanker }
+						10 = { add_trait = trickster }
+						10 = { add_trait = flat_terrain_leader }
+					}
+				}
+			}
+
+			set_government_type = nomadic_tribal_government
+
+			spawn_nomadic_army_effect = yes
+			if = {
+				limit = {
+					has_game_rule = {
+						name = provincial_revolt_strength
+						value = powerful
+					}
+				}
+
+				spawn_nomadic_army_effect = yes
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						name = provincial_revolt_strength
+						value = very_powerful
+					}
+				}
+
+				spawn_nomadic_army_effect = yes
+				spawn_nomadic_army_effect = yes
+				spawn_nomadic_army_effect = yes
+			}
+			else_if = {
+				limit = {
+					has_game_rule = {
+						name = provincial_revolt_strength
+						value = extremely_powerful
+					}
+				}
+
+				spawn_nomadic_army_effect = yes
+				spawn_nomadic_army_effect = yes
+				spawn_nomadic_army_effect = yes
+				spawn_nomadic_army_effect = yes
+				spawn_nomadic_army_effect = yes
+			}
+
+			# DoW on the province top liege
+			ROOT = {
+				owner = {
+					top_liege = {
+						reverse_war = {
+							target = PREVPREVPREV
+							casus_belli = nomadic_revolt
+							thirdparty_title = ROOT # The county
+						}
+
+						reverse_opinion = {
+							name = opinion_evil_tyrant
+							who = PREVPREVPREV
+						}
+					}
+				}
+			}
+		}
+
+		owner = {
+			any_liege = { # Inform the lieges
+				character_event = { id = EMP.11031 }
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_EMP_11030
+	}
+}
+
+character_event = {
+	id = EMP.11031
+	desc = EVTDESC_EMP_11031
+	picture = GFX_evt_steppe_mercenaries
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	ai = no
+
+	option = {
+		name = EVTOPTA_EMP_11030
+	}
+}
+
+# Nomadic Rebels seize a holding. Fired from 'on_siege_over_winner'.
+character_event = {
+	id = EMP.11035
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		government = nomadic_tribal_government
+		rebel = yes
+
+		FROM = {
+			is_capital = yes # The capital holding
+		}
+	}
+
+	immediate = {
+		FROM = {
+			location = {
+				if = {
+					limit = {
+						has_province_modifier = nomad_population
+						NOT = { has_province_modifier = rampaging_nomads }
+					}
+
+					add_province_modifier = {
+						name = rampaging_nomads
+						years = 2
+					}
+				}
+			}
+		}
+	}
+}
+
+# Nomadic Rebels rise up to reinforce an ongoing provincial nomadic revolt
+# Triggered from "on_rebel_revolt"
+province_event = {
+	id = EMP.11040
+	desc = EVTDESC_EMP_11040
+	picture = GFX_evt_steppe_mercenaries
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	has_dlc = "The Old Gods"
+
+	trigger = {
+		# There is already an ongoing peasant revolt for this province
+		owner = {
+			top_liege = {
+				any_war = {
+					attacker = { culture = ROOT }
+					defender = { character = PREV }
+					using_cb = nomadic_revolt
+				}
+			}
+		}
+
+		has_province_modifier = nomad_population
+
+		any_province_holding = {
+			NOT = { holding_type = nomad }
+		}
+	}
+
+	immediate = {
+		add_province_modifier = {
+			name = recent_county_uprising # -100% revolt risk
+			years = 5
+		}
+
+		owner = {
+			top_liege = {
+				any_war = {
+					limit = {
+						attacker = { culture = ROOT }
+						defender = { character = PREV }
+						using_cb = nomadic_revolt
+					}
+
+					attacker = {
+						spawn_nomadic_reinforcements_effect = yes
+
+						if = {
+							limit = {
+								has_game_rule = {
+									name = provincial_revolt_strength
+									value = powerful
+								}
+							}
+
+							spawn_nomadic_reinforcements_effect = yes
+						}
+						else_if = {
+							limit = {
+								has_game_rule = {
+									name = provincial_revolt_strength
+									value = very_powerful
+								}
+							}
+
+							spawn_nomadic_reinforcements_effect = yes
+							spawn_nomadic_reinforcements_effect = yes
+							spawn_nomadic_reinforcements_effect = yes
+						}
+						else_if = {
+							limit = {
+								has_game_rule = {
+									name = provincial_revolt_strength
+									value = extremely_powerful
+								}
+							}
+
+							spawn_nomadic_reinforcements_effect = yes
+							spawn_nomadic_reinforcements_effect = yes
+							spawn_nomadic_reinforcements_effect = yes
+							spawn_nomadic_reinforcements_effect = yes
+							spawn_nomadic_reinforcements_effect = yes
+						}
+					}
+				}
+			}
+		}
+
+		owner = {
+			any_liege = { # Inform the lieges
+				character_event = {
+					id = EMP.11041
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_EMP_11040
+	}
+}
+
+character_event = {
+	id = EMP.11041
+	desc = EVTDESC_EMP_11041
+	picture = GFX_evt_steppe_mercenaries
+	border = GFX_event_normal_frame_war
+
+	is_triggered_only = yes
+
+	ai = no
+
+	option = {
+		name = EVTOPTA_EMP_11040
 	}
 }

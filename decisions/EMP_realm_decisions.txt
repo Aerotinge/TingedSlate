@@ -26,6 +26,15 @@ decisions = {
 		effect = {
 			set_government_type = tribal_government
 
+			any_demesne_province = {
+				limit = {
+					culture = ROOT
+					has_province_modifier = nomad_population
+				}
+
+				remove_province_modifier = nomad_population
+			}
+
 			hidden_effect = {
 				any_realm_lord = {
 					limit = {
@@ -33,6 +42,15 @@ decisions = {
 						government = nomadic_tribal_government
 					}
 					set_government_type = tribal_government
+
+					any_demesne_province = {
+						limit = {
+							culture = ROOT
+							has_province_modifier = nomad_population
+						}
+
+						remove_province_modifier = nomad_population
+					}
 				}
 			}
 
@@ -64,6 +82,15 @@ decisions = {
 					}
 				}
 			}
+
+			mult_modifier = {
+				factor = 0.1
+
+				any_realm_province = {
+					has_province_modifier = nomad_population
+					NOT = { culture = ROOT }
+				}
+			}
 		}
 	}
 
@@ -89,6 +116,15 @@ decisions = {
 		effect = {
 			set_government_type = tribal_government
 
+			any_demesne_province = {
+				limit = {
+					culture = ROOT
+					has_province_modifier = nomad_population
+				}
+
+				remove_province_modifier = nomad_population
+			}
+
 			hidden_effect = {
 				any_realm_lord = {
 					limit = {
@@ -96,6 +132,15 @@ decisions = {
 						government = nomadic_tribal_government
 					}
 					set_government_type = tribal_government
+
+					any_demesne_province = {
+						limit = {
+							culture = ROOT
+							has_province_modifier = nomad_population
+						}
+
+						remove_province_modifier = nomad_population
+					}
 				}
 			}
 		}
@@ -107,14 +152,8 @@ decisions = {
 				factor = 0.1
 
 				any_realm_province = {
-					region = world_steppe
-				}
-			}
-			mult_modifier = {
-				factor = 0.1
-
-				any_realm_province = {
 					OR = {
+						region = world_steppe
 						terrain = steppe
 						terrain = plains
 						terrain = desert
@@ -122,6 +161,16 @@ decisions = {
 					}
 				}
 			}
+
+			mult_modifier = {
+				factor = 0.1
+
+				any_realm_province = {
+					has_province_modifier = nomad_population
+					NOT = { culture = ROOT }
+				}
+			}
+
 			mult_modifier = {
 				factor = 0.1
 

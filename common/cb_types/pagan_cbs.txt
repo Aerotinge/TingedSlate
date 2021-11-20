@@ -1338,13 +1338,27 @@ tribal_invasion = {
 
 	can_use_gui = {
 		# Attacker
-		ROOT = {
-			prestige >= 500
+		trigger_if = {
+			limit = {
+				ROOT = {
+					government = nomadic_tribal_government
+					has_character_flag = allowed_to_invasion_@FROMFROM
+				}
+			}
+
+			ROOT = {
+				prestige >= 0
+			}
+		}
+		trigger_else = {
+			ROOT = {
+				prestige >= 500
+			}
 		}
 
 		check_if_crusader_trigger = yes
 	}
-	
+
 	can_use = {
 	}
 
@@ -1380,7 +1394,10 @@ tribal_invasion = {
 					}
 
 					OR = {
-						is_tribal = yes
+						AND = {
+							is_tribal = yes
+							NOT = { government = nomadic_tribal_government }
+						}
 						primary_title = { has_law = succ_elective_gavelkind }
 
 						trigger_if = {
@@ -1449,6 +1466,7 @@ tribal_invasion = {
 					independent = yes
 					higher_real_tier_than = COUNT
 					government = nomadic_tribal_government
+					has_character_flag = allowed_to_invasion_@PREV
 				}
 			}
 
@@ -1483,7 +1501,17 @@ tribal_invasion = {
 		attacker = {
 			show_scope_change = no
 
-			prestige = -500
+			if = {
+				limit = {
+					government = nomadic_tribal_government
+					has_character_flag = allowed_to_invasion_@PREV
+
+			#		prestige = -100
+				}
+			}
+			else = {
+				prestige = -500
+			}
 
 			if = {
 				limit = {

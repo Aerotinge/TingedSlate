@@ -1,6 +1,7 @@
 # invasion
 # imperial_reconquest
 # thankmars_rebellion
+# blood_feud
 
 invasion = {
 	name = CB_NAME_INVASION
