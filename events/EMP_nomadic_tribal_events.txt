@@ -5431,38 +5431,6 @@ province_event = {
 
 	lacks_dlc = "Horse Lords"
 
-	trigger = {
-		# Will get clan rebels instead
-		trigger_if = {
-			limit = { has_empty_holding = yes }
-
-			owner = {
-				is_nomadic = no
-			}
-		}
-
-		any_province_holding = {
-			NOT = { holding_type = nomad }
-		}
-
-		has_province_modifier = nomad_population
-
-		owner = {
-			top_liege = {
-				# Not if there is already an ongoing revolt for this province
-				NOT = {
-					any_war = {
-						defender = { character = PREV }
-						attacker = {
-							culture = ROOT # Province
-						}
-						using_cb = nomadic_revolt
-					}
-				}
-			}
-		}
-	}
-
 	immediate = {
 		add_province_modifier = {
 			name = recent_county_uprising
@@ -5664,25 +5632,6 @@ province_event = {
 	is_triggered_only = yes
 
 	has_dlc = "The Old Gods"
-
-	trigger = {
-		# There is already an ongoing peasant revolt for this province
-		owner = {
-			top_liege = {
-				any_war = {
-					attacker = { culture = ROOT }
-					defender = { character = PREV }
-					using_cb = nomadic_revolt
-				}
-			}
-		}
-
-		has_province_modifier = nomad_population
-
-		any_province_holding = {
-			NOT = { holding_type = nomad }
-		}
-	}
 
 	immediate = {
 		add_province_modifier = {

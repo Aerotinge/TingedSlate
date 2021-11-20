@@ -2225,7 +2225,7 @@ on_approve_de_jure_law = {
 # ROOT is province
 on_rebel_revolt = {
 	events = {
-		600 # Only valid without "The Old Gods" DLC
+		# 600 # Only valid without "The Old Gods" DLC
 	}
 }
 

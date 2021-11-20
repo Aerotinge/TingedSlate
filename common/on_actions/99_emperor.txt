@@ -30,15 +30,6 @@ on_siege_over_winner = {
 	}
 }
 
-# When rebels appear
-# ROOT is province
-on_rebel_revolt = {
-	events = {
-		EMP.11040 # Nomadic rebels reinforced
-		EMP.11030 # Nomadic rebels rise up
-	}
-}
-
 on_death = {
 	events = {
 		EMP.12010

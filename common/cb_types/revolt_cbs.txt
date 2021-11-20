@@ -839,6 +839,14 @@ nomadic_revolt = {
 
 			set_government_type = nomadic_tribal_government
 			set_defacto_liege = attacker
+
+			any_realm_province = {
+				limit = {
+					has_province_modifier = rampaging_nomads
+				}
+
+				remove_province_modifier = rampaging_nomads
+			}
 		}
 
 		defender = {
