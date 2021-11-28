@@ -2,7 +2,7 @@ namespace = EMP
 
 # Landless title heir fix
 character_event = {
-    id = EMP.10010
+    id = EMP.20010
     hide_window = yes
 
     is_triggered_only = yes # on_death
@@ -65,7 +65,7 @@ character_event = {
 
 # Skip a character for a title
 character_event = {
-    id = EMP.10011
+    id = EMP.20011
     hide_window = yes
 
     is_triggered_only = yes # on_new_holder_inheritance

@@ -127,7 +127,6 @@ job_marshal = {
 	action = action_advance_mil_tech
 	action = action_organize_raid			# Replaces action_advance_mil_tech for Tribes
 	action = action_logistic_management		# Replaces action_train_troops for Nomadic Tribal
-	# events for siege_speed/days_of_supply/global_movement_speed boost(on_war);(peace time)combat_rating/regiment_reinforcement_speed boos(RoL)/tier 1 artifact(rare)
 	action = action_organize_invasion		# Replaces action_advance_mil_tech for Nomadic Tribal
 
 	allow = {

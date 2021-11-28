@@ -355,13 +355,42 @@ action_organize_traderoute = {
 	}
 
 	trigger = {
-		trade_post_owner = {
-			character = FROM
+		any_trade_route_province = {
+			any_province_lord = {
+				character = FROM
+			}
+			province = PREV
 		}
 	}
 
-	events = {
+	display_on_map = {
+		tooltip = JOB_ORGANIZE_TRADE_ROUTE
+		color = { 255 35 35 }
+
+		trigger = {
+			any_trade_route_province = {
+				any_province_lord = {
+					character = FROM
+				}
+				province = PREV
+				has_trade_post = no
+			}
+		}
 	}
+	
+	display_on_map = {
+		tooltip = JOB_ORGANIZE_TRADE_POST
+		color = { 0 255 0 }
+
+		trigger = {
+			has_trade_post = yes
+			trade_post_owner = {
+				character = FROM
+			}
+		}
+	}
+
+	events = { }
 }
 
 # Spymaster
@@ -644,9 +673,9 @@ action_logistic_management = {
 	}
 
 	events = {
-		marshal.501 # A High Quality Armament Produced
-		marshal.503 # Found a Good Warhorse
-		marshal.506 # Logistical Accident
+		EMP.10010 # A High Quality Armament Produced
+		EMP.10012 # Found a Good Warhorse
+		EMP.10015 # Logistical Accident
 	}
 }
 
@@ -679,8 +708,8 @@ action_organize_invasion = {
 	}
 
 	events = {
-		marshal.601 # Invasion Plan Devised
-		marshal.603 # Counter-Attacked by Local Forces (Gets away, Is wounded, Is imprisoned, Is killed)
+		EMP.10020 # Invasion Plan Devised
+		EMP.10023 # Counter-Attacked by Local Forces (Gets away, Is wounded, Is imprisoned, Is killed)
 	}
 }
 

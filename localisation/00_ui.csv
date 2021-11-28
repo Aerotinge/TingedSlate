@@ -2811,6 +2811,8 @@ Jan;Jan;Jan;Jan;;Ene;Gen;;;;;;;;x
 January;January;janvier;Januar;Styczeñ;Enero;Gennaio;Január;Leden;;;;;;x
 JIZYA_BONUS;Jizya Tax Bonus: ;Bonus de la djizîa : ;Bonus Dschizya-Steuer: ;;Bonificación de impuestos de Jizya: ;;;;;;;;;x
 joan_darc;Jehanne Darc;Jeanne d'Arc;Jeanne d'Arc;;Juana de Arco;;;;;;;;;x
+JOB_ORGANIZE_TRADE_ROUTE;Organize Trade Route;Organiser la route commerciale;Handelsroute organisieren;;Organizar ruta comercial;;;;;;;;;x
+JOB_ORGANIZE_TRADE_POST;Organize Trade Post;Organiser le poste commerciale;Handelsposten organisieren;;Organizar el puesto comercial;;;;;;;;;x
 JOB_PROSELYTIZE_CONVERT_INDEPENDENT;Proselytize: §GIndependent ruler can be converted. Current religion: §!§Y[Root.Holder.Religion.GetName]§!;Faire du prosélytisme: §GLe dirigeant indépendant peut être converti. Religion actuelle: §!§Y[Root.Holder.Religion.GetName]§!;Bekehren: §GUnabhängiger Herrscher kann konvertiert werden. Momentane Religion: §!§Y[Root.Holder.Religion.GetName]§!;;Proselitismo: §Gse puede convertir al gobernante independiente. Religión actual: §!§Y[Root.Holder.Religion.GetName]§!;;;;;;;;;x
 JOB_PROSELYTIZE_DIFFERENT_RELIGION;Proselytize: §GProvince can be converted. Current religion: §!§Y[Root.Religion.GetName]§!;Faire du prosélytisme: §GLa province peut être convertie. Religion actuelle: §!§Y[Root.Religion.GetName]§!;Bekehren: §GProvinzen können konvertiert werden. Momentane Religion: §!§Y[Root.Religion.GetName]§!;;Proselitismo: §Gse puede convertir la provincia. Religión actual: §!§Y[Root.Religion.GetName]§!;;;;;;;;;x
 JOB_PROSELYTIZE_SAME_RELIGION;Proselytize: §YProvince already converted.§!;Faire du prosélytisme: §YProvince déjà convertie§!;Bekehrung: §YProvinz ist bereits konvertiert.§!;;Proselitismo: §Yprovincia ya convertida.§!;;;;;;;;;x
