@@ -1,0 +1,20 @@
+name = "Ghurid War to Make Chandela a Tributary State"
+
+casus_belli = {
+	casus_belli = tributary_permanent_cb
+	actor = 144142
+	recipient = 188054
+	date = 1203.1.1
+}
+
+1203.1.1 = {
+	add_defender = 188054
+	add_attacker = 144142
+	start_war = yes
+}
+
+1205.1.1 = {
+	end_war = yes
+	rem_attacker = 144142
+	rem_defender = 188054
+}

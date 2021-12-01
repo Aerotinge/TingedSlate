@@ -1,0 +1,83 @@
+710.1.1 = {
+	liege = d_samarkand
+}
+
+769.1.1 = {
+	holder = 188682 # Sa'id al-Harashi (fictitious holding assignment)
+}
+
+864.1.1 = {
+	holder = 163157
+}
+
+890.1.1 = {
+	holder = 188599 # Muhammad
+}
+
+# Seljuks
+
+1037.1.1 = {
+	liege = k_khorasan
+	holder = 3038
+}
+
+1063.9.4 = {
+	holder = 3040
+}
+
+1066.1.1 = {
+	holder = 93122
+}
+
+1073.1.1 = {
+	holder = 93123
+}
+
+# Anushtigin under Seljuks
+
+1077.1.1 = {
+	liege = d_khiva
+	holder = 20713
+}
+
+1096.1.1 = {
+	holder = 93088
+}
+
+1097.1.1 = {
+	holder = 144099
+}
+
+1127.1.1 = {
+	holder = 144100
+}
+
+1156.1.1 = {
+	holder = 144101
+}
+
+1172.3.1 = {
+	holder = 230000
+}
+
+1200.1.1 = {
+	holder = 93052
+}
+
+1212.1.1 = {
+	holder = 93053
+}
+
+1221.1.1 = {
+	liege = d_khiva
+	holder = 248212
+}
+
+1271.1.1 = {
+	holder = 248213
+}
+
+1300.1.1 = {
+	holder = 248214
+}
+

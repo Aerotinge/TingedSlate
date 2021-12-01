@@ -1,0 +1,25 @@
+name = "Independence"
+
+casus_belli = {
+	casus_belli = bid_for_independence
+	actor = 93088
+	recipient = 144013
+	date = 1096.1.1
+}
+
+# In civil wars defender MUST be added before attacker!
+1096.1.1 = {
+	add_defender = 144013
+	add_attacker = 93088
+	start_war = yes
+	vassal_liege = {
+		vassal = 93088
+		liege = 144013
+	}
+}
+
+1097.1.1 = {
+	end_war = yes
+	rem_attacker = 93088
+	rem_defender = 144013
+}

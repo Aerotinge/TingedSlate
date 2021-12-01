@@ -8,92 +8,44 @@
 	holder = 188599 # Muhammad
 }
 
-1052.1.1 = {
-	holder = 3014
+# Anushtigin under Seljuks
+
+1077.1.1 = {
+	#vice_royalty = yes
+	liege = k_khorasan
+	holder = 20713
 }
 
-1068.1.1 = {
-	holder = 3016
-}
+# Ekinchi bid for independence
 
-1080.1.1 = {
-	holder = 3018
-}
-
-1081.1.1 = {
-	holder = 3020
-}
-
-1089.1.1 = {
-	holder = 3022
-}
-
-1095.1.1 = {
-	holder = 3024
+1096.1.1 = {
+	# vice_royalty = 0
+	liege = 0
+	holder = 93088
 }
 
 1097.1.1 = {
-	holder = 144110
+	liege = k_khorasan
+	holder = 144099
 }
 
-1097.6.1 = {
-	holder = 144108
-}
-
-1099.1.1 = {
-	holder = 144109
-}
-
-1102.1.1 = {
-	holder = 144111
-}
-
-1129.1.1 = {
-	holder = 144112
-}
-
-1129.6.1 = {
-	holder = 144113
-}
-
-1130.1.1 = {
-	holder = 144116
-}
-
-1132.1.1 = {
-	holder = 144117
-}
-
-1132.6.1 = {
-	holder = 144118
-}
-
-1141.1.1 = {
-	holder = 144119
+1127.1.1 = {
+	holder = 144100
 }
 
 1156.1.1 = {
-	holder = 144120
+	holder = 144101
 }
 
-1161.1.1 = {
-	holder = 144121
+1172.3.1 = {
+	holder = 230000
 }
 
-1178.1.1 = {
-	holder = 144122
-}
-
-1194.3.1 = {
-	liege = k_persia
-}
-
-1204.1.1 = {
-	holder = 93051
+1200.1.1 = {
+	holder = 93052
 }
 
 1212.1.1 = {
-	liege = k_persia
 	holder = 93053
 }
 

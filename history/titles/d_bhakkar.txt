@@ -1,0 +1,86 @@
+860.1.1 = {
+	liege = k_sindh
+	holder = 178012
+}
+
+869.1.1 = {
+	holder = 0
+}
+
+936.1.1 = {
+	holder = 261104
+}
+
+948.1.1 = {
+	holder = 0
+}
+
+1182.1.1 = {
+	liege = 0
+	set_tribute_suzerain = {
+		who = k_sistan
+		type = permanent
+	}
+	holder = 188359 # Doda II
+}
+
+# under Qabacha
+
+1210.1.1 = {
+	clear_tribute_suzerain = k_sistan
+	set_tribute_suzerain = {
+		who = k_sindh
+		type = permanent
+	}
+}
+
+1194.1.1 = {
+	holder = 188362 # Bhoongar
+}
+
+1222.1.1 = {
+	holder = 188363 # Gunero I
+}
+
+# End of Qabacha rules, under Delhi
+
+1228.5.30 = {
+	clear_tribute_suzerain = k_sindh
+	set_tribute_suzerain = {
+		who = k_delhi
+		type = permanent
+	}
+}
+
+# Possibly some dynastic fighting with a Chamesar, or may be the same person as Gunero
+1242.1.1 = {
+	holder = 188364 # Muhammed-Tur
+}
+
+1256.1.1 = {
+	holder = 188365 # Gunero II
+}
+
+1259.1.1 = {
+	holder = 188366 # Doda III
+}
+
+1273.1.1 = {
+	holder = 188367 # Tai
+}
+
+1283.1.1 = {
+	holder = 188368 # Chanesar
+}
+
+1300.1.1 = {
+	holder = 188369 # Bhoongar III
+}
+
+1315.1.1 = {
+	holder = 188370 # Khafif III
+}
+
+1333.1.1 = {
+	holder = 188371 # Doda IV
+}

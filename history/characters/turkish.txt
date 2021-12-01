@@ -1401,33 +1401,33 @@
 	religion = sunni
 	culture = turkish
 	add_trait = dutiful_cleric
-	1039.1.1 = {
+	1053.1.1 = {
 		birth = yes
 	}
-	1089.1.1 = {
+	1109.1.1 = {
 		death = yes
 	}
 }
 
-#20701 = {
-#	name = "Hussamaddin"
-#	dynasty = 101023
-#	martial = 5
-#	diplomacy = 4
-#	intrigue = 8
-#	stewardship = 4
-#	religion = sunni
-#	culture = turkish
-#	add_trait = proud
-#	add_trait = gluttonous
-#	add_trait = tough_soldier
-#	1039.1.1 = {
-#		birth = yes
-#	}
-#	1089.1.1 = {
-#		death = yes
-#	}
-#}
+20701 = {
+	name = "Hussamaddin"
+	dynasty = 101023
+	martial = 5
+	diplomacy = 4
+	intrigue = 8
+	stewardship = 4
+	religion = sunni
+	culture = turkish
+	add_trait = proud
+	add_trait = gluttonous
+	add_trait = tough_soldier
+	1089.1.1 = {
+		birth = yes
+	}
+	1141.1.1 = {
+		death = yes
+	}
+}
 
 20702 = {
 	name = "Khaleel"
@@ -1439,10 +1439,10 @@
 	religion = sunni
 	culture = turkish
 	add_trait = skilled_tactician
-	1039.1.1 = {
+	1117.1.1 = {
 		birth = yes
 	}
-	1089.1.1 = {
+	1172.3.1 = {
 		death = yes
 	}
 }
@@ -1461,10 +1461,10 @@
 	add_trait = gluttonous
 	add_trait = honest
 	add_trait = amateurish_plotter
-	1039.1.1 = {
+	1146.1.1 = {
 		birth = yes
 	}
-	1089.1.1 = {
+	1198.1.1 = {
 		death = yes
 	}
 }
@@ -1481,10 +1481,10 @@
 	add_trait = kind
 	add_trait = ill
 	add_trait = flamboyant_schemer
-	1039.1.1 = {
+	1167.1.1 = {
 		birth = yes
 	}
-	1089.1.1 = {
+	1216.1.1 = {
 		death = yes
 	}
 }
@@ -1500,10 +1500,10 @@
 	culture = turkish
 	add_trait = clubfooted
 	add_trait = dutiful_cleric
-	1039.1.1 = {
+	1177.1.1 = {
 		birth = yes
 	}
-	1089.1.1 = {
+	1228.1.1 = {
 		death = yes
 	}
 }
@@ -1685,8 +1685,8 @@
 }
 
 225006 = {
-	name = "Kutlug"
-	dynasty = 100750
+	name = "Shuja ad-Din Abul-Qasim"
+	dynasty = 1045062 # Maturid, fictional
 	martial = 6
 	diplomacy = 8
 	intrigue = 4
@@ -1695,10 +1695,10 @@
 	culture = turkish
 	add_trait = clubfooted
 	add_trait = dutiful_cleric
-	1150.1.1 = {
+	1174.1.1 = {
 		birth = yes
 	}
-	1200.1.1 = {
+	1222.1.1 = {
 		death = yes
 	}
 }
@@ -9574,6 +9574,7 @@
 	dynasty = 1045062 # Maturid, fictional
 	religion = sunni
 	culture = turkish
+	father = 225006
 	1196.1.1 = {
 		birth = yes
 	}

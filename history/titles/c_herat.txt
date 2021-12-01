@@ -1,0 +1,148 @@
+650.1.1 = {
+	liege = d_khorasan
+}
+
+760.1.1 = {
+	holder = 188688 # Ruzaiq Tahirid
+}
+
+782.1.1 = {
+	holder = 188687 # Husayn
+}
+
+806.1.1 = {
+	holder = 188686 # Tahir
+}
+
+819.1.1 = {
+	holder = 163155 # Ilyas Samanid
+}
+
+856.1.1 = {
+	holder = 163156 # Ibrahim Samanid
+}
+
+864.1.1 = {
+	liege = d_khiva
+}
+
+936.1.1 = {
+	holder = 261121
+	liege = k_transoxiana
+}
+
+977.1.1 = {
+	holder = 144123
+	liege = d_zabulistan
+}
+
+997.1.1 = {
+	holder = 144124
+}
+
+998.1.1 = {
+	holder = 144125
+}
+
+1030.1.1 = {
+	holder = 144126
+}
+
+1031.1.1 = {
+	holder = 144127
+}
+
+1041.1.1 = {
+	holder = 144128
+}
+
+1050.1.1 = {
+	holder = 144129
+}
+
+1050.6.1 = {
+	holder = 144130
+}
+
+1050.9.1 = {
+	holder = 144131
+}
+
+1053.1.1 = {
+	holder = 144132
+}
+
+1059.1.1 = {
+	holder = 144133
+}
+
+1099.1.1 = {
+	holder = 144134
+}
+
+1115.1.1 = {
+	holder = 144135
+}
+
+1115.6.1 = {
+	holder = 144136
+}
+
+1118.1.1 = {
+	holder = 144137
+}
+
+1149.1.1 = {
+	liege = k_khorasan
+	holder = 93150
+}
+
+1176.1.1 = {
+	liege = k_sistan
+}
+
+1180.1.1 = {
+	holder = 93151
+}
+
+1210.1.1 = {
+	holder = 93153
+}
+
+1212.1.1 = {
+	liege = d_zabulistan
+}
+
+1220.1.1 = {
+	holder = 194303
+}
+
+1222.1.1 = {
+	holder = 93153
+}
+
+1245.1.1 = {
+	holder = 93154
+}
+
+1277.1.1 = {
+	holder = 93155
+}
+
+1295.1.1 = {
+	holder = 93156
+}
+
+1308.1.1 = {
+	holder = 93157
+}
+
+1330.1.1 = {
+	holder = 93158
+}
+
+1332.1.1 = {
+	liege = 0
+	holder = 93159
+}
+

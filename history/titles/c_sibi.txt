@@ -1,0 +1,105 @@
+711.1.1 = {
+	liege = k_sindh
+}
+
+# 711-747: Umayyad governors
+
+767.1.1 = {
+	holder = 188556
+}
+
+# 747-854: Abbasid governors
+
+860.1.1 = {
+	holder = 178015
+	liege = d_bhakkar
+}
+
+936.1.1 = {
+	holder = 261105
+	liege = k_sindh
+}
+
+## To be filled
+
+1011.1.1 = {
+	holder = 188349 # Khafif I
+}
+
+1026.1.1 = {
+	holder = 188350 # Soomra
+}
+
+1053.1.1 = {
+	holder = 188351 # Bhoongar I
+	liege = k_sindh
+}
+
+1068.1.1 = {
+	holder = 188352 # Doda I
+}
+
+1092.1.1 = {
+	holder = 188353 # Zainab Tari
+}
+
+1102.1.1 = {
+	holder = 188354 # Sanghar
+}
+
+1107.1.1 = {
+	holder = 188357 # Khafif II
+}
+
+1140.1.1 = {
+	holder = 188358 # Umar I
+}
+
+1180.1.1 = {
+	holder = 188359 # Doda II
+}
+
+1182.1.1 = {
+	liege = d_bhakkar
+}
+
+1194.1.1 = {
+	holder = 188362 # Bhoongar
+}
+
+1222.1.1 = {
+	holder = 188363 # Gunero I
+}
+
+# Possibly some dynastic fighting with a Chamesar, or may be the same person as Gunero
+1242.1.1 = {
+	holder = 188364 # Muhammed-Tur
+}
+
+1256.1.1 = {
+	holder = 188365 # Gunero II
+}
+
+1259.1.1 = {
+	holder = 188366 # Doda III
+}
+
+1273.1.1 = {
+	holder = 188367 # Tai
+}
+
+1283.1.1 = {
+	holder = 188368 # Chanesar
+}
+
+1300.1.1 = {
+	holder = 188369 # Bhoongar III
+}
+
+1315.1.1 = {
+	holder = 188370 # Khafif III
+}
+
+1333.1.1 = {
+	holder = 188371 # Doda IV
+}

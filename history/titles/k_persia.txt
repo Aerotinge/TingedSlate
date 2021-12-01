@@ -46,8 +46,22 @@
 }
 
 1157.5.8 = {
-	holder = 0 # End of the Seljuk Turks
+	holder = 144054
 }
+
+1159.1.1 = {
+	holder = 144055
+}
+
+1175.12.31 = {
+	holder = 144056
+}
+
+1194.3.1 = {
+	holder = 93233
+}
+
+# Khwarezmid
 
 1194.3.1 = {
 	holder = 230000
@@ -60,4 +74,3 @@
 1221.1.1 = {
 	holder = 0
 }
-

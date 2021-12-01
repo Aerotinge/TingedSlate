@@ -1,0 +1,163 @@
+944.1.1 = {
+	liege = k_rajputana # Independence from Pratiharas
+	holder = 188115 # Singhraja
+}
+
+973.1.1 = {
+	holder = 188117 # Vigrharaja II
+}
+
+999.1.1 = {
+	holder = 188118 # Durlabharaja II
+}
+
+1012.1.1 = {
+	holder = 188119 # Govinda III
+}
+
+1020.1.1 = {
+	holder = 188120 # Vakapati II
+}
+
+1030.1.1 = {
+	holder = 188121 # Viryarama
+}
+
+1040.1.1 = {
+	holder = 188122 # Chamundaraja
+}
+
+1050.1.1 = {
+	holder = 188124 # Simghata
+}
+
+1055.1.1 = {
+	holder = 188123 # Durlabharaja III
+}
+
+1070.1.1 = {
+	holder = 188125 # Virasimha
+}
+
+1090.1.1 = {
+	holder = 188126 # Vigrharaja III
+}
+
+1105.1.1 = {
+	holder = 188127 # Prithviraja I
+}
+
+1110.1.1 = {
+	holder = 188129 # Ajairaja I
+}
+
+1125.1.1 = {
+	holder = 188131 # Arnoraja
+}
+
+1151.1.1 = {
+	holder = 188134 # Jagadeva
+}
+
+1151.6.1 = {
+	holder = 188136 # Vigrharaja IV
+}
+
+1163.1.1 = {
+	holder = 188139 # Amarangeya
+}
+
+1165.1.1 = {
+	holder = 188135 # Prithviraja II
+}
+
+1169.1.1 = {
+	holder = 188141 # Someshwara
+}
+
+1177.1.1 = {
+	holder = 188142 # Prithviraja III
+}
+
+# Chauhan under Ghurids
+
+1192.1.1 = {
+	set_tribute_suzerain = {
+		who = k_sistan
+		type = permanent
+	}
+	holder = 188145 # Govinda
+}
+
+1206.3.15 = {
+	clear_tribute_suzerain = k_sistan
+	set_tribute_suzerain = {
+		who = k_delhi
+		type = permanent
+	}
+}
+
+1215.1.1 = {
+	holder = 188220 # Valhana Chauhan
+}
+
+1220.1.1 = {
+	holder = 188221 # Prahladana
+}
+
+1221.1.1 = {
+	holder = 188222 # Viranarayana
+}
+
+1226.1.1 = {
+	holder = 170193 #Iltutmish
+	liege = k_delhi
+}
+
+1236.1.1 = {
+	liege = 0
+	holder = 188223 # Vagbhata Chauhan
+}
+
+1253.1.1 = {
+	holder = 188224 # Jaitrasimha
+}
+
+# Possible occupation by Sultan of Delhi from 1259 to 1283...sources disagree
+
+1285.1.1 = {
+	holder = 188227 # Hammira (expanded beyond Ranthambore)
+}
+
+1301.7.8 = {
+	liege = k_delhi
+	holder = 170246 #Ala-ud-din Muhammad
+}
+
+1316.1.3 = {
+	holder = 170247 #Umar
+}
+
+1316.4.1 = {
+	holder = 170248 #Mubarak
+}
+
+1318.1.1 = {
+	holder = 170250 #Mahmud
+}
+
+1318.6.1 = {
+	holder = 170248 #Mubarak
+}
+
+1320.6.1 = {
+	holder = 170251 #Husraw Kushru
+}
+
+1320.10.1 = {
+	holder = 170257 #Ghiyath al-Din Tughluq
+}
+
+1325.2.1 = {
+	holder = 170258 #Muhammad
+}

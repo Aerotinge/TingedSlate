@@ -1,0 +1,68 @@
+750.1.1 = {
+	holder = 191518 #Bhars
+	liege = k_kosala
+}
+
+828.1.1 = {
+	holder = 190110 #Ajaka
+}
+
+882.1.1 = {
+	holder = 190111 #Ghosha
+}
+
+902.1.1 = {
+	holder = 190113 #Manava
+}
+
+#910 return to rajastan
+936.1.1 = {
+	holder = 261128
+}
+
+1046.1.1 = {
+	holder = 190215 #Mahitala Gahadvala
+	liege = k_gondwana
+}
+
+1085.1.1 = {
+	holder = 190216 #Candradeva Gahadvala
+	liege = 0
+}
+
+1089.1.1 = {
+	liege = k_kosala
+}
+
+1104.1.1 = {
+	holder = 190217 #Madanacandra Gahadvala
+}
+
+1114.1.1 = {
+	holder = 190218 #Govindacandra Gahadvala
+}
+
+1168.1.1 = {
+	holder = 190219 #Vijayacandra Gahadvala
+}
+
+1170.1.1 = {
+	holder = 190220 #Jayacandra Gahadvala
+}
+
+1194.1.1 = {
+	liege = k_sistan
+	holder = 190221 #Hariscandra Gahadvala
+}
+
+1197.1.1 = {
+	holder = 190222 #Adakkamalla Gahadvala
+}
+
+1206.3.15 = {
+	liege = k_delhi
+}
+
+1226.1.1 = {
+	holder = 0
+}

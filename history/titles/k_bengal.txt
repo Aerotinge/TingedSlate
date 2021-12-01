@@ -1,0 +1,160 @@
+755.1.1 = {
+	holder = 190027 #Gopala Pala
+}
+
+769.1.1 = {
+	holder = 190028 #Dharamapala Pala
+}
+
+810.1.1 = {
+	holder = 190004 #Devapala Pala
+}
+
+850.1.1 = {
+	holder = 190005 #Mahendrapala Pala
+}
+
+854.1.1 = {
+	holder = 190008 #Vigrahapala Pala
+}
+
+855.1.1 = {
+	holder = 190009 #Narayanapala Pala
+}
+
+908.1.1 = {
+	holder = 190010 #Rajyapala Pala
+}
+
+940.1.1 = {
+	holder = 190011 #Gopala II Pala
+}
+
+960.1.1 = {
+	holder = 190012 #Vigrahapala II Pala
+}
+
+988.1.1 = {
+	holder = 190013 #Mahipala Pala
+}
+
+1038.1.1 = {
+	holder = 190016 #Nayapala Pala
+}
+
+1055.1.1 = {
+	holder = 190017 #Vigrahapala III Pala
+}
+
+1070.1.1 = {
+	holder = 190018 #Mahipala II Pala
+}
+
+1075.1.1 = {
+	holder = 190019 #Surapala Pala
+}
+
+1077.1.1 = {
+	holder = 190020 #Ramapala Pala
+}
+
+1120.1.1 = {
+	holder = 190021 #Kumarapala Pala
+}
+
+1125.1.1 = {
+	holder = 190022 #Gopala III Pala
+}
+
+1140.1.1 = {
+	holder = 154002 #Vijay Sena
+}
+
+1159.1.1 = {
+	holder = 154004 #Valla Sena
+}
+
+1179.1.1 = {
+	holder = 154005 #Laksmana Sena
+}
+
+1206.1.1 = {
+	holder = 154006 #Visvarupa Sena
+}
+
+1225.1.1 = {
+	holder = 154007 #Kesava Sena
+}
+
+1230.1.1 = {
+	holder = 170193 #Iltutmish
+}
+
+1236.5.1 = {
+	holder = 170194 #Firuz I
+}
+
+1236.11.20 = {
+	holder = 170195 #Raziyya
+}
+
+1239.10.1 = {
+	holder = 170198 #Bahram
+}
+
+1242.5.15 = {
+	holder = 170199 #Masud
+}
+
+1246.6.11 = {
+	holder = 170201 #Mahmud
+}
+
+1251.1.1 = {
+	holder = 170270 #Malik Ikhtiyaruddin Iuzbak
+	liege = 0
+}
+
+1257.1.1 = {
+	holder = 170201 #Mahmud
+}
+
+1259.1.1 = {
+	holder = 170272 #Tatar Khan
+	liege = 0
+}
+
+1266.2.19 = {
+	holder = 170204 #Ghiyasuddin Balban
+}
+
+1286.1.1 = {	#Death of Ghiyasuddin Balban
+	liege = 0
+	holder = 170213 #Muizz ud-din Qaiqabad
+}
+
+1291.1.1 = {
+	holder = 170215 #Rukunuddin Kaikaus
+}
+
+1300.1.1 = {
+	holder = 170275 #Shamsuddin Firoz Shah
+}
+
+1322.1.1 = {
+	holder = 170278 #Ghiyasuddin Bahadur
+}
+
+1325.1.1 = {
+	holder = 170251 #Husraw Kushru
+}
+
+1320.10.1 = {
+	holder = 170257 #Ghiyath al-Din Tughluq
+}
+
+1325.2.1 = {
+	holder = 170258 #Muhammad
+}
+
+#Lasting independence from 1338

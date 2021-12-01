@@ -32,7 +32,7 @@ e_persia = {
 		color = { 163 121 57 }
 		color2 = { 220 220 0 }
 
-		capital = 1400 # Kabul
+		capital = 1403 # Ghazna
 
 		culture = afghan
 
