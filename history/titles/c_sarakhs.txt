@@ -3,7 +3,7 @@
 }
 
 768.1.1 = {
-	holder = 188602 # Homayd ibn Qahtaba
+	holder = 248316
 }
 
 864.1.1 = {
@@ -14,8 +14,8 @@
 	holder = 163099
 }
 
-914.1.1 = {
-	holder = 261017
+936.1.1 = {
+	holder = 261041
 	liege = k_transoxiana
 }
 

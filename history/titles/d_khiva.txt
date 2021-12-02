@@ -33,12 +33,25 @@
 	holder = 144100
 }
 
+1141.9.9 = {
+	liege = 0
+	set_tribute_suzerain = {
+		who = k_liao
+		type = default
+	}
+}
+
 1156.1.1 = {
+	clear_tribute_suzerain = k_liao
 	holder = 144101
 }
 
 1172.3.1 = {
 	holder = 230000
+}
+
+1194.3.1 = {
+	liege = k_khorasan
 }
 
 1200.1.1 = {

@@ -64,28 +64,57 @@
 	holder = 93126
 }
 
+# Emir of Nishapur
+
 1152.1.1 = {
-	holder = 93127
+	liege = d_khorasan
+	holder = 20712 #Mu'ayyid al-Din Ai-Aba
 }
 
-1161.1.1 = {
+# Khwarezm
+
+1162.1.1 = {
+	liege = d_khiva
 	holder = 144101
 }
 
-1172.3.1 = {
-	holder = 230000
+# Under Kara-Khitan
+
+1165.1.1 = {
+	liege = d_merv
+	holder = 93110
 }
 
-1200.1.1 = {
-	holder = 93052
+1170.1.1 = {
+	holder = 93111
 }
 
-1203.1.1 = {
-	holder = 144142
+1178.1.1 = {
+	holder = 93112
 }
+
+1185.1.1 = {
+	holder = 93113
+}
+
+1190.1.1 = {
+	holder = 93114
+}
+
+1191.1.1 = {
+	holder = 93115
+}
+
+# Ghurid
+
+1198.1.1 = {
+	liege = d_kabulistan
+	holder = 144142 # Mu'izz Ghurid
+}
+
+# Khwarezm
 
 1206.3.15 = {
-	liege = d_kabulistan
 	holder = 170302
 }
 

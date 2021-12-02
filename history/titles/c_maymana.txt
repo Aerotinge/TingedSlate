@@ -1,9 +1,6 @@
-650.1.1 = {
-	liege = d_khorasan
-}
-
-768.1.1 = {
-	holder = 188602 # Homayd ibn Qahtaba
+740.1.1 = {
+	liege = 0
+	holder = 188570 # Bamiyan
 }
 
 864.1.1 = {
@@ -14,9 +11,9 @@
 	holder = 163099
 }
 
-914.1.1 = {
-	holder = 261017
-	liege = k_transoxiana
+936.1.1 = {
+	holder = 261036
+	liege = d_balkh
 }
 
 1066.1.1 = {
@@ -58,21 +55,50 @@
 	holder = 20712 #Mu'ayyid al-Din Ai-Aba
 }
 
-# Sultan Shah of Khawarezmid
+# Khwarezm
 
-1181.1.1 = {
-	liege = 0
-	holder = 93050
+1162.1.1 = {
+	liege = d_khiva
+	holder = 144101
 }
 
-# Khawarezm
+# Under Kara-Khitan
 
-1193.1.1 = {
-	liege = d_khorasan
-	holder = 230000
+1165.1.1 = {
+	liege = d_merv
+	holder = 93110
 }
 
-1200.1.1 = {
+1170.1.1 = {
+	holder = 93111
+}
+
+1178.1.1 = {
+	holder = 93112
+}
+
+1185.1.1 = {
+	holder = 93113
+}
+
+1190.1.1 = {
+	holder = 93114
+}
+
+1191.1.1 = {
+	holder = 93115
+}
+
+# Ghurid
+
+1198.1.1 = {
+	liege = d_kabulistan
+	holder = 144142 # Mu'izz Ghurid
+}
+
+# Khwarezm
+
+1206.3.15 = {
 	holder = 93052
 }
 

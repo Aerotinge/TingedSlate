@@ -45,7 +45,10 @@
 	holder = 93127
 }
 
-1161.1.1 = {
+# Khawarezm
+
+1165.1.1 = {
+	liege = d_khiva
 	holder = 144101
 }
 

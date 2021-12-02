@@ -60,6 +60,7 @@
 }
 
 1066.1.1 = {
+	liege = d_merv
 	holder = 93107
 }
 
@@ -100,11 +101,11 @@
 }
 
 1207.1.1 = {
-	liege = d_khiva
 	holder = 93051
 }
 
 1212.1.1 = {
+	liege = d_khiva
 	holder = 93053
 }
 

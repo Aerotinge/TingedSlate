@@ -1261,7 +1261,6 @@
 20673 = {
 	name = "Abdul-Jabbar"
 	# AKA: Abdul
-	dynasty = 101040
 	martial = 4
 	diplomacy = 6
 	intrigue = 5
@@ -1490,8 +1489,8 @@
 }
 
 20712 = {
-	name = "Adnan"
-	dynasty = 101040
+	name = "Mu'ayyid al-Din Ai-Aba"
+	dynasty = 1053008 # Mavi
 	martial = 5
 	diplomacy = 6
 	intrigue = 7
@@ -1500,10 +1499,10 @@
 	culture = turkish
 	add_trait = clubfooted
 	add_trait = dutiful_cleric
-	1177.1.1 = {
+	1125.1.1 = {
 		birth = yes
 	}
-	1228.1.1 = {
+	1181.1.1 = {
 		death = yes
 	}
 }
@@ -2212,18 +2211,19 @@
 
 229003 = {
 	name = "Saltuk"
-	dynasty = 1053008
+	dynasty = 1053008 # Mavi
 	martial = 7
 	diplomacy = 7
 	intrigue = 6
 	stewardship = 7
 	religion = sunni
 	culture = turkish
+	father = 20712
 	add_trait = skilled_tactician
 	1150.1.1 = {
 		birth = yes
 	}
-	1200.1.1 = {
+	1188.1.1 = {
 		death = yes
 	}
 }
@@ -9169,7 +9169,7 @@
 	dynasty = 1044381	#Toghril
 	religion = sunni
 	culture = turkish
-	1150.1.1 = {
+	1130.1.1 = {
 		birth = yes
 	}
 	1206.1.1 = {
@@ -9183,10 +9183,10 @@
 	religion = sunni
 	culture = turkish
 	father = 191873
-	1170.1.1 = {
+	1150.1.1 = {
 		birth = yes
 	}
-	1210.1.1 = {
+	1190.1.1 = {
 		death = yes
 	}
 }

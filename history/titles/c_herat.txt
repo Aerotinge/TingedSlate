@@ -93,12 +93,13 @@
 }
 
 1149.1.1 = {
-	liege = k_khorasan
-	holder = 93150
+	liege = d_khorasan
+	holder = 191873
 }
 
 1176.1.1 = {
 	liege = k_sistan
+	holder = 93150
 }
 
 1180.1.1 = {

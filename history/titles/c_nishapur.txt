@@ -3,20 +3,15 @@
 }
 
 768.1.1 = {
-	holder = 188602 # Homayd ibn Qahtaba
+	holder = 188690 # fictitious assignment
 }
 
-864.1.1 = {
-	liege = d_khiva
+862.1.1 = {
+	holder = 163100
 }
 
-864.1.1 = {
-	holder = 163099
-}
-
-914.1.1 = {
-	holder = 261017
-	liege = k_transoxiana
+936.1.1 = {
+	holder = 261044
 }
 
 1066.1.1 = {
@@ -28,7 +23,7 @@
 }
 
 1074.1.1 = {
-	liege = d_dihistan
+	liege = d_khorasan
 }
 
 1074.1.1 = {
@@ -51,24 +46,25 @@
 	holder = 93126
 }
 
+1152.1.1 = {
+	liege = d_dihistan
+	holder = 93127
+}
+
 # Emir of Nishapur
 
-1152.1.1 = {
+1161.1.1 = {
 	liege = d_khorasan
-	holder = 20712 #Mu'ayyid al-Din Ai-Aba
+	holder = 20712
 }
-
-# Sultan Shah of Khawarezmid
 
 1181.1.1 = {
-	liege = 0
-	holder = 93050
+	holder = 229003
 }
 
-# Khawarezm
+# Khwarezm
 
-1193.1.1 = {
-	liege = d_khorasan
+1188.1.1 = {
 	holder = 230000
 }
 
@@ -77,7 +73,7 @@
 }
 
 1220.1.1 = {
-	holder = 194303
+	holder = 194308
 }
 
 1221.1.1 = {
@@ -88,6 +84,10 @@
 	holder = 93057
 }
 
+1228.1.1 = {
+	liege = d_dihistan
+}
+
 1250.1.1 = {
 	holder = 93058
 }
@@ -96,7 +96,11 @@
 	holder = 93059
 }
 
-1310.1.1 = {
-	holder = 93060
+1300.1.1 = {
+	holder = 45102
+}
+
+1335.1.1 = {
+	holder = 45100
 }
 
