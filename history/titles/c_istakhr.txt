@@ -2,26 +2,37 @@
 	liege = d_fars
 }
 
-765.1.1 = {
-	holder = 188677
+769.1.1 = {
+	holder = 188607
 }
 
-861.1.1 = {
-	liege = d_zabulistan
-	holder = 6897
+862.1.1 = {
+	liege = d_khorasan
+	holder = 163161
 }
 
 936.1.1 = {
-	holder = 261012
+	holder = 261014
 	liege = d_fars
 }
 
 1066.1.1 = {
+	liege = k_persia
+	holder = 93160
+}
+
+1068.1.1 = {
+	liege = d_fars
 	holder = 3854
 }
 
 1069.1.1 = {
 	holder = 93229
+}
+
+1072.1.1 = { # Acutally governor Qutlugh-Tegin Rukn al Daula
+	liege = k_persia
+	holder = 93160
 }
 
 1080.1.1 = {

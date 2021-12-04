@@ -15,18 +15,11 @@
 }
 
 1066.1.1 = {
-	liege = d_zabulistan
-}
-
-1066.1.1 = {
-	holder = 144134
-}
-
-1074.1.1 = {
 	liege = d_khorasan
+	holder = 93122
 }
 
-1074.1.1 = {
+1073.1.1 = {
 	holder = 93123
 }
 

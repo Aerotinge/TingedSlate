@@ -51,7 +51,6 @@ laws = {
 
 	centralization_0 = {
 		group = centralization
-		default = yes
 
 		demesne_size = 0
 		vassal_limit = 10
@@ -174,6 +173,7 @@ laws = {
 
 	centralization_2 = {
 		group = centralization
+		default = yes
 
 		vassal_limit = 0
 		demesne_size = 2

@@ -50,7 +50,6 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -116,7 +115,6 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -172,13 +170,12 @@ feudal_governments = {
 		free_retract_vassalage = yes
 		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
 		have_gender_laws = no
-		uses_decadence = yes
+		#uses_decadence = yes
 		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -246,13 +243,12 @@ feudal_governments = {
 		free_retract_vassalage = yes
 		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
 		have_gender_laws = no
-		uses_decadence = yes
+		#uses_decadence = yes
 		uses_piety_for_law_change = yes
 
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -342,7 +338,6 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -444,7 +439,6 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -504,7 +498,6 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -579,7 +572,6 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -642,7 +634,6 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 
@@ -720,7 +711,6 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		vassal_limit = -2
 		court_size_modifier = 10
 	}
 

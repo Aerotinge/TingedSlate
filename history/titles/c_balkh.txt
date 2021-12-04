@@ -33,42 +33,22 @@
 }
 
 1066.1.1 = {
-	liege = d_zabulistan
+	liege = d_balkh
+	holder = 93130
 }
 
-1066.1.1 = {
-	holder = 144134
+1080.1.1 = {
+	holder = 93121
 }
 
-1074.1.1 = {
-	liege = d_dihistan
+1097.1.1 = {
+	holder = 144015
 }
 
-1074.1.1 = {
-	holder = 93123
-}
+# Ghuzz
 
-1078.1.1 = {
-	holder = 93125
-}
-
-1098.1.1 = {
-	holder = 93128
-}
-
-1100.1.1 = {
-	holder = 93129
-}
-
-1110.1.1 = {
-	holder = 93126
-}
-
-# Emir of Nishapur
-
-1152.1.1 = {
-	liege = d_khorasan
-	holder = 20712 #Mu'ayyid al-Din Ai-Aba
+1157.5.8 = {
+	holder = 93256
 }
 
 # Khwarezm

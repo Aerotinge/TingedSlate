@@ -25,87 +25,155 @@
 }
 
 # 985-1008: Soomra rule
-# 1008-ca 1040: Ghaznavid rule
 
-## To be filled
+# Ghaznivid
 
-1011.1.1 = {
-	holder = 188349 # Khafif I
+1008.1.1 = {
+	liege = d_zabulistan
+	holder = 144125
 }
 
-1026.1.1 = {
-	holder = 188350 # Soomra
+1030.1.1 = {
+	holder = 144126
+}
+
+1031.1.1 = {
+	holder = 144127
+}
+
+1041.1.1 = {
+	holder = 144128
+}
+
+1050.1.1 = {
+	holder = 144129
+}
+
+1050.6.1 = {
+	holder = 144130
+}
+
+1050.9.1 = {
+	holder = 144131
 }
 
 1053.1.1 = {
-	holder = 188351 # Bhoongar I
+	holder = 144132
 }
 
-1068.1.1 = {
-	holder = 188352 # Doda I
+1059.1.1 = {
+	holder = 144133
 }
 
-1092.1.1 = {
-	holder = 188353 # Zainab Tari
+1099.1.1 = {
+	holder = 144134
 }
 
-1102.1.1 = {
-	holder = 188354 # Sanghar
+1115.1.1 = {
+	holder = 144135
 }
 
-1107.1.1 = {
-	holder = 188357 # Khafif II
+1115.6.1 = {
+	holder = 144136
 }
 
-1140.1.1 = {
-	holder = 188358 # Umar I
+1118.1.1 = {
+	holder = 144137
 }
 
-1180.1.1 = {
-	holder = 188359 # Doda II
+1152.1.1 = {
+	holder = 144138
 }
 
-1182.1.1 = {
-	liege = d_bhakkar
+1160.1.1 = {
+	holder = 144139
 }
 
-1194.1.1 = {
-	holder = 188362 # Bhoongar
+1173.1.1 = {
+	holder = 144142
 }
 
-1222.1.1 = {
-	holder = 188363 # Gunero I
+1186.1.1 = {
+	holder = 170190 #Mu'izz al-Din conquered Lahore and made Qutb-ud-din Aibak governor
 }
 
-# Possibly some dynastic fighting with a Chamesar, or may be the same person as Gunero
-1242.1.1 = {
-	holder = 188364 # Muhammed-Tur
+1203.1.1 = {
+	holder = 170300
 }
 
-1256.1.1 = {
-	holder = 188365 # Gunero II
+1218.1.1 = {
+	holder = 194188
 }
 
-1259.1.1 = {
-	holder = 188366 # Doda III
+1228.5.30 = {
+	holder = 170193 #Iltutmish
+	liege = e_rajastan
 }
 
-1273.1.1 = {
-	holder = 188367 # Tai
+1236.5.1 = {
+	holder = 170194 #Firuz I
 }
 
-1283.1.1 = {
-	holder = 188368 # Chanesar
+1236.11.20 = {
+	holder = 170195 #Raziyya
 }
 
-1300.1.1 = {
-	holder = 188369 # Bhoongar III
+1239.10.1 = {
+	holder = 170198 #Bahram
 }
 
-1315.1.1 = {
-	holder = 188370 # Khafif III
+1242.5.15 = {
+	holder = 170199 #Masud
 }
 
-1333.1.1 = {
-	holder = 188371 # Doda IV
+1246.6.11 = {
+	holder = 170201 #Mahmud
+}
+
+1266.2.19 = {
+	holder = 170204 #Ghiyasuddin Balban
+}
+
+1286.1.1 = {
+	holder = 170213 #Muizz ud-din Qaiqabad
+}
+
+1290.10.1 = {
+	holder = 170243 #Jalal ud din Firuz Khilji
+}
+
+1296.7.21 = {
+	holder = 170245 #Ibrahim
+}
+
+1296.11.1 = {
+	holder = 170246 #Ala-ud-din Muhammad
+}
+
+1316.1.3 = {
+	holder = 170247 #Umar
+}
+
+1316.4.1 = {
+	holder = 170248 #Mubarak
+}
+
+1318.1.1 = {
+	holder = 170250 #Mahmud
+}
+
+1318.6.1 = {
+	holder = 170248 #Mubarak
+}
+
+1320.6.1 = {
+	holder = 170251 #Husraw Kushru
+}
+
+1320.10.1 = {
+	holder = 170257 #Ghiyath al-Din Tughluq
+}
+
+1325.2.1 = {
+	holder = 170258 #Muhammad
 }

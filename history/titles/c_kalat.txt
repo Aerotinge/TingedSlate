@@ -15,51 +15,89 @@
 	holder = 261110
 }
 
-## To be filled
-
-1011.1.1 = {
-	holder = 188349 # Khafif I
+961.1.1 = {
+	holder = 170303 #Took Ghazna from 	lawiks
+	liege = d_kabulistan
 }
 
-1026.1.1 = {
-	holder = 188350 # Soomra
+975.1.1 = {
+	holder = 170304
+}
+
+977.1.1 = {
+	holder = 144123
+}
+
+997.1.1 = {
+	holder = 144124
+}
+
+998.1.1 = {
+	holder = 144125
+}
+
+1030.1.1 = {
+	holder = 144126
+}
+
+1031.1.1 = {
+	holder = 144127
+}
+
+1041.1.1 = {
+	holder = 144128
+}
+
+1050.1.1 = {
+	holder = 144129
+}
+
+1050.6.1 = {
+	holder = 144130
+}
+
+1050.9.1 = {
+	holder = 144131
 }
 
 1053.1.1 = {
-	holder = 188351 # Bhoongar I
-	liege = k_sindh
+	holder = 144132
 }
 
-1068.1.1 = {
-	holder = 188352 # Doda I
+1059.1.1 = {
+	holder = 144133
 }
 
-1092.1.1 = {
-	holder = 188353 # Zainab Tari
+1099.1.1 = {
+	holder = 144134
 }
 
-1102.1.1 = {
-	holder = 188354 # Sanghar
+1115.1.1 = {
+	holder = 144135
 }
 
-1107.1.1 = {
-	holder = 188357 # Khafif II
+1115.6.1 = {
+	holder = 144136
 }
 
-1140.1.1 = {
-	holder = 188358 # Umar I
+1118.1.1 = {
+	holder = 144137
 }
 
-1180.1.1 = {
-	holder = 188359 # Doda II
+1152.1.1 = {
+	holder = 144138
 }
 
-1182.1.1 = {
-	liege = d_bhakkar
+1160.1.1 = {
+	holder = 144139
 }
 
-1194.1.1 = {
-	holder = 188362 # Bhoongar
+1173.1.1 = {
+	holder = 144142
+}
+
+1206.3.15 = {
+	holder = 170302
 }
 
 #Khwazerim

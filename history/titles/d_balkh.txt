@@ -1,0 +1,32 @@
+936.1.1 = {
+	holder = 261036
+	liege = k_transoxiana
+}
+
+982.1.1 = {
+	holder = 0
+}
+
+1066.1.1 = {
+	liege = k_khorasan
+	holder = 93130
+}
+
+1080.1.1 = {
+	holder = 93121
+}
+
+1097.1.1 = {
+	holder = 144015
+}
+
+# Ghuzz
+
+1157.5.8 = {
+	liege = 0
+	holder = 93256
+}
+
+1162.1.1 = {
+	holder = 0
+}

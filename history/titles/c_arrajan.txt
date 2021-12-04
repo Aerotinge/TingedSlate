@@ -2,17 +2,17 @@
 	liege = d_fars
 }
 
-765.1.1 = {
-	holder = 188677
+769.1.1 = {
+	holder = 188607
 }
 
-861.1.1 = {
-	liege = d_zabulistan
-	holder = 6897
+862.1.1 = {
+	liege = d_khorasan
+	holder = 163161
 }
 
 936.1.1 = {
-	holder = 261012
+	holder = 261339
 	liege = d_fars
 }
 

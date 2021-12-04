@@ -85,7 +85,7 @@ tribal_governments = {
 		can_usurp_kingdoms_and_empires = no
 		dukes_called_kings = yes
 		ignores_de_jure_laws = yes
-		uses_decadence = yes
+		#uses_decadence = yes
 
 		capital_move_delay = 600
 		max_consorts = 3
@@ -172,7 +172,7 @@ tribal_governments = {
 		have_gender_laws = no
 		ignores_de_jure_laws = yes
 		marriage_ignore_religion = yes
-		uses_decadence = yes
+		#uses_decadence = yes
 		uses_prestige_for_law_change = yes
 
 		capital_move_delay = 120
@@ -183,6 +183,7 @@ tribal_governments = {
 			global_levy_size = -3 # -300%
 			global_garrison_size = -3 # -300%
 		}
+		demesne_size = 2
 		vassal_limit = -10
 	}
 }

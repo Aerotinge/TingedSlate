@@ -15,65 +15,45 @@
 	holder = 261101
 }
 
-# Ghaznavid
-
-977.1.1 = {
-	holder = 144123
+1010.1.1 = {
+	liege = k_kabulistan
+	holder = 188544 # Ma'dan Ma'danid
 }
 
-997.1.1 = {
-	holder = 144124
+1025.1.1 = {
+	holder = 188545 # Isa
 }
 
-998.1.1 = {
-	holder = 144125
-}
-
-1030.1.1 = {
-	holder = 144126
+1029.1.1 = {
+	liege = 0 # Isa's rebellion
 }
 
 1031.1.1 = {
-	holder = 144127
+	liege = k_kabulistan
+	holder = 188546 # Abu'l-'Askar Husayn
 }
 
-1041.1.1 = {
-	holder = 144128
+1068.1.1 = {
+	holder = 188547 # ? Ma'danid
 }
 
-1050.1.1 = {
-	holder = 144129
+1090.1.1 = {
+	holder = 188548 # ? Ma'danid
 }
 
-1050.6.1 = {
-	holder = 144130
-}
-
-1050.9.1 = {
-	holder = 144131
-}
-
-1053.1.1 = {
-	holder = 144132
-}
-
-1059.1.1 = {
-	holder = 144133
-}
-
-1099.1.1 = {
-	holder = 144134
-}
-
-1115.1.1 = {
-	holder = 144135
-}
-
-1115.6.1 = {
-	holder = 144136
+1105.1.1 = {
+	holder = 188549 # ? Ma'danid
 }
 
 1118.1.1 = {
+	liege = d_zabulistan
+}
+
+1130.1.1 = {
+	holder = 188550 # ? Ma'danid
+}
+
+1150.1.1 = {
 	holder = 144137
 }
 

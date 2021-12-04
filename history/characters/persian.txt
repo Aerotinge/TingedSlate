@@ -378,7 +378,7 @@
 }
 
 220995 = {
-	name = "Rostam"
+	name = "Shervin" # Shervin III
 	dynasty = 7331
 	father = 160295
 	martial = 7
@@ -7075,27 +7075,40 @@
 	}
 	730.1.1 = {
 		culture = han
-		name = Juluo
+		name = "Khulô" # Tang sound. "Julou" is in Mandarin, aka Beijing dialect.
 	}
 	740.1.1 = {
 		death = yes
 	}
 }
 
-248554 = {
+248553 = {
 	name = "Rustam Dushmanziyar"
 	dynasty = 7331
 	religion = shiite
 	culture = persian
 	father = 220995
+	957.1.1 = {
+		birth = yes
+	}
+	1003.1.1 = {
+		death = yes
+	}
+}
+
+248554 = {
+	name = "Muhammad"
+	dynasty = 7331
+	religion = shiite
+	culture = persian
+	father = 248553
 	add_trait = ambitious
 	add_trait = skilled_tactician
-	add_trait = sympathy_zoroastrianism
-	970.1.1 = {
-		birth = yes # maybe
+	987.1.1 = {
+		birth = yes
 	}
-	1028.1.1 = {
-		dynasty = 1059994 # establishes himself in Jibal
+	1008.1.1 = {
+		dynasty = 1059994
 	}
 	1041.1.1 = {
 		death = yes
@@ -7110,18 +7123,11 @@
 	father = 248554
 	add_trait = charismatic_negotiator
 	add_trait = siege_leader
-	1020.1.1 = {
-		birth = yes # maybe
+	1013.1.1 = {
+		birth = yes
 	}
-	1066.1.1 = { # claims to lost territories
-		add_claim = d_jibal
-		add_claim = c_hamadan
-		add_claim = c_rayy
-		add_claim = c_qom
-		add_claim = c_esfahan
-	}
-	1072.11.1 = {
-		death = yes # unknown
+	1067.11.1 = {
+		death = yes
 	}
 }
 
@@ -7140,14 +7146,14 @@
 }
 
 248557 = {
-	name = "Ali Faramurz"
+	name = "Ali"
 	dynasty = 1059994
 	religion = shiite
 	culture = persian
 	father = 248555
 	add_trait = gregarious
 	add_trait = charitable
-	1042.1.1 = {
+	1047.1.1 = {
 		birth = yes # maybe
 	}
 	1095.1.1 = {
@@ -7177,10 +7183,10 @@
 	religion = shiite
 	culture = persian
 	father = 248557
-	1120.1.1 = {
+	1076.1.1 = {
 		birth = yes # maybe
 	}
-	1152.1.1 = {
+	1142.1.1 = {
 		death = yes
 	}
 }
@@ -7233,9 +7239,6 @@
 	1123.1.1 = {
 		birth = yes # maybe
 	}
-	1142.1.1 = {
-		add_spouse = 248559 # to give marriage link to Kakuyids
-	}
 	1207.1.1 = {
 		death = yes #
 	}
@@ -7247,7 +7250,6 @@
 	religion = shiite
 	culture = persian
 	father = 248562
-	mother = 248559
 	1146.1.1 = {
 		birth = yes # maybe
 	}
@@ -7262,7 +7264,6 @@
 	religion = shiite
 	culture = persian
 	father = 248562
-	mother = 248559
 	1148.1.1 = {
 		birth = yes # maybe
 	}
