@@ -54,28 +54,6 @@ province_event = {
 		}
 		else_if = {
 			limit = {
-				has_province_modifier = nomad_population
-			}
-
-			if = {
-				limit = {
-					top_liege = {
-						any_war = {
-							defender = { character = PREV }
-							using_cb = nomadic_revolt
-							attacker = { culture = ROOT }
-						}
-					}
-				}
-
-				province_event = { id = EMP.11040 } # Reinforce ongoing nomadic revolt
-			}
-			else = {
-				province_event = { id = EMP.11030 } # Start new nomadic revolt
-			}
-		}
-		else_if = {
-			limit = {
 				OR = {
 					has_castle = yes
 					has_tribal = yes
@@ -90,6 +68,7 @@ province_event = {
 			if = {
 				limit = {
 					is_heresy_of = top_liege
+					has_dlc = "The Old Gods"
 
 					NOT = { # Not if there is already an ongoing revolt
 						top_liege = {
@@ -133,6 +112,7 @@ province_event = {
 			else_if = {
 				limit = {
 					NOT = { culture = top_liege }
+					has_dlc = "The Old Gods"
 
 					kingdom = {
 						has_holder = no
@@ -193,6 +173,7 @@ province_event = {
 			else_if = {
 				limit = {
 					NOT = { religion_group = top_liege }
+					has_dlc = "The Old Gods"
 
 					NOT = { # Not if there is already an ongoing revolt
 						top_liege = {
@@ -245,9 +226,6 @@ province_event = {
 				}
 			}
 		}
-		else = {
-			province_event = { id = 600 }
-		}
 	}
 }
 
@@ -258,7 +236,7 @@ province_event = {
 	picture = GFX_evt_peasants
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt via TOG.999; MNM.20017, mnm_devil_worshipers_events.txt
 
 	immediate = {
 		add_province_modifier = {
@@ -385,7 +363,7 @@ character_event = {
 character_event = {
 	id = TOG.1005
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_siege_over_winner
 	hide_window = yes
 
 	trigger = {
@@ -422,7 +400,7 @@ province_event = {
 	picture = GFX_evt_peasants
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt via TOG.999
 
 	immediate = {
 		add_province_modifier = {
@@ -483,9 +461,7 @@ province_event = {
 			}
 
 			any_liege = { # Inform the lieges
-				character_event = {
-					id = TOG.1011
-				}
+				character_event = { id = TOG.1011 }
 			}
 		}
 	}
@@ -517,7 +493,7 @@ province_event = {
 	picture = GFX_evt_heretic
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt via TOG.999
 
 	immediate = {
 		add_province_modifier = {
@@ -652,7 +628,7 @@ character_event = {
 character_event = {
 	id = TOG.1025
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_siege_over_winner
 	hide_window = yes
 
 	trigger = {
@@ -700,7 +676,7 @@ province_event = {
 	picture = GFX_evt_heretic
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt via TOG.999
 
 	immediate = {
 		add_province_modifier = {
@@ -793,7 +769,7 @@ province_event = {
 	picture = GFX_evt_siege
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt via TOG.999
 
 	immediate = {
 		add_province_modifier = {
@@ -948,7 +924,7 @@ character_event = {
 character_event = {
 	id = TOG.1045
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_siege_over_winner
 	hide_window = yes
 
 	trigger = {
@@ -1003,7 +979,7 @@ province_event = {
 	picture = GFX_evt_siege
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt via TOG.999
 
 	immediate = {
 		add_province_modifier = {
@@ -1096,7 +1072,7 @@ province_event = {
 	picture = GFX_evt_heretic
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt via TOG.999
 
 	immediate = {
 		add_province_modifier = {
@@ -1243,7 +1219,7 @@ character_event = {
 character_event = {
 	id = TOG.1065
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_siege_over_winner
 	hide_window = yes
 
 	trigger = {
@@ -1292,7 +1268,7 @@ province_event = {
 	picture = GFX_evt_heretic
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt via TOG.999
 
 	immediate = {
 		add_province_modifier = {
@@ -1386,7 +1362,7 @@ character_event = {
 	picture = GFX_evt_beheading
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_siege_over_loc_chars, random_events
 
 	trigger = {
 		new_character = {
@@ -1405,7 +1381,7 @@ character_event = {
 	}
 
 	weight_multiplier = {
-		days = 1
+		factor = 1
 
 		mult_modifier = {
 			factor = 0.5

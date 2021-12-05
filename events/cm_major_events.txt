@@ -27,11 +27,12 @@ narrative_event = {
 
 	trigger = {
 		owns = event_target:pulse_province
-		NOT = { has_global_flag = viking_age_started }
 		year >= 800
-		year < 867
+		year <  867
 
-		NOT = {
+		NOR = {
+			has_global_flag = viking_age_started
+
 			has_alternate_start_parameter = {
 				key = religion_names
 				value = random
@@ -140,48 +141,41 @@ narrative_event = {
 	}
 
 	option = {
-		name = EVTOPTA_CM_503
+		name = {
+			text = EVTOPTA_CM_503
+			trigger = {
+				NOT = { culture = norse }
 
-		trigger = {
-			NOT = { culture = norse }
-
-			capital_scope = {
-				NOR = {
-					region = world_india
-					region = world_africa_west
-					region = world_africa_central
-					region = world_africa_east
+				capital_scope = {
+					NOR = {
+						region = world_india
+						region = world_africa_west
+						region = world_africa_central
+						region = world_africa_east
+					}
 				}
 			}
 		}
-	}
-
-	option = {
-		name = EVTOPTB_CM_503
-
-		trigger = {
-			culture = norse
+		name = {
+			text = EVTOPTB_CM_503
+			trigger = { culture = norse }
 		}
-	}
+		name = {
+			text = EVTOPTC_CM_503
+			trigger = {
+				NOT = { culture = norse }
 
-	option = {
-		name = EVTOPTC_CM_503
-
-		trigger = {
-			capital_scope = {
-				OR = {
-					region = world_india
-					region = world_africa_west
-					region = world_africa_central
-					region = world_africa_east
+				capital_scope = {
+					OR = {
+						region = world_india
+						region = world_africa_west
+						region = world_africa_central
+						region = world_africa_east
+					}
 				}
 			}
-
-			NOT = { culture = norse }
 		}
-	}
 
-	after = {
 		custom_tooltip = { text = viking_age_shipyards_and_tech_tooltip }
 		custom_tooltip = { text = viking_age_cb_tooltip }
 	}
@@ -194,7 +188,7 @@ narrative_event = {
 	desc = EVTDESC_CM_510
 	picture = GFX_evt_found_hre
 
-	is_triggered_only = yes # realm_decisions.txt
+	is_triggered_only = yes # form_the_hre_early, realm_decisions.txt
 	major = yes
 
 	major_trigger = {
@@ -215,55 +209,50 @@ narrative_event = {
 	}
 
 	option = {
-		name = EVTOPTA_CM_510
+		name = {
+			text = EVTOPTA_CM_510
+			trigger = {
+				OR = {
+					has_landed_title = e_hre
 
-		trigger = {
-			OR = {
-				has_landed_title = e_hre
-
-				AND = {
-					dynasty = ROOT
-					NOT = { is_rival = ROOT }
+					trigger_if = {
+						limit = { dynasty = ROOT }
+						NOT = { is_rival = ROOT }
+					}
 				}
 			}
 		}
-	}
-
-	option = {
-		name = EVTOPTB_CM_510
-
-		trigger = {
-			religion = ROOT
-
-			trigger_if = {
-				limit = { dynasty = ROOT }
-				is_rival = ROOT
-			}
-
-			NOR = {
-				has_landed_title = e_hre
-				has_landed_title = e_byzantium
-			}
-		}
-	}
-
-	option = {
-		name = EVTOPTC_CM_510
-
-		trigger = {
-			NOR = {
+		name = {
+			text = EVTOPTB_CM_510
+			trigger = {
 				religion = ROOT
-				has_landed_title = e_byzantium
+
+				trigger_if = {
+					limit = { dynasty = ROOT }
+					is_rival = ROOT
+				}
+
+				NOR = {
+					has_landed_title = e_hre
+					has_landed_title = e_byzantium
+				}
 			}
 		}
-	}
-
-	option = {
-		name = EVTOPTD_CM_510
-
-		trigger = {
-			has_landed_title = e_byzantium
-			NOT = { has_landed_title = e_hre }
+		name = {
+			text = EVTOPTC_CM_510
+			trigger = {
+				NOR = {
+					religion = ROOT
+					has_landed_title = e_byzantium
+				}
+			}
+		}
+		name = {
+			text = EVTOPTD_CM_510
+			trigger = {
+				has_landed_title = e_byzantium
+				NOT = { has_landed_title = e_hre }
+			}
 		}
 	}
 }

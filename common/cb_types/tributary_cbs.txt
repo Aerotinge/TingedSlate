@@ -143,32 +143,24 @@ tributary_cb = {
 	}
 
 	on_success = {
-		attacker = {
+		defender = {
 			show_scope_change = no
 
-			prestige = 200
-
-			hidden_effect = {
-				defender = {
-					if = {
-						limit = { is_tributary = yes }
-
-						# Used for custom tooltip further down
-						set_character_flag = had_suzerain
-
-						any_suzerain = {
-							event_target:target_loser = {
-								remove_tributary = PREV
-							}
-						}
-					}
-				}
+			if = {
+				limit = { is_tributary = yes }
+				remove_tributary = suzerain
 			}
+		}
+
+		attacker = {
+			show_scope_change = no
 
 			make_tributary = {
 				who = defender
 				percentage = 0.4
 			}
+
+			prestige = 200
 
 			if = {
 				limit = { uses_decadence = yes }
@@ -213,24 +205,6 @@ tributary_cb = {
 							years = 5
 						}
 					}
-				}
-			}
-		}
-
-		defender = {
-			show_scope_change = no
-
-			save_event_target_as = target_loser
-			prestige = -100
-
-			if = {
-				limit = { has_character_flag = had_suzerain }
-
-				# Set up above
-				clr_character_flag = had_suzerain
-
-				custom_tooltip = {
-					text = REMOVE_PREVIOUS_SUZERAIN # actually happens above
 				}
 			}
 		}
@@ -1091,32 +1065,24 @@ tributary_permanent_cb = {
 	}
 
 	on_success = {
-		attacker = {
+		defender = {
 			show_scope_change = no
 
-			prestige = 200
-
-			hidden_effect = {
-				defender = {
-					if = {
-						limit = { is_tributary = yes }
-
-						# Used for custom tooltip further down
-						set_character_flag = had_suzerain
-
-						any_suzerain = {
-							event_target:target_loser = {
-								remove_tributary = PREV
-							}
-						}
-					}
-				}
+			if = {
+				limit = { is_tributary = yes }
+				remove_tributary = suzerain
 			}
+		}
+
+		attacker = {
+			show_scope_change = no
 
 			make_tributary = {
 				who = defender
 				tributary_type = permanent
 			}
+
+			prestige = 200
 
 			if = {
 				limit = { uses_decadence = yes }
@@ -1162,19 +1128,7 @@ tributary_permanent_cb = {
 		defender = {
 			show_scope_change = no
 
-			save_event_target_as = target_loser
 			prestige = -100
-
-			if = {
-				limit = { has_character_flag = had_suzerain }
-
-				# Set up above
-				clr_character_flag = had_suzerain
-
-				custom_tooltip = {
-					text = REMOVE_PREVIOUS_SUZERAIN # actually happens above
-				}
-			}
 
 			opinion = {
 				name = opinion_forced_tributary
@@ -1415,34 +1369,21 @@ tributary_nomad_cb = {
 		defender = {
 			show_scope_change = no
 
-			transfer_scaled_wealth = {
-				to = attacker
-				value = 2.0
-			}
-
-			save_event_target_as = target_loser
-			prestige = -100
-
-			custom_tooltip = {
-				text = REMOVE_PREVIOUS_SUZERAIN
-
-				any_suzerain = {
-					event_target:target_loser = {
-						remove_tributary = PREV
-					}
-				}
+			if = {
+				limit = { is_tributary = yes }
+				remove_tributary = suzerain
 			}
 		}
 
 		attacker = {
 			show_scope_change = no
 
-			prestige = 200
-
 			make_tributary = {
 				who = defender
 				tributary_type = nomadic
 			}
+
+			prestige = 200
 
 			if = {
 				limit = { uses_decadence = yes }
@@ -1483,6 +1424,17 @@ tributary_nomad_cb = {
 					}
 				}
 			}
+		}
+
+		defender = {
+			show_scope_change = no
+
+			transfer_scaled_wealth = {
+				to = attacker
+				value = 2.0
+			}
+
+			prestige = -100
 		}
 	}
 
