@@ -54,6 +54,28 @@ province_event = {
 		}
 		else_if = {
 			limit = {
+				has_province_modifier = nomad_population
+			}
+
+			if = {
+				limit = {
+					top_liege = {
+						any_war = {
+							defender = { character = PREV }
+							using_cb = nomadic_revolt
+							attacker = { culture = ROOT }
+						}
+					}
+				}
+
+				province_event = { id = EMP.11040 } # Reinforce ongoing nomadic revolt
+			}
+			else = {
+				province_event = { id = EMP.11030 } # Start new nomadic revolt
+			}
+		}
+		else_if = {
+			limit = {
 				OR = {
 					has_castle = yes
 					has_tribal = yes
@@ -68,7 +90,6 @@ province_event = {
 			if = {
 				limit = {
 					is_heresy_of = top_liege
-					has_dlc = "The Old Gods"
 
 					NOT = { # Not if there is already an ongoing revolt
 						top_liege = {
@@ -112,7 +133,6 @@ province_event = {
 			else_if = {
 				limit = {
 					NOT = { culture = top_liege }
-					has_dlc = "The Old Gods"
 
 					kingdom = {
 						has_holder = no
@@ -173,7 +193,6 @@ province_event = {
 			else_if = {
 				limit = {
 					NOT = { religion_group = top_liege }
-					has_dlc = "The Old Gods"
 
 					NOT = { # Not if there is already an ongoing revolt
 						top_liege = {
@@ -225,6 +244,9 @@ province_event = {
 					province_event = { id = TOG.1000 } # Start new peasant uprising
 				}
 			}
+		}
+		else = {
+			province_event = { id = 600 }
 		}
 	}
 }
