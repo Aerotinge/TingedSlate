@@ -14874,6 +14874,9 @@ character_event = {
 				title = e_hre
 				title = e_persia
 				title = e_byzantium
+				title = e_nicaea
+				title = k_italy
+				title = k_lombardy
 				controls_religion = yes # Pagan religion head titles
 			}
 		}
@@ -14897,9 +14900,25 @@ character_event = {
 					}
 					trigger_else_if = {
 						limit = {
-							ROOT_FROM = { title = e_byzantium }
+							ROOT_FROM = {
+								OR = {
+									title = e_byzantium
+									title = e_nicaea
+								}
+							}
 						}
 						artifact_type = crown_byzantine
+					}
+					trigger_else_if = {
+						limit = {
+							ROOT_FROM = {
+								OR = {
+									title = k_italy
+									title = k_lombardy
+								}
+							}
+						}
+						artifact_type = iron_crown_of_lombardy
 					}
 					trigger_else_if = {
 						limit = {
@@ -14972,65 +14991,76 @@ character_event = {
 	is_triggered_only = yes # on_death
 	hide_window = yes
 
-	only_rulers = yes
+	only_playable = yes
 
 	trigger = {
-		OR = {
-			AND = {
-				has_landed_title = e_hre
-				any_artifact = { artifact_type = crown_hre } 
+		any_artifact = {
+			trigger_if = {
+				limit = { artifact_type = crown_hre }
+				ROOT = { has_landed_title = e_hre }
 			}
-			AND = {
-				has_landed_title = e_byzantium
-				any_artifact = { artifact_type = crown_byzantine }
+			trigger_else_if = {
+				limit = { artifact_type = crown_byzantine }
+				ROOT = {
+					OR = {
+						title = e_byzantium
+						title = e_nicaea
+					}
+				}
 			}
-			AND = {
-				has_landed_title = e_persia
-				any_artifact = { artifact_type = crown_pahlavi }
+			trigger_else_if = {
+				limit = { artifact_type = crown_pahlavi }
+				ROOT = { has_landed_title = e_persia }
 			}
-			AND = {
-				has_landed_title = k_italy
-				any_artifact = { artifact_type = iron_crown_of_lombardy }
-			}			
-			AND = {
-				has_landed_title = k_hellenic_pagan_reformed
-				any_artifact = { artifact_type = scepter_hellenic_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = iron_crown_of_lombardy }
+
+				ROOT = {
+					OR = {
+						has_landed_title = k_italy
+						has_landed_title = k_lombardy
+					}
+				}
 			}
-			AND = {
-				has_landed_title = d_norse_pagan_reformed
-				any_artifact = { artifact_type = crown_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = scepter_hellenic_fylkir }
+				ROOT = { has_landed_title = k_hellenic_pagan_reformed }
 			}
-			AND = {
-				has_landed_title = d_tengri_pagan_reformed
-				any_artifact = { artifact_type = crown_tengri_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = crown_fylkir }
+				ROOT = { has_landed_title = d_norse_pagan_reformed }
 			}
-			AND = {
-				has_landed_title = d_finnish_pagan_reformed
-				any_artifact = { artifact_type = crown_finnish_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = crown_tengri_fylkir }
+				ROOT = { has_landed_title = d_tengri_pagan_reformed }
 			}
-			AND = {
-				has_landed_title = d_west_african_pagan_reformed
-				any_artifact = { artifact_type = crown_west_african_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = crown_finnish_fylkir }
+				ROOT = { has_landed_title = d_finnish_pagan_reformed }
 			}
-			AND = {
-				has_landed_title = d_slavic_pagan_reformed
-				any_artifact = { artifact_type = crown_slavic_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = crown_west_african_fylkir }
+				ROOT = { has_landed_title = d_west_african_pagan_reformed }
 			}
-			AND = {
-				has_landed_title = d_baltic_pagan_reformed
-				any_artifact = { artifact_type = crown_romuva_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = crown_slavic_fylkir }
+				ROOT = { has_landed_title = d_slavic_pagan_reformed }
 			}
-			AND = {
-				has_landed_title = d_bon_pagan_reformed
-				any_artifact = { artifact_type = scepter_bon_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = crown_romuva_fylkir }
+				ROOT = { has_landed_title = d_baltic_pagan_reformed }
 			}
-			AND = {
-				has_landed_title = d_zun_pagan_reformed
-				any_artifact = { artifact_type = crown_zun_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = scepter_bon_fylkir }
+				ROOT = { has_landed_title = d_bon_pagan_reformed }
 			}
-			AND = {
-				has_landed_title = d_aztec_pagan_reformed
-				any_artifact = { artifact_type = crown_aztec_fylkir }
+			trigger_else_if = {
+				limit = { artifact_type = crown_zun_fylkir }
+				ROOT = { has_landed_title = d_zun_pagan_reformed }
+			}
+			trigger_else = {
+				artifact_type = crown_aztec_fylkir
+				ROOT = { has_landed_title = d_aztec_pagan_reformed }
 			}
 		}
 	}
@@ -15047,7 +15077,10 @@ character_event = {
 		}
 		if = {
 			limit = {
-				has_landed_title = e_byzantium
+				OR = {
+					has_landed_title = e_byzantium
+					has_landed_title = e_nicaea
+				}
 				any_artifact = { artifact_type = crown_byzantine }
 			}
 			add_trait = dead_crown_byzantine
@@ -15061,7 +15094,10 @@ character_event = {
 		}
 		if = {
 			limit = {
-				has_landed_title = k_italy
+				OR = {
+					has_landed_title = k_italy
+					has_landed_title = k_lombardy
+				}
 				any_artifact = { artifact_type = iron_crown_of_lombardy }
 			}
 			add_trait = dead_iron_crown_lombardy
@@ -15143,7 +15179,10 @@ character_event = {
 				OR = {
 					title = e_hre
 					title = e_byzantium
+					title = e_nicaea
 					title = e_persia
+					title = k_italy
+					title = k_lombardy
 					title = k_hellenic_pagan_reformed
 					title = d_norse_pagan_reformed
 					title = d_tengri_pagan_reformed
@@ -15182,9 +15221,25 @@ character_event = {
 						}
 						trigger_else_if = {
 							limit = {
-								PREVPREV = { title = e_byzantium }
+								PREVPREV = {
+									OR = {
+										title = e_byzantium
+										title = e_nicaea
+									}
+								}
 							}
 							artifact_type = crown_byzantine
+						}
+						trigger_else_if = {
+							limit = {
+								PREVPREV = {
+									OR = {
+										title = k_italy
+										title = k_lombardy
+									}
+								}
+							}
+							artifact_type = iron_crown_of_lombardy
 						}
 						trigger_else_if = {
 							limit = {
@@ -15252,7 +15307,7 @@ character_event = {
 	}
 }
 
-# Fix abdicated rulers did not hand out special crowns
+# Inherit special crowns on abdication
 character_event = {
     id = HF.20407
     hide_window = yes
@@ -15271,7 +15326,10 @@ character_event = {
 			}
 			AND = {
 				FROM = {
-					title = e_byzantium
+					OR = {
+						title = e_byzantium
+						title = e_nicaea
+					}
 				}
 				FROMFROM = {
 					any_artifact = { artifact_type = crown_byzantine }
@@ -15287,12 +15345,15 @@ character_event = {
 			}
 			AND = {
 				FROM = {
-					title = k_italy
+					OR = {
+						title = k_italy
+						title = k_lombardy
+					}
 				}
 				FROMFROM = {
 					any_artifact = { artifact_type = iron_crown_of_lombardy }
 				}
-			}			
+			}
 			AND = {
 				FROM = {
 					title = k_hellenic_pagan_reformed
@@ -15394,9 +15455,25 @@ character_event = {
 					}
 					trigger_else_if = {
 						limit = {
-							FROM = { title = e_byzantium }
+							FROM = { 
+								OR = {
+									title = e_byzantium
+									title = e_nicaea
+								}
+							}
 						}
 						artifact_type = crown_byzantine
+					}
+					trigger_else_if = {
+						limit = {
+							FROM = {
+								OR = {
+									title = k_italy
+									title = k_lombardy
+								}
+							}
+						}
+						artifact_type = iron_crown_of_lombardy
 					}
 					trigger_else_if = {
 						limit = {
