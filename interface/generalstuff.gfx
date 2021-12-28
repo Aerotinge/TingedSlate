@@ -1371,8 +1371,8 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_icon_feudal_vassal_government"
-		textureFile = "gfx\\interface\\government_icon_feudal.dds"
+		name = "GFX_icon_manorial_government"
+		textureFile = "gfx\\interface\\government_icon_manorial.dds"
 	}
 
 	spriteType = {
@@ -1386,7 +1386,7 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_icon_muslim_vassal_government"
+		name = "GFX_icon_iqta_government"
 		textureFile = "gfx\\interface\\government_icon_iqta.dds"
 	}
 
@@ -1396,8 +1396,13 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_icon_theocratic_feudal_vassal_government"
-		textureFile = "gfx\\interface\\government_icon_theocratic_feudal.dds"
+		name = "GFX_icon_thema_government"
+		textureFile = "gfx\\interface\\government_icon_thema.dds"
+	}
+
+	spriteType = {
+		name = "GFX_icon_pronoia_government"
+		textureFile = "gfx\\interface\\government_icon_thema.dds"
 	}
 
 	spriteType = {
@@ -1441,18 +1446,8 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_icon_tibetan_feudal_vassal_government"
-		textureFile = "gfx\\interface\\government_icon_tibetan_feudal.dds"
-	}
-
-	spriteType = {
 		name = "GFX_icon_secular_feudal_government"
 		texturefile = "gfx\\interface\\government_icon_secular_feudal.dds"
-	}
-
-	spriteType = {
-		name = "GFX_icon_secular_feudal_vassal_government"
-		textureFile = "gfx\\interface\\government_icon_secular_feudal.dds"
 	}
 
 	spriteType = {
@@ -1478,6 +1473,43 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_checkmark"
 		textureFile = "gfx\\interface\\checkmark.dds"
+	}
+
+	# Manorial Government
+
+	spriteType = {
+		name = "GFX_charframe_150_manorial"
+		textureFile = "gfx\\interface\\charframe_150_manorial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_100_manorial"
+		textureFile = "gfx\\interface\\charframe_100_manorial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_75_manorial"
+		textureFile = "gfx\\interface\\charframe_75_manorial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_50_manorial"
+		textureFile = "gfx\\interface\\charframe_50_manorial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_34_manorial"
+		textureFile = "gfx\\interface\\charframe_34_manorial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
 	}
 
 	# Roman Imperial Government
@@ -1526,43 +1558,6 @@ spriteTypes = {
 		textureFile = "gfx\\interface\\charframe_34_romanimperial.dds"
 		noOfFrames = 6
 		alwaysTransparent = yes
-	}
-
-	# Sacred Imperial Government
-
-	spriteType = {
-		name = "GFX_charframe_150_sacredimperial"
-		texturefile = "gfx\\interface\\charframe_150_sacredimperial.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_sacredimperial"
-		texturefile = "gfx\\interface\\charframe_100_sacredimperial.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_75_sacredimperial"
-		texturefile = "gfx\\interface\\charframe_75_sacredimperial.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_50_sacredimperial"
-		texturefile = "gfx\\interface\\charframe_50_sacredimperial.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_34_sacredimperial"
-		texturefile = "gfx\\interface\\charframe_34_sacredimperial.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
 	}
 
 	# Tibetan Feudal Government

@@ -14,6 +14,8 @@
 
 1204.5.16 = {
 	holder = 215517
+	law = cognatic_succession
+	law = succ_primogeniture
 }
 
 1215.1.1 = {

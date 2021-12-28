@@ -1,0 +1,23 @@
+1136.1.2 = {
+	holder = 260313
+	set_tribute_suzerain = {
+		who = d_novgorod
+		type = permanent
+	}
+}
+
+1181.1.1 = {
+	holder = 260314
+}
+
+1222.1.1 = {
+	holder = 260315
+}
+
+1278.1.1 = {
+	holder = 260316
+}
+
+1315.1.1 = {
+	holder = 260317
+}

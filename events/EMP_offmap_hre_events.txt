@@ -577,13 +577,12 @@ narrative_event = {
 					}
 				}
 			}
-			set_government_type = sacred_confederacy_government
 			offmap_hre_government_de_facto_maintain_effect = yes
 			offmap_hre_ruler_name_sync_effect = yes
 			character_event = { id = EMP.12220 } # generate weak claim for all princes
 		}
 	}
-	
+
 	option = {
 		name = EVTOPTA_HF_16002 # I... I have to do something about this.
 		trigger = {

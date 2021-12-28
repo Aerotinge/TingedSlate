@@ -283,9 +283,10 @@ foreign_rebels = {
 }
 
 jizya_tax = {
-	icon = 4
+	icon = 6
 
-	local_tax_modifier = 0.25
+	local_tax_modifier = 0.125
+	levy_reinforce_rate = -0.3
 }
 
 settled_adventurer = {

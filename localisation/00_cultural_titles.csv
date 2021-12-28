@@ -1,3 +1,4 @@
+baron;Baron;Baron;Baron;;Barón;;;;;;;;;x
 baron_arabic;Wâli;Wâli;Wâli;;Valí;;;;;;;;;x
 baron_dravidian_group;Damapati;Damapati;Damapati;;Damapati;;;;;;;;;x
 baron_female;Baroness;Baronne;Baroness;;Baronesa;;;;;;;;;x
@@ -10,6 +11,7 @@ baron_female_iranian;Wâlia;Walia;Wâlia;;Valía;;;;;;;;;x
 baron_female_nahuatl;Teuctli;Teuhtli;Teuctli;;Teuctli;;;;;;;;;x
 baron_female_nepali;Damapatni;Damapatni;Damapatni;;Damapatní;;;;;;;;;x
 baron_female_roman;Legata;Legata;Legata;;Legada;;;;;;;;;x
+baron_female_turkish;Hanim;Hanim;Hanim;;Hanim;;;;;;;;;x
 baron_hellenic_pagan;Legatus;Legatus;Legatus;;Legado;;;;;;;;;x
 baron_hellenic_pagan_reformed;Legatus;Legatus;Legatus;;Legado;;;;;;;;;x
 baron_indo_aryan_group;Damapati;Damapati;Damapati;;Damapati;;;;;;;;;x
@@ -22,11 +24,14 @@ baron_norse_pagan;Þegn;Þegn;Þegn;;Þegn;;;;;;;;;x
 baron_norse_pagan_reformed;Þegn;Þegn;Þegn;;Þegn;;;;;;;;;x
 baron_pagan_group;Hetman;Hetman;Hetman;;Hetman;;;;;;;;;x
 baron_roman;Legatus;Legatus;Legatus;;Legado;;;;;;;;;x
+baron_turkish;Agha;Agha;Agha;;Agha;;;;;;;;;x
+barony;Barony;Baronnie;Baronie;;Baronía;;;;;;;;;x
 barony_arabic;Wilayah;Wilaya;Wilayah;;Vilayato;;;;;;;;;x
 barony_dravidian_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_indo_aryan_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_iranian;Arg;Arg;Arg;;Arg;;;;;;;;;x
 barony_mongol;Taishi;Taïshi;Taishi;;Taishi;;;;;;;;;x
+barony_of;Barony of;Baronnie de;Baronie;;Baronía de;;;;;;;;;x
 barony_of_arabic;Wilayah of;Wilaya de;Wilayah von;;Vilayato de;;;;;;;;;x
 barony_of_dravidian_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
 barony_of_indo_aryan_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
@@ -79,6 +84,7 @@ city_kingdom_of;Most Serene Republic of;République Sérénissime de;Höchst Durchla
 city_kingdom_of_german;Merchant League of;Ligue marchande de;Handelsbündnis von;;Liga Mercantil de;;;;;;;;;x
 city_kingdom_of_roman;Republic of;République de;Republik von;;República de;;;;;;;;;x
 city_kingdom_roman;Republic;République;Republik;;República;;;;;;;;;x
+count;Count;Comte;Graf;;Conde;;;;;;;;;x
 count_arabic;Sheikh;Cheik;Scheich;;Jeque;;;;;;;;;x
 count_arabic_female;Shaykhah;Cheika;Shaykhah;;Jequesa;;;;;;;;;x
 count_bodpa;Ngapo;Ngapo;Ngapo;;Ngapo;;;;;;;;;x
@@ -115,11 +121,13 @@ count_anglo-saxon;Earl;Earl;Earl;;Conde;;;;;;;;;x
 count_scottish;Earl;Earl;Earl;;Conde;;;;;;;;;x
 count_turkish;Bey;Bey;Bey;;Gobernador turco;;;;;;;;;x
 count_west_african;Farin;Farin;Farin;;Farín;;;;;;;;;x
+county;County;Comté;Grafschaft;;Condado;;;;;;;;;x
 county_arabic;Sheikhdom;Cheikat;Scheichtum;;Dominio del Jeque;;;;;;;;;x
 county_dravidian_group;Thikana;Thikana;Thikana;;Thikana;;;;;;;;;x
 county_indo_aryan_group;Thikana;Thikana;Thikana;;Thikana;;;;;;;;;x
 county_iranian;Marzpanate;Marzpanat;Marzpanat;;Marzpanate;;;;;;;;;x
 county_mongol;Chiefdom;Chefferie;Häuptlingstum;;Cacicazgo;;;;;;;;;x
+county_of;County of;Comté de;Grafschaft;;Condado de;;;;;;;;;x
 county_of_arabic;Sheikhdom of;Cheikat de;Scheichtum von;;Dominio del Jeque;;;;;;;;;x
 county_of_dravidian_group;Thikana of;Thikana de;Thikana von;;Thikana de;;;;;;;;;x
 county_of_indo_aryan_group;Thikana of;Thikana de;Thikana von;;Thikana de;;;;;;;;;x
@@ -129,6 +137,7 @@ county_of_roman;County of;Comté de;Grafschaft von;;Condado de;;;;;;;;;x
 county_of_sardinian;Giudicato of;Giudicato de;Beurteilt von;;Juzgado de;;;;;;;;;x
 county_of_turkish;Beylik of;Beylicat de;Beylik von;;Beylicato de;;;;;;;;;x
 county_turkish;Beylik;Beylicat;Beylik;;Beylik;;;;;;;;;x
+duchy;Duchy;Duché;Herzogtum;;Ducado;;;;;;;;;x
 duchy_arabic;Emirate;Émirat;Emirat;;Emirato;;;;;;;;;x
 duchy_bosnian;Banate;Banat;Banat;;Banato;;;;;;;;;x
 duchy_bulgarian;Grand Principality;Grande-principauté;Großfürstentum;;Gran principado;;;;;;;;;x
@@ -139,6 +148,7 @@ duchy_indo_aryan_group;Raj;Raj;Radsch;;Raj;;;;;;;;;x
 duchy_iranian;Satrapy;Satrapie;Satrapie;;Satrapía;;;;;;;;;x
 duchy_mongol;High Chiefdom;Grande chefferie;Oberhäuptlingstum;;Alto Cacicazgo;;;;;;;;;x
 duchy_norse;Jarldom;Jarldómr;Jarltum;;Jarldom;;;;;;;;;x
+duchy_of;Duchy of;Duché de;Herzogtum;;Ducado de;;;;;;;;;x
 duchy_of_arabic;Emirate of;Émirat de;Emirat von;;Emirato de;;;;;;;;;x
 duchy_of_baltic_pagan;High Chiefdom of;Grande chefferie de;Hochhäuptlingstum von;;Alto Cacicazgo de;;;;;;;;;x
 duchy_of_baltic_pagan_reformed;High Chiefdom of;Grande chefferie de;Hochhäuptlingstum von;;Alto Cacicazgo de;;;;;;;;;x
@@ -158,6 +168,7 @@ duchy_of_slavic_pagan;High Chiefdom of;Grande chefferie de;Hochhäuptlingstum von
 duchy_of_slavic_pagan_reformed;High Chiefdom of;Grande chefferie de;Hochhäuptlingstum von;;Alto Cacicazgo de;;;;;;;;;x
 duchy_of_turkish;Beylerbeylik of;Beylerbeylicat de;Beylerbeyli von;;Beylicato de Beylicatos de;;;;;;;;;x
 duchy_turkish;Beylerbeylik;Beylerbeylicat;Beylerbeylik;;Beylerbeylik;;;;;;;;;x
+duke;Duke;Duc;Herzog;;Duque;;;;;;;;;x
 duke_arabic;Emir;Émir;Emir;;Emir;;;;;;;;;x
 duke_baltic_pagan;High Chief;Grand chef;Hoher Häuptling;;Alto mandatario;;;;;;;;;x
 duke_baltic_pagan_reformed;High Chief;Grand chef;Hoher Häuptling;;Alto mandatario;;;;;;;;;x
@@ -234,19 +245,24 @@ emperor_tangut;Thu Ghu;Thu Ghu;Thu Ghu;;Thu Ghu;;;;;;;;;x
 emperor_title_queen_mother_female;Empress Dowager;Impératrice douairière;Kaiserinwitwe;;Emperatriz viuda;;;;;;;;;x
 emperor_title_queen_mother_female_german;Kaiserin;Kaiserin;Kaiserin;;Emperatriz Viuda;;;;;;;;;x
 emperor_turkish;Padishah;Padishah;Padishah;;Emperador Padishah;;;;;;;;;x
+empire;Empire;Empire;Reich;;Imperio;;;;;;;;;x
+empire_of;Empire of;Empire de;Reich von;;Imperio de;;;;;;;;;x
 empire_of_altaic;Empire of;Empire de;Reich von;;Imperio de;;;;;;;;;x
 empire_of_roman;Empire of;Empire de;Reich von;;Imperio de;;;;;;;;;x
 family_palace;Palace;Palais familial;Palast;;Palacio;;;;;;;;;x
 family_palace_baron;Patrician;Patricien;Patrizier;;Patricio;;;;;;;;;x
 family_palace_baron_female;Lady;Dame;Lady;;Señora;;;;;;;;;x
 family_palace_barony_of;Palace of;Palais de;Palast von;;Palacio de;;;;;;;;;x
-iqta_king;Sultan;Sultan;Sultan;;Sultán;;;;;;;;;x
-iqta_king_female;Sultana;Sultane;Sultana;;Sultana;;;;;;;;;x
-iqta_kingdom;Sultanate;Sultanat;Sultanat;;Sultanato;;;;;;;;;x
-iqta_kingdom_of;Sultanate of;Sultanat de;Sultanat von;;Sultanato de;;;;;;;;;x
+muslim_king;Sultan;Sultan;Sultan;;Sultán;;;;;;;;;x
+muslim_king_female;Sultana;Sultane;Sultana;;Sultana;;;;;;;;;x
+muslim_kingdom;Sultanate;Sultanat;Sultanat;;Sultanato;;;;;;;;;x
+muslim_kingdom_of;Sultanate of;Sultanat de;Sultanat von;;Sultanato de;;;;;;;;;x
+muslim_barony;Wilayah;Wilaya;Wilayah;;Vilayato;;;;;;;;;x
+muslim_barony_of;Wilayah of;Wilaya de;Wilayah von;;Vilayato de;;;;;;;;;x
 iqta_baron;Muqta';Muqta';Muqta';;Muqta';;;;;;;;;x
 iqta_barony;Iqta';Iqta';Iqta';;Iqta';;;;;;;;;x
 iqta_barony_of;Iqta' of;Iqta' de;Iqta' von;;Iqta' de;;;;;;;;;x
+king;King;Roi;König;;Rey;;;;;;;;;x
 king_altaic;Khan;Khan;Khan;;Kan;;;;;;;;;x
 king_arabic;Malik;Malik;Malik;;Malik;;;;;;;;;x
 king_bodpa;Gyalpo;Gyalpo;Gyalpo;;Gyalpo;;;;;;;;;x
@@ -275,6 +291,7 @@ king_nepali;Raja;Raja;Raja;;Rajá;;;;;;;;;x
 king_roman;Rex;Rex;Rex;;Rex;;;;;;;;;x
 king_tangut;Ne;Ne;Ne;;Ne;;;;;;;;;x
 king_west_african;Mansa;Mansa;Mansa;;Mansa;;;;;;;;;x
+kingdom;Kingdom;Royaume;Königreich;;Reino;;;;;;;;;x
 kingdom_altaic;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
 kingdom_bulgarian;Tsardom;Tsarat;Zarenreich;;Zarato;;;;;;;;;x
 kingdom_iranian;Shahdom;Royaume;Shahtum;;Shahdom;;;;;;;;;x
@@ -314,6 +331,16 @@ nomadic_duchy_magyar;High Chiefdom;Grande chefferie;Oberhäuptlingstum;;Gran caci
 nomadic_duchy_of_magyar;High Chiefdom of;Grande chefferie de;Großhäuptlingstum von;;Grande chefferie de;;;;;;;;;x
 nomadic_duchy_mongol;Ilkhanate;Ilkhanat;Ilkhanat;;Ilkanato;;;;;;;;;x
 nomadic_duchy_of_mongol;Ilkhanate of;Ilkhanat de;Ilkhanat von;;Ilkanato de;;;;;;;;;x
+manorial_duke;Grand Prince;Grand-prince;Großfürst;;Gran príncipe;;;;;;;;;x
+manorial_duke_female;Grand-Princess;Grande princesse;Großfürstin;;Gran princesa;;;;;;;;;x
+manorial_count;Prince;Prince;Fürst;;Príncipe;;;;;;;;;x
+manorial_count_female;Princess;Princesse;Fürstin;;Princesa;;;;;x
+manorial_baron_east_slavic;Pomeshchik;Pomeshchik;Pomeshchik;;Pomeshchik;;;;;x
+manorial_baron_female_east_slavic;Pomeshchika;Pomeshchika;Pomeshchika;;Pomeshchika;;;;;x
+manorial_county;Principality;Principauté;Fürstentum;;Principado;;;;;;;;;x
+manorial_county_of;Principality of;Principauté de;Fürstentum von;;Principado de;;;;;;;;;x
+manorial_duchy;Grand Principality;Grande-principauté;Großfürstentum;;Gran principado;;;;;;;;;x
+manorial_duchy_of;Grand Principality of;Grande-principauté de;Großfürstentum von;;Gran Principado de;;;;;;;;;x
 order_baron;Knight;Sieur;Ritter;;Caballero;;;;;x
 order_baron_female;Dame;Dame;Ritterin;;Dama;;;;;x
 order_barony_of;Garrison Town of;Ville de garnison de;Garnisonsstadt von;;Pueblo guarnicionado de;;;;;x
@@ -329,6 +356,7 @@ order_empire_of;Monastic State of;État monastique de;Mönchsstaat von;;Estado mon
 order_king;Grandmaster;Grand maître;Großmeister;;Gran Maestro;;;;;x
 order_king_female;Grandmistress;Grande maîtresse;Großmeisterin;;Gran Maestra;;;;;x
 order_kingdom_of;Grand Order of;Grand ordre de;Großorden von;;Gran Orden de;;;;;x
+pronoia_baron;Pronoiar;Pronoiar;Pronoiar;;Pronoiar;;;;;;;;;x
 temple_baron_aztec;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
 temple_baron_aztec_reformed;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
 temple_baron_baltic_pagan;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x

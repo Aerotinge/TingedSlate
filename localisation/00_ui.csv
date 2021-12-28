@@ -496,12 +496,9 @@ BARB_SURRENDERTITLE;Demand Surrender;Demander la reddition;Kapitulation verlange
 BARBARIAN_SPAW_MOD;Chance of barbarian rising;Risque de soulèvement barbare;Wahrscheinlichkeit für Barbarenaufstand;;Probabilidad de levantamiento bárbaro;Probabilità di una rivolta dei barbari;;;;;;;;x
 BARBER_TOOLTIP;§YGo to the Barber§!;§YAller chez le barbier§!;§YZum Barbier gehen§!;;§YIr al Peluquero§!;;;;;;;;;x
 BARBER_TOOLTIP_DELAYED;By going to the Barber you can change the hair and/or beard style of your character.;En allant chez le barbier, vous pouvez changer la coiffure et la barbe de votre personnage.;Mit dem Barbier könnt Ihr den Haar- und/oder Bartstil Eures Charakters ändern.;;Puedes cambiar el estilo de pelo y/o barba de tu personaje yendo al barbero.;;;;;;;;;x
-baron;Baron;Baron;Baron;;Barón;;;;;;;;;x
 baron_deed;Crown of;Couronne de;Krone von;;Corona de;;;;;;;;;x
 baronies;Baronies;Baronnies;Baronien;;Baronías;;;;;;;;;x
-barony;Barony;Baronnie;Baronie;;Baronía;;;;;;;;;x
 BARONY_DESTROYED;This barony has been destroyed;Cette baronnie a été détruite;Diese Baronie wurde zerstört;;Esta baronía ha sido destruida.;;;;;;;;;x
-barony_of;Barony of;Baronnie de;Baronie;;Baronía de;;;;;;;;;x
 BASE;Base;Base;Basis;;Base;Base;;;;;;;;x
 BASE_COST;Base Cost;Coût de base;Basiskosten;;Coste base;;;;;;;;;x
 BASE_TAX;$DIRECTION$ $VALUE$ base tax in $WHERE$.\n;$DIRECTION$ $VALUE$ d'impôts de base à $WHERE$.\n;$DIRECTION$ $VALUE$ Grundsteuer in $WHERE$.\n;$DIRECTION$ $VALUE$ podatek podstawowy w $WHERE$.\n;Una $DIRECTION$ de $VALUE$ en la base impositiva de $WHERE$.\n;$WHERE$: tasse base $DIRECTION$ $VALUE$.\n;$WHERE$ alapadója $DIRECTION$ $VALUE$.\n;;;;;;;x
@@ -1329,7 +1326,6 @@ COUNCILOR_LAW_CHANGE_IN_LIEGE_REALM_LOG;By calling in a Favor $COUNCILOR|Y$ has 
 COUNCILOR_LAW_CHANGE_IN_LIEGE_REALM_SETUP;Councilor initiating law change in liege's realm by using favor;Un conseiller initie un changement de loi contre son seigneur via une faveur;Ratsmitglied nutzt einen Gefallen, um eine Gesetzesänderung im Reich des Lehnsherrn zu veranlassen.;;El consejero inicia modificación de la ley en el reino del señor usando un favor.;;;;;;;;;x
 COUNCILOR_LAW_CHANGE_ON_LIEGE_REALM_NOTIFICATION;$COUNCILOR$ has decided to institute the $LAW$ Law in $TITLE$;$COUNCILOR$ a décidé d'instituer la loi $LAW$ en $TITLE$;$COUNCILOR$ hat entschieden, das Gesetz $LAW$ in $TITLE$ einzuführen.;;$COUNCILOR$ ha decidido instituir la ley $LAW$  ley en $TITLE$;;;;;;;;;x
 COUNCILOR_VOTES;Votes for $ISSUE|Y$;Votes sur $ISSUE|Y$;Stimmt ab für $ISSUE|Y$;;Votos a favor de $ISSUE|Y$;;;;;;;;;x
-count;Count;Comte;Graf;;Conde;;;;;;;;;x
 count_deed;Crown of;Couronne de;Krone von;;Corona de;;;;;;;;;x
 COUNT_TECH_POINTS;Counts do not generate technology points;Les comtes ne génèrent pas de points de technologie;Grafen erzeugen keine Technologiepunkte;;Los Condes no generan puntos tecnológicos;;;;;;;;;x
 counties;Counties;Comtés;Grafschaften;;Condados;;;;;;;;;x
@@ -1340,10 +1336,8 @@ COUNTRY_REQUIRED;Country§R *§!;Pays§R *§!;Land§R *§!;;País§R *§!;;;;;;;;;x
 COUNTS_AS_DESIGNATED_HEIR;Marks the Character as the Designated Heir;Marque ce personnage comme héritier désigné;Kennzeichnet Charakter als gewählten Erben;;Marca al personaje como heredero designado;;;;;;;;;x
 COUNTS_AS_PURPLE_BORN;Counts as being born in the Purple;Naissance dans la Pourpre;Zählt als Purpurgeboren;;Cuenta como nacido en la Sala Púrpura;;;;;;;;;x
 COUNTY;County;(Comté);Gräfliche;;Condado;;;;;;;;;x
-county;County;Comté;Grafschaft;;Condado;;;;;;;;;x
 COUNTY_CAPITAL_OF;§Y$NAME$§! (County Capital);§Y$NAME$§! (Capitale du comté);§Y$NAME$§! - Grafschaftshauptstadt;;§Y$NAME$§!: capital del condado;;;;;;;;;x
 COUNTY_LOOT_DESC;§LThis value represents the amount of lootable wealth owned by the population. Hostile armies will deplete this value, which lowers the tax income until the County can recover.§!;§LCette valeur représente le montant de la richesse appartenant à la population qui peut être pillée. Lorsque des armées hostiles l'épuiseront, cela abaissera le revenu d'impôt jusqu'à ce que le comté puisse se remettre.§!;§LDieser Wert repräsentiert die Menge der plünderbaren Reichtümer, die im Besitz der Bevölkerung sind. Feindliche Armeen werden diesen Wert plündern, was das Steuereinkommen senkt, solange sich die Grafschaft erholt.;;§LEste valor representa la cantidad de riquezas saqueable que posee la población. Ejércitos hostiles agotarán este valor, lo que reduce los ingresos fiscales hasta que el condado pueda recuperarse.§!;;;;;;;;;x
-county_of;County of;Comté de;Grafschaft;;Condado de;;;;;;;;;x
 COURT_LIMITED_TAB_DRO;The Court mainly consists of various unlanded nobles, but also councilors (who can be landed vassals).\n\nRulers can house only a certain number of adult people in their court, depending on the tier of their Title. Beyond that number, §YCourt Expenses§! will increase.;La Cour se compose principalement de nobles sans terre, mais également de conseillers (qui peuvent être des vassaux possédant des terres) et de pupilles de courtisans.\n\nLes dirigeants ont, en fonction de leur rang, un nombre de personnes pouvant être accueillies à leur Cour et au-delà duquel les §Yfrais de Cour§! augmentent.;Der Hof besteht hauptsächlich aus verschiedenen landlosen Adligen, aber auch Ratsmitgliedern (die Vasallen mit Besitz sein können) und Kindern, die von einem Höfling betreut werden.\n\nHerrscher können je nach Stufe ihres Titels nur eine bestimmte Anzahl an Personen in ihrem Hof unterbringen. Alle Charaktere darüber hinaus, erhöhen die §YHofausgaben§!.;;La corte se compone principalmente de varios nobles sin títulos, pero también de consejeros (que pueden ser vasallos con títulos) y niños tutelados por algún cortesano.\n\nLos gobernantes solo pueden tener un cierto número de gente en su corte, dependiendo del rango de su título. Superado este, los §Ygastos de la corte§! aumentarán.;;;;;;;;;x
 COURT_MENU;§YCouncil§!;§YConseil§!;§YRat§!;;§YConsejo§!;;;;;;;;;x
 COURT_SIZE_MAINTENANCE_COST_MODIFIER;Court Size Cost;Coût de la taille de la Cour;Hofgröße (Kosten);;Coste del tamaño de corte;;;;;;;;;x
@@ -1716,10 +1710,7 @@ DS_TRUCE_DESC;This truce was signed after the §Y$WARNAME$§!;Cette trêve a été si
 DS_WHITEPEACE;The war between §Y$ATTACKER$§! and §Y$DEFENDER$§! ended with a §Ywhite peace§!;La guerre entre §Y$ATTACKER$§! et §Y$DEFENDER$§! s'est soldée par une §Ypaix blanche§!;Der Krieg zwischen §Y$ATTACKER$§! und §Y$DEFENDER$§! endete mit einem §YWeißen Frieden§!;;La guerra entre §Y$ATTACKER$§! y §Y$DEFENDER$§! acabó en §Ypaz blanca§!;;;;;;;;;x
 DUCAL;Ducal;(Duché);Herzögliche;;Ducal;;;;;;;;;x
 duchies;Duchies;Duchés;Herzogtümer;;Ducados;;;;;;;;;x
-duchy;Duchy;Duché;Herzogtum;;Ducado;;;;;;;;;x
 DUCHY_CAPITAL;Duchy Capital;Capitale de duché;Herzogtum-Hauptstadt;;Ducado Capital;;;;;;;;;x
-duchy_of;Duchy of;Duché de;Herzogtum;;Ducado de;;;;;;;;;x
-duke;Duke;Duc;Herzog;;Duque;;;;;;;;;x
 duke_deed;Crown of;Couronne de;Krone von;;Corona de;;;;;;;;;x
 DUPLICATE_ARTIFACT_DESTROYED_LOG;The new $ARTIFACT|Y$ $CHARACTER|Y$ received was destroyed because they already had one.;L'artefact '$ARTIFACT|Y$' de $CHARACTER|Y$ a été détruit puisqu'il en existait déjà un.;Der neue Gegenstand $ARTIFACT|Y$, den $CHARACTER|Y$ erhielt, wurde zerstört, da bereits eines vorhanden ist.;;El nuevo $ARTIFACT|Y$ que $CHARACTER|Y$ recibió fue destruido porque ya tenía uno.;;;;;;;;;x
 DUPLICATE_ARTIFACT_DESTROYED_SETUP;Duplicate artifact destroyed;Artefact en double détruit;Doppeltes-Artefakt zerstört;;Artefacto duplicado destruido;;;;;;;;;x
@@ -1809,13 +1800,10 @@ EMAIL_HINT;Enter a valid email address;Veuillez saisir une adresse e-mail valide
 EMAIL_REQUIRED;Email§R *§!;E-mail§R *§!;E-Mail§R *§!;;Correo electrónico§R *§!;;;;;;;;;x
 EMBARK_UNITS;Embark the selected units;Embarquer les unités sélectionnées;Ausgewählte Einheiten einschiffen;;Embarcar unidades seleccionadas;;;;;;;;;x
 EMBARK_UNITS_DRO;Choosing the embark option will load as many of the selected units onto ships as possible.;Autant d'unités sélectionnées que possible embarqueront dans les navires.;Mit der Option "Einschiffen" werden so viele der ausgewählten Einheiten wie möglich auf ein Schiff geladen.;;Se embarcarán tantas unidades seleccionadas como sea posible.;;;;;;;;;x
-emperor;Emperor;Empereur;Kaiser;;Emperador;;;;;;;;;x
 emperor_deed;Crown of;Couronne de;Krone von;;Corona de;;;;;;;;;x
 EMPEROR_DISLIKES_LABEL;The Emperor Dislikes;L'Empereur déteste;Der Kaiser mag keine;;Al Emperador le disgustan;;;;;;;;;x
 EMPEROR_LIKES_LABEL;The Emperor Likes;L'Empereur aime;Der Kaiser mag;;Al Emperador le gustan;;;;;;;;;x
-empire;Empire;Empire;Reich;;Imperio;;;;;;;;;x
 EMPIRE_CAPITAL;Empire Capital;Capitale d'empire;Kaiserreich-Hauptstadt;;Imperio Capital;;;;;;;;;x
-empire_of;Empire of;Empire de;Reich von;;Imperio de;;;;;;;;;x
 empires;Empires;Empires;Reiche;;Imperios;;;;;;;;;x
 EMPTY_HOLDINGS;Empty Holdings;Propriétés vides;Freie Besitztümer;;Posesiones vacías;;;;;;;;;x
 EMPTY_HOLDINGS_BY_CLAN;§YEmpty Holdings by Clan§!:;§YPropriétés vides par clan§! :;§YFreie Besitztümer nach Klans§!:;;§YPosesiones vacías por clan§!;;;;;;;;;x
@@ -2845,9 +2833,7 @@ KILL_LIST_COUNT;$WHO|Y$ is responsible for the death of $COUNT|Y$ person.;$WHO|Y
 KILL_LIST_COUNT_PLURAL;$WHO|Y$ is responsible for the deaths of $COUNT|Y$ people.;$WHO|Y$ est responsable de la mort de $COUNT|Y$ personnes.;$WHO|Y$ ist für den Tod von $COUNT|Y$ Personen verantwortlich.;;$WHO|Y$ es responsable de la muerte de $COUNT|Y$ gentes.;;;;;;;;x
 KILL_LIST_INTERFACE_LABEL;§YKills§!;§YTués§!;§YTötungsliste§!;;§YLista de muertes§!;;;;;;;;;x
 KILLER;Killer;Tueur;Mörder;;Asesino;;;;;;;;;x
-king;King;Roi;König;;Rey;;;;;;;;;x
 king_deed;Crown of;Couronne de;Krone von;;Corona de;;;;;;;;;x
-kingdom;Kingdom;Royaume;Königreich;;Reino;;;;;;;;;x
 KINGDOM_CAPITAL;Kingdom Capital;Capitale de royaume;Königreich-Hauptstadt;;Reino Capital;;;;;;;;;x
 KINGDOM_LAW;§YCrown Law§!;§YLoi de la Couronne§!;§YKronrecht§!;;§YLey de la Corona§!;;;;;;;;;x
 KINGDOM_LAW_DESC;Crown Laws can only be passed by Kings and Emperors, and concern everyone in the geographical (de jure) kingdom or empire, even if they are not de facto part of it.;Les lois de la Couronne sont édictées par les rois et les empereurs et s'appliquent à tous les sujets du royaume ou de l'empire géographique (de jure) en question, même s'ils n'en font pas de facto partie.;Krongesetze können nur von Königen und Kaisern erlassen werden und betreffen jeden im geografischen (De-jure-)Königreich oder Kaiserreich, selbst wenn sie de facto kein Teil davon sind.;;Las leyes de la Corona las pueden aprobar reyes y emperadores, afectan a todos los habitantes del área geográfica (de iure) que comprende el reino o imperio, aunque no formen parte de facto de él.;;;;;;;;;x

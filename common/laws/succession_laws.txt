@@ -10,8 +10,6 @@ succession_laws = {
 		potential = {
 			rebel = no
 
-			NOT = { has_law = succ_byzantine_elective }
-
 			trigger_if = {
 				limit = { is_primary_type_title = yes }
 				NOT = { is_law_potential = succ_open_elective }
@@ -26,6 +24,17 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Has special elective law instead
+			trigger_if = {
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
+
+				NOT = { is_law_potential = succ_hre_elective }
+			}
+
 			holder_scope = {
 				OR = {
 					is_feudal = yes
@@ -37,8 +46,8 @@ succession_laws = {
 					religion_group = muslim
 					government = order_government
 					government = roman_imperial_government
+					government = pronoia_government
 					government = chinese_imperial_government
-					government = sacred_confederacy_government
 					government = nomadic_tribal_government
 				}
 			}
@@ -127,8 +136,6 @@ succession_laws = {
 		potential = {
 			rebel = no
 
-			NOT = { has_law = succ_byzantine_elective }
-
 			trigger_if = {
 				limit = { is_primary_type_title = yes }
 				NOT = { is_law_potential = succ_open_elective }
@@ -143,6 +150,17 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Has special elective law instead
+			trigger_if = {
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
+
+				NOT = { is_law_potential = succ_hre_elective }
+			}
+
 			holder_scope = {
 				OR = {
 					is_feudal = yes
@@ -155,7 +173,6 @@ succession_laws = {
 					government = order_government
 					government = roman_imperial_government
 					government = chinese_imperial_government
-					government = sacred_confederacy_government
 					government = nomadic_tribal_government
 				}
 			}
@@ -231,8 +248,6 @@ succession_laws = {
 			has_dlc = "Holy Fury"
 			rebel = no
 
-			NOT = { has_law = succ_byzantine_elective }
-
 			trigger_if = {
 				limit = { is_primary_type_title = yes }
 				NOT = { is_law_potential = succ_open_elective }
@@ -245,6 +260,17 @@ succession_laws = {
 				}
 
 				NOT = { is_law_potential = succ_open_elective }
+			}
+
+			# Has special elective law instead
+			trigger_if = {
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
+
+				NOT = { is_law_potential = succ_hre_elective }
 			}
 
 			holder_scope = {
@@ -274,7 +300,6 @@ succession_laws = {
 					government = order_government
 					government = roman_imperial_government
 					government = chinese_imperial_government
-					government = sacred_confederacy_government
 					government = nomadic_tribal_government
 					has_religion_feature = religion_matriarchal
 					has_religion_feature = religion_patriarchal
@@ -366,6 +391,17 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Has special elective law instead
+			trigger_if = {
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
+
+				NOT = { is_law_potential = succ_hre_elective }
+			}
+
 			holder_scope = {
 				trigger_if = {
 					limit = { is_merchant_republic = yes }
@@ -396,8 +432,8 @@ succession_laws = {
 					is_vice_royalty = yes
 					government = order_government
 					government = roman_imperial_government
+					government = pronoia_government
 					government = chinese_imperial_government
-					government = sacred_confederacy_government
 				}
 			}
 		}
@@ -507,7 +543,16 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
-			NOT = { has_law = succ_byzantine_elective }
+			# Has special elective law instead
+			trigger_if = {
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
+
+				NOT = { is_law_potential = succ_hre_elective }
+			}
 
 			holder_scope = {
 				trigger_if = {
@@ -517,18 +562,10 @@ succession_laws = {
 					religion_group = muslim
 				}
 
-				trigger_if = {
-					limit = {
-						government = confucian_bureaucracy
-					}
-					
-					is_vice_royalty = yes
-				}
-
 				NOR = {
+					government = iqta_government
 					government = order_government
-					government = roman_imperial_government
-					government = sacred_confederacy_government
+					government = pronoia_government
 					government = nomadic_tribal_government
 				}
 
@@ -685,8 +722,8 @@ succession_laws = {
 						always = yes
 					}
 				}
-				
-				NOT = { has_offmap_flag = hre_diet_metz_enacted }
+
+				NOT = { is_law_potential = succ_hre_elective }
 			}
 
 			holder_scope = {
@@ -714,8 +751,8 @@ succession_laws = {
 					is_vice_royalty = yes
 					government = order_government
 					government = roman_imperial_government
+					government = pronoia_government
 					government = chinese_imperial_government
-					government = sacred_confederacy_government
 					government = confucian_bureaucracy
 				}
 			}
@@ -782,15 +819,6 @@ succession_laws = {
 			#title = e_hre
 			offmap_power = {
 				is_offmap_tag = offmap_hre
-			}
-			
-			trigger_if = {
-				limit = {
-					offmap_power = {
-						always = yes
-					}
-				}
-				
 				has_offmap_flag = hre_diet_metz_enacted
 			}
 
@@ -809,28 +837,6 @@ succession_laws = {
 		}
 
 		allow = {
-			holder_scope = {
-				show_scope_change = no
-
-				#trigger_if = {
-				#	limit = {
-				#		has_dlc = "Conclave"
-
-				#		OR = {
-				#			religion_group = muslim
-				#			religion_group = indian_group
-
-				#			AND = {
-				#				religion_group = pagan_group
-				#				is_reformed_religion = no
-				#				NOT = { religion = hellenic_pagan }
-				#			}
-				#		}
-				#	}
-
-				#	has_law = succession_voting_power_1
-				#}
-			}
 		}
 
 		pass_effect = {
@@ -854,6 +860,7 @@ succession_laws = {
 		feudal_opinion = -5
 
 		potential = {
+			always = no # Disabled
 			real_tier = EMPEROR
 
 			OR = {
@@ -913,7 +920,16 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
-			NOT = { has_law = succ_byzantine_elective }
+			# Has special elective law instead
+			trigger_if = {
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
+
+				NOT = { is_law_potential = succ_hre_elective }
+			}
 
 			holder_scope = {
 				OR = {
@@ -935,7 +951,6 @@ succession_laws = {
 					government = order_government
 					government = roman_imperial_government
 					government = chinese_imperial_government
-					government = sacred_confederacy_government
 					government = nomadic_tribal_government
 				}
 			}
@@ -1020,7 +1035,16 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
-			NOT = { has_law = succ_byzantine_elective }
+			# Has special elective law instead
+			trigger_if = {
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
+
+				NOT = { is_law_potential = succ_hre_elective }
+			}
 
 			holder_scope = {
 				trigger_if = {
@@ -1060,8 +1084,8 @@ succession_laws = {
                     religion_group = muslim
                     government = order_government
 					government = roman_imperial_government
+					government = pronoia_government
 					government = chinese_imperial_government
-					government = sacred_confederacy_government
 					government = nomadic_tribal_government
                 }
             }
@@ -1176,6 +1200,17 @@ succession_laws = {
 				NOT = { is_law_potential = succ_open_elective }
 			}
 
+			# Has special elective law instead
+			trigger_if = {
+				limit = {
+					offmap_power = {
+						always = yes
+					}
+				}
+
+				NOT = { is_law_potential = succ_hre_elective }
+			}
+
 			holder_scope = {
 				OR = {
 					is_feudal = yes
@@ -1203,8 +1238,8 @@ succession_laws = {
 					religion_group = muslim
 					government = order_government
 					government = roman_imperial_government
+					government = pronoia_government
 					government = chinese_imperial_government
-					government = sacred_confederacy_government
 					government = nomadic_tribal_government
 				}
 			}
@@ -1251,9 +1286,13 @@ succession_laws = {
 	succ_appointment = {
 		potential = {
 			holder_scope = {
-				AND = {
-					government = order_government
-					holy_order = no
+				OR = {
+					AND = {
+						government = order_government
+						holy_order = no
+					}
+					government = iqta_government
+					government = pronoia_government
 				}
 			}
 		}

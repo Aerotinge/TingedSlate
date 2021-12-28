@@ -49,6 +49,13 @@ revoke_feudal_tax_effect = {
 	revoke_law = feudal_tax_3
 }
 
+revoke_manorial_contract_effect = {
+	revoke_law = manorial_contract_0
+	revoke_law = manorial_contract_1
+	revoke_law = manorial_contract_2
+	revoke_law = manorial_contract_3
+}
+
 revoke_iqta_contract_effect = {
 	revoke_law = iqta_contract_0
 	revoke_law = iqta_contract_1

@@ -22,7 +22,7 @@
 
 1057.1.2 = {
 	holder = 256084
-	liege = k_ruthenia
+	liege = d_kiev
 }
 
 1075.1.1 = {

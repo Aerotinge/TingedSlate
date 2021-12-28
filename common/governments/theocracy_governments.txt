@@ -18,19 +18,14 @@ theocracy_governments = {
 		}
 		accepts_liege_governments = {
 			feudal_government
-			feudal_vassal_government
-			muslim_government
-			muslim_vassal_government
-			secular_feudal_government
-			secular_feudal_vassal_government
-			theocratic_feudal_government
-			theocratic_feudal_vassal_government
-			tibetan_feudal_government
-			tibetan_feudal_vassal_government
-			sacred_confederacy_government
 			order_government
 			republic_government
 			merchant_republic_government
+		}
+		accepts_liege_governments_religion = {
+			theocracy_government
+			tibetan_feudal_government
+			theocratic_feudal_government
 		}
 
 		frame_suffix = "_theocracy"
@@ -51,6 +46,48 @@ theocracy_governments = {
 			trigger_else = {
 				religion_allows_male_temple_holders = yes
 			}
+			
+			trigger_if = { # christian without universal priesthood
+				limit = { religion_group = christian }
+
+				NOR = {
+					religion = cathar		# I don't think Cathar practice universal priesthood, but it's no head in game.
+					religion = waldensian
+					religion = lollard
+					religion = messalian
+					religion = bogomilist
+				}
+			}
+			trigger_else_if = { # indian_group Sramana practice
+				limit = { religion_group = indian_group }
+
+				NOT = { religion = taoist }
+			}
+			trigger_else_if = {	# zoroastrian_group without clergy practice
+				limit = { religion_group = zoroastrian_group }
+
+				NOT = { religion = mazdaki }
+			}
+			trigger_else_if = { # jewish_group without rabbinic halakha
+				limit = { religion_group = jewish_group }
+
+				NOT = { religion = karaite }
+			}
+			trigger_else_if = { # Reformed Pagan, Bon exclusive
+				limit = {
+					is_reformed_religion = yes
+				}
+
+				NAND = { # with Autonomous & Cosmopolitan/Civilized doctrine
+					has_religion_feature = religion_no_leader
+					has_religion_feature = religion_proselytizing
+				}
+			}
+
+			NOR = {
+				is_government_potential = tibetan_feudal_government
+				is_government_potential = theocratic_feudal_government
+			}
 		}
 
 		allow = {}
@@ -63,4 +100,50 @@ theocracy_governments = {
 		capital_move_delay = 600
 	}
 
+	confucian_bureaucracy = {
+		offmap_power = offmap_china
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			CITY
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		forced_contract = {
+			confucian_bureaucracy
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+
+		frame_suffix = "_confucian"
+		color = { 94 187 185 }
+
+		potential = {
+			is_offmap_tag = offmap_china
+		}
+
+		allow = {}
+
+		can_create_empires = no
+		can_create_kingdoms = no
+		can_build_tribal = no
+		can_demand_religious_conversion = no
+		can_imprison_without_reason = no
+		can_inherit = no
+		can_revoke_without_reason = no
+		gets_religion_opinion_penalties = no
+		vassal_government_opinion_penalties = no
+
+		capital_move_delay = 600
+		aggression = 0 # AI only attacks by script
+
+		## Modifiers
+		court_size_modifier = 10
+	}
 }

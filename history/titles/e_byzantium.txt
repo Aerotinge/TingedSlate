@@ -1,6 +1,6 @@
 395.1.17 = {
 	law = crown_authority_2
-	law = succ_byzantine_elective
+	law = succ_primogeniture
 	law = centralization_3
 	law = imperial_administration
 	law = ze_administration_laws_2

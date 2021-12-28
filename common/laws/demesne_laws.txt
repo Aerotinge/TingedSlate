@@ -16,13 +16,16 @@ law_groups = {
 	feudal_contract = {
 		law_type = realm
 	}
+	manorial_contract = {
+		law_type = realm
+	}
 	feudal_tax = {
 		law_type = realm
 	}
-	iqta_contract = {
+	muslim_contract = {
 		law_type = realm
 	}
-	iqta_tax = {
+	muslim_tax = {
 		law_type = realm
 	}
 	city_contract = {
@@ -57,7 +60,11 @@ laws = {
 
 		potential = {
 			holder_scope = {
-				is_nomadic = no
+				OR = {
+					government = feudal_government
+					government = tibetan_feudal_government
+					government = theocratic_feudal_government
+				}
 				higher_real_tier_than = COUNT
 			}
 		}
@@ -1070,6 +1077,12 @@ laws = {
 			}
 		}
 
+		allow = {
+			holder_scope = {
+				NOT = {	government = roman_imperial_government }
+			}
+		}
+
 		pass_effect = {
 			# log = "vice_royalty_0 pass ([This.GetFullBaseName])"
 		}
@@ -1096,6 +1109,12 @@ laws = {
 
 		potential = {
 			is_law_potential = vice_royalty_0
+		}
+
+		allow = {
+			holder_scope = {
+				NOT = {	government = roman_imperial_government }
+			}
 		}
 
 		pass_effect = {
@@ -1178,6 +1197,12 @@ laws = {
 			}
 		}
 
+		allow = {
+			holder_scope = {
+				NOT = {	government = roman_imperial_government }
+			}
+		}
+
 		pass_effect = {
 			# log = "feudal_administration pass ([This.GetFullBaseName])"
 		}
@@ -1245,19 +1270,23 @@ laws = {
 
 		feudal_opinion = 10
 		castle_vassal_max_levy = -0.40
+		castle_vassal_min_levy = 0.05
 
 		potential = {
 			NOT = { has_dlc = "Conclave" }
 
 			holder_scope = {
 				is_playable = yes
-				NOT = { government = muslim_government }
+				NOR = {
+					is_law_potential = manorial_contract_0
+					is_law_potential = muslim_contract_0
+				}
 			}
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_feudal_tax_effect = yes
+				revoke_feudal_contract_effect = yes
 			}
 		}
 
@@ -1271,6 +1300,7 @@ laws = {
 
 		feudal_opinion = 5
 		castle_vassal_max_levy = -0.30
+		castle_vassal_min_levy = 0.05
 
 		potential = {
 			is_law_potential = feudal_contract_0
@@ -1278,7 +1308,7 @@ laws = {
 
 		effect = {
 			hidden_effect = {
-				revoke_feudal_tax_effect = yes
+				revoke_feudal_contract_effect = yes
 			}
 		}
 
@@ -1292,6 +1322,7 @@ laws = {
 		default = yes
 
 		castle_vassal_max_levy = -0.20
+		castle_vassal_min_levy = 0.05
 
 		potential = {
 			is_law_potential = feudal_contract_0
@@ -1299,7 +1330,7 @@ laws = {
 
 		effect = {
 			hidden_effect = {
-				revoke_feudal_tax_effect = yes
+				revoke_feudal_contract_effect = yes
 			}
 		}
 
@@ -1312,6 +1343,7 @@ laws = {
 		group = feudal_contract
 
 		feudal_opinion = -5
+		castle_vassal_min_levy = 0.05
 
 		potential = {
 			is_law_potential = feudal_contract_0
@@ -1319,7 +1351,98 @@ laws = {
 
 		effect = {
 			hidden_effect = {
-				revoke_feudal_tax_effect = yes
+				revoke_feudal_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	# MANORIAL VASSAL LEVY SIZE LAWS
+	##############################
+
+	manorial_contract_0 = {
+		group = manorial_contract
+
+		feudal_opinion = 10
+		castle_vassal_max_levy = -0.40
+
+		potential = {
+			NOT = { has_dlc = "Conclave" }
+
+			holder_scope = {
+				is_playable = yes
+				government = manorial_government
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_manorial_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	manorial_contract_1 = {
+		group = manorial_contract
+		default = yes
+
+		feudal_opinion = 5
+		castle_vassal_max_levy = -0.30
+
+		potential = {
+			is_law_potential = manorial_contract_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_manorial_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	manorial_contract_2 = {
+		group = manorial_contract
+
+		castle_vassal_max_levy = -0.20
+
+		potential = {
+			is_law_potential = manorial_contract_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_manorial_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	manorial_contract_3 = {
+		group = manorial_contract
+
+		feudal_opinion = -5
+
+		potential = {
+			is_law_potential = manorial_contract_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_manorial_contract_effect = yes
 			}
 		}
 
@@ -1340,7 +1463,9 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				NOT = { government = muslim_government }
+				NOT = {
+					is_law_potential = muslim_tax_0
+				}
 			}
 		}
 
@@ -1417,120 +1542,29 @@ laws = {
 		}
 	}
 
-	##############################
-	# MUSLIM FEUDAL LAWS
-	##############################
-
-	# IQTA VASSAL LEVY SIZE LAWS
+	# MUSLIM VASSAL LEVY SIZE LAWS
 	##############################
 
-	iqta_contract_0 = {
-		group = iqta_contract
-
-		feudal_opinion = 10
-		castle_vassal_max_levy = -0.40
-
-		potential = {
-			NOT = { has_dlc = "Conclave" }
-
-			holder_scope = {
-				is_playable = yes
-				government = muslim_government
-			}
-		}
-
-		effect = {
-			hidden_effect = {
-				revoke_iqta_contract_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	iqta_contract_1 = {
-		group = iqta_contract
+	muslim_contract_0 = {
+		group = muslim_contract
 
 		feudal_opinion = 5
-		castle_vassal_max_levy = -0.30
-
-		potential = {
-			is_law_potential = iqta_contract_0
-		}
-
-		effect = {
-			hidden_effect = {
-				revoke_iqta_contract_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	iqta_contract_2 = {
-		group = iqta_contract
-		default = yes
-
-		castle_vassal_max_levy = -0.20
-
-		potential = {
-			is_law_potential = iqta_contract_0
-		}
-
-		effect = {
-			hidden_effect = {
-				revoke_iqta_contract_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	iqta_contract_3 = {
-		group = iqta_contract
-		feudal_opinion = -5
-
-		potential = {
-			is_law_potential = iqta_contract_0
-		}
-
-		effect = {
-			hidden_effect = {
-				revoke_iqta_contract_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-
-	# FEUDAL VASSAL TAX SIZE LAWS
-	##############################
-
-	iqta_tax_0 = {
-		group = iqta_tax
-		feudal_opinion = 10
+		temple_opinion = 5
+		castle_vassal_max_levy = -0.40
+		temple_vassal_max_levy = -0.50
 
 		potential = {
 			NOT = { has_dlc = "Conclave" }
 
 			holder_scope = {
 				is_playable = yes
-				government = muslim_government
+				religion_group = muslim
 			}
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_iqta_tax_effect = yes
+				revoke_muslim_contract_effect = yes
 			}
 		}
 
@@ -1539,19 +1573,43 @@ laws = {
 		}
 	}
 
-	iqta_tax_1 = {
-		group = iqta_tax
+	muslim_contract_1 = {
+		group = muslim_contract
 		default = yes
 
-		castle_vassal_tax_modifier = 0.10
+		castle_vassal_max_levy = -0.30
+		temple_vassal_max_levy = -0.40
 
 		potential = {
-			is_law_potential = iqta_tax_0
+			is_law_potential = muslim_contract_0
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_iqta_tax_effect = yes
+				revoke_muslim_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	muslim_contract_2 = {
+		group = muslim_contract
+
+		feudal_opinion = -5
+		temple_opinion = -5
+		castle_vassal_max_levy = -0.20
+		temple_vassal_max_levy = -0.30
+
+		potential = {
+			is_law_potential = muslim_contract_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_muslim_contract_effect = yes
 			}
 		}
 
@@ -1560,19 +1618,20 @@ laws = {
 		}
 	}
 
-	iqta_tax_2 = {
-		group = iqta_tax
+	muslim_contract_3 = {
+		group = muslim_contract
 
 		feudal_opinion = -10
-		castle_vassal_tax_modifier = 0.20
+		temple_opinion = -10
+		temple_vassal_max_levy = -0.20
 
 		potential = {
-			is_law_potential = iqta_tax_0
+			is_law_potential = muslim_contract_0
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_iqta_tax_effect = yes
+				revoke_muslim_contract_effect = yes
 			}
 		}
 
@@ -1581,19 +1640,97 @@ laws = {
 		}
 	}
 
-	iqta_tax_3 = {
-		group = iqta_tax
+	# MUSLIM VASSAL TAX SIZE LAWS
+	##############################
 
-		feudal_opinion = -20
-		castle_vassal_tax_modifier = 0.30
+	muslim_tax_0 = {
+		group = muslim_tax
+		default = yes
+
+		castle_vassal_tax_modifier = 0.05
+		temple_vassal_tax_modifier = 0.25
 
 		potential = {
-			is_law_potential = iqta_tax_0
+			NOT = { has_dlc = "Conclave" }
+
+			holder_scope = {
+				is_playable = yes
+				religion_group = muslim
+			}
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_iqta_tax_effect = yes
+				revoke_muslim_tax_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	muslim_tax_1 = {
+		group = muslim_tax
+
+		feudal_opinion = -10
+		temple_opinion = -10
+		castle_vassal_tax_modifier = 0.15
+		temple_vassal_tax_modifier = 0.35
+
+		potential = {
+			is_law_potential = muslim_tax_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_muslim_tax_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	muslim_tax_2 = {
+		group = muslim_tax
+
+		feudal_opinion = -20
+		temple_opinion = -20
+		castle_vassal_tax_modifier = 0.25
+		temple_vassal_tax_modifier = 0.45
+
+		potential = {
+			is_law_potential = muslim_tax_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_muslim_tax_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	muslim_tax_3 = {
+		group = muslim_tax
+
+		feudal_opinion = -30
+		temple_opinion = -30
+		castle_vassal_tax_modifier = 0.35
+		temple_vassal_tax_modifier = 0.55
+
+		potential = {
+			is_law_potential = muslim_tax_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_muslim_tax_effect = yes
 			}
 		}
 
@@ -1802,6 +1939,9 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
+				NOT = {
+					is_law_potential = muslim_contract_0
+				}
 			}
 		}
 
@@ -1892,6 +2032,9 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
+				NOT = {
+					is_law_potential = muslim_tax_0
+				}
 			}
 		}
 

@@ -41,7 +41,7 @@
 
 1124.3.19 = {
 	set_tribute_suzerain = {
-		who = k_ruthenia
+		who = d_kiev
 		type = permanent
 	}
 }
@@ -55,7 +55,7 @@
 }
 
 1169.1.2 = {		#When Kiev lost too much legitimacy to be a proper suzerain of the Rus principalities
-	clear_tribute_suzerain = k_ruthenia
+	clear_tribute_suzerain = d_kiev
 }
 
 1187.10.1 = {
