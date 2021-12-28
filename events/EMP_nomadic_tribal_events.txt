@@ -204,7 +204,7 @@ character_event = {
 							modifier = {
 								factor = 0
 
-								NOT = {	culture_group = magyar }
+								culture_group = magyar
 							}
 							spawn_unit = {
 								province = PREV
