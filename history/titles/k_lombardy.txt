@@ -1,4 +1,5 @@
 565.1.1 = {
+	law = centralization_0
 	holder = 190124 #Alboin
 	law = succ_elective_gavelkind
 }

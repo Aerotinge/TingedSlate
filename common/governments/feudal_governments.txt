@@ -18,6 +18,7 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			tibetan_feudal_government
 			theocratic_feudal_government
+			mandala_government
 			thema_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
@@ -38,6 +39,7 @@ feudal_governments = {
 				is_government_potential = iqta_government
 				is_government_potential = tibetan_feudal_government
 				is_government_potential = theocratic_feudal_government
+				is_government_potential = mandala_government
 				is_government_potential = order_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
@@ -75,9 +77,9 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			thema_government
 		}
-		free_revoke_on_tiers = {
-			DUKE
-		}
+		#free_revoke_on_tiers = {
+		#	DUKE
+		#}
 		free_revoke_on_governments = {
 			iqta_government
 		}
@@ -117,7 +119,7 @@ feudal_governments = {
 		can_build_tribal = no
 		#dukes_called_kings = yes
 		dukes_called_kings = no
-		free_retract_vassalage = yes
+		#free_retract_vassalage = yes
 		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
 		have_gender_laws = no
 		#uses_decadence = yes
@@ -127,7 +129,6 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
-		demesne_size = 2
 	}
 
 	iqta_government = {
@@ -232,6 +233,7 @@ feudal_governments = {
 		accepts_liege_governments_religion = {
 			theocracy_government
 			theocratic_feudal_government
+			order_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -293,9 +295,14 @@ feudal_governments = {
 		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
 			TRIBAL
 		}
+		accepts_liege_governments = {
+			feudal_government
+			mandala_government
+		}
 		accepts_liege_governments_religion = {
 			theocracy_government
 			tibetan_feudal_government
+			order_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -367,7 +374,7 @@ feudal_governments = {
 			OR = {
 				culture_group = east_slavic
 				#culture_group = south_slavic
-				culture = bosnian
+				#culture = bosnian
 				culture = bulgarian
 				culture = serbian
 				culture = vlach
@@ -421,11 +428,177 @@ feudal_governments = {
 		can_create_kingdoms = no
 		can_usurp_kingdoms_and_empires = no
 		can_build_tribal = no
-		#dukes_called_kings = no
 		dukes_called_kings = yes
 
 		capital_move_delay = 600
-		max_consorts = 3
+	}
+
+	mandala_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			tibetan_feudal_government
+			theocratic_feudal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_mandala"
+		color = { 183 93 64 }
+
+		potential = {
+			OR = {
+				culture_group = dravidian_group
+				culture_group = indo_aryan_group
+			}
+			OR = {
+				religion_openly_zun_or_reformed_trigger = yes
+				has_dharmic_religion_trigger = yes
+			}
+			is_patrician = no
+			is_tributary = no
+
+			trigger_if = {
+				limit = {
+					# independent = no # Not working well in lobby screen/history
+					any_liege = {
+						always = yes
+					}
+				}
+
+				liege = {
+					government = mandala_government
+					trigger_if = {
+						limit = {
+							trigger_if = {
+								limit = {
+									has_game_started = no
+								}
+								real_tier = EMPEROR
+							}
+							trigger_else = {
+								primary_title = {
+									has_law = centralization_3
+								}
+							}
+						}
+
+						capital_scope = {
+							empire = {
+								ROOT = {
+									capital_scope = {
+										empire = {
+											title = PREVPREVPREV
+										}
+									}
+								}
+							}
+						}
+					}
+					trigger_else_if = {
+						limit = {
+							trigger_if = {
+								limit = {
+									has_game_started = no
+								}
+								real_tier = KING
+							}
+							trigger_else = {
+								primary_title = {
+									has_law = centralization_2
+								}
+							}
+						}
+
+						capital_scope = {
+							kingdom = {
+								ROOT = {
+									capital_scope = {
+										kingdom = {
+											title = PREVPREVPREV
+										}
+									}
+								}
+							}
+						}
+					}
+					trigger_else_if = {
+						limit = {
+							trigger_if = {
+								limit = {
+									has_game_started = no
+								}
+								real_tier = DUKE
+							}
+							trigger_else = {
+								primary_title = {
+									has_law = centralization_1
+								}
+							}
+						}
+
+						capital_scope = {
+							duchy = {
+								ROOT = {
+									capital_scope = {
+										duchy = {
+											title = PREVPREVPREV
+										}
+									}
+								}
+							}
+						}
+					}
+					trigger_else = {
+						capital_scope = {
+							county = {
+								ROOT = {
+									capital_scope = {
+										county = {
+											title = PREVPREVPREV
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			trigger_else = {
+				higher_real_tier_than = COUNT
+			}
+
+			NOR = {
+				is_government_potential = tibetan_feudal_government
+				is_government_potential = order_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = thema_government
+				is_government_potential = chinese_imperial_government
+			}
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		dukes_called_kings = yes
+
+		capital_move_delay = 2000
+
+		## Modifiers
+		court_size_modifier = 10
 	}
 
 	order_government = {
@@ -441,6 +614,7 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
+			mandala_government
 		}
 		accepts_liege_governments_religion = {
 			theocracy_government
@@ -566,8 +740,6 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 15
-		demesne_size = 3
-		vassal_limit = -5
 		character_modifier = {
 			castle_vassal_max_levy = -0.25 # For balancing forced_contract with thema_government
 		}
@@ -616,8 +788,8 @@ feudal_governments = {
 		have_gender_laws = no
 
 		## Modifiers
-		demesne_size = 1
-		vassal_limit = -5
+		demesne_size = 2
+		vassal_limit = -10
 	}
 
 	pronoia_government = {
@@ -752,6 +924,7 @@ feudal_governments = {
 		can_demand_religious_conversion = no
 		can_grant_kingdoms_and_empires_to_other_government_group = yes
 		can_usurp_kingdoms_and_empires = no
+		ignores_de_jure_laws = yes
 		free_retract_vassalage = yes
 		gets_religion_opinion_penalties = no
 		gives_religion_opinion_penalties = no
@@ -767,8 +940,6 @@ feudal_governments = {
 		}
 
 		court_size_modifier = 15
-		demesne_size = 4
-		vassal_limit = -10
 	}
 
 	temporary_fake_theocracy_government = {

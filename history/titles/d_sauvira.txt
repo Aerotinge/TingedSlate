@@ -1,0 +1,91 @@
+711.1.1 = {
+	liege = e_arabia
+}
+
+# 711-747: Umayyad governors
+# 747-854: Abbasid governors
+
+768.1.1 = {
+	holder = 188533 # Hisham ibn 'Amr al-Taghlibi
+}
+
+854.1.1 = {
+	liege = 0
+	holder = 175050 # Umar I Habbari
+	#set_tribute_suzerain = {
+	#	who = e_arabia
+	#	type = permanent
+	#}
+}
+
+861.1.1 = {
+	#clear_tribute_suzerain = e_arabia
+}
+
+884.1.1 = {
+	holder = 261106 # Abdullah
+}
+
+913.1.1 = {
+	holder = 261107 # Umar II
+}
+
+#943.1.1 = {
+#	holder = # Muhammad
+#}
+
+#973.1.1 = {
+#	holder = # Ali
+#}
+
+#987.1.1 = {
+#	holder = # Yahya-Manbi
+#}
+
+1011.1.1 = {
+	holder = 188349 # Khafif I
+}
+
+1026.1.1 = {
+	holder = 188350 # Soomra
+}
+
+1053.1.1 = {
+	holder = 188351 # Bhoongar I
+}
+
+1068.1.1 = {
+	holder = 188352 # Doda I
+}
+
+1092.1.1 = {
+	holder = 188353 # Zainab Tari
+}
+
+1102.1.1 = {
+	holder = 188354 # Sanghar
+}
+
+1107.1.1 = {
+	holder = 188357 # Khafif II
+}
+
+1140.1.1 = {
+	holder = 188358 # Umar I
+}
+
+1180.1.1 = {
+	holder = 188359 # Doda II
+}
+
+1182.1.1 = {
+	holder = 0
+}
+
+1210.1.1 = {
+	holder = 170300
+}
+
+1228.5.30 = {
+	holder = 0
+}

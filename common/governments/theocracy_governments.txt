@@ -18,7 +18,6 @@ theocracy_governments = {
 		}
 		accepts_liege_governments = {
 			feudal_government
-			order_government
 			republic_government
 			merchant_republic_government
 		}
@@ -26,6 +25,7 @@ theocracy_governments = {
 			theocracy_government
 			tibetan_feudal_government
 			theocratic_feudal_government
+			order_government
 		}
 
 		frame_suffix = "_theocracy"

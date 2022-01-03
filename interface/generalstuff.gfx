@@ -698,6 +698,43 @@ spriteTypes = {
 		alwaysTransparent = yes
 	}
 
+	# MANDALA
+
+	spriteType = {
+		name = "GFX_charframe_150_mandala"
+		textureFile = "gfx\\interface\\charframe_150_mandala.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_100_mandala"
+		textureFile = "gfx\\interface\\charframe_100_mandala.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_75_mandala"
+		textureFile = "gfx\\interface\\charframe_75_mandala.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_50_mandala"
+		textureFile = "gfx\\interface\\charframe_50_mandala.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_34_mandala"
+		textureFile = "gfx\\interface\\charframe_34_mandala.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
 	# CHINESE IMPERIAL
 
 	spriteType = {
@@ -1393,6 +1430,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_icon_theocratic_feudal_government"
 		textureFile = "gfx\\interface\\government_icon_theocratic_feudal.dds"
+	}
+
+	spriteType = {
+		name = "GFX_icon_mandala_government"
+		textureFile = "gfx\\interface\\government_icon_mandala.dds"
 	}
 
 	spriteType = {

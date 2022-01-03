@@ -1,5 +1,5 @@
 711.1.1 = {
-	liege = k_sindh
+	liege = d_sauvira
 }
 
 # 711-747: Umayyad governors

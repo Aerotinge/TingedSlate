@@ -29,6 +29,7 @@ republic_governments = {
 			NOR = {
 				is_government_potential = merchant_republic_government	# Necessary to keep Merchant Republics from reverting on some successions
 				is_government_potential = roman_imperial_government		# Necessary to keep Roman Imperial from reverting on some successions
+				is_government_potential = chinese_imperial_government	# Necessary to keep Chinese Imperial from reverting on some successions
 			}
 			could_be_temporal_religious_head_trigger = yes
 		}
@@ -65,6 +66,9 @@ republic_governments = {
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			merchant_republic_government
 		}
 
 		frame_suffix = "_merchantrepublic"

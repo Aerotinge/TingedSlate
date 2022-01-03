@@ -1,6 +1,16 @@
 spriteTypes = {
 
 	spriteType = {
+		name = "GFX_create_nomad_horde"
+		texturefile = "gfx\\interface\\decision_icon_raise_tribal_army.dds"
+	}
+
+	spriteType = {
+		name = "GFX_mandala_become_outer_ring"
+		texturefile = "gfx\\interface\\decision_icon_mandala_become_outer_ring.dds"
+	}
+
+	spriteType = {
 		name = "GFX_form_the_daneland"
 		textureFile = "gfx\\interface\\decision_icon_form_the_daneland.dds"
 	}

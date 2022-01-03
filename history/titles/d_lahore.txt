@@ -1,9 +1,13 @@
 740.1.1 = {
 	holder = 191017 #Madras
-	liege = k_kashmir
+	set_tribute_suzerain = {
+		who = d_kashmir
+		type = permanent
+	}
 }
 
 860.1.1 = {
+	clear_tribute_suzerain = d_kashmir
 	holder = 191009	#Alakhana
 	liege = k_kosala
 }

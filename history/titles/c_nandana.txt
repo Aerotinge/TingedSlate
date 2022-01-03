@@ -1,6 +1,6 @@
 756.1.1 = {
 	holder = 191961 #Sujji, fictional vassal in the Salt range
-	liege = k_kashmir
+	liege = d_kashmir
 }
 
 780.1.1 = {

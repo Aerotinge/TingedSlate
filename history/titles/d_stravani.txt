@@ -108,7 +108,10 @@
 }
 
 1294.1.1 = {
-	liege = k_sindh
+	set_tribute_suzerain = {
+		who = d_sauvira
+		type = permanent
+	}
 	holder = 188344 #Rawal-Jhetsi
 }
 
@@ -117,6 +120,7 @@
 }
 
 1320.1.1 = {
+	clear_tribute_suzerain = d_sauvira
 	holder = 188346 #Mulraja
 }
 

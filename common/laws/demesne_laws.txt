@@ -60,11 +60,10 @@ laws = {
 
 		potential = {
 			holder_scope = {
-				OR = {
-					government = feudal_government
-					government = tibetan_feudal_government
-					government = theocratic_feudal_government
-				}
+				is_nomadic = no
+				is_tribal = no
+				#is_vice_royalty = no
+				NOT = { government = thema_government }
 				higher_real_tier_than = COUNT
 			}
 		}
@@ -1199,7 +1198,9 @@ laws = {
 
 		allow = {
 			holder_scope = {
-				NOT = {	government = roman_imperial_government }
+				NOT = {
+					government = roman_imperial_government
+				}
 			}
 		}
 
@@ -1374,7 +1375,10 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				government = manorial_government
+				OR = {
+					government = manorial_government
+					government = roman_imperial_government
+				}
 			}
 		}
 
@@ -1391,7 +1395,6 @@ laws = {
 
 	manorial_contract_1 = {
 		group = manorial_contract
-		default = yes
 
 		feudal_opinion = 5
 		castle_vassal_max_levy = -0.30
@@ -1407,12 +1410,13 @@ laws = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
 	manorial_contract_2 = {
 		group = manorial_contract
+		default = yes
 
 		castle_vassal_max_levy = -0.20
 
@@ -1427,7 +1431,7 @@ laws = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 1
 		}
 	}
 
@@ -1591,7 +1595,7 @@ laws = {
 		}
 
 		ai_will_do = {
-			factor = 0
+			factor = 1
 		}
 	}
 
@@ -1614,7 +1618,7 @@ laws = {
 		}
 
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 

@@ -21,7 +21,7 @@
 # 863-985: banu Sama rule
 
 985.1.1 = {
-	liege = k_sindh
+	liege = d_sauvira
 }
 
 # 985-1008: Soomra rule

@@ -1,0 +1,190 @@
+decisions = {
+
+	mandala_become_outer_ring = {
+		is_high_prio = yes
+		ai_check_interval = 120
+
+		only_playable = yes
+
+		potential = {
+			NOR = {
+				government = mandala_government
+				has_character_flag = had_been_mandala_outer_ring
+				is_vice_royalty = yes
+			}
+			primary_title = {
+				any_de_jure_liege_title = {
+					OR = {
+						has_holder = no
+						NOT = { same_realm = ROOT }
+					}
+				}
+			}
+			liege = {
+				government = mandala_government
+				independent = yes
+				ROOT = {
+					any_realm_province = {
+						any_neighbor_province = {
+							owner = {
+								NOR = {
+									same_realm = ROOT
+									is_tributary = {
+										suzerain = PREVPREVPREV
+									}
+									top_liege = {
+										is_tributary = {
+											suzerain = PREVPREVPREVPREV
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = TT_NOT_CONNECTED_WITH_INNER_RING
+
+				NOT = {
+					any_realm_province = {
+						any_neighbor_province = {
+							owner = {
+								same_realm = ROOT
+								government = mandala_government
+							}
+						}
+					}
+				}
+			}
+			trigger_if = {
+				limit = {
+					real_tier = KING
+				}
+				prestige = 1000
+			}
+			trigger_else_if = {
+				limit = {
+					real_tier = DUKE
+				}
+				prestige = 500
+			}
+			trigger_else = {
+				prestige = 250
+			}
+		}
+
+		effect = {
+			liege = {
+				hidden_effect = {
+					PREV = {
+						set_defacto_liege = ROOT
+					}
+				}
+				make_tributary = {
+					who = ROOT
+					tributary_type = permanent
+					percentage = 0.4
+				}
+				opinion = {
+					modifier = opinion_disrespectful_pest
+					who = ROOT
+					years = 5
+				}
+			}
+			hidden_effect = {
+				set_correct_feudal_government_type_effect = yes
+				set_character_flag = had_been_mandala_outer_ring
+				clr_character_flag = recently_mandala_suzerain_changed
+				set_character_flag = recently_mandala_suzerain_changed
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
+
+targeted_decisions = {
+	mandala_change_suzerain = {
+		filter = independent_rulers
+
+		ai = no
+
+		potential = {
+			FROM = {
+				suzerain = {
+					government = mandala_government
+					ROOT_FROM = {
+						is_tributary = {
+							type = permanent
+							suzerain = PREV
+						}
+					}
+					NOT = { character = ROOT }
+				}
+				any_neighbor_independent_ruler = {
+					character = ROOT
+				}
+			}
+			government = mandala_government
+			independent = yes
+			OR = {
+				higher_real_tier_than = FROM
+				real_tier = FROM
+			}
+		}
+
+		allow = {
+			ROOT = {
+				war = no
+			}
+			FROM = {
+				custom_tooltip = {
+					text = not_recently_mandala_suzerain_changed_tooltip
+
+					OR = {
+						NOT = { has_character_flag = recently_mandala_suzerain_changed }
+						had_character_flag = {
+							flag = recently_mandala_suzerain_changed 
+							years >= 5
+						}
+					}
+				}
+				war = no
+				is_incapable = no
+				is_inaccessible_trigger = no
+				prisoner = no
+			}
+		}
+
+		effect = {
+			FROM = {
+				suzerain = {
+					remove_tributary = PREV
+					opinion = {
+						modifier = opinion_angry
+						who = PREV
+						years = 5
+					}
+				}
+				clr_character_flag = recently_mandala_suzerain_changed
+				set_character_flag = recently_mandala_suzerain_changed
+			}
+			make_tributary = {
+				who = FROM
+				tributary_type = permanent
+				percentage = 0.4
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

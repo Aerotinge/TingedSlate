@@ -1,5 +1,5 @@
 711.1.1 = {
-	liege = k_sindh
+	liege = d_sauvira
 }
 
 # 711-747: Umayyad governors
@@ -31,7 +31,7 @@
 
 1053.1.1 = {
 	holder = 188351 # Bhoongar I
-	liege = k_sindh
+	liege = d_sauvira
 }
 
 1068.1.1 = {

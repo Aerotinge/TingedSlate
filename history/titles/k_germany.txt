@@ -13,6 +13,7 @@
 }
 
 769.1.1 = {
+	law = centralization_0
 	name = EAST_FRANCIA
 	adjective = EAST_FRANCIA_ADJ
 	law = agnatic_succession

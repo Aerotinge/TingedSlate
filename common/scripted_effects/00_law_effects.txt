@@ -56,18 +56,18 @@ revoke_manorial_contract_effect = {
 	revoke_law = manorial_contract_3
 }
 
-revoke_iqta_contract_effect = {
-	revoke_law = iqta_contract_0
-	revoke_law = iqta_contract_1
-	revoke_law = iqta_contract_2
-	revoke_law = iqta_contract_3
+revoke_muslim_contract_effect = {
+	revoke_law = muslim_contract_0
+	revoke_law = muslim_contract_1
+	revoke_law = muslim_contract_2
+	revoke_law = muslim_contract_3
 }
 
-revoke_iqta_tax_effect = {
-	revoke_law = iqta_tax_0
-	revoke_law = iqta_tax_1
-	revoke_law = iqta_tax_2
-	revoke_law = iqta_tax_3
+revoke_muslim_tax_effect = {
+	revoke_law = muslim_tax_0
+	revoke_law = muslim_tax_1
+	revoke_law = muslim_tax_2
+	revoke_law = muslim_tax_3
 }
 
 revoke_city_contract_effect = {
