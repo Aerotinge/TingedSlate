@@ -470,7 +470,7 @@ finnish_band_composition = {
 	light_cavalry = 150
 }
 
-lappish_band_composition = {
+sami_band_composition = {
 	levy_size = 0.2
 	archers = 250
 	light_infantry = 450
@@ -540,7 +540,7 @@ cuman_band_composition = {
 pecheneg_band_composition = {
 	levy_size = 0.3
 	light_infantry = 100
-	light_cavalry = 300	
+	light_cavalry = 300
 	horse_archers = 300
 }
 

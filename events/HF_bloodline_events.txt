@@ -2337,7 +2337,7 @@ character_event = {
 			limit = {
 				trigger_if = {
 					limit = { has_character_flag = flag_forge_bloodline_was_child }
-					practical_age = 35 # Should still be somewhat young
+					practical_age < 35 # Should still be somewhat young
 				}
 				trigger_else = {
 					is_adult = no
@@ -2423,6 +2423,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTAHF24033
+
 		trigger = {
 			religion_group = christian
 			is_evil_trigger = no
@@ -6287,6 +6288,8 @@ character_event = {
 			has_plot = plot_kill_spouse
 		}
 
+		is_plot_active = no
+
 		plot_target_char = {
 			OR = {
 				at_location = ROOT
@@ -6295,8 +6298,6 @@ character_event = {
 
 			block_general_event_trigger = no
 		}
-
-		NOT = { has_character_flag = murder_in_motion }
 	}
 
 	mean_time_to_happen = {
@@ -6405,7 +6406,7 @@ character_event = {
 		custom_tooltip = {
 			text = EVTOPTA_HF24113_TOOLTIP
 
-			set_character_flag = murder_in_motion
+			activate_plot = yes
 
 			event_target:plot_target = {
 				character_event = {
@@ -6442,12 +6443,18 @@ character_event = {
 	is_triggered_only = yes
 	hide_from = yes
 
+	trigger = {
+		is_plot_active = yes
+
+		plot_target_char = {
+			is_alive = yes
+		}
+	}
+
 	option = {
 		name = EVTOPTAHF24114
 
 		hidden_effect = {
-			FROM = { clr_character_flag = murder_in_motion }
-
 			random_list = {
 				60 = { # Die
 					random_list = {
@@ -6732,8 +6739,6 @@ character_event = {
 				add_society_currency_minor_effect = yes
 			}
 		}
-
-		clr_character_flag = murder_in_motion
 	}
 }
 
@@ -6846,8 +6851,6 @@ character_event = {
 				add_society_currency_minor_effect = yes
 			}
 		}
-
-		clr_character_flag = murder_in_motion
 	}
 }
 
@@ -6872,6 +6875,7 @@ character_event = {
 	immediate = {
 		event_target:assassin_plot_owner = {
 			character_event = { id = HF.24122 }
+			activate_plot = no
 		}
 	}
 
@@ -6961,6 +6965,10 @@ character_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		activate_plot = no
+	}
+
 	option = {
 		name = EVTOPTAHF24124
 
@@ -6974,8 +6982,6 @@ character_event = {
 			add_maimed_trait_effect = yes
 			clr_character_flag = assassin_maimed
 		}
-
-		clr_character_flag = murder_in_motion
 	}
 }
 
@@ -6999,6 +7005,7 @@ character_event = {
 	immediate = {
 		event_target:assassin_plot_owner = {
 			character_event = { id = HF.24128 }
+			activate_plot = no
 		}
 	}
 

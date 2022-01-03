@@ -599,15 +599,9 @@ decisions = {
 
 		potential = {
 			OR = {
-				is_tributary = {
-					type = default
-				}
-				is_tributary = {
-					type = permanent
-				}
-				is_tributary = {
-					type = nomadic
-				}
+				is_tributary = { type = default }
+				is_tributary = { type = permanent }
+				is_tributary = { type = nomadic }
 			}
 		}
 
@@ -706,6 +700,8 @@ decisions = {
 		}
 		effect = {
 			any_suzerain = {
+				show_scope_change = no
+
 				character_event = { id = JD.2200 }
 				remove_tributary = ROOT
 			}
@@ -752,6 +748,8 @@ decisions = {
 
 		effect = {
 			any_suzerain = {
+				show_scope_change = no
+
 				remove_tributary = ROOT
 			}
 

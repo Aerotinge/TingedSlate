@@ -1346,9 +1346,11 @@ succession_laws = {
 					limit = { is_theocracy = yes }
 
 					# Use Investiture and Papal succession instead
-					NOR = {
-						is_law_potential = succ_papal_succession
-						is_law_potential = succ_catholic_bishopric
+					ROOT = {
+						NOR = {
+							is_law_potential = succ_papal_succession
+							is_law_potential = succ_catholic_bishopric
+						}
 					}
 				}
 				trigger_else_if = {
