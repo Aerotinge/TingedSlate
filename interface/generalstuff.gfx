@@ -1488,20 +1488,10 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_icon_secular_feudal_government"
-		texturefile = "gfx\\interface\\government_icon_secular_feudal.dds"
+		name = "GFX_icon_band_government"
+		texturefile = "gfx\\interface\\government_icon_band.dds"
 	}
 
-	spriteType = {
-		name = "GFX_icon_sacred_confederacy_government"
-		texturefile = "gfx\\interface\\government_icon_sacred_confederacy.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_icon_mexikhan_colonial_government"
-		texturefile = "gfx\\interface\\government_icon_nogovernment.dds"
-	}
-	
 	spriteType = {
 		name = "GFX_icon_nomadic_tribal_government"
 		texturefile = "gfx\\interface\\government_icon_nomadic.dds"
@@ -1606,72 +1596,72 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_charframe_150_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_150_tibetanfeudal.tga"
+		texturefile = "gfx\\interface\\charframe_150_tibetanfeudal.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_charframe_100_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_100_tibetanfeudal.tga"
+		texturefile = "gfx\\interface\\charframe_100_tibetanfeudal.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_charframe_75_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_75_tibetanfeudal.tga"
+		texturefile = "gfx\\interface\\charframe_75_tibetanfeudal.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_charframe_50_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_50_tibetanfeudal.tga"
+		texturefile = "gfx\\interface\\charframe_50_tibetanfeudal.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_charframe_34_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_34_tibetanfeudal.tga"
+		texturefile = "gfx\\interface\\charframe_34_tibetanfeudal.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
 
-	# Spiritual Feudal Government
+	# Band Government
 
 	spriteType = {
-		name = "GFX_charframe_150_secularfeudal"
-		texturefile = "gfx\\interface\\charframe_150_secularfeudal.tga"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_secularfeudal"
-		texturefile = "gfx\\interface\\charframe_100_secularfeudal.tga"
+		name = "GFX_charframe_150_band"
+		texturefile = "gfx\\interface\\charframe_150_band.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
 
 	spriteType = {
-		name = "GFX_charframe_75_secularfeudal"
-		texturefile = "gfx\\interface\\charframe_75_secularfeudal.tga"
+		name = "GFX_charframe_100_band"
+		texturefile = "gfx\\interface\\charframe_100_band.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
 
 	spriteType = {
-		name = "GFX_charframe_50_secularfeudal"
-		texturefile = "gfx\\interface\\charframe_50_secularfeudal.tga"
+		name = "GFX_charframe_75_band"
+		texturefile = "gfx\\interface\\charframe_75_band.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}
 
 	spriteType = {
-		name = "GFX_charframe_34_secularfeudal"
-		texturefile = "gfx\\interface\\charframe_34_secularfeudal.tga"
+		name = "GFX_charframe_50_band"
+		texturefile = "gfx\\interface\\charframe_50_band.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_34_band"
+		texturefile = "gfx\\interface\\charframe_34_band.dds"
 		noOfFrames = 6
 		allwaystransparent = yes
 	}

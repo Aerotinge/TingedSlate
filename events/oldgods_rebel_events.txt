@@ -563,7 +563,6 @@ province_event = {
 			}
 
 			wealth = 100
-
 			spawn_heretic_army_effect = yes
 
 			if = {
@@ -1140,8 +1139,8 @@ province_event = {
 				holder = THIS
 			}
 
-			spawn_religious_army_effect = yes
 			wealth = 100
+			spawn_religious_army_effect = yes
 
 			if = {
 				limit = {

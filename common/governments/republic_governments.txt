@@ -30,6 +30,7 @@ republic_governments = {
 				is_government_potential = merchant_republic_government	# Necessary to keep Merchant Republics from reverting on some successions
 				is_government_potential = roman_imperial_government		# Necessary to keep Roman Imperial from reverting on some successions
 				is_government_potential = chinese_imperial_government	# Necessary to keep Chinese Imperial from reverting on some successions
+				is_government_potential = band_government
 			}
 			could_be_temporal_religious_head_trigger = yes
 		}
@@ -147,5 +148,58 @@ republic_governments = {
 		## Modifiers
 		court_size_modifier = 5
 		court_size_maintenance_cost_modifier = -0.05
+	}
+
+	band_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			FORT
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			muslim_government
+			tibetan_feudal_government
+			theocratic_feudal_government
+			mandala_government
+			republic_government
+			merchant_republic_government
+			theocracy_government
+		}
+
+		frame_suffix = "_band"
+		color = { 69 69 69 }
+
+		potential = {
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+			OR = {
+				mercenary = yes
+				rebel = yes
+			}
+		}
+
+		allow = {
+		}
+
+		can_build_tribal = no
+		can_be_granted_kingdoms_and_empires_by_other_government = no
+		can_create_kingdoms = no
+		can_create_empires = no
+		can_grant_kingdoms_and_empires_to_other_government = no
+		can_imprison_without_reason = no
+		can_revoke_without_reason = no
+		can_usurp_kingdoms_and_empires = no
+		dukes_called_kings = no
+		have_gender_laws = no
+
+		capital_move_delay = 600
+
+		# Modifiers
+		commander_limit = 1
+		character_modifier = {
+			combat_rating = 5
+		}
 	}
 }

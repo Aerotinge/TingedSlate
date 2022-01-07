@@ -1366,7 +1366,6 @@ on_death = {
 		532      # Clears regents if heir has one already
 		680      # Preserve player religion if heir has DLC locked religion
 		LT.20501 # Sucessor must decide on Burial if it has wonders with burial_ground flag
-		EMP.20010 # Landless title heir dynasty fix
 	}
 
 	random_events = {
@@ -2401,7 +2400,6 @@ on_new_holder_inheritance = {
 		62932 # Rename Middle Francia to Austrasia
 		62933 # Special event for renaming Ruthenia should they be ruled by Russians in Kiev
 		62934 # Reset name if no longer ruled by Russians in Kiev
-		EMP.20011
 	}
 
 	random_events = {

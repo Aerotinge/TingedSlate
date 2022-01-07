@@ -5500,8 +5500,6 @@ province_event = {
 				}
 			}
 
-			set_government_type = nomadic_tribal_government
-
 			spawn_nomadic_army_effect = yes
 			if = {
 				limit = {

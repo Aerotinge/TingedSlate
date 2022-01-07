@@ -25,13 +25,13 @@ baron_norse_pagan_reformed;Þegn;Þegn;Þegn;;Þegn;;;;;;;;;x
 baron_pagan_group;Hetman;Hetman;Hetman;;Hetman;;;;;;;;;x
 baron_roman;Legatus;Legatus;Legatus;;Legado;;;;;;;;;x
 baron_turkish;Agha;Agha;Agha;;Agha;;;;;;;;;x
-barony;Barony;Baronnie;Baronie;;Baronía;;;;;;;;;x
+barony;Castle;Château;Burg;;Castillo;;;;;;;;;x
 barony_arabic;Wilayah;Wilaya;Wilayah;;Vilayato;;;;;;;;;x
 barony_dravidian_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_indo_aryan_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_iranian;Arg;Arg;Arg;;Arg;;;;;;;;;x
 barony_mongol;Taishi;Taïshi;Taishi;;Taishi;;;;;;;;;x
-barony_of;Barony of;Baronnie de;Baronie;;Baronía de;;;;;;;;;x
+barony_of;Castle of;Château de;Burg von;;Castillo de;;;;;;;;;x
 barony_of_arabic;Wilayah of;Wilaya de;Wilayah von;;Vilayato de;;;;;;;;;x
 barony_of_dravidian_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
 barony_of_indo_aryan_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
@@ -317,6 +317,12 @@ nomadic_kingdom_altaic;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
 nomadic_kingdom_magyar;Confederation;Confédération;Eidgenossenschaft;;Confederación;;;;;;;;;x
 nomadic_kingdom_of_altaic;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
 nomadic_kingdom_of_magyar;Confederation of;Confédération de;Eidgenossenschaft von;;Confederación de;;;;;;;;;x
+nomadic_count;Chief;Chef;Häuptling;;Mandatario;;;;;;;;;x
+nomadic_count_female;Chieftess;Cheffesse;Stammesführerin;;Jefa;;;;;;;;;x
+nomadic_county;Chiefdom;Chefferie;Häuptlingstum;;Cacicazgo;;;;;;;;;x
+nomadic_county_of;Chiefdom of;Chefferie de;Ländereien des Häuptlings von;;Cacicazgo de;;;;;;;;;x
+nomadic_county_of_altaic;Ordu of;Ordu de;Ordu von;;Ordu de;;;;;;;;;x
+nomadic_county_of_east_slavic;Ordu of;Ordu de;Ordu von;;Ordu de;;;;;;;;;x
 nomadic_duke_altaic;Tarkhan;Tarkhan;Tarkhan;;Tarkan;;;;;;;;;x
 nomadic_duke_female_altaic;Tarkhanum;Tarkhanoum;Tarkhanum;;Tarkanum;;;;;;;;;x
 nomadic_duke_female_magyar;Grand-Princess;Grande princesse;Großfürstin;;Gran princesa;;;;;;;;;x

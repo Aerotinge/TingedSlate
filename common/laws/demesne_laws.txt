@@ -63,7 +63,10 @@ laws = {
 				is_nomadic = no
 				is_tribal = no
 				#is_vice_royalty = no
-				NOT = { government = thema_government }
+				NOR = {
+					government = thema_government
+					government = band_government
+				}
 				higher_real_tier_than = COUNT
 			}
 		}
@@ -1378,6 +1381,7 @@ laws = {
 				OR = {
 					government = manorial_government
 					government = roman_imperial_government
+					government = band_government
 				}
 			}
 		}
