@@ -40,7 +40,6 @@ tribal_governments = {
 
 		potential = {
 			holy_order = no
-			NOT = { is_government_potential = order_government }
 
 			trigger_if = {
 				limit = { has_game_started = yes }
@@ -48,6 +47,7 @@ tribal_governments = {
 			}
 
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 		}
 
 		allow = {
@@ -122,7 +122,6 @@ tribal_governments = {
 				higher_real_tier_than = BARON
 			}
 			holy_order = no
-			NOT = { is_government_potential = order_government }
 
 			trigger_if = {
 				limit = { has_game_started = yes }
@@ -130,6 +129,7 @@ tribal_governments = {
 			}
 
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 		}
 
 		allow = {

@@ -6,6 +6,7 @@ feudal_governments = {
 		}
 		allowed_holdings = {
 			CASTLE
+			TEMPLE
 			FORT
 			HOSPITAL
 		}
@@ -30,6 +31,7 @@ feudal_governments = {
 		potential = {
 			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 
 			NOR = {
 				is_government_potential = manorial_government
@@ -38,7 +40,6 @@ feudal_governments = {
 				is_government_potential = tibetan_feudal_government
 				is_government_potential = theocratic_feudal_government
 				is_government_potential = mandala_government
-				is_government_potential = order_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = pronoia_government
@@ -100,10 +101,10 @@ feudal_governments = {
 		potential = {
 			religion_group = muslim
 			is_patrician = no
+			could_be_order_trigger = no
 
 			NOR = {
 				is_government_potential = iqta_government
-				is_government_potential = order_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = chinese_imperial_government
@@ -162,6 +163,7 @@ feudal_governments = {
 			real_tier = BARON
 			#religion_group = muslim
 			is_patrician = no
+			could_be_order_trigger = no
 			independent = no
 
 			liege = {
@@ -194,8 +196,6 @@ feudal_governments = {
 					has_law = succ_appointment
 				}
 			}
-
-			NOT = { is_government_potential = order_government }
 		}
 
 		allow = {
@@ -244,6 +244,7 @@ feudal_governments = {
 			#higher_real_tier_than = BARON
 			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 
 			OR = {
 				religion_openly_bon_or_reformed_trigger = yes
@@ -255,7 +256,6 @@ feudal_governments = {
 			}
 
 			NOR = {
-				is_government_potential = order_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = chinese_imperial_governmen
@@ -312,12 +312,12 @@ feudal_governments = {
 		potential = {
 			controls_religion = yes
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 			is_patrician = no
 
 			NOR = {
 				is_government_potential = muslim_government
 				is_government_potential = tibetan_feudal_government
-				is_government_potential = order_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = chinese_imperial_government
@@ -377,6 +377,7 @@ feudal_governments = {
 			NOT = { higher_real_tier_than = DUKE }
 			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 
 			trigger_if = {
 				limit = {
@@ -410,7 +411,6 @@ feudal_governments = {
 				is_government_potential = iqta_government
 				is_government_potential = theocratic_feudal_government
 				is_government_potential = thema_government
-				is_government_potential = order_government
 				is_government_potential = band_government
 			}
 		}
@@ -464,6 +464,7 @@ feudal_governments = {
 			is_patrician = no
 			is_tributary = no
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 
 			trigger_if = {
 				limit = {
@@ -577,7 +578,6 @@ feudal_governments = {
 
 			NOR = {
 				is_government_potential = tibetan_feudal_government
-				is_government_potential = order_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = chinese_imperial_government
@@ -596,71 +596,6 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
-	}
-
-	order_government = {
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			TEMPLE
-			TRIBAL
-			FORT
-			HOSPITAL
-		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			mandala_government
-		}
-		accepts_liege_governments_religion = {
-			theocracy_government
-			tibetan_feudal_government
-			theocratic_feudal_government
-		}
-		free_revoke_on_governments = {
-			order_government
-		}
-		free_revoke_on_tiers_religion = {
-			BARON
-		}
-		forced_contract = {
-			order_government
-		}
-
-		frame_suffix = "_order"
-		title_prefix = "order_"
-		color = { 169 169 169 }
-
-		potential = {
-			trigger_if = {
-				limit = { holy_order = no }
-
-				ai = yes
-
-				any_liege = {
-					holy_order = yes
-					religion = ROOT
-				}
-
-				NOT = { is_government_potential = merchant_republic_government }
-			}
-		}
-
-		allow = {}
-
-		barons_need_dynasty = yes
-		can_be_granted_kingdoms_and_empires_by_other_government = no
-		can_create_kingdoms = no
-		can_create_empires = no
-		can_grant_kingdoms_and_empires_to_other_government = no
-		can_inherit = no
-		can_imprison_without_reason = no
-		can_revoke_without_reason = no
-		can_usurp_kingdoms_and_empires = no
-		dukes_called_kings = no
-		#free_retract_vassalage = yes
-		have_gender_laws = no
 	}
 
 	roman_imperial_government = {
@@ -717,6 +652,7 @@ feudal_governments = {
 			}
 
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 		}
 
 		allow = {}
@@ -828,10 +764,6 @@ feudal_governments = {
 					has_law = succ_appointment
 				}
 			}
-
-			NOT = {
-				is_government_potential = order_government
-			}
 		}
 
 		allow = {
@@ -900,6 +832,7 @@ feudal_governments = {
 			}
 
 			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 		}
 
 		allow = {

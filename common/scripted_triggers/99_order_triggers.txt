@@ -1,0 +1,25 @@
+could_be_order_trigger = {
+	trigger_if = {
+		limit = { holy_order = no }
+
+		ai = yes
+
+		any_liege = {
+			holy_order = yes
+			religion = ROOT
+		}
+
+		capital_holding = {
+			OR = {
+				holding_type = castle
+				holding_type = tribal
+				trigger_if = {
+					limit = {
+						PREV = { religion_group = muslim }
+					}
+					holding_type = temple
+				}
+			}
+		}
+	}
+}
