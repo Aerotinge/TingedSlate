@@ -123,6 +123,8 @@ jewish_group = {
 		can_grant_invasion_cb = invasion
 		join_crusade_if_bordering_hostile = yes
 		priests_can_marry = yes
+		female_temple_holders = no
+		male_temple_holders = no
 	}
 
 	samaritan = {

@@ -1345,11 +1345,13 @@ succession_laws = {
 				trigger_if = {
 					limit = { is_theocracy = yes }
 
-					# Use Investiture and Papal succession instead
 					ROOT = {
 						NOR = {
+							# Use Investiture and Papal succession and instead
 							is_law_potential = succ_papal_succession
 							is_law_potential = succ_catholic_bishopric
+							# Use Appointment succession and instead
+							is_law_potential = succ_appointment
 						}
 					}
 				}
@@ -1392,7 +1394,7 @@ succession_laws = {
 			is_landless_type_title = no
 
 			holder_scope = {
-				is_theocracy = yes
+				government = theocracy_government
 
 				OR = {
 					religion = catholic

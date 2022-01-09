@@ -15,7 +15,10 @@ could_be_order_trigger = {
 				holding_type = tribal
 				trigger_if = {
 					limit = {
-						PREV = { religion_group = muslim }
+						PREV = {
+							religion_allows_female_temple_holders = no
+							religion_allows_male_temple_holders = no
+						}
 					}
 					holding_type = temple
 				}

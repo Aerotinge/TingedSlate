@@ -1,0 +1,30 @@
+has_clan_culture = {
+	custom_tooltip = {
+		text = HAS_CLAN_CULTURE
+
+		OR = {
+			culture = turkish
+			culture = karluk
+			culture = khitan
+			culture = bedouin_arabic
+			culture = maghreb_arabic
+			culture = levantine_arabic
+			culture = egyptian_arabic
+			culture = andalusian_arabic
+			culture = tamil
+			culture = telugu
+			culture = kannada
+			culture = bengali
+			culture = oriya
+			culture = panjabi
+			culture = rajput
+			culture = sindhi
+			culture = marathi
+			culture = sinhala
+			culture = persian
+			culture = kurdish
+			culture = afghan
+			culture = baloch
+		}
+	}
+}

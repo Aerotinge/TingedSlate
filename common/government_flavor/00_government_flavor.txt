@@ -10,7 +10,9 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -54,7 +56,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -95,7 +99,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -204,7 +210,9 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOT = { religion_group = indian_group }
@@ -244,7 +252,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -279,7 +289,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -314,7 +326,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -346,7 +360,9 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -398,7 +414,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -446,7 +464,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -494,7 +514,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -632,7 +654,9 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		mercenary = no
@@ -688,7 +712,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -738,7 +764,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -788,7 +816,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -838,7 +868,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -885,7 +917,9 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -922,7 +956,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -956,7 +992,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -1044,7 +1082,9 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		# Council is powerless
@@ -1081,7 +1121,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		# Council is powerless
@@ -1113,7 +1155,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		# Council is powerless
@@ -1145,7 +1189,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		# Council is powerless
@@ -1185,7 +1231,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		# Council is powerless
@@ -1222,7 +1270,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		# Council is powerless
@@ -1257,7 +1307,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		# Council is powerless
@@ -1292,7 +1344,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		# Council is powerless
@@ -1386,7 +1440,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -1420,7 +1476,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -1454,7 +1512,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -1479,12 +1539,12 @@ government_flavor = {
 	priority = 3
 
 	trigger = {
-		has_law = succ_byzantine_elective
-		is_landed = yes
+		government = roman_imperial_government
 
 		OR = {
 			has_landed_title = e_roman_empire
 			has_landed_title = e_byzantium
+			has_landed_title = e_nicaea
 		}
 	}
 }
@@ -1495,12 +1555,12 @@ government_flavor = {
 	priority = 3
 
 	trigger = {
-		has_law = succ_byzantine_elective
-		is_landed = no
+		NOT = { government = roman_imperial_government }
 
-		NOR = {
+		OR = {
 			has_landed_title = e_roman_empire
 			has_landed_title = e_byzantium
+			has_landed_title = e_nicaea
 		}
 	}
 }
@@ -1518,7 +1578,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		mercenary = no
@@ -1576,7 +1638,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		trigger_if = {
@@ -1629,7 +1693,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -1682,7 +1748,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -1827,7 +1895,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -1882,7 +1952,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -1929,7 +2001,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -1978,7 +2052,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -2016,7 +2092,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -2054,7 +2132,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -2092,7 +2172,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -2195,7 +2277,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -2236,7 +2320,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -2277,7 +2363,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -2482,7 +2570,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -2520,7 +2610,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -2557,7 +2649,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -2602,7 +2696,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -2645,7 +2741,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -2674,7 +2772,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -2716,7 +2816,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		NOR = {
@@ -2736,7 +2838,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 
 		OR = {
@@ -2748,32 +2852,36 @@ government_flavor = {
 
 government_flavor = {
 	name = gov_duchy_viceroy
-	graphics = GFX_evt_siege
+	graphics = GFX_evt_powerful_tower
 	priority = 2
 
 	trigger = {
 		is_vice_royalty = yes
 		real_tier = DUKE
 
-		NOR = {
-			culture_group = byzantine
-			culture = roman
+		liege = {
+			NOR = {
+				culture_group = byzantine
+				culture = roman
+			}
 		}
 	}
 }
 
 government_flavor = {
 	name = gov_king_viceroy
-	graphics = GFX_evt_spymaster
+	graphics = GFX_evt_castle_garden
 	priority = 2
 
 	trigger = {
 		is_vice_royalty = yes
 		real_tier = KING
 
-		NOR = {
-			culture_group = byzantine
-			culture = roman
+		liege = {
+			NOR = {
+				culture_group = byzantine
+				culture = roman
+			}
 		}
 	}
 }
@@ -2785,7 +2893,9 @@ government_flavor = {
 
 	trigger = {
 		is_vice_royalty = yes
-		culture_group = byzantine
+		liege = {
+			culture_group = byzantine
+		}
 		real_tier = DUKE
 	}
 }
@@ -2797,7 +2907,9 @@ government_flavor = {
 
 	trigger = {
 		is_vice_royalty = yes
-		culture_group = byzantine
+		liege = {
+			culture_group = byzantine
+		}
 		real_tier = KING
 	}
 }
@@ -2809,7 +2921,9 @@ government_flavor = {
 
 	trigger = {
 		is_vice_royalty = yes
-		culture = roman
+		liege = {
+			culture = roman
+		}
 		real_tier = DUKE
 	}
 }
@@ -2820,7 +2934,9 @@ government_flavor = {
 
 	trigger = {
 		is_vice_royalty = yes
-		culture = roman
+		liege = {
+			culture = roman
+		}
 		real_tier = KING
 	}
 }
@@ -2841,7 +2957,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 	}
 }
@@ -2862,7 +2980,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 	}
 }
@@ -2880,7 +3000,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 	}
 }
@@ -2904,7 +3026,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 	}
 }
@@ -2943,7 +3067,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 	}
 }
@@ -2983,7 +3109,9 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = theocratic_feudal_government
+			government = tibetan_feudal_government
+			government = manorial_government
+			government = mandala_government
 		}
 	}
 }
@@ -3214,7 +3342,7 @@ government_flavor = {
 	priority = 2
 
 	trigger = {
-		is_theocracy = yes
+		government = theocracy_government
 	}
 }
 
@@ -3226,6 +3354,10 @@ government_flavor = {
 	trigger = {
 		is_republic = yes
 		is_patrician = no
+		NOR = {
+			mercenary = yes
+			rebel = yes
+		}
 	}
 }
 

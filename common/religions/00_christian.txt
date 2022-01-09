@@ -114,9 +114,9 @@ christian = {
 
 		intermarry = christian
 
-		can_retire_to_monastery = yes
-		female_temple_holders = yes
 		feminist = yes
+		female_temple_holders = no
+		male_temple_holders = no
 	}
 	fraticelli = {
 		alternate_start = {
@@ -178,8 +178,9 @@ christian = {
 
 		intermarry = christian
 
-		can_retire_to_monastery = yes
 		priests_can_inherit = no
+		female_temple_holders = no
+		male_temple_holders = no
 	}
 	waldensian = {
 		alternate_start = {
@@ -205,8 +206,9 @@ christian = {
 
 		intermarry = christian
 
-		can_retire_to_monastery = yes
 		priests_can_inherit = no
+		female_temple_holders = no
+		male_temple_holders = no
 	}
 
 	# Miaphysite Group
@@ -439,9 +441,9 @@ christian = {
 
 		intermarry = christian
 
-		can_retire_to_monastery = yes
-		female_temple_holders = yes
 		feminist = yes
+		female_temple_holders = no
+		male_temple_holders = no
 	}
 	iconoclast = {
 		alternate_start = {

@@ -347,6 +347,7 @@ feudal_governments = {
 		}
 		allowed_holdings = {
 			CASTLE
+			TEMPLE
 			FORT
 			HOSPITAL
 		}
@@ -434,6 +435,7 @@ feudal_governments = {
 		}
 		allowed_holdings = {
 			CASTLE
+			TEMPLE
 			FORT
 			HOSPITAL
 		}
@@ -605,6 +607,7 @@ feudal_governments = {
 		allowed_holdings = {
 			CASTLE
 			CITY
+			TEMPLE
 			FORT
 			HOSPITAL
 		}
@@ -725,6 +728,7 @@ feudal_governments = {
 		}
 		allowed_holdings = {
 			CASTLE
+			TEMPLE
 			FORT
 			HOSPITAL
 		}
@@ -784,6 +788,7 @@ feudal_governments = {
 		allowed_holdings = {
 			CASTLE
 			CITY
+			TEMPLE
 			FORT
 			HOSPITAL
 		}
