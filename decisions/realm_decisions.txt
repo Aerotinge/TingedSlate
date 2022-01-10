@@ -2211,7 +2211,6 @@ decisions = {
 					add_law = {
 						law = succ_feudal_elective
 						cooldown = no
-						opinion_effect = no
 					}
 				}
 			}
@@ -2816,7 +2815,7 @@ decisions = {
 		}
 	}
 
-	convert_to_feudalism_indep = {
+	adopt_hierarchism_indep = {
 		is_high_prio = yes
 		ai_check_interval = 12
 
@@ -2830,16 +2829,41 @@ decisions = {
 		allow = {
 			war = no
 
-			custom_tooltip = {
-				text = TT_NOT_UNREFORMED_PAGAN
-
-				trigger_if = {
-					limit = { religion_group = pagan_group }
-					is_reformed_religion = yes
+			primary_title = {
+				OR = {
+					trigger_if = {
+						limit = {
+							ROOT = {
+								NOT = { higher_real_tier_than = DUKE }
+								OR = {
+									culture_group = east_slavic
+									#culture_group = south_slavic
+									#culture = bosnian
+									culture = bulgarian
+									culture = serbian
+									culture = vlach
+									culture_group = baltic
+									culture_group = finno_ugric
+								}
+							}
+						}
+						has_law = tribal_organization_2
+					}
+					has_law = tribal_organization_3
+					has_law = tribal_organization_4
 				}
 			}
 
-			primary_title = { has_law = tribal_organization_4 }
+			trigger_if = {
+				limit = {
+					primary_title = {
+						NOT = { has_law = tribal_organization_4 }
+						is_unreformed_pagan_trigger = yes
+					}
+				}
+
+				is_not_unreformed_pagan_trigger = yes
+			}
 
 			capital_holding = {
 				OR = {
@@ -2847,7 +2871,30 @@ decisions = {
 
 					AND = {
 						holding_type = tribal
-						has_building = tb_hillfort_4
+						trigger_if = {
+							limit = {
+								ROOT = {
+									primary_title = {
+										has_law = tribal_organization_2
+									}
+								}
+							}
+
+							OR = {
+								has_building = tb_hillfort_2
+								has_building = tb_hillfort_3
+								has_building = tb_hillfort_4
+							}
+						}
+						trigger_else = {
+							OR = {
+								AND = {
+									has_building = tb_hillfort_3
+									has_building = tb_defensive_fortifications_3
+								}
+								has_building = tb_hillfort_4
+							}
+						}
 					}
 				}
 			}
@@ -2863,8 +2910,6 @@ decisions = {
 				set_character_flag = achievement_not_a_tribe
 			}
 
-			set_government_type = feudal_government # It will switch to right govenment type automatically
-
 			if = {
 				limit = {
 					higher_tier_than = KING
@@ -2876,7 +2921,26 @@ decisions = {
 				}
 			}
 
+			custom_tooltip = {
+				text = RENOUNCE_TRIBALISM
+			}
+
 			hidden_effect = {
+				if = {
+					primary_title = {
+						has_law = tribal_organization_2
+					}
+
+					set_government_type = manorial_government # If muslim? Gov overhaual v2 required
+				}
+				else = {
+					set_government_type = feudal_government # It will switch to right government type automatically
+				}
+
+				primary_title = { revoke_tribal_organization_effect = yes }
+
+				# TODO: for tooltip, make if/else_if for each government type converted
+
 				any_demesne_title = {
 					limit = {
 						tier = BARON
@@ -2901,39 +2965,60 @@ decisions = {
 
 					if = {
 						limit = {
-							dejure_liege_title = {
-								holder = ROOT
+							NOT = { government = manorial_government }
+						}
 
-								location = {
-									has_city = no
-									num_of_empty_holdings >= 2
+						if = {
+							limit = {
+								dejure_liege_title = {
+									holder = ROOT
+
+									location = {
+										has_city = no
+										num_of_empty_holdings >= 2
+									}
+								}
+							}
+
+							location = {
+								build_holding = {
+									type = city
 								}
 							}
 						}
 
-						location = {
-							build_holding = {
-								type = city
+						if = {
+							limit = {
+								dejure_liege_title = {
+									holder = ROOT
+
+									location = {
+										has_temple = no
+										num_of_empty_holdings >= 2
+									}
+								}
+							}
+
+							location = {
+								build_holding = {
+									type = temple
+								}
 							}
 						}
 					}
+				}
 
-					if = {
-						limit = {
-							dejure_liege_title = {
-								holder = ROOT
+				if = { # Setup crown authority
+					limit = { NOT = { has_dlc = "Conclave" } }
 
-								location = {
-									has_temple = no
-									num_of_empty_holdings >= 2
-								}
-							}
-						}
+					any_demesne_title = {
+						limit = { is_crown_law_title = yes }
 
-						location = {
-							build_holding = {
-								type = temple
-							}
+						set_title_flag = no_opinion_effect
+						add_law = {
+							law = crown_authority_1
+							cooldown = no
+							opinion_effect = no
 						}
 					}
 				}
@@ -2945,7 +3030,7 @@ decisions = {
 		}
 	}
 
-	convert_to_feudalism_vassal = {
+	adopt_hierarchism_vassal = {
 		is_high_prio = yes
 		ai_check_interval = 12
 
@@ -2954,20 +3039,6 @@ decisions = {
 		potential = {
 			government = tribal_government
 			independent = no
-		}
-
-		allow = {
-			war = no
-
-			custom_tooltip = {
-				text = TT_NOT_UNREFORMED_PAGAN
-
-				trigger_if = {
-					limit = { religion_group = pagan_group }
-					is_reformed_religion = yes
-				}
-			}
-
 			liege = {
 				OR = {
 					is_feudal = yes
@@ -2984,30 +3055,35 @@ decisions = {
 								is_reformed_religion = yes
 							}
 						}
+						NOT = { government = order_government }
 					}
 				}
 			}
+		}
 
-			OR = {
-				capital_holding = {
-					OR = {
-						holding_type = castle
+		allow = {
+			war = no
 
-						AND = {
-							holding_type = tribal
+			capital_holding = {
+				OR = {
+					holding_type = castle
+
+					AND = {
+						holding_type = tribal
+						OR = {
 							has_building = tb_hillfort_4
-						}
-					}
-				}
-
-				capital_scope = {
-					any_province_holding = {
-						holding_type = castle
-
-						holder_scope = {
-							OR = {
-								character = ROOT
-								is_liege_or_above = ROOT
+							AND = {
+								has_building = tb_hillfort_3
+								has_building = tb_defensive_fortifications_3
+							}
+							trigger_if = {
+								limit = {
+									liege = {
+										culture = ROOT
+										government = manorial_government
+									}
+								}
+								has_building = tb_hillfort_2
 							}
 						}
 					}
@@ -3025,69 +3101,24 @@ decisions = {
 				set_character_flag = achievement_not_a_tribe
 			}
 
-			set_government_type = feudal_government # It will switch to right govenment type automatically
-
 			hidden_effect = {
 				if = {
 					limit = {
-						capital_holding = {
-							holding_type = tribal
-							ROOT = { NOT = { tier = BARON } }
-						}
-
-						capital_scope = {
-							any_province_holding = {
-								holding_type = castle
-
-								holder_scope = {
-									OR = {
-										character = ROOT
-										is_liege_or_above = ROOT
-									}
-								}
-							}
+						liege = {
+							culture = ROOT
+							government = manorial_government
 						}
 					}
-
-					capital_scope = {
-						random_province_holding = {
-							limit = {
-								holding_type = castle
-
-								holder_scope = {
-									OR = {
-										character = ROOT
-										is_liege_or_above = ROOT
-									}
-								}
-							}
-
-							if = {
-								limit = {
-									NOT = { holder = ROOT }
-								}
-								usurp_title = ROOT
-							}
-
-							make_capital_holding = yes
-
-							ROOT = {
-								set_character_flag = feudalize_handled_capital
-							}
-						}
-					}
+					set_government_type = manorial_government # If muslim? Gov overhaual v2 required
+				}
+				else = {
+					set_government_type = feudal_government # It will switch to right government type automatically
 				}
 
 				any_demesne_title = {
 					limit = {
 						tier = BARON
 						holding_type = tribal
-
-						location = {
-							capital_holding = {
-								NOT = { holding_type = castle }
-							}
-						}
 					}
 
 					convert_to = castle
@@ -3108,38 +3139,46 @@ decisions = {
 
 					if = {
 						limit = {
-							dejure_liege_title = {
-								holder = ROOT
+							ROOT = {
+								NOT = { government = manorial_government }
+							}
+						}
 
-								location = {
-									has_city = no
-									num_of_empty_holdings >= 2
+						if = {
+							limit = {
+								dejure_liege_title = {
+									holder = ROOT
+
+									location = {
+										has_city = no
+										num_of_empty_holdings >= 2
+									}
+								}
+							}
+
+							location = {
+								build_holding = {
+									type = city
 								}
 							}
 						}
 
-						location = {
-							build_holding = {
-								type = city
-							}
-						}
-					}
+						if = {
+							limit = {
+								dejure_liege_title = {
+									holder = ROOT
 
-					if = {
-						limit = {
-							dejure_liege_title = {
-								holder = ROOT
-
-								location = {
-									has_temple = no
-									num_of_empty_holdings >= 2
+									location = {
+										has_temple = no
+										num_of_empty_holdings >= 2
+									}
 								}
 							}
-						}
 
-						location = {
-							build_holding = {
-								type = temple
+							location = {
+								build_holding = {
+									type = temple
+								}
 							}
 						}
 					}
@@ -3200,8 +3239,13 @@ decisions = {
 
 		allow = {
 			higher_real_tier_than = COUNT
-			is_not_unreformed_pagan_trigger = yes
-			has_law = tribal_organization_4
+			OR = {
+				AND = {
+					is_not_unreformed_pagan_trigger = yes
+					primary_title = { has_law = tribal_organization_3 }
+				}
+				primary_title = { has_law = tribal_organization_4 }
+			}
 			is_female = no
 			war = no
 
@@ -3215,17 +3259,36 @@ decisions = {
 
 					AND = {
 						holding_type = tribal
-						has_building = tb_market_town_4
+						OR = {
+							has_building = tb_market_town_4
+							AND = {
+								has_building = tb_market_town_3
+								has_building = tb_shipyard_3
+							}
+						}
 					}
 				}
 			}
 		}
 
 		effect = {
+			if = {
+				limit = {
+					ai = no
+					is_ironman = yes
+				}
+
+				set_character_flag = achievement_res_publica
+			}
+
 			hidden_effect = {
 				create_family_palace = yes
 
 				set_government_type = merchant_republic_government
+
+				family_palace = {
+					refill_holding_levy = yes
+				}
 
 				if = {
 					limit = {
@@ -3320,6 +3383,12 @@ decisions = {
 						}
 
 						create_family_palace = yes
+
+						set_government_type = merchant_republic_government
+
+						family_palace = {
+							refill_holding_levy = yes
+						}
 					}
 				}
 
@@ -3383,15 +3452,20 @@ decisions = {
 						}
 					}
 				}
-			}
 
-			if = {
-				limit = {
-					ai = no
-					is_ironman = yes
+				if = { # Setup crown authority
+					limit = { NOT = { has_dlc = "Conclave" } }
+
+					any_demesne_title = {
+						limit = { is_crown_law_title = yes }
+
+						set_title_flag = no_opinion_effect
+						add_law = {
+							law = crown_authority_1
+							cooldown = no
+						}
+					}
 				}
-
-				set_character_flag = achievement_res_publica
 			}
 
 			if = {
@@ -3402,8 +3476,6 @@ decisions = {
 					picture = GFX_evt_busy_trading_dock_republic
 				}
 			}
-
-			set_government_type = merchant_republic_government
 		}
 
 		ai_will_do = {

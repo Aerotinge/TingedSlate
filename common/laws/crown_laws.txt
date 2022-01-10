@@ -43,7 +43,17 @@ de_jure_laws = {
 
 		pass_effect = {
 			# log = "crown_authority_0 pass ([This.GetFullBaseName])"
-			decreased_crown_authority_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				decreased_crown_authority_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -93,11 +103,20 @@ de_jure_laws = {
 			# log = "crown_authority_1 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = crown_authority_0 }
-				increased_crown_authority_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = crown_authority_0 }
+					increased_crown_authority_effect = yes
+				}
+				else = {
+					decreased_crown_authority_effect = yes
+				}
 			}
 			else = {
-				decreased_crown_authority_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -152,12 +171,15 @@ de_jure_laws = {
 
 				is_republic = no
 
-				custom_tooltip = {
-					text = TT_NOT_UNREFORMED_PAGAN
+				trigger_if = {
+					limit = {
+						NOT = { government = tibetan_feudal_government }
+					}
 
-					OR = {
+					custom_tooltip = {
+						text = TT_NOT_UNREFORMED_PAGAN
+
 						is_unreformed_pagan_trigger = no
-						religion_openly_bon_or_reformed_trigger = yes
 					}
 				}
 			}
@@ -167,11 +189,20 @@ de_jure_laws = {
 			# log = "crown_authority_2 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = crown_authority_1 }
-				increased_crown_authority_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = crown_authority_0 }
+					increased_crown_authority_effect = yes
+				}
+				else = {
+					decreased_crown_authority_effect = yes
+				}
 			}
 			else = {
-				decreased_crown_authority_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -226,12 +257,15 @@ de_jure_laws = {
 
 				is_republic = no
 
-				custom_tooltip = {
-					text = TT_NOT_UNREFORMED_PAGAN
+				trigger_if = {
+					limit = {
+						NOT = { government = tibetan_feudal_government }
+					}
 
-					OR = {
+					custom_tooltip = {
+						text = TT_NOT_UNREFORMED_PAGAN
+
 						is_unreformed_pagan_trigger = no
-						religion_openly_bon_or_reformed_trigger = yes
 					}
 				}
 			}
@@ -241,11 +275,20 @@ de_jure_laws = {
 			# log = "crown_authority_3 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = crown_authority_2 }
-				increased_crown_authority_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = crown_authority_0 }
+					increased_crown_authority_effect = yes
+				}
+				else = {
+					decreased_crown_authority_effect = yes
+				}
 			}
 			else = {
-				decreased_crown_authority_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -298,12 +341,15 @@ de_jure_laws = {
 
 				is_republic = no
 
-				custom_tooltip = {
-					text = TT_NOT_UNREFORMED_PAGAN
+				trigger_if = {
+					limit = {
+						NOT = { government = tibetan_feudal_government }
+					}
 
-					OR = {
+					custom_tooltip = {
+						text = TT_NOT_UNREFORMED_PAGAN
+
 						is_unreformed_pagan_trigger = no
-						religion_openly_bon_or_reformed_trigger = yes
 					}
 				}
 			}
@@ -311,7 +357,17 @@ de_jure_laws = {
 
 		pass_effect = {
 			# log = "crown_authority_4 pass ([This.GetFullBaseName])"
-			increased_crown_authority_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				increased_crown_authority_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {

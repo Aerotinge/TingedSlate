@@ -62,7 +62,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_feudal_0 pass ([This.GetFullBaseName])"
-			decreased_feudal_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				decreased_feudal_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -108,11 +118,20 @@ laws = {
 			# log = "tax_levy_law_feudal_1 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_feudal_0 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_feudal_0 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -168,11 +187,20 @@ laws = {
 			# log = "tax_levy_law_feudal_2 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_feudal_1 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_feudal_1 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -228,11 +256,20 @@ laws = {
 			# log = "tax_levy_law_feudal_3 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_feudal_2 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_feudal_2 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -289,11 +326,20 @@ laws = {
 			# log = "tax_levy_law_feudal_4 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_feudal_3 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_feudal_3 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -349,11 +395,20 @@ laws = {
 			# log = "tax_levy_law_feudal_5 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_feudal_4 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_feudal_4 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -409,11 +464,20 @@ laws = {
 			# log = "tax_levy_law_feudal_6 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_feudal_5 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_feudal_5 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -469,11 +533,20 @@ laws = {
 			# log = "tax_levy_law_feudal_7 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_feudal_6 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_feudal_6 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -522,7 +595,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_feudal_8 pass ([This.GetFullBaseName])"
-			increased_feudal_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				increased_feudal_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -564,7 +647,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_iqta_0 pass ([This.GetFullBaseName])"
-			decreased_feudal_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				decreased_feudal_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -610,11 +703,20 @@ laws = {
 			# log = "tax_levy_law_iqta_1 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_iqta_0 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_iqta_0 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -670,11 +772,20 @@ laws = {
 			# log = "tax_levy_law_iqta_2 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_iqta_1 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_iqta_1 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -730,11 +841,20 @@ laws = {
 			# log = "tax_levy_law_iqta_3 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_iqta_2 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_iqta_2 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -791,11 +911,20 @@ laws = {
 			# log = "tax_levy_law_iqta_4 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_iqta_3 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_iqta_3 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -851,11 +980,20 @@ laws = {
 			# log = "tax_levy_law_iqta_5 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_iqta_4 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_iqta_4 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -911,11 +1049,20 @@ laws = {
 			# log = "tax_levy_law_iqta_6 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_iqta_5 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_iqta_5 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -971,11 +1118,20 @@ laws = {
 			# log = "tax_levy_law_iqta_7 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_iqta_6 }
-				increased_feudal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_iqta_6 }
+					increased_feudal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_feudal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_feudal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1026,7 +1182,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_iqta_8 pass ([This.GetFullBaseName])"
-			increased_feudal_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				increased_feudal_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -1067,7 +1233,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_republic_0 pass ([This.GetFullBaseName])"
-			increased_republic_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				increased_republic_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -1111,11 +1287,20 @@ laws = {
 			# log = "tax_levy_law_republic_1 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_republic_0 }
-				decreased_republic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_republic_0 }
+					decreased_republic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_republic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_republic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1171,11 +1356,20 @@ laws = {
 			# log = "tax_levy_law_republic_2 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_republic_1 }
-				decreased_republic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_republic_1 }
+					decreased_republic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_republic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_republic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1231,11 +1425,20 @@ laws = {
 			# log = "tax_levy_law_republic_3 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_republic_2 }
-				decreased_republic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_republic_2 }
+					decreased_republic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_republic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_republic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1292,11 +1495,20 @@ laws = {
 			# log = "tax_levy_law_republic_4 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_republic_3 }
-				decreased_republic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_republic_3 }
+					decreased_republic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_republic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_republic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1352,11 +1564,20 @@ laws = {
 			# log = "tax_levy_law_republic_5 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_republic_4 }
-				decreased_republic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_republic_4 }
+					decreased_republic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_republic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_republic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1412,11 +1633,20 @@ laws = {
 			# log = "tax_levy_law_republic_6 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_republic_5 }
-				decreased_republic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_republic_5 }
+					decreased_republic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_republic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_republic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1472,11 +1702,20 @@ laws = {
 			# log = "tax_levy_law_republic_7 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_republic_6 }
-				decreased_republic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_republic_6 }
+					decreased_republic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_republic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_republic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1527,7 +1766,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_republic_8 pass ([This.GetFullBaseName])"
-			decreased_republic_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				decreased_republic_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -1580,7 +1829,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_theocracy_0 pass ([This.GetFullBaseName])"
-			increased_theocratic_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				increased_theocratic_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -1637,11 +1896,20 @@ laws = {
 			# log = "tax_levy_law_theocracy_1 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_theocracy_0 }
-				decreased_theocratic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_theocracy_0 }
+					decreased_theocratic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_theocratic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_theocratic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1699,11 +1967,20 @@ laws = {
 			# log = "tax_levy_law_theocracy_2 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_theocracy_1 }
-				decreased_theocratic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_theocracy_1 }
+					decreased_theocratic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_theocratic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_theocratic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1764,11 +2041,20 @@ laws = {
 			# log = "tax_levy_law_theocracy_3 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_theocracy_2 }
-				decreased_theocratic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_theocracy_2 }
+					decreased_theocratic_obligation_laws_effect = yes
+				}
+				else = {
+					increased_theocratic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_theocratic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1828,7 +2114,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_theocracy_4 pass ([This.GetFullBaseName])"
-			decreased_theocratic_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				decreased_theocratic_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -1888,11 +2184,20 @@ laws = {
 			# log = "tax_levy_law_theocracy_5 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_theocracy_4 }
-				increased_theocratic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_theocracy_4 }
+					increased_theocratic_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_theocratic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_theocratic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -1953,11 +2258,20 @@ laws = {
 			# log = "tax_levy_law_theocracy_6 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_theocracy_5 }
-				increased_theocratic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_theocracy_5 }
+					increased_theocratic_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_theocratic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_theocratic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -2017,11 +2331,20 @@ laws = {
 			# log = "tax_levy_law_theocracy_7 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_theocracy_6 }
-				increased_theocratic_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_theocracy_6 }
+					increased_theocratic_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_theocratic_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_theocratic_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -2076,7 +2399,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_theocracy_8 pass ([This.GetFullBaseName])"
-			increased_theocratic_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				increased_theocratic_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -2111,7 +2444,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_tribal_0 pass ([This.GetFullBaseName])"
-			increased_tribal_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				increased_tribal_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -2156,11 +2499,20 @@ laws = {
 			# log = "tax_levy_law_tribal_1 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_tribal_0 }
-				decreased_tribal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_tribal_0 }
+					decreased_tribal_obligation_laws_effect = yes
+				}
+				else = {
+					increased_tribal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_tribal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -2208,11 +2560,20 @@ laws = {
 			# log = "tax_levy_law_tribal_2 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_tribal_1 }
-				decreased_tribal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_tribal_1 }
+					decreased_tribal_obligation_laws_effect = yes
+				}
+				else = {
+					increased_tribal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_tribal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -2261,11 +2622,20 @@ laws = {
 			# log = "tax_levy_law_tribal_3 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_tribal_2 }
-				decreased_tribal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_tribal_2 }
+					decreased_tribal_obligation_laws_effect = yes
+				}
+				else = {
+					increased_tribal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				increased_tribal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -2313,7 +2683,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_tribal_4 pass ([This.GetFullBaseName])"
-			decreased_tribal_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				decreased_tribal_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
@@ -2361,11 +2741,20 @@ laws = {
 			# log = "tax_levy_law_tribal_5 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_tribal_4 }
-				increased_tribal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_tribal_4 }
+					increased_tribal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_tribal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_tribal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -2414,11 +2803,20 @@ laws = {
 			# log = "tax_levy_law_tribal_6 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_tribal_5 }
-				increased_tribal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_tribal_5 }
+					increased_tribal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_tribal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_tribal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -2467,11 +2865,20 @@ laws = {
 			# log = "tax_levy_law_tribal_7 pass ([This.GetFullBaseName])"
 
 			if = {
-				limit = { has_law = tax_levy_law_tribal_6 }
-				increased_tribal_obligation_laws_effect = yes
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				if = {
+					limit = { has_law = tax_levy_law_tribal_6 }
+					increased_tribal_obligation_laws_effect = yes
+				}
+				else = {
+					decreased_tribal_obligation_laws_effect = yes
+				}
 			}
 			else = {
-				decreased_tribal_obligation_laws_effect = yes
+				clr_title_flag = no_opinion_effect
 			}
 		}
 
@@ -2514,7 +2921,17 @@ laws = {
 
 		pass_effect = {
 			# log = "tax_levy_law_tribal_8 pass ([This.GetFullBaseName])"
-			increased_tribal_obligation_laws_effect = yes
+
+			if = {
+				limit = {
+					NOT = { has_title_flag = no_opinion_effect }
+				}
+
+				increased_tribal_obligation_laws_effect = yes
+			}
+			else = {
+				clr_title_flag = no_opinion_effect
+			}
 		}
 
 		effect = {
