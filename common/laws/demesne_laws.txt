@@ -7,6 +7,9 @@ law_groups = {
 	tribal_organization = {
 		law_type = realm
 	}
+	tribal_obligation = {
+		law_type = realm
+	}
 	vice_royalty = {
 		law_type = realm
 	}
@@ -411,7 +414,7 @@ laws = {
 			}
 			else = {
 				set_allow_title_revokation = no
-				set_allow_free_infidel_revokation = no
+				#set_allow_free_infidel_revokation = no
 				set_tribal_vassal_levy_control = no
 				set_tribal_vassal_tax_income = no
 			}
@@ -419,22 +422,16 @@ laws = {
 			trigger_switch = {
 				on_trigger = has_law
 
-				tribal_organization_1 = {
-					custom_tooltip = { text = disables_centralization_1 }
-				}
-
 				tribal_organization_2 = {
-					custom_tooltip = { text = disables_centralization_2 }
-				}
-
-				tribal_organization_3 = {
-					custom_tooltip = { text = disables_centralization_3 }
-					custom_tooltip = { text = disables_tribal_levy_laws }
 					custom_tooltip = { text = disables_tribal_tax_laws }
 				}
 
+				tribal_organization_3 = {
+					custom_tooltip = { text = disables_tribal_levy_laws }
+					custom_tooltip = { text = disallows_change_government }
+				}
+
 				tribal_organization_4 = {
-					custom_tooltip = { text = disables_centralization_4 }
 					custom_tooltip = { text = disallows_change_government }
 				}
 			}
@@ -543,7 +540,7 @@ laws = {
 			}
 			else = {
 				set_allow_title_revokation = yes
-				set_allow_free_infidel_revokation = no
+				#set_allow_free_infidel_revokation = no
 				set_tribal_vassal_levy_control = no
 				set_tribal_vassal_tax_income = no
 			}
@@ -551,39 +548,21 @@ laws = {
 			trigger_switch = {
 				on_trigger = has_law
 
-				tribal_organization_0 = {
-					custom_tooltip = { text = enables_centralization_1 }
-				}
-
 				tribal_organization_2 = {
-					custom_tooltip = { text = disables_centralization_2 }
-				}
-
-				tribal_organization_3 = {
-					custom_tooltip = { text = disables_centralization_3 }
-					custom_tooltip = { text = disables_tribal_levy_laws }
 					custom_tooltip = { text = disables_tribal_tax_laws }
 				}
 
+				tribal_organization_3 = {
+					custom_tooltip = { text = disables_tribal_levy_laws }
+					custom_tooltip = { text = disallows_change_government }
+				}
+
 				tribal_organization_4 = {
-					custom_tooltip = { text = disables_centralization_4 }
 					custom_tooltip = { text = disallows_change_government }
 				}
 			}
 
 			hidden_effect = {
-				if = {
-					limit = {
-						OR = {
-							has_law = centralization_2
-							has_law = centralization_3
-							has_law = centralization_4
-						}
-					}
-
-					add_law = centralization_1
-				}
-
 				revoke_tribal_organization_effect = yes
 				revoke_tribal_contract_effect = yes
 				revoke_tribal_tax_effect = yes
@@ -650,7 +629,6 @@ laws = {
 		group = tribal_organization
 
 		unreformed_tribal_opinion = -5
-		tribal_opinion = -5
 
 		potential = {
 			is_law_potential = tribal_organization_0
@@ -715,46 +693,40 @@ laws = {
 			}
 			else = {
 				set_allow_title_revokation = yes
-				set_allow_free_infidel_revokation = yes
+				#set_allow_free_infidel_revokation = yes
 				set_tribal_vassal_levy_control = no
-				set_tribal_vassal_tax_income = no
+				set_tribal_vassal_tax_income = yes
 			}
 
-			trigger_switch = {
-				on_trigger = has_law
-
-				tribal_organization_0 = {
-					custom_tooltip = { text = enables_centralization_2 }
+			if = {
+				limit = {
+					OR = {
+						has_law = tribal_organization_0
+						has_law = tribal_organization_1
+					}
 				}
 
-				tribal_organization_1 = {
-					custom_tooltip = { text = enables_centralization_2 }
+				if = {
+					limit = { NOT = { has_dlc = "Conclave" } }
+
+					custom_tooltip = {
+						text = enables_tribal_tax_laws
+						add_law = tribal_tax_0
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
 				}
 
-				tribal_organization_3 = {
-					custom_tooltip = { text = disables_centralization_3 }
-					custom_tooltip = { text = disables_tribal_levy_laws }
-					custom_tooltip = { text = disables_tribal_tax_laws }
-				}
-
-				tribal_organization_4 = {
-					custom_tooltip = { text = disables_centralization_4 }
-					custom_tooltip = { text = disallows_change_government }
-				}
+				custom_tooltip = { text = disallows_change_government }
 			}
 
 			hidden_effect = {
-				if = {
-					limit = {
-						OR = {
-							has_law = centralization_3
-							has_law = centralization_4
-						}
-					}
-
-					add_law = centralization_2
-				}
-
 				revoke_tribal_organization_effect = yes
 				revoke_tribal_contract_effect = yes
 				revoke_tribal_tax_effect = yes
@@ -821,7 +793,6 @@ laws = {
 		group = tribal_organization
 
 		unreformed_tribal_opinion = -10
-		tribal_opinion = -5
 		demesne_size = -1
 		vassal_limit = 5
 
@@ -887,7 +858,7 @@ laws = {
 			}
 			else = {
 				set_allow_title_revokation = yes
-				set_allow_free_infidel_revokation = yes
+				#set_allow_free_infidel_revokation = yes
 				set_tribal_vassal_levy_control = yes
 				set_tribal_vassal_tax_income = yes
 			}
@@ -907,29 +878,31 @@ laws = {
 					custom_tooltip = {
 						text = enables_tribal_levy_laws
 						add_law = tribal_contract_0
-					}
-
-					custom_tooltip = {
-						text = enables_tribal_tax_laws
-						add_law = tribal_tax_0
+						revoke_law = tribal_obligation_0
 					}
 				}
 
-				custom_tooltip = { text = enables_centralization_3 }
+				if = {
+					limit = {
+						holder_scope = { is_not_unreformed_pagan_trigger = yes }
+					}
+
+					custom_tooltip = { text = allows_change_government }
+				}
 			}
 			else_if = {
 				limit = { has_law = tribal_organization_4 }
 
-				custom_tooltip = { text = disables_centralization_4 }
-				custom_tooltip = { text = disallows_change_government }
+				if = {
+					limit = {
+						holder_scope = { is_unreformed_pagan_trigger = yes }
+					}
+
+					custom_tooltip = { text = disallows_change_government }
+				}
 			}
 
 			hidden_effect = {
-				if = {
-					limit = { has_law = centralization_4 }
-					add_law = centralization_3
-				}
-
 				revoke_tribal_organization_effect = yes
 			}
 		}
@@ -994,7 +967,6 @@ laws = {
 		group = tribal_organization
 
 		unreformed_tribal_opinion = -15
-		tribal_opinion = -10
 		demesne_size = -2
 		vassal_limit = 10
 
@@ -1039,7 +1011,7 @@ laws = {
 				limit = { NOT = { has_dlc = "Conclave" } }
 
 				set_allow_title_revokation = yes
-				set_allow_free_infidel_revokation = yes
+				#set_allow_free_infidel_revokation = yes
 				set_tribal_vassal_levy_control = yes
 				set_tribal_vassal_tax_income = yes
 
@@ -1056,11 +1028,6 @@ laws = {
 						text = enables_tribal_levy_laws
 						add_law = tribal_contract_0
 					}
-
-					custom_tooltip = {
-						text = enables_tribal_tax_laws
-						add_law = tribal_tax_0
-					}
 				}
 			}
 
@@ -1074,10 +1041,9 @@ laws = {
 					}
 				}
 
-				custom_tooltip = { text = enables_centralization_4 }
 				custom_tooltip = { text = allows_change_government }
 			}
-			
+
 			hidden_effect = {
 				revoke_tribal_organization_effect = yes
 			}
@@ -1112,6 +1078,70 @@ laws = {
 			}
 		}
 	}
+
+	# TRIBAL OBLIGATION
+	##############################
+
+	tribal_obligation_0 = {
+		group = tribal_obligation
+
+		city_vassal_max_levy = -1
+		castle_vassal_max_levy = -1
+		temple_vassal_max_levy = -1
+		tribal_vassal_max_levy = -1
+
+		potential = {
+			NOT = { has_dlc = "Conclave" }
+
+			holder_scope = {
+				is_tribal = yes
+
+				OR = {
+					has_law = tribal_organization_0
+					has_law = tribal_organization_1
+					has_law = tribal_organization_2
+					real_tier = COUNT
+				}
+			}
+		}
+
+		allow = {}
+
+		pass_effect = {
+			# log = "tribal_obligation_0 pass ([This.GetFullBaseName])"
+		}
+
+		effect = {}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	tribal_obligation_1 = {
+		group = tribal_obligation
+
+		potential = {
+			is_law_potential = tribal_obligation_0
+		}
+
+		allow = {
+			hidden_tooltip = {
+				always = no
+			}
+		}
+
+		pass_effect = {
+			# log = "tribal_obligation_1 pass ([This.GetFullBaseName])"
+		}
+
+		effect = {}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
 
 	# VICE ROYALTY LAWS
 	##############################
@@ -1331,10 +1361,20 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				NOR = {
-					is_law_potential = manorial_contract_0
-					is_law_potential = muslim_contract_0
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
 				}
+			}
+
+			NOR = {
+				is_law_potential = manorial_contract_0
+				is_law_potential = muslim_contract_0
 			}
 		}
 
@@ -1385,6 +1425,8 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_feudal_contract_effect = yes
+				revoke_manorial_contract_effect = yes
+				revoke_muslim_contract_effect = yes
 			}
 		}
 
@@ -1429,11 +1471,23 @@ laws = {
 			holder_scope = {
 				is_playable = yes
 				OR = {
+					is_tribal = yes
 					government = manorial_government
 					government = roman_imperial_government
 					government = band_government
 				}
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
+				}
 			}
+
+			NOT = { is_law_potential = muslim_contract }
 		}
 
 		effect = {
@@ -1480,7 +1534,9 @@ laws = {
 
 		effect = {
 			hidden_effect = {
+				revoke_feudal_contract_effect = yes
 				revoke_manorial_contract_effect = yes
+				revoke_muslim_contract_effect = yes
 			}
 		}
 
@@ -1521,15 +1577,25 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				NOT = {
-					is_law_potential = muslim_tax_0
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_2
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
 				}
 			}
+
+			NOT = { is_law_potential = muslim_tax_0 }
 		}
 
 		effect = {
 			hidden_effect = {
 				revoke_feudal_tax_effect = yes
+				revoke_muslim_tax_effect = yes
 			}
 		}
 
@@ -1617,6 +1683,15 @@ laws = {
 			holder_scope = {
 				is_playable = yes
 				religion_group = muslim
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
+				}
 			}
 		}
 
@@ -1644,6 +1719,8 @@ laws = {
 
 		effect = {
 			hidden_effect = {
+				revoke_feudal_contract_effect = yes
+				revoke_manorial_contract_effect = yes
 				revoke_muslim_contract_effect = yes
 			}
 		}
@@ -1714,11 +1791,22 @@ laws = {
 			holder_scope = {
 				is_playable = yes
 				religion_group = muslim
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_2
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
+				}
 			}
 		}
 
 		effect = {
 			hidden_effect = {
+				revoke_feudal_tax_effect = yes
 				revoke_muslim_tax_effect = yes
 			}
 		}
@@ -1811,6 +1899,15 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
+				}
 			}
 		}
 
@@ -1906,6 +2003,16 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_2
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
+				}
 			}
 		}
 
@@ -1997,10 +2104,18 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				NOT = {
-					is_law_potential = muslim_contract_0
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
 				}
 			}
+
+			NOT = { is_law_potential = muslim_contract_0 }
 		}
 
 		effect = {
@@ -2027,6 +2142,7 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_temple_contract_effect = yes
+				revoke_muslim_contract_effect = yes
 			}
 		}
 
@@ -2090,10 +2206,19 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				NOT = {
-					is_law_potential = muslim_tax_0
+
+				trigger_if = {
+					limit = { is_tribal = yes }
+
+					OR = {
+						has_law = tribal_organization_2
+						has_law = tribal_organization_3
+						has_law = tribal_organization_4
+					}
 				}
 			}
+
+			NOT = { is_law_potential = muslim_tax_0 }
 		}
 
 		effect = {
@@ -2121,6 +2246,7 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_temple_tax_effect = yes
+				revoke_muslim_tax_effect = yes
 			}
 		}
 
@@ -2288,6 +2414,7 @@ laws = {
 					limit = { is_tribal = yes }
 
 					OR = {
+						has_law = tribal_organization_2
 						has_law = tribal_organization_3
 						has_law = tribal_organization_4
 					}

@@ -12,6 +12,7 @@ de_jure_laws = {
 		feudal_opinion = 5
 		city_opinion = 5
 		temple_opinion = 5
+		unreformed_tribal_opinion = -5
 
 		city_vassal_min_levy = 0.00
 		castle_vassal_min_levy = 0.00
@@ -83,6 +84,7 @@ de_jure_laws = {
 		feudal_opinion = -5
 		city_opinion = -5
 		temple_opinion = -5
+		unreformed_tribal_opinion = -15
 
 		city_vassal_min_levy = 0.15
 		castle_vassal_min_levy = 0.15
@@ -151,6 +153,7 @@ de_jure_laws = {
 		feudal_opinion = -10
 		city_opinion = -10
 		temple_opinion = -10
+		unreformed_tribal_opinion = -15
 
 		city_vassal_min_levy = 0.35
 		castle_vassal_min_levy = 0.35
@@ -237,6 +240,7 @@ de_jure_laws = {
 		feudal_opinion = -20
 		city_opinion = -20
 		temple_opinion = -20
+		unreformed_tribal_opinion = -15
 
 		city_vassal_min_levy = 0.55
 		castle_vassal_min_levy = 0.55
@@ -324,6 +328,7 @@ de_jure_laws = {
 		feudal_opinion = -30
 		city_opinion = -30
 		temple_opinion = -30
+		unreformed_tribal_opinion = -15
 
 		city_vassal_min_levy = 0.75
 		castle_vassal_min_levy = 0.75

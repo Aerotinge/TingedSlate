@@ -2815,7 +2815,7 @@ decisions = {
 		}
 	}
 
-	adopt_hierarchism_indep = {
+	convert_to_feudalism_indep = {
 		is_high_prio = yes
 		ai_check_interval = 12
 
@@ -2831,24 +2831,6 @@ decisions = {
 
 			primary_title = {
 				OR = {
-					trigger_if = {
-						limit = {
-							ROOT = {
-								NOT = { higher_real_tier_than = DUKE }
-								OR = {
-									culture_group = east_slavic
-									#culture_group = south_slavic
-									#culture = bosnian
-									culture = bulgarian
-									culture = serbian
-									culture = vlach
-									culture_group = baltic
-									culture_group = finno_ugric
-								}
-							}
-						}
-						has_law = tribal_organization_2
-					}
 					has_law = tribal_organization_3
 					has_law = tribal_organization_4
 				}
@@ -2874,8 +2856,15 @@ decisions = {
 						trigger_if = {
 							limit = {
 								ROOT = {
-									primary_title = {
-										has_law = tribal_organization_2
+									OR = {
+										culture_group = east_slavic
+										#culture_group = south_slavic
+										#culture = bosnian
+										culture = bulgarian
+										culture = serbian
+										culture = vlach
+										culture_group = baltic
+										culture_group = finno_ugric
 									}
 								}
 							}
@@ -2922,24 +2911,27 @@ decisions = {
 			}
 
 			custom_tooltip = {
-				text = RENOUNCE_TRIBALISM
+				set_government_type = feudal_government
 			}
 
 			hidden_effect = {
 				if = {
-					primary_title = {
-						has_law = tribal_organization_2
+					limit = {
+						capital_holding = {
+							NOR = {
+								has_building = tb_hillfort_4
+								holding_type = castle
+							}
+						}
 					}
 
-					set_government_type = manorial_government # If muslim? Gov overhaual v2 required
+					set_government_type = manorial_government # If muslim? Gov overhaual v2 required # It will switch to right government type automatically
 				}
-				else = {
+				else = { # TODO: for tooltip, make if/else_if for each government type converted
 					set_government_type = feudal_government # It will switch to right government type automatically
 				}
 
-				primary_title = { revoke_tribal_organization_effect = yes }
-
-				# TODO: for tooltip, make if/else_if for each government type converted
+				#primary_title = { revoke_tribal_organization_effect = yes }
 
 				any_demesne_title = {
 					limit = {
@@ -3030,7 +3022,7 @@ decisions = {
 		}
 	}
 
-	adopt_hierarchism_vassal = {
+	convert_to_feudalism_vassal = {
 		is_high_prio = yes
 		ai_check_interval = 12
 
@@ -3083,7 +3075,10 @@ decisions = {
 										government = manorial_government
 									}
 								}
-								has_building = tb_hillfort_2
+								OR = {
+									has_building = tb_hillfort_2
+									has_building = tb_hillfort_3
+								}
 							}
 						}
 					}
