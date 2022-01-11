@@ -57,6 +57,8 @@ on_new_holder = {
 		EMP.11011
 		# Papacy
 		EMP.13140
+		# Tribal Organization Cleanup
+		EMP.20010
 	}
 }
 
@@ -71,6 +73,8 @@ on_new_holder_inheritance = {
 		EMP.11006
 		# Papacy
 		EMP.13140
+		# Tribal Organization Cleanup
+		EMP.20010
 	}
 }
 
@@ -83,6 +87,8 @@ on_new_holder_usurpation = {
 		EMP.11006
 		# Papacy
 		EMP.13140
+		# Tribal Organization Cleanup
+		EMP.20010
 	}
 }
 

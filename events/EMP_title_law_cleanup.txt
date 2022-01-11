@@ -1,0 +1,29 @@
+namespace = EMP
+
+# TO cleanup
+character_event = {
+	id = EMP.20010
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_new_holder_*
+
+	trigger = {
+		FROM = {
+			OR = {
+				has_law = tribal_organization_0
+				has_law = tribal_organization_1
+				has_law = tribal_organization_2
+				has_law = tribal_organization_3
+				has_law = tribal_organization_4
+			}
+		}
+		is_tribal = no
+	}
+
+	immediate = {
+		FROM = {
+			revoke_tribal_organization_effect = yes
+		}
+	}
+}

@@ -2910,6 +2910,13 @@ decisions = {
 				}
 			}
 
+			any_demesne_title = {
+				limit = {
+					is_law_potential = tribal_organization_0
+				}
+				revoke_tribal_organization_effect = yes
+			}
+
 			custom_tooltip = {
 				set_government_type = feudal_government
 			}
