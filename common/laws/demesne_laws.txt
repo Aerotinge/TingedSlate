@@ -7,9 +7,6 @@ law_groups = {
 	tribal_organization = {
 		law_type = realm
 	}
-	tribal_obligation = {
-		law_type = realm
-	}
 	vice_royalty = {
 		law_type = realm
 	}
@@ -351,7 +348,6 @@ laws = {
 		}
 	}
 
-
 	# TRIBAL ORGANIZATION
 	##############################
 
@@ -645,7 +641,7 @@ laws = {
 						government = nomadic_tribal_government
 					}
 				}
-				
+
 				holder_scope = {
 					NOT = { government = nomadic_tribal_government }
 				}
@@ -811,7 +807,7 @@ laws = {
 						government = nomadic_tribal_government
 					}
 				}
-				
+
 				holder_scope = {
 					NOT = { government = nomadic_tribal_government }
 				}
@@ -878,7 +874,6 @@ laws = {
 					custom_tooltip = {
 						text = enables_tribal_levy_laws
 						add_law = tribal_contract_0
-						revoke_law = tribal_obligation_0
 					}
 				}
 
@@ -982,7 +977,7 @@ laws = {
 						government = nomadic_tribal_government
 					}
 				}
-				
+
 				holder_scope = {
 					NOT = { government = nomadic_tribal_government }
 				}
@@ -1078,70 +1073,6 @@ laws = {
 			}
 		}
 	}
-
-	# TRIBAL OBLIGATION
-	##############################
-
-	tribal_obligation_0 = {
-		group = tribal_obligation
-
-		city_vassal_max_levy = -1
-		castle_vassal_max_levy = -1
-		temple_vassal_max_levy = -1
-		tribal_vassal_max_levy = -1
-
-		potential = {
-			NOT = { has_dlc = "Conclave" }
-
-			holder_scope = {
-				is_tribal = yes
-
-				OR = {
-					has_law = tribal_organization_0
-					has_law = tribal_organization_1
-					has_law = tribal_organization_2
-					real_tier = COUNT
-				}
-			}
-		}
-
-		allow = {}
-
-		pass_effect = {
-			# log = "tribal_obligation_0 pass ([This.GetFullBaseName])"
-		}
-
-		effect = {}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	tribal_obligation_1 = {
-		group = tribal_obligation
-
-		potential = {
-			is_law_potential = tribal_obligation_0
-		}
-
-		allow = {
-			hidden_tooltip = {
-				always = no
-			}
-		}
-
-		pass_effect = {
-			# log = "tribal_obligation_1 pass ([This.GetFullBaseName])"
-		}
-
-		effect = {}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
 
 	# VICE ROYALTY LAWS
 	##############################
@@ -1361,15 +1292,6 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-
-				trigger_if = {
-					limit = { is_tribal = yes }
-
-					OR = {
-						has_law = tribal_organization_3
-						has_law = tribal_organization_4
-					}
-				}
 			}
 
 			NOR = {
@@ -1475,15 +1397,6 @@ laws = {
 					government = manorial_government
 					government = roman_imperial_government
 					government = band_government
-				}
-
-				trigger_if = {
-					limit = { is_tribal = yes }
-
-					OR = {
-						has_law = tribal_organization_3
-						has_law = tribal_organization_4
-					}
 				}
 			}
 
@@ -1683,15 +1596,6 @@ laws = {
 			holder_scope = {
 				is_playable = yes
 				religion_group = muslim
-
-				trigger_if = {
-					limit = { is_tribal = yes }
-
-					OR = {
-						has_law = tribal_organization_3
-						has_law = tribal_organization_4
-					}
-				}
 			}
 		}
 
@@ -1899,15 +1803,6 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-
-				trigger_if = {
-					limit = { is_tribal = yes }
-
-					OR = {
-						has_law = tribal_organization_3
-						has_law = tribal_organization_4
-					}
-				}
 			}
 		}
 
@@ -2104,15 +1999,6 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-
-				trigger_if = {
-					limit = { is_tribal = yes }
-
-					OR = {
-						has_law = tribal_organization_3
-						has_law = tribal_organization_4
-					}
-				}
 			}
 
 			NOT = { is_law_potential = muslim_contract_0 }
