@@ -156,6 +156,7 @@ character_event = {
 	}
 }
 
+# What if ROOT holds more than one title using succ_open_elective? Hmmm...
 character_event = {
 	id = EMP.20112
 
@@ -175,14 +176,57 @@ character_event = {
 	}
 
 	immediate = {
-		create_random_soldier = {
-			random_traits = yes
-			female = yes
-			dynasty = none
+		if = {
+			limit = {
+				any_demesne_title = {
+					has_law = succ_open_elective
+					NOT = {
+						current_heir = {
+							always = yes
+						}
+					}
+					OR = {
+						mercenary = yes
+						holy_order = yes
+					}
+				}
+			}
+
+			create_random_soldier = {
+				random_traits = yes
+				female = yes
+				dynasty = none
+			}
+			create_random_soldier = {
+				random_traits = yes
+				dynasty = none
+			}
 		}
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = none
+		else_if = {
+			limit = {
+				government = theocracy_government
+			}
+
+			create_random_priest = {
+				random_traits = yes
+				female = yes
+				dynasty = none
+			}
+			create_random_priest = {
+				random_traits = yes
+				dynasty = none
+			}
+		}
+		else = {
+			create_character = {
+				random_traits = yes
+				female = yes
+				dynasty = none
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = none
+			}
 		}
 		recalc_succession = yes
 	}
