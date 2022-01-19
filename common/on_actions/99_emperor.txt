@@ -34,6 +34,11 @@ on_death = {
 	events = {
 		EMP.12010
 		EMP.12011
+		# Gender Law Enforcement
+		EMP.20110
+		# Generate female character for non-agnatic succ_open_elective if no heir available
+		# Or else it spawn a hardcoded male character, who ignoring the gender law
+		EMP.20112
 	}
 }
 
@@ -59,6 +64,8 @@ on_new_holder = {
 		EMP.13140
 		# Tribal Organization Cleanup
 		EMP.20010
+		# Gender Law Enforcement
+		EMP.20111
 	}
 }
 
@@ -75,6 +82,8 @@ on_new_holder_inheritance = {
 		EMP.13140
 		# Tribal Organization Cleanup
 		EMP.20010
+		# Gender Law Enforcement
+		EMP.20111
 	}
 }
 

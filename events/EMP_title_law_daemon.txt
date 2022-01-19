@@ -1,0 +1,237 @@
+namespace = EMP
+
+# TO cleanup
+character_event = {
+	id = EMP.20010
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_new_holder_*
+
+	trigger = {
+		FROM = {
+			OR = {
+				has_law = tribal_organization_0
+				has_law = tribal_organization_1
+				has_law = tribal_organization_2
+				has_law = tribal_organization_3
+				has_law = tribal_organization_4
+			}
+		}
+		is_tribal = no
+	}
+
+	immediate = {
+		FROM = {
+			revoke_tribal_organization_effect = yes
+		}
+	}
+}
+
+# succ_open_elective Gender Law Enforcement
+# Exception: abdication
+character_event = {
+	id = EMP.20110
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_death
+
+	trigger = {
+		any_demesne_title = {
+			OR = {
+				has_law = cognatic_succession
+				has_law = true_cognatic_succession
+				has_law = enatic_cognatic_succession
+				has_law = enatic_succession
+				has_title_flag = gender_law_1 # Make sure gender law flag working, even if EMP.20113 has yet fired
+				has_title_flag = gender_law_2
+				has_title_flag = gender_law_3
+				has_title_flag = gender_law_4
+			}
+			has_law = succ_open_elective
+		}
+	}
+
+	immediate = {
+		any_demesne_title = {
+			limit = {
+				OR = {
+					has_law = cognatic_succession
+					has_law = true_cognatic_succession
+					has_law = enatic_cognatic_succession
+					has_law = enatic_succession
+				}
+				has_law = succ_open_elective
+			}
+
+			trigger_switch = {
+				on_trigger = has_law
+
+				cognatic_succession			= { set_title_flag = gender_law_1 }
+				true_cognatic_succession	= { set_title_flag = gender_law_2 }
+				enatic_cognatic_succession	= { set_title_flag = gender_law_3 }
+				enatic_succession			= { set_title_flag = gender_law_4 }
+			}
+		}
+
+		# Keep the gender_law flag and setup gender_law immediately, recalc_succession
+		any_demesne_title = {
+			limit = {
+				OR = {
+					has_title_flag = gender_law_1
+					has_title_flag = gender_law_2
+					has_title_flag = gender_law_3
+					has_title_flag = gender_law_4
+				}
+				has_law = succ_open_elective
+			}
+
+			trigger_switch = {
+				on_trigger = has_title_flag
+
+				gender_law_1 = {
+					add_law = {
+						law = cognatic_succession
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				gender_law_2 = {
+					add_law = {
+						law = true_cognatic_succession
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				gender_law_3 = {
+					add_law = {
+						law = enatic_cognatic_succession
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				gender_law_4 = {
+					add_law = {
+						law = enatic_succession
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+			}
+			ROOT = { recalc_succession = yes }
+		}
+	}
+}
+
+character_event = {
+	id = EMP.20111
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_new_holder, on_new_holder_inheritance
+
+	trigger = {
+		FROM = {
+			OR = {
+				has_title_flag = gender_law_1
+				has_title_flag = gender_law_2
+				has_title_flag = gender_law_3
+				has_title_flag = gender_law_4
+			}
+		}
+	}
+
+	immediate = {
+		# Due to spaghetti code in CK2 engine, we cannot simply apply gender_law here
+		# liege, tributary, gender_law and more changing will be overriden. Nice job PDX.
+		FROM = {
+			capital_scope = {
+				province_event = {
+					id = EMP.20113
+					days = 1
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = EMP.20112
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_death
+
+	trigger = {
+		any_demesne_title = {
+			has_law = succ_open_elective
+			NOT = {
+				current_heir = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	immediate = {
+		create_random_soldier = {
+			random_traits = yes
+			female = yes
+			dynasty = none
+		}
+		create_random_soldier = {
+			random_traits = yes
+			dynasty = none
+		}
+		recalc_succession = yes
+	}
+}
+
+province_event = {
+	id = EMP.20113
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		FROMFROM = {
+			trigger_switch = {
+				on_trigger = has_title_flag
+
+				gender_law_1 = {
+					add_law = {
+						law = cognatic_succession
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				gender_law_2 = {
+					add_law = {
+						law = true_cognatic_succession
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				gender_law_3 = {
+					add_law = {
+						law = enatic_cognatic_succession
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+				gender_law_4 = {
+					add_law = {
+						law = enatic_succession
+						cooldown = no
+						opinion_effect = no
+					}
+				}
+			}
+			clear_flags_with_prefix = gender_law_
+			holder_scope = {
+				recalc_succession = yes
+			}
+		}
+	}
+}
