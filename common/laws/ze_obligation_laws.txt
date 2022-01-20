@@ -52,7 +52,7 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				NOT = { government = muslim_government }
+				NOT = { government = clan_government }
 			}
 		}
 
@@ -636,7 +636,7 @@ laws = {
 			has_dlc = "Conclave"
 
 			holder_scope = {
-				government = muslim_government
+				government = clan_government
 				is_playable = yes
 			}
 		}

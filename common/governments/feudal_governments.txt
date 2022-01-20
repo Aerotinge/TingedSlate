@@ -35,7 +35,7 @@ feudal_governments = {
 
 			NOR = {
 				is_government_potential = manorial_government
-				is_government_potential = muslim_government
+				is_government_potential = clan_government
 				is_government_potential = iqta_government
 				is_government_potential = tibetan_feudal_government
 				is_government_potential = theocratic_feudal_government
@@ -61,7 +61,7 @@ feudal_governments = {
 		court_size_modifier = 10
 	}
 
-	muslim_government = {
+	clan_government = { # Patrimonialism
 		preferred_holdings = {
 			CASTLE
 		}
@@ -77,9 +77,6 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			thema_government
 		}
-		#free_revoke_on_tiers = {
-		#	DUKE
-		#}
 		free_revoke_on_governments = {
 			iqta_government
 		}
@@ -99,12 +96,38 @@ feudal_governments = {
 		color = { 10 138 57 }
 
 		potential = {
-			religion_group = muslim
+			OR = {
+				culture = turkish
+				culture = karluk
+				culture = khitan
+				culture = bedouin_arabic
+				culture = maghreb_arabic
+				culture = levantine_arabic
+				culture = egyptian_arabic
+				culture = andalusian_arabic
+				culture = tamil
+				culture = telugu
+				culture = kannada
+				culture = bengali
+				culture = oriya
+				culture = panjabi
+				culture = rajput
+				culture = sindhi
+				culture = marathi
+				culture = sinhala
+				culture = persian
+				culture = kurdish
+				culture = afghan
+				culture = baloch
+			}
+
 			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
 			could_be_order_trigger = no
 
 			NOR = {
 				is_government_potential = iqta_government
+				is_government_potential = mandala_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = chinese_imperial_government
@@ -146,7 +169,7 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			muslim_government
+			clan_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -161,12 +184,12 @@ feudal_governments = {
 
 		potential = {
 			real_tier = BARON
-			#religion_group = muslim
 			is_patrician = no
 			could_be_order_trigger = no
 			independent = no
 
 			liege = {
+				# Have to replace this with dynamic flag or modifier
 				religion_group = muslim
 				independent = yes
 			}
@@ -241,15 +264,14 @@ feudal_governments = {
 
 		potential = {
 			culture_group = tibetan_group
-			#higher_real_tier_than = BARON
-			is_patrician = no
-			could_be_temporal_religious_head_trigger = yes
-			could_be_order_trigger = no
-
 			OR = {
 				religion_openly_bon_or_reformed_trigger = yes
 				religion = buddhist
 			}
+
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
 
 			primary_title = {
 				NOT = { has_law = succ_open_elective }
@@ -277,7 +299,7 @@ feudal_governments = {
 		court_size_modifier = 10
 	}
 
-	theocratic_feudal_government = { # Patrimonial Theocracy
+	theocratic_feudal_government = {
 		preferred_holdings = {
 			TEMPLE
 		}
@@ -311,12 +333,13 @@ feudal_governments = {
 
 		potential = {
 			controls_religion = yes
+
+			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
 			could_be_order_trigger = no
-			is_patrician = no
 
 			NOR = {
-				is_government_potential = muslim_government
+				is_government_potential = clan_government
 				is_government_potential = tibetan_feudal_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
@@ -367,8 +390,6 @@ feudal_governments = {
 		potential = {
 			OR = {
 				culture_group = east_slavic
-				#culture_group = south_slavic
-				#culture = bosnian
 				culture = bulgarian
 				culture = serbian
 				culture = vlach
@@ -376,6 +397,7 @@ feudal_governments = {
 				culture_group = finno_ugric
 			}
 			NOT = { higher_real_tier_than = DUKE }
+
 			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
 			could_be_order_trigger = no
@@ -408,10 +430,8 @@ feudal_governments = {
 			}
 
 			NOR = {
-				is_government_potential = muslim_government
 				is_government_potential = iqta_government
 				is_government_potential = theocratic_feudal_government
-				is_government_potential = thema_government
 				is_government_potential = band_government
 			}
 		}
@@ -455,6 +475,7 @@ feudal_governments = {
 		color = { 183 93 64 }
 
 		potential = {
+			is_tributary = no
 			OR = {
 				culture_group = dravidian_group
 				culture_group = indo_aryan_group
@@ -463,8 +484,8 @@ feudal_governments = {
 				religion_openly_zun_or_reformed_trigger = yes
 				has_dharmic_religion_trigger = yes
 			}
+
 			is_patrician = no
-			is_tributary = no
 			could_be_temporal_religious_head_trigger = yes
 			could_be_order_trigger = no
 
@@ -579,9 +600,7 @@ feudal_governments = {
 			}
 
 			NOR = {
-				is_government_potential = tibetan_feudal_government
 				is_government_potential = roman_imperial_government
-				is_government_potential = thema_government
 				is_government_potential = chinese_imperial_government
 				is_government_potential = band_government
 			}

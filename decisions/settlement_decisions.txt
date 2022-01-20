@@ -1352,9 +1352,9 @@ settlement_decisions = {
 				}
 
 				if = {
-					limit = { is_government_potential = muslim_government }
+					limit = { is_government_potential = clan_government }
 
-					set_government_type = muslim_government
+					set_government_type = clan_government
 
 					if = {
 						limit = { ai = no }

@@ -138,7 +138,7 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		government = muslim_government
+		government = clan_government
 		mercenary = no
 
 		NOR = {
@@ -172,7 +172,7 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		government = muslim_government
+		government = clan_government
 
 		OR = {
 			has_law = succ_feudal_elective
@@ -560,7 +560,7 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		government = muslim_government
+		government = clan_government
 		mercenary = no
 
 		NOR = {
@@ -605,7 +605,7 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		government = muslim_government
+		government = clan_government
 
 		OR = {
 			has_law = succ_feudal_elective
@@ -1024,7 +1024,7 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		government = muslim_government
+		government = clan_government
 		mercenary = no
 
 		# Council is powerless
@@ -1051,7 +1051,7 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		government = muslim_government
+		government = clan_government
 
 		OR = {
 			has_law = succ_feudal_elective
@@ -1376,7 +1376,7 @@ government_flavor = {
 			has_law = ze_administration_laws_2
 		}
 
-		government = muslim_government
+		government = clan_government
 		mercenary = no
 
 		NOR = {
@@ -1406,7 +1406,7 @@ government_flavor = {
 			has_law = ze_administration_laws_2
 		}
 
-		government = muslim_government
+		government = clan_government
 
 		OR = {
 			has_law = succ_feudal_elective
@@ -1798,7 +1798,7 @@ government_flavor = {
 			has_law = ze_administration_laws_2
 		}
 
-		government = muslim_government
+		government = clan_government
 		mercenary = no
 
 		NOR = {
@@ -1846,7 +1846,7 @@ government_flavor = {
 			has_law = ze_administration_laws_2
 		}
 
-		government = muslim_government
+		government = clan_government
 
 		OR = {
 			has_law = succ_feudal_elective
@@ -2208,7 +2208,7 @@ government_flavor = {
 
 	trigger = {
 		mercenary = no
-		government = muslim_government
+		government = clan_government
 
 		NOR = {
 			has_law = succ_feudal_elective
@@ -2240,7 +2240,7 @@ government_flavor = {
 	priority = 1
 
 	trigger = {
-		government = muslim_government
+		government = clan_government
 
 		OR = {
 			has_law = succ_feudal_elective

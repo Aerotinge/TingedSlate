@@ -161,7 +161,7 @@ republic_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
-			muslim_government
+			clan_government
 			tibetan_feudal_government
 			theocratic_feudal_government
 			mandala_government
