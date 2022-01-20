@@ -90,10 +90,9 @@ gender_laws = {
 				is_theocracy = no
 
 				trigger_if = {
-					limit = { is_republic = yes }
+					limit = { is_patrician = yes }
 
 					has_dlc = "Conclave"
-					is_patrician = yes
 
 					trigger_if = {
 						limit = { independent = no }
@@ -218,10 +217,9 @@ gender_laws = {
 					}
 
 					trigger_if = {
-						limit = { is_republic = yes }
+						limit = { is_patrician = yes }
 
 						has_dlc = "Conclave"
-						is_patrician = yes
 
 						trigger_if = {
 							limit = { independent = no }
@@ -327,10 +325,9 @@ gender_laws = {
 				is_theocracy = no
 
 				trigger_if = {
-					limit = { is_republic = yes }
+					limit = { is_patrician = yes }
 
 					has_dlc = "Conclave"
-					is_patrician = yes
 
 					trigger_if = {
 						limit = { independent = no }
@@ -374,15 +371,17 @@ gender_laws = {
 		female_dynasty_opinion = 10
 
 		potential = {
-			holder_scope = {
-				trigger_if = {
-					limit = { is_theocracy = yes }
+			OR = {
+				holder_scope = {
+					trigger_if = {
+						limit = { is_theocracy = yes }
 
-					religion_allows_male_temple_holders = no
-					religion_allows_female_temple_holders = yes
-				}
-				trigger_else = {
-					has_religion_feature = religion_matriarchal
+						religion_allows_male_temple_holders = no
+						religion_allows_female_temple_holders = yes
+					}
+					trigger_else = {
+						has_religion_feature = religion_matriarchal
+					}
 				}
 			}
 		}
