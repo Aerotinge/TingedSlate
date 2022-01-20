@@ -34,7 +34,7 @@ on_death = {
 	events = {
 		EMP.12010
 		EMP.12011
-		# Generate characters for succ_open_elective if no heir available
+		# Generate characters for succ_open_elective title holder other than theocracy, if no heir available
 		# Or else it spawn a hardcoded male character, who ignoring the gender law
 		EMP.20110
 	}

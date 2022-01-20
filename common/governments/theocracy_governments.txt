@@ -38,6 +38,8 @@ theocracy_governments = {
 			holy_order = no
 			could_be_order_trigger = no
 
+			religion_allows_temple_holders = yes
+
 			trigger_if = {
 				limit = { is_female = yes }
 				religion_allows_female_temple_holders = yes

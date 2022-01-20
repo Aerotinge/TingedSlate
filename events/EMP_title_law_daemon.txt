@@ -37,7 +37,11 @@ character_event = {
 
 	trigger = {
 		any_demesne_title = {
-			has_law = succ_open_elective # Also Investiture?
+			has_law = succ_open_elective
+			OR = {
+				has_law = enatic_cognatic_succession
+				has_law = enatic_succession
+			}
 			NOT = {
 				current_heir = {
 					always = yes
@@ -50,6 +54,10 @@ character_event = {
 		any_demesne_title = {
 			limit = {
 				has_law = succ_open_elective
+				OR = {
+					has_law = enatic_cognatic_succession
+					has_law = enatic_succession
+				}
 				NOT = {
 					current_heir = {
 						always = yes
@@ -70,34 +78,11 @@ character_event = {
 					female = yes
 					dynasty = none
 				}
-				create_random_soldier = {
-					random_traits = yes
-					dynasty = none
-				}
-			}
-			else_if = {
-				limit = {
-					government = theocracy_government
-				}
-
-				create_random_priest = {
-					random_traits = yes
-					female = yes
-					dynasty = none
-				}
-				create_random_priest = {
-					random_traits = yes
-					dynasty = none
-				}
 			}
 			else = {
 				create_character = {
 					random_traits = yes
 					female = yes
-					dynasty = none
-				}
-				create_character = {
-					random_traits = yes
 					dynasty = none
 				}
 			}

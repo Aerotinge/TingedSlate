@@ -8,7 +8,7 @@ gender_laws = {
 			holder_scope = {
 				# Theocracies have to allow Male temple holders
 				trigger_if = {
-					limit = { is_theocracy = yes }
+					limit = { government = theocracy_government }
 
 					religion_allows_male_temple_holders = yes
 					religion_allows_female_temple_holders = no
@@ -65,8 +65,8 @@ gender_laws = {
 						# Zoroastrian
 						religion = mazdaki
 
-						AND = {
-							culture_group = tibetan_group
+						trigger_if = {
+							limit = { culture_group = tibetan_group }
 
 							NOR = {
 								religion = taoist
@@ -118,15 +118,11 @@ gender_laws = {
 
                     has_dlc = "Conclave"
                 }
-				trigger_else_if = {
-					limit = { government = order_government }
-					independent = yes
-				}
 
 				# No exceptions
 				NOR = {
 					has_religion_feature = religion_matriarchal
-                	has_religion_feature = religion_equal
+					has_religion_feature = religion_equal
 				}
 			}
 		}
@@ -186,7 +182,7 @@ gender_laws = {
 		potential = {
 			holder_scope = {
 				trigger_if = {
-					limit = { is_theocracy = yes }
+					limit = { government = theocracy_government }
 
 					religion_allows_male_temple_holders = yes
 					religion_allows_female_temple_holders = yes
@@ -251,7 +247,7 @@ gender_laws = {
 		}
 
 		allow = {
-            holder_scope = {
+			holder_scope = {
 				show_scope_change = no
 
 				trigger_if = {
@@ -282,7 +278,7 @@ gender_laws = {
 						}
 					}
 				}
-            }
+			}
 		}
 
 		pass_effect = {
@@ -371,17 +367,15 @@ gender_laws = {
 		female_dynasty_opinion = 10
 
 		potential = {
-			OR = {
-				holder_scope = {
-					trigger_if = {
-						limit = { is_theocracy = yes }
+			holder_scope = {
+				trigger_if = {
+					limit = { government = theocracy_government }
 
-						religion_allows_male_temple_holders = no
-						religion_allows_female_temple_holders = yes
-					}
-					trigger_else = {
-						has_religion_feature = religion_matriarchal
-					}
+					religion_allows_male_temple_holders = no
+					religion_allows_female_temple_holders = yes
+				}
+				trigger_else = {
+					has_religion_feature = religion_matriarchal
 				}
 			}
 		}

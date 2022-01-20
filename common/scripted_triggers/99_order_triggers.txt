@@ -1,3 +1,20 @@
+religion_allows_temple_holders = {
+	NOR = {
+		religion = mazdaki
+		religion_group = muslim
+		religion = karaite
+		religion = cathar
+		religion = lollard
+		religion = waldensian
+		religion = bogomilist
+		AND = {
+			has_religion_feature = religion_proselytizing
+			has_religion_feature = religion_equal
+			has_religion_feature = religion_no_leader
+		}
+	}
+}
+
 could_be_order_trigger = {
 	trigger_if = {
 		limit = { holy_order = no }
