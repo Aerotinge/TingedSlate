@@ -87,5 +87,6 @@ character_event = {
 				}
 			}
 		}
+		recalc_succession = yes
 	}
 }

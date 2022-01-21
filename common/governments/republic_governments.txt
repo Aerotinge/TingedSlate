@@ -180,6 +180,7 @@ republic_governments = {
 			OR = {
 				mercenary = yes
 				rebel = yes
+				primary_title = { adventurer = yes }
 			}
 		}
 

@@ -4642,26 +4642,6 @@ narrative_event = {
 			convert_religion_failsafe_effect = yes
 		}
 
-		# Prevent wrong-gendered temple holders
-		any_vassal = {
-			limit = {
-				is_playable = no
-				capital_holding = { holding_type = temple }
-				NOT = { is_government_potential = theocracy_government }
-			}
-			log = "[This.GetBestName] abdicates due to not being allowed to remain a priest"
-			abdicate = yes
-		}
-
-		if = {
-			limit = {
-				capital_holding = { holding_type = temple }
-				NOT = { is_government_potential = theocracy_government }
-			}
-			log = "[This.GetBestName] abdicates due to not being allowed to remain a priest"
-			abdicate = yes
-		}
-
 		# Capital Conversion
 		capital_scope = {
 			if = {
@@ -5044,26 +5024,6 @@ narrative_event = {
 				# Workaround for automatic usurption of theocratic characters
 				set_character_flag = convert_abandon_heresy
 				convert_religion_failsafe_effect = yes
-			}
-
-			# Prevent wrong-gendered temple holders
-			any_vassal = {
-				limit = {
-					is_playable = no
-					capital_holding = { holding_type = temple }
-					NOT = { is_government_potential = theocracy_government }
-				}
-				log = "[This.GetBestName] abdicates due to not being allowed to remain a priest"
-				abdicate = yes
-			}
-
-			if = {
-				limit = {
-					capital_holding = { holding_type = temple }
-					NOT = { is_government_potential = theocracy_government }
-				}
-				log = "[This.GetBestName] abdicates due to not being allowed to remain a priest"
-				abdicate = yes
 			}
 
 			# Capital Conversion
