@@ -66,6 +66,7 @@ laws = {
 				NOR = {
 					government = thema_government
 					government = band_government
+					government = clan_government
 				}
 				higher_real_tier_than = COUNT
 			}

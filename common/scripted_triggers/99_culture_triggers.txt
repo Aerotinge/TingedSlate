@@ -5,6 +5,7 @@ has_clan_culture = {
 		OR = {
 			culture = turkish
 			culture = karluk
+			culture = mongol
 			culture = khitan
 			culture = bedouin_arabic
 			culture = maghreb_arabic

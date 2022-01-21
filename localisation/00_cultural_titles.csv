@@ -31,12 +31,14 @@ barony_dravidian_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_indo_aryan_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_iranian;Arg;Arg;Arg;;Arg;;;;;;;;;x
 barony_mongol;Taishi;Taïshi;Taishi;;Taishi;;;;;;;;;x
+barony_muslim;Wilayah;Wilaya;Wilayah;;Vilayato;;;;;;;;;x
 barony_of;Castle of;Château de;Burg von;;Castillo de;;;;;;;;;x
 barony_of_arabic;Wilayah of;Wilaya de;Wilayah von;;Vilayato de;;;;;;;;;x
 barony_of_dravidian_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
 barony_of_indo_aryan_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
 barony_of_iranian;Arg of;Arg de;Arg von;;Arg de;;;;;;;;;x
 barony_of_mongol;Taishi of;Taishi de;Taishi von;;Taishi de;;;;;;;;;x
+barony_of_muslim;Wilayah of;Wilaya de;Wilayah von;;Vilayato de;;;;;;;;;x
 barony_of_roman;Fortress of;Forteresse de;Festung von;;Fortaleza de;;;;;;;;;x
 city_baron;Mayor;Bourgmestre;Bürgermeister;;Alcalde;;;;;;;;;x
 city_baron_female;Mayor;Bourgmestre;Bürgermeisterin;;Alcalde;;;;;;;;;x
@@ -253,12 +255,6 @@ family_palace;Palace;Palais familial;Palast;;Palacio;;;;;;;;;x
 family_palace_baron;Patrician;Patricien;Patrizier;;Patricio;;;;;;;;;x
 family_palace_baron_female;Lady;Dame;Lady;;Señora;;;;;;;;;x
 family_palace_barony_of;Palace of;Palais de;Palast von;;Palacio de;;;;;;;;;x
-muslim_king;Sultan;Sultan;Sultan;;Sultán;;;;;;;;;x
-muslim_king_female;Sultana;Sultane;Sultana;;Sultana;;;;;;;;;x
-muslim_kingdom;Sultanate;Sultanat;Sultanat;;Sultanato;;;;;;;;;x
-muslim_kingdom_of;Sultanate of;Sultanat de;Sultanat von;;Sultanato de;;;;;;;;;x
-muslim_barony;Wilayah;Wilaya;Wilayah;;Vilayato;;;;;;;;;x
-muslim_barony_of;Wilayah of;Wilaya de;Wilayah von;;Vilayato de;;;;;;;;;x
 iqta_baron;Muqta';Muqta';Muqta';;Muqta';;;;;;;;;x
 iqta_barony;Iqta';Iqta';Iqta';;Iqta';;;;;;;;;x
 iqta_barony_of;Iqta' of;Iqta' de;Iqta' von;;Iqta' de;;;;;;;;;x
@@ -270,6 +266,8 @@ king_bulgarian;Tsar;Tsar;Zar;;Zar;;;;;x
 king_central_african;Mai;Mai;Mai;;Mai;;;;;;;;;x
 king_dravidian_group;Maharaja;Maharaja;Maharadscha;;Maharaja;;;;;;;;;x
 king_east_slavic;Tsar;Tsar;Zar;;Zar;;;;;x
+king_muslim;Sultan;Sultan;Sultan;;Sultán;;;;;;;;;x
+king_muslim_female;Sultana;Sultane;Sultana;;Sultana;;;;;;;;;x
 king_female;Queen;Reine;Königin;;Reina;;;;;;;;;x
 king_female_altaic;Khanum;Khanoum;Khanum;;Khanum;;;;;;;;;x
 king_female_arabic;Malikah;Malikah;Malikah;;Malikah;;;;;;;;;x
@@ -296,6 +294,7 @@ kingdom_altaic;Khanate;Khanat;Khanat;;Kanato;;;;;;;;;x
 kingdom_bulgarian;Tsardom;Tsarat;Zarenreich;;Zarato;;;;;;;;;x
 kingdom_iranian;Shahdom;Royaume;Shahtum;;Shahdom;;;;;;;;;x
 kingdom_east_slavic;Tsardom;Tsarat;Zarenreich;;Zarato;;;;;;;;;x
+kingdom_muslim;Sultanate;Sultanat;Sultanat;;Sultanato;;;;;;;;;x
 kingdom_of;Kingdom of;Royaume de;Königreich;;Reino de;;;;;;;;;x
 kingdom_of_altaic;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
 kingdom_of_bavaria_name;Bavaria;Bavière;Bayern;;Baviera;;;;;x
@@ -303,6 +302,7 @@ kingdom_of_bulgarian;Tsardom of;Tsarat de;Zarenreich von;;Zarato de;;;;;;;;;x
 kingdom_of_carinthia_name;Carinthia;Carinthie;Kärnten;;Carintia;;;;;x
 kingdom_of_east_slavic;Tsardom of;Tsarat de;Zarenreich von;;Zarato de;;;;;;;;;x
 kingdom_of_iranian;Shahdom of;Royaume de;Schahtum von;;Shahdom de;;;;;;;;;x
+kingdom_of_muslim;Sultanate of;Sultanat de;Sultanat von;;Sultanato de;;;;;;;;;x
 kingdom_of_roman;Regnum of;Regnum de;Regna von;;Reino de;;;;;;;;;x
 kingdom_of_styria_name;Styria;Styrie;Steiermark;;Estiria;;;;;x
 nomadic_emperor_altaic;Khagan;Khagan;Khagan;;Khagan;;;;;;;;;x

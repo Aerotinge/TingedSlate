@@ -624,6 +624,43 @@ spriteTypes = {
 		alwaysTransparent = yes
 	}
 
+	# CLAN GOVERNMENT
+
+	spriteType = {
+		name = "GFX_charframe_150_clan"
+		textureFile = "gfx\\interface\\charframe_150_clan.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_100_clan"
+		textureFile = "gfx\\interface\\charframe_100_clan.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_75_clan"
+		textureFile = "gfx\\interface\\charframe_75_clan.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_50_clan"
+		textureFile = "gfx\\interface\\charframe_50_clan.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_34_clan"
+		textureFile = "gfx\\interface\\charframe_34_clan.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
 	# CONFUCIAN GOVERNMENT
 
 	spriteType = {
@@ -1418,8 +1455,8 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_icon_muslim_government"
-		textureFile = "gfx\\interface\\government_icon_iqta.dds"
+		name = "GFX_icon_clan_government"
+		textureFile = "gfx\\interface\\government_icon_clan.dds"
 	}
 
 	spriteType = {

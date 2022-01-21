@@ -90,36 +90,12 @@ feudal_governments = {
 			iqta_government
 		}
 
-		frame_suffix = "_iqta"
-		#title_prefix = "iqta_"
-		title_prefix = "muslim_"
-		color = { 10 138 57 }
+		frame_suffix = "_clan"
+		title_prefix = "clan_"
+		color = { 118 255 163 }
 
 		potential = {
-			OR = {
-				culture = turkish
-				culture = karluk
-				culture = khitan
-				culture = bedouin_arabic
-				culture = maghreb_arabic
-				culture = levantine_arabic
-				culture = egyptian_arabic
-				culture = andalusian_arabic
-				culture = tamil
-				culture = telugu
-				culture = kannada
-				culture = bengali
-				culture = oriya
-				culture = panjabi
-				culture = rajput
-				culture = sindhi
-				culture = marathi
-				culture = sinhala
-				culture = persian
-				culture = kurdish
-				culture = afghan
-				culture = baloch
-			}
+			has_clan_culture = yes
 
 			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
@@ -138,21 +114,21 @@ feudal_governments = {
 		allow = {
 		}
 
-		allows_matrilineal_marriage = no
+		#allows_matrilineal_marriage = no
 		barons_need_dynasty = yes
 		can_build_tribal = no
-		#dukes_called_kings = yes
 		dukes_called_kings = no
 		#free_retract_vassalage = yes
-		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
+		#free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
 		have_gender_laws = no
 		#uses_decadence = yes
-		uses_piety_for_law_change = yes
+		uses_prestige_for_law_change = yes
 
 		capital_move_delay = 600
 
 		## Modifiers
 		court_size_modifier = 10
+		demesne_size = 2 # Equals to fixed centralization_2
 	}
 
 	iqta_government = {
@@ -260,7 +236,7 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_tibetanfeudal"
-		color = { 207 145 90 }
+		color = { 0 146 250 }
 
 		potential = {
 			culture_group = tibetan_group
@@ -385,7 +361,7 @@ feudal_governments = {
 
 		frame_suffix = "_manorial"
 		title_prefix = "manorial_"
-		color = { 0 146 250 }
+		color = { 207 145 90 }
 
 		potential = {
 			OR = {
@@ -469,6 +445,7 @@ feudal_governments = {
 		}
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
+			mandala_government
 		}
 
 		frame_suffix = "_mandala"
@@ -617,6 +594,7 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
+		vassal_limit = -10
 	}
 
 	roman_imperial_government = {
@@ -831,7 +809,7 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_chineseimperial"
-		color = { 118 255 163 }
+		color = { 217 149 2 }
 
 		potential = {
 			trigger_if = {
