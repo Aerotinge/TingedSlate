@@ -1293,12 +1293,14 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
+				OR = {
+					government = feudal_government
+					government = tibetan_feudal_government
+					government = theocratic_feudal_government
+				}
 			}
 
-			NOR = {
-				is_law_potential = manorial_contract_0
-				is_law_potential = muslim_contract_0
-			}
+			NOT = { is_law_potential = muslim_contract_0 }
 		}
 
 		effect = {
@@ -1393,15 +1395,12 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				OR = {
-					is_tribal = yes
-					government = manorial_government
-					government = roman_imperial_government
-					government = band_government
-				}
 			}
 
-			NOT = { is_law_potential = muslim_contract }
+			NOR = {
+				is_law_potential = feudal_contract_0
+				is_law_potential = muslim_contract_0
+			}
 		}
 
 		effect = {

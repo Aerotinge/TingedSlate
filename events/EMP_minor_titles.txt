@@ -1,0 +1,66 @@
+###################################################
+# EMPEROR events
+# By Sergei Ivanov
+####################################################
+# EMP.15000-EMP.15999
+
+namespace = EMP
+
+# Govenor setup
+character_event = {
+    id = EMP.15010
+    hide_window = yes
+
+	is_triggered_only = yes
+
+    trigger = {
+		always = no
+		OR = {
+			AND = {
+				government = roman_imperial_government
+				year >= 1000
+			}
+			AND = {
+				higher_tier_than = DUKE
+				independent = yes
+				religion_group = muslim
+				capital_scope = {
+					OR = {
+						region = world_persia
+						region = world_india
+					}
+				}
+				year >= 1050
+			}
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { government = roman_imperial_government }
+
+			any_vassal = {
+				limit = {
+					real_tier = BARON
+					is_feudal = yes
+				}
+
+				primary_title = { add_law = succ_appointment }
+				unsafe_give_minor_title = title_pronoiar
+				set_government_type = pronoia_government
+			}
+		}
+		else = {
+			any_vassal = {
+				limit = {
+					real_tier = BARON
+					is_feudal = yes
+				}
+
+				primary_title = { add_law = succ_appointment }
+				unsafe_give_minor_title = title_iqtadar
+				set_government_type = iqta_government
+			}
+		}		
+	}
+}

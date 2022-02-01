@@ -164,4 +164,111 @@ theocracy_governments = {
 		## Modifiers
 		court_size_modifier = 10
 	}
+
+	pronoia_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+		}
+
+		frame_suffix = "_romanimperial"
+		title_prefix = "pronoia_"
+		color = { 143 12 125 }
+
+		potential = {
+			has_minor_title = title_pronoiar
+			primary_title = {
+				has_law = succ_appointment
+			}
+
+			is_patrician = no
+			could_be_order_trigger = no
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = no
+		can_build_tribal = no
+		can_inherit = no
+		can_create_empires = no
+		can_create_kingdoms = no
+		can_usurp_kingdoms_and_empires = no
+		can_imprison_without_reason = no
+		dukes_called_kings = no
+		have_gender_laws = no
+
+		## Modifiers
+	}
+
+	iqta_government = { # Iqta, Timar
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			clan_government
+			tibetan_feudal_government
+			theocratic_feudal_government
+		}
+		free_revoke_on_governments = {
+			iqta_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_iqta"
+		title_prefix = "iqta_"
+		color = { 10 138 57 }
+
+		potential = {
+			has_minor_title = title_iqtadar
+			primary_title = {
+				has_law = succ_appointment
+			}
+
+			is_patrician = no
+			could_be_order_trigger = no
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = no
+		can_build_tribal = no
+		can_inherit = no
+		can_create_empires = no
+		can_create_kingdoms = no
+		can_usurp_kingdoms_and_empires = no
+		dukes_called_kings = no
+		have_gender_laws = no
+	}
+
+	## Modifiers
+	character_modifier = {
+		global_levy_size = -0.25
+	}
 }

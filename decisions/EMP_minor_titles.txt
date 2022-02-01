@@ -1,0 +1,594 @@
+# Title decisions are possible vs _all_ titles and are shown in the Title Diplomacy View, not the Intrigue View. The taker is in the FROM scope.
+#
+# filter = [capital/primary_title/owned/vassal_owned/sub_realm_owned/realm_owned/dynasty_owned/all]
+# ai_target_filter = [capital/primary_title/owned/vassal_owned/sub_realm_owned/realm_owned/dynasty_owned/all] (which titles for which the AI evaluates the decision.)
+#	owned: all titles owned by the AI
+#	vassal_owned: all titles owned by direct vassal rulers of the AI's employer
+#	sub_realm_owned: all titles below the AI's employer
+#	realm_owned: all titles in the same top realm as the AI
+#	dynasty_owned: all titles owned by members of the same dynasty
+#	all: all titles (Avoid if possible. VERY CPU-HEAVY!)
+#
+
+title_decisions = {
+	grant_pronia = {
+		filter = owned
+		ai_target_filter = owned
+		third_party_filter = home_court
+		ai_third_party_filter = home_court
+		ai_check_interval = 2
+
+		show_third_party_potential = yes
+
+		only_independent = yes
+
+		from_potential = {
+			government = roman_imperial_government
+			num_of_extra_landed_titles >= 1
+
+			NOR = {
+				has_law = crown_authority_0
+				has_law = crown_authority_1
+			}
+			trigger_if = {
+				limit = { has_law = crown_authority_2 }
+
+				NOT = {
+					any_vassal = {
+						count >= 2
+
+						higher_tier_than = BARON
+						government = pronoia_government
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = { has_law = crown_authority_3 }
+
+				NOT = {
+					any_vassal = {
+						count >= 3
+
+						higher_tier_than = BARON
+						government = pronoia_government
+					}
+				}
+			}
+			trigger_else = {
+				NOT = {
+					any_vassal = {
+						count >= 4
+
+						higher_tier_than = BARON
+						government = pronoia_government
+					}
+				}
+			}
+		}
+
+		potential = {
+			holder = FROM
+			NOT = { higher_tier_than = COUNT }
+			can_be_given_away = yes
+
+			OR = {
+				trigger_if = {
+					limit = { is_theocracy = yes }
+
+					FROM = {
+						religion_allows_temple_holders = no
+					}
+				}
+				is_feudal = yes
+			}
+
+			trigger_if = { # AI can grant a county away only if it doesn't hold a baron
+				limit = {
+					real_tier = COUNT
+				}
+
+				FROM = {
+					OR = {
+						ai = no
+						any_demesne_title = {
+							NOT = { real_tier = BARON }
+						}
+					}
+				}
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+
+				#war = no
+				prisoner = no
+				is_incapable = no
+				is_inaccessible_trigger = no
+			}
+		}
+
+		third_party_potential = {
+			FROMFROM = {
+				show_scope_change = no
+
+				is_landed = no
+				is_heir = no
+
+				custom_tooltip = {
+					text = is_adult_under_45_tt
+
+					is_adult = yes
+					practical_age < 45
+				}
+
+				custom_tooltip = {
+					text = is_not_incapable_inbred_or_imbecile_tt
+
+					is_incapable = no
+
+					NOR = {
+						trait = inbred
+						trait = imbecile
+					}
+				}
+
+				custom_tooltip = {
+					text = is_not_maimed_or_infirm_tt
+
+					NOR = {
+						trait = maimed
+						trait = infirm
+					}
+				}
+
+				custom_tooltip = {
+					text = is_not_wounded_severely_injured_tt
+
+					NOR = {
+						trait = wounded
+						trait = severely_injured
+					}
+				}
+
+				custom_tooltip = {
+					text = is_not_one_eyed_handed_legged_disfigured_or_mangled_tt
+
+					NOR = {
+						trait = one_eyed
+						trait = one_handed
+						trait = one_legged
+						trait = disfigured
+						trait = mangled
+					}
+				}
+
+				is_ascetic_trigger = no
+
+				trigger_if = {
+					limit = { is_female = yes }
+
+					ROOT_FROM = {
+						primary_title = {
+							OR = {
+								#has_law = status_of_women_4
+								has_law = enatic_succession
+								has_law = enatic_cognatic_succession
+								has_law = true_cognatic_succession
+							}
+						}
+					}
+				}
+				trigger_else = {
+					ROOT_FROM = {
+						primary_title = {
+							NOR = {
+								has_law = enatic_succession
+								has_law = enatic_cognatic_succession
+								#has_law = true_cognatic_succession
+							}
+						}
+					}
+				}
+
+				trigger_if = {
+					limit = {
+						ROOT_FROM = { religion = hindu }
+					}
+
+					trait = kshatriya
+				}
+			}
+		}
+
+		third_party_allow = {
+			show_only_failed_conditions = yes
+
+			FROMFROM = {
+				show_scope_change = no
+
+				prisoner = no
+				is_inaccessible_trigger = no
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				grant_title_no_opinion = {
+					target = FROMFROM
+				}
+
+				add_law = succ_appointment
+
+				FROMFROM = {
+					unsafe_give_minor_title = title_pronoiar
+					set_government_type = pronoia_government
+					# Placeholder opinion
+					if = {
+						limit = {
+							PREV = { tier = BARON }
+						}
+
+						opinion = {
+							name = opinion_granted_barony_vice_royalty
+							who = ROOT_FROM
+						}
+					}
+					else = {
+						opinion = {
+							name = opinion_granted_county_vice_royalty
+							who = ROOT_FROM
+						}
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0.1
+
+			trigger = {
+				FROM = {
+					demesne_size_compared_to_limit >= 1
+				}
+			}
+
+			mult_modifier = {
+				factor = 5
+
+				FROM = {
+					demesne_size_compared_to_limit == 1
+					any_demesne_title = {
+						can_be_given_away = yes
+						real_tier = BARON
+					}
+				}
+			}
+
+			mult_modifier = {
+				factor = 10
+
+				FROM = {
+					over_max_demesne_size >= 1
+				}
+			}
+		}
+	}
+
+	grant_iqta = {
+		filter = owned
+		ai_target_filter = owned
+		third_party_filter = home_court
+		ai_third_party_filter = home_court
+		ai_check_interval = 2
+
+		show_third_party_potential = yes
+
+		only_independent = yes
+
+		from_potential = {
+			religion_group = muslim
+			capital_scope = {
+				trigger_if = {
+					limit = { region = world_persia }
+
+					TECH_MAJESTY >= 3
+					TECH_LEGALISM >= 3
+				}
+				trigger_else = {
+					TECH_MAJESTY >= 4
+					TECH_LEGALISM >= 4
+				}
+			}
+			higher_tier_than = DUKE
+			independent = yes
+			num_of_extra_landed_titles >= 1
+		}
+
+		potential = {
+			real_tier = BARON
+			holder = FROM
+			can_be_given_away = yes
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+
+				prisoner = no
+				is_incapable = no
+				is_inaccessible_trigger = no
+
+				trigger_if = {
+					limit = { martial >= 22 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 17
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 21 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 16
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 20 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 15
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 19 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 14
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 18 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 13
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 17 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 12
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 16 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 11
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 15 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 10
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 14 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 9
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 13 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 8
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 12 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 7
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 11 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 6
+					}
+				}
+				trigger_else_if = {
+					limit = { martial >= 10 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 5
+					}
+				}
+				trigger_else_if = {
+					limit = { martial < 8 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 4
+					}
+				}
+				trigger_else_if = {
+					limit = { martial < 6 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 3
+					}
+				}
+				trigger_else_if = {
+					limit = { martial < 4 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 2
+					}
+				}
+				trigger_else_if = {
+					limit = { martial < 2 }
+					num_of_government_vassals = {
+						government = iqta_government
+						value <= 1
+					}
+				}
+			}
+		}
+
+		third_party_potential = {
+			FROMFROM = {
+				show_scope_change = no
+
+				is_landed = no
+				is_heir = no
+
+				can_grant_title = title_commander
+				religion = ROOT_FROM
+
+				custom_tooltip = {
+					text = is_adult_under_45_tt
+
+					is_adult = yes
+					practical_age < 45
+				}
+
+				custom_tooltip = {
+					text = is_not_incapable_inbred_or_imbecile_tt
+
+					is_incapable = no
+
+					NOR = {
+						trait = inbred
+						trait = imbecile
+					}
+				}
+
+				custom_tooltip = {
+					text = is_not_maimed_or_infirm_tt
+
+					NOR = {
+						trait = maimed
+						trait = infirm
+					}
+				}
+
+				custom_tooltip = {
+					text = is_not_wounded_severely_injured_tt
+
+					NOR = {
+						trait = wounded
+						trait = severely_injured
+					}
+				}
+
+				custom_tooltip = {
+					text = is_not_one_eyed_handed_legged_disfigured_or_mangled_tt
+
+					NOR = {
+						trait = one_eyed
+						trait = one_handed
+						trait = one_legged
+						trait = disfigured
+						trait = mangled
+					}
+				}
+
+				is_ascetic_trigger = no
+
+				trigger_if = {
+					limit = { is_female = yes }
+
+					ROOT_FROM = {
+						primary_title = {
+							OR = {
+								#has_law = status_of_women_4
+								has_law = enatic_succession
+								has_law = enatic_cognatic_succession
+								has_law = true_cognatic_succession
+							}
+						}
+					}
+				}
+				trigger_else = {
+					ROOT_FROM = {
+						primary_title = {
+							NOR = {
+								has_law = enatic_succession
+								has_law = enatic_cognatic_succession
+								#has_law = true_cognatic_succession
+							}
+						}
+					}
+				}
+			}
+		}
+
+		third_party_allow = {
+			show_only_failed_conditions = yes
+
+			FROMFROM = {
+				show_scope_change = no
+
+				prisoner = no
+				is_inaccessible_trigger = no
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				grant_title_no_opinion = {
+					target = FROMFROM
+				}
+
+				add_law = succ_appointment
+
+				FROMFROM = {
+					unsafe_give_minor_title = title_iqtadar
+					set_government_type = iqta_government
+					# Placeholder opinion
+					opinion = {
+						name = opinion_granted_barony_vice_royalty
+						who = ROOT_FROM
+					}
+				}
+			}
+		}
+
+		ai_will_do = {
+			factor = 0.1
+
+			trigger = {
+				FROM = {
+					demesne_size_compared_to_limit >= 1
+				}
+			}
+
+			mult_modifier = {
+				factor = 5
+
+				FROM = {
+					demesne_size_compared_to_limit == 1
+					any_demesne_title = {
+						can_be_given_away = yes
+						real_tier = BARON
+					}
+				}
+			}
+
+			mult_modifier = {
+				factor = 10
+
+				FROM = {
+					over_max_demesne_size >= 1
+				}
+			}
+		}
+	}
+}

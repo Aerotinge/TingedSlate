@@ -1,6 +1,8 @@
 #character
 on_startup = {
 	events = {
+		# Governor title Setup
+		EMP.15010
 		# Nomadic tribal
 		EMP.11002
 		EMP.11003

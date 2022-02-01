@@ -1,0 +1,80 @@
+########################################################
+# MINOR TITLES
+# Characters can have any number of these
+########################################################
+#	grant_limit			Max number of holders
+#	realm_in_name		Append the name of the realm after the title (Queen [of Sweden])
+#	allowed_to_hold		Conditions for the character to hold the title
+#	allowed_to_grant	Conditions for a ruler to grant the title
+#	gain_effect			Fires when the title is granted
+#	lose_effect			Fires when a title is lost through most causes
+#	retire_effect		Fires when a title is lost due to the character stepping down
+#	death_effect		Fires when a title is lost due to the character dying
+#	message				Should fire a message to the its owner when set
+#	The other fields are all character modifiers
+
+#	Scopes (except allowed_to_grant)
+#	ROOT is potential holder of minor title
+#	FROM is liege
+
+#	ai_will_do is supported
+
+title_iqtadar = {
+	message = no
+
+	dignity = 0.8
+
+	allowed_to_grant = {
+		always = no
+	}
+
+	allowed_to_hold = {
+		government = iqta_government
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}
+
+title_pronoiar = {
+	message = no
+
+	dignity = 0.8
+
+	allowed_to_grant = {
+		always = no
+	}
+
+	allowed_to_hold = {
+		government = pronoia_government
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	retire_effect = {
+	}
+
+	death_effect = {
+	}
+}

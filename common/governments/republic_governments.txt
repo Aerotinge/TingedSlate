@@ -174,8 +174,6 @@ republic_governments = {
 		color = { 69 69 69 }
 
 		potential = {
-			is_patrician = no
-			could_be_temporal_religious_head_trigger = yes
 			could_be_order_trigger = no
 			OR = {
 				mercenary = yes

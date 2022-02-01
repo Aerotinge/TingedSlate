@@ -362,7 +362,10 @@ order_empire_of;Monastic State of;État monastique de;Mönchsstaat von;;Estado mon
 order_king;Grandmaster;Grand maître;Großmeister;;Gran Maestro;;;;;x
 order_king_female;Grandmistress;Grande maîtresse;Großmeisterin;;Gran Maestra;;;;;x
 order_kingdom_of;Grand Order of;Grand ordre de;Großorden von;;Gran Orden de;;;;;x
-pronoia_baron;Pronoiar;Pronoiar;Pronoiar;;Pronoiar;;;;;;;;;x
+pronoia_baron;[GetPronoiarTitleName];[GetPronoiarTitleName];[GetPronoiarTitleName];;[GetPronoiarTitleName];;;;;;;;;x
+pronoia_baron_female;[GetPronoiarTitleName];[GetPronoiarTitleName];[GetPronoiarTitleName];;[GetPronoiarTitleName];;;;;;;;;x
+pronoia_count;[GetPronoiarTitleName];[GetPronoiarTitleName];[GetPronoiarTitleName];;[GetPronoiarTitleName];;;;;;;;;x
+pronoia_count_female;[GetPronoiarTitleName];[GetPronoiarTitleName];[GetPronoiarTitleName];;[GetPronoiarTitleName];;;;;;;;;x
 temple_baron_aztec;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
 temple_baron_aztec_reformed;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
 temple_baron_baltic_pagan;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
