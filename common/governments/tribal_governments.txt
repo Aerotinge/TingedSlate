@@ -12,7 +12,6 @@ tribal_governments = {
 			manorial_government
 			feudal_government
 			clan_government
-			theocratic_feudal_government
 			tibetan_feudal_government
 			mandala_government
 			republic_government

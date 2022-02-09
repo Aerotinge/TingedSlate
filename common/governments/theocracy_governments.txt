@@ -24,7 +24,6 @@ theocracy_governments = {
 		accepts_liege_governments_religion = {
 			theocracy_government
 			tibetan_feudal_government
-			theocratic_feudal_government
 			order_government
 		}
 
@@ -48,10 +47,7 @@ theocracy_governments = {
 				religion_allows_male_temple_holders = yes
 			}
 
-			NOR = {
-				is_government_potential = tibetan_feudal_government
-				is_government_potential = theocratic_feudal_government
-			}
+			NOT = { is_government_potential = tibetan_feudal_government	}
 		}
 
 		allow = {}
@@ -82,7 +78,6 @@ theocracy_governments = {
 		accepts_liege_governments_religion = {
 			theocracy_government
 			tibetan_feudal_government
-			theocratic_feudal_government
 		}
 		free_revoke_on_governments = {
 			order_government
@@ -227,8 +222,6 @@ theocracy_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
 			clan_government
-			tibetan_feudal_government
-			theocratic_feudal_government
 		}
 		free_revoke_on_governments = {
 			iqta_government

@@ -16,7 +16,6 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			clan_government
 			tibetan_feudal_government
-			theocratic_feudal_government
 			mandala_government
 			thema_government
 		}
@@ -42,7 +41,6 @@ feudal_governments = {
 				is_government_potential = clan_government
 				is_government_potential = iqta_government
 				is_government_potential = tibetan_feudal_government
-				is_government_potential = theocratic_feudal_government
 				is_government_potential = mandala_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
@@ -81,7 +79,6 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
 			tibetan_feudal_government
-			theocratic_feudal_government
 			mandala_government
 			thema_government
 		}
@@ -158,13 +155,11 @@ feudal_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
 			clan_government
-			theocratic_feudal_government
 			mandala_government
 			thema_government
 		}
 		accepts_liege_governments_religion = {
 			theocracy_government
-			theocratic_feudal_government
 			order_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
@@ -237,7 +232,6 @@ feudal_governments = {
 			feudal_government
 			clan_government
 			tibetan_feudal_government
-			theocratic_feudal_government
 			mandala_government
 			thema_government
 		}
@@ -295,7 +289,6 @@ feudal_governments = {
 
 			NOR = {
 				is_government_potential = iqta_government
-				is_government_potential = theocratic_feudal_government
 				is_government_potential = band_government
 			}
 		}
@@ -330,7 +323,6 @@ feudal_governments = {
 			feudal_government
 			clan_government
 			tibetan_feudal_government
-			theocratic_feudal_government
 			mandala_government
 			thema_government
 		}

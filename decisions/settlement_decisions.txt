@@ -1366,9 +1366,9 @@ settlement_decisions = {
 					}
 				}
 				else_if = {
-					limit = { is_government_potential = theocratic_feudal_government }
+					limit = { is_government_potential = tibetan_feudal_government }
 
-					set_government_type = theocratic_feudal_government
+					set_government_type = tibetan_feudal_government
 
 					if = {
 						limit = { ai = no }

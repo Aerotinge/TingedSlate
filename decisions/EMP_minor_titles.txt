@@ -450,7 +450,7 @@ title_decisions = {
 				is_heir = no
 
 				can_grant_title = title_commander
-				religion = ROOT_FROM
+				religion_group = ROOT_FROM
 
 				custom_tooltip = {
 					text = is_adult_under_45_tt

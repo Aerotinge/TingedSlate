@@ -1296,7 +1296,6 @@ laws = {
 				OR = {
 					government = feudal_government
 					government = tibetan_feudal_government
-					government = theocratic_feudal_government
 				}
 			}
 

@@ -163,7 +163,6 @@ republic_governments = {
 			feudal_government
 			clan_government
 			tibetan_feudal_government
-			theocratic_feudal_government
 			mandala_government
 			republic_government
 			merchant_republic_government
