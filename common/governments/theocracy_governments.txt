@@ -181,9 +181,40 @@ theocracy_governments = {
 		color = { 143 12 125 }
 
 		potential = {
-			has_minor_title = title_pronoiar
-			primary_title = {
-				has_law = succ_appointment
+			OR = {
+				has_minor_title = title_pronoiar
+				AND = {
+					has_character_flag = lose_pronoiar_delayed
+					liege = {
+						OR = {
+							government = roman_imperial_government
+							government = thema_government
+							government = pronoia_government
+						}
+					}
+				}
+			}
+			NOT = { higher_real_tier_than = COUNT }
+
+			#primary_title = {
+			#	has_law = succ_appointment
+			#}
+
+			#liege = {
+			any_liege = {
+				trigger_if = {
+					limit = {
+						NOR = {
+							government = roman_imperial_government
+							government = thema_government
+							government = pronoia_government
+						}
+					}
+
+					liege_before_war = {
+						government = roman_imperial_government
+					}
+				}
 			}
 
 			is_patrician = no
@@ -238,7 +269,10 @@ theocracy_governments = {
 		color = { 10 138 57 }
 
 		potential = {
-			has_minor_title = title_iqtadar
+			#has_minor_title = title_iqtadar
+			has_minor_title = title_commander
+			NOT = { higher_real_tier_than = COUNT }
+
 			primary_title = {
 				has_law = succ_appointment
 			}
@@ -261,7 +295,4 @@ theocracy_governments = {
 	}
 
 	## Modifiers
-	character_modifier = {
-		global_levy_size = -0.25
-	}
 }

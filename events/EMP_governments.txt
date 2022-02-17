@@ -1,0 +1,172 @@
+namespace = EMP
+
+# Create New Nomadic government vassal
+# on_new_holder
+character_event = {
+    id = EMP.21011
+    hide_window = yes
+	
+    is_triggered_only = yes
+	
+	lacks_dlc = "Horse Lords"
+
+    trigger = {
+		is_tribal = yes
+		OR = {
+			culture_group = altaic
+			culture_group = magyar
+			culture = FROMFROM
+		}
+		trigger_if = {
+			limit = {
+				real_tier = BARON
+			}
+			num_of_titles == 1
+		}
+		trigger_else = {
+			num_of_titles == 2
+		}
+		FROM = {
+			is_primary_holder_title = yes
+			NOT = { higher_real_tier_than = COUNT }
+		}
+		FROMFROM = {
+			government = nomadic_tribal_government
+		}
+    }
+
+	immediate = {
+		set_government_type = nomadic_tribal_government
+	}
+}
+
+# Create New Pronoia government vassal
+# on_new_holder
+character_event = {
+    id = EMP.21012
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+		is_feudal = yes
+		trigger_if = {
+			limit = {
+				real_tier = BARON
+			}
+			num_of_titles == 1
+		}
+		trigger_else = {
+			num_of_titles == 2
+		}
+		FROM = {
+			is_primary_holder_title = yes
+			NOT = { higher_real_tier_than = COUNT }
+		}
+		FROMFROM = {
+			OR = {
+				government = thema_government
+				government = roman_imperial_government
+			}
+		}
+    }
+
+	immediate = {
+		FROM = { add_law = succ_appointment }
+		unsafe_give_minor_title = title_pronoiar
+		set_government_type = pronoia_government
+	}
+}
+
+# Create New Iqta government vassal
+# on_new_holder
+character_event = {
+    id = EMP.21013
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+		is_feudal = yes
+		has_minor_title = title_commander
+		trigger_if = {
+			limit = {
+				real_tier = BARON
+			}
+			num_of_titles == 1
+			crownlaw_title = {
+				holder = FROMFROM
+				OR = {
+					has_law = crown_authority_2
+					has_law = crown_authority_3
+					has_law = crown_authority_4
+				}
+				OR = {
+					has_law = centralization_2
+					has_law = centralization_3
+					has_law = centralization_4
+				}
+			}
+		}
+		trigger_else = {
+			num_of_titles == 2
+			crownlaw_title = {
+				holder = FROMFROM
+				OR = {
+					has_law = crown_authority_3
+					has_law = crown_authority_4
+				}
+				OR = {
+					has_law = centralization_3
+					has_law = centralization_4
+				}
+			}
+		}
+		FROM = {
+			is_primary_holder_title = yes
+			NOT = { higher_real_tier_than = COUNT }
+		}
+		FROMFROM = {
+			is_feudal = yes
+			religion_group = muslim
+			religion_group = ROOT
+			OR = {
+				culture_group = iranian
+				culture = turkish
+			}
+		}
+    }
+
+	immediate = {
+		FROM = { add_law = succ_appointment }
+		set_government_type = iqta_government
+	}
+}
+
+character_event = {
+    id = EMP.21112
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				liege = {
+					OR = {
+						government = roman_imperial_government
+						government = thema_government
+						government = pronoia_government
+					}
+				}
+			}
+
+			unsafe_give_minor_title = title_pronoiar
+		}
+
+		clr_character_flag = lose_pronoiar_delayed
+	}
+}

@@ -220,6 +220,7 @@ duke_tengri_pagan;High Chief;Grand chef;Hoher Häuptling;;Alto mandatario;;;;;;;;
 duke_tengri_pagan_reformed;High Chief;Grand chef;Hoher Häuptling;;Alto mandatario;;;;;;;;;x
 duke_turkish;Beylerbey;Beylerbey;Beylerbey;;Gobernador de gobernadores;;;;;;;;;x
 duke_west_african;Farbas;Farbas;Farbas;;Farbas;;;;;;;;;x
+emperor;Emperor;Empereur;Kaiser;;Emperador;;;;;;;;;x
 emperor_altaic;Khagan;Khagan;Khagan;;Khagan;;;;;;;;;x
 emperor_arabic;Badshah;Badshah;Badshah;;Badshah;;;;;;;;;x
 emperor_bodpa;Tsenpo;Tsenpo;Tsenpo;;Tsenpo;;;;;;;;;x
@@ -256,6 +257,7 @@ family_palace_baron;Patrician;Patricien;Patrizier;;Patricio;;;;;;;;;x
 family_palace_baron_female;Lady;Dame;Lady;;Señora;;;;;;;;;x
 family_palace_barony_of;Palace of;Palais de;Palast von;;Palacio de;;;;;;;;;x
 iqta_baron;Muqta';Muqta';Muqta';;Muqta';;;;;;;;;x
+iqta_count;Iqtadar;Iqtadar;Iqtadar;;Iqtadar;;;;;;;;;x
 iqta_barony;Iqta';Iqta';Iqta';;Iqta';;;;;;;;;x
 iqta_barony_of;Iqta' of;Iqta' de;Iqta' von;;Iqta' de;;;;;;;;;x
 king;King;Roi;König;;Rey;;;;;;;;;x
@@ -362,10 +364,18 @@ order_empire_of;Monastic State of;État monastique de;Mönchsstaat von;;Estado mon
 order_king;Grandmaster;Grand maître;Großmeister;;Gran Maestro;;;;;x
 order_king_female;Grandmistress;Grande maîtresse;Großmeisterin;;Gran Maestra;;;;;x
 order_kingdom_of;Grand Order of;Grand ordre de;Großorden von;;Gran Orden de;;;;;x
-pronoia_baron;[GetPronoiarTitleName];[GetPronoiarTitleName];[GetPronoiarTitleName];;[GetPronoiarTitleName];;;;;;;;;x
-pronoia_baron_female;[GetPronoiarTitleName];[GetPronoiarTitleName];[GetPronoiarTitleName];;[GetPronoiarTitleName];;;;;;;;;x
-pronoia_count;[GetPronoiarTitleName];[GetPronoiarTitleName];[GetPronoiarTitleName];;[GetPronoiarTitleName];;;;;;;;;x
-pronoia_count_female;[GetPronoiarTitleName];[GetPronoiarTitleName];[GetPronoiarTitleName];;[GetPronoiarTitleName];;;;;;;;;x
+pronoia_baron;Pronoiar;Pronoiar;Pronoiar;;Pronoiar;;;;;;;;;x
+pronoia_baron_roman;Curator;Curator;Curator;;Curator;;;;;;;;;x
+pronoia_baron_turkish;Timariot;Timariot;Timariot;;Timariot;;;;;;;;;x
+pronoia_baron_female;Pronoiar;Pronoiar;Pronoiar;;Pronoiar;;;;;;;;;x
+pronoia_baron_female_roman;Curator;Curator;Curator;;Curator;;;;;;;;;x
+pronoia_baron_female_turkish;Timariot;Timariot;Timariot;;Timariot;;;;;;;;;x
+pronoia_count;Praitor;Praitor;Praitor;;Praitor;;;;;;;;;x
+pronoia_count_roman;Praetor;Praetor;Praetor;;Praetor;;;;;;;;;x
+pronoia_count_turkish;Zaim;Zaim;Zaim;;Zaim;;;;;;;;;x
+pronoia_count_female;Praitor;Praitor;Praitor;;Praitor;;;;;;;;;x
+pronoia_count_female_roman;Praetor;Praetor;Praetor;;Praetor;;;;;;;;;x
+pronoia_count_female_turkish;Zaim;Zaim;Zaim;;Zaim;;;;;;;;;x
 temple_baron_aztec;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
 temple_baron_aztec_reformed;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
 temple_baron_baltic_pagan;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x

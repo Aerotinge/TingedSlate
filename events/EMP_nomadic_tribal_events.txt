@@ -4811,37 +4811,6 @@ character_event = {
 	}
 }
 
-# Create New Nomadic government vassal
-# on_new_holder
-character_event = {
-    id = EMP.11011
-    hide_window = yes
-	
-    is_triggered_only = yes
-	
-	lacks_dlc = "Horse Lords"
-
-    trigger = {
-		is_tribal = yes
-		NOT = { government = nomadic_tribal_government }
-		OR = {
-			culture_group = altaic
-			culture_group = magyar
-			culture = FROMFROM
-		}
-		primary_title = {
-			title = FROM
-		}
-		FROMFROM = {
-			government = nomadic_tribal_government
-		}
-    }
-
-	immediate = {
-		set_government_type = nomadic_tribal_government
-	}
-}
-
 # Nomadic population province mechanism
 # on_startup
 character_event = {
@@ -5437,6 +5406,14 @@ province_event = {
 			years = 5 # 100% revolt risk in this county
 		}
 
+		top_liege = {
+			save_event_target_as = province_top_liege
+		}
+
+		duchy = {
+			save_event_target_as = province_duchy
+		}
+
 		create_random_soldier = {
 			random_traits = yes
 			dynasty = random
@@ -5539,21 +5516,15 @@ province_event = {
 			}
 
 			# DoW on the province top liege
-			ROOT = {
-				owner = {
-					top_liege = {
-						reverse_war = {
-							target = PREVPREVPREV
-							casus_belli = nomadic_revolt
-							thirdparty_title = ROOT # The county
-						}
+			war = {
+				target = event_target:province_top_liege
+				casus_belli = nomadic_revolt
+				thirdparty_title = event_target:province_duchy
+			}
 
-						reverse_opinion = {
-							name = opinion_evil_tyrant
-							who = PREVPREVPREV
-						}
-					}
-				}
+			opinion = {
+				name = opinion_evil_tyrant
+				who = event_target:province_top_liege
 			}
 		}
 

@@ -59,7 +59,10 @@ on_new_holder = {
 		EMP.12060	# Bishop Elector
 		# Nomadic tribal
 		EMP.11006
-		EMP.11011
+		# Government assignment
+		EMP.21011 # Nomadic
+		EMP.21012 # Pronoia
+		EMP.21013 # Iqta
 		# Papacy
 		EMP.13140
 		# Tribal Organization Cleanup

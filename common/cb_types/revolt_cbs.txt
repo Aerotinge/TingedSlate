@@ -13,7 +13,6 @@ peasant_revolt = {
 
 	hostile_against_others = yes
 	check_all_titles = yes # if permanent, setting this to true will check against all of someones titles, including vassal held titles
-	press_claim = yes
 	attacker_can_call_allies = no
 	defender_can_call_allies = no
 	can_ask_to_join_war = no
@@ -52,10 +51,73 @@ peasant_revolt = {
 			type = revolt
 		}
 
+		any_de_jure_vassal_title = { # take all baronies too
+			show_scope_change = no
+
+			limit = {
+				has_holder = yes
+
+				holder_scope = {
+					OR = {
+						character = defender
+						is_vassal_or_below_of = defender
+
+						AND = {
+							is_vassal_or_below_of = attacker
+
+							NOT = { trait = peasant_leader }
+						}
+					}
+				}
+			}
+
+			usurp_title = attacker
+		}
+
 		attacker = {
 			show_scope_change = no
 
 			set_defacto_liege = attacker
+			if = { # Goes Peasant Republic if available
+				limit = {
+					capital_scope = {
+						any_province_holding = {
+							OR = {
+								holding_type = city
+								holding_type = castle
+							}
+							holder = attacker
+						}
+					}
+				}
+
+				capital_scope = {
+					random_province_holding = {
+						limit = {
+							is_capital = no
+							OR = {
+								holding_type = city
+								holding_type = castle
+							}
+							holder = attacker
+						}
+						preferred_limit = {
+							holding_type = city
+						}
+
+						make_capital_holding = yes
+					}
+				}
+				any_demesne_title = { # Required for set_government_type below
+					limit = {
+						rebel = yes
+					}
+
+					unsafe_destroy_landed_title = THIS
+				}
+				set_government_type = republic_government
+			}
+			recalc_succession = yes
 		}
 
 		defender = {
@@ -191,13 +253,7 @@ heretic_revolt = {
 
 			prestige = 200
 			piety = 100
-			occupy_minors_of_occupied_settlements = defender
-
-			gain_all_occupied_titles = {
-				who = defender
-				type = revolt
-			}
-
+			
 			clr_character_flag = heretic_revolter
 		}
 
@@ -215,6 +271,8 @@ heretic_revolt = {
 
 	on_success_title = {
 		attacker = {
+			occupy_minors_of_occupied_settlements = defender
+
 			vassalize_or_take_under_title = {
 				title = PREV
 				enemy = defender
@@ -222,30 +280,119 @@ heretic_revolt = {
 				is_religious = yes
 				type = holy_war
 			}
-		}
 
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						holder_scope = {
-							OR = {
-								character = defender
-								is_vassal_or_below_of = defender
+			gain_all_occupied_titles = {
+				who = defender
+				type = revolt
+			}
+
+			PREV = {
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								holder_scope = {
+									OR = {
+										character = defender
+										is_vassal_or_below_of = defender
+									}
+								}
+
+								controls_religion = no # Don't usurp religious leadership titles
 							}
-						}
 
-						controls_religion = no # Don't usurp religious leadership titles
+							has_holder = no # Create title if it doesn't exist
+						}
 					}
 
-					has_holder = no # Create title if it doesn't exist
+					usurp_title = {
+						target = attacker
+						type = holy_war
+					}
 				}
 			}
 
-			usurp_title = {
-				target = attacker
-				type = holy_war
+			set_defacto_liege = attacker
+			if = { # Goes Theocracy if available
+				limit = {
+					capital_scope = {
+						any_province_holding = {
+							OR = {
+								holding_type = temple
+								holding_type = castle
+							}
+							holder = attacker
+						}
+					}
+					religion_allows_temple_holders = yes
+				}
+
+				any_demesne_province = {
+					random_province_holding = {
+						limit = {
+							is_capital = no
+							OR = {
+								holding_type = temple
+								holding_type = castle
+							}
+							holder = attacker
+						}
+						preferred_limit = {
+							holding_type = temple
+						}
+
+						make_capital_holding = yes
+					}
+				}
+				any_demesne_title = { # Required for set_government_type below
+					limit = {
+						rebel = yes
+					}
+
+					unsafe_destroy_landed_title = THIS
+				}
+				set_government_type = theocracy_government
 			}
+			else_if = { # Goes Republic if available
+				limit = {
+					capital_scope = {
+						any_province_holding = {
+							OR = {
+								holding_type = city
+								holding_type = castle
+							}
+							holder = attacker
+						}
+					}
+				}
+
+				capital_scope = {
+					random_province_holding = {
+						limit = {
+							is_capital = no
+							OR = {
+								holding_type = city
+								holding_type = castle
+							}
+							holder = attacker
+						}
+						preferred_limit = {
+							holding_type = city
+						}
+
+						make_capital_holding = yes
+					}
+				}
+				any_demesne_title = { # Required for set_government_type below
+					limit = {
+						rebel = yes
+					}
+
+					unsafe_destroy_landed_title = THIS
+				}
+				set_government_type = republic_government
+			}
+			recalc_succession = yes
 		}
 
 		hidden_effect = {
@@ -387,12 +534,6 @@ religious_revolt = {
 
 			prestige = 200
 			piety = 100
-			occupy_minors_of_occupied_settlements = defender
-
-			gain_all_occupied_titles = {
-				who = defender
-				type = revolt
-			}
 
 			clr_character_flag = religious_revolter
 		}
@@ -413,6 +554,8 @@ religious_revolt = {
 		attacker = {
 			show_scope_change = no
 
+			occupy_minors_of_occupied_settlements = defender
+
 			vassalize_or_take_under_title = {
 				title = PREV
 				enemy = defender
@@ -420,30 +563,119 @@ religious_revolt = {
 				is_religious = yes
 				type = holy_war
 			}
-		}
 
-		if = {
-			limit = {
-				OR = {
-					AND = {
-						holder_scope = {
-							OR = {
-								character = defender
-								is_vassal_or_below_of = defender
+			gain_all_occupied_titles = {
+				who = defender
+				type = revolt
+			}
+
+			PREV = {
+				if = {
+					limit = {
+						OR = {
+							AND = {
+								holder_scope = {
+									OR = {
+										character = defender
+										is_vassal_or_below_of = defender
+									}
+								}
+
+								controls_religion = no # Don't usurp religious leadership titles
 							}
-						}
 
-						controls_religion = no # Don't usurp religious leadership titles
+							has_holder = no # Create title if it doesn't exist
+						}
 					}
 
-					has_holder = no # Create title if it doesn't exist
+					usurp_title = {
+						target = attacker
+						type = holy_war
+					}
 				}
 			}
 
-			usurp_title = {
-				target = attacker
-				type = holy_war
+			set_defacto_liege = attacker
+			if = { # Goes Theocracy if available
+				limit = {
+					capital_scope = {
+						any_province_holding = {
+							OR = {
+								holding_type = temple
+								holding_type = castle
+							}
+							holder = attacker
+						}
+					}
+					religion_allows_temple_holders = yes
+				}
+
+				any_demesne_province = {
+					random_province_holding = {
+						limit = {
+							is_capital = no
+							OR = {
+								holding_type = temple
+								holding_type = castle
+							}
+							holder = attacker
+						}
+						preferred_limit = {
+							holding_type = temple
+						}
+
+						make_capital_holding = yes
+					}
+				}
+				any_demesne_title = { # Required for set_government_type below
+					limit = {
+						rebel = yes
+					}
+
+					unsafe_destroy_landed_title = THIS
+				}
+				set_government_type = theocracy_government
 			}
+			else_if = { # Goes Republic if available
+				limit = {
+					capital_scope = {
+						any_province_holding = {
+							OR = {
+								holding_type = city
+								holding_type = castle
+							}
+							holder = attacker
+						}
+					}
+				}
+
+				capital_scope = {
+					random_province_holding = {
+						limit = {
+							is_capital = no
+							OR = {
+								holding_type = city
+								holding_type = castle
+							}
+							holder = attacker
+						}
+						preferred_limit = {
+							holding_type = city
+						}
+
+						make_capital_holding = yes
+					}
+				}
+				any_demesne_title = { # Required for set_government_type below
+					limit = {
+						rebel = yes
+					}
+
+					unsafe_destroy_landed_title = THIS
+				}
+				set_government_type = republic_government
+			}
+			recalc_succession = yes
 		}
 
 		hidden_effect = {
@@ -593,12 +825,6 @@ liberation_revolt = {
 			show_scope_change = no
 
 			prestige = 1000
-			occupy_minors_of_occupied_settlements = defender
-
-			gain_all_occupied_titles = {
-				who = defender
-				type = revolt
-			}
 
 			clr_character_flag = nationalist_rebel
 			give_nickname = nick_the_liberator
@@ -616,10 +842,17 @@ liberation_revolt = {
 			text = tribal_invasion_succ_tip
 
 			attacker = {
+				occupy_minors_of_occupied_settlements = defender
+
 				vassalize_or_take_under_title = {
 					title = PREV
 					enemy = defender
 					is_revolt = yes
+					type = revolt
+				}
+
+				gain_all_occupied_titles = {
+					who = defender
 					type = revolt
 				}
 
@@ -639,6 +872,8 @@ liberation_revolt = {
 						target = PREV
 						type = revolt
 					}
+
+					recalc_succession = yes
 				}
 			}
 		}
@@ -748,12 +983,10 @@ nomadic_revolt = {
 	truce_days = 365
 
 	hostile_against_others = yes
-	check_all_titles = yes # if permanent, setting this to true will check against all of someones titles, including vassal held titles
-	press_claim = yes
 	attacker_can_call_allies = no
 	defender_can_call_allies = no
 	can_ask_to_join_war = no
-	is_independence = yes
+	check_de_jure_tier = DUKE
 
 	can_use = {
 		# Attacker
@@ -764,89 +997,14 @@ nomadic_revolt = {
 		}
 	}
 
-	can_use_title = {
-		real_tier = COUNT
-	}
-
-	is_valid_title = {
-		holder_scope = {
-			OR = {
-				character = FROM
-				is_vassal_or_below_of = FROM
-			}
-		}
-	}
-
 	on_add = {
 		fire_haruspicy_event_effect = yes
 		anger_china_effect = yes
 	}
 
-	on_success_title = {
-		usurp_title_plus_barony_if_unlanded = {
-			target = attacker
-			type = revolt
-		}
-
-		# Take any nearby(x2) nomadic population provinces under same top_liege
-		location = {
-			any_neighbor_province = {
-				limit = {
-					has_province_modifier = nomad_population
-					culture = attacker
-					owner = {
-						same_realm = defender
-					}
-				}
-
-				county = {
-					usurp_title_plus_barony_if_unlanded = {
-						target = attacker
-						type = revolt
-					}
-				}
-				any_neighbor_province = {
-					limit = {
-						has_province_modifier = nomad_population
-						culture = attacker
-						owner = {
-							same_realm = defender
-						}
-					}
-
-					county = {
-						usurp_title_plus_barony_if_unlanded = {
-							target = attacker
-							type = revolt
-						}
-					}
-				}
-			}
-		}
-
+	on_success = {
 		attacker = {
 			show_scope_change = no
-
-			participation_scaled_prestige = 100
-
-			any_demesne_title = { # workaround for set_government_type below, or else it fallbacks to tribal_government
-				limit = {
-					rebel = yes
-				}
-
-				unsafe_destroy_landed_title = THIS
-			}
-
-			set_government_type = nomadic_tribal_government
-			set_defacto_liege = attacker
-
-			any_realm_province = {
-				limit = {
-					has_province_modifier = rampaging_nomads
-				}
-
-				remove_province_modifier = rampaging_nomads
-			}
 		}
 
 		defender = {
@@ -854,57 +1012,75 @@ nomadic_revolt = {
 
 			prestige = -100
 		}
+	}
+
+	on_success_title = {
+		custom_tooltip = {
+			text = tribal_invasion_succ_tip
+
+			attacker = {
+				occupy_minors_of_occupied_settlements = defender
+
+				vassalize_or_take_under_title = {
+					title = PREV
+					enemy = defender
+					is_revolt = yes
+					type = revolt
+				}
+
+				gain_all_occupied_titles = {
+					who = defender
+					type = revolt
+				}
+
+				PREV = {
+					if = {
+						limit = {
+							OR = {
+								AND = {
+									holder_scope = {
+										OR = {
+											character = defender
+											is_vassal_or_below_of = defender
+										}
+									}
+
+									controls_religion = no # Don't usurp religious leadership titles
+								}
+
+								has_holder = no # Create title if it doesn't exist
+							}
+						}
+
+						usurp_title = {
+							target = attacker
+							type = revolt
+						}
+					}
+				}
+
+				any_demesne_title = { # Required for set_government_type below
+					limit = {
+						rebel = yes
+					}
+
+					unsafe_destroy_landed_title = THIS
+				}
+				set_government_type = nomadic_tribal_government
+				recalc_succession = yes
+
+				any_realm_province = {
+					limit = {
+						has_province_modifier = rampaging_nomads
+					}
+
+					remove_province_modifier = rampaging_nomads
+				}
+			}
+		}
 
 		hidden_effect = {
 			check_if_reconquista_finished_effect = yes
-
-			attacker = {
-				if = {
-					limit = {
-						any_neighbor_independent_ruler = {
-							government = nomadic_tribal_government
-							higher_real_tier_than = COUNT
-							OR = {
-								culture = attacker
-								AND = {
-									culture_group = attacker
-									religion = attacker
-								}
-							}
-							NOT = { character = defender }
-						}
-					}
-					random_neighbor_independent_ruler = {
-						limit = {
-							government = nomadic_tribal_government
-							higher_real_tier_than = COUNT
-							OR = {
-								culture = attacker
-								AND = {
-									culture_group = attacker
-									religion = attacker
-								}
-							}
-							NOT = { character = defender }
-						}
-						preferred_limit = {
-							culture = attacker
-						}
-						preferred_limit = {
-							check_variable = { which = empty_holdings_total value = 14 }
-						}
-						preferred_limit = {
-							check_variable = { which = empty_holdings_total value = 7 }
-						}
-
-						make_tributary = {
-							who = PREV
-							tributary_type = nomadic
-						}
-						# character_event = { id = EMP.11050 } # inform the new khan in charge
-					}
-				}
-			}
 
 			defender = {
 				landless_pope_effect = yes

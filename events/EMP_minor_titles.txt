@@ -14,30 +14,41 @@ character_event = {
 	is_triggered_only = yes
 
     trigger = {
-		always = no
 		OR = {
+			government = roman_imperial_government
+			government = thema_government
 			AND = {
-				government = roman_imperial_government
-				year >= 1000
-			}
-			AND = {
-				higher_tier_than = DUKE
-				independent = yes
+				is_feudal = yes
 				religion_group = muslim
-				capital_scope = {
+				OR = {
+					culture_group = iranian
+					culture = turkish
+				}
+				crownlaw_title = {
+					holder = ROOT
 					OR = {
-						region = world_persia
-						region = world_india
+						has_law = crown_authority_2
+						has_law = crown_authority_3
+						has_law = crown_authority_4
+					}
+					OR = {
+						has_law = centralization_2
+						has_law = centralization_3
+						has_law = centralization_4
 					}
 				}
-				year >= 1050
 			}
 		}
 	}
 
 	immediate = {
 		if = {
-			limit = { government = roman_imperial_government }
+			limit = {
+				OR = {
+					government = roman_imperial_government
+					government = thema_government
+				}
+			}
 
 			any_vassal = {
 				limit = {
@@ -55,12 +66,25 @@ character_event = {
 				limit = {
 					real_tier = BARON
 					is_feudal = yes
+					has_minor_title = title_commander
+					crownlaw_title = {
+						holder = ROOT
+						OR = {
+							has_law = crown_authority_2
+							has_law = crown_authority_3
+							has_law = crown_authority_4
+						}
+						OR = {
+							has_law = centralization_2
+							has_law = centralization_3
+							has_law = centralization_4
+						}
+					}
 				}
 
 				primary_title = { add_law = succ_appointment }
-				unsafe_give_minor_title = title_iqtadar
 				set_government_type = iqta_government
 			}
-		}		
+		}
 	}
 }

@@ -3225,7 +3225,7 @@ convert_religion_failsafe_effect = {
 		if = {
 			limit = {
 				OR = {
-					is_theocracy = yes
+					government = theocracy_government
 					AND = {
 						is_feudal = yes
 						capital_holding = { holding_type = temple }

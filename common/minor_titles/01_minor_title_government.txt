@@ -19,36 +19,6 @@
 
 #	ai_will_do is supported
 
-title_iqtadar = {
-	message = no
-
-	dignity = 0.8
-
-	allowed_to_grant = {
-		always = no
-	}
-
-	allowed_to_hold = {
-		government = iqta_government
-	}
-
-	revoke_trigger = {
-		always = no
-	}
-
-	gain_effect = {
-	}
-
-	lose_effect = {
-	}
-
-	retire_effect = {
-	}
-
-	death_effect = {
-	}
-}
-
 title_pronoiar = {
 	message = no
 
@@ -59,7 +29,6 @@ title_pronoiar = {
 	}
 
 	allowed_to_hold = {
-		government = pronoia_government
 	}
 
 	revoke_trigger = {
@@ -70,6 +39,11 @@ title_pronoiar = {
 	}
 
 	lose_effect = {
+		set_character_flag = lose_pronoiar_delayed
+		character_event = {
+			id = EMP.21112
+			days = 1
+		}
 	}
 
 	retire_effect = {

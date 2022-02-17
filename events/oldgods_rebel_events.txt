@@ -54,6 +54,8 @@ province_event = {
 		}
 		else_if = {
 			limit = {
+				has_dlc = "The Old Gods"
+
 				has_province_modifier = nomad_population
 			}
 
@@ -198,11 +200,8 @@ province_event = {
 						top_liege = {
 							any_war = {
 								defender = { character = PREV }
-
-								trigger_if = {
-									limit = { using_cb = peasant_revolt }
-									war_title = ROOT # The province
-								}
+								using_cb = peasant_revolt
+								war_title = ROOT # The province
 							}
 						}
 					}
@@ -244,9 +243,6 @@ province_event = {
 					province_event = { id = TOG.1000 } # Start new peasant uprising
 				}
 			}
-		}
-		else = {
-			province_event = { id = 600 }
 		}
 	}
 }
@@ -531,25 +527,48 @@ province_event = {
 			save_event_target_as = province_duchy
 		}
 
-		create_character = {
-			random_traits = yes
-			dynasty = none
-			religion = ROOT
-			culture = ROOT
-			female = no
-			age = 32
-			add_trait = heresiarch
-			add_trait = zealous
-			add_trait = scholar
-			add_trait = skilled_tactician
+		if = {
+			limit = {
+				religion_allows_male_temple_holders = no # Actually works well with province scope
+			}
+			create_random_priest = {
+				random_traits = yes
+				dynasty = none
+				religion = ROOT
+				culture = ROOT
+				female = yes
+				min_age = 32
+				max_age = 51
 
-			attributes = {
-				martial = 7
-				learning = 7
+				attributes = {
+					martial = 7
+					learning = 7
+				}
+			}
+		}
+		else = {
+			create_random_priest = {
+				random_traits = yes
+				dynasty = none
+				religion = ROOT
+				culture = ROOT
+				female = no
+				min_age = 32
+				max_age = 51
+
+				attributes = {
+					martial = 7
+					learning = 7
+				}
 			}
 		}
 
 		new_character = {
+			clear_education_trait = yes
+			add_trait = heresiarch
+			add_trait = zealous
+			add_trait = scholar
+			add_trait = scholarly_theologian
 			set_character_flag = heretic_revolter
 
 			create_title = {
@@ -563,6 +582,7 @@ province_event = {
 			}
 
 			wealth = 100
+
 			spawn_heretic_army_effect = yes
 
 			if = {
@@ -1109,24 +1129,47 @@ province_event = {
 			save_event_target_as = province_duchy
 		}
 
-		create_character = {
-			random_traits = yes
-			dynasty = none
-			religion = ROOT
-			culture = ROOT
-			female = no
-			age = 32
-			add_trait = zealous
-			add_trait = scholar
-			add_trait = skilled_tactician
+		if = {
+			limit = {
+				religion_allows_male_temple_holders = no # Actually works well with province scope
+			}
+			create_random_priest = {
+				random_traits = yes
+				dynasty = none
+				religion = ROOT
+				culture = ROOT
+				female = yes
+				min_age = 32
+				max_age = 51
 
-			attributes = {
-				martial = 7
-				learning = 7
+				attributes = {
+					martial = 7
+					learning = 7
+				}
+			}
+		}
+		else = {
+			create_random_priest = {
+				random_traits = yes
+				dynasty = none
+				religion = ROOT
+				culture = ROOT
+				female = no
+				min_age = 32
+				max_age = 51
+
+				attributes = {
+					martial = 7
+					learning = 7
+				}
 			}
 		}
 
 		new_character = {
+			clear_education_trait = yes
+			add_trait = scholarly_theologian
+			add_trait = zealous
+			add_trait = scholar
 			set_character_flag = religious_revolter
 
 			create_title = {
@@ -1139,8 +1182,8 @@ province_event = {
 				holder = THIS
 			}
 
-			wealth = 100
 			spawn_religious_army_effect = yes
+			wealth = 100
 
 			if = {
 				limit = {
