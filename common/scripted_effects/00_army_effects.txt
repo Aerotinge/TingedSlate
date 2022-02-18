@@ -958,8 +958,8 @@ spawn_heretic_army_effect = {
 			female = no
 			min_age = 23
 			max_age = 31
-			add_trait = peasant_leader
-			add_trait = tough_soldier
+			add_trait = heresiarch
+			add_trait = dutiful_cleric
 		}
 
 		new_character = {
@@ -1214,8 +1214,8 @@ spawn_heretic_reinforcements_effect = {
 			female = no
 			min_age = 23
 			max_age = 31
-			add_trait = peasant_leader
-			add_trait = tough_soldier
+			add_trait = heresiarch
+			add_trait = dutiful_cleric
 		}
 
 		new_character = {
@@ -1560,8 +1560,8 @@ spawn_religious_army_effect = {
 			female = no
 			min_age = 23
 			max_age = 31
-			add_trait = peasant_leader
-			add_trait = tough_soldier
+			add_trait = zealous
+			add_trait = dutiful_cleric
 		}
 
 		new_character = {
@@ -1816,8 +1816,8 @@ spawn_religious_reinforcements_effect = {
 			female = no
 			min_age = 23
 			max_age = 31
-			add_trait = peasant_leader
-			add_trait = tough_soldier
+			add_trait = zealous
+			add_trait = dutiful_cleric
 		}
 
 		new_character = {
@@ -2072,16 +2072,14 @@ spawn_nomadic_army_effect = {
 			female = no
 			min_age = 23
 			max_age = 31
-			add_trait = cavalry_leader
 			add_trait = tough_soldier
 		}
 
 		new_character = {
 			give_minor_title = title_commander
 			random_list = {
+				10 = { add_trait = cavalry_leader }
 				10 = { add_trait = aggressive_leader }
-				10 = { add_trait = flanker }
-				10 = { add_trait = trickster }
 				10 = { add_trait = flat_terrain_leader }
 			}
 		}
@@ -2292,16 +2290,14 @@ spawn_nomadic_reinforcements_effect = {
 			female = no
 			min_age = 23
 			max_age = 31
-			add_trait = cavalry_leader
 			add_trait = tough_soldier
 		}
 
 		new_character = {
 			give_minor_title = title_commander
 			random_list = {
+				10 = { add_trait = cavalry_leader }
 				10 = { add_trait = aggressive_leader }
-				10 = { add_trait = flanker }
-				10 = { add_trait = trickster }
 				10 = { add_trait = flat_terrain_leader }
 			}
 		}

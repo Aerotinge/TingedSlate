@@ -1,0 +1,23 @@
+When setting up a title history, do following standards below
+
+d_example
+#########
+330.1.1 = {									# earliest date available is "2.1.1"
+	set_global_flag	= it_doesnt_matter		# global command, executed immediately and can be resolved by government below
+	vice_royalty = yes						# misc hardcoded title command such as "vice_royalty", "historical_nomad", "holding_dynasty", "capital", "de_jure_liege"
+	liege = k_big_dude						# liege/set_tribute_suzerain has to be first
+	holder = 321654							# holder can be later
+	government = custom_government			# apply government after then if any, validation executed immediately. Can only do once in a title.
+	# Low prio
+	name = "good_tag"						# NAME
+	adjective = "good_tag_ADJ"				# ADJ
+	# Not executed till start
+	law = succ_primogeniture				# laws of the title, only executed once the game starts
+	effect = {}								# effect, only executed once the game starts
+}
+
+340.1.1 = {
+	liege = 0								# Don't forget to clean up liege/clear_tribute_suzerain. Or else the liege consider there's a vassal/tributary with this title
+	vice_royalty = no						# ...and so did the hardcoded title flags if have to
+	holder = 0								# If there's no longer a holder (e.g dies/title destroyed)
+}

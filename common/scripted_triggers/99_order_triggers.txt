@@ -33,8 +33,7 @@ could_be_order_trigger = {
 				trigger_if = {
 					limit = {
 						PREV = {
-							religion_allows_female_temple_holders = no
-							religion_allows_male_temple_holders = no
+							religion_allows_temple_holders = no
 						}
 					}
 					holding_type = temple

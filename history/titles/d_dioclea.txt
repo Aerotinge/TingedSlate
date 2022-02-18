@@ -43,9 +43,9 @@
 }
 
 1050.1.1 = {
-	holder = 20491
 	liege = 0
 	vice_royalty = no
+	holder = 20491
 }
 
 1082.1.1 = {

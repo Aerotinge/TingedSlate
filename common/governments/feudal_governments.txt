@@ -97,13 +97,7 @@ feudal_governments = {
 		color = { 118 255 163 }
 
 		potential = {
-			trigger_if = {
-				limit = {
-					NOT = { government = clan_government }
-				}
-
-				has_clan_culture = yes
-			}
+			has_clan_culture = yes
 
 			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
@@ -172,20 +166,14 @@ feudal_governments = {
 		color = { 0 146 250 }
 
 		potential = {
-			trigger_if = {
-				limit = {
-					NOT = { government = tibetan_feudal_government }
-				}
+			culture_group = tibetan_group
+			OR = {
+				religion_openly_bon_or_reformed_trigger = yes
+				religion = buddhist
+			}
 
-				culture_group = tibetan_group
-				OR = {
-					religion_openly_bon_or_reformed_trigger = yes
-					religion = buddhist
-				}
-
-				primary_title = {
-					NOT = { has_law = succ_open_elective }
-				}
+			primary_title = {
+				NOT = { has_law = succ_open_elective }
 			}
 
 			is_patrician = no
@@ -243,40 +231,24 @@ feudal_governments = {
 		color = { 207 145 90 }
 
 		potential = {
+			OR = {
+				culture_group = east_slavic
+				culture = bulgarian
+				culture = serbian
+				culture = vlach
+				culture_group = baltic
+				culture_group = finno_ugric
+			}
+
 			trigger_if = {
 				limit = {
-					NOT = { government = manorial_government }
-				}
-
-				OR = {
-					culture_group = east_slavic
-					culture = bulgarian
-					culture = serbian
-					culture = vlach
-					culture_group = baltic
-					culture_group = finno_ugric
-				}
-
-				trigger_if = {
-					limit = {
-						# independent = no # Not working well in lobby screen/history
-						any_liege = {
-							NOT = { government = manorial_government }
-						}
-					}
-
-					any_liege = {
-						is_feudal = no
+					liege = {
+						NOT = { government = manorial_government }
 					}
 				}
 
-				trigger_if = { # Workaround for Serb Rashka Under Byz and later on
-					limit = {
-						has_game_started = no
-						culture_group = south_slavic
-					}
-
-					NOT = { year >= 1150 }
+				liege = {
+					is_feudal = no
 				}
 			}
 
@@ -322,142 +294,94 @@ feudal_governments = {
 			feudal_government
 			clan_government
 			tibetan_feudal_government
+		}
+		vassal_call_to_arms = {
 			mandala_government
-			thema_government
 		}
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
-			mandala_government
 		}
 
 		frame_suffix = "_mandala"
 		color = { 183 93 64 }
 
 		potential = {
+			is_tributary = no
+			OR = {
+				culture_group = dravidian_group
+				culture_group = indo_aryan_group
+			}
+			OR = {
+				religion_openly_zun_or_reformed_trigger = yes
+				has_dharmic_religion_trigger = yes
+			}
+
 			trigger_if = {
 				limit = {
-					NOT = { government = mandala_government }
+					any_liege = {
+						always = yes
+					}
 				}
 
-				is_tributary = no
-				OR = {
-					culture_group = dravidian_group
-					culture_group = indo_aryan_group
-				}
-				OR = {
-					religion_openly_zun_or_reformed_trigger = yes
-					has_dharmic_religion_trigger = yes
+				top_liege = {
+					government = mandala_government
+					trigger_if = {
+						limit = {
+							real_tier = EMPEROR
+						}
+						capital_scope = {
+							kingdom = {
+								ROOT = {
+									capital_holding = {
+										de_jure_liege_or_above = PREVPREV
+									}
+								}
+							}
+						}
+					}
+					trigger_else_if = {
+						limit = {
+							real_tier = KING
+						}
+						capital_scope = {
+							duchy = {
+								ROOT = {
+									capital_holding = {
+										de_jure_liege_or_above = PREVPREV
+									}
+								}
+							}
+						}
+					}
+					trigger_else = {
+						capital_scope = {
+							county = {
+								ROOT = {
+									capital_holding = {
+										de_jure_liege_or_above = PREVPREV
+									}
+								}
+							}
+						}
+					}
 				}
 
 				trigger_if = {
-					limit = {
-						# independent = no # Not working well in lobby screen/history
-						any_liege = {
-							always = yes
-						}
-					}
+					limit = { real_tier = BARON }
 
-					liege = {
-						government = mandala_government
-						trigger_if = {
-							limit = {
-								trigger_if = {
-									limit = {
-										has_game_started = no
-									}
-									real_tier = EMPEROR
-								}
-								trigger_else = {
-									primary_title = {
-										has_law = centralization_3
-									}
-								}
-							}
-
-							capital_scope = {
-								empire = {
-									ROOT = {
-										capital_scope = {
-											empire = {
-												title = PREVPREVPREV
-											}
-										}
-									}
-								}
-							}
-						}
-						trigger_else_if = {
-							limit = {
-								trigger_if = {
-									limit = {
-										has_game_started = no
-									}
-									real_tier = KING
-								}
-								trigger_else = {
-									primary_title = {
-										has_law = centralization_2
-									}
-								}
-							}
-
-							capital_scope = {
-								kingdom = {
-									ROOT = {
-										capital_scope = {
-											kingdom = {
-												title = PREVPREVPREV
-											}
-										}
-									}
-								}
-							}
-						}
-						trigger_else_if = {
-							limit = {
-								trigger_if = {
-									limit = {
-										has_game_started = no
-									}
-									real_tier = DUKE
-								}
-								trigger_else = {
-									primary_title = {
-										has_law = centralization_1
-									}
-								}
-							}
-
-							capital_scope = {
-								duchy = {
-									ROOT = {
-										capital_scope = {
-											duchy = {
-												title = PREVPREVPREV
-											}
-										}
-									}
-								}
-							}
-						}
-						trigger_else = {
-							capital_scope = {
-								county = {
-									ROOT = {
-										capital_scope = {
-											county = {
-												title = PREVPREVPREV
-											}
-										}
-									}
+					top_liege = {
+						capital_scope = {
+							ROOT = {
+								capital_scope = {
+									province = PREVPREV
 								}
 							}
 						}
 					}
 				}
-				trigger_else = {
-					higher_real_tier_than = COUNT
-				}
+			}
+			trigger_else = {
+				higher_real_tier_than = COUNT
 			}
 
 			is_patrician = no
@@ -482,7 +406,6 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
-		vassal_limit = -10
 	}
 
 	roman_imperial_government = {
