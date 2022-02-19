@@ -14,13 +14,12 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			clan_government
 			tibetan_feudal_government
-			mandala_government
 			thema_government
 		}
-		free_revoke_on_governments = {
-			iqta_government
+		accepts_liege_governments_religion = {
+			clan_government
+			mandala_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -76,14 +75,9 @@ feudal_governments = {
 		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
 			TRIBAL
 		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			tibetan_feudal_government
-			mandala_government
+		accepts_liege_governments_culture = {
 			thema_government
-		}
-		free_revoke_on_governments = {
-			iqta_government
+			mandala_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -147,11 +141,11 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
-			clan_government
-			mandala_government
 			thema_government
 		}
 		accepts_liege_governments_religion = {
+			clan_government
+			mandala_government
 			theocracy_government
 			order_government
 		}
@@ -217,13 +211,12 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
-			clan_government
 			tibetan_feudal_government
-			mandala_government
 			thema_government
 		}
-		accepts_liege_governments_culture = {
-			tribal_government
+		accepts_liege_governments_religion = {
+			clan_government
+			mandala_government
 		}
 
 		frame_suffix = "_manorial"
@@ -291,9 +284,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			clan_government
-			tibetan_feudal_government
 		}
 		vassal_call_to_arms = {
 			mandala_government
@@ -400,6 +390,7 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 		can_build_tribal = no
+		can_revoke_without_reason = no
 		dukes_called_kings = yes
 
 		capital_move_delay = 2000
@@ -426,7 +417,6 @@ feudal_governments = {
 		}
 		free_revoke_on_governments = {
 			pronoia_government
-			iqta_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -558,9 +548,6 @@ feudal_governments = {
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 			confucian_bureaucracy
-		}
-		vassal_call_to_arms = {
-			#jiedu_government
 		}
 
 		frame_suffix = "_chineseimperial"

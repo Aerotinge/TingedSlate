@@ -9,11 +9,12 @@ tribal_governments = {
 			FORT
 		}
 		accepts_liege_governments_culture = { # Tribals have no opinion penalty towards their liege if of the same culture
-			manorial_government
 			feudal_government
 			clan_government
 			tibetan_feudal_government
+			manorial_government
 			mandala_government
+			thema_government
 			republic_government
 			merchant_republic_government
 			theocracy_government

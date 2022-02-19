@@ -167,6 +167,7 @@ republic_governments = {
 			republic_government
 			merchant_republic_government
 			theocracy_government
+			order_government
 		}
 
 		frame_suffix = "_band"

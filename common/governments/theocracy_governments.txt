@@ -16,14 +16,15 @@ theocracy_governments = {
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
 		}
-		accepts_liege_governments = {
+		accepts_liege_governments_religion = {
 			feudal_government
+			clan_government
+			tibetan_feudal_government
+			manorial_government
+			mandala_government
+			thema_government
 			republic_government
 			merchant_republic_government
-		}
-		accepts_liege_governments_religion = {
-			theocracy_government
-			tibetan_feudal_government
 			order_government
 		}
 
@@ -71,13 +72,16 @@ theocracy_governments = {
 			FORT
 			HOSPITAL
 		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
+		accepts_liege_governments_religion = { # Gets the wrong religion modifier instead
 			feudal_government
-			mandala_government
-		}
-		accepts_liege_governments_religion = {
-			theocracy_government
+			clan_government
 			tibetan_feudal_government
+			manorial_government
+			mandala_government
+			thema_government
+			republic_government
+			merchant_republic_government
+			theocracy_government
 		}
 		free_revoke_on_governments = {
 			order_government
@@ -174,6 +178,7 @@ theocracy_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			thema_government
 		}
 
 		frame_suffix = "_romanimperial"
@@ -200,7 +205,6 @@ theocracy_governments = {
 			#	has_law = succ_appointment
 			#}
 
-			#liege = {
 			any_liege = {
 				trigger_if = {
 					limit = {
@@ -253,9 +257,8 @@ theocracy_governments = {
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
 			clan_government
-		}
-		free_revoke_on_governments = {
-			iqta_government
+			manorial_government
+			mandala_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
