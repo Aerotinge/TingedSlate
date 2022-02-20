@@ -17,10 +17,6 @@ feudal_governments = {
 			tibetan_feudal_government
 			thema_government
 		}
-		accepts_liege_governments_religion = {
-			clan_government
-			mandala_government
-		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
 		}
@@ -76,8 +72,8 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments_culture = {
-			thema_government
 			mandala_government
+			thema_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -144,8 +140,6 @@ feudal_governments = {
 			thema_government
 		}
 		accepts_liege_governments_religion = {
-			clan_government
-			mandala_government
 			theocracy_government
 			order_government
 		}
@@ -210,13 +204,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			tibetan_feudal_government
-			thema_government
-		}
-		accepts_liege_governments_religion = {
-			clan_government
-			mandala_government
 		}
 
 		frame_suffix = "_manorial"
@@ -224,24 +211,68 @@ feudal_governments = {
 		color = { 207 145 90 }
 
 		potential = {
-			OR = {
-				culture_group = east_slavic
-				culture = bulgarian
-				culture = serbian
-				culture = vlach
-				culture_group = baltic
-				culture_group = finno_ugric
+			trigger_if = {
+				limit = { # Have to limit culture while in the lobby, or else some other culture may pass trigger_else block even before any law applied
+					is_save_game = no
+					has_game_started = no
+				}
+
+				OR = {
+					culture_group = east_slavic
+					culture = bulgarian
+					culture = serbian
+					culture = vlach
+					culture_group = baltic
+					culture_group = finno_ugric
+					culture_group = altaic
+					culture_group = magyar
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					OR = {
+						culture_group = east_slavic
+						culture = bulgarian
+						culture = serbian
+						culture = vlach
+						culture_group = baltic
+						culture_group = finno_ugric
+						culture_group = altaic
+						culture_group = magyar
+					}
+				}
+
+				primary_title = {
+					NOR = {
+						has_law = feudal_contract_0
+						has_law = feudal_contract_1
+						has_law = feudal_contract_2
+						has_law = feudal_contract_3
+					}
+				}
+			}
+			trigger_else = {
+				primary_title = {
+					OR = {
+						has_law = manorial_contract_0
+						has_law = manorial_contract_1
+						has_law = manorial_contract_2
+						has_law = manorial_contract_3
+					}
+				}
 			}
 
 			trigger_if = {
 				limit = {
-					liege = {
-						NOT = { government = manorial_government }
-					}
+					independent = no
 				}
-
-				liege = {
-					is_feudal = no
+				top_liege = {
+					NOR = {
+						government = feudal_government
+						government = tibetan_feudal_government
+						government = roman_imperial_government
+						government = chinese_imperial_government
+					}
 				}
 			}
 
@@ -252,6 +283,9 @@ feudal_governments = {
 			could_be_order_trigger = no
 
 			NOR = {
+				is_government_potential = clan_government
+				is_government_potential = iqta_government
+				is_government_potential = mandala_government
 				is_government_potential = thema_government
 				is_government_potential = band_government
 			}
@@ -297,6 +331,7 @@ feudal_governments = {
 
 		potential = {
 			is_tributary = no
+			in_revolt = no
 			OR = {
 				culture_group = dravidian_group
 				culture_group = indo_aryan_group
@@ -308,9 +343,7 @@ feudal_governments = {
 
 			trigger_if = {
 				limit = {
-					any_liege = {
-						always = yes
-					}
+					independent = no
 				}
 
 				top_liege = {
@@ -618,8 +651,6 @@ feudal_governments = {
 
 	temporary_fake_theocracy_government = {
 		preferred_holdings = {
-			CASTLE
-			CITY
 			TEMPLE
 		}
 

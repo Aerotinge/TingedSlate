@@ -258,7 +258,6 @@ theocracy_governments = {
 			feudal_government
 			clan_government
 			manorial_government
-			mandala_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
