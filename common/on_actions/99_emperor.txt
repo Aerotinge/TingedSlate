@@ -147,10 +147,10 @@ on_offmap_yearly_pulse = {
 	random_events = {
 		# Papacy
 		papal_investiture = {
-			550 = 0
-			100 = 67000
-			100 = 67010
-			100 = 67020
+			delay = 35
+
+			760 = 0
+			240 = 67000 # The Pope singles out a Kingdom with Free Investiture
 		}
 	}
 }

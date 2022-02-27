@@ -577,6 +577,8 @@ character_event = {
 	desc = EVTDESC55002
 	picture = GFX_evt_stone_church
 
+	is_triggered_only = yes # on_five_year_pulse, random_events, english_conversion
+
 	only_playable = yes
 	culture = norman
 
@@ -596,46 +598,46 @@ character_event = {
 		NOT = { government = chinese_imperial_government }
 	}
 
-	mean_time_to_happen = {
-		years = 100
+	weight_multiplier = {
+		factor = 1
 
 		mult_modifier = {
-			factor = 0.75
+			factor = 1.33
 			learning >= 7
 		}
 
 		mult_modifier = {
-			factor = 0.75
+			factor = 1.33
 			learning >= 9
 		}
 
 		mult_modifier = {
-			factor = 0.75
+			factor = 1.33
 			learning >= 11
 		}
 
 		mult_modifier = {
-			factor = 0.75
+			factor = 1.33
 			learning >= 13
 		}
 
 		mult_modifier = {
-			factor = 1.5
+			factor = 0.67
 			learning < 5
 		}
 
 		mult_modifier = {
-			factor = 1.5
+			factor = 0.67
 			learning < 3
 		}
 
 		mult_modifier = {
-			factor = 2.0
+			factor = 0.5
 			learning < 1
 		}
 
 		mult_modifier = {
-			factor = 0.3
+			factor = 3.33
 
 			OR = {
 				has_game_rule = {
@@ -679,6 +681,8 @@ character_event = {
 	desc = EVTDESC55003
 	picture = GFX_evt_stone_church
 
+	is_triggered_only = yes # on_five_year_pulse, random_events, english_conversion
+
 	only_playable = yes
 	culture = english
 
@@ -701,11 +705,11 @@ character_event = {
 		should_evolve_cultures_trigger = yes
 	}
 
-	mean_time_to_happen = {
-		years = 60
+	weight_multiplier = {
+		factor = 1
 
 		mult_modifier = {
-			factor = 0.3
+			factor = 3.33
 
 			OR = {
 				has_game_rule = {
@@ -751,6 +755,8 @@ character_event = {
 	desc = EVTDESC55004
 	picture = GFX_evt_throne_room
 
+	is_triggered_only = yes # on_yearly_pulse, random_events, english_courtier_conversion
+
 	only_rulers = yes
 	culture = english
 
@@ -776,11 +782,11 @@ character_event = {
 		should_evolve_cultures_trigger = yes
 	}
 
-	mean_time_to_happen = {
-		years = 10
+	weight_multiplier = {
+		factor = 1
 
 		mult_modifier = {
-			factor = 0.3
+			factor = 3.33
 
 			OR = {
 				has_game_rule = {
@@ -830,6 +836,8 @@ character_event = {
 	desc = EVTDESC55005
 	picture = GFX_evt_throne_room
 
+	is_triggered_only = yes # on_five_year_pulse, random_events, english_conversion
+
 	only_playable = yes
 	culture = english
 
@@ -856,11 +864,11 @@ character_event = {
 		should_evolve_cultures_trigger = yes
 	}
 
-	mean_time_to_happen = {
-		years = 60
+	weight_multiplier = {
+		factor = 1
 
 		mult_modifier = {
-			factor = 0.3
+			factor = 3.33
 
 			OR = {
 				has_game_rule = {
@@ -923,6 +931,8 @@ character_event = {
 	id = 55010
 	desc = EVTDESC55010
 	picture = GFX_evt_stone_church
+
+	is_triggered_only = yes # on_five_year_pulse, random_events, ruler_culture_conversion
 
 	only_rulers = yes
 	lacks_dlc = "Rajas of India" # Controlled by Decision: convert_to_local_culture
@@ -993,11 +1003,11 @@ character_event = {
 		NOT = { government = chinese_imperial_government }
 	}
 
-	mean_time_to_happen = {
-		years = 100
+	weight_multiplier = {
+		factor = 1
 
 		mult_modifier = {
-			factor = 0.5
+			factor = 2
 
 			independent = no
 
@@ -1011,7 +1021,7 @@ character_event = {
 		}
 
 		mult_modifier = {
-			factor = 0.5
+			factor = 2
 
 			primary_title = {
 				ROOT = {
@@ -1023,7 +1033,7 @@ character_event = {
 		}
 
 		mult_modifier = {
-			factor = 2.0
+			factor = 0.5
 			culture_group = capital_scope # Same culture group: slower assimilation
 		}
 	}

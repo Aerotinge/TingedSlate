@@ -116,15 +116,6 @@ pagan_county_conquest = {
 		# Attacker
 		ROOT = {
 			trigger_if = {
-				limit = {
-					is_nomadic = yes
-				}
-
-				NOT = {
-					same_realm = FROM
-				}
-			}
-			trigger_else_if = {
 				limit = { government = nomadic_tribal_government }
 
 				NOR = {
@@ -132,7 +123,9 @@ pagan_county_conquest = {
 					same_realm = FROM
 				}
 			}
-			trigger_else = {
+			trigger_else_if = {
+				limit = { is_nomadic = no }
+
 				religion_group = pagan_group
 
 				NOR = {
@@ -1505,8 +1498,6 @@ tribal_invasion = {
 				limit = {
 					government = nomadic_tribal_government
 					has_character_flag = allowed_to_invasion_@PREV
-
-			#		prestige = -100
 				}
 			}
 			else = {
@@ -1888,8 +1879,8 @@ tribal_invasion = {
 
 				primary_title = {
 					OR = {
-						title = k_magyar
-						title = e_danubia
+						title = k_hungary
+						title = e_carpathia
 					}
 				}
 			}
@@ -2070,7 +2061,7 @@ matriarchal_deposition_war = {
 
 						save_event_target_as = new_swapped_ruler
 
-						usurp_title = {
+						usurp_title_plus_barony_if_unlanded = {
 							target = event_target:title_usurped
 							type = invasion
 						}
@@ -2140,7 +2131,7 @@ matriarchal_deposition_war = {
 
 						save_event_target_as = new_swapped_ruler
 
-						usurp_title = {
+						usurp_title_plus_barony_if_unlanded = {
 							target = event_target:title_usurped
 							type = invasion
 						}
@@ -2191,7 +2182,7 @@ matriarchal_deposition_war = {
 							piety = 100
 							save_event_target_as = new_swapped_ruler
 
-							usurp_title = {
+							usurp_title_plus_barony_if_unlanded = {
 								target = event_target:title_usurped
 								type = invasion
 							}
@@ -2615,7 +2606,7 @@ patriarchal_deposition_war = {
 
 						save_event_target_as = new_swapped_ruler
 
-						usurp_title = {
+						usurp_title_plus_barony_if_unlanded = {
 							target = event_target:title_usurped
 							type = invasion
 						}
@@ -2686,7 +2677,7 @@ patriarchal_deposition_war = {
 
 						save_event_target_as = new_swapped_ruler
 
-						usurp_title = {
+						usurp_title_plus_barony_if_unlanded = {
 							target = event_target:title_usurped
 							type = invasion
 						}
@@ -2738,7 +2729,7 @@ patriarchal_deposition_war = {
 							piety = 100
 							save_event_target_as = new_swapped_ruler
 
-							usurp_title = {
+							usurp_title_plus_barony_if_unlanded = {
 								target = event_target:title_usurped
 								type = invasion
 							}

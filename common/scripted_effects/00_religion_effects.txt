@@ -8,6 +8,8 @@
 # apply_cosmopolian_on_start_effect
 # apply_dogmatic_on_start_effect
 # reformation_god_names_changes_effect
+# convert_religion_failsafe_effect
+# abdicate_all_primary_type_titles_effect
 
 # TODO: detemine of this is of any use
 remove_secret_religion_trait_effect = {
@@ -3264,11 +3266,133 @@ convert_religion_failsafe_effect = {
 	}
 
 	hidden_effect = {
+		# Stop apostates from becoming the pope
+		trigger_switch = {
+			on_trigger = has_minor_title
+
+			title_cardinal = {
+				remove_title = title_cardinal
+			}
+
+			title_fraticelli_cardinal = {
+				remove_title = title_fraticelli_cardinal
+			}
+		}
+
 		if = {
 			limit = { government = temporary_fake_theocracy_government }
 
 			clr_character_flag = needs_temporary_fake_theocracy_government
 			set_correct_theocratic_government_type_effect = yes
+		}
+	}
+}
+
+abdicate_all_primary_type_titles_effect = {
+	if = {
+		limit = { controls_religion = yes }
+
+		# Secular religious head titles are forfeit
+		if = {
+			limit = { is_theocracy = no }
+
+			any_demesne_title = {
+				limit = { controls_religion = yes }
+				destroy_landed_title = THIS
+			}
+		}
+
+		# Theocratic religious head titles are given to a random new character
+		else = {
+			hidden_effect = {
+				liege = {
+					save_event_target_as = liege_target
+				}
+			}
+
+			any_demesne_title = {
+				show_scope_change = no
+
+				limit = { controls_religion = yes }
+
+				hidden_effect = {
+					create_character = {
+						age = 38
+						dynasty = random
+						religion = ROOT
+						culture = ROOT
+						random_traits = yes
+					}
+				}
+
+				grant_title = new_character
+
+				holder_scope = {
+					show_scope_change = no
+
+					any_vassal = {
+						show_scope_change = no
+
+						set_defacto_liege = event_target:liege_target
+					}
+				}
+			}
+
+			hidden_effect = {
+				set_defacto_liege = event_target:liege_target
+			}
+		}
+	}
+
+	if = { # Holy Orders/Static Mercs are given to a random new character
+		limit = {
+			OR = {
+				holy_order = yes
+				mercenary = yes
+			}
+		}
+
+		hidden_effect = {
+			liege = {
+				save_event_target_as = liege_target
+			}
+		}
+
+		any_demesne_title = {
+			show_scope_change = no
+
+			limit = {
+				OR = {
+					holy_order = yes
+					mercenary = yes
+				}
+			}
+
+			hidden_effect = {
+				create_character = {
+					age = 38
+					dynasty = random
+					religion = PREV
+					culture = PREV
+					random_traits = yes
+				}
+			}
+
+			grant_title = new_character
+
+			holder_scope = {
+				show_scope_change = no
+
+				any_vassal = {
+					show_scope_change = no
+
+					set_defacto_liege = event_target:liege_target
+				}
+			}
+		}
+
+		hidden_effect = {
+			set_defacto_liege = event_target:liege_target
 		}
 	}
 }

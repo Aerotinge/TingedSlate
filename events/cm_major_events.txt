@@ -190,6 +190,7 @@ narrative_event = {
 
 	is_triggered_only = yes # form_the_hre_early, realm_decisions.txt
 	major = yes
+	show_root = yes
 
 	major_trigger = {
 		ai = no

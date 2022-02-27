@@ -139,17 +139,8 @@ gender_laws = {
 							religion_group = muslim
 							government = nomadic_tribal_government
 							has_horde_culture = yes
-							has_religion_feature = religion_matriarchal
-							has_religion_feature = religion_equal
 							is_nomadic = yes
 							religion = aztec_pagan
-						}
-
-						NOT = {
-							has_game_rule = {
-								name = gender
-								value = all
-							}
 						}
 					}
 

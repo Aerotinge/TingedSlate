@@ -369,7 +369,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_castle_chinesegfx"
-		textureFile = "gfx\\interface\\placeholder_castle_china.tga"
+		textureFile = "gfx\\interface\\placeholder_castle_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -511,7 +511,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_tribal_chinesegfx"
-		textureFile = "gfx\\interface\\placeholder_tribal_china.tga"
+		textureFile = "gfx\\interface\\placeholder_tribal_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -534,7 +534,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_nomad"
-		textureFile = "gfx\\interface\\placeholder_nomad.tga"
+		textureFile = "gfx\\interface\\placeholder_nomad.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -627,7 +627,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_city_chinesegfx"
-		textureFile = "gfx\\interface\\placeholder_city_china.tga"
+		textureFile = "gfx\\interface\\placeholder_city_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -741,7 +741,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_westerngfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -848,7 +848,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_jewishgfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -955,7 +955,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_muslimgfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -1062,7 +1062,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_norsegfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -1253,14 +1253,14 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_mongolgfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_bodpagfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -1381,7 +1381,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_mesoamericangfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -1488,7 +1488,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_persiangfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -1595,7 +1595,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_westafricangfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -1786,14 +1786,14 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_indiangfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_southindiangfx"
-		textureFile = "gfx\\interface\\placeholder_temple_china.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2023,7 +2023,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_castle_chinesegfx_looted"
-		textureFile = "gfx\\interface\\placeholder_castle_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_castle_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2102,7 +2102,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_tribal_chinesegfx_looted"
-		textureFile = "gfx\\interface\\placeholder_tribal_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_tribal_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2125,7 +2125,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_nomad_looted"
-		textureFile = "gfx\\interface\\placeholder_nomad_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_nomad_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2267,7 +2267,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_city_chinesegfx_looted"
-		textureFile = "gfx\\interface\\placeholder_city_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_city_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2374,7 +2374,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_westerngfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2481,7 +2481,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_muslimgfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2588,7 +2588,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_norsegfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2772,14 +2772,14 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_mongolgfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_bodpagfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -2900,7 +2900,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_mesoamericangfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -3007,7 +3007,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_persiangfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -3114,7 +3114,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_westafricangfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -3305,14 +3305,14 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_indiangfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_temple_chinesegfx_southindiangfx_looted"
-		textureFile = "gfx\\interface\\placeholder_temple_china_looted.tga"
+		textureFile = "gfx\\interface\\placeholder_temple_china_looted.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -3651,105 +3651,105 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_fort"
-		textureFile = "gfx\\interface\\placeholder_fort.tga"
+		textureFile = "gfx\\interface\\placeholder_fort.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_muslimgfx"
-		textureFile = "gfx\\interface\\placeholder_fort_desert.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_desert.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_indiangfx"
-		textureFile = "gfx\\interface\\placeholder_fort_indian.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_indian.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_southindiangfx"
-		textureFile = "gfx\\interface\\placeholder_fort_indian.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_indian.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_mongolgfx"
-		textureFile = "gfx\\interface\\placeholder_fort_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_bodpagfx"
-		textureFile = "gfx\\interface\\placeholder_fort_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_westafricangfx"
-		textureFile = "gfx\\interface\\placeholder_fort_westafrican.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_westafrican.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_africangfx"
-		textureFile = "gfx\\interface\\placeholder_fort_desert.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_desert.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_turkishgfx"
-		textureFile = "gfx\\interface\\placeholder_fort_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_cumangfx"
-		textureFile = "gfx\\interface\\placeholder_fort_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_persiangfx"
-		textureFile = "gfx\\interface\\placeholder_fort_desert.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_desert.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_andalusiangfx"
-		textureFile = "gfx\\interface\\placeholder_fort_desert.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_desert.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_chinesegfx"
-		textureFile = "gfx\\interface\\placeholder_fort_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_fort_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_byzantinegfx"
-		textureFile = "gfx\\interface\\placeholder_fort.tga"
+		textureFile = "gfx\\interface\\placeholder_fort.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_fort_romangfx"
-		textureFile = "gfx\\interface\\placeholder_fort.tga"
+		textureFile = "gfx\\interface\\placeholder_fort.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -3758,105 +3758,105 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_hospital"
-		textureFile = "gfx\\interface\\placeholder_hospital.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_muslimgfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_desert.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_desert.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_indiangfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_indian.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_indian.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_southindiangfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_indian.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_indian.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_mongolgfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_bodpagfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_westafricangfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_west_african.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_west_african.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_africangfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_desert.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_desert.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_turkishgfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_cumangfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_persiangfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_desert.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_desert.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_andalusiangfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_desert.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_desert.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_chinesegfx"
-		textureFile = "gfx\\interface\\placeholder_hospital_mongol.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital_mongol.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_byzantinegfx"
-		textureFile = "gfx\\interface\\placeholder_hospital.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
 
 	spriteType = {
 		name = "GFX_settlement_hospital_romangfx"
-		textureFile = "gfx\\interface\\placeholder_hospital.tga"
+		textureFile = "gfx\\interface\\placeholder_hospital.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
@@ -3999,7 +3999,7 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_settlement_building_chinesegfx"
-		textureFile = "gfx\\interface\\placeholder_building_settlement_china.tga"
+		textureFile = "gfx\\interface\\placeholder_building_settlement_china.dds"
 		noOfFrames = 1
 		noRefCount = yes
 	}
