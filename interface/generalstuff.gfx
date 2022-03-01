@@ -1460,6 +1460,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_icon_patrimonial_government"
+		textureFile = "gfx\\interface\\government_icon_patrimonial.dds"
+	}
+
+	spriteType = {
 		name = "GFX_icon_iqta_government"
 		textureFile = "gfx\\interface\\government_icon_iqta.dds"
 	}

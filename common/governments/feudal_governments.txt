@@ -34,6 +34,7 @@ feudal_governments = {
 			NOR = {
 				is_government_potential = manorial_government
 				is_government_potential = clan_government
+				is_government_potential = patrimonial_government
 				is_government_potential = iqta_government
 				is_government_potential = tibetan_feudal_government
 				is_government_potential = mandala_government
@@ -51,138 +52,7 @@ feudal_governments = {
 		barons_need_dynasty = yes
 		can_build_tribal = no
 		dukes_called_kings = yes
-
-		capital_move_delay = 600
-
-		## Modifiers
-		court_size_modifier = 10
-	}
-
-	clan_government = { # Patrimonialism
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			TEMPLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments_culture = {
-			mandala_government
-			thema_government
-		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
-		}
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
-
-		frame_suffix = "_clan"
-		title_prefix = "clan_"
-		color = { 118 255 163 }
-
-		potential = {
-			has_clan_culture = yes
-
-			is_patrician = no
-			could_be_temporal_religious_head_trigger = yes
-			could_be_order_trigger = no
-
-			NOR = {
-				is_government_potential = iqta_government
-				is_government_potential = mandala_government
-				is_government_potential = roman_imperial_government
-				is_government_potential = thema_government
-				is_government_potential = chinese_imperial_government
-				is_government_potential = band_government
-			}
-		}
-
-		allow = {
-		}
-
-		#allows_matrilineal_marriage = no
-		barons_need_dynasty = yes
-		can_build_tribal = no
-		dukes_called_kings = no
-		#free_retract_vassalage = yes
-		#free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
-		have_gender_laws = no
-		#uses_decadence = yes
-		uses_prestige_for_law_change = yes
-
-		capital_move_delay = 600
-
-		## Modifiers
-		court_size_modifier = 10
-	}
-
-	tibetan_feudal_government = {
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			TEMPLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			thema_government
-		}
-		accepts_liege_governments_religion = {
-			theocracy_government
-			order_government
-		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
-		}
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
-
-		frame_suffix = "_tibetanfeudal"
-		color = { 0 146 250 }
-
-		potential = {
-			culture_group = tibetan_group
-			OR = {
-				religion_openly_bon_or_reformed_trigger = yes
-				religion = buddhist
-			}
-
-			primary_title = {
-				NOT = { has_law = succ_open_elective }
-			}
-
-			is_patrician = no
-			could_be_temporal_religious_head_trigger = yes
-			could_be_order_trigger = no
-
-			NOR = {
-				is_government_potential = roman_imperial_government
-				is_government_potential = thema_government
-				is_government_potential = chinese_imperial_government
-				is_government_potential = band_government
-			}
-		}
-
-		allow = {
-		}
-
-		barons_need_dynasty = yes
-		can_build_tribal = no
-		dukes_called_kings = yes
-		uses_piety_for_law_change = yes
+		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for lords where they could raise levies without pissing off vassals if in an offensive war.
 
 		capital_move_delay = 600
 
@@ -284,6 +154,7 @@ feudal_governments = {
 
 			NOR = {
 				is_government_potential = clan_government
+				is_government_potential = patrimonial_government
 				is_government_potential = iqta_government
 				is_government_potential = mandala_government
 				is_government_potential = thema_government
@@ -302,6 +173,244 @@ feudal_governments = {
 		dukes_called_kings = yes
 
 		capital_move_delay = 600
+	}
+
+	tibetan_feudal_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			thema_government
+		}
+		accepts_liege_governments_religion = {
+			theocracy_government
+			order_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_tibetanfeudal"
+		color = { 0 146 250 }
+
+		potential = {
+			culture_group = tibetan_group
+			OR = {
+				religion_openly_bon_or_reformed_trigger = yes
+				religion = buddhist
+			}
+
+			primary_title = {
+				NOT = { has_law = succ_open_elective }
+			}
+
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
+
+			NOR = {
+				is_government_potential = roman_imperial_government
+				is_government_potential = thema_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = band_government
+			}
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		dukes_called_kings = yes
+		uses_piety_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
+	}
+
+	clan_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = {
+			feudal_government
+			patrimonial_government
+			mandala_government
+			tibetan_feudal_government
+			thema_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_clan"
+		color = { 118 255 163 }
+
+		potential = {
+			has_clan_culture = yes
+
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
+
+			NOR = {
+				is_government_potential = iqta_government
+				is_government_potential = patrimonial_government
+				is_government_potential = mandala_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = thema_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = band_government
+			}
+		}
+
+		allow = {
+		}
+
+		#allows_matrilineal_marriage = no
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		dukes_called_kings = no
+		have_gender_laws = no
+		#uses_decadence = yes
+		uses_prestige_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
+	}
+
+	patrimonial_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		vassal_call_to_arms = {
+			patrimonial_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_clan"
+		color = { 118 255 163 }
+
+		potential = {
+			has_clan_culture = yes
+
+			trigger_if = {
+				limit = {
+					independent = no
+				}
+
+				trigger_if = {
+					limit = {
+						is_save_game = no
+						has_game_started = no
+					}
+
+					#among_most_powerful_vassals = 1 # Not working
+					always = no
+				}
+				trigger_else = {
+					is_powerful_vassal = yes
+				}
+
+				liege = {
+					independent = yes
+					government = patrimonial_government
+					dynasty = PREV
+
+					trigger_if = {
+						limit = {
+							PREV = {
+								NOT = { government = patrimonial_government }
+							}
+						}
+
+						num_of_government_vassals = {
+							government = patrimonial_government
+							value == 0
+						}
+					}
+				}
+			}
+			trigger_else = {
+				higher_real_tier_than = COUNT
+			}
+
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
+
+			NOR = {
+				is_government_potential = mandala_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = band_government
+			}
+		}
+
+		allow = {
+		}
+
+		#allows_matrilineal_marriage = no
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		dukes_called_kings = no
+		have_gender_laws = no
+		#uses_decadence = yes
+		uses_prestige_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
+		character_modifier = {
+			#castle_opinion = -6 # Not working
+			liege_opinion = -5
+			castle_vassal_max_levy = -0.15
+		}
+		#feudal_opinion = -6 # Not working
 	}
 
 	mandala_government = {

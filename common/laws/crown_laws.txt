@@ -241,6 +241,7 @@ de_jure_laws = {
 		city_opinion = -20
 		temple_opinion = -20
 		unreformed_tribal_opinion = -15
+		demesne_size = 1
 
 		city_vassal_min_levy = 0.55
 		castle_vassal_min_levy = 0.55
@@ -329,6 +330,7 @@ de_jure_laws = {
 		city_opinion = -30
 		temple_opinion = -30
 		unreformed_tribal_opinion = -15
+		demesne_size = 2
 
 		city_vassal_min_levy = 0.75
 		castle_vassal_min_levy = 0.75
