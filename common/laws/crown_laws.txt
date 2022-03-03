@@ -86,9 +86,9 @@ de_jure_laws = {
 		temple_opinion = -5
 		unreformed_tribal_opinion = -15
 
-		city_vassal_min_levy = 0.15
-		castle_vassal_min_levy = 0.15
-		temple_vassal_min_levy = 0.15
+		city_vassal_min_levy = 0.10
+		castle_vassal_min_levy = 0.10
+		temple_vassal_min_levy = 0.10
 
 		potential = {
 			is_law_potential = crown_authority_0
@@ -155,9 +155,9 @@ de_jure_laws = {
 		temple_opinion = -10
 		unreformed_tribal_opinion = -15
 
-		city_vassal_min_levy = 0.35
-		castle_vassal_min_levy = 0.35
-		temple_vassal_min_levy = 0.35
+		city_vassal_min_levy = 0.30
+		castle_vassal_min_levy = 0.30
+		temple_vassal_min_levy = 0.30
 
 		potential = {
 			is_law_potential = crown_authority_0
@@ -243,9 +243,9 @@ de_jure_laws = {
 		unreformed_tribal_opinion = -15
 		demesne_size = 1
 
-		city_vassal_min_levy = 0.55
-		castle_vassal_min_levy = 0.55
-		temple_vassal_min_levy = 0.55
+		city_vassal_min_levy = 0.50
+		castle_vassal_min_levy = 0.50
+		temple_vassal_min_levy = 0.50
 
 		potential = {
 			is_law_potential = crown_authority_0
@@ -332,9 +332,9 @@ de_jure_laws = {
 		unreformed_tribal_opinion = -15
 		demesne_size = 2
 
-		city_vassal_min_levy = 0.75
-		castle_vassal_min_levy = 0.75
-		temple_vassal_min_levy = 0.75
+		city_vassal_min_levy = 0.70
+		castle_vassal_min_levy = 0.70
+		temple_vassal_min_levy = 0.70
 
 		potential = {
 			is_law_potential = crown_authority_0

@@ -248,34 +248,6 @@ e_britannia = {
 			}
 		}
 
-		d_durham_palatine = {
-			color = { 251 33 12 }
-			color2 = { 220 220 0 }
-
-			capital = 67 # Durham
-
-			title = PRINCE_BISHOP
-			foa = PRINCE_BISHOP_FOA
-			short_name = yes
-			location_ruler_title = yes
-
-			allow = {
-				is_theocracy = yes
-				can_create_duchy = yes
-			}
-
-			religion = catholic
-
-			# Cannot be held as a secondary title
-			primary = yes
-
-			assimilate = no
-
-			dynasty_title_names = no 	# Will not be named "Seljuk", etc.
-
-			dignity = 20
-		}
-
 		d_hwicce = {
 			color = { 241 79 15 }
 			color2 = { 255 255 255 }

@@ -331,10 +331,13 @@ feudal_governments = {
 			tribal_government
 		}
 
-		frame_suffix = "_clan"
-		color = { 118 255 163 }
+		frame_suffix = "_patrimonial"
+		color = { 10 138 57 }
 
 		potential = {
+			is_tributary = no
+			in_revolt = no
+
 			has_clan_culture = yes
 
 			trigger_if = {
@@ -358,6 +361,12 @@ feudal_governments = {
 				liege = {
 					independent = yes
 					government = patrimonial_government
+					OR = {
+						is_close_relative = PREV
+						is_aunt_uncle_of = PREV
+						#is_cousin_of = PREV
+					}
+					#is_older_than = PREV
 					dynasty = PREV
 
 					trigger_if = {
@@ -539,6 +548,9 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
+		character_modifier = {
+			castle_vassal_max_levy = -0.15
+		}
 	}
 
 	roman_imperial_government = {

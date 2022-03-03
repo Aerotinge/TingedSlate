@@ -661,6 +661,43 @@ spriteTypes = {
 		alwaysTransparent = yes
 	}
 
+	# PATRIMONIAL GOVERNMENT
+
+	spriteType = {
+		name = "GFX_charframe_150_patrimonial"
+		textureFile = "gfx\\interface\\charframe_150_patrimonial.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_100_patrimonial"
+		textureFile = "gfx\\interface\\charframe_100_patrimonial.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_75_patrimonial"
+		textureFile = "gfx\\interface\\charframe_75_patrimonial.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_50_patrimonial"
+		textureFile = "gfx\\interface\\charframe_50_patrimonial.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_34_patrimonial"
+		textureFile = "gfx\\interface\\charframe_34_patrimonial.tga"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
 	# CONFUCIAN GOVERNMENT
 
 	spriteType = {
