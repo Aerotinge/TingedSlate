@@ -97,3 +97,47 @@ narrative_event = {
 		trigger = { character = FROM }
 	}
 }
+
+# Narrative Event - Armenian Empire
+narrative_event = {
+	id = EMP.40040
+	title = EVTTITLE_EMP_40040
+	desc = EVTDESC_EMP_40040
+	picture = GFX_evt_magnificent_castle
+
+	is_triggered_only = yes
+	major = yes
+
+	major_trigger = {
+		ai = no
+	}
+
+	option = {
+		name = EVTOPTC39100 # I had a bad feeling
+
+		trigger = {
+			any_neighbor_independent_ruler = {
+				character = FROM
+			}
+		}
+	}
+
+	option = {
+		name = INTERESTING
+
+		trigger = {
+			NOR = {
+				any_neighbor_independent_ruler = {
+					character = FROM
+				}
+				character = FROM
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_EMP_40040
+
+		trigger = { character = FROM }
+	}
+}

@@ -94,7 +94,6 @@ feudal_governments = {
 					culture = vlach
 					culture_group = baltic
 					culture_group = finno_ugric
-					culture_group = altaic
 					culture_group = magyar
 				}
 			}
@@ -107,7 +106,6 @@ feudal_governments = {
 						culture = vlach
 						culture_group = baltic
 						culture_group = finno_ugric
-						culture_group = altaic
 						culture_group = magyar
 					}
 				}

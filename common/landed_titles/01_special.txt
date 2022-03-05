@@ -288,6 +288,34 @@ e_timurids = {
 	religion = sunni
 }
 
+e_armenia = {
+	color = { 172 150 55 }
+	color2 = { 255 255 255 }
+
+	capital = 594 #	Dwin
+
+	short_name = yes
+
+	allow = {
+		can_create_empire = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+
+		OR = {
+			religion = miaphysite
+			religion_group = zoroastrian_group
+		}
+	}
+
+	culture = armenian
+	religion = miaphysite
+}
+
 k_sina = { #placeholder for the Chinese Empire itself, for V4 map is yet prepared
 	color = { 245 240 10 }
 	color2 = { 220 220 0 }

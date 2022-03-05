@@ -49,4 +49,9 @@ spriteTypes = {
 		name = "GFX_convert_to_tribalism_vassal"
 		textureFile = "gfx\\interface\\decision_icon_adopt_tribalism.dds"
 	}
+
+	spriteType = {
+		name = "GFX_create_armenian_empire"
+		textureFile = "gfx\\interface\\decision_icon_create_armenian_empire.dds"
+	}
 }

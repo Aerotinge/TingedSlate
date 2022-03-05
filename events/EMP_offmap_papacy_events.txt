@@ -60,6 +60,12 @@ character_event = {
 	immediate = {
 		print_papacy_governor_update_effect = yes
 		offmap_papacy_ruler_name_sync_effect = yes
+		any_claim = {
+			limit = {
+				is_theocracy = yes
+			}
+			remove_claim = PREV
+		}
 	}
 }
 

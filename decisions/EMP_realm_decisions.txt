@@ -751,4 +751,185 @@ decisions = {
 			}
 		}
 	}
+
+	create_armenian_empire = {
+		ai_check_interval = 120
+
+		is_high_prio = yes
+
+		only_independent = yes
+
+		potential = {
+			is_feudal = yes
+			is_tributary = no
+
+			culture = armenian
+			OR = {
+				religion = miaphysite
+				religion_group = zoroastrian_group
+			}
+			has_landed_title = k_armenia
+			lower_real_tier_than = EMPEROR
+			is_adult = yes
+
+			NOT = { is_title_active = e_armenia }
+
+			NOR = {
+				has_alternate_start_setting = {
+					setting = dejure
+					option = random
+				}
+
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random
+				}
+
+				has_alternate_start_setting = {
+					setting = title_names
+					option = random_including_duchies
+				}
+			}
+		}
+
+		allow = {
+			completely_controls = d_cilicia
+			completely_controls = d_coloneia
+			completely_controls = d_edessa
+			completely_controls = d_mesopotamia
+			completely_controls = d_armenia
+			completely_controls = d_azerbaijan
+			completely_controls = d_tao
+			completely_controls = d_abkhazia
+			completely_controls = d_kartli
+			completely_controls = d_kakheti
+
+			trigger_if = {
+				limit = {
+					d_derbent = {
+						any_direct_de_jure_vassal_title = {
+							location = {
+								culture = armenian
+							}
+						}
+					}
+				}
+				completely_controls = d_derbent
+			}
+			trigger_if = {
+				limit = {
+					c_theodosiopolis = {
+						location = {
+							culture = armenian
+						}
+					}
+				}
+				c_theodosiopolis = {
+					holder_scope = {
+						OR = {
+							character = ROOT
+							is_vassal_or_below_of = ROOT
+						}
+					}
+				}
+			}
+
+			primary_title { title = k_armenia }
+			trigger_if = {
+				limit = {
+					k_georgia = {
+						is_titular = no
+					}
+				}
+				has_landed_title = k_georgia
+			}
+			trigger_else = {
+				custom_tooltip = {
+					text = hold_kingdom_besides_prima_TT
+
+					any_demesne_title = {
+						real_tier = KING
+						NOT = { title = k_armenia }
+					}
+				}
+			}
+
+			war = no
+			is_incapable = no
+
+			prestige >= 1000
+			wealth >= 500
+			realm_size >= 100
+		}
+
+		effect = {
+			wealth = -500
+
+			custom_tooltip = {
+				text = create_armenian_empire_tt
+
+				primary_title = {
+					e_armenia = {
+						copy_title_laws = PREV
+						#copy_title_history = PREV
+						grant_title_no_opinion = ROOT
+					}
+					destroy_landed_title = THIS
+				}
+			}
+
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_great
+			}
+
+			if = {
+				limit = { has_landed_title = c_dwin }
+				capital = c_dwin
+			}
+
+			hidden_effect = {
+				d_cilicia		= { de_jure_liege = k_armenia }
+				d_coloneia		= { de_jure_liege = k_armenia }
+				d_edessa		= { de_jure_liege = k_armenia }
+				d_mesopotamia	= { de_jure_liege = k_armenia }
+				d_armenia		= { de_jure_liege = k_armenia }
+				d_azerbaijan	= { de_jure_liege = k_armenia }
+				d_tao			= { de_jure_liege = k_georgia }
+				d_abkhazia		= { de_jure_liege = k_georgia }
+				d_kartli		= { de_jure_liege = k_georgia }
+				d_kakheti		= { de_jure_liege = k_georgia }
+				if = {
+					limit = {
+						d_derbent = {
+							any_direct_de_jure_vassal_title = {
+								location = {
+									culture = armenian
+								}
+							}
+						}
+					}
+					d_derbent	= { de_jure_liege = k_georgia }
+				}
+			}
+			k_armenia		= { show_scope_change = no de_jure_liege = e_armenia }
+			k_georgia		= { show_scope_change = no de_jure_liege = e_armenia }
+
+			any_player = {
+				limit = {
+					capital_scope = {
+						OR = {
+							region = world_middle_east_asia_minor
+						}
+					}
+				}
+
+				narrative_event = { id = EMP.40040 }
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
 }
