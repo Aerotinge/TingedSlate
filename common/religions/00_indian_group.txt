@@ -54,10 +54,6 @@ indian_group = {
 		intermarry = bon_pagan
 		intermarry = bon_pagan_reformed
 
-		character_modifier = {
-			learning = 4
-		}
-
 		max_consorts = 3
 		short_reign_opinion_year_mult = 0
 
@@ -67,6 +63,10 @@ indian_group = {
 		feminist = yes
 		has_heir_designation = yes
 		priests_can_inherit = no
+
+		character_modifier = {
+			plot_discovery_chance = 0.025
+		}
 	}
 
 	hindu = {
@@ -162,6 +162,11 @@ indian_group = {
 		peace_piety_gain = 1.0
 		castes = yes
 		pacifist = yes
+
+		character_modifier = {
+			vassal_opinion = 15
+			threat_decay_speed = 0.02
+		}
 	}
 
 	taoist = {
@@ -206,8 +211,27 @@ indian_group = {
 		intermarry = bon_pagan
 		intermarry = bon_pagan_reformed
 
-		character_modifier = {
-			stewardship = 2
+		unit_modifier = {
+			garrison_size = 0.40
+
+			key = "DEF_RELIGION"
+		}
+
+		unit_home_modifier = {
+			land_morale = 0.80
+			light_infantry_defensive = 0.80
+			heavy_infantry_defensive = 0.80
+			pikemen_defensive = 0.80
+			light_cavalry_defensive = 0.80
+			knights_defensive = 0.80
+			archers_defensive = 0.80
+			horse_archers_defensive = 0.80
+			camel_cavalry_defensive = 0.80
+			war_elephants_defensive = 0.80
+
+			garrison_size = 0.40
+
+			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 
 		max_consorts = 3

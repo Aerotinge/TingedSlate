@@ -24,4 +24,4 @@ NDefines.NFrontend.MAX_ZOOM_LEVEL = 3000
 -- Since Frontend Fading is broken by the promotion splash introduce in 3.3.x, it is removed here to save time.
 NDefines.NFrontend.TIME_FROZEN = 0									-- Time before initial animation starts (some delay here so it should NOT be 0, then the animation starts before you can see it)
 NDefines.NFrontend.FADE_IN_DONE_TIME = 0.1
-NDefines.NFrontend.GUI_START_MOVE_TIME = 0.8
+NDefines.NFrontend.GUI_START_MOVE_TIME = 0.9

@@ -413,11 +413,8 @@ feudal_governments = {
 		## Modifiers
 		court_size_modifier = 10
 		character_modifier = {
-			#castle_opinion = -6 # Not working
-			liege_opinion = -5
 			castle_vassal_max_levy = -0.15
 		}
-		#feudal_opinion = -6 # Not working
 	}
 
 	mandala_government = {
@@ -576,9 +573,6 @@ feudal_governments = {
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 		}
-		forced_contract = {
-			thema_government
-		}
 
 		frame_suffix = "_romanimperial"
 		color = { 143 12 125 }
@@ -624,7 +618,7 @@ feudal_governments = {
 		## Modifiers
 		court_size_modifier = 15
 		character_modifier = {
-			castle_vassal_max_levy = -0.25 # For balancing forced_contract with thema_government
+			castle_vassal_min_levy = 0.10
 		}
 	}
 
@@ -670,6 +664,10 @@ feudal_governments = {
 		## Modifiers
 		demesne_size = 2
 		vassal_limit = -10
+		levy_size = -0.15
+		character_modifier = {
+			global_levy_size = -0.15
+		}
 	}
 
 	chinese_imperial_government = {
