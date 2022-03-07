@@ -21,6 +21,18 @@ gender_laws = {
 					}
 				}
 			}
+
+			# Override laws set by title history, should default to Absolute Cognatic
+			trigger_if = {
+				limit = { has_game_started = no }
+
+				NOT = {
+					has_game_rule = {
+						name = gender
+						value = all
+					}
+				}
+			}
 		}
 
 		pass_effect = {
@@ -35,16 +47,6 @@ gender_laws = {
 
 		default_selection = {
 			factor = 1
-
-			trigger = {
-				# Defaults to Agnatic-Cognatic with "All" gender gamerule.
-				NOT = {
-					has_game_rule = {
-						name = gender
-						value = all
-					}
-				}
-			}
 
 			mult_modifier = {
 				factor = 100
@@ -125,6 +127,18 @@ gender_laws = {
 					has_religion_feature = religion_equal
 				}
 			}
+
+			# Override laws set by title history, should default to Absolute Cognatic
+			trigger_if = {
+				limit = { has_game_started = no }
+
+				NOT = {
+					has_game_rule = {
+						name = gender
+						value = all
+					}
+				}
+			}
 		}
 
 		allow = {
@@ -133,14 +147,19 @@ gender_laws = {
 
 				trigger_if = {
 					limit = {
-						has_dlc = "Conclave"
-
 						OR = {
 							religion_group = muslim
 							government = nomadic_tribal_government
 							has_horde_culture = yes
 							is_nomadic = yes
 							religion = aztec_pagan
+						}
+
+						NOT = {
+							has_game_rule = {
+								name = gender
+								value = all
+							}
 						}
 					}
 
@@ -285,6 +304,15 @@ gender_laws = {
 		default_selection = {
 			factor = 1
 
+			additive_modifier = {
+				value = 1000
+
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+			}
+
 			mult_modifier = {
 				factor = 0.1
 
@@ -335,6 +363,23 @@ gender_laws = {
 						has_bloodline_flag = bloodline_enatic_cognatic
 						bloodline_is_active_for = PREV
 					}
+
+					trigger_if = {
+						limit = { has_game_started = no }
+						character = c_251187 # Magajiva Daura, necesesary because her historical bloodline doesn't evaluate correctly on game start-up
+					}
+				}
+			}
+
+			# Override laws set by title history, should default to Absolute Cognatic
+			trigger_if = {
+				limit = { has_game_started = no }
+
+				NOT = {
+					has_game_rule = {
+						name = gender
+						value = all
+					}
 				}
 			}
 		}
@@ -367,6 +412,18 @@ gender_laws = {
 				}
 				trigger_else = {
 					has_religion_feature = religion_matriarchal
+				}
+			}
+
+			# Override laws set by title history, should default to Absolute Cognatic
+			trigger_if = {
+				limit = { has_game_started = no }
+
+				NOT = {
+					has_game_rule = {
+						name = gender
+						value = all
+					}
 				}
 			}
 		}
