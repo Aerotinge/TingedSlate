@@ -10,13 +10,7 @@ e_italia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = {
-				ai = yes
-				has_game_rule = {
-					name = title_culture_requirement
-					value = ai_only
-				}
-			}
+			limit = { ai = yes }
 
 			culture = italian
 		}
@@ -228,7 +222,12 @@ e_italia = {
 
 		allow = {
 			can_create_kingdom = yes
-			religion_group = christian
+
+			trigger_if = {
+				limit = { ai = yes }
+
+				religion_group = christian
+			}
 		}
 
 		christian = 10000 # Crusade target weight
@@ -247,13 +246,7 @@ e_italia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
+				limit = { ai = yes }
 
 				culture = lombard
 			}
@@ -711,6 +704,13 @@ e_italia = {
 		allow = {
 			can_create_kingdom = yes
 
+			FROM = {
+				show_scope_change = no
+				show_only_failed_conditions = yes
+
+				is_titular = no
+			}
+
 			trigger_if = {
 				limit = { ai = yes }
 
@@ -1036,6 +1036,13 @@ e_italia = {
 			can_create_kingdom = yes
 
 			is_republic = yes
+
+			FROM = {
+				show_scope_change = no
+				show_only_failed_conditions = yes
+
+				is_titular = no
+			}
 		}
 	}
 
@@ -1051,6 +1058,13 @@ e_italia = {
 
 		allow = {
 			can_create_kingdom = yes
+
+			FROM = {
+				show_scope_change = no
+				show_only_failed_conditions = yes
+
+				is_titular = no
+			}
 		}
 	}
 
@@ -1273,6 +1287,13 @@ e_italia = {
 			can_create_kingdom = yes
 
 			is_republic = yes
+
+			FROM = {
+				show_scope_change = no
+				show_only_failed_conditions = yes
+
+				is_titular = no
+			}
 		}
 
 		d_venice = {

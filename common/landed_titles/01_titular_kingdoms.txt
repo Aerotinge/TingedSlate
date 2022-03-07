@@ -268,3 +268,43 @@ k_magyar = {
 
 	catholic = 500 # Crusade target weight
 }
+
+k_daneland = {
+	color = { 255 128 128 }
+	color2 = { 255 255 255 }
+
+	capital = 61 # York
+
+	culture = norse
+
+	pagan_coa = {
+		template = 2
+		layer = {
+			texture = 2
+			texture_internal = 12
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		layer = {
+			texture = 2
+			texture_internal = 7
+			emblem = 0
+			color = 0
+			color = 0
+			color = 0
+		}
+		religion = norse_pagan
+	}
+
+	allow = {
+		can_create_kingdom = yes
+
+		trigger_if = {
+			limit = { ai = yes }
+
+			culture_group = north_germanic
+		}
+	}
+}

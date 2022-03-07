@@ -14,13 +14,7 @@ e_persia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = {
-				ai = yes
-				has_game_rule = {
-					name = title_culture_requirement
-					value = ai_only
-				}
-			}
+			limit = { ai = yes }
 
 			culture_group = iranian
 		}
@@ -41,21 +35,6 @@ e_persia = {
 
 		allow = {
 			can_create_kingdom = yes
-			
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture_group = iranian
-					culture_group = indo_aryan_group
-				}
-			}
 		}
 
 		d_kabulistan = {
@@ -198,15 +177,6 @@ e_persia = {
 
 			allow = {
 				can_create_duchy = yes
-
-				trigger_if = {
-					limit = { ai = yes }
-
-					OR = {
-						culture_group = iranian
-						culture_group = indo_aryan_group
-					}
-				}
 			}
 
 			c_armail = {
@@ -372,22 +342,6 @@ e_persia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture_group = iranian
-					culture_group = arabic
-					culture_group = byzantine
-				}
-			}
 		}
 
 		d_azerbaijan = {
@@ -398,16 +352,6 @@ e_persia = {
 
 			allow = {
 				can_create_duchy = yes
-				
-				trigger_if = {
-					limit = { ai = yes }
-
-					OR = {
-						culture_group = iranian
-						culture_group = arabic
-						culture_group = byzantine
-					}
-				}
 			}
 
 			culture = persian
@@ -704,22 +648,6 @@ e_persia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture_group = iranian
-					culture_group = arabic
-					culture_group = byzantine
-				}
-			}
 		}
 
 		d_baghdad = {
@@ -951,18 +879,6 @@ e_persia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				culture_group = iranian
-			}
 		}
 
 		d_balkh = {
@@ -1260,22 +1176,6 @@ e_persia = {
 
 		allow = {
 			can_create_kingdom = yes
-			
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture_group = iranian
-					culture_group = arabic
-					culture_group = byzantine
-				}
-			}
 		}
 
 		d_jazira = {
@@ -1460,18 +1360,6 @@ e_persia = {
 
 		allow = {
 			can_create_kingdom = yes
-			
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				culture_group = iranian
-			}
 		}
 
 		d_fars = {

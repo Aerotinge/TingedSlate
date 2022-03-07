@@ -10,21 +10,9 @@ e_turk = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = {
-				ai = yes
-				has_game_rule = {
-					name = title_culture_requirement
-					value = ai_only
-				}
-			}
+			limit = { ai = yes }
 
 			culture_group = altaic
-			NOR = {
-				culture = bolghar
-				culture = avar
-				culture = khitan
-				culture = jurchen
-			}
 		}
 
 		NOR = {
@@ -51,13 +39,7 @@ e_turk = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
+				limit = { ai = yes }
 
 				culture = cuman
 			}
@@ -515,23 +497,6 @@ e_turk = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture = khitan
-					culture = mongol
-					culture = uyghur
-					culture = kirghiz
-				}
-			}
 		}
 
 		d_abakan = {

@@ -10,19 +10,9 @@ e_arabia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = {
-				ai = yes
-				has_game_rule = {
-					name = title_culture_requirement
-					value = ai_only
-				}
-			}
+			limit = { ai = yes }
 
-			OR = {
-				culture = bedouin_arabic
-				culture = levantine_arabic
-				culture = egyptian_arabic
-			}
+			culture_group = arabic
 		}
 	}
 
@@ -41,18 +31,6 @@ e_arabia = {
 
 		allow = {
 			can_create_kingdom = yes
-			
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				culture_group = arabic
-			}
 		}
 
 		d_al_bahrein = {
@@ -495,23 +473,6 @@ e_arabia = {
 
 		allow = {
 			can_create_kingdom = yes
-			
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture = egyptian_arabic
-					culture = coptic
-					culture = greek
-					culture = nubian
-				}
-			}
 		}
 
 		d_alexandria = {
@@ -1793,21 +1754,6 @@ e_arabia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture = levantine_arabic
-					culture = assyrian
-				}
-			}
 		}
 
 		d_aleppo = {
@@ -2211,18 +2157,6 @@ e_arabia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				culture = bedouin_arabic
-			}
 		}
 
 		d_hadramut = {

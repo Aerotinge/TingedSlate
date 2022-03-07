@@ -13,13 +13,7 @@ e_britannia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = {
-				ai = yes
-				has_game_rule = {
-					name = title_culture_requirement
-					value = ai_only
-				}
-			}
+			limit = { ai = yes }
 
 			OR = {
 				culture = english
@@ -51,24 +45,6 @@ e_britannia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture = english
-					culture = anglo-saxon
-					culture = norman
-					culture_group = celtic
-					culture_group = north_germanic
-				}
-			}
 		}
 
 		d_essex	= {
@@ -814,21 +790,6 @@ e_britannia = {
 
 		allow = {
 			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture_group = celtic
-					culture_group = north_germanic
-				}
-			}
 		}
 
 		d_connacht = {
@@ -1500,21 +1461,6 @@ e_britannia = {
 
 		allow = {
 			can_create_kingdom = yes
-			
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				OR = {
-					culture_group = celtic
-					culture_group = north_germanic
-				}
-			}
 		}
 
 		d_albany = {
@@ -2552,13 +2498,7 @@ e_britannia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
+				limit = { ai = yes }
 
 				culture_group = celtic
 			}
@@ -2778,7 +2718,14 @@ e_britannia = {
 
 			allow = {
 				can_create_duchy = yes
-				has_titular_requirements = yes
+
+				FROM = {
+					show_scope_change = no
+					show_only_failed_conditions = yes
+
+					is_titular = no
+				}
+
 
 				trigger_if = {
 					limit = { ai = yes }
@@ -2852,53 +2799,6 @@ e_britannia = {
 				b_bridgnorth = {}
 				b_oswestry = {}
 				b_chirk = {}
-			}
-		}
-	}
-
-	k_daneland = {
-		color = { 255 128 128 }
-		color2 = { 255 255 255 }
-
-		capital = 61 # York
-
-		culture = norse
-
-		pagan_coa = {
-			template = 2
-			layer = {
-				texture = 2
-				texture_internal = 12
-				emblem = 0
-				color = 0
-				color = 0
-				color = 0
-			}
-			layer = {
-				texture = 2
-				texture_internal = 7
-				emblem = 0
-				color = 0
-				color = 0
-				color = 0
-			}
-			religion = norse_pagan
-		}
-
-		allow = {
-			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
-
-				culture_group = north_germanic
-				NOT = { culture = swedish }
 			}
 		}
 	}

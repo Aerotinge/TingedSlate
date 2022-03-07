@@ -10,13 +10,7 @@ e_scythia = {
 		can_create_empire = yes
 
 		trigger_if = {
-			limit = {
-				ai = yes
-				has_game_rule = {
-					name = title_culture_requirement
-					value = ai_only
-				}
-			}
+			limit = { ai = yes }
 
 			OR = {
 				culture = alan
@@ -36,13 +30,7 @@ e_scythia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
+				limit = { ai = yes }
 
 				culture = alan
 			}
@@ -317,13 +305,7 @@ e_scythia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
+				limit = { ai = yes }
 
 				OR = {
 					culture = khazar
@@ -576,13 +558,7 @@ e_scythia = {
 			can_create_kingdom = yes
 
 			trigger_if = {
-				limit = {
-					ai = yes
-					has_game_rule = {
-						name = title_culture_requirement
-						value = ai_only
-					}
-				}
+				limit = { ai = yes }
 
 				culture = khazar
 			}
