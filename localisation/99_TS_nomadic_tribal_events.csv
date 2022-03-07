@@ -15,3 +15,5 @@ EVTDESC_EMP_11040;Even more hordes have risen up in [Root.GetName], reinforcing 
 EVTDESC_EMP_11041;Even more hordes have risen up in [From.GetName], reinforcing the ongoing revolt!;Davantage de hordes se soulèvent en [From.GetName], renforçant la révolte actuelle !;Weitere Horden lehnen sich in [From.GetName] auf und verstärken die momentan stattfindende Revolte!;;Más hordas incluso se han sublevado en [From.GetName], lo que refuerza la revuelta en curso!;;;;;;;;;x
 EVTOPTA_EMP_11030;Jinxed barbarian!;Barbare pervers!;Verhexter Barbar!;;¡Bárbaro maldito!;;;;;;;;;x
 EVTOPTA_EMP_11040;Bewitched savages!;Sauvages ensorcelés!;Verzauberter Wilde!;;¡salvajes hechizados!;;;;;;;;;x
+
+hidden_nomad_horde_mp;Manpower;Effectifs;Mannstärke;;Mano de obra;;;;;;;;

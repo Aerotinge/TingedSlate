@@ -9,7 +9,15 @@ nomad_population = {
 	icon = 57
 	tribal_tax_modifier = -1
 	supply_limit = -5
-	#tribal_levy_size = -1
+	#tech_growth_modifier = -1
+}
+
+hidden_nomad_horde_mp = {
+	is_visible = {
+		#always = no
+	}
+	icon = 56
+	retinuesize = 225
 }
 
 pet_warhorse = {

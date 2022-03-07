@@ -12,13 +12,15 @@ character_event = {
     hide_window = yes
 	lacks_dlc = "Horse Lords"
 	
-    is_triggered_only = yes #on_yearly_pulse
+    only_playable = yes
+	is_triggered_only = yes # on_startup, on_yearly_pulse
 
     trigger = {
         government = nomadic_tribal_government
     }
 
 	immediate = {
+		# TODO: handle over_vassal_limit, in case a Khan has tons of ally troop while no penalty since we don't use levy and tax system on nomadic_tribal_government
 		set_variable = { which = "empty_holdings_total" value = 0 } # empty_holdings_total cap at 35
 		# calc empty holding in realm
 		any_realm_province = {
@@ -159,6 +161,36 @@ character_event = {
 				which = over_prov_total
 				value = 0
 			}
+
+			# Export to modifier stack if LoR is enabled
+			if = {
+				limit = {
+					has_dlc = "Legacy of Rome"
+				}
+
+				remove_character_modifiers = {
+					modifier = hidden_nomad_horde_mp
+					amount = 35
+				}
+				while = {
+					limit = {
+						check_variable = {
+							which = empty_holdings_total
+							value >= 1
+						}
+					}
+
+					subtract_variable = {
+						which = empty_holdings_total
+						value = 1
+					}
+					add_character_modifier = {
+						name = hidden_nomad_horde_mp
+						days = 365
+						stacking = yes
+					}
+				}
+			}
 		}
 	}
 }
@@ -166,10 +198,12 @@ character_event = {
 character_event = {
     id = EMP.11003
     hide_window = yes
-	
+
+	only_playable = yes
 	is_triggered_only = yes
-	
+
 	lacks_dlc = "Horse Lords"
+	lacks_dlc = "Legacy of Rome"
 
     trigger = {
 		government = nomadic_tribal_government
@@ -2461,11 +2495,13 @@ character_event = {
 character_event = {
     id = EMP.11004
     hide_window = yes
-	
+
+	only_playable = yes
 	is_triggered_only = yes
 
 	lacks_dlc = "Horse Lords"
-	
+	lacks_dlc = "Legacy of Rome"
+
     trigger = {
 		government = nomadic_tribal_government
     }
@@ -4756,41 +4792,54 @@ character_event = {
 character_event = {
     id = EMP.11005
     hide_window = yes
-	
-    is_triggered_only = yes
-	
+
+    only_playable = yes
+	is_triggered_only = yes # on_startup, EMP.21011
+
 	lacks_dlc = "Horse Lords"
+	has_dlc = "Legacy of Rome"
 
     trigger = {
-		always = no # Disabled
         government = nomadic_tribal_government
     }
 
 	immediate = {
-		economy_techpoints = -50
-		culture_techpoints = -50
-		military_techpoints = -50
+		prestige = 50
+		piety = 25
+		character_event = { id = EMP.11006 }
 	}
 }
 
-# ROOT is the character, FROM is the title, FROMFROM is the old holder
 character_event = {
     id = EMP.11006
     hide_window = yes
 	
-    is_triggered_only = yes
+    only_playable = yes
+	is_triggered_only = yes
 	
 	lacks_dlc = "Horse Lords"
+	has_dlc = "Legacy of Rome"
 
     trigger = {
         government = nomadic_tribal_government
-		FROM = {
-			real_tier = COUNT
-		}
     }
 
 	immediate = {
-		character_event = { id = EMP.11002 days = 1 }
+		if = {
+			limit = {
+				independent = yes
+				is_tributary = no
+			}
+
+			create_retinue = NOMADIC_RETTYPE_CAV4
+			create_retinue = NOMADIC_RETTYPE_CAV4
+		}
+		else_if = {
+			limit = { higher_tier_than = COUNT }
+
+			create_retinue = NOMADIC_RETTYPE_CAV4
+		}
+		create_retinue = NOMADIC_RETTYPE_CAV4
 	}
 }
 
@@ -4798,7 +4847,8 @@ character_event = {
     id = EMP.11008
     hide_window = yes
 	
-    is_triggered_only = yes
+    only_playable = yes
+	is_triggered_only = yes # on_unlanded
 	
 	lacks_dlc = "Horse Lords"
 
@@ -4807,7 +4857,12 @@ character_event = {
     }
 
 	immediate = {
+		# TODO: unland nomadic adventurer
 		set_variable = { which = "empty_holdings_total" value = 0 }
+		remove_character_modifiers = {
+			modifier = hidden_nomad_horde_mp
+			amount = 35
+		}
 	}
 }
 
@@ -4817,7 +4872,8 @@ character_event = {
     id = EMP.11021
     hide_window = yes
 
-    is_triggered_only = yes
+    only_playable = yes
+	is_triggered_only = yes
 
 	lacks_dlc = "Horse Lords"
 
@@ -4828,6 +4884,16 @@ character_event = {
     }
 
 	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					any_spouse_even_if_dead = {
+						always = yes
+					}
+				}
+			}
+			prestige = 300 # Lazy Compensation for Nomad-Lowborn marriage, for their prestige always fucked up on_start
+		}
 		any_demesne_province = {
 			limit = {
 				culture_group = ROOT

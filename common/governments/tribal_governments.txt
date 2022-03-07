@@ -178,6 +178,7 @@ tribal_governments = {
 		character_modifier = {
 			global_levy_size = -3 # -300%
 			global_garrison_size = -3 # -300%
+			retinuesize_perc = 3
 		}
 		demesne_size = 2
 		vassal_limit = -10

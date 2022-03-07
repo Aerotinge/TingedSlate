@@ -402,6 +402,58 @@ title_commander = {
 				}
 			}
 		}
+		trigger_else_if = {
+			limit = { liege = { government = nomadic_tribal_government } } # For make use of retinue reinforce modifier
+
+			OR = {
+				government = nomadic_tribal_government # ...Or potential commander is vassal...
+
+				NOT = { # ...Or there are no valid vassal candidates who can be commanders.
+					custom_tooltip = {
+						text = tooltip_nomad_can_appoint_commanders
+
+						liege = {
+							any_vassal = {
+								government = nomadic_tribal_government
+								prisoner = no
+								is_incapable = no
+								is_inaccessible_trigger = no
+								primary_title = { temporary = no }
+
+								trigger_if = {
+									limit = {
+										NOT = { has_character_flag = special_marshal }
+									}
+
+									OR = {
+										male_can_hold_minor_title_trigger = yes
+										female_can_hold_minor_commander_title_trigger = yes
+									}
+
+									trigger_if = {
+										limit = { religion = hindu }
+										NOT = { trait = kshatriya }
+									}
+
+									is_adult = yes
+								}
+
+								NOR = {
+									has_character_flag = guru
+									has_character_modifier = refusing_to_lead
+									has_job_title = job_chancellor
+									has_job_title = job_marshal
+									has_job_title = job_treasurer
+									has_job_title = job_spymaster
+									has_job_title = job_spiritual
+									has_minor_title = title_commander
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 
 	revoke_trigger = {

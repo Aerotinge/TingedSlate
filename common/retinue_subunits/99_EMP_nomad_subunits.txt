@@ -1,0 +1,403 @@
+NOMADIC_RETTYPE_CAV1 = {
+	first_type = 3 # Light Cavalry
+	first_amount = 250
+
+	hire_cost = 25
+	costs_prestige = yes
+
+	maintenance_multiplier = 0.50
+
+	potential = {
+		government = nomadic_tribal_government
+	}
+
+	modifier = {
+		light_cavalry_defensive = 0.3
+		light_cavalry_offensive = -0.1
+	}
+}
+
+NOMADIC_RETTYPE_CAV2 = {
+	first_type = 3 # Light Cavalry
+	first_amount = 225
+
+	second_type = 6 # Special Troops
+	second_amount = 25
+
+	special_troops = horse_archers
+
+	hire_cost = 50
+	costs_prestige = yes
+
+	maintenance_multiplier = 0.50
+
+	potential = {
+		government = nomadic_tribal_government
+	}
+
+	modifier = {
+		light_cavalry_defensive = 0.3
+		light_cavalry_offensive = -0.1
+		horse_archers_offensive = 0.05
+		horse_archers_defensive = 0.3
+	}
+}
+
+NOMADIC_RETTYPE_CAV3 = {
+	first_type = 3 # Light Cavalry
+	first_amount = 200
+
+	second_type = 6 # Special Troops
+	second_amount = 50
+
+	special_troops = horse_archers
+
+	hire_cost = 75
+	costs_prestige = yes
+
+	maintenance_multiplier = 0.5
+
+	potential = {
+		government = nomadic_tribal_government
+	}
+
+	modifier = {
+		light_cavalry_defensive = 0.3
+		light_cavalry_offensive = -0.1
+		horse_archers_offensive = 0.05
+		horse_archers_defensive = 0.3
+	}
+}
+
+NOMADIC_RETTYPE_CAV4 = {
+	first_type = 3 # Light Cavalry
+	first_amount = 150
+
+	second_type = 6 # Special Troops
+	second_amount = 100
+
+	special_troops = horse_archers
+
+	hire_cost = 50
+
+	maintenance_multiplier = 0.3
+
+	potential = {
+		government = nomadic_tribal_government
+	}
+
+	modifier = {
+		light_cavalry_defensive = 0.55
+		horse_archers_offensive = 0.3
+		horse_archers_defensive = 0.55
+	}
+}
+
+NOMADIC_RETTYPE_CAV5 = {
+	first_type = 3 # Light Cavalry
+	first_amount = 200
+
+	second_type = 4 # Heavy Cavalry
+	second_amount = 50
+
+	hire_cost = 100
+
+	maintenance_multiplier = 0.3
+
+	potential = {
+		government = nomadic_tribal_government
+
+		# This stops the Mongol Empire from spending all their money on super-expensive retinues
+		NOT = { has_character_modifier = invading_population_halt }
+	}
+
+	modifier = {
+		light_cavalry_offensive = 0.05
+		light_cavalry_defensive = 0.3
+		knights_defensive = 0.05
+	}
+}
+
+NOMADIC_RETTYPE_CAV6 = {
+	first_type = 3 # Light Cavalry
+	first_amount = 100
+
+	second_type = 4 # Heavy Cavalry
+	second_amount = 150
+
+	hire_cost = 150
+
+	maintenance_multiplier = 0.3
+
+	potential = {
+		government = nomadic_tribal_government
+
+		# This stops the Mongol Empire from spending all their money on super-expensive retinues
+		NOT = { has_character_modifier = invading_population_halt }
+	}
+
+	modifier = {
+		light_cavalry_offensive = 0.05
+		light_cavalry_defensive = 0.3
+		knights_defensive = 0.05
+	}
+}
+
+NOMADIC_RETTYPE_CAV7 = {
+	first_type = 6 # Special Troops
+	first_amount = 250
+
+	special_troops = horse_archers
+
+	hire_cost = 150
+
+	maintenance_multiplier = 0.3
+
+	potential = {
+		government = nomadic_tribal_government
+
+		# This stops the Mongol Empire from spending all their money on super-expensive retinues
+		NOT = { has_character_modifier = invading_population_halt }
+	}
+
+	modifier = {
+		horse_archers_offensive = 0.55
+		horse_archers_defensive = 0.8
+	}
+}
+
+NOMADIC_RETTYPE_PAGAN = {
+	first_type = 3 # Light Cavalry
+	first_amount = 125
+
+	second_type = 6 # Special Troops
+	second_amount = 125
+
+	special_troops = horse_archers
+
+	hire_cost = 50
+	costs_piety = yes
+
+	maintenance_multiplier = 0.25
+
+	potential = {
+		government = nomadic_tribal_government
+		religion_group = pagan_group
+	}
+
+	modifier = {
+		light_cavalry_defensive = 0.3
+		light_cavalry_offensive = -0.1
+		horse_archers_offensive = 0.05
+		horse_archers_defensive = 0.3
+	}
+}
+
+NOMADIC_RETTYPE_MUSLIM = {
+	first_type = 6 # Special Troops
+	first_amount = 125
+
+	second_type = 5 # Archers
+	second_amount = 125
+
+	special_troops = horse_archers
+
+	hire_cost = 50
+	costs_piety = yes
+
+	maintenance_multiplier = 0.25
+
+	potential = {
+		government = nomadic_tribal_government
+		religion_group = muslim
+	}
+
+	modifier = {
+		archers_offensive = 0.05
+		archers_defensive = 0.3
+		horse_archers_offensive = 0.05
+		horse_archers_defensive = 0.3
+	}
+}
+
+NOMADIC_RETTYPE_CHRISTIAN = {
+	first_type = 2 # Pikemen
+	first_amount = 125
+
+	second_type = 6 # Special Troops
+	second_amount = 125
+
+	special_troops = horse_archers
+
+	hire_cost = 75
+	costs_piety = yes
+
+	maintenance_multiplier = 0.25
+
+	potential = {
+		government = nomadic_tribal_government
+		religion_group = christian
+	}
+
+	modifier = {
+		pikemen_defensive = 0.05
+		horse_archers_offensive = 0.05
+		horse_archers_defensive = 0.3
+	}
+}
+
+NOMADIC_RETTYPE_ZOROASTRIAN = {
+	first_type = 1 # Heavy Infantry
+	first_amount = 125
+
+	second_type = 6 # Special Troops
+	second_amount = 125
+
+	special_troops = horse_archers
+
+	hire_cost = 75
+	costs_piety = yes
+
+	maintenance_multiplier = 0.25
+
+	potential = {
+		government = nomadic_tribal_government
+		religion_group = zoroastrian_group
+	}
+
+	modifier = {
+		heavy_infantry_defensive = 0.05
+		horse_archers_offensive = 0.05
+		horse_archers_defensive = 0.3
+	}
+}
+
+NOMADIC_RETTYPE_JEWISH = {
+	first_type = 3 # Light Cavalry
+	first_amount = 125
+
+	second_type = 1 # Heavy Infantry
+	second_amount = 125
+
+	special_troops = horse_archers
+
+	hire_cost = 50
+	costs_piety = yes
+
+	maintenance_multiplier = 0.25
+
+	potential = {
+		government = nomadic_tribal_government
+		religion_group = jewish_group
+	}
+
+	modifier = {
+		heavy_infantry_defensive = 0.05
+		light_cavalry_defensive = 0.55
+	}
+}
+
+NOMADIC_RETTYPE_EASTERN = {
+	first_type = 0 # Light Infantry
+	first_amount = 125
+
+	second_type = 3 # Light Cavalry
+	second_amount = 125
+
+	special_troops = horse_archers
+
+	hire_cost = 50
+	costs_piety = yes
+
+	maintenance_multiplier = 0.25
+
+	potential = {
+		government = nomadic_tribal_government
+		religion_group = indian_group
+	}
+
+	modifier = {
+		light_infantry_offensive = 0.05
+		light_infantry_defensive = 0.3
+		light_cavalry_defensive = 0.3
+		light_cavalry_offensive = -0.1
+	}
+}
+
+NOMADIC_RETTYPE_INDIAN = {
+	first_type = 3 # Light Cavalry
+	first_amount = 200
+
+	second_type = 6 # Special Troops
+	second_amount = 50
+
+	special_troops = war_elephants
+
+	hire_cost = 250
+
+	potential = {
+		government = nomadic_tribal_government
+
+		capital_scope = {
+			region = world_india
+		}
+
+		# This stops the Mongol Empire from spending all their money on super-expensive retinues
+		NOT = { has_character_modifier = invading_population_halt }
+	}
+
+	modifier = {
+		light_cavalry_offensive = 0.05
+		light_cavalry_defensive = 0.3
+		war_elephants_morale = 0.05
+	}
+}
+
+NOMADIC_RETTYPE_DESERT = {
+	first_type = 3 # Light Cavalry
+	first_amount = 100
+
+	second_type = 6 # Special Troops
+	second_amount = 150
+
+	special_troops = camel_cavalry
+
+	hire_cost = 250
+
+	potential = {
+		government = nomadic_tribal_government
+
+		capital_scope = {
+			terrain = desert
+		}
+
+		# This stops the Mongol Empire from spending all their money on super-expensive retinues
+		NOT = { has_character_modifier = invading_population_halt }
+	}
+
+	modifier = {
+		light_cavalry_offensive = 0.05
+		light_cavalry_defensive = 0.3
+		camel_cavalry_offensive = 0.05
+		camel_cavalry_defensive = 0.3
+	}
+}
+
+NOMADIC_RETTYPE_EUROPE = {
+	first_type = 4 # Heavy Cavalry
+	first_amount = 250
+
+	hire_cost = 250
+
+	potential = {
+		government = nomadic_tribal_government
+
+		# This stops the Mongol Empire from spending all their money on super-expensive retinues
+		NOT = { has_character_modifier = invading_population_halt }
+	}
+
+	modifier = {
+		knights_offensive = 0.05
+		knights_defensive = -0.05
+	}
+}

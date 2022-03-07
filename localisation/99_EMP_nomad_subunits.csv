@@ -1,0 +1,16 @@
+NOMADIC_RETTYPE_CAV1;Light Rider;Cavalerie légère;Leichte Reiter;;Jinete ligero;;;;;;;;;x
+NOMADIC_RETTYPE_CAV2;Marauder;Maraudeurs;Marodeur;;Merodeador/ora;;;;;;;;;x
+NOMADIC_RETTYPE_CAV3;Skirmish Cavalry;Cavalerie d'escarmouche;Scharmützel-Kavallerie;;Caballería de hostigamiento;;;;;;;;;x
+NOMADIC_RETTYPE_CAV4;Light Horse Archer;Archers à cheval légers;Leichte berittene Bogenschützen;;Arquero de caballería ligera;;;;;;;;;x
+NOMADIC_RETTYPE_CAV5;Light Vanguard;Première ligne légère;Leichte Vorhut;;Vanguardia ligera;;;;;;;;;x
+NOMADIC_RETTYPE_CAV6;Heavy Vanguard;Première ligne lourde;Schwere Vorhut;;Vanguardia pesada;;;;;;;;;x
+NOMADIC_RETTYPE_CAV7;Horse Archer;Archers à cheval;Berittene Bogenschützen;;Arquero a caballo;;;;;;;;;x
+NOMADIC_RETTYPE_CHRISTIAN;Keraite Auxiliaries;Auxiliaires kéraïtes;Karäische Hilfstruppen;;Auxiliares keraitas;;;;;x
+NOMADIC_RETTYPE_DESERT;Camel Cavalry;Chameaux de cavalerie;Kamelkavallerie;;Caballería del camellos;;;;;;;;;x
+NOMADIC_RETTYPE_EASTERN;Khitan Auxiliaries;Auxiliaires khitans;Kitanische Hilfstruppen;;Auxiliares kitan;;;;;x
+NOMADIC_RETTYPE_EUROPE;Lancer;Lanciers;Lanzenreiter;;Lancero;;;;;;;;;x
+NOMADIC_RETTYPE_INDIAN;Elephant Cavalry;Éléphants de cavalerie;Elefantenkavallerie;;Caballería de elefantes;;;;;;;;;x
+NOMADIC_RETTYPE_JEWISH;Khazarian Auxiliaries;Auxiliaires khazars;Chasarische Hilfstruppen;;Auxiliares jázaros;;;;;x
+NOMADIC_RETTYPE_MUSLIM;Bolghar Auxiliaries;Auxiliaires bolgars;Bolgarische Hilfstruppen;;Auxiliares búlgar;;;;;x
+NOMADIC_RETTYPE_PAGAN;Riders of the Open Sky;Chevaucheurs du Ciel dégagé;Reiter der Offenen Himmel;;Jinetes del Cielo abierto;;;;;x
+NOMADIC_RETTYPE_ZOROASTRIAN;Parthian Auxiliaries;Auxiliaires parthes;Partherrische Hilfstruppen;;Auxiliares partos;;;;;x

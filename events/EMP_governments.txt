@@ -37,6 +37,7 @@ character_event = {
 
 	immediate = {
 		set_government_type = nomadic_tribal_government
+		character_event = { id = EMP.11005 }
 	}
 }
 
