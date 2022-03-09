@@ -25,14 +25,24 @@ character_event = {
 		# calc empty holding in realm
 		any_realm_province = {
 			limit = {
+				trigger_if = {
+					limit = { has_game_start = yes }
+
+					has_province_modifier = nomad_population
+				}
+				trigger_else = {
+					owner = {
+						government = nomadic_tribal_government
+					}
+				}
 				OR = {
 					terrain = steppe
 					terrain = plains
 					terrain = desert
 					terrain = farmlands
 				}
-				owner = {
-					government = nomadic_tribal_government
+				capital_holding = {
+					holding_type = tribal
 				}
 			}
 			ROOT = {
@@ -60,7 +70,7 @@ character_event = {
 			}
 			if = {
 				limit = {
-					total_years_played > 1
+					has_game_start = yes
 				}
 				subtract_variable = {
 					which = empty_holdings_total
@@ -186,7 +196,7 @@ character_event = {
 					}
 					add_character_modifier = {
 						name = hidden_nomad_horde_mp
-						days = 365
+						days = 385
 						stacking = yes
 					}
 				}
@@ -4829,13 +4839,17 @@ character_event = {
 			limit = {
 				independent = yes
 				is_tributary = no
+				ai = yes
 			}
 
 			create_retinue = NOMADIC_RETTYPE_CAV4
 			create_retinue = NOMADIC_RETTYPE_CAV4
 		}
 		else_if = {
-			limit = { higher_tier_than = COUNT }
+			limit = {
+				higher_tier_than = COUNT
+				ai = yes
+			}
 
 			create_retinue = NOMADIC_RETTYPE_CAV4
 		}
@@ -4897,6 +4911,12 @@ character_event = {
 		any_demesne_province = {
 			limit = {
 				culture_group = ROOT
+				OR = {
+					terrain = steppe
+					terrain = plains
+					terrain = desert
+					terrain = farmlands
+				}
 			}
 			add_province_modifier = {
 				name = nomad_population

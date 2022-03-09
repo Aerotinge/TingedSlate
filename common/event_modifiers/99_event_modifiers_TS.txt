@@ -18,6 +18,7 @@ hidden_nomad_horde_mp = {
 	}
 	icon = 56
 	retinuesize = 225
+	monthly_character_wealth = 0.13
 }
 
 pet_warhorse = {

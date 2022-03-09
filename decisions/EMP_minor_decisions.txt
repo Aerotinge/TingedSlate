@@ -185,6 +185,4 @@ decisions = {
 			factor = 0 # decisions with the "is_mercenary" will not be calculated from the script
 		}
 	}
-	
-	# over_vassal_limit nomad vassal release as a nomad tribute khanate
 }
