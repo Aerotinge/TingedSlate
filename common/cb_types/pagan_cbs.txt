@@ -579,7 +579,7 @@ pagan_subjugation = {
 
 			add_character_modifier = {
 				name = launched_subjugation
-				years = 1000
+				duration = -1
 				hidden = yes
 			}
 		}

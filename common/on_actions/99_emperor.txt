@@ -8,12 +8,15 @@ on_startup = {
 		}
 	}
 	events = {
+		# Title Status Setup
+		EMP.20210
 		# Governor title Setup
 		EMP.15010
 		# Nomadic tribal
 		EMP.11002
 		EMP.11003
 		EMP.11021
+		EMP.11007
 		# Holy Roman Empire setup
 		EMP.12110
 		# Papacy setup

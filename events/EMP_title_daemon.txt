@@ -1,0 +1,39 @@
+# landed_title setup
+character_event = {
+	id = EMP.20210
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_startup
+
+	trigger = {
+		is_multiplayer_host_character = yes
+		is_save_game = yes
+	}
+
+	immediate = {
+		any_title = {
+			limit = {
+				higher_real_tier_than = COUNT
+				OR = {
+					has_title_flag = CustomTitular
+					has_title_flag = CustomLandless
+				}
+			}
+
+			if = {
+				limit = { has_title_flag = CustomTitular }
+
+				de_jure_liege = 0
+			}
+			if = {
+				limit = { has_title_flag = CustomLandless } # see also 60504
+
+				set_title_landless = {
+					title = THIS
+					status = yes
+				}
+			}
+		}
+	}
+}

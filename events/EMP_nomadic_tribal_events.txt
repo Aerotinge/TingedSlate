@@ -4879,6 +4879,128 @@ character_event = {
 	}
 }
 
+
+character_event = {
+    id = EMP.11007
+    hide_window = yes
+	
+    only_playable = yes
+	is_triggered_only = yes # on_startup
+	
+	lacks_dlc = "Horse Lords"
+
+    trigger = {
+		government = nomadic_tribal_government
+		is_save_game = no
+    }
+
+	immediate = {
+		# De jure title swappiness
+		any_demesne_title = {
+			limit = {
+				higher_tier_than = COUNT
+				is_primary_holder_title = no
+				is_titular = no
+			}
+			destroy_landed_title = THIS
+			recalc_succession = yes
+		}
+		# Kingdom
+		any_demesne_title = {
+			limit = {
+				is_titular = no
+				real_tier = KING
+			}
+
+			create_title = {
+				tier = KING
+				name = "THIS_BNAME"
+				culture = THIS
+				base_title = THIS
+				holder = ROOT
+			}
+			new_title = {
+				save_event_target_as = new_dejure_title
+			}
+			any_direct_de_jure_vassal_title = {
+				# de_jure_liege = event_target:new_dejure_title # Will trigger loop here
+				save_persistent_event_target = {
+					name = new_dejure
+					scope = event_target:new_dejure_title
+				}
+			}
+			dejure_liege_title = {
+				event_target:new_dejure_title = {
+					de_jure_liege = PREV
+					destroy_landed_title = THIS
+					activate_title = {
+						title = THIS
+						status = yes
+					}
+					copy_title_history = e_timurids # Format history
+				}
+			}
+			# The attributes of titles that pre-defined in /landed_titles will be override on every startup
+			# Therefore I need flag to setup them up on every startup later
+			set_title_flag = CustomTitular
+			de_jure_liege = 0
+		}
+		# Duchy
+		any_demesne_title = {
+			limit = {
+				is_titular = no
+				real_tier = DUKE
+			}
+
+			create_title = {
+				tier = DUKE
+				name = "THIS_BNAME"
+				culture = THIS
+				base_title = THIS
+				holder = ROOT
+			}
+			new_title = {
+				save_event_target_as = new_dejure_title
+			}
+			any_direct_de_jure_vassal_title = {
+				# de_jure_liege = event_target:new_dejure_title # Will trigger loop here
+				save_persistent_event_target = {
+					name = new_dejure
+					scope = event_target:new_dejure_title
+				}
+			}
+			dejure_liege_title = {
+				event_target:new_dejure_title = {
+					de_jure_liege = PREV
+					destroy_landed_title = THIS
+					activate_title = {
+						title = THIS
+						status = yes
+					}
+					copy_title_history = e_timurids # Format history
+				}
+			}
+			# The attributes of titles that pre-defined in /landed_titles will be override on every startup
+			# Therefore I need flag to setup them up on every startup later
+			set_title_flag = CustomTitular
+			de_jure_liege = 0
+		}
+	}
+
+	after = {
+		any_title = {
+			limit = {
+				persistent_event_target:new_dejure = {
+					always = yes
+				}
+			}
+
+			de_jure_liege = persistent_event_target:new_dejure
+			clear_persistent_event_target = new_dejure
+		}
+	}
+}
+
 character_event = {
     id = EMP.11008
     hide_window = yes
@@ -4897,7 +5019,7 @@ character_event = {
 		set_variable = { which = "empty_holdings_total" value = 0 }
 		remove_character_modifiers = {
 			modifier = hidden_nomad_horde_mp
-			amount = 35
+			amount = 315
 		}
 	}
 }
@@ -4928,7 +5050,7 @@ character_event = {
 					}
 				}
 			}
-			prestige = 300 # Lazy Compensation for Nomad-Lowborn marriage, for their prestige always fucked up on_start
+			prestige = 300 # Lazy Compensation for Nomad-Lowborn marriage, for their prestige always fucked up on_startup
 		}
 		any_demesne_province = {
 			limit = {

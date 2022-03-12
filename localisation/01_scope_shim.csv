@@ -1,9 +1,16 @@
 ROOT_NAME;[Root.GetName];[Root.GetName];[Root.GetName];;[Root.GetName];;;;;;;;;x
 PREV_NAME;[Prev.GetName];[Prev.GetName];[Prev.GetName];;[Prev.GetName];;;;;;;;;x
 FROM_NAME;[From.GetName];[From.GetName];[From.GetName];;[From.GetName];;;;;;;;;x
+THIS_NAME;[This.GetName];[This.GetName];[This.GetName];;[This.GetName];;;;;;;;;x
 ROOT_ADJ;[Root.GetAdjective];[Root.GetAdjective];[Root.GetAdjective];;[Root.GetAdjective];;;;;;;;;x
 PREV_ADJ;[Prev.GetAdjective];[Prev.GetAdjective];[Prev.GetAdjective];;[Prev.GetAdjective];;;;;;;;;x
 FROM_ADJ;[From.GetAdjective];[From.GetAdjective];[From.GetAdjective];;[From.GetAdjective];;;;;;;;;x
+THIS_ADJ;[This.GetAdjective];[This.GetAdjective];[This.GetAdjective];;[This.GetAdjective];;;;;;;;;x
 ROOT_FNAME;[Root.GetFirstName];[Root.GetFirstName];[Root.GetFirstName];;[Root.GetFirstName];;;;;;;;;x
 PREV_FNAME;[Prev.GetFirstName];[Prev.GetFirstName];[Prev.GetFirstName];;[Prev.GetFirstName];;;;;;;;;x
 FROM_FNAME;[From.GetFirstName];[From.GetFirstName];[From.GetFirstName];;[From.GetFirstName];;;;;;;;;x
+THIS_FNAME;[This.GetFirstName];[This.GetFirstName];[This.GetFirstName];;[This.GetFirstName];;;;;;;;;x
+ROOT_BNAME;[Root.GetBaseName];[Root.GetBaseName];[Root.GetBaseName];;[Root.GetBaseName];;;;;;;;;x
+PREV_BNAME;[Prev.GetBaseName];[Prev.GetBaseName];[Prev.GetBaseName];;[Prev.GetBaseName];;;;;;;;;x
+FROM_BNAME;[From.GetBaseName];[From.GetBaseName];[From.GetBaseName];;[From.GetBaseName];;;;;;;;;x
+THIS_BNAME;[This.GetBaseName];[This.GetBaseName];[This.GetBaseName];;[This.GetBaseName];;;;;;;;;x

@@ -8,6 +8,7 @@ can_create_title = {
 can_create_duchy = {
 	can_create_title = yes
 	# empty for vanilla
+	NOT = { government = nomadic_tribal_government }
 }
 
 can_create_kingdom = {
