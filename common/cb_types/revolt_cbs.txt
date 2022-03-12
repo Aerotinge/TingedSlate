@@ -353,45 +353,6 @@ heretic_revolt = {
 				}
 				set_government_type = theocracy_government
 			}
-			else_if = { # Goes Republic if available
-				limit = {
-					capital_scope = {
-						any_province_holding = {
-							OR = {
-								holding_type = city
-								holding_type = castle
-							}
-							holder = attacker
-						}
-					}
-				}
-
-				capital_scope = {
-					random_province_holding = {
-						limit = {
-							is_capital = no
-							OR = {
-								holding_type = city
-								holding_type = castle
-							}
-							holder = attacker
-						}
-						preferred_limit = {
-							holding_type = city
-						}
-
-						make_capital_holding = yes
-					}
-				}
-				any_demesne_title = { # Required for set_government_type below
-					limit = {
-						rebel = yes
-					}
-
-					unsafe_destroy_landed_title = THIS
-				}
-				set_government_type = republic_government
-			}
 			recalc_succession = yes
 		}
 
@@ -635,45 +596,6 @@ religious_revolt = {
 					unsafe_destroy_landed_title = THIS
 				}
 				set_government_type = theocracy_government
-			}
-			else_if = { # Goes Republic if available
-				limit = {
-					capital_scope = {
-						any_province_holding = {
-							OR = {
-								holding_type = city
-								holding_type = castle
-							}
-							holder = attacker
-						}
-					}
-				}
-
-				capital_scope = {
-					random_province_holding = {
-						limit = {
-							is_capital = no
-							OR = {
-								holding_type = city
-								holding_type = castle
-							}
-							holder = attacker
-						}
-						preferred_limit = {
-							holding_type = city
-						}
-
-						make_capital_holding = yes
-					}
-				}
-				any_demesne_title = { # Required for set_government_type below
-					limit = {
-						rebel = yes
-					}
-
-					unsafe_destroy_landed_title = THIS
-				}
-				set_government_type = republic_government
 			}
 			recalc_succession = yes
 		}
@@ -1059,15 +981,26 @@ nomadic_revolt = {
 					}
 				}
 
-				any_demesne_title = { # Required for set_government_type below
+				if = {
 					limit = {
-						rebel = yes
+						capital_holding = { is_tribal = yes	}
 					}
 
-					unsafe_destroy_landed_title = THIS
+					any_demesne_title = { # Required for set_government_type below
+						limit = {
+							rebel = yes
+						}
+
+						unsafe_destroy_landed_title = THIS
+					}
+
+					set_government_type = nomadic_tribal_government
+					prestige = 50
+					piety = 25
+					character_event = { id = EMP.11002 }
+					character_event = { id = EMP.11006 }
+					recalc_succession = yes
 				}
-				set_government_type = nomadic_tribal_government
-				recalc_succession = yes
 
 				any_realm_province = {
 					limit = {

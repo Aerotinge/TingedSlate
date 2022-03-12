@@ -87,46 +87,26 @@ feudal_governments = {
 					has_game_started = no
 				}
 
-				OR = {
-					culture_group = east_slavic
-					culture = bulgarian
-					culture = serbian
-					culture = vlach
-					culture_group = baltic
-					culture_group = finno_ugric
-					culture_group = magyar
-				}
+				has_regionalism_culture = yes
 			}
 			trigger_else_if = {
 				limit = {
-					OR = {
-						culture_group = east_slavic
-						culture = bulgarian
-						culture = serbian
-						culture = vlach
-						culture_group = baltic
-						culture_group = finno_ugric
-						culture_group = magyar
-					}
+					has_regionalism_culture = yes
 				}
 
-				primary_title = {
-					NOR = {
-						has_law = feudal_contract_0
-						has_law = feudal_contract_1
-						has_law = feudal_contract_2
-						has_law = feudal_contract_3
-					}
+				NOR = {
+					has_law = feudal_contract_0
+					has_law = feudal_contract_1
+					has_law = feudal_contract_2
+					has_law = feudal_contract_3
 				}
 			}
 			trigger_else = {
-				primary_title = {
-					OR = {
-						has_law = manorial_contract_0
-						has_law = manorial_contract_1
-						has_law = manorial_contract_2
-						has_law = manorial_contract_3
-					}
+				OR = {
+					has_law = manorial_contract_0
+					has_law = manorial_contract_1
+					has_law = manorial_contract_2
+					has_law = manorial_contract_3
 				}
 			}
 
@@ -642,8 +622,10 @@ feudal_governments = {
 			is_vice_royalty = yes
 			real_tier = DUKE
 
-			liege = {
-				government = roman_imperial_government
+			OR = {
+				de_facto_liege_title = e_byzantium
+				de_facto_liege_title = e_roman_empire
+				de_facto_liege_title = e_nicaea
 			}
 		}
 

@@ -315,6 +315,7 @@ RETTYPE_CUL_ENG = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		OR = {
 			culture = english
 			culture = welsh
@@ -333,6 +334,7 @@ RETTYPE_CUL_SCOT = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = scottish
 	}
 
@@ -349,6 +351,7 @@ RETTYPE_CUL_BALT = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 
 		OR = {
 			culture_group = baltic
@@ -373,6 +376,7 @@ RETTYPE_CUL_ALTAIC = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 
 		OR = {
 			culture_group = altaic
@@ -397,6 +401,7 @@ RETTYPE_CUL_FRANK_NOR_GER = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 
 		OR = {
 			culture = french
@@ -420,6 +425,7 @@ RETTYPE_CUL_IBER = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = iberian
 	}
 
@@ -435,6 +441,7 @@ RETTYPE_CUL_ITA = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 
 		OR = {
 			culture = italian
@@ -458,6 +465,7 @@ RETTYPE_CUL_ROMAN = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = roman
 	}
 
@@ -477,6 +485,7 @@ RETTYPE_CUL_RUS = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = east_slavic
 	}
 
@@ -493,6 +502,7 @@ RETTYPE_CUL_NORTHGER = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 
 		OR = {
 			culture_group = north_germanic
@@ -514,6 +524,7 @@ RETTYPE_CUL_HUNG = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 
 		OR = {
 			culture = hungarian
@@ -535,6 +546,7 @@ RETTYPE_CUL_ARAB = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = arabic
 
 		NOR = {
@@ -556,6 +568,7 @@ RETTYPE_CUL_ANDALUSIAN = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = andalusian_arabic
 	}
 
@@ -572,6 +585,7 @@ RETTYPE_CUL_BERBER = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = maghreb_arabic
 	}
 
@@ -592,6 +606,7 @@ RETTYPE_CUL_BYZ = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = byzantine
 
 		NOR = {
@@ -615,6 +630,7 @@ RETTYPE_CUL_IRISH = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = irish
 	}
 
@@ -630,6 +646,7 @@ RETTYPE_CUL_ETHIO = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = ethiopian
 	}
 
@@ -645,6 +662,7 @@ RETTYPE_CUL_SOMALI = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = somali
 	}
 
@@ -663,6 +681,7 @@ RETTYPE_CUL_W_AFR = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 
 		OR = {
 			culture_group = west_african
@@ -687,6 +706,7 @@ RETTYPE_CUL_SOUTH_SLA = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = south_slavic
 	}
 
@@ -707,6 +727,7 @@ RETTYPE_CUL_DUTCH = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = dutch
 	}
 
@@ -729,6 +750,7 @@ RETTYPE_CUL_NAHUA = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = nahua
 	}
 
@@ -746,6 +768,7 @@ RETTYPE_CUL_JEWISH = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = israelite
 	}
 
@@ -766,6 +789,7 @@ RETTYPE_CUL_INDIAN = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 
 		OR = {
 			culture_group = indo_aryan_group
@@ -785,6 +809,7 @@ RETTYPE_CUL_NUBIAN = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = nubian
 	}
 
@@ -800,6 +825,7 @@ RETTYPE_CUL_FRA = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = frankish
 	}
 
@@ -816,6 +842,7 @@ RETTYPE_CUL_LOM = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = lombard
 	}
 
@@ -834,6 +861,7 @@ RETTYPE_CUL_SUEBI = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = suebi
 	}
 
@@ -854,6 +882,7 @@ RETTYPE_CUL_PICTISH = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = pictish
 	}
 
@@ -1286,6 +1315,7 @@ RETTYPE_CUL_HAN = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = han
 	}
 
@@ -1307,6 +1337,7 @@ RETTYPE_CUL_TIBET = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = tibetan_group
 	}
 
@@ -1329,6 +1360,7 @@ RETTYPE_CUL_JURCHEN = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = jurchen
 	}
 
@@ -1346,6 +1378,7 @@ RETTYPE_CUL_ASSYRIAN = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = assyrian
 	}
 
@@ -1364,6 +1397,7 @@ RETTYPE_CUL_COPTIC = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = coptic
 	}
 
@@ -1379,6 +1413,7 @@ RETTYPE_CUL_HORSE = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = horse_group
 	}
 
@@ -1394,6 +1429,7 @@ RETTYPE_CUL_CAT = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = cat_group
 	}
 
@@ -1409,6 +1445,7 @@ RETTYPE_CUL_BEAR = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = bear_group
 	}
 
@@ -1424,6 +1461,7 @@ RETTYPE_CUL_HEDGEHOG = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = hedgehog_group
 	}
 
@@ -1439,6 +1477,7 @@ RETTYPE_CUL_DUCK = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = duck_group
 	}
 
@@ -1455,6 +1494,7 @@ RETTYPE_CUL_DOG = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = dog_group
 	}
 
@@ -1472,6 +1512,7 @@ RETTYPE_CUL_ELEPHANT = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = elephant_group
 	}
 
@@ -1487,6 +1528,7 @@ RETTYPE_CUL_DRAGON = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture_group = dragon_group
 	}
 
@@ -1507,6 +1549,7 @@ RETTYPE_CUL_OUTREMER = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = outremer
 	}
 
@@ -1524,6 +1567,7 @@ RETTYPE_CUL_ARBERIAN = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = arberian
 	}
 
@@ -1543,6 +1587,7 @@ RETTYPE_CUL_SAR = {
 
 	potential = {
 		is_nomadic = no
+		NOT = { government = nomadic_tribal_government }
 		culture = sardinian
 	}
 

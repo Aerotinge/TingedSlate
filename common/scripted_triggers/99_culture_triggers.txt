@@ -5,6 +5,7 @@ has_clan_culture = {
 		OR = {
 			culture = turkish
 			culture = karluk
+			culture = uyghur
 			culture = mongol
 			culture = khitan
 			culture = bedouin_arabic
@@ -29,6 +30,28 @@ has_clan_culture = {
 			culture = kurdish
 			culture = afghan
 			culture = baloch
+		}
+	}
+}
+
+has_regionalism_culture = {
+	custom_tooltip = {
+		text = HAS_REGIONALISM_CULTURE
+
+		OR = {
+			culture_group = east_slavic
+			culture = bulgarian
+			culture = serbian
+			culture = vlach
+			culture = pecheneg
+			culture = cuman
+			culture = khazar
+			culture = bolghar
+			culture = avar
+			culture = kirghiz
+			culture_group = baltic
+			culture_group = finno_ugric
+			culture_group = magyar
 		}
 	}
 }

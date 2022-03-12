@@ -2234,8 +2234,8 @@ spawn_nomadic_army_effect = {
 					attrition = 0.25
 
 					troops = {
-						light_cavalry = { 130 130 }
-						horse_archers = { 120 120 }
+						light_cavalry = { 175 175 }
+						horse_archers = { 75 75 }
 					}
 				}
 
@@ -2251,8 +2251,8 @@ spawn_nomadic_army_effect = {
 						disband_on_peace = yes
 
 						troops = {
-							light_cavalry = { 130 130 }
-							horse_archers = { 120 120 }
+							light_cavalry = { 175 175 }
+							horse_archers = { 75 75 }
 						}
 					}
 				}
@@ -2267,7 +2267,7 @@ spawn_nomadic_army_effect = {
 					attrition = 0.25
 
 					troops = {
-						horse_archers = { 250 250 }
+						light_cavalry = { 250 250 }
 					}
 				}
 
@@ -2283,7 +2283,7 @@ spawn_nomadic_army_effect = {
 						disband_on_peace = yes
 
 						troops = {
-							horse_archers = { 250 250 }
+							light_cavalry = { 250 250 }
 						}
 					}
 				}
@@ -2332,8 +2332,8 @@ spawn_nomadic_army_effect = {
 					leader = THIS
 
 					troops = {
-						light_cavalry = { 130 130 }
-						horse_archers = { 120 120 }
+						light_cavalry = { 175 175 }
+						horse_archers = { 75 75 }
 					}
 				}
 
@@ -2348,8 +2348,8 @@ spawn_nomadic_army_effect = {
 						disband_on_peace = yes
 
 						troops = {
-							light_cavalry = { 130 130 }
-							horse_archers = { 120 120 }
+							light_cavalry = { 175 175 }
+							horse_archers = { 75 75 }
 						}
 					}
 				}
@@ -2363,7 +2363,7 @@ spawn_nomadic_army_effect = {
 					leader = THIS
 
 					troops = {
-						horse_archers = { 250 250 }
+						light_cavalry = { 250 250 }
 					}
 				}
 
@@ -2378,7 +2378,7 @@ spawn_nomadic_army_effect = {
 						disband_on_peace = yes
 
 						troops = {
-							horse_archers = { 250 250 }
+							light_cavalry = { 250 250 }
 						}
 					}
 				}
@@ -2464,8 +2464,8 @@ spawn_nomadic_reinforcements_effect = {
 					attrition = 0.25
 
 					troops = {
-						light_cavalry = { 130 130 }
-						horse_archers = { 120 120 }
+						light_cavalry = { 175 175 }
+						horse_archers = { 75 75 }
 					}
 				}
 
@@ -2481,8 +2481,8 @@ spawn_nomadic_reinforcements_effect = {
 						disband_on_peace = yes
 
 						troops = {
-							light_cavalry = { 130 130 }
-							horse_archers = { 120 120 }
+							light_cavalry = { 175 175 }
+							horse_archers = { 75 75 }
 						}
 					}
 				}
@@ -2497,7 +2497,7 @@ spawn_nomadic_reinforcements_effect = {
 					attrition = 0.25
 
 					troops = {
-						horse_archers = { 250 250 }
+						light_cavalry = { 250 250 }
 					}
 				}
 
@@ -2513,7 +2513,7 @@ spawn_nomadic_reinforcements_effect = {
 						disband_on_peace = yes
 
 						troops = {
-							horse_archers = { 250 250 }
+							light_cavalry = { 250 250 }
 						}
 					}
 				}
@@ -2562,8 +2562,8 @@ spawn_nomadic_reinforcements_effect = {
 					leader = THIS
 
 					troops = {
-						light_cavalry = { 130 130 }
-						horse_archers = { 120 120 }
+						light_cavalry = { 175 175 }
+						horse_archers = { 75 75 }
 					}
 				}
 
@@ -2578,8 +2578,8 @@ spawn_nomadic_reinforcements_effect = {
 						disband_on_peace = yes
 
 						troops = {
-							light_cavalry = { 130 130 }
-							horse_archers = { 120 120 }
+							light_cavalry = { 175 175 }
+							horse_archers = { 75 75 }
 						}
 					}
 				}
@@ -2593,7 +2593,7 @@ spawn_nomadic_reinforcements_effect = {
 					leader = THIS
 
 					troops = {
-						horse_archers = { 250 250 }
+						light_cavalry = { 250 250 }
 					}
 				}
 
@@ -2608,7 +2608,7 @@ spawn_nomadic_reinforcements_effect = {
 						disband_on_peace = yes
 
 						troops = {
-							horse_archers = { 250 250 }
+							light_cavalry = { 250 250 }
 						}
 					}
 				}

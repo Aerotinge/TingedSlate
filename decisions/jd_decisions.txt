@@ -639,7 +639,7 @@ decisions = {
 						}
 
 						AND = {
-							prestige < 0
+							prestige < -50
 
 							ROOT = {
 								prestige >= 0
@@ -680,7 +680,7 @@ decisions = {
 						}
 
 						AND = {
-							prestige < 0
+							prestige < -50
 
 							ROOT = {
 								prestige >= 0

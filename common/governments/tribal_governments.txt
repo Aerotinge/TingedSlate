@@ -180,6 +180,7 @@ tribal_governments = {
 			global_garrison_size = -3 # -300%
 			retinuesize_perc = 3
 		}
+
 		demesne_size = 2
 		vassal_limit = -10
 	}

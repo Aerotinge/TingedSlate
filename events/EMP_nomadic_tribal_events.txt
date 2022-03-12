@@ -20,13 +20,13 @@ character_event = {
     }
 
 	immediate = {
-		# TODO: handle over_vassal_limit, in case a Khan has tons of ally troop while no penalty since we don't use levy and tax system on nomadic_tribal_government
 		set_variable = { which = "empty_holdings_total" value = 0 } # empty_holdings_total cap at 35
-		# calc empty holding in realm
-		any_realm_province = {
+		# calc empty holding in demesne
+		#any_realm_province = {
+		any_demesne_province = {
 			limit = {
 				trigger_if = {
-					limit = { has_game_start = yes }
+					limit = { has_game_started = yes }
 
 					has_province_modifier = nomad_population
 				}
@@ -58,148 +58,170 @@ character_event = {
 				}
 			}
 		}
-		ROOT = {
-			# over demesne penalty
-			export_to_variable = {
-				which = over_prov_total
-				value = over_max_demesne_size
-			}
-			multiply_variable = {
-				which = over_prov_total
-				value = 5
-			}
-			if = {
-				limit = {
-					has_game_start = yes
+		# over demesne penalty
+		export_to_variable = {
+			which = over_prov_total
+			value = over_max_demesne_size
+		}
+		multiply_variable = {
+			which = over_prov_total
+			value = 5
+		}
+		subtract_variable = {
+			which = empty_holdings_total
+			which = over_prov_total
+		}
+		# over vassal penalty
+		export_to_variable = {
+			which = over_vass_total
+			value = over_vassal_limit
+		}
+		multiply_variable = {
+			which = over_vass_total
+			value = 3
+		}
+		subtract_variable = {
+			which = empty_holdings_total
+			which = over_vass_total
+		}
+		# Base coefficient
+		#multiply_variable = {
+		#	which = empty_holdings_total
+		#	value = 1
+		#}
+		divide_variable = {
+			which = empty_holdings_total
+			value = 3
+		}
+		# and modified by martial of ROOT
+		export_to_variable = {
+			which = character_martial
+			value = martial
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = character_martial
+					value > 20
 				}
-				subtract_variable = {
+			}
+			set_variable = {
+				which = character_martial
+				value = 20
+			}
+		}
+		change_variable = {
+			which = character_martial
+			value = -10
+		}
+		divide_variable = {
+			which = character_martial
+			value = 50
+		}
+		change_variable = {
+			which = character_martial
+			value = 1
+		}
+		multiply_variable = {
+			which = empty_holdings_total
+			which = character_martial
+		}
+		# Base value for independent rulers
+		if = {
+			limit = {
+				independent = yes
+				check_variable = {
 					which = empty_holdings_total
-					which = over_prov_total
+					value < 3
 				}
 			}
-			# Base coefficient
-			#multiply_variable = {
-			#	which = empty_holdings_total
-			#	value = 1
-			#}
-			divide_variable = {
+			set_variable = {
 				which = empty_holdings_total
 				value = 3
 			}
-			# and modified by martial of ROOT
-			export_to_variable = {
-				which = character_martial
-				value = martial
-			}
-			if = {
-				limit = {
-					check_variable = {
-						which = character_martial
-						value > 20
-					}
-				}
-				set_variable = {
-					which = character_martial
-					value = 20
+		}
+		# Boundary check
+		if = {
+			limit = {
+				check_variable = {
+					which = empty_holdings_total
+					value > 35
 				}
 			}
-			change_variable = {
-				which = character_martial
-				value = -10
+			set_variable = {
+				which = empty_holdings_total
+				value = 35
 			}
-			divide_variable = {
-				which = character_martial
-				value = 50
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = empty_holdings_total
+					value < 1
+				}
 			}
-			change_variable = {
-				which = character_martial
+			set_variable = {
+				which = empty_holdings_total
 				value = 1
 			}
-			multiply_variable = {
+		}
+		# cleanup
+		set_variable = {
+			which = empty_holdings
+			value = 0
+		}
+		set_variable = {
+			which = character_martial
+			value = 0
+		}
+		set_variable = {
+			which = over_prov_total
+			value = 0
+		}
+		set_variable = {
+			which = over_vass_total
+			value = 0
+		}
+
+		# Export to modifier stack if LoR is enabled
+		if = {
+			limit = {
+				has_dlc = "Legacy of Rome"
+			}
+
+			remove_character_modifiers = {
+				modifier = hidden_nomad_horde_mp
+				amount = 315
+			}
+			set_variable = {
+				which = empty_holdings_total_conv
 				which = empty_holdings_total
-				which = character_martial
 			}
-			# Base value for independent rulers
-			if = {
-				limit = {
-					independent = yes
-					check_variable = {
-						which = empty_holdings_total
-						value < 3
-					}
-				}
-				set_variable = {
-					which = empty_holdings_total
-					value = 3
-				}
+			multiply_variable = {
+				which = empty_holdings_total_conv
+				value = 9
 			}
-			# Boundary check
-			if = {
+			while = {
 				limit = {
 					check_variable = {
-						which = empty_holdings_total
-						value > 35
+						which = empty_holdings_total_conv
+						value >= 1
 					}
 				}
-				set_variable = {
-					which = empty_holdings_total
-					value = 35
-				}
-			}
-			else_if = {
-				limit = {
-					check_variable = {
-						which = empty_holdings_total
-						value < 1
-					}
-				}
-				set_variable = {
-					which = empty_holdings_total
+
+				subtract_variable = {
+					which = empty_holdings_total_conv
 					value = 1
 				}
-			}
-			# cleanup
-			set_variable = {
-				which = empty_holdings
-				value = 0
-			}
-			set_variable = {
-				which = character_martial
-				value = 0
+				add_character_modifier = {
+					name = hidden_nomad_horde_mp
+					days = 385
+					stacking = yes
+				}
 			}
 			set_variable = {
-				which = over_prov_total
+				which = empty_holdings_total_conv
 				value = 0
-			}
-
-			# Export to modifier stack if LoR is enabled
-			if = {
-				limit = {
-					has_dlc = "Legacy of Rome"
-				}
-
-				remove_character_modifiers = {
-					modifier = hidden_nomad_horde_mp
-					amount = 35
-				}
-				while = {
-					limit = {
-						check_variable = {
-							which = empty_holdings_total
-							value >= 1
-						}
-					}
-
-					subtract_variable = {
-						which = empty_holdings_total
-						value = 1
-					}
-					add_character_modifier = {
-						name = hidden_nomad_horde_mp
-						days = 385
-						stacking = yes
-					}
-				}
 			}
 		}
 	}

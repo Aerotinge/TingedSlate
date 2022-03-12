@@ -8,7 +8,6 @@ hre_elector_modifier = {
 nomad_population = {
 	icon = 57
 	tribal_tax_modifier = -1
-	supply_limit = -5
 	#tech_growth_modifier = -1
 }
 
@@ -17,8 +16,8 @@ hidden_nomad_horde_mp = {
 		#always = no
 	}
 	icon = 56
-	retinuesize = 225
-	monthly_character_wealth = 0.13
+	retinuesize = 25
+	monthly_character_wealth = 0.01
 }
 
 pet_warhorse = {

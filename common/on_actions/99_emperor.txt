@@ -1,12 +1,18 @@
 #character
 on_startup = {
+	effect = {
+		if = {
+			limit = { is_save_game = no }
+
+			character_event = { id = EMP.11005 }
+		}
+	}
 	events = {
 		# Governor title Setup
 		EMP.15010
 		# Nomadic tribal
 		EMP.11002
 		EMP.11003
-		EMP.11005
 		EMP.11021
 		# Holy Roman Empire setup
 		EMP.12110

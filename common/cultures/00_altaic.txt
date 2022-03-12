@@ -494,6 +494,7 @@ altaic = {
 		from_dynasty_prefix = "of "
 
 		allow_looting = yes
+		dynasty_title_names = yes
 		dukes_called_kings = yes
 		founder_named_dynasties = yes
 		nomadic_in_alt_start = yes
@@ -609,7 +610,6 @@ altaic = {
 		dynasty_title_names = yes
 		dukes_called_kings = yes
 		dynasty_name_first = yes
-		dynasty_title_names = yes
 		founder_named_dynasties = yes
 		horde = yes
 		nomadic_in_alt_start = yes
