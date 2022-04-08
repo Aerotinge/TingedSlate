@@ -903,6 +903,7 @@ nomadic_revolt = {
 	war_name = WAR_NAME_NOMADIC_REVOLT
 	sprite = 16
 	truce_days = 365
+	battle_warscore_mult = 1.5
 
 	hostile_against_others = yes
 	attacker_can_call_allies = no
@@ -983,7 +984,7 @@ nomadic_revolt = {
 
 				if = {
 					limit = {
-						capital_holding = { is_tribal = yes	}
+						capital_holding = { holding_type = tribal }
 					}
 
 					any_demesne_title = { # Required for set_government_type below

@@ -15,6 +15,7 @@ NDefines.NReligion.REFORM_RELIGION_MIN_HOLY_SITES = 2				-- Number of holy sites
 NDefines.NMilitary.RETINUE_FROM_REALMSIZE = 0.8
 NDefines.NMilitary.RETINUE_INCREASE_PER_TECH = 0.35
 NDefines.NMilitary.MERCENARY_HIRE_DISTANCE_THRESHOLD = 200			-- Mercs will not be available if the province of origin is more distant from your capital
+NDefines.NMilitary.LOOT_TAX_MULTIPLIER = 1.3						-- Base gold looted from raided holdings is (tax * LOOT_TAX_MULTIPLIER) + (total building value * LOOT_BUILDING_MULTIPLIER)
 NDefines.NEngine.MISSING_SCRIPTED_SUCCESSOR_ERROR_CUTOFF_YEAR = 769	-- The missing scripted successor error will not be shown before this date
 NDefines.NEngine.MISSING_SCRIPTED_SUCCESSOR_ERROR_CUTOFF_MONTH = 1
 NDefines.NEngine.MISSING_SCRIPTED_SUCCESSOR_ERROR_CUTOFF_DAY = 1

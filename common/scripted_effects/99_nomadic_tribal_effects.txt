@@ -1,0 +1,439 @@
+get_closest_realm_province_effect = {
+	random_realm_province = {
+		limit = {
+			#can_land_path_to = { target = event_target:target_province }
+			any_neighbor_province = {
+				owner = {
+					NOT = {
+						same_realm = PREVPREVPREV
+					}
+				}
+			}
+		}
+		preferred_limit = {
+			any_neighbor_province = { province = event_target:target_province }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 10 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 20 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 30 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 40 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 50 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 60 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 70 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 80 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 90 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 100 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 110 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 120 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 130 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 140 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 150 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 160 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 170 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 180 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 190 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 200 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 210 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 220 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 230 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 240 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 250 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 260 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 270 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 280 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 290 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 300 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 310 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 320 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 330 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 340 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 350 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 360 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 370 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 380 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 390 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 400 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 410 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 420 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 430 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 440 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 450 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 460 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 470 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 480 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 490 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 500 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 510 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 520 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 530 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 540 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 550 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 560 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 570 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 580 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 590 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 600 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 610 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 620 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 630 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 640 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 650 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 660 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 670 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 680 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 690 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 700 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 710 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 720 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 730 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 740 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 750 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 760 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 770 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 780 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 790 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 800 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 810 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 820 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 830 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 840 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 850 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 860 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 870 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 880 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 890 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 900 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 910 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 920 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 930 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 940 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 950 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 960 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 970 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 980 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 990 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1000 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1010 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1020 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1030 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1040 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1050 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1060 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1070 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1080 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1090 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1100 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1110 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1120 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1130 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1140 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1150 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1160 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1170 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1180 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1190 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1200 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1210 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1220 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1230 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1240 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1250 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1260 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1270 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1280 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1290 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1300 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1310 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1320 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1330 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1340 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1350 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1360 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1370 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1380 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1390 }
+		}
+		preferred_limit = {
+			can_land_path_to = { target = event_target:target_province distance < 1400 }
+		}
+
+		save_event_target_as = closest_realm_province
+	}
+}

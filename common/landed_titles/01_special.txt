@@ -112,6 +112,8 @@ e_il-khanate = {
 
 	capital = 1449 # Esfahan
 
+	title = ILKHAN
+
 	# Always exists
 	# landless = yes
 

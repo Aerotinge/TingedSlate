@@ -16,18 +16,18 @@ character_event = {
 			limit = {
 				higher_real_tier_than = COUNT
 				OR = {
-					has_title_flag = CustomTitular
-					has_title_flag = CustomLandless
+					has_title_flag = HasCustomDejure
+					has_title_flag = temporary_landless_title
 				}
 			}
 
 			if = {
-				limit = { has_title_flag = CustomTitular }
+				limit = { has_title_flag = HasCustomDejure }
 
 				de_jure_liege = 0
 			}
 			if = {
-				limit = { has_title_flag = CustomLandless } # see also 60504
+				limit = { has_title_flag = temporary_landless_title } # see also 60504
 
 				set_title_landless = {
 					title = THIS

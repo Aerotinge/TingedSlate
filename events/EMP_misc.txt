@@ -1,0 +1,21 @@
+namespace = EMP
+
+# House arrest instead of dungeon imprisonment by default
+character_event = {
+	id = EMP.20310
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_character_modifier = the_dungeon
+	}
+
+	immediate = {
+		remove_character_modifier = the_dungeon
+		add_character_modifier = { 
+			name = house_arrest
+			duration = -1
+		}
+	}
+}

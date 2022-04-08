@@ -2869,22 +2869,34 @@ decisions = {
 		allow = {
 			war = no
 
-			primary_title = {
-				OR = {
-					has_law = tribal_organization_3
-					has_law = tribal_organization_4
-				}
+			OR = {
+				has_law = tribal_organization_3
+				has_law = tribal_organization_4
 			}
 
 			trigger_if = {
 				limit = {
-					primary_title = {
-						NOT = { has_law = tribal_organization_4 }
-						is_unreformed_pagan_trigger = yes
-					}
+					NOT = { has_law = tribal_organization_4 }
+					is_unreformed_pagan_trigger = yes
 				}
 
 				is_not_unreformed_pagan_trigger = yes
+			}
+
+			TECH_LEGALISM >= 2
+			trigger_if = {
+				limit = {
+					has_clan_culture = no
+				}
+
+				TECH_NOBLE_CUSTOMS >= 2
+			}
+			trigger_if = {
+				limit = {
+					has_regionalism_culture = no
+				}
+
+				TECH_MAJESTY >= 2
 			}
 
 			capital_holding = {
@@ -2896,21 +2908,11 @@ decisions = {
 						trigger_if = {
 							limit = {
 								ROOT = {
-									OR = {
-										culture_group = east_slavic
-										#culture_group = south_slavic
-										#culture = bosnian
-										culture = bulgarian
-										culture = serbian
-										culture = vlach
-										culture_group = baltic
-										culture_group = finno_ugric
-									}
+									has_regionalism_culture = yes
 								}
 							}
 
 							OR = {
-								has_building = tb_hillfort_2
 								has_building = tb_hillfort_3
 								has_building = tb_hillfort_4
 							}
@@ -2919,7 +2921,7 @@ decisions = {
 							OR = {
 								AND = {
 									has_building = tb_hillfort_3
-									has_building = tb_defensive_fortifications_3
+									has_building = tb_defensive_fortifications_1
 								}
 								has_building = tb_hillfort_4
 							}
@@ -2939,17 +2941,6 @@ decisions = {
 				set_character_flag = achievement_not_a_tribe
 			}
 
-			if = {
-				limit = {
-					higher_tier_than = KING
-					NOT = { has_dlc = "Conclave" }
-				}
-
-				primary_title = {
-					add_law = feudal_administration
-				}
-			}
-
 			any_demesne_title = {
 				limit = {
 					is_law_potential = tribal_organization_0
@@ -2957,27 +2948,31 @@ decisions = {
 				revoke_tribal_organization_effect = yes
 			}
 
-			custom_tooltip = {
-				set_government_type = feudal_government
+			if = {
+				limit = { is_government_potential = patrimonial_government }
+				set_government_type = patrimonial_government
+			}
+			else_if = {
+				limit = { is_government_potential = mandala_government }
+				set_government_type = mandala_government
+			}
+			else_if = {
+				limit = { is_government_potential = clan_government }
+				set_government_type = clan_government
+			}
+			else_if = {
+				limit = { is_government_potential = manorial_government }
+				set_government_type = manorial_government
+			}
+			else_if = {
+				limit = { is_government_potential = tibetan_feudal_government }
+				set_government_type = tibetan_feudal_government
+			}
+			else = {
+				set_government_type = feudal_government # Fallback, will switch to right government type automatically
 			}
 
 			hidden_effect = {
-				if = {
-					limit = {
-						capital_holding = {
-							NOR = {
-								has_building = tb_hillfort_4
-								holding_type = castle
-							}
-						}
-					}
-
-					set_government_type = manorial_government # If muslim? Gov overhaual v2 required # It will switch to right government type automatically
-				}
-				else = { # TODO: for tooltip, make if/else_if for each government type converted
-					set_government_type = feudal_government # It will switch to right government type automatically
-				}
-
 				#primary_title = { revoke_tribal_organization_effect = yes }
 
 				any_demesne_title = {
@@ -3004,44 +2999,38 @@ decisions = {
 
 					if = {
 						limit = {
-							NOT = { government = manorial_government }
-						}
+							dejure_liege_title = {
+								holder = ROOT
 
-						if = {
-							limit = {
-								dejure_liege_title = {
-									holder = ROOT
-
-									location = {
-										has_city = no
-										num_of_empty_holdings >= 2
-									}
-								}
-							}
-
-							location = {
-								build_holding = {
-									type = city
+								location = {
+									has_city = no
+									num_of_empty_holdings >= 2
 								}
 							}
 						}
 
-						if = {
-							limit = {
-								dejure_liege_title = {
-									holder = ROOT
+						location = {
+							build_holding = {
+								type = city
+							}
+						}
+					}
 
-									location = {
-										has_temple = no
-										num_of_empty_holdings >= 2
-									}
+					if = {
+						limit = {
+							dejure_liege_title = {
+								holder = ROOT
+
+								location = {
+									has_temple = no
+									num_of_empty_holdings >= 2
 								}
 							}
+						}
 
-							location = {
-								build_holding = {
-									type = temple
-								}
+						location = {
+							build_holding = {
+								type = temple
 							}
 						}
 					}

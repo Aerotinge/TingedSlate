@@ -6064,7 +6064,7 @@ narrative_event = {
 							status = yes
 						}
 
-						set_title_flag = CustomLandless
+						set_title_flag = temporary_landless_title
 						grant_title = PREV
 					}
 
@@ -6122,7 +6122,7 @@ narrative_event = {
 						status = yes
 					}
 
-					set_title_flag = CustomLandless
+					set_title_flag = temporary_landless_title
 					grant_title = PREV
 				}
 
@@ -6378,14 +6378,14 @@ character_event = {
 
 		e_mongol_empire = {
 			holder = ROOT
-			has_title_flag = CustomLandless
+			has_title_flag = temporary_landless_title
 			is_landless_type_title = yes
 		}
 	}
 
 	immediate = {
 		e_mongol_empire = {
-			clr_title_flag = CustomLandless
+			clr_title_flag = temporary_landless_title
 
 			set_title_landless = {
 				title = THIS

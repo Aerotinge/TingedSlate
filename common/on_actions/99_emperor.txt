@@ -16,7 +16,6 @@ on_startup = {
 		EMP.11002
 		EMP.11003
 		EMP.11021
-		EMP.11007
 		# Holy Roman Empire setup
 		EMP.12110
 		# Papacy setup
@@ -38,6 +37,24 @@ on_yearly_pulse = {
 on_siege_over_winner = {
 	events = {
 		EMP.11035 # Nomadic rebels take county capital
+	}
+}
+
+on_birth = {
+	events = {
+		EMP.20310 # House arrest instead of dungeon imprisonment by default
+	}
+}
+
+on_become_imprisoned_any_reason = {
+	events = {
+		EMP.20310 # House arrest instead of dungeon imprisonment by default
+	}
+}
+
+on_became_imprisoned = {
+	events = {
+		EMP.20310 # House arrest instead of dungeon imprisonment by default
 	}
 }
 
@@ -112,12 +129,21 @@ on_new_holder_usurpation = {
 		EMP.13140
 		# Tribal Organization Cleanup
 		EMP.20010
+		# Unlanded Nomadic ruler goes raiding adventurer
+		EMP.11050
 	}
 	random_events = {
 		recalc_nomad_holding = {
 			delay = 1
 			100 = EMP.11002
 		}
+	}
+}
+
+on_unlanded = {
+	events = {
+		# Holy Roman Empire
+		EMP.12120
 	}
 }
 
@@ -176,15 +202,6 @@ on_offmap_yearly_pulse = {
 	}
 }
 
-on_unlanded = {
-	events = {
-		# Nomadic tribal
-		EMP.11008 #Landless nomad clean-up
-		# Holy Roman Empire
-		EMP.12120
-	}
-}
-
 # Triggers when a player renames a character. Note that the player is not provided as a scope. This includes the "newborn" event
 # ROOT is the renamed character
 on_character_renamed = {
@@ -193,5 +210,15 @@ on_character_renamed = {
 		EMP.12130
 		# Papacy
 		EMP.13130
+	}
+}
+
+# Triggers when a change of employer has been detected. Note that the FROM scope is empty for newly created characters.
+# ROOT is character that got a new employer
+# FROM is previous employer
+# FROMFROM is new employer
+on_employer_change = {
+	events = {
+		EMP.11051
 	}
 }

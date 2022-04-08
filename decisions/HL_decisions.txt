@@ -6,6 +6,7 @@ decisions = {
 
 		potential = {
 			has_character_flag = raiding_adventurer
+			NOT = { has_character_flag = raiding_adventurer_nomad }
 			is_nomadic = no
 			ai = yes
 			war = no
@@ -82,6 +83,7 @@ decisions = {
 				attrition = 0
 			#	disband_on_peace = yes
 				reinforces = yes
+				reinforce_rate_multiplier = 0.25
 				is_looter = yes
 				can_toggle_looting = no
 				cannot_inherit = yes
@@ -186,6 +188,7 @@ decisions = {
 				attrition = 0
 				#disband_on_peace = yes
 				reinforces = yes
+				reinforce_rate_multiplier = 0.25
 				is_looter = yes
 				can_toggle_looting = no
 				cannot_inherit = yes
