@@ -497,63 +497,54 @@ can_be_spiritual_trigger = {
 			}
 		}
 		trigger_else_if = {
-			limit = {
-				religion_group = muslim
-			}
+			limit = { religion_group = muslim }
 
 			has_education_learning_trigger = yes
 		}
 		trigger_else_if = {
-			limit = {
-				has_pentarchy = yes
-			}
+			limit = { has_pentarchy = yes }
 
 			trigger_if = {
 				limit = {
 					liege = {
-						government = roman_imperial_government
-						any_vassal = {
-							has_landed_title = k_orthodox
-						}
-					}
-				}
-
-				has_landed_title = k_orthodox
-			}
-			trigger_else_if = {
-				limit = {
-					liege = {
-						has_landed_title = e_hre
-						any_vassal = {
-							has_landed_title = k_papacy
-						}
-					}
-				}
-
-				has_landed_title = k_papacy
-			}
-			trigger_else_if = {
-				limit = {
-					liege = {
-						primary_title = {
-							persistent_event_target:pentarch_title = {
-								tier = BARON
-								holder_scope = {
-									character = ROOT
-								}
-							}
+						rightful_religious_head_scope = {
+							is_theocracy = yes
+							character = PREVPREV
+							vassal_of = PREV
 						}
 					}
 				}
 
 				liege = {
-					primary_title = {
-						persistent_event_target:pentarch_title = {
-							holder_scope = {
-								character = ROOT
+					rightful_religious_head_scope = {
+						is_theocracy = yes
+						character = PREVPREV
+						vassal_of = PREV
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					liege = {
+						any_vassal = {
+							is_theocracy = yes
+							OR = {
+								has_landed_title = b_roma
+								has_landed_title = b_alexandria
+								has_landed_title = b_antioch
+								has_landed_title = b_jerusalem
+								has_landed_title = b_hagiasophia
 							}
 						}
 					}
+				}
+
+				OR = {
+					has_landed_title = b_roma
+					has_landed_title = b_alexandria
+					has_landed_title = b_antioch
+					has_landed_title = b_jerusalem
+					has_landed_title = b_hagiasophia
 				}
 			}
 		}
@@ -561,7 +552,7 @@ can_be_spiritual_trigger = {
 		trigger_if = {
 			limit = {
 				is_theocracy = no
-				NOT = { religion_group = muslim }
+				religion_allows_temple_holders = yes
 			}
 
 			trigger_if = {
@@ -586,21 +577,21 @@ can_be_spiritual_trigger = {
 					}
 				}
 				is_theocracy = yes
-
-				trigger_if = {
-					limit = {
-						liege = {
-							is_theocracy = yes
-							higher_real_tier_than = DUKE
-						}
-					}
-
-					always = no # Do not want an extra patriach within ecumenical patriarchate
-				}
 			}
 			trigger_else = {
 				is_ruler = no
 			}
+		}
+
+		trigger_if = {
+			limit = {
+				liege = {
+					is_theocracy = yes
+					higher_real_tier_than = DUKE
+				}
+			}
+
+			always = no # Do not want an extra patriach within ecumenical patriarchate
 		}
 	}
 }
