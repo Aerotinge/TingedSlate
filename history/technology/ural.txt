@@ -2,7 +2,7 @@
 
 technology = {
 	titles = {
-		d_bashkirs
+		d_bashkiria
 		d_komi
 		d_perm
 		d_ural

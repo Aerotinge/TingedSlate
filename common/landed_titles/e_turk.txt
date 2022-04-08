@@ -23,7 +23,7 @@ e_turk = {
 
 	short_name = yes
 
-	k_cuman = {
+	k_cumania = {
 		color = { 231 192 88 }
 		color2 = { 255 255 255 }
 

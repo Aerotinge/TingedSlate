@@ -7,7 +7,7 @@ technology = {
 		d_halsingland
 		d_ostergotland
 		d_smaland
-		d_tioharad
+		d_varend
 		d_uppland
 		d_vastergotland
 		d_holstein
@@ -24,7 +24,7 @@ technology = {
 		d_vestlandet
 		d_finland
 		d_karelia
-		d_ostrobothnia
+		d_osterbotten
 		d_savonia
 		d_estonia
 		d_kola

@@ -46,12 +46,12 @@ settlement_decisions = {
 			trigger_if = {
 				limit = {
 					FROM = {
-						has_landed_title = e_russian_empire
+						has_landed_title = e_russia
 					}
 				}
 
 				FROM = {
-					has_landed_title = e_russian_empire
+					has_landed_title = e_russia
 				}
 
 				has_building = tb_hillfort_1
@@ -1453,7 +1453,7 @@ settlement_decisions = {
 							has_landed_title = e_mongol_empire
 							has_landed_title = e_golden_horde
 							has_landed_title = e_chagatai
-							has_landed_title = e_il-khanate
+							has_landed_title = e_ilkhanate
 						}
 					}
 				}

@@ -355,7 +355,7 @@ decisions = {
 		potential = {
 			OR = {
 				has_landed_title = d_saxony
-				has_landed_title = d_munster_germany
+				has_landed_title = d_westphalia
 				has_landed_title = d_bremen
 				has_landed_title = d_angria
 				trigger_if = {
@@ -397,7 +397,7 @@ decisions = {
 
 		allow = {
 			completely_controls = d_saxony
-			completely_controls = d_munster_germany
+			completely_controls = d_westphalia
 			completely_controls = d_bremen
 			completely_controls = d_angria
 			trigger_if = {
@@ -448,7 +448,7 @@ decisions = {
 				d_saxony = {
 					de_jure_liege = k_saxony
 				}
-				d_munster_germany = {
+				d_westphalia = {
 					de_jure_liege = k_saxony
 				}
 				d_bremen = {

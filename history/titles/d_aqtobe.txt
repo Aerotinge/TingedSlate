@@ -4,7 +4,7 @@
 
 1060.1.1 = {
 	set_tribute_suzerain = {
-		who = k_cuman
+		who = k_cumania
 		type = nomadic
 	}
 	holder = 228057
@@ -31,6 +31,6 @@
 }
 
 1227.1.2 = {
-	clear_tribute_suzerain = k_cuman
+	clear_tribute_suzerain = k_cumania
 	holder = 0
 }

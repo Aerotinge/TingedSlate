@@ -1,5 +1,5 @@
 752.1.1 = {
-	liege = d_turkestan
+	liege = d_aral
 	holder = 188824
 }
 
@@ -9,7 +9,7 @@
 }
 
 936.1.1 = {
-	liege = d_turkestan
+	liege = d_aral
 	holder = 261027
 }
 

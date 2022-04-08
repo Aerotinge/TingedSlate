@@ -11,8 +11,8 @@
 
 1192.5.3 = {
 	holder = 223500 #Guy of Lusignan
-#	law = zcognatic_succession
-#	law = zsucc_primogeniture
+#	law = cognatic_succession
+#	law = succ_primogeniture
 }
 
 1194.4.1 = {

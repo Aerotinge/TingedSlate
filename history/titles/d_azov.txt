@@ -94,7 +94,7 @@
 
 1066.1.1 = {
 	set_tribute_suzerain = {
-		who = k_cuman
+		who = k_cumania
 		type = nomadic
 	}
 	holder = 161730
@@ -125,7 +125,7 @@
 }
 
 1238.1.1 = {
-	clear_tribute_suzerain = k_cuman
+	clear_tribute_suzerain = k_cumania
 	liege = e_golden_horde
 	holder = 34885
 }

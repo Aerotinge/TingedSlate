@@ -8,7 +8,7 @@
 }
 
 860.1.1 = {
-	liege = d_lombardia
+	liege = d_milano
 }
 
 860.1.1 = {
@@ -68,7 +68,7 @@
 }
 
 1220.1.1 = {
-	liege = d_lombardia
+	liege = d_milano
 }
 
 1236.1.1 = {

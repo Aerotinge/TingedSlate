@@ -9,17 +9,17 @@ technology = {
 		d_silesia
 		d_brandenburg
 		d_mecklemburg
-		d_pomeralia
+		d_pomerelia
 		d_pomerania
 		d_rugen
 
 		# Lithuania		
-		d_courland
+		d_curonia
 		d_latgale
 		d_lithuania
 		d_livonia
 		d_prussia
-		d_samogitia
+		d_scalovia
 		d_yatvingia
 
 		d_novgorod
@@ -28,8 +28,8 @@ technology = {
 		d_rostov
 		d_tver
 		d_vladimir
-		d_yaroslavl 			# Vologda
-		d_cherven_cities
+		d_vologda
+		d_red_ruthenia
 		d_galich
 		d_volhynia
 		d_kiev
@@ -45,7 +45,7 @@ technology = {
 		d_bryansk
 		d_novosil
 		d_ryazan
-		d_moldau
+		d_moldavia
 		d_esztergom
 		d_nyitra
 		d_pecs

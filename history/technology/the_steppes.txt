@@ -28,7 +28,7 @@ technology = {
 
 		d_emba
 		d_syr_darya
-		d_turkestan			# Aral
+		d_aral			# Aral
 		d_usturt
 		d_chuy
 		d_ili

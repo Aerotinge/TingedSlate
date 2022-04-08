@@ -19,12 +19,12 @@
 }
 
 1041.1.1 = {
-	liege = d_esfahan
+	liege = d_mafaza
 	holder = 248556
 }
 
 1066.1.1 = {
-	liege = d_kermanshah
+	liege = d_luristan
 	holder = 93197
 }
 

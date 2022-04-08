@@ -100,11 +100,9 @@ can_be_chancellor_trigger = {
 		trait = in_hiding
 		has_character_modifier = resigned_in_anger
 
-		liege = {
-			has_opinion_modifier = {
-				name = opinion_resigned_from_council
-				who = ROOT
-			}
+		reverse_has_opinion_modifier = {
+			name = opinion_resigned_from_council
+			who = liege
 		}
 	}
 
@@ -188,11 +186,9 @@ can_be_marshal_trigger = {
 		trait = in_hiding
 		has_character_modifier = resigned_in_anger
 
-		liege = {
-			has_opinion_modifier = {
-				name = opinion_resigned_from_council
-				who = ROOT
-			}
+		reverse_has_opinion_modifier = {
+			name = opinion_resigned_from_council
+			who = liege
 		}
 	}
 
@@ -275,11 +271,9 @@ can_be_treasurer_trigger = {
 		trait = in_hiding
 		has_character_modifier = resigned_in_anger
 
-		liege = {
-			has_opinion_modifier = {
-				name = opinion_resigned_from_council
-				who = ROOT
-			}
+		reverse_has_opinion_modifier = {
+			name = opinion_resigned_from_council
+			who = liege
 		}
 	}
 
@@ -363,11 +357,9 @@ can_be_spymaster_trigger = {
 		trait = in_hiding
 		has_character_modifier = resigned_in_anger
 
-		liege = {
-			has_opinion_modifier = {
-				name = opinion_resigned_from_council
-				who = ROOT
-			}
+		reverse_has_opinion_modifier = {
+			name = opinion_resigned_from_council
+			who = liege
 		}
 	}
 
@@ -471,11 +463,9 @@ can_be_spiritual_trigger = {
 		trait = in_hiding
 		has_character_modifier = resigned_in_anger
 
-		liege = {
-			has_opinion_modifier = {
-				name = opinion_resigned_from_council
-				who = ROOT
-			}
+		reverse_has_opinion_modifier = {
+			name = opinion_resigned_from_council
+			who = liege
 		}
 	}
 
@@ -584,15 +574,19 @@ can_be_spiritual_trigger = {
 				limit = {
 					liege = {
 						has_autocephaly = yes
+
+						OR = {
+							any_vassal = {
+								is_theocracy = yes
+								is_voter = no
+							}
+
+							job_spiritual = { is_theocracy = yes }
+						}
 					}
 				}
-				liege = {
-					NOT = {
-						any_vassal = { is_theocracy = yes }
-					}
-				}
-				is_ruler = no
-				
+				is_theocracy = yes
+
 				trigger_if = {
 					limit = {
 						liege = {
@@ -601,7 +595,7 @@ can_be_spiritual_trigger = {
 						}
 					}
 
-					always = no # Do not want an extra patriach of ecumenical patriarchate
+					always = no # Do not want an extra patriach within ecumenical patriarchate
 				}
 			}
 			trigger_else = {
@@ -621,11 +615,9 @@ can_be_councilmember_king_trigger = {
 		trait = in_hiding
 		has_character_modifier = resigned_in_anger
 
-		liege = {
-			has_opinion_modifier = {
-				name = opinion_resigned_from_council
-				who = ROOT
-			}
+		reverse_has_opinion_modifier = {
+			name = opinion_resigned_from_council
+			who = liege
 		}
 	}
 
@@ -685,11 +677,9 @@ can_be_councilmember_emperor_trigger = {
 		trait = in_hiding
 		has_character_modifier = resigned_in_anger
 
-		liege = {
-			has_opinion_modifier = {
-				name = opinion_resigned_from_council
-				who = ROOT
-			}
+		reverse_has_opinion_modifier = {
+			name = opinion_resigned_from_council
+			who = liege
 		}
 	}
 
@@ -934,11 +924,9 @@ can_still_be_marshal_byzantine_trigger = {
 		has_character_modifier = guru
 		has_character_modifier = resigned_in_anger
 
-		liege = {
-			has_opinion_modifier = {
-				name = opinion_resigned_from_council
-				who = ROOT
-			}
+		reverse_has_opinion_modifier = {
+			name = opinion_resigned_from_council
+			who = liege
 		}
 	}
 }

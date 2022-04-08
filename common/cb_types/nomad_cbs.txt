@@ -1450,7 +1450,7 @@ nomad_invasion = {
 					dynasty = 800 # Timurids
 
 					primary_title = {
-						title = e_il-khanate
+						title = e_ilkhanate
 					}
 				}
 			}
@@ -1494,7 +1494,7 @@ nomad_invasion = {
 
 				defender = {
 					primary_title = {
-						title = e_il-khanate
+						title = e_ilkhanate
 					}
 
 					year < 1300
@@ -1519,7 +1519,7 @@ nomad_invasion = {
 			empire = {
 				OR = {
 					title = e_turk
-					title = e_russia
+					title = e_rus
 				}
 			}
 		}
@@ -1538,8 +1538,8 @@ nomad_invasion = {
 					title = e_turk
 					title = e_turan
 					title = e_scythia
-					title = e_idel_ural
-					title = e_russia
+					title = e_idel-ural
+					title = e_rus
 					title = e_persia
 				}
 			}
@@ -1879,7 +1879,7 @@ nomad_expansion = {
 					dynasty = 800 # Timurids
 
 					primary_title = {
-						title = e_il-khanate
+						title = e_ilkhanate
 					}
 				}
 			}
@@ -1923,7 +1923,7 @@ nomad_expansion = {
 
 				defender = {
 					primary_title = {
-						title = e_il-khanate
+						title = e_ilkhanate
 					}
 
 					year < 1300

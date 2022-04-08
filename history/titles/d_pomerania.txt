@@ -20,8 +20,8 @@
 
 1066.1.1 = {
 	holder = 30522 #Siemomysl
-#	law = zagnatic_succession
-#	law = zsucc_seniority
+#	law = agnatic_succession
+#	law = succ_seniority
 }
 
 1068.1.1 = {

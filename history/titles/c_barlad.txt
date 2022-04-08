@@ -40,7 +40,7 @@
 }
 
 936.1.1 = {
-	liege = d_moldau
+	liege = d_moldavia
 	holder = 260692
 }
 
@@ -63,7 +63,7 @@
 }
 
 1171.1.1 = {
-	liege = d_moldau
+	liege = d_moldavia
 	holder = 34826
 }
 

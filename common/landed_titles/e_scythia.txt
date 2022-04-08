@@ -97,7 +97,7 @@ e_scythia = {
 			color = { 218 179 130 }
 			color2 = { 255 255 255 }
 
-			capital = 614 # Azov
+			capital = 613 # Azov
 
 			allow = {
 				can_create_duchy = yes

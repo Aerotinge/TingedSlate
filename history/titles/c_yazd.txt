@@ -19,7 +19,7 @@
 }
 
 1041.1.1 = {
-	liege = d_esfahan
+	liege = d_mafaza
 	holder = 248555
 }
 
