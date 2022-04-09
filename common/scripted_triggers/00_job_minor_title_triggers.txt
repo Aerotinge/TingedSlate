@@ -508,8 +508,7 @@ can_be_spiritual_trigger = {
 				limit = {
 					liege = {
 						rightful_religious_head_scope = {
-							is_theocracy = yes
-							character = PREVPREV
+							government = theocracy_government
 							vassal_of = PREV
 						}
 					}
@@ -517,41 +516,17 @@ can_be_spiritual_trigger = {
 
 				liege = {
 					rightful_religious_head_scope = {
-						is_theocracy = yes
+						government = theocracy_government
 						character = PREVPREV
 						vassal_of = PREV
 					}
-				}
-			}
-			trigger_else_if = {
-				limit = {
-					liege = {
-						any_vassal = {
-							is_theocracy = yes
-							OR = {
-								has_landed_title = b_roma
-								has_landed_title = b_alexandria
-								has_landed_title = b_antioch
-								has_landed_title = b_jerusalem
-								has_landed_title = b_hagiasophia
-							}
-						}
-					}
-				}
-
-				OR = {
-					has_landed_title = b_roma
-					has_landed_title = b_alexandria
-					has_landed_title = b_antioch
-					has_landed_title = b_jerusalem
-					has_landed_title = b_hagiasophia
 				}
 			}
 		}
 
 		trigger_if = {
 			limit = {
-				is_theocracy = no
+				NOT = { government = theocracy_government }
 				religion_allows_temple_holders = yes
 			}
 
@@ -568,15 +543,15 @@ can_be_spiritual_trigger = {
 
 						OR = {
 							any_vassal = {
-								is_theocracy = yes
-								is_voter = no
+								NOT = { character = ROOT }
+								government = theocracy_government
+								can_hold_title = job_spiritual
 							}
-
-							job_spiritual = { is_theocracy = yes }
+							job_spiritual = { government = theocracy_government }
 						}
 					}
 				}
-				is_theocracy = yes
+				government = theocracy_government
 			}
 			trigger_else = {
 				is_ruler = no
@@ -585,9 +560,10 @@ can_be_spiritual_trigger = {
 
 		trigger_if = {
 			limit = {
-				liege = {
-					is_theocracy = yes
-					higher_real_tier_than = DUKE
+				has_autocephaly = yes
+				religion_head = {
+					higher_tier_than = DUKE
+					character = FROM
 				}
 			}
 

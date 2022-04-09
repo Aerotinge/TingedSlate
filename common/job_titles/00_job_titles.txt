@@ -515,12 +515,13 @@ job_spiritual = {
 				religion = ROOT
 			}
 
-			# Autocephaly lords can't fire Patriarch
+			# Pentarchical lords can't fire Patriarch of the five sees
 			NAND = {
 				has_pentarchy = yes
 				religion = ROOT
 				rightful_religious_head_scope = {
 					character = ROOT
+					# NOTE: Do not combine these five. They are separate for the tooltip
 					trigger_if = {
 						limit = { has_landed_title = b_roma }
 

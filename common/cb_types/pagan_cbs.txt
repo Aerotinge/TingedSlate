@@ -1398,6 +1398,7 @@ tribal_invasion = {
 
 							OR = {
 								has_landed_title = e_mongol_empire
+								has_landed_title = e_aztec_empire
 								has_landed_title = e_mexikha
 							}
 						}
@@ -1603,7 +1604,8 @@ tribal_invasion = {
 
 				if = {
 					limit = {
-						e_mexikha = {
+						e_aztec_empire = {
+						#e_mexikha = {
 							holder = attacker
 						}
 					}
@@ -1794,6 +1796,7 @@ tribal_invasion = {
 					ROOT = {
 						OR = {
 							has_landed_title = e_mongol_empire
+							has_landed_title = e_aztec_empire
 							has_landed_title = e_mexikha
 						}
 					}
