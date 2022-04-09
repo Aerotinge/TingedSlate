@@ -515,36 +515,16 @@ job_spiritual = {
 				religion = ROOT
 			}
 
-			# Pentarchical lords can't fire Patriarch of the five sees
-			NAND = {
-				has_pentarchy = yes
-				religion = ROOT
-				rightful_religious_head_scope = {
-					character = ROOT
-					# NOTE: Do not combine these five. They are separate for the tooltip
-					trigger_if = {
-						limit = { has_landed_title = b_roma }
+			trigger_if = {
+				limit = {
+					higher_real_tier_than = DUKE
+				}
 
-						has_landed_title = b_roma
-					}
-					trigger_else_if = {
-						limit = { has_landed_title = b_alexandria }
-
-						has_landed_title = b_alexandria
-					}
-					trigger_else_if = {
-						limit = { has_landed_title = b_antioch }
-
-						has_landed_title = b_antioch
-					}
-					trigger_else_if = {
-						limit = { has_landed_title = b_jerusalem }
-
-						has_landed_title = b_jerusalem
-					}
-					trigger_else = {
-						has_landed_title = b_hagiasophia
-					}
+				# Autocephalous lords can't fire Patriarchs
+				NAND = {
+					has_autocephaly = yes
+					religion = ROOT
+					rightful_religious_head = ROOT
 				}
 			}
 

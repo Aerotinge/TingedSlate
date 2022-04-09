@@ -502,26 +502,16 @@ can_be_spiritual_trigger = {
 			has_education_learning_trigger = yes
 		}
 		trigger_else_if = {
-			limit = { has_pentarchy = yes }
-
-			trigger_if = {
-				limit = {
-					liege = {
-						rightful_religious_head_scope = {
-							government = theocracy_government
-							vassal_of = PREV
-						}
-					}
-				}
-
+			limit = {
+				has_pentarchy = yes
 				liege = {
-					rightful_religious_head_scope = {
-						government = theocracy_government
-						character = PREVPREV
-						vassal_of = PREV
+					any_vassal = {
+						FROM = { rightful_religious_head = PREV }
 					}
 				}
 			}
+
+			rightful_religious_head = THIS
 		}
 
 		trigger_if = {
