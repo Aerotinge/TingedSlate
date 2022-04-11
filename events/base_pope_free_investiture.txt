@@ -60,13 +60,10 @@ character_event = {
 
 		random_independent_ruler = {
 			limit = {
+				has_law = investiture_law_1
 				higher_real_tier_than = DUKE
 				religion = ROOT
 				rightful_religious_head = ROOT
-
-				primary_title = {
-					has_law = investiture_law_1
-				}
 
 				NOR = {
 					has_character_flag = pope_wants_our_law_changed
@@ -102,15 +99,16 @@ character_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		# No cheating by changing your primary title!
 		primary_title = {
-			save_event_target_as = title_being_demanded
+			save_event_target_as = current_primary_title
 		}
 	}
 
 	option = {
 		name = EVTOPTA67001 # Fold to demand
 
-		event_target:title_being_demanded = {
+		event_target:current_primary_title = {
 			add_law_w_cooldown = investiture_law_0
 		}
 
@@ -391,6 +389,8 @@ character_event = {
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
+
+	ai = no
 
 	option = {
 		name = EVTOPTA67004
