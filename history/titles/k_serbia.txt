@@ -1,25 +1,10 @@
-692.1.1 = {
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 1217.1.1 = {
 	holder = 218507
 }
 
 1219.1.1 = {
-	pentarch = 0
 	effect = {
-		# Already had autocephaly established in 1219
+		# Had autocephaly established in 1219
 		save_persistent_event_target = {
 			name = pentarch_title
 			scope = ROOT

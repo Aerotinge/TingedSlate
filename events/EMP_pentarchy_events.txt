@@ -1,0 +1,23 @@
+namespace = EMP
+
+# Design jurisdiction of the realm under patriarchates of the Pentarchy
+character_event = {
+	id = EMP.20510
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_multiplayer_host_character = yes
+		is_save_game = no
+	}
+
+	immediate = {
+		any_landed_title = {
+			limit = { tier = KING }
+
+			save_event_target_as = pentarchy_assignment
+			set_pentarch_title_effect = yes
+		}
+	}
+}

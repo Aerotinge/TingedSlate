@@ -1,17 +1,3 @@
-692.1.1 = {
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 751.1.1 = {
 	law = agnatic_succession
 }

@@ -1,17 +1,3 @@
-692.1.1 = {
-	pentarch = b_alexandria
-	effect = {
-		b_alexandria = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 # Vandals
 435.1.1 = {
 	holder = 168796 # Genseric

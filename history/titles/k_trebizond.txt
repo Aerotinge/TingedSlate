@@ -1,22 +1,15 @@
-692.1.1 = {
-	pentarch = b_hagiasophia
-	effect = {
-		b_hagiasophia = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 1204.4.1 = {
 	liege = 0
 	holder = 215519
 	law = cognatic_succession
 	law = succ_primogeniture
+	effect = {
+		# No autocephaly established, but made it independent from Ecumenical patriarch under Nicaea
+		save_persistent_event_target = {
+			name = pentarch_title
+			scope = ROOT
+		}
+	}
 }
 
 1222.2.1 = {

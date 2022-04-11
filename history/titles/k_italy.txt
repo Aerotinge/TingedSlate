@@ -19,20 +19,6 @@
 	active = no
 }
 
-692.1.1 = {
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 774.1.1 = {
 	active = yes
 	holder = 6392 #Charlemagne

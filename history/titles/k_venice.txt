@@ -11,20 +11,6 @@
 #b_tradonico
 #b_tribuno
 #b_ziani
-692.1.1 = {
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 811.1.1 = {
 	holder = 184020 #Agnello Participazio
 #	liege = e_byzantium

@@ -1,17 +1,3 @@
-692.1.1 = {
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 1085.6.15 = { # Vratislav II
 	law = agnatic_succession
 	law = succ_seniority

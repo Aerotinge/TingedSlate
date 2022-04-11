@@ -1,17 +1,3 @@
-692.1.1 = {
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 #Historical High Kings of Ireland, have no vassals but their own, yet title gives them proper cb's
 #723.1.1 = {
 #	holder = 7244 # Flaithbertach mac Loingsig

@@ -6,17 +6,6 @@
 	active = yes
 	holder = 482
 	de_jure_liege = e_danubia
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
 }
 
 #1038.1.1 = {

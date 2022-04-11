@@ -1,44 +1,4 @@
-692.1.1 = {
-	pentarch = b_hagiasophia
-	effect = {
-		b_hagiasophia = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 1204.5.16 = {
-	effect = {
-		insert_title_history = e_byzantium
-	}
-	pentarch = b_hagiasophia
-	effect = {
-		b_hagiasophia = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-
 	law = crown_authority_1
 	law = succ_primogeniture
 	law = centralization_2
@@ -47,6 +7,18 @@
 	law = vice_royalty_1
 	law = revoke_title_law_1
 	holder = 215674
+	pentarch = b_hagiasophia
+	effect = {
+		insert_title_history = e_byzantium
+		b_hagiasophia = {
+			ROOT = {
+				save_persistent_event_target = {
+					name = pentarch_title
+					scope = PREV
+				}
+			}
+		}
+	}
 }
 
 1222.8.2 = {

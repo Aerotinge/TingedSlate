@@ -69,20 +69,6 @@
 	holder = 168709 #Clovis IV
 }
 
-692.1.1 = {
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 695.1.1 = {
 	holder = 168711 #Childebert IV
 }

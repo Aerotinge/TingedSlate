@@ -1,17 +1,3 @@
-692.1.1 = {
-	pentarch = b_hagiasophia
-	effect = {
-		b_hagiasophia = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 1261.7.25 = {
 	de_jure_liege = e_nicaea
 }

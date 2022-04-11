@@ -556,49 +556,36 @@
 	holder = 145017
 }
 
-1206.6.26 = {
-	liege = e_nicaea
-	holder = 145018
+1204.5.16 = {
+	liege = k_venice
+	holder = 145062
 }
 
-1214.8.26 = {
-	holder = 145019
+1211.7.1 = {
+	holder = 145063 # 'Fantino Dandolo' of 1211-1215 is an imaginary person
 }
 
-1216.2.27 = {
-	holder = 145020
+1219.11.8 = {
+	holder = 145064
 }
 
-1216.12.1 = {
-	holder = 145021
+1226.12.1 = {
+	holder = 145065
 }
 
-1222.11.1 = {
-	holder = 145022
+1233.3.1 = {
+	holder = 145066
 }
 
-1240.7.1 = {
-	holder = 145023
+1251.6.1 = {
+	holder = 145067
 }
 
-1240.10.1 = {
-	holder = 145024
-}
-
-1254.11.1 = {
+1261.7.25 = {
+	liege = k_orthodox
 	holder = 145025
 }
 
-# 1st reign
-1260.3.1 = {
-	holder = 145026
-}
-
-1261.2.1 = {
-	holder = 145025
-}
-
-# 2nd reign
 1265.5.28 = {
 	holder = 145027
 }

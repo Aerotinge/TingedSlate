@@ -4815,6 +4815,13 @@ character_event = {
 
     trigger = {
         government = nomadic_tribal_government
+		OR = {
+			is_save_game = no
+			FROM = {
+				log = "[This.GetName] trigger EMP.11005"
+				always = yes
+			}
+		}
     }
 
 	immediate = {

@@ -68,20 +68,6 @@
 	holder = 190188 #Cunipert
 }
 
-692.1.1 = {
-	pentarch = b_roma
-	effect = {
-		b_roma = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 700.1.1 = {
 	holder = 190189 #Liutpert
 }

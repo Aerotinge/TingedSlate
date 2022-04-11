@@ -1,17 +1,3 @@
-692.1.1 = {
-	pentarch = b_antioch
-	effect = {
-		b_antioch = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 960.1.1 = {
 	set_global_flag = seljuk_spawned
 }

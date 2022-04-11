@@ -8,20 +8,6 @@
 	holder = 145984
 }
 
-692.1.1 = {
-	pentarch = b_alexandria
-	effect = {
-		b_alexandria = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 696.1.1 = {
 	holder = 145985
 }

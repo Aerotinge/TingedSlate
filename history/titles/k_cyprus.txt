@@ -1,7 +1,7 @@
 692.1.1 = {
 	#pentarch = b_antioch
 	effect = {
-		# Already had autocephaly established in 434
+		# Had autocephaly established in 434
 		save_persistent_event_target = {
 			name = pentarch_title
 			scope = ROOT

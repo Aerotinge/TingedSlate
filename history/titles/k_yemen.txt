@@ -1,17 +1,3 @@
-692.1.1 = {
-	pentarch = b_jerusalem
-	effect = {
-		b_jerusalem = {
-			ROOT = {
-				save_persistent_event_target = {
-					name = pentarch_title
-					scope = PREV
-				}
-			}
-		}
-	}
-}
-
 1063.1.1 = {
 	holder = 45035 # Ali Sulayhid
 }

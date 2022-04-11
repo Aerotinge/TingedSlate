@@ -547,42 +547,35 @@ job_spiritual = {
 	}
 
 	gain_effect = {
-		if = { # Update pentarch whenever a job_spiritual of has_pentarchy religion was there
-			limit = {
-				FROM = {
-					real_tier = KING
+		FROM = {
+			if = { # Design jurisdiction of the realm under patriarchates of the Pentarchy
+				limit = {
+					has_global_flag = on_startup_finished
+					higher_real_tier_than = DUKE
 					has_pentarchy = yes
-					is_heretic = no
-					# King with autocephaly is not going to setup pentarchy in his realm
-					primary_title = {
-						persistent_event_target:pentarch_title = {
-							NOT = { title = PREV }
-						}
-					}
 				}
-			}
 
-			FROM = {
 				any_realm_province = {
-					limit = {
-						kingdom = {
-							NOT = {
-								persistent_event_target:pentarch_title = {
-									always = yes
+					kingdom = {
+						if = {
+							limit = {
+								NOT = {
+									persistent_event_target:pentarch_title = {
+										always = yes
+									}
+								}
+								# unequal to has_pentarchy = no
+								empire = {
+									NOT = {
+										has_pentarchy = yes
+									}
 								}
 							}
-						}
-						# unequal to has_pentarchy = no
-						empire = {
-							NOT = {
-								has_pentarchy = yes
-							}
-						}
-					}
 
-					kingdom = {
-						save_event_target_as = pentarchy_assignment
-						set_pentarch_title_effect = yes
+							save_event_target_as = pentarchy_assignment
+							#log = "From [Prev.GetName], [This.GetName] - [pentarch_title.GetName] as pentarch_title"
+							set_pentarch_title_effect = yes
+						}
 					}
 				}
 			}
