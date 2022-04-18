@@ -331,7 +331,7 @@ decisions = {
 					is_heretic = no
 				}
 				k_bulgaria = {
-					persistent_event_target:pentarch_title = {
+					persistent_event_target:pentarch_de_facto = {
 						title = PREV
 					}
 				}
@@ -366,7 +366,7 @@ decisions = {
 						copy_title_laws = PREV
 						copy_title_history = PREV
 						save_persistent_event_target = {
-							name = pentarch_title
+							name = pentarch_de_facto
 							scope = THIS
 						}
 					}

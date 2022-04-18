@@ -1,3 +1,14 @@
+732.1.1 = {
+	# Leo III transferred Illyria from the patriarchate of Rome to that of Constantinople
+	pentarch = b_hagiasophia
+	effect = {
+		save_persistent_event_target = {
+			name = pentarch_de_jure_drift
+			scope = b_hagiasophia
+		}
+	}
+}
+
 925.1.1 = {
 	holder = 8604
 #	law = agnatic_succession

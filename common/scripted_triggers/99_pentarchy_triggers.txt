@@ -1,0 +1,318 @@
+has_de_jure_pentarchy_pretension = {
+	capital_scope = {
+		trigger_if = {
+			limit = {
+				trigger_if = {
+					limit = {
+						PREV = {
+							persistent_event_target:pentarch_de_jure_drift = {
+								always = yes
+							}
+						}
+					}
+					PREV = {
+						persistent_event_target:pentarch_de_jure_drift = {
+							title = b_roma
+						}
+					}
+				}
+				trigger_else = {
+					OR = {
+						region = world_europe_west
+						region = world_europe_south_sardinia_corsica
+						region = world_europe_south_sicily
+						region = world_europe_south_italy
+						# Illyria
+						province_id = 517
+						province_id = 518
+						province_id = 519
+						province_id = 520
+						province_id = 521
+						province_id = 522
+						province_id = 523
+						province_id = 672
+						province_id = 673
+						province_id = 674
+						province_id = 675
+						province_id = 676
+						province_id = 677
+						province_id = 678
+						province_id = 679
+						province_id = 680
+						province_id = 681
+						province_id = 682
+						province_id = 683
+						province_id = 684
+						province_id = 685
+						province_id = 686
+						# Poland
+						province_id = 739
+						province_id = 740
+						province_id = 741
+						province_id = 742
+						province_id = 743
+						province_id = 744
+						province_id = 745
+						province_id = 746
+						province_id = 747
+						province_id = 748
+						province_id = 749
+						province_id = 750
+						province_id = 751
+						province_id = 752
+						province_id = 753
+						province_id = 754
+						province_id = 755
+						province_id = 756
+						province_id = 757
+						province_id = 758
+						province_id = 759
+						AND = {
+							region = world_europe_north
+							NOT = { region = custom_eastern_baltic }
+						}
+						AND = {
+							region = world_europe_east_pannonia
+							NOR = { # Wallachia
+								province_id = 658
+								province_id = 659
+								province_id = 660
+								province_id = 661
+								province_id = 662
+								province_id = 663
+								province_id = 664
+								province_id = 665
+								province_id = 666
+								province_id = 667
+								province_id = 668
+								province_id = 669
+								province_id = 670
+								province_id = 671
+							}
+						}
+					}
+				}
+			}
+
+			b_roma = {
+				owner = {
+					has_pentarchy = yes
+					government = theocracy_government
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				trigger_if = {
+					limit = {
+						PREV = {
+							persistent_event_target:pentarch_de_jure_drift = {
+								always = yes
+							}
+						}
+					}
+					PREV = {
+						persistent_event_target:pentarch_de_jure_drift = {
+							title = b_alexandria
+						}
+					}
+				}
+				trigger_else = {
+					region = world_africa
+					NOR = {
+						province_id = 1612
+						province_id = 1613
+						province_id = 1614
+						province_id = 1615
+					}
+				}
+			}
+
+			b_alexandria = {
+				owner = {
+					has_pentarchy = yes
+					government = theocracy_government
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				trigger_if = {
+					limit = {
+						PREV = {
+							persistent_event_target:pentarch_de_jure_drift = {
+								always = yes
+							}
+						}
+					}
+					PREV = {
+						persistent_event_target:pentarch_de_jure_drift = {
+							title = b_antioch
+						}
+					}
+				}
+				trigger_else = {
+					OR = {
+						region = world_india
+						region = world_middle_east
+						region = world_himalayas
+						region = world_steppe_tarim
+					}
+					NOR = {
+						region = world_middle_east_asia_minor
+						province_id = 1509
+						province_id = 1510
+						province_id = 1511
+						province_id = 1512
+						province_id = 1513
+						province_id = 1514
+						province_id = 1515
+						province_id = 1516
+						province_id = 1517
+						province_id = 1518
+						province_id = 1519
+						province_id = 1520
+						province_id = 1521
+						province_id = 1522
+						province_id = 1523
+						province_id = 1524
+						province_id = 1525
+						province_id = 1526
+						province_id = 1527
+						province_id = 1528
+						province_id = 1529
+						province_id = 1530
+						province_id = 1531
+						province_id = 1532
+						province_id = 1533
+						province_id = 1534
+						province_id = 1535
+						province_id = 1536
+						province_id = 1537
+						province_id = 1538
+						province_id = 1539
+						province_id = 1540
+						province_id = 1541
+						province_id = 1542
+						province_id = 1543
+						province_id = 1544
+						province_id = 1545
+						province_id = 1546
+						province_id = 1547
+						province_id = 1548
+						province_id = 1549
+						province_id = 1550
+						province_id = 1551
+						province_id = 1552
+						province_id = 1553
+						province_id = 1554
+						province_id = 1555
+						province_id = 1556
+						province_id = 1557
+						province_id = 1558
+						province_id = 1559
+					}
+				}
+			}
+
+			b_antioch = {
+				owner = {
+					has_pentarchy = yes
+					government = theocracy_government
+				}
+			}
+		}
+		trigger_else_if = {
+			limit = {
+				trigger_if = {
+					limit = {
+						PREV = {
+							persistent_event_target:pentarch_de_jure_drift = {
+								always = yes
+							}
+						}
+					}
+					PREV = {
+						persistent_event_target:pentarch_de_jure_drift = {
+							title = b_jerusalem
+						}
+					}
+				}
+				trigger_else = {
+					OR = { # Jerusalem/Arabia/Yemen plus Sinai
+						province_id = 1509
+						province_id = 1510
+						province_id = 1511
+						province_id = 1512
+						province_id = 1513
+						province_id = 1514
+						province_id = 1515
+						province_id = 1516
+						province_id = 1517
+						province_id = 1518
+						province_id = 1519
+						province_id = 1520
+						province_id = 1521
+						province_id = 1522
+						province_id = 1523
+						province_id = 1524
+						province_id = 1525
+						province_id = 1526
+						province_id = 1527
+						province_id = 1528
+						province_id = 1529
+						province_id = 1530
+						province_id = 1531
+						province_id = 1532
+						province_id = 1533
+						province_id = 1534
+						province_id = 1535
+						province_id = 1536
+						province_id = 1537
+						province_id = 1538
+						province_id = 1539
+						province_id = 1540
+						province_id = 1541
+						province_id = 1542
+						province_id = 1543
+						province_id = 1544
+						province_id = 1545
+						province_id = 1546
+						province_id = 1547
+						province_id = 1548
+						province_id = 1549
+						province_id = 1550
+						province_id = 1551
+						province_id = 1552
+						province_id = 1553
+						province_id = 1554
+						province_id = 1555
+						province_id = 1556
+						province_id = 1557
+						province_id = 1558
+						province_id = 1559
+						province_id = 1612
+						province_id = 1613
+						province_id = 1614
+						province_id = 1615
+					}
+				}
+			}
+
+			b_jerusalem = {
+				owner = {
+					has_pentarchy = yes
+					government = theocracy_government
+				}
+			}
+		}
+		trigger_else = {
+			b_hagiasophia = {
+				owner = {
+					has_pentarchy = yes
+					government = theocracy_government
+				}
+			}
+		}
+	}
+}

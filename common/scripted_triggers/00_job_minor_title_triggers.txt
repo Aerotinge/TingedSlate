@@ -551,13 +551,13 @@ can_be_spiritual_trigger = {
 		trigger_if = {
 			limit = {
 				has_autocephaly = yes
-				religion_head = {
+				rightful_religious_head_scope = {
 					higher_tier_than = DUKE
 					character = FROM
 				}
 			}
 
-			always = no # Do not want an extra patriach within ecumenical patriarchate
+			always = no # Do not want an extra patriarch within the ecumenical/king-bishop patriarchate
 		}
 	}
 }

@@ -6,7 +6,7 @@
 	effect = {
 		# No autocephaly established, but made it independent from Ecumenical patriarch under Nicaea
 		save_persistent_event_target = {
-			name = pentarch_title
+			name = pentarch_de_facto
 			scope = ROOT
 		}
 	}

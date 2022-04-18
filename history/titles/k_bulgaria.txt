@@ -101,7 +101,7 @@
 	effect = {
 		# Had autocephaly established in 927
 		save_persistent_event_target = {
-			name = pentarch_title
+			name = pentarch_de_facto
 			scope = ROOT
 		}
 	}

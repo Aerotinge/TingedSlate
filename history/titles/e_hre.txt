@@ -8,7 +8,7 @@
 		b_roma = {
 			ROOT = {
 				save_persistent_event_target = {
-					name = pentarch_title
+					name = pentarch_de_facto
 					scope = PREV
 				}
 			}

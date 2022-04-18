@@ -1,3 +1,14 @@
+732.1.1 = {
+	# Leo III transferred Sicily from the patriarchate of Rome to that of Constantinople
+	pentarch = b_hagiasophia
+	effect = {
+		save_persistent_event_target = {
+			name = pentarch_de_facto
+			scope = b_hagiasophia
+		}
+	}
+}
+
 1261.7.25 = {
 	de_jure_liege = e_nicaea
 }

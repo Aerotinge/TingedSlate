@@ -1,6 +1,11 @@
 namespace = EMP
 
-# Design jurisdiction of the realm under patriarchates of the Pentarchy
+# Pentarchy Scheme
+# Every landed kingdom title had a de jure pentarchy, which can be "drifted" by a persistent_event_target:pentarch_de_jure_drift
+# A persistent_event_target:pentarch_de_facto = { title = THIS } can be used to make it autocephalous 
+# A persistent_event_target:pentarch_de_facto = { title = b_hagiasophia/b_antioch/... } is used when a pentarchy see is vacant, and redirect it to a valid pentarchy see.
+
+# Setup de jure jurisdiction of the patriarchate under the Pentarchy
 character_event = {
 	id = EMP.20510
 
@@ -16,8 +21,179 @@ character_event = {
 		any_landed_title = {
 			limit = { tier = KING }
 
-			save_event_target_as = pentarchy_assignment
-			set_pentarch_title_effect = yes
+			save_event_target_as = ecclesiastical_patriarchate
+			set_de_jure_pentarch_title_effect = yes
+		}
+	}
+}
+
+# Setup Pentarchy for orthodox only
+character_event = {
+	id = EMP.20511
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		is_multiplayer_host_character = yes
+		is_save_game = no
+	}
+
+	immediate = {
+		orthodox	= {}
+		iconoclast	= { set_pentarchy = no } # Autocephalous until it takes over orthodox
+		monothelite	= { set_pentarchy = no }
+		paulician	= { set_pentarchy = no }
+	}
+}
+
+# on_heresy_takeover, norm get pentarchy and disabled for old orthodoxy
+# So the heretic one become autocephalous only
+character_event = {
+	id = EMP.20512
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		FROMFROM = { has_pentarchy = yes }
+		FROM = {
+			OR = {
+				religion = orthodox
+				religion = iconoclast
+				religion = monothelite
+				religion = paulician
+			}
+		}
+	}
+
+	immediate = {
+		FROMFROM	= { set_pentarchy = no }
+		FROM		= { set_pentarchy = yes }
+	}
+}
+
+character_event = {
+	id = EMP.20520
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		has_pentarchy = no
+		FROM = {
+			OR = {
+				title = b_roma
+				title = b_alexandria
+				title = b_antioch
+				title = b_jerusalem
+				title = b_hagiasophia
+			}
+		}
+		FROMFROM = { has_pentarchy = yes }
+	}
+
+	immediate = {
+		any_landed_title = {
+			limit = {
+				tier = KING
+				persistent_event_target:pentarch_de_facto = {
+					title = FROM
+				}
+			}
+
+			clear_persistent_event_target = pentarch_de_facto
+			if = {
+				limit = {
+					monothelite = { is_heretic = no }
+				}
+				set_pentarch_title = b_antioch
+				save_persistent_event_target = {
+					name = pentarch_de_facto
+					scope = b_antioch
+				}
+			}
+			else = {
+				set_pentarch_title = b_hagiasophia
+				save_persistent_event_target = {
+					name = pentarch_de_facto
+					scope = b_hagiasophia
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = EMP.20530
+
+	is_triggered_only = yes # on_character_convert_religion
+	hide_window = yes
+
+	trigger = {
+		OR = {
+			FROM = { has_pentarchy = yes }
+			has_pentarchy = yes
+		}
+		OR = {
+			has_landed_title = b_roma
+			has_landed_title = b_alexandria
+			has_landed_title = b_antioch
+			has_landed_title = b_jerusalem
+			has_landed_title = b_hagiasophia
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { has_pentarchy = yes }
+
+			any_landed_title = {
+				limit = {
+					tier = KING
+					has_de_jure_pentarchy_pretension = yes
+					persistent_event_target:pentarch_de_facto = {
+						tier = BARON
+					}
+				}
+
+				log = "[This.GetName] reset custom pentarch to default"
+				clear_persistent_event_target = pentarch_de_facto
+				save_event_target_as = ecclesiastical_patriarchate
+				set_de_jure_pentarch_title_effect = yes
+			}
+		}
+		else = {
+			any_landed_title = {
+				limit = {
+					tier = KING
+					NOT = { has_de_jure_pentarchy_pretension = yes }
+					NOT = {
+						persistent_event_target:pentarch_de_facto = {
+							always = yes
+						}
+					}
+				}
+
+				log = "[This.GetName] has a custom pentarch set due to absence of pentarch see"
+				if = {
+					limit = {
+						ROOT = { religion = monothelite }
+					}
+					set_pentarch_title = b_antioch
+					save_persistent_event_target = {
+						name = pentarch_de_facto
+						scope = b_antioch
+					}
+				}
+				else = {
+					set_pentarch_title = b_hagiasophia
+					save_persistent_event_target = {
+						name = pentarch_de_facto
+						scope = b_hagiasophia
+					}
+				}
+			}
 		}
 	}
 }

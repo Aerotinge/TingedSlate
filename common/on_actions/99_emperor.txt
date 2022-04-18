@@ -6,6 +6,7 @@ on_startup = {
 	events = {
 		# Pentarchy Setup
 		EMP.20510
+		EMP.20511
 		# Title Status Setup
 		EMP.20210
 		# Governor title Setup
@@ -67,19 +68,19 @@ on_death = {
 	}
 }
 
-on_artifact_inheritance = {
+# A heresy has become the new norm, replacing the old orthodoxy
+# FROM is new parent religion scope
+# FROMFROM is new heresy religion scope
+on_heresy_takeover = {
 	events = {
-	}
-}
-
-on_create_title = {
-	events = {
+		EMP.20512 # 
 	}
 }
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder = {
 	events = {
+		# TODO: Pentarchy: Reevaluate pentarchy if FROM is related
 		# Holy Roman Empire
 		EMP.12060	# Bishop Elector
 		# Government assignment
@@ -102,6 +103,7 @@ on_new_holder = {
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder_inheritance = {
 	events = {
+		EMP.20520 # Reevaluate Pentarchy if FROM is the five sees
 		# Holy Roman Empire
 		EMP.12020
 		EMP.12021	#
@@ -122,6 +124,7 @@ on_new_holder_inheritance = {
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder_usurpation = {
 	events = {
+		EMP.20520 # Reevaluate Pentarchy if FROM is the five sees
 		# Holy Roman Empire
 		EMP.12060	# Bishop Elector
 		# Papacy
@@ -146,6 +149,15 @@ on_unlanded = {
 	}
 }
 
+# Character converts religion, for whatever reason
+# ROOT is the character after conversion
+# FROM scope has the old religion
+on_character_convert_religion = {
+	events = {
+		EMP.20530 # Reevaluate Pentarchy if FROM is the five sees
+	}
+}
+
 # An offmap power changes its governor. Triggers for the new governor
 # Root = New governor
 # From = Old governor
@@ -155,7 +167,7 @@ on_offmap_governor_changed = {
 		# offmap_hre
 		EMP.12140
 		# Papacy
-		# EMP.13140 # Not working for k_papacy for some damn hardcoded quirks, using on_new_holder_* instead
+		# EMP.13140 # Not working for k_papacy possibly due to succ_papal_succession, using on_new_holder_* instead
 	}
 }
 
