@@ -4007,7 +4007,7 @@ character_event = {
 						war = {
 							target = PREV
 							casus_belli = duchy_adventure
-							thirdparty_title = event_target:target_province
+							thirdparty_title = PREVPREVPREV
 							tier = DUKE
 						}
 					}
@@ -4114,7 +4114,7 @@ character_event = {
 							war = {
 								target = PREV
 								casus_belli = duchy_adventure
-								thirdparty_title = event_target:target_province
+								thirdparty_title = PREVPREVPREV
 								tier = DUKE
 							}
 						}
@@ -4780,7 +4780,7 @@ character_event = {
 						war = {
 							target = PREV
 							casus_belli = duchy_adventure
-							thirdparty_title = event_target:target_province
+							thirdparty_title = PREVPREVPREV
 							tier = DUKE
 						}
 					}
@@ -7141,75 +7141,68 @@ character_event = {
 		}
 
 		event_target:target_province = {
-			top_liege = {
-				save_event_target_as = target_top_liege
-			}
-		}
+			owner = {
+				top_liege = {
+					save_event_target_as = target_top_liege
 
-		set_defacto_liege = ROOT
-		set_character_flag = duchy_adventurer
+					ROOT = {
+						set_defacto_liege = ROOT
 
-		create_title = {
-			tier = DUKE
-			landless = yes
-			temporary = yes
-			adventurer = yes
-			culture = ROOT
-			name = CLAIMANT_ADVENTURE
-			holder = ROOT
-		}
+						create_title = {
+							tier = DUKE
+							landless = yes
+							temporary = yes
+							adventurer = yes
+							culture = ROOT
+							name = CLAIMANT_ADVENTURE
+							holder = ROOT
+						}
 
-		while = {
-			count = 3
+						set_character_flag = duchy_adventurer
 
-			spawn_unit = {
-				province = event_target:liege_capital
-				home = event_target:liege_capital
-				owner = ROOT
-				match_character = event_target:target_top_liege
-				match_mult = 0.25
-				match_min = 2000
-				match_max = 10000
-				attrition = 0.25
-			}
+						while = {
+							count = 6
 
-			spawn_unit = {
-				province = event_target:liege_capital
-				home = event_target:liege_capital
-				owner = ROOT
-				match_character = event_target:target_top_liege
-				match_mult = 0.25
-				match_min = 2000
-				match_max = 10000
-				attrition = 0.25
-				cannot_inherit = yes
-			}
-		}
+							spawn_unit = {
+								province = event_target:liege_capital
+								home = event_target:liege_capital
+								owner = THIS
+								match_character = PREV
+								match_mult = 0.33
+								match_min = 500
+								match_max = 10000
+								attrition = 0.25
+							}
+						}
 
-		war = {
-			target = event_target:target_top_liege
-			casus_belli = duchy_adventure
-			thirdparty_title = event_target:target_province
-			tier = DUKE
-		}
+						war = {
+							target = PREV
+							casus_belli = duchy_adventure
+							thirdparty_title = PREVPREVPREV
+							tier = DUKE
+						}
 
-		remove_opinion = {
-			name = opinion_duchy_adventure_target
-			who = event_target:target_top_liege
-		}
+						remove_opinion = {
+							name = opinion_duchy_adventure_target
+							who = event_target:target_top_liege
+						}
 
-		# Create some decent commander characters
-		while = {
-			count = 4
+						# Create some decent commander characters
+						while = {
+							count = 4
 
-			create_random_soldier = {
-				random_traits = yes
-				dynasty = none
-				religion = ROOT
-				culture = ROOT
-				female = no
-				min_age = 19
-				max_age = 30
+							create_random_soldier = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								min_age = 19
+								max_age = 30
+							}
+						}
+					}
+				}
 			}
 		}
 

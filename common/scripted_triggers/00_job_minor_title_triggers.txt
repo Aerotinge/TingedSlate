@@ -90,7 +90,7 @@ change_council_job_potential_trigger = {
 	}
 }
 
-# ROOT is potential chancellor
+# THIS is potential councillor
 can_be_chancellor_trigger = {
 	independent = no
 	prisoner = no
@@ -133,7 +133,7 @@ can_be_chancellor_trigger = {
 									religion = messalian
 								}
 							}
-							religion = ROOT
+							religion = PREV
 						}
 
 						# Laws permitting
@@ -145,7 +145,7 @@ can_be_chancellor_trigger = {
 								}
 							}
 
-							ROOT = {
+							PREV = {
 								OR = {
 									dynasty = PREV
 									is_close_relative = PREV
@@ -223,14 +223,14 @@ can_be_marshal_trigger = {
 									religion = messalian
 								}
 							}
-							religion = ROOT
+							religion = PREV
 						}
 
 						# Laws permitting
 						trigger_if = {
 							limit = { has_law = status_of_women_3 }
 
-							ROOT = {
+							PREV = {
 								OR = {
 									dynasty = PREV
 									is_close_relative = PREV
@@ -304,7 +304,7 @@ can_be_treasurer_trigger = {
 									religion = messalian
 								}
 							}
-							religion = ROOT
+							religion = PREV
 						}
 
 						# Laws permitting
@@ -382,8 +382,8 @@ can_be_spymaster_trigger = {
 						trigger_if = {
 							limit = {
 								OR = {
-									is_married = ROOT
-									is_mother = ROOT
+									is_married = PREV
+									is_mother = PREV
 								}
 							}
 							NOT = { has_religion_feature = religion_patriarchal }
@@ -401,14 +401,14 @@ can_be_spymaster_trigger = {
 									religion = messalian
 								}
 							}
-							religion = ROOT
+							religion = PREV
 						}
 						trigger_else_if = {
 							limit = {
 								religion_group = pagan_group
 								NOT = { has_religion_feature = religion_patriarchal }
 							}
-							ROOT = { religion_group = pagan_group }
+							religion_group = PREV
 						}
 
 						# Laws permitting
@@ -421,7 +421,7 @@ can_be_spymaster_trigger = {
 								}
 							}
 
-							ROOT = {
+							PREV = {
 								OR = {
 									dynasty = PREV
 									is_close_relative = PREV
@@ -519,12 +519,10 @@ can_be_spiritual_trigger = {
 				NOT = { government = theocracy_government }
 				religion_allows_temple_holders = yes
 			}
-
+	
 			trigger_if = {
-				limit = {
-					liege = { is_nomadic = yes }
-				}
-				clan = yes
+				limit = { clan = yes }
+				liege = { is_nomadic = yes }
 			}
 			trigger_else_if = {
 				limit = {
@@ -533,7 +531,7 @@ can_be_spiritual_trigger = {
 
 						OR = {
 							any_vassal = {
-								NOT = { character = ROOT }
+								NOT = { character = PREVPREV }
 								government = theocracy_government
 								can_hold_title = job_spiritual
 							}
@@ -595,7 +593,7 @@ can_be_councilmember_king_trigger = {
 							religion = messalian
 						}
 					}
-					religion = ROOT
+					religion = PREV
 				}
 
 				# Laws permitting
@@ -608,7 +606,7 @@ can_be_councilmember_king_trigger = {
 						}
 					}
 
-					ROOT = { is_landed = yes }
+					PREV = { is_landed = yes }
 				}
 				trigger_else = {
 					has_law = status_of_women_4
@@ -620,6 +618,11 @@ can_be_councilmember_king_trigger = {
 					value = all
 				}
 			}
+		}
+	}
+	trigger_else = {
+		liege = {
+			NOT = { has_religion_feature = religion_matriarchal }
 		}
 	}
 }
@@ -657,7 +660,7 @@ can_be_councilmember_emperor_trigger = {
 							religion = messalian
 						}
 					}
-					religion = ROOT
+					religion = PREV
 				}
 
 				# Laws permitting
@@ -670,7 +673,7 @@ can_be_councilmember_emperor_trigger = {
 						}
 					}
 
-					ROOT = { is_landed = yes }
+					PREV = { is_landed = yes }
 				}
 				trigger_else = {
 					has_law = status_of_women_4
@@ -682,6 +685,11 @@ can_be_councilmember_emperor_trigger = {
 					value = all
 				}
 			}
+		}
+	}
+	trigger_else = {
+		liege = {
+			NOT = { has_religion_feature = religion_matriarchal }
 		}
 	}
 }
@@ -828,14 +836,14 @@ can_still_be_marshal_byzantine_trigger = {
 								religion = messalian
 							}
 						}
-						religion = ROOT
+						religion = PREV
 					}
 
 					# Laws permitting
 					trigger_if = {
 						limit = { has_law = status_of_women_3 }
 
-						ROOT = {
+						PREV = {
 							OR = {
 								dynasty = PREV
 								is_close_relative = PREV
