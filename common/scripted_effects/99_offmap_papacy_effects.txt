@@ -39,7 +39,9 @@ set_de_jure_pentarch_title_effect = {
 						NOT = { has_global_flag = de_jure_pentarch_init }
 						b_roma = {
 							owner = {
+								is_heretic = no
 								has_pentarchy = yes
+								government = theocracy_government
 							}
 						}
 					}
@@ -163,7 +165,9 @@ set_de_jure_pentarch_title_effect = {
 						NOT = { has_global_flag = de_jure_pentarch_init }
 						b_alexandria = {
 							owner = {
+								is_heretic = no
 								has_pentarchy = yes
+								government = theocracy_government
 							}
 						}
 					}
@@ -205,7 +209,9 @@ set_de_jure_pentarch_title_effect = {
 						NOT = { has_global_flag = de_jure_pentarch_init }
 						b_antioch = {
 							owner = {
+								is_heretic = no
 								has_pentarchy = yes
+								government = theocracy_government
 							}
 						}
 					}
@@ -289,7 +295,9 @@ set_de_jure_pentarch_title_effect = {
 						NOT = { has_global_flag = de_jure_pentarch_init }
 						b_jerusalem = {
 							owner = {
+								is_heretic = no
 								has_pentarchy = yes
+								government = theocracy_government
 							}
 						}
 					}
@@ -370,7 +378,9 @@ set_de_jure_pentarch_title_effect = {
 						NOT = { has_global_flag = de_jure_pentarch_init }
 						b_hagiasophia = {
 							owner = {
+								is_heretic = no
 								has_pentarchy = yes
+								government = theocracy_government
 							}
 						}
 					}

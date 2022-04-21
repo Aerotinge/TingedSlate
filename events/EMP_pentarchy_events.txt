@@ -30,28 +30,6 @@ character_event = {
 	}
 }
 
-# Setup Pentarchy for orthodox only
-character_event = {
-	id = EMP.20511
-
-	is_triggered_only = yes # on_startup
-	hide_window = yes
-
-	trigger = {
-		is_multiplayer_host_character = yes
-		is_save_game = no
-	}
-
-	immediate = {
-		orthodox	= {}
-		iconoclast	= { set_pentarchy = no } # Autocephalous until it takes over orthodox
-		monothelite	= { set_pentarchy = no }
-		paulician	= { set_pentarchy = no }
-	}
-}
-
-# on_heresy_takeover, norm get pentarchy and disabled for old orthodoxy
-# So the heretic one become autocephalous only
 character_event = {
 	id = EMP.20512
 
@@ -59,20 +37,37 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
-		FROMFROM = { has_pentarchy = yes }
-		FROM = {
+		FROM = { has_pentarchy = yes }
+		any_landed_title = {
 			OR = {
-				religion = orthodox
-				religion = iconoclast
-				religion = monothelite
-				religion = paulician
+				title = b_roma
+				title = b_antioch
+				title = b_alexandria
+				title = b_jerusalem
+				title = b_hagiasophia
+			}
+			holder_scope = {
+				religion = FROM
+				government = theocracy_government
 			}
 		}
 	}
 
 	immediate = {
-		FROMFROM	= { set_pentarchy = no }
-		FROM		= { set_pentarchy = yes }
+		any_landed_title = {
+			limit = {
+				tier = KING
+				has_de_jure_pentarchy_pretension = yes
+				persistent_event_target:pentarch_de_facto = {
+					tier = BARON
+				}
+			}
+
+			log = "[This.GetName] reset custom pentarch to default"
+			clear_persistent_event_target = pentarch_de_facto
+			save_event_target_as = ecclesiastical_eparchy
+			set_de_jure_pentarch_title_effect = yes
+		}
 	}
 }
 
@@ -84,6 +79,7 @@ character_event = {
 
 	trigger = {
 		NOR = {
+			is_heretic = no
 			has_pentarchy = yes
 			government = theocracy_government
 		}
@@ -187,6 +183,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		is_heretic = no
 		has_pentarchy = yes
 		government = theocracy_government
 		FROM = {
@@ -265,6 +262,7 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		is_heretic = no
 		OR = {
 			FROM = { has_pentarchy = yes }
 			has_pentarchy = yes
@@ -353,17 +351,15 @@ character_event = {
 
 	hide_window = yes
 
-	ai = no
-
 	religion_group = christian
 	only_men = yes
 	has_job_title = yes
 
 	trigger = {
-		has_job_title = job_spiritual
 		rightful_religious_head = THIS
 		controls_religion = no
 		has_pentarchy = yes
+		has_job_title = job_spiritual
 		NOR = {
 			has_landed_title = b_roma
 			has_landed_title = b_alexandria
@@ -391,5 +387,39 @@ character_event = {
 			log = "[This.PrimaryTitle.GetBaseName] has Autocephalous Patriarch: [Root.GetBestName]"
 			log = "While missing persistent_event_target:pentarch_de_facto set to title itself"
 		}
+	}
+}
+
+# Debug event
+character_event = {
+	id = EMP.20551
+
+	hide_window = yes
+
+	religion_group = christian
+	only_rulers = yes
+	only_independent = no
+
+	trigger = {
+		rightful_religious_head = THIS
+		has_pentarchy = yes
+		OR = {
+			has_landed_title = b_roma
+			has_landed_title = b_alexandria
+			has_landed_title = b_antioch
+			has_landed_title = b_jerusalem
+			has_landed_title = b_hagiasophia
+		}
+		is_theocracy = yes
+		NOT = { government = theocracy_government }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		log = "[This.GetBestName] become a patriarch of the five sees"
+		log = "While having [This.Government.GetName] Government"
 	}
 }

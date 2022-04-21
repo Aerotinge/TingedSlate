@@ -112,6 +112,7 @@ has_de_jure_pentarchy_pretension = {
 
 			b_roma = {
 				owner = {
+					is_heretic = no
 					has_pentarchy = yes
 					government = theocracy_government
 				}
@@ -140,6 +141,7 @@ has_de_jure_pentarchy_pretension = {
 
 			b_alexandria = {
 				owner = {
+					is_heretic = no
 					has_pentarchy = yes
 					government = theocracy_government
 				}
@@ -216,6 +218,7 @@ has_de_jure_pentarchy_pretension = {
 
 			b_antioch = {
 				owner = {
+					is_heretic = no
 					has_pentarchy = yes
 					government = theocracy_government
 				}
@@ -289,6 +292,7 @@ has_de_jure_pentarchy_pretension = {
 
 			b_jerusalem = {
 				owner = {
+					is_heretic = no
 					has_pentarchy = yes
 					government = theocracy_government
 				}
@@ -297,6 +301,7 @@ has_de_jure_pentarchy_pretension = {
 		trigger_else = {
 			b_hagiasophia = {
 				owner = {
+					is_heretic = no
 					has_pentarchy = yes
 					government = theocracy_government
 				}

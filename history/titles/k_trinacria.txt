@@ -3,7 +3,7 @@
 	pentarch = b_hagiasophia
 	effect = {
 		save_persistent_event_target = {
-			name = pentarch_de_facto
+			name = pentarch_de_jure_drift
 			scope = b_hagiasophia
 		}
 	}
