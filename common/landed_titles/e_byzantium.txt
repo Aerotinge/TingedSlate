@@ -2392,6 +2392,95 @@ e_byzantium = {
 				b_polog = {}
 			}
 		}
+
+		d_strymon = {
+			color = { 175 50 170 }
+			color2 = { 255 255 255 }
+
+			capital = 527 # Strymon
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			c_astibus = {
+				color = { 140 10 120 }
+				color2 = { 255 255 20 }
+
+				b_astibus = {}
+				b_veles = {}
+				b_skopje = {}
+				b_zegligovo = {}
+				b_presevo = {}
+				b_dukena = {}
+				b_stobi = {}
+			}
+
+			c_strymon = {
+				color = { 139 29 101 }
+				color2 = { 255 255 20 }
+
+				b_strumica = {}
+				b_prilep = {}
+				b_prosek = {}
+				b_trikves = {}
+				b_kocane = {}
+				b_kratovo = {}
+				b_radovish = {}
+			}
+		}
+
+		d_vidin = {
+			color = { 122 103 58 }
+			color2 = { 255 255 255 }
+
+			capital = 524 # Vidin
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			greek = "Bononia"
+
+			c_naissos = {
+				color = { 126 107 62 }
+				color2 = { 255 255 255 }
+
+				serbian = "Nish"
+				croatian = "Nish"
+				bosnian = "Nish"
+				bulgarian = "Nish"
+
+				b_nish = {
+					greek = "Naissos"
+				}
+				b_kumanovo = {}
+				b_koprijan = {}
+				b_brdo = {}
+				b_vranje = {}
+				b_lesnovo = {}
+				b_kambelevac = {}
+				b_knjazevac = {}
+			}
+
+			c_vidin = {
+				color = { 124 105 60 }
+				color2 = { 255 255 255 }
+
+				greek = "Bononia"
+
+				b_vidin = {
+					greek = "Bononia"
+				}
+				b_viseslav = {}
+				b_kula = {}
+				b_srvljig = {}
+				b_pirot = {}
+				b_bolvan = {}
+				b_kucevo = {}
+				b_zajecar = {}
+			}
+		}
 	}
 
 	k_sicily = {
@@ -3462,43 +3551,6 @@ e_byzantium = {
 			}
 		}
 
-		d_strymon = {
-			color = { 175 50 170 }
-			color2 = { 255 255 255 }
-
-			capital = 527 # Strymon
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			c_astibus = {
-				color = { 140 10 120 }
-				color2 = { 255 255 20 }
-
-				b_astibus = {}
-				b_veles = {}
-				b_skopje = {}
-				b_zegligovo = {}
-				b_presevo = {}
-				b_dukena = {}
-				b_stobi = {}
-			}
-
-			c_strymon = {
-				color = { 139 29 101 }
-				color2 = { 255 255 20 }
-
-				b_strumica = {}
-				b_prilep = {}
-				b_prosek = {}
-				b_trikves = {}
-				b_kocane = {}
-				b_kratovo = {}
-				b_radovish = {}
-			}
-		}
-
 		d_moesia = {
 			color = { 197 39 154 }
 			color2 = { 255 255 255 }
@@ -3581,58 +3633,6 @@ e_byzantium = {
 				b_chirpan = {}
 				b_maglizh = {}
 				b_kazanlak = {}
-			}
-		}
-
-		d_vidin = {
-			color = { 122 103 58 }
-			color2 = { 255 255 255 }
-
-			capital = 524 # Vidin
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			greek = "Bononia"
-
-			c_naissos = {
-				color = { 126 107 62 }
-				color2 = { 255 255 255 }
-
-				serbian = "Nish"
-				croatian = "Nish"
-				bosnian = "Nish"
-				bulgarian = "Nish"
-
-				b_nish = {
-					greek = "Naissos"
-				}
-				b_kumanovo = {}
-				b_koprijan = {}
-				b_brdo = {}
-				b_vranje = {}
-				b_lesnovo = {}
-				b_kambelevac = {}
-				b_knjazevac = {}
-			}
-
-			c_vidin = {
-				color = { 124 105 60 }
-				color2 = { 255 255 255 }
-
-				greek = "Bononia"
-
-				b_vidin = {
-					greek = "Bononia"
-				}
-				b_viseslav = {}
-				b_kula = {}
-				b_srvljig = {}
-				b_pirot = {}
-				b_bolvan = {}
-				b_kucevo = {}
-				b_zajecar = {}
 			}
 		}
 	}

@@ -2,14 +2,15 @@ namespace = EMP
 
 # Pentarchy Scheme
 # Every landed kingdom title had a de jure pentarchy, which can be "drifted" by a persistent_event_target:pentarch_de_jure_drift
-# A persistent_event_target:pentarch_de_facto = { title = THIS } can be used to make it autocephalous 
+# A persistent_event_target:pentarch_de_facto = { title = THIS } can be used to make the kingdom autocephalous
 # A persistent_event_target:pentarch_de_facto = { title = b_hagiasophia/b_antioch/... } is used when a pentarchy see is vacant, and redirect it to a valid pentarchy see.
+# set_de_jure_pentarch_title_effect setup pentarch of a title, will abort if a persistent_event_target:pentarch_de_facto exists
 
 # Setup de jure jurisdiction of the patriarchate under the Pentarchy
 character_event = {
 	id = EMP.20510
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_startup
 	hide_window = yes
 
 	trigger = {
@@ -21,9 +22,11 @@ character_event = {
 		any_landed_title = {
 			limit = { tier = KING }
 
-			save_event_target_as = ecclesiastical_patriarchate
+			save_event_target_as = ecclesiastical_eparchy
 			set_de_jure_pentarch_title_effect = yes
 		}
+
+		set_global_flag = de_jure_pentarch_init
 	}
 }
 
@@ -31,7 +34,7 @@ character_event = {
 character_event = {
 	id = EMP.20511
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_startup
 	hide_window = yes
 
 	trigger = {
@@ -52,7 +55,7 @@ character_event = {
 character_event = {
 	id = EMP.20512
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_heresy_takeover
 	hide_window = yes
 
 	trigger = {
@@ -76,11 +79,14 @@ character_event = {
 character_event = {
 	id = EMP.20520
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
 	hide_window = yes
 
 	trigger = {
-		has_pentarchy = no
+		NOR = {
+			has_pentarchy = yes
+			government = theocracy_government
+		}
 		FROM = {
 			OR = {
 				title = b_roma
@@ -88,9 +94,48 @@ character_event = {
 				title = b_antioch
 				title = b_jerusalem
 				title = b_hagiasophia
+				trigger_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_roma }
+						}
+					}
+					title = c_roma
+				}
+				trigger_else_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_alexandria }
+						}
+					}
+					title = c_alexandria
+				}
+				trigger_else_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_antioch }
+						}
+					}
+					title = c_antioch
+				}
+				trigger_else_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_jerusalem }
+						}
+					}
+					title = c_jerusalem
+				}
+				trigger_else_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_hagiasophia }
+						}
+					}
+					title = c_constantinopolis
+				}
 			}
 		}
-		FROMFROM = { has_pentarchy = yes }
 	}
 
 	immediate = {
@@ -98,14 +143,25 @@ character_event = {
 			limit = {
 				tier = KING
 				persistent_event_target:pentarch_de_facto = {
-					title = FROM
+					OR = {
+						title = FROM
+						county = {
+							title = FROM
+						}
+					}
 				}
 			}
 
 			clear_persistent_event_target = pentarch_de_facto
 			if = {
 				limit = {
-					monothelite = { is_heretic = no }
+					monothelite = {
+						NOT = { # Is not heresy
+							parent_religion = {
+								always = yes
+							}
+						}
+					}
 				}
 				set_pentarch_title = b_antioch
 				save_persistent_event_target = {
@@ -120,6 +176,84 @@ character_event = {
 					scope = b_hagiasophia
 				}
 			}
+		}
+	}
+}
+
+character_event = {
+	id = EMP.20521
+
+	is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
+	hide_window = yes
+
+	trigger = {
+		has_pentarchy = yes
+		government = theocracy_government
+		FROM = {
+			OR = {
+				title = b_roma
+				title = b_alexandria
+				title = b_antioch
+				title = b_jerusalem
+				title = b_hagiasophia
+				trigger_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_roma }
+						}
+					}
+					title = c_roma
+				}
+				trigger_else_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_alexandria }
+						}
+					}
+					title = c_alexandria
+				}
+				trigger_else_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_antioch }
+						}
+					}
+					title = c_antioch
+				}
+				trigger_else_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_jerusalem }
+						}
+					}
+					title = c_jerusalem
+				}
+				trigger_else_if = {
+					limit = {
+						location = {
+							capital_holding = { title = b_hagiasophia }
+						}
+					}
+					title = c_constantinopolis
+				}
+			}
+		}
+	}
+
+	immediate = {
+		any_landed_title = {
+			limit = {
+				tier = KING
+				has_de_jure_pentarchy_pretension = yes
+				persistent_event_target:pentarch_de_facto = {
+					tier = BARON
+				}
+			}
+
+			log = "[This.GetName] reset custom pentarch to default"
+			clear_persistent_event_target = pentarch_de_facto
+			save_event_target_as = ecclesiastical_eparchy
+			set_de_jure_pentarch_title_effect = yes
 		}
 	}
 }
@@ -157,9 +291,9 @@ character_event = {
 					}
 				}
 
-				log = "[This.GetName] reset custom pentarch to default"
+				log = "[This.GetName] reset pentarch to the default"
 				clear_persistent_event_target = pentarch_de_facto
-				save_event_target_as = ecclesiastical_patriarchate
+				save_event_target_as = ecclesiastical_eparchy
 				set_de_jure_pentarch_title_effect = yes
 			}
 		}
@@ -175,7 +309,7 @@ character_event = {
 					}
 				}
 
-				log = "[This.GetName] has a custom pentarch set due to absence of pentarch see"
+				log = "[This.GetName] is under a fallback pentarch due to absence of pentarch see"
 				if = {
 					limit = {
 						ROOT = { religion = monothelite }
@@ -194,6 +328,68 @@ character_event = {
 					}
 				}
 			}
+		}
+	}
+}
+
+# Debug event
+character_event = {
+	id = EMP.20540
+
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		add_trait = saoshyant
+	}
+}
+
+# Debug event
+character_event = {
+	id = EMP.20550
+
+	hide_window = yes
+
+	ai = no
+
+	religion_group = christian
+	only_men = yes
+	has_job_title = yes
+
+	trigger = {
+		has_job_title = job_spiritual
+		rightful_religious_head = THIS
+		controls_religion = no
+		has_pentarchy = yes
+		NOR = {
+			has_landed_title = b_roma
+			has_landed_title = b_alexandria
+			has_landed_title = b_antioch
+			has_landed_title = b_jerusalem
+			has_landed_title = b_hagiasophia
+		}
+		liege = {
+			primary_title = {
+				NOT = {
+					persistent_event_target:pentarch_de_facto = {
+						title = THIS
+					}
+				}
+			}
+		}
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		liege = {
+			log = "[This.PrimaryTitle.GetBaseName] has Autocephalous Patriarch: [Root.GetBestName]"
+			log = "While missing persistent_event_target:pentarch_de_facto set to title itself"
 		}
 	}
 }

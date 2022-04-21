@@ -1,8 +1,5 @@
 #character
 on_startup = {
-	effect = {
-		set_global_flag = on_startup_finished
-	}
 	events = {
 		# Pentarchy Setup
 		EMP.20510
@@ -80,7 +77,7 @@ on_heresy_takeover = {
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder = {
 	events = {
-		# TODO: Pentarchy: Reevaluate pentarchy if FROM is related
+		EMP.20520 # Reevaluate Pentarchy if FROM is the five sees
 		# Holy Roman Empire
 		EMP.12060	# Bishop Elector
 		# Government assignment

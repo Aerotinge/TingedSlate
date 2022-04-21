@@ -1,3 +1,14 @@
+732.1.1 = {
+	# Leo III transferred Thessalonica from the patriarchate of Rome to that of Constantinople
+	pentarch = b_hagiasophia
+	effect = {
+		save_persistent_event_target = {
+			name = pentarch_de_jure_drift
+			scope = b_hagiasophia
+		}
+	}
+}
+
 1204.5.16 = {
 	holder = 215517
 	law = cognatic_succession

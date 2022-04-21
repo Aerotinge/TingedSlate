@@ -1,4 +1,7 @@
 theocracy_governments = {
+	# Many hardcoded triggers uses "is_theocracy = yes" instead of "government = theocracy_government"
+	# Have to make workarounds to exclude them from being allowed
+	# E.g Pentarchy mechanism
 
 	theocracy_government = {
 		preferred_holdings = {

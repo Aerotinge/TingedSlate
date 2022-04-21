@@ -66,6 +66,14 @@
 	law = succ_primogeniture
 	holder = 159124
 	historical_nomad = no
+	# Inherit Pentarch attribution from Thracia
+	pentarch = b_hagiasophia
+	effect = {
+		save_persistent_event_target = {
+			name = pentarch_de_facto
+			scope = b_hagiasophia
+		}
+	}
 }
 
 831.1.1 = {
@@ -98,6 +106,7 @@
 
 927.5.27 = {
 	holder = 714 #Petar I
+	pentarch = 0
 	effect = {
 		# Had autocephaly established in 927
 		save_persistent_event_target = {
