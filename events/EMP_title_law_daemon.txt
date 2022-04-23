@@ -6,7 +6,7 @@ character_event = {
 
 	hide_window = yes
 
-	is_triggered_only = yes # on_new_holder_*
+	is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
 
 	trigger = {
 		FROM = {

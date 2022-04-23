@@ -506,12 +506,34 @@ can_be_spiritual_trigger = {
 				has_pentarchy = yes
 				liege = {
 					any_vassal = {
-						FROM = { rightful_religious_head = PREV }
+						liege = { rightful_religious_head = PREV }
 					}
 				}
 			}
 
 			rightful_religious_head = THIS
+		}
+		trigger_else_if = {
+			limit = {
+				has_pentarchy = yes
+				government = theocracy_government
+				liege = {
+					primary_title = {
+						persistent_event_target:pentarch_de_facto = {
+							title = THIS
+						}
+					}
+				}
+			}
+
+			liege = {
+				primary_title = {
+					any_de_jure_vassal_title = {
+						holder = PREVPREVPREV
+						is_primary_holder_title = yes
+					}
+				}
+			}
 		}
 
 		trigger_if = {
@@ -551,7 +573,7 @@ can_be_spiritual_trigger = {
 				has_autocephaly = yes
 				rightful_religious_head_scope = {
 					higher_tier_than = DUKE
-					character = FROM
+					is_vassal_or_below = PREV
 				}
 			}
 

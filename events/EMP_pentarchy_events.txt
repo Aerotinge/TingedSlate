@@ -2,8 +2,8 @@ namespace = EMP
 
 # Pentarchy Scheme
 # Every landed kingdom title had a de jure pentarchy, which can be "drifted" by a persistent_event_target:pentarch_de_jure_drift
-# A persistent_event_target:pentarch_de_facto = { title = THIS } can be used to make the kingdom autocephalous
-# A persistent_event_target:pentarch_de_facto = { title = b_hagiasophia/b_antioch/... } is used when a pentarchy see is vacant, and redirect it to a valid pentarchy see.
+# A persistent_event_target:pentarch_de_facto = { title = THIS } can be used to mark the kingdom autocephalous
+# A persistent_event_target:pentarch_de_facto = { title = b_hagiasophia/b_antioch/... } is used to mark a fallback pentarch
 # set_de_jure_pentarch_title_effect setup pentarch of a title, will abort if a persistent_event_target:pentarch_de_facto exists
 
 # Setup de jure jurisdiction of the patriarchate under the Pentarchy
@@ -185,7 +185,8 @@ character_event = {
 	trigger = {
 		is_heretic = no
 		has_pentarchy = yes
-		government = theocracy_government
+		#government = theocracy_government
+		is_theocracy = yes
 		FROM = {
 			OR = {
 				title = b_roma
@@ -238,19 +239,42 @@ character_event = {
 	}
 
 	immediate = {
-		any_landed_title = {
-			limit = {
-				tier = KING
-				has_de_jure_pentarchy_pretension = yes
-				persistent_event_target:pentarch_de_facto = {
-					tier = BARON
+		if = {
+			limit = { government = theocracy_government }
+
+			any_landed_title = {
+				limit = {
+					tier = KING
+					has_de_jure_pentarchy_pretension = yes
+					persistent_event_target:pentarch_de_facto = {
+						tier = BARON
+					}
+				}
+
+				log = "[This.GetName] reset custom pentarch to default"
+				clear_persistent_event_target = pentarch_de_facto
+				save_event_target_as = ecclesiastical_eparchy
+				set_de_jure_pentarch_title_effect = yes
+			}
+		}
+		else = {
+			create_random_priest = {
+				religion = ROOT
+				culture = ROOT
+			}
+			new_character = {
+				grant_title = FROM
+
+				if = {
+					limit = { independent = yes }
+
+					ROOT = {
+						liege = {
+							set_defacto_vassal = PREVPREV
+						}
+					}
 				}
 			}
-
-			log = "[This.GetName] reset custom pentarch to default"
-			clear_persistent_event_target = pentarch_de_facto
-			save_event_target_as = ecclesiastical_eparchy
-			set_de_jure_pentarch_title_effect = yes
 		}
 	}
 }
@@ -341,7 +365,7 @@ character_event = {
 	}
 
 	immediate = {
-		add_trait = saoshyant
+		log = "[This.GetBestName] fires EMP.20540"
 	}
 }
 

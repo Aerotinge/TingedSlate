@@ -152,6 +152,12 @@ on_character_convert_religion = {
 	events = {
 		EMP.20530 # Reevaluate Pentarchy if FROM is the five sees
 	}
+	random_events = {
+		dismiss_job_spiritual = { # Dismiss your job_spiritual of old religion when conversion, with an one-day grace period
+			delay = 1
+			100 = EMP.20320
+		}
+	}
 }
 
 # An offmap power changes its governor. Triggers for the new governor

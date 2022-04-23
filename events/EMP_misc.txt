@@ -4,7 +4,7 @@ namespace = EMP
 character_event = {
 	id = EMP.20310
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_birth, on_become_imprisoned_any_reason, on_became_imprisoned
 	hide_window = yes
 
 	trigger = {
@@ -16,6 +16,26 @@ character_event = {
 		add_character_modifier = { 
 			name = house_arrest
 			duration = -1
+		}
+	}
+}
+
+# Dismiss your job_spiritual of old religion when conversion, with an one-day grace period
+character_event = {
+	id = EMP.20320
+
+	is_triggered_only = yes # on_character_convert_religion
+	hide_window = yes
+
+	trigger = {
+		job_spiritual = {
+			NOT = { religion = ROOT }
+		}
+	}
+
+	immediate = {
+		job_spiritual = {
+			remove_title = job_spiritual
 		}
 	}
 }

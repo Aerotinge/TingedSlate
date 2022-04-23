@@ -137,7 +137,7 @@ character_event = {
     id = EMP.12060
     hide_window = yes
 
-    is_triggered_only = yes # on_new_holder_*
+    is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
 
     trigger = {
 		offmap_hre = {

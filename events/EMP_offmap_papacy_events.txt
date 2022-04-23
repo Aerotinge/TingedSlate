@@ -47,7 +47,7 @@ character_event = {
 
 	hide_window = yes
 
-	is_triggered_only = yes # on_new_holder
+	is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
 
 	trigger = {
 		offmap_papacy = {

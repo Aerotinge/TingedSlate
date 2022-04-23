@@ -214,7 +214,7 @@ character_event = {
     hide_window = yes
 
 	only_playable = yes
-	is_triggered_only = yes
+	is_triggered_only = yes # on_startup
 
 	lacks_dlc = "Horse Lords"
 	lacks_dlc = "Legacy of Rome"
@@ -2511,7 +2511,7 @@ character_event = {
     hide_window = yes
 
 	only_playable = yes
-	is_triggered_only = yes
+	is_triggered_only = yes # EMP_minor_decisions.txt
 
 	lacks_dlc = "Horse Lords"
 	lacks_dlc = "Legacy of Rome"
@@ -4834,10 +4834,10 @@ character_event = {
 character_event = {
     id = EMP.11006
     hide_window = yes
-	
+
     only_playable = yes
-	is_triggered_only = yes
-	
+	is_triggered_only = yes # EMP.11005
+
 	lacks_dlc = "Horse Lords"
 	has_dlc = "Legacy of Rome"
 
@@ -4875,7 +4875,7 @@ character_event = {
     hide_window = yes
 
     only_playable = yes
-	is_triggered_only = yes #on_startup
+	is_triggered_only = yes # on_startup
 
 	lacks_dlc = "Horse Lords"
 
@@ -4921,8 +4921,8 @@ province_event = {
     id = EMP.11022
     hide_window = yes
 	
-    is_triggered_only = yes
-	
+    is_triggered_only = yes # EMP.11021
+
 	lacks_dlc = "Horse Lords"
 
     trigger = {
@@ -5382,7 +5382,7 @@ province_event = {
 	picture = GFX_evt_dead_body_hf
 	border = GFX_event_normal_frame_diplomacy
 
-	is_triggered_only = yes
+	is_triggered_only = yes # EMP.11022
 
 	trigger = {
 		owner = {
@@ -5505,7 +5505,7 @@ province_event = {
     hide_window = yes
 
     only_playable = yes
-	is_triggered_only = yes
+	is_triggered_only = yes # EMP.11025
 
 	lacks_dlc = "Horse Lords"
 
@@ -5559,7 +5559,7 @@ province_event = {
 	picture = GFX_evt_steppe_mercenaries
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt
 
 	lacks_dlc = "Horse Lords"
 
@@ -5710,7 +5710,7 @@ character_event = {
 	picture = GFX_evt_steppe_mercenaries
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # EMP.11030
 
 	ai = no
 
@@ -5723,7 +5723,7 @@ character_event = {
 character_event = {
 	id = EMP.11035
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_siege_over_winner
 	hide_window = yes
 
 	trigger = {
@@ -5760,7 +5760,7 @@ province_event = {
 	picture = GFX_evt_steppe_mercenaries
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_rebel_revolt
 
 	has_dlc = "The Old Gods"
 
@@ -5843,7 +5843,7 @@ character_event = {
 	picture = GFX_evt_steppe_mercenaries
 	border = GFX_event_normal_frame_war
 
-	is_triggered_only = yes
+	is_triggered_only = yes # EMP.11040
 
 	ai = no
 
@@ -5999,7 +5999,7 @@ character_event = {
 	id = EMP.11052
     hide_window = yes
 
-	is_triggered_only = yes
+	is_triggered_only = yes # EMP.11050
 	only_playable = yes # For any reason the character is still holding a title
 
 	lacks_dlc = "Horse Lords"
@@ -6020,7 +6020,7 @@ character_event = {
 character_event = {
 	id = EMP.11060
 
-	is_triggered_only = yes
+	is_triggered_only = yes # EMP.11051
 	hide_window = yes
 
 	has_character_flag = raiding_adventurer

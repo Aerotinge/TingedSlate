@@ -11,7 +11,7 @@ character_event = {
     id = EMP.15010
     hide_window = yes
 
-	is_triggered_only = yes
+	is_triggered_only = yes # on_startup
 
     trigger = {
 		OR = {
@@ -52,6 +52,7 @@ character_event = {
 
 			any_vassal = {
 				limit = {
+					historical = no
 					real_tier = BARON
 					is_feudal = yes
 				}
@@ -64,6 +65,7 @@ character_event = {
 		else = {
 			any_vassal = {
 				limit = {
+					historical = no
 					real_tier = BARON
 					is_feudal = yes
 					has_minor_title = title_commander
