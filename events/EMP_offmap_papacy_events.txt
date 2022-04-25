@@ -60,12 +60,6 @@ character_event = {
 	immediate = {
 		print_papacy_governor_update_effect = yes
 		offmap_papacy_ruler_name_sync_effect = yes
-		any_claim = {
-			limit = {
-				is_theocracy = yes
-			}
-			remove_claim = PREV
-		}
 	}
 }
 
@@ -82,52 +76,5 @@ character_event = {
 	immediate = {
 		print_papacy_ruler_update_effect = yes
 		offmap_papacy_ruler_name_sync_effect = yes
-	}
-}
-
-# ping events for decision
-
-character_event = {
-	id = EMP.13511
-	
-	hide_window = yes
-	
-	is_triggered_only = yes # decision: buy_indulgence_for_sins
-
-	trigger = {
-		has_character_flag = ask_for_indulgence
-	}
-
-	immediate = {
-		FROM = {
-			character_event = {
-				id = 39250
-				days = 5
-				random = 12
-				tooltip = indulgence_ask
-			}
-		}
-	}
-}
-
-character_event = {
-	id = EMP.13521
-	
-	hide_window = yes
-	
-	is_triggered_only = yes # decision: ask_pope_coronation
-
-	trigger = {
-		has_character_modifier = coronation_request_cooldown
-	}
-
-	immediate = {
-		FROM = {
-			letter_event = {
-				id = HF.20201
-				days = 30
-				random = 5
-			}
-		}
 	}
 }

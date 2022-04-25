@@ -1,66 +1,5 @@
 offmap_decisions = {
 
-	buy_indulgence_for_sins = {
-		button_name = papacy_donation
-		ai_check_interval = 6
-
-		only_playable = yes
-
-		from_potential = {
-			religion = ROOT
-			is_landed = yes
-			is_adult = yes
-
-			NOR = {
-				has_character_flag = ask_for_indulgence
-				trait = excommunicated
-			}
-		}
-
-		potential = {
-			offmap_papacy = {
-				governor_title = {
-					holder = PREVPREV
-				}
-			}
-		}
-
-		allow = {
-			show_only_failed_conditions = yes
-
-			FROM = {
-				scaled_wealth = {
-					value = 1.0
-					min = 25
-				}
-
-				is_heretic = no
-				prisoner = no
-				is_incapable = no
-				is_inaccessible_trigger = no
-			}
-		}
-
-		effect = {
-			FROM = {
-				set_character_flag = ask_for_indulgence
-
-				character_event = { id = EMP.13511 } # ping event
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-
-			trigger = {
-				FROM = {
-					piety < 0
-					NOT = { scaled_wealth = 10.0 }
-				}
-			}
-		}
-	}
-
 	ask_pope_coronation = {
 		button_name = papacy_prayer
 		ai_check_interval = 8
@@ -232,8 +171,12 @@ offmap_decisions = {
 					months = 5
 					hidden = yes
 				}
-
-				character_event = { id = EMP.13521 } # ping event
+			}
+			repeat_event = {
+				id = HF.20201
+				days = 30
+				random = 5
+				tooltip = EVTTOOLTIPHF20201
 			}
 		}
 
