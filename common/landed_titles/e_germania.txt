@@ -1096,18 +1096,6 @@ e_germania = {
 			}
 		}
 
-		d_mainz = {
-			color = { 129 129 129 }
-			color2 = { 255 255 255 }
-
-			capital = 194 # Mainz
-
-			allow = {
-				is_theocracy = yes
-				can_create_duchy = yes
-			}
-		}
-
 		d_raetia = {
 			color = { 150 240 190 }
 			color2 = { 255 255 255 }

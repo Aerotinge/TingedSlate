@@ -7,7 +7,7 @@ offmap_decisions = {
 		only_playable = yes
 
 		from_potential = {
-			religion = ROOT
+			rightful_religious_head = ROOT
 
 			higher_real_tier_than = DUKE
 			is_feudal = yes

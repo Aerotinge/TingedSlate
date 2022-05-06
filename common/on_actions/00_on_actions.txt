@@ -2400,6 +2400,9 @@ GIVE_ARTIFACT_INTERACTION_ACCEPT_EVENT = {
 }
 
 # Unused, but perfectly functional
+# Root is the crusade target
+# From is the religious head
+# This/Prev is the asker
 ASK_FOR_CRUSADE_INTERACTION_ACCEPT_EVENT = {
 	events = {
 	}

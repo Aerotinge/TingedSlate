@@ -134,38 +134,6 @@ character_event = {
 }
 
 character_event = {
-    id = EMP.12060
-    hide_window = yes
-
-    is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
-
-    trigger = {
-		offmap_hre = {
-			has_status = hre_shattered
-			governor_title = {
-				OR = {
-					persistent_event_target:hre_title_1_per = {
-						title = FROM
-					}
-					persistent_event_target:hre_title_2_per = {
-						title = FROM
-					}
-					persistent_event_target:hre_title_3_per = {
-						title = FROM
-					}
-				}
-			}
-		}
-		is_theocracy = yes
-		# TODO: religious check
-    }
-
-	immediate = {
-		add_trait = hre_spiritual_elector
-	}
-}
-
-character_event = {
 	id = EMP.12110
 
 	is_triggered_only = yes # on_startup
@@ -337,7 +305,7 @@ character_event = {
 	}
 }
 
-# Weak claim for all Princes of hre
+# Monthly update - Elector
 character_event = {
 	id = EMP.12220
 
@@ -353,75 +321,15 @@ character_event = {
 	}
 
 	immediate = {
-		any_tributary = {
-			limit = {
-				is_tributary = {
-					type = hre_prince
-				}
-				is_feudal = yes
-				NOT = { has_claim = e_hre }
-			}
-
-			add_weak_claim = e_hre
-			character_event = {
-				id = EMP.12221
-				days = 30
-				random = 30
-			}
-		}
-	}
-}
-
-# Maintainace event for event generated weak claim
-character_event = {
-	id = EMP.12221
-
-	is_triggered_only = yes # EMP.12220
-
-	hide_window = yes
-
-	trigger = {
-		is_member_of_hre = yes
-		is_feudal = yes
-	}
-
-	fail_trigger_effect = {
-		if = {
-			limit = { has_weak_claim = e_hre }
-
-			remove_claim = e_hre
-		}
-		break = yes
-	}
-
-	immediate = {
-		repeat_event = {
-			id = EMP.12221
-			months = 1
-		}
-	}
-}
-
-
-# Monthly update - Elector modifier
-# Since triggered_modifiers is not working at all
-character_event = {
-	id = EMP.12222
-
-	is_triggered_only = yes # EMP.12220
-
-	hide_window = yes
-
-	trigger = {
-		is_offmap_governor = offmap_hre
-		FROM = {
-			has_status = hre_shattered
-		}
-	}
-
-	immediate = {
 		FROM = {
 			governor_title = {
+				any_tributary = {
+					limit = {
+						is_member_of_hre = yes
+					}
+
+					add_trait = hre_reigning_prince
+				}
 				any_elector_character = {
 					limit = {
 						NOT = { character = ROOT }
@@ -434,6 +342,26 @@ character_event = {
 				}
 			}
 		}
+	}
+}
+
+# Cleanup events
+character_event = {
+	id = EMP.12230
+
+	hide_window = yes
+
+	trigger = {
+		trait = hre_reigning_prince
+		is_member_of_hre = no
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		remove_trait = hre_reigning_prince
 	}
 }
 
@@ -541,45 +469,17 @@ narrative_event = {
 						cooldown = no
 						#opinion_effect = no # Anger all current electors
 					}
-
-					persistent_event_target:hre_title_1_per = {
-						holder_scope = {
-							if = {
-								limit = {
-									is_theocracy = yes
-								}
-
-								add_trait = hre_spiritual_elector
-							}
-						}
-					}
-					persistent_event_target:hre_title_2_per = {
-						holder_scope = {
-							if = {
-								limit = {
-									is_theocracy = yes
-								}
-
-								add_trait = hre_spiritual_elector
-							}
-						}
-					}
-					persistent_event_target:hre_title_3_per = {
-						holder_scope = {
-							if = {
-								limit = {
-									is_theocracy = yes
-								}
-
-								add_trait = hre_spiritual_elector
-							}
-						}
-					}
 				}
 			}
 			offmap_hre_government_de_facto_maintain_effect = yes
 			offmap_hre_ruler_name_sync_effect = yes
-			character_event = { id = EMP.12220 } # generate weak claim for all princes
+
+			any_tributary = {
+				limit = {
+					is_member_of_hre = yes
+				}
+				add_trait = hre_reigning_prince
+			}
 		}
 	}
 

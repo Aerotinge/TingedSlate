@@ -369,6 +369,16 @@ character_event = {
 	}
 
 	immediate = {
+		if = {
+			limit = {
+				offmap_papacy = {
+					governor = { character = ROOT }
+				}
+			}
+
+			offmap_papacy = { set_status = ppc_crusade }
+		}
+
 		crusade_target_title = {
 			save_event_target_as = crusade_title
 		}
@@ -2278,6 +2288,16 @@ character_event = {
 	hide_window = yes
 
 	immediate = {
+		if = {
+			limit = {
+				offmap_papacy = {
+					governor = { character = ROOT }
+				}
+			}
+
+			offmap_papacy = { set_status = ppc_pastoral }
+		}
+
 		any_playable_ruler = {
 			limit = { religion = ROOT }
 
@@ -2329,8 +2349,9 @@ character_event = {
 
 		add_character_modifier = {
 			name = cancel_crusade_cooldown
-			years = 10
+			years = 20
 			hidden = yes
+			inherit = yes
 		}
 	}
 }

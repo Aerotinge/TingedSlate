@@ -1,5 +1,8 @@
 namespace = EMP
-
+# GFX_evt_pope
+# GFX_evt_cathedral
+# GFX_evt_stone_church
+# GFX_evt_bishop
 
 character_event = {
 	id = EMP.13110
@@ -42,24 +45,73 @@ character_event = {
 	}
 }
 
+# Curia Controller Maintenance
 character_event = {
-	id = EMP.13140
+	id = EMP.13142
 
 	hide_window = yes
 
 	is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
 
 	trigger = {
+		FROMFROM = {
+			has_character_modifier = papacy_curia_controller_modifier
+			NOT = { higher_real_tier_than = BARON }
+		}
+	}
+
+	immediate = {
 		offmap_papacy = {
-			governor_title = {
-				title = FROM
+			event_target:curia_controller = {
+				remove_character_modifier = papacy_curia_controller_modifier
+			}
+			clear_persistent_event_target = curia_controller
+		}
+	}
+}
+
+character_event = {
+	id = EMP.13143
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_character_convert_religion
+
+	trigger = {
+		has_character_modifier = papacy_curia_controller_modifier
+		FROM = {
+			offmap_papacy = {
+				governor = {
+					religion = PREVPREV
+				}
 			}
 		}
 	}
 
 	immediate = {
-		print_papacy_governor_update_effect = yes
-		offmap_papacy_ruler_name_sync_effect = yes
+		remove_character_modifier = papacy_curia_controller_modifier
+		offmap_papacy = {
+			clear_persistent_event_target = curia_controller
+		}
+	}
+}
+
+character_event = {
+	id = EMP.13144
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_death
+
+	trigger = {
+		has_character_modifier = papacy_curia_controller_modifier
+	}
+
+	immediate = {
+		remove_character_modifier = papacy_curia_controller_modifier
+		offmap_papacy = {
+			clear_persistent_event_target = curia_controller
+		}
 	}
 }
 
@@ -78,3 +130,1091 @@ character_event = {
 		offmap_papacy_ruler_name_sync_effect = yes
 	}
 }
+
+# New Pope. Send a News Event!
+character_event = {
+	id = EMP.13200
+
+	is_triggered_only = yes # on_new_holder(_inheritance/usurpation)
+	hide_window = yes
+
+	only_playable = yes
+	religion_group = christian
+	only_men = yes
+
+	trigger = {
+		#is_offmap_tag = offmap_papacy
+		offmap_papacy = {
+			governor_title = {
+				title = FROM
+			}
+		}
+	}
+
+	immediate = {
+		print_papacy_governor_update_effect = yes
+		offmap_papacy_ruler_name_sync_effect = yes
+
+		# If lowborn, give him a dynasty
+		# The hardcoded generation is too late for an event desc below...
+		if = {
+			limit = { is_lowborn = yes }
+
+			dynasty = mother_bastard
+		}
+
+		# Get the protodeacon of the College of Cardinals
+		# The vassalship has yet transferred
+		random_character = {
+			limit = { has_minor_title = title_cardinal }
+			preferred_limit = { is_liege_or_above = FROMFROM }
+			preferred_limit = { ruled_years >= 10 }
+			preferred_limit = { ruled_years >= 5 }
+
+			narrative_event = { id = EMP.13201 }
+		}
+	}
+}
+
+# News from Papacy: A new Pope
+narrative_event = {
+ 	id = EMP.13201
+	title = NEWS_FROM_PAPACY
+	picture = GFX_evt_cathedral
+	show_root = yes
+	hide_from = yes # The charframe of the Pope is not ready and will have the feudal one as fallback
+
+	desc = {
+		text = EVTDESC_EMP_13201_HABEMUS_PAPAM
+		trigger = {
+			FROMFROMFROM = { is_dying = yes }
+		}
+	}
+	desc = {
+		text = EVTDESC_EMP_13201_COMPROMISE
+		trigger = {
+			FROMFROMFROM = { is_dying = no }
+		}
+	}
+
+	is_triggered_only = yes
+	major = yes
+
+	major_trigger = {
+		ai = no
+		has_offmap_news_enabled = offmap_papacy
+		is_within_diplo_range = FROM
+		rightful_religious_head = FROM
+	}
+
+	immediate = {
+		offmap_papacy = {
+			event_target:curia_controller = {
+				remove_character_modifier = papacy_curia_controller_modifier
+			}
+			clear_persistent_event_target = curia_controller
+
+			governor = {
+				any_opinion_modifier_target = {
+					count = 1 # An abdicated Pope might be reinstalled again
+
+					limit = {
+						reverse_has_opinion_modifier = {
+							name = opinion_supported_pope
+							who = FROM
+						}
+
+						rightful_religious_head = FROM
+					}
+
+					add_character_modifier = {
+						name = papacy_curia_controller_modifier
+						duration = -1
+					}
+					offmap_papacy = {
+						save_persistent_event_target = {
+							name = curia_controller
+							scope = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPT_EMP_13201
+	}
+
+	after = {
+	}
+}
+
+# Ecumenical Synod Entry point
+# Status changes to 'Synod'
+# Root = Governor
+# From = Offmap
+narrative_event = {
+	id = EMP.13250
+	title = EVTNAME_EMP_13250
+	desc = EVTDESC_EMP_13250
+	picture = GFX_evt_pope
+	border = GFX_event_narrative_frame_religion
+	show_root = yes
+
+	is_triggered_only = yes # on_offmap_yearly_pulse, random_events
+	major = yes
+
+	min_age = 16
+	#max_age = 80
+	only_capable = yes
+	prisoner = no
+	religion_group = christian
+
+	trigger = {
+		FROM = {
+			is_offmap_tag = offmap_papacy
+
+			has_status = ppc_pastoral
+
+			trigger_if = {
+				limit = { year < 1100 }
+				had_offmap_tmp_flag = { flag = synod_held years >= 100 }
+			}
+			trigger_else = {
+				had_offmap_tmp_flag = { flag = synod_held years >= 50 }
+			}
+		}
+
+		NOT = { has_character_flag = ecumenical_council_organizer }
+
+		# Pope himself
+		block_general_event_trigger = no
+		war = no
+		NOT = { has_any_opinion_modifier = opinion_supposed_to_crown }
+	}
+
+	major_trigger = {
+		ai = no
+		has_offmap_news_enabled = offmap_papacy
+		is_within_diplo_range = ROOT
+		religion_group = christian
+	}
+
+	weight_multiplier = {
+		factor = 1
+
+		mult_modifier = {
+			factor = 0.1
+			always = no
+			# Pope prestige?
+		}
+	}
+
+	immediate = {
+		random_province = {
+			limit = {
+				any_province_holding = {
+					holding_type = temple
+					NOT = {
+						check_variable = {
+							which = ecumenical_council_held
+							value >= 5
+						}
+					}
+					owner = {
+						rightful_religious_head = ROOT
+						is_within_diplo_range = ROOT
+						war = no
+						#any_liege = {
+						#	war = no
+						#}
+					}
+					has_siege = no
+				}
+			}
+			preferred_limit = {
+				any_province_lord = { is_vassal_or_below_of = ROOT }
+			}
+			preferred_limit = {
+				any_province_lord = { has_minor_title = title_cardinal }
+			}
+			preferred_limit = {
+				distance = {
+					who = ROOT
+					value <= 150
+				}
+			}
+
+			random_province_holding = {
+				limit = {
+					holding_type = temple
+					NOT = {
+						check_variable = {
+							which = ecumenical_council_held
+							value >= 5
+						}
+					}
+					owner = {
+						rightful_religious_head = ROOT
+						is_within_diplo_range = ROOT
+						war = no
+						#any_liege = {
+						#	war = no
+						#}
+					}
+					has_siege = no
+				}
+				preferred_limit = {
+					owner = { is_vassal_or_below_of = ROOT }
+				}
+				preferred_limit = {
+					owner = { has_minor_title = title_cardinal }
+				}
+
+				FROM = {
+					save_persistent_event_target = {
+						name = cathedral_helding_council
+						scope = PREV
+					}
+					set_status = ppc_synod
+				}
+				save_event_target_as = cathedral_helding_council
+			}
+
+			if = {
+				limit = {
+					FROM = {
+						NOT = { has_status = ppc_synod }
+					}
+				}
+
+				log = "Papacy Logging:"
+				log = "Can't find any cathedral for a synod...Aborting"
+				break = yes
+			}
+			else = {
+				ROOT = {
+					set_character_flag = ecumenical_council_organizer
+					set_character_flag = do_not_disturb
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTA_EMP_13250 # Hallelujah!
+
+		trigger = {
+			trigger_if = {
+				limit = {
+					ROOT = { has_pentarchy = no }
+				}
+
+				rightful_religious_head = ROOT
+			}
+			trigger_else = {
+				religion_head = { character = ROOT }
+			}
+		}
+
+		ROOT = {
+			show_portrait = no
+		}
+		# Just to get the portraits
+		event_target:cathedral_helding_council = {
+			holder_scope = {
+				show_portrait = yes
+			}
+		}
+	}
+
+	option = { # Christian cousins
+		name = EVTOPTB_EMP_13250 # Ecumenical? They Can't Represent Us!
+
+		trigger = {
+			trigger_if = {
+				limit = {
+					ROOT = { has_pentarchy = no }
+				}
+
+				NOT = { rightful_religious_head = ROOT }
+			}
+			trigger_else = {
+				NOT = {
+					religion_head = { character = ROOT }
+				}
+			}
+		}
+
+		ROOT = {
+			show_portrait = no
+		}
+	}
+}
+
+# Monthly ground check
+narrative_event = {
+	id = EMP.13251
+	title = EVTNAME_EMP_13251
+	desc = EVTDESC_EMP_13251
+	picture = GFX_evt_bad_news
+	border = GFX_event_narrative_frame_religion
+	show_root = yes
+
+	is_triggered_only = yes # on_offmap_monthly_pulse
+	major = yes
+
+	trigger = {
+		FROM = {
+			is_offmap_tag = offmap_papacy
+
+			has_status = ppc_synod
+
+			OR = {
+				persistent_event_target:cathedral_helding_council = {
+					OR = {
+						owner = {
+							OR = {
+								NOT = { rightful_religious_head = ROOT }
+								war = yes
+							}
+						}
+						has_siege = yes
+						has_holder = no
+					}
+				}
+				ROOT = { war = yes }
+			}
+		}
+	}
+
+	major_trigger = {
+		ai = no
+		has_offmap_news_enabled = offmap_papacy
+		NOT = { excommunicated_for = ROOT }
+		is_within_diplo_range = ROOT
+		trigger_if = {
+			limit = {
+				ROOT = { has_pentarchy = no }
+			}
+
+			rightful_religious_head = ROOT
+		}
+		trigger_else = {
+			religion_head = { character = ROOT }
+		}
+	}
+
+	immediate = {
+		FROM = {
+			persistent_event_target:cathedral_helding_council = {
+				save_event_target_as = cathedral_helding_council
+			}
+			clear_persistent_event_target = cathedral_helding_council
+			clr_offmap_tmp_flag = council_staged
+			set_status = ppc_pastoral
+			# More to clean
+		}
+
+		clr_character_flag = do_not_disturb
+	}
+
+	option = {
+		name = EVTOPTA40026
+	}
+}
+
+# Ecumenical - Summons bishops
+character_event = {
+	id = EMP.13260
+
+	is_triggered_only = yes # on_offmap_monthly_pulse
+	hide_window = yes
+
+	trigger = {
+		FROM = {
+			is_offmap_tag = offmap_papacy
+			has_status = ppc_synod
+			NOT = {
+				has_offmap_tmp_flag = council_staged
+			}
+		}
+	}
+
+	immediate = {
+		FROM = {
+			persistent_event_target:cathedral_helding_council = {
+				location = {
+					any_character = {
+						count = 15
+
+						limit = {
+							rightful_religious_head = ROOT
+							government = theocracy_government
+							is_ruler = yes # required, theocracy_government can exist on a landless char
+							block_general_event_trigger = no
+							has_job_title = no # Prone to be in other place than his bishopric
+							in_command = no
+							NOR = {
+								has_any_opinion_modifier = opinion_supposed_to_crown
+								at_location = PREV
+								character = ROOT
+								has_character_flag = travelling_to_@PREV
+							}
+							# Time-based distance increasement
+							trigger_if = {
+								limit = {
+									ROOT_FROM = {
+										days_since_status_change < 60
+									}
+								}
+
+								distance = {
+									where = PREVPREV
+									distance <= 200
+								}
+							}
+							trigger_else_if = {
+								limit = {
+									ROOT_FROM = {
+										days_since_status_change >= 60
+										days_since_status_change < 120
+									}
+								}
+
+								distance = {
+									where = PREVPREV
+									distance > 250
+								}
+								distance = {
+									where = PREVPREV
+									distance <= 500
+								}
+							}
+							trigger_else = {
+								distance = {
+									where = PREVPREV
+									distance > 500
+								}
+							}
+						}
+						preferred_limit = {
+							has_minor_title = title_cardinal
+						}
+						preferred_limit = {
+							likes_better_than = {
+								who = ROOT
+								than = liege
+							}
+						}
+
+						# Better wrapped in a flavor letter_event, but theocracy_government is unplayable
+						add_trait = travelling
+						set_character_flag = travelling_to_@PREV
+
+						character_event = { id = EMP.13261 days = 30 } # Failsafe
+					}
+				}
+			}
+		}
+	}
+}
+
+# Travelling Failsafe
+# FROM is Governor
+# ROOT is the bishop
+character_event = {
+	id = EMP.13261
+
+	is_triggered_only = yes # EMP.13260
+	hide_window = yes
+
+	immediate = {
+		if = {
+			limit = {
+				FROMFROM = {
+					has_status = ppc_synod
+				}
+				religion = FROM								# Those whose got jurisdiction changed after setting off is still welcome
+				NOR = {
+					rightful_religious_head = THIS			# ...Unless he's the antipope himself
+					has_any_opinion_modifier = opinion_supposed_to_crown
+				}
+				government = theocracy_government
+			}
+
+			repeat_event = { id = EMP.13261 days = 30 }
+		}
+		else = {
+			remove_trait = travelling
+			clear_flags_with_prefix = travelling_to_
+		}
+	}
+}
+
+# Ecumenical - Opening
+narrative_event = {
+	id = EMP.13270
+	title = EVTNAME_EMP_13270 # The [offmap_papacy.cathedral_helding_council.GetEcumenicalOrdinal] Council of the [offmap_papacy.cathedral_helding_council.GetBaseName]
+	desc = EVTDESC_EMP_13270 # "We announce to you the eternal life which dwelt with the Father and was made visible to us. What we have seen and heard we announce to you, so that you may have fellowship with us and our common fellowship be with the Father and His Son Jesus Christ." Therefore, this present council wishes to set forth authentic doctrine on divine revelation and how it is handed on, so that by hearing the message of salvation the whole world may believe, by believing it may hope, and by hoping it may love.
+	picture = GFX_evt_bishop
+	border = GFX_event_narrative_frame_religion
+	show_root = yes
+
+	is_triggered_only = yes # on_offmap_monthly_pulse
+	major = yes
+
+	trigger = {
+		FROM = {
+			is_offmap_tag = offmap_papacy
+			has_status = ppc_synod
+			days_since_status_change > 150
+			persistent_event_target:cathedral_helding_council = { always = yes }
+			NOT = { has_offmap_tmp_flag = council_staged }
+		}
+	}
+
+	major_trigger = {
+		ai = no
+		has_offmap_news_enabled = offmap_papacy
+		NOT = { excommunicated_for = ROOT }
+		is_within_diplo_range = ROOT
+		trigger_if = {
+			limit = {
+				ROOT = { has_pentarchy = no }
+			}
+
+			rightful_religious_head = ROOT
+		}
+		trigger_else = {
+			religion_head = { character = ROOT }
+		}
+	}
+
+	immediate = {
+		FROM = {
+			set_offmap_tmp_flag = council_staged
+		}
+	}
+
+	option = {
+		name = EVTOPTAHF23813
+		# tooltip: The Ecumenical Council Begins
+
+		ROOT_FROM = {
+			persistent_event_target:cathedral_helding_council = {
+				location = {
+					save_event_target_as = cathedral_province
+
+					# Just to get the portraits
+					# Dirty nested. Since a cached scope do not randomize,
+					# while/count will always pick the same character
+					travelling = {
+						limit = { has_character_flag = travelling_to_@event_target:cathedral_province }
+
+						show_portrait = yes
+						travelling = {
+							limit = {
+								has_character_flag = travelling_to_@event_target:cathedral_province
+								NOT = { character = PREV }
+							}
+
+							show_portrait = yes
+							travelling = {
+								limit = {
+									has_character_flag = travelling_to_@event_target:cathedral_province
+									NOR = {
+										character = PREV
+										character = PREVPREV
+									}
+								}
+
+								show_portrait = yes
+								travelling = {
+									limit = {
+										has_character_flag = travelling_to_@event_target:cathedral_province
+										NOR = {
+											character = PREV
+											character = PREVPREV
+											character = PREVPREVPREV
+										}
+									}
+
+									show_portrait = yes
+									travelling = {
+										limit = {
+											has_character_flag = travelling_to_@event_target:cathedral_province
+											NOR = {
+												character = PREV
+												character = PREVPREV
+												character = PREVPREVPREV
+												character = PREVPREVPREVPREV
+											}
+										}
+
+										show_portrait = yes
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+# Issue Topic/Decree - Tombola event
+character_event = {
+	id = EMP.13271
+
+	is_triggered_only = yes # on_offmap_monthly_pulse
+	hide_window = yes
+
+	trigger = {
+		FROM = {
+			is_offmap_tag = offmap_papacy
+			has_status = ppc_synod
+			days_since_status_change > 165
+			days_since_status_change < 225
+			persistent_event_target:cathedral_helding_council = { always = yes }
+			has_offmap_tmp_flag = council_staged
+		}
+	}
+
+	immediate = {
+		current_heir = { # Praefectus
+			save_event_target_as = praefectus_target
+		}
+		FROM = {
+			# Issue Topic Tombola
+			random_list = {
+				# Generic
+				50 = { # Summon and Condemn heresy
+					trigger = {
+						OR = {
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+							travelling = {
+								has_character_flag = travelling_to_@event_target:council_province
+								OR = {
+									# Bad priest
+									trait = bad_priest_christian
+									trait = cynical
+									has_character_modifier = the_cynical
+									# Mentally unhealthy
+									trait = possessed
+									trait = lunatic
+									has_character_modifier = speaking_in_tounges
+									has_character_modifier = voice_of_jesus
+									has_character_modifier = military_jesus
+									# Mystic
+									has_character_modifier = esoteric_religion
+									trait = mystic
+								}
+							}
+						}
+					}
+
+					if = {
+						limit = {
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+						}
+
+						persistent_event_target:special_condemn_target = { save_event_target_as = council_condemn_target }
+					}
+					else = {
+						travelling = {
+							limit = {
+								has_character_flag = travelling_to_@event_target:council_province
+								OR = {
+									# Bad priest
+									trait = bad_priest_christian
+									trait = cynical
+									has_character_modifier = the_cynical
+									# Mentally unhealthy
+									trait = possessed
+									trait = lunatic
+									has_character_modifier = speaking_in_tounges
+									has_character_modifier = voice_of_jesus
+									has_character_modifier = military_jesus
+									# Mystic
+									has_character_modifier = esoteric_religion
+									trait = mystic
+									# Zealot
+									trait = zealous
+									trait = theologian
+								}
+							}
+
+							save_event_target_as = council_condemn_target
+						}
+					}
+
+					event_target:council_condemn_target = {
+						random_list = {
+							10 = { # Being Accused Heresy
+								mult_modifier = {
+									factor = 0.75
+									ROOT = { realm_learning < 2 }
+								}
+								mult_modifier = {
+									factor = 0.75
+									ROOT = { realm_learning < 4 }
+								}
+								mult_modifier = {
+									factor = 0.75
+									ROOT = { realm_learning < 6 }
+								}
+								mult_modifier = {
+									factor = 0.75
+									ROOT = { realm_learning < 8 }
+								}
+								mult_modifier = {
+									factor = 1.15
+									ROOT = { realm_learning >= 10 }
+								}
+								mult_modifier = {
+									factor = 1.15
+									ROOT = { realm_learning >= 11 }
+								}
+								mult_modifier = {
+									factor = 1.15
+									ROOT = { realm_learning >= 12 }
+								}
+								mult_modifier = {
+									factor = 1.15
+									ROOT = { realm_learning >= 13 }
+								}
+								mult_modifier = {
+									factor = 1.10
+									ROOT = { realm_learning >= 14 }
+								}
+								mult_modifier = {
+									factor = 1.10
+									ROOT = { realm_learning >= 15 }
+								}
+								mult_modifier = {
+									factor = 1.10
+									ROOT = { realm_learning >= 16 }
+								}
+								mult_modifier = {
+									factor = 1.10
+									ROOT = { realm_learning >= 17 }
+								}
+								mult_modifier = {
+									factor = 1.10
+									ROOT = { realm_learning >= 18 }
+								}
+								mult_modifier = {
+									factor = 1.10
+									ROOT = { realm_learning >= 19 }
+								}
+								mult_modifier = {
+									factor = 1.05
+									ROOT = { realm_learning >= 20 }
+								}
+								mult_modifier = {
+									factor = 1.05
+									ROOT = { realm_learning >= 21 }
+								}
+								mult_modifier = {
+									factor = 1.05
+									ROOT = { realm_learning >= 22 }
+								}
+								# Special character
+								# Jeanne d'Arc
+								additive_modifier = { value = 1.5 has_character_flag = is_jeanne_darc }
+								# Hus
+								additive_modifier = { value = 10 has_character_flag = is_jan_hus }
+								# Jacques de Molay
+								additive_modifier = { value = 10 holy_order = yes }
+
+								# letter_event = { id = EMP.13310 } # Confess your guilty
+								# response pick narrative_event, or maybe one by trigger and ifs?
+								# EMP.13311 The Sinner Confessed
+								# EMP.13312 The Sinner Burnt
+								# EMP.13313 The Sinner Excommunicated and Banished
+							}
+							1 = { # Being Found Innocent
+								learning_score = yes
+								mult_modifier = { factor = 0.8 trait = slothful }
+								mult_modifier = { factor = 0.8 trait = wroth }
+								mult_modifier = { factor = 0.8 trait = proud }
+								mult_modifier = { factor = 0.8 trait = shy }
+								mult_modifier = { factor = 0.8 trait = craven }
+								mult_modifier = { factor = 0.8 trait = arbitrary }
+								mult_modifier = { factor = 0.8 trait = stutter }
+								job_event_mtth_modifier_inverted_learning_score = yes
+
+								governor = {
+									# narrative_event = { id = EMP.13314 } # Declared Innocent
+								}
+							}
+						}
+					}
+				}
+
+				50 = { # Voluntary abdication of Popes
+					trigger = {
+						governor_title = {
+							any_claimant = {
+								always = yes
+							}
+						}
+						NOT = { # Has a reserved issue
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+						}
+					}
+
+					change_variable = {
+						which = papacy_abdication_declaration
+						value = 1
+					}
+					governor_title = {
+						any_claimant = {
+							PREVPREV = {
+								change_variable = {
+									which = papacy_abdication_declaration
+									value = 1
+								}
+							}
+							# letter_event = { id = EMP.13320 } # Ans:Y/FROMFROM = { vote_count -1 }; portrait = event_target:praefectus_target
+							# Reslove in after block
+							# EMP.13321 # The Papal Schism Carry on...
+							# EMP.13322 # The Schism Ends # All abdicated
+						}
+					}
+				}
+
+				50 = { # Suppressed some abuses connected with indulgences
+					trigger = {
+						NOT = { has_offmap_tmp_flag = papacy_decree_indulgence_ban }
+						NOT = { # Has a reserved issue
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+						}
+						governor = {
+							religion = catholic
+							NOR = {
+								trait = greedy
+								trait = bad_priest_christian
+							}
+							OR = {
+								trait = just
+								trait = charitable
+								trait = kind
+								trait = humble
+							}
+						}
+					}
+
+					mult_modifier = { factor = 0.5 year < 1000 }
+					mult_modifier = { factor = 0.5 year < 1100 }
+					mult_modifier = { factor = 0.5 year < 1200 }
+					# 1066 observation facts: papacy_indulgence_counter is quite close to total_years_played
+					mult_modifier = {
+						factor = 2
+						year > 1200
+						check_variable = {
+							which = papacy_indulgence_counter # Also affects Jan Hus spawn rate
+							which > total_years_played
+						}
+					}
+
+					governor = {
+						# narrative_event = { id = EMP.13360 } # Indulgence control
+						# Flavor only
+					}
+				}
+
+				# Decrees, and its revokations variant await...
+				50 = { # Pax Dei
+					trigger = {
+						NOT = { has_offmap_tmp_flag = papacy_decree_pax_dei }
+						NOT = { # Has a reserved issue
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+						}
+					}
+
+					mult_modifier = { factor = 0.8 year < 900 }
+					mult_modifier = { factor = 0.8 year < 950 }
+					mult_modifier = { factor = 0.8 year < 1000 }
+					mult_modifier = { factor = 100 year > 1000 }
+
+					governor = {
+						# narrative_event = { id = EMP.13330 }
+					}
+				}
+
+				50 = { # Sicut Judaeis
+					trigger = {
+						has_offmap_tmp_flag = papacy_decree_pax_dei
+						# has_global_flag = first_crusade_complete # Do a crusader slaughtered jews flag in near east province while in crusading
+						NOT = { has_offmap_tmp_flag = papacy_decree_sicut_judaeis }
+						NOT = { # Has a reserved issue
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+						}
+						governor = {
+							is_catholic_branch = yes
+							NOR = {
+								trait = zealous
+								trait = stubborn
+							}
+						}
+					}
+
+					mult_modifier = {
+						factor = 10
+						travelling = {
+							trait = sympathy_judaism
+						}
+					}
+
+					governor = {
+						# narrative_event = { id = EMP.13340 } # Issue Sicut Judaeis # additional 100 piety penalty for expelled jews decision if religion_head is governor of offmap_papacy
+					}
+				}
+
+				50 = { # Dictatus papae
+					trigger = {
+						NOT = { has_offmap_tmp_flag = papacy_decree_dictatus_papae }
+						NOT = { # Has a reserved issue
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+						}
+						governor = { is_catholic_branch = yes }
+					}
+
+					mult_modifier = {
+						factor = 4
+						year > 1050
+					}
+
+					governor = {
+						# narrative_event = { id = EMP.13340 } # Issue Dictatus papae # Papacy starts murmuring with your free investiture_law_0
+					}
+				}
+
+				50 = { # Cardinals granted the privilege of wearing the red hat
+					trigger = {
+						NOT = { has_offmap_tmp_flag = papacy_decree_red_cardinal }
+						NOT = { # Has a reserved issue
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+						}
+						governor = { is_catholic_branch = yes }
+					}
+
+					governor = {
+						# narrative_event = { id = EMP.13350 } # The most select persons
+					}
+				}
+
+				50 = { # Christiana pietas
+					trigger = {
+						has_offmap_tmp_flag = papacy_decree_pax_dei
+						# has_global_flag = first_crusade_complete # Do a crusader slaughtered jews flag in near east province while in crusading
+						NOT = { has_offmap_tmp_flag = papacy_decree_sicut_judaeis }
+						NOT = { # Has a reserved issue
+							persistent_event_target:special_condemn_target = { is_alive = yes }
+						}
+						governor = {
+							is_catholic_branch = yes
+							NOR = {
+								trait = zealous
+								trait = stubborn
+							}
+						}
+					}
+
+					mult_modifier = {
+						factor = 10
+						travelling = {
+							trait = sympathy_judaism
+						}
+					}
+
+					governor = {
+						# narrative_event = { id = EMP.13340 } # Issue Christiana pietas, add_intermarry = jewish_group, disable expel jews decision
+					}
+				}
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				check_variable = {
+					which = papacy_abdication_declaration
+					value > 0
+				}
+			}
+
+			governor = {
+				# letter_event = { id = EMP.13320 } # Your turn
+				# if N	fires EMP.13321
+				# if Y	check papacy_abdication_declaration == 0, EMP.13322
+				#		else fire EMP.13321
+			}
+		}
+	}
+}
+
+# Ecumenical - Closing Missa
+narrative_event = {
+	id = EMP.13290
+	title = EVTNAME_EMP_13290
+	desc = EVTDESC_EMP_13290_A
+	desc = EVTDESC_EMP_13290_B # TODO: only for post-schism
+	picture = GFX_evt_bishop
+	border = GFX_event_narrative_frame_religion
+	show_root = yes
+
+	is_triggered_only = yes # on_offmap_monthly_pulse
+	major = yes
+
+	trigger = {
+		FROM = {
+			is_offmap_tag = offmap_papacy
+			has_status = ppc_synod
+			days_since_status_change >= 225
+		}
+	}
+
+	major_trigger = {
+		ai = no
+		has_offmap_news_enabled = offmap_papacy
+		NOT = { excommunicated_for = ROOT }
+		is_within_diplo_range = ROOT
+		trigger_if = {
+			limit = {
+				ROOT = { has_pentarchy = no }
+			}
+
+			rightful_religious_head = ROOT
+		}
+		trigger_else = {
+			religion_head = { character = ROOT }
+		}
+	}
+
+	immediate = {
+		FROM = {
+			set_status = ppc_pastoral
+			# Reset Timer
+			clr_offmap_tmp_flag = synod_held
+			set_offmap_tmp_flag = synod_held
+		}
+	}
+
+	option = {
+		name = AMEN
+	}
+
+	after = {
+		clr_offmap_tmp_flag = council_staged
+		clear_persistent_event_target = cathedral_helding_council
+		# more
+	}
+}
+
+# Most beloved brethren,\nUrged by necessity, I, [Root.GetTitledName] by the permission of God chief bishop and prelate over the whole world, have come into these parts as an ambassador with a divine admonition to you, the servants of God.\nFreshly quickened by the divine correction, you must apply the strength of your righteousness concerns you as well as God.\nFor your brethren are in urgent need of your help.\nFor, as the most of you have heard, the [crusade_target.holder.Culture.GetName] and [crusade_target.holder.Religion.GetName] have conquered the territory of [crusade_target.GetBaseName]\nThey have killed and captured many christian, and have destroyed the churches.\n\nOn this account I, or rather the Lord, beseech you as Christ's heralds to  persuade all people of whatever rank, foot-soldiers and knights, poor and rich, to carry aid promptly to those Christians and to destroy that vile race from the lands of our friends.\nI say this to those who are present, it meant also for those who are absent.\nMoreover, Christ commands it.

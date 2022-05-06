@@ -651,6 +651,21 @@ new_crusade = {
 			can_call_crusade = yes
 			uses_new_crusade = yes
 			NOT = { has_character_modifier = cancel_crusade_cooldown }
+
+			# If Pope, controlled by Papal status
+			trigger_if = {
+				limit = {
+					offmap_papacy = {
+						governor = {
+							character = PREVPREV
+						}
+					}
+				}
+
+				offmap_papacy = {
+					has_status = ppc_pastoral
+				}
+			}
 		}
 
 		# Defender
@@ -2539,19 +2554,15 @@ religious = {
 			show_scope_change = no
 
 			if = {
-				limit = {
-					religion = buddhist
-				}
+				limit = { religion = buddhist }
 				piety = -250
 			}
 			else_if = {
-				limit = {
-					NOT = { trait = zealous }
-				}
-				piety = -250
+				limit = { trait = zealous }
+				piety = -100
 			}
 			else = {
-				piety = -100
+				piety = -250
 			}
 		}
 

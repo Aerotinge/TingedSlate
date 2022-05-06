@@ -22,7 +22,7 @@ defined_text = {
 }
 
 defined_text = {
-	name = GetOffmapLikeAndDislikeDesc
+	name = GetOffmapLikesAndDislikesDesc
 	use_first_valid = yes
 
 	text = {
@@ -35,5 +35,22 @@ defined_text = {
 		trigger = {
 		}
 		localisation_key = OFFMAP_OFFMAP_LIKES_AND_DISLIKES_DESC
+	}
+}
+
+defined_text = {
+	name = GetOffmapGraceTooltip
+	use_first_valid = yes
+
+	text = {
+		trigger = {
+			is_offmap_tag_including_dead = offmap_china
+		}
+		localisation_key = OFFMAP_CHINA_GRACE_TOOLTIP
+	}
+	text = {
+		trigger = {
+		}
+		localisation_key = OFFMAP_OFFMAP_CURRENCY_TOOLTIP
 	}
 }

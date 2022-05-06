@@ -14,7 +14,7 @@ guiTypes = {
 		guiButtonType = {
 			name = "icon_offmaps"
 			position = { x = 0 y = 0 }
-			quadTextureSprite = "GFX_italia_screen_button"
+			quadTextureSprite = "GFX_papacy_screen_button"
 			clickSound = generic_click_02
 		}
 	}

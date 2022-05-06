@@ -107,6 +107,18 @@ d_kirghiz = {
 	color2 = { 255 255 255 }
 }
 
+d_mainz = {
+	color = { 129 129 129 }
+	color2 = { 255 255 255 }
+
+	capital = 194 # Mainz
+
+	allow = {
+		is_theocracy = yes
+		can_create_duchy = yes
+	}
+}
+
 d_peloponnese = {
 	color = { 196 35 140 }
 	color2 = { 255 255 20 }

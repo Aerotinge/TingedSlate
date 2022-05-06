@@ -61,6 +61,8 @@ on_death = {
 		# Generate characters for succ_open_elective title holder other than theocracy, if no heir available
 		# Or else it spawn a hardcoded male character, who ignoring the gender law
 		EMP.20110
+		# Papacy
+		EMP.13144
 	}
 }
 
@@ -78,13 +80,13 @@ on_new_holder = {
 	events = {
 		EMP.20520 # Reevaluate Pentarchy if FROM is the five sees
 		# Holy Roman Empire
-		EMP.12060	# Bishop Elector
 		# Government assignment
 		EMP.21011 # Nomadic
 		EMP.21012 # Pronoia
 		EMP.21013 # Iqta
 		# Papacy
-		EMP.13140
+		EMP.13200 # New Pope
+		EMP.13142 # Curia Controller Maintenance
 		# Tribal Organization Cleanup
 		EMP.20010
 	}
@@ -103,9 +105,9 @@ on_new_holder_inheritance = {
 		# Holy Roman Empire
 		EMP.12020
 		EMP.12021	#
-		EMP.12060	# Bishop Elector
 		# Papacy
-		EMP.13140
+		EMP.13200 # New Pope
+		EMP.13142
 		# Tribal Organization Cleanup
 		EMP.20010
 	}
@@ -122,9 +124,9 @@ on_new_holder_usurpation = {
 	events = {
 		EMP.20520 # Reevaluate Pentarchy if FROM is the five sees
 		# Holy Roman Empire
-		EMP.12060	# Bishop Elector
 		# Papacy
-		EMP.13140
+		EMP.13200 # New Pope
+		EMP.13142
 		# Tribal Organization Cleanup
 		EMP.20010
 		# Unlanded Nomadic ruler goes raiding adventurer
@@ -151,6 +153,8 @@ on_unlanded = {
 on_character_convert_religion = {
 	events = {
 		EMP.20530 # Reevaluate Pentarchy if FROM is the five sees
+		# Papacy
+		EMP.13143
 	}
 	random_events = {
 		dismiss_job_spiritual = { # Dismiss your job_spiritual of old religion when conversion, with an one-day grace period
@@ -191,9 +195,14 @@ on_offmap_ruler_changed = {
 # FROM is offmap
 on_offmap_monthly_pulse = {
 	events = {
-		EMP.12220 # pulse event for princes, for giving/revoking their weak claim of e_hre
-		EMP.12222 # Elector
-		#EMP.13160 # Patriachate setup
+		EMP.12220 # pulse event for princes
+		# offmap_papacy
+		EMP.13251 # Preparing of an Ecumenical Synod - Failsafe check
+		EMP.13260 # Preparing of an Ecumenical Synod - Summon bishops
+		EMP.13270 # Opening of an Ecumenical Synod
+		EMP.13271 # Ecumenical Tombola
+		EMP.13290 # Closing of an Ecumenical Synod
+		EMP.13250 # Status changes to 'Synod'
 	}
 }
 
@@ -202,16 +211,7 @@ on_offmap_monthly_pulse = {
 # FROM is offmap
 on_offmap_yearly_pulse = {
 	events = {
-	}
-
-	random_events = {
-		# Papacy
-		papal_investiture = {
-			delay = 35
-
-			760 = 0
-			240 = 67000 # The Pope singles out a Kingdom with Free Investiture
-		}
+		#EMP.13250 # Status changes to 'Synod'
 	}
 }
 

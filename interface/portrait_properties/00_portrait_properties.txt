@@ -4895,7 +4895,9 @@
 				has_minor_title = title_fraticelli_cardinal
 			}
 
-			year < 1245
+			NOT = {
+				offmap_papacy = { has_offmap_tmp_flag = papacy_decree_red_cardinal }
+			}
 		}
 	}
 
@@ -4911,7 +4913,7 @@
 				has_minor_title = title_fraticelli_cardinal
 			}
 
-			year >= 1245
+			offmap_papacy = { has_offmap_tmp_flag = papacy_decree_red_cardinal }
 		}
 	}
 }

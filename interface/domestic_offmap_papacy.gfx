@@ -1,27 +1,37 @@
 spriteTypes = {
 
 	spriteType = {
-		name = "GFX_offmap_bg_italia"
-		textureFile = "gfx\\interface\\offmap_screen\\italia_background.dds"
+		name = "GFX_offmap_bg_papacy"
+		textureFile = "gfx\\interface\\offmap_screen\\papacy_background.dds"
 	}
 
 	spriteType = {
-		name = "GFX_offmap_ruler_banner_italia"
-		textureFile = "gfx\\interface\\offmap_screen\\italia_emperor_italia_banner.dds"
+		name = "GFX_offmap_ruler_banner_papacy"
+		textureFile = "gfx\\interface\\offmap_screen\\papacy_pope_papacy_banner.dds"
 	}
 
 	spriteType = {
-		name = "GFX_italia_screen_button"
-		textureFile = "gfx\\interface\\offmap_screen\\italia_screen_button.dds"
+		name = "GFX_papacy_screen_button"
+		textureFile = "gfx\\interface\\offmap_screen\\papacy_screen_button.dds"
 	}
 
 	spriteType = {
-		name = "GFX_offmap_italia_likes"
-		textureFile = "gfx\\interface\\offmap_screen\\italia_like_icon.dds"
+		name = "GFX_offmap_papacy_likes"
+		textureFile = "gfx\\interface\\offmap_screen\\papacy_like_icon.dds"
 	}
 
 	spriteType = {
-		name = "GFX_offmap_italia_dislikes"
-		textureFile = "gfx\\interface\\offmap_screen\\italia_dislike_icon.dds"
+		name = "GFX_offmap_papacy_dislikes"
+		textureFile = "gfx\\interface\\offmap_screen\\papacy_dislike_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_offmap_papacy_donation"
+		textureFile = "gfx\\interface\\offmap_screen\\papacy_donation_icon.dds"
+	}
+
+	spriteType = {
+		name = "GFX_offmap_papacy_prayer"
+		textureFile = "gfx\\interface\\offmap_screen\\papacy_prayer_icon.dds"
 	}
 }

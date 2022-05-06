@@ -1,0 +1,13 @@
+# Used in the invasion script...
+valid_offmap_papacy_target = {
+	is_landed = yes
+	higher_real_tier_than = BARON
+	is_within_diplo_range = ROOT
+	in_revolt = no
+
+	NOR = {
+		character = ROOT
+		pays_tribute_to = ROOT
+		religion_group = ROOT
+	}
+}

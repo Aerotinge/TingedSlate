@@ -109,6 +109,19 @@ decisions = {
 					random = 12
 					tooltip = indulgence_ask
 				}
+
+				offmap_papacy = {
+					if = {
+						limit = {
+							governor = { character = PREVPREV }
+						}
+
+						change_variable = {
+							which = papacy_indulgence_counter
+							value = 1
+						}
+					}
+				}
 			}
 		}
 

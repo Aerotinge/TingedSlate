@@ -16,7 +16,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "bg_offmaps"
-			quadTextureSprite = "GFX_offmap_bg_italia"
+			quadTextureSprite = "GFX_offmap_bg_papacy"
 			position = { x = 0 y = 0 }
 			orientation = "UPPER_LEFT"
 		}
@@ -69,23 +69,23 @@ guiTypes = {
 				orientation = "UPPER_LEFT"
 			}
 
-			instantTextBoxType = {
-				name = "grace_label"
-				position = { x = 5290 y = 348 }
-				textureFile = ""
-				font = "vic_22"
-				borderSize = { x = 0 y = 0 }
-				text = "OFFMAP_GRACE"
-				maxWidth = 120
-				maxHeight = 24
-				format = centre
-				fixedSize = yes
-				orientation = "UPPER_LEFT"
-			}
+			#instantTextBoxType = {
+			#	name = "grace_label"
+			#	position = { x = 5290 y = 348 }
+			#	textureFile = ""
+			#	font = "vic_22"
+			#	borderSize = { x = 0 y = 0 }
+			#	text = "OFFMAP_GRACE"
+			#	maxWidth = 120
+			#	maxHeight = 24
+			#	format = centre
+			#	fixedSize = yes
+			#	orientation = "UPPER_LEFT"
+			#}
 
 			iconType = {
 				name = "ruler_portrait_banner"
-				quadTextureSprite = "GFX_offmap_ruler_banner_italia"
+				quadTextureSprite = "GFX_offmap_ruler_banner_papacy"
 				position = { x = 250 y = 300 }
 				orientation = "UPPER_LEFT"
 			}
@@ -199,14 +199,14 @@ guiTypes = {
 
 			iconType = {
 				name = "likes_icon"
-				spriteType = "GFX_offmap_italia_likes"
-				position = { x = 60 y = 416 }
+				spriteType = "GFX_offmap_papacy_likes"
+				position = { x = 5060 y = 416 }
 				orientation = "UPPER_LEFT"
 			}
 
 			instantTextBoxType = {
 				name = "likes_label"
-				position = { x = 110 y = 420 }
+				position = { x = 5110 y = 420 }
 				textureFile = ""
 				font = "vic_18_black"
 				borderSize = { x = 0 y = 0 }
@@ -220,7 +220,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "likes_text"
-				position = { x = 110 y = 444 }
+				position = { x = 5110 y = 444 }
 				textureFile = ""
 				font = "vic_18_black"
 				borderSize = { x = 0 y = 0 }
@@ -234,7 +234,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "dislikes_label"
-				position = { x = 110 y = 516 }
+				position = { x = 5110 y = 516 }
 				textureFile = ""
 				font = "vic_18_black"
 				borderSize = { x = 0 y = 0 }
@@ -248,7 +248,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "dislikes_text"
-				position = { x = 110 y = 544 }
+				position = { x = 5110 y = 544 }
 				textureFile = ""
 				font = "vic_18_black"
 				borderSize = { x = 0 y = 0 }
@@ -262,8 +262,8 @@ guiTypes = {
 
 			iconType = {
 				name = "dislikes_icon"
-				spriteType = "GFX_offmap_italia_dislikes"
-				position = { x = 60 y = 516 }
+				spriteType = "GFX_offmap_papacy_dislikes"
+				position = { x = 5060 y = 516 }
 				orientation = "UPPER_LEFT"
 			}
 
@@ -326,7 +326,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "status"
-				position = { x = 5375 y = 47 }
+				position = { x = 375 y = 47 }
 				textureFile = ""
 				font = "vic_22"
 				borderSize = { x = 0 y = 0 }
@@ -368,13 +368,6 @@ guiTypes = {
 				maxWidth = 200
 				maxHeight = 50
 				fixedSize = yes
-			}
-
-			overlappingElementsBoxType = {
-				name = "naps"
-				position = { x = 5355 y = 530 }
-				size = { x = 280 y = 32 }
-				format = centre
 			}
 
 			guiButtonType = {
@@ -441,13 +434,23 @@ guiTypes = {
 				fixedSize = yes
 			}
 
+			iconType = {
+				name = "papacy_donation_static"
+				spriteType = "GFX_offmap_papacy_donation"
+				position = { x = 235 y = 250 }
+			}
+
 			guiButtonType = {
 				name = "papacy_donation"
 				quadTextureSprite = "GFX_offmap_gift_button_china"
 				position = { x = 235 y = 250 }
 				clickSound = click_default_china
-				#pdx_tooltip = "OFFMAP_GIFTS"
-				#pdx_tooltip_delayed = "OFFMAP_GIFTS_DESC"
+			}
+
+			iconType = {
+				name = "papacy_prayer_static"
+				spriteType = "GFX_offmap_papacy_prayer"
+				position = { x = 425 y = 250 }
 			}
 
 			guiButtonType = {
@@ -455,8 +458,56 @@ guiTypes = {
 				quadTextureSprite = "GFX_offmap_boon_button_china"
 				position = { x = 425 y = 250 }
 				clickSound = click_default_china
-				#pdx_tooltip = "OFFMAP_GIFTS"
-				#pdx_tooltip_delayed = "OFFMAP_GIFTS_DESC"
+			}
+
+			guiButtonType = {
+				name = "papacy_controller_banner"
+				spriteType = "GFX_combat_open_flank"
+				position = { x = 16 y = 198 }
+				pdx_tooltip = "CURIA_CONTROLLER"
+				pdx_tooltip_delayed = "CURIA_CONTROLLER_DELAYED"
+			}
+
+			overlappingElementsBoxType = {
+				name = "naps"
+				position = { x = 28 y = 207 }
+				size = { x = 32 y = 32 }
+				format = centre
+			}
+
+			iconType = {
+				name = "papacy_grace_coffer"
+				spriteType = "GFX_religion_saints_frame"
+				position = { x = 578 y = 495 }
+			}
+
+			instantTextBoxType = {
+				name = "papacy_grace_name"
+				position = { x = 580 y = 512 }
+				textureFile = ""
+				font = "vic_22"
+				borderSize = { x = 0 y = 0 }
+				text = "TXT_INFLUENCE"
+				maxWidth = 120
+				maxHeight = 24
+				format = centre
+				fixedSize = yes
+				orientation = "UPPER_LEFT"
+			}
+
+			instantTextBoxType = {
+				name = "grace_label"
+				position = { x = 578 y = 580 }
+				textureFile = ""
+				#font = "vic_36"
+				font = "headline"
+				borderSize = { x = 0 y = 0 }
+				text = "OFFMAP_GRACE"
+				maxWidth = 120
+				maxHeight = 24
+				format = centre
+				fixedSize = yes
+				orientation = "UPPER_LEFT"
 			}
 		}
 	}

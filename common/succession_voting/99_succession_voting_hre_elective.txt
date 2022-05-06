@@ -5,6 +5,8 @@
 # FROMFROMFROM	The title owner's candidate
 # The voter will vote for the top score candidate calculated from this script
 
+# Note: all characters with hre_reigning_prince has been cached and reachable in scripts below
+
 hre_elective = {
 	elector_vote_strength = {
 		days = 1
@@ -14,7 +16,7 @@ hre_elective = {
 			value = 1
 			localisation_key = tooltip_hre_vote_strength_theocracy
 
-			is_theocracy = yes
+			government = theocracy_government
 
 			FROMFROM = {
 				holder_scope = {
@@ -62,14 +64,11 @@ hre_elective = {
 			FROMFROM = {
 				holder_scope = {
 					religion = ROOT
-					any_tributary = {
-						character = ROOT
-					}
 				}
 	
 				# Either title is higher than Duke-tier, or must be primary
 				OR = {
-					higher_tier_than = DUKE
+					higher_real_tier_than = DUKE
 					is_primary_holder_title = yes
 				}
 
@@ -100,9 +99,9 @@ hre_elective = {
 
 			NOT = { has_landed_title = FROMFROM }
 
-			OR = {
-				is_feudal = yes
-				trait = hre_spiritual_elector
+			OR = { # Either de facto direct vassal, or a HRE prince
+				vassal_of = FROMFROM
+				is_member_of_hre = yes
 			}
 		}
 
@@ -110,11 +109,9 @@ hre_elective = {
 			value = 30
 
 			FROMFROM = {
+				# Tied to religion
 				holder_scope = {
-					religion = ROOT # Tied to religion
-					any_tributary = {
-						character = ROOT
-					}
+					religion = ROOT 
 				}
 
 				# Either title is higher than Duke-tier, or must be primary
@@ -122,6 +119,14 @@ hre_elective = {
 					higher_real_tier_than = DUKE
 					is_primary_holder_title = yes
 				}
+			}
+
+			# Only Dukes and above
+			higher_real_tier_than = COUNT
+
+			OR = { # Either de facto direct vassal, or a HRE prince
+				vassal_of = FROMFROM
+				is_member_of_hre = yes
 			}
 		}
 
@@ -133,9 +138,6 @@ hre_elective = {
 				holder_scope = {
 					NOT = { religion = ROOT }
 					religion_group = ROOT
-					any_tributary = {
-						character = ROOT
-					}
 				}
 
 				# Either title is higher than Duke-tier, or must be primary
@@ -144,12 +146,20 @@ hre_elective = {
 					is_primary_holder_title = yes
 				}
 			}
+
+			# Only Dukes and above
+			higher_real_tier_than = COUNT
+
+			OR = { # Either de facto direct vassal, or a HRE prince
+				vassal_of = FROMFROM
+				is_member_of_hre = yes
+			}
 		}
 
 		additive_modifier = { # Papal influence
 			value = 4
 	
-			is_theocracy = yes
+			government = theocracy_government
 			controls_religion = yes
 	
 			FROMFROM = {
@@ -202,10 +212,10 @@ hre_elective = {
 				has_claim = ROOT_FROMFROM
 			}
 
+			is_landed = yes
 			is_ascetic_trigger = no
 			is_theocracy = no
 			is_republic = no
-			is_landed = yes
 
 			NOR = {
 				# Parent is a candidate for election

@@ -2,8 +2,8 @@ offmap_papacy = {
 	name = papacy_papacy
 	window_name = domestic_offmaps_window_offmap_papacy
 	button_name = icon_offmaps_entry_offmap_papacy
-	currency_name = TXT_SALVATION
-	currency_gain = monthly_salvation
+	currency_name = TXT_INFLUENCE
+	currency_gain = monthly_influence
 	currency_reset_on_dynasty_change = no
 	currency_below_zero = no
 
@@ -11,11 +11,11 @@ offmap_papacy = {
 	governor_title = k_papacy
 	tier = king
 
-	non_aggression_modifier = def_of_faith_modifier
+	non_aggression_modifier = papacy_curia_controller_modifier
 	coa_religion = orthodox # catholic
 	government = theocracy_government
 	beginning_of_history = 42.1.1
-	sound = italia_interaction_interface
+	sound = crusade_outcome_negative
 
 	display_trigger = {
 		FROM = {
@@ -29,18 +29,17 @@ offmap_papacy = {
 	}
 
 	policies = {
-		ppc_pax_dei				# set_pacifist = yes
-		ppc_dictatus_papae		# can call crusade, controls investure
-		ppc_inquisitionis		# heresies can be formed/asserted
-		# ppc_contrareformatio	# Seriously, not CK2 timeframe
+		ppc_ecumenism
+		ppc_conciliarism
+		ppc_papal_primacy
 	}
 
-	statuses = {
-		ppc_communio			# great_schism can be mended with basic requirement
-		ppc_great_schism		# great_schism can be mended with additional requirement
-		ppc_papal_schism		# disable most of function of papacy, e.g crusade
+	statuses = {	# Trinity
+		ppc_crusade # YHWH TZEVA'OT wills it
+		ppc_pastoral# IHS the Good Shepherd
+		ppc_synod	# Holy Spirit preserves the Church
 	}
-	
+
 	buttons = {
 		offmap_gifts = {
 			is_active_trigger = {
@@ -71,19 +70,42 @@ offmap_papacy = {
 
 		papacy_donation = {
 			is_active_trigger = {
+				show_only_failed_conditions = yes
+
 				always = yes
 			}
 			display_trigger = {
 				always = yes
+				# is_decision_potential = papacy_decisions
+				has_global_flag = papacy_end
 			}
 		}
 
 		papacy_prayer = {
 			is_active_trigger = {
+				show_only_failed_conditions = yes
+
 				always = yes
 			}
 			display_trigger = {
 				always = yes
+				# is_decision_potential = papacy_decisions_2
+				has_global_flag = papacy_end
+			}
+		}
+
+		papacy_controller_banner = {
+			is_active_trigger = {
+				show_only_failed_conditions = yes
+
+				always = yes
+			}
+			display_trigger = {
+				offmap_papacy = {
+					persistent_event_target:curia_controller = {
+						always = yes
+					}
+				}
 			}
 		}
 	}
@@ -92,8 +114,165 @@ offmap_papacy = {
 
 	icon_triggers = {
 	}
-	
+
 	monthly_currency_gain = {
+		# default is the governor
+		# FROM is the character
+		papacy_monthly_currency_decay = {
+			value = -1
+			FROM = {
+				OR = {
+					has_offmap_currency = {
+						offmap = offmap_papacy
+						value > 200
+					}
+					NOT = { rightful_religious_head = PREV }
+				}
+			}
+		}
+
+		papacy_occupy_rome = {
+			value = -5
+
+			464 = { # Rome
+				any_province_holding = {
+					controller = { # owner/occupier
+						OR = {
+							character = FROM
+							is_liege_or_above = FROM
+						}
+						NOT = { same_realm = PREVPREV }
+					}
+				}
+			}
+		}
+
+		papacy_occupy_archbasilica = {
+			value = -5
+
+			b_roma = {
+				controller = { # owner/occupier
+					OR = {
+						character = FROM
+						is_liege_or_above = FROM
+					}
+					NOR = {
+						character = PREVPREV
+						is_liege_or_above = PREVPREV
+					}
+				}
+			}
+		}
+
+		papacy_excommunicatio = {
+			value = -3
+			FROM = {
+				excommunicated_for = PREV
+			}
+		}
+
+		papacy_pledged_crusade = {
+			value = 2
+			FROM = {
+				has_offmap_currency = {
+					offmap = offmap_papacy
+					value < 200
+				}
+				has_pledged_crusade_participation = yes
+				rightful_religious_head = PREV
+				NOT = { character = PREV } # Not on yourself, dirty Pope
+			}
+		}
+
+		papacy_controlled_cardinal_1 = {
+			value = 1
+			FROM = {
+				has_offmap_currency = {
+					offmap = offmap_papacy
+					value < 200
+				}
+				any_realm_character = {
+					has_minor_title = title_cardinal
+				}
+				NOT = {
+					any_realm_character = {
+						count >= 2
+						has_minor_title = title_cardinal
+					}
+				}
+				independent = yes
+				rightful_religious_head = PREV
+				NOT = { character = PREV } # Not on yourself, dirty Pope
+			}
+		}
+
+		papacy_controlled_cardinal_2 = {
+			value = 2
+			FROM = {
+				has_offmap_currency = {
+					offmap = offmap_papacy
+					value < 200
+				}
+				any_realm_character = {
+					count >= 2
+					has_minor_title = title_cardinal
+				}
+				independent = yes
+				rightful_religious_head = PREV
+				NOT = { character = PREV } # Not on yourself, dirty Pope
+			}
+		}
+
+		papacy_curia_controller = {
+			value = 2
+			FROM = {
+				has_offmap_currency = {
+					offmap = offmap_papacy
+					value < 200
+				}
+				has_character_modifier = papacy_curia_controller_modifier
+				rightful_religious_head = PREV
+				NOT = { character = PREV } # Not on yourself, dirty Pope
+			}
+		}
+
+		papacy_loyal_clergy = {
+			value = 2
+			FROM = {
+				has_offmap_currency = {
+					offmap = offmap_papacy
+					value < 200
+				}
+				trigger_if = {
+					limit = {
+						num_of_government_vassals = {
+							government = theocracy_government
+							value >= 10
+						}
+					}
+
+					any_vassal = {
+						count >= 5
+
+						government = theocracy_government
+						rightful_religious_head = PREVPREV
+						likes_better_than = {
+							who = liege
+							than = PREVPREV
+						}
+					}
+				}
+				trigger_else = {
+					always = no
+				}
+				NOT = { character = PREV } # Not on yourself, dirty Pope
+			}
+		}
+
+		offmap_war_with_me = {
+			value = -10
+			war_with = FROM
+		}
 	}
 
 	temple_names = {

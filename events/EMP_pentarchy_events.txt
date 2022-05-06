@@ -362,6 +362,23 @@ character_event = {
 	hide_window = yes
 
 	trigger = {
+		offmap_papacy = {
+			is_offmap_tag = offmap_papacy
+
+			has_status = ppc_synod
+			persistent_event_target:cathedral_helding_council = {
+				OR = {
+					owner = {
+						OR = {
+							NOT = { rightful_religious_head = ROOT }
+							war = yes
+						}
+					}
+					has_siege = yes
+					has_holder = no
+				}
+			}
+		}
 	}
 
 	immediate = {

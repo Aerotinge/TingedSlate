@@ -1,16 +1,70 @@
+# TODO: Setup a provincial variable for giving a ordinal number for a Council
+
 42.1.1 = {
-	policy = ppc_communio
-	status = ppc_pax_dei
+	policy = ppc_ecumenism
+	status = ppc_pastoral
 }
+
+325.5.20 = {
+	set_offmap_flag = synod_held # First Council of Nicaea
+}
+
+381.5.1 = {
+	set_offmap_flag = synod_held # First Council of Constantinople
+}
+
+431.6.7 = {
+	set_offmap_flag = synod_held # Council of Ephesus
+}
+
+451.10.8 = {
+	set_offmap_flag = synod_held # Council of Chalcedon
+}
+
+553.5.5 = {
+	set_offmap_flag = synod_held # Second Council of Constantinople
+}
+
+680.11.7 = {
+	set_offmap_flag = synod_held # Third Council of Constantinople
+}
+
+787.9.24 = {
+	set_offmap_flag = synod_held # Second Council of Nicaea
+}
+
+869.10.5 = {
+	set_offmap_flag = synod_held # Fourth Council of Constantinople
+}
+
 1054.1.1 = {
-	status = ppc_great_schism
+	#policy = ppc_conciliarism
 }
-1075.1.1 = {
-	policy = ppc_dictatus_papae
+
+1122.12.1 = {
+	set_offmap_flag = synod_held # First Council of the Lateran
 }
-1231.1.1 = {
-	policy = ppc_inquisitionis
+
+1139.4.1 = {
+	set_offmap_flag = synod_held # Second Council of the Lateran
 }
-#1378.1.1 = {
-#	status = ppc_papal_schism
-#}
+
+1179.5.1 = {
+	set_offmap_flag = synod_held # Third Council of the Lateran
+}
+
+1213.4.19 = {
+	set_offmap_flag = synod_held # Fourth Council of the Lateran
+}
+
+1245.5.1 = {
+	set_offmap_flag = synod_held # First Council of Lyon
+}
+
+1272.3.31 = {
+	set_offmap_flag = synod_held # Second Council of Lyon
+}
+
+1311.10.16 = {
+	set_offmap_flag = synod_held # Council of Vienne
+}

@@ -2,18 +2,14 @@
 # however they are not applied to a character but to the offmap_power
 # they can also have flags that can be tested from the offmap_power scope
 
-ppc_pax_dei = {
+ppc_ecumenism = {
 	frame = 1
 }
 
-ppc_dictatus_papae = {
+ppc_conciliarism = {
 	frame = 2
 }
 
-ppc_inquisitionis = {
+ppc_papal_primacy = {
 	frame = 3
-}
-
-ppc_contrareformatio = {
-	frame = 4
 }
