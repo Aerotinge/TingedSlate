@@ -24,6 +24,9 @@ k_hellenic_pagan_reformed = {
 
 	religion = hellenic_pagan_reformed
 
+	# Cannot be held as a secondary title
+	primary = yes
+
 	assimilate = no
 
 	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
@@ -117,6 +120,8 @@ d_aztec_pagan_reformed = {
 	# Always exists
 	landless = yes
 
+	dignity = 100 # Counted as having this many more counties than it does
+
 	# Controls a religion
 	controls_religion = aztec_pagan_reformed
 
@@ -143,6 +148,8 @@ d_baltic_pagan_reformed = {
 	# Always exists
 	landless = yes
 
+	dignity = 100 # Counted as having this many more counties than it does
+
 	# Controls a religion
 	controls_religion = baltic_pagan_reformed
 
@@ -167,6 +174,8 @@ d_bon_pagan_reformed = {
 
 	# Always exists
 	landless = yes
+
+	dignity = 100 # Counted as having this many more counties than it does
 
 	# Controls a religion
 	controls_religion = bon_pagan_reformed
@@ -193,6 +202,8 @@ d_finnish_pagan_reformed = {
 
 	# Always exists
 	landless = yes
+
+	dignity = 100 # Counted as having this many more counties than it does
 
 	# Controls a religion
 	controls_religion = finnish_pagan_reformed
@@ -839,6 +850,8 @@ d_slavic_pagan_reformed = {
 	# Always exists
 	landless = yes
 
+	dignity = 100 # Counted as having this many more counties than it does
+
 	# Controls a religion
 	controls_religion = slavic_pagan_reformed
 
@@ -932,6 +945,8 @@ d_tengri_pagan_reformed = {
 	# Always exists
 	landless = yes
 
+	dignity = 100 # Counted as having this many more counties than it does
+
 	# Controls a religion
 	controls_religion = tengri_pagan_reformed
 
@@ -957,6 +972,8 @@ d_west_african_pagan_reformed = {
 
 	# Always exists
 	landless = yes
+
+	dignity = 100 # Counted as having this many more counties than it does
 
 	# Controls a religion
 	controls_religion = west_african_pagan_reformed
@@ -1038,6 +1055,8 @@ d_zun_pagan_reformed = {
 
 	# Always exists
 	landless = yes
+
+	dignity = 100 # Counted as having this many more counties than it does
 
 	# Controls a religion
 	controls_religion = zun_pagan_reformed

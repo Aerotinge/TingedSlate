@@ -127,6 +127,7 @@ province_event = {
 							any_realm_province = {
 								religion = ROOT
 								has_province_modifier = heretic_stronghold
+								held_under_PREV = yes
 							}
 						}
 					}
@@ -308,6 +309,7 @@ character_event = {
 		any_demesne_province = {
 			religion_group = christian
 			is_heretic = yes
+			owned_by = PREV
 
 			owner = {
 				job_spiritual = {
@@ -344,6 +346,7 @@ character_event = {
 				limit = {
 					religion_group = christian
 					is_heretic = yes
+					owned_by = PREV
 
 					owner = {
 						job_spiritual = {
@@ -3991,6 +3994,7 @@ character_event = {
 
 				any_realm_province = {
 					religion = FROM
+					held_under_PREV = yes
 				}
 			}
 
@@ -4153,6 +4157,7 @@ character_event = {
 						# More cocky when pagan homeland attrition effect is active against neighbors
 						any_realm_province = {
 							TECH_RECRUITMENT >= 4
+							held_under_PREV = yes
 						}
 					}
 				}
@@ -4708,6 +4713,7 @@ character_event = {
 
 						any_realm_province = {
 							TECH_RECRUITMENT >= 4 # More cocky when pagan homeland attrition effect is active against neighbors
+							held_under_PREV = yes
 						}
 					}
 				}
@@ -4732,6 +4738,7 @@ character_event = {
 				NOT = {
 					any_realm_province = {
 						NOT = { religion = FROM }
+						held_under_PREV = yes
 					}
 				}
 			}
@@ -4742,6 +4749,7 @@ character_event = {
 				NOT = {
 					any_realm_province = {
 						religion = FROM
+						held_under_PREV = yes
 					}
 				}
 			}
@@ -5339,7 +5347,7 @@ letter_event = {
 		FROMFROM = {
 			show_scope_change = no
 
-			cancel_job_action = action_inquisition
+			cancel_job_action = yes
 		}
 
 		piety = 200
@@ -5360,7 +5368,7 @@ letter_event = {
 		FROM = {
 			show_scope_change = no
 
-			cancel_job_action = action_inquisition
+			cancel_job_action = yes
 		}
 	}
 }
@@ -5395,7 +5403,7 @@ letter_event = {
 		FROMFROMFROM = {
 			show_scope_change = no
 
-			cancel_job_action = action_inquisition
+			cancel_job_action = yes
 		}
 	}
 }
@@ -5473,6 +5481,8 @@ narrative_event = {
 		decadence >= 10
 
 		any_realm_province = {
+			held_under_PREV = yes
+
 			kingdom = {
 				trigger_if = {
 					limit = { has_holder = yes }
@@ -5572,6 +5582,8 @@ narrative_event = {
 
 		random_realm_province = {
 			limit = {
+				held_under_PREV = yes
+
 				kingdom = {
 					trigger_if = {
 						limit = { has_holder = yes }
@@ -5745,8 +5757,7 @@ narrative_event = {
 					religion = THIS
 					culture = THIS
 					female = no
-					min_age = 23
-					max_age = 32
+					age = 23
 				}
 
 				new_character = {
@@ -5755,6 +5766,19 @@ narrative_event = {
 					random_list = {
 						67 = { add_trait = skilled_tactician }
 						33 = { add_trait = brilliant_strategist }
+					}
+
+					random_list = {
+						1 = { }
+						1 = { add_age = 1 }
+						1 = { add_age = 2 }
+						1 = { add_age = 3 }
+						1 = { add_age = 4 }
+						1 = { add_age = 5 }
+						1 = { add_age = 6 }
+						1 = { add_age = 7 }
+						1 = { add_age = 8 }
+						1 = { add_age = 9 }
 					}
 				}
 			}
@@ -7468,8 +7492,23 @@ narrative_event = {
 					religion = ROOT
 					culture = assyrian
 					female = no
-					min_age = 18
-					max_age = 28
+					age = 18
+				}
+
+				new_character = {
+					random_list = {
+						1 = { }
+						1 = { add_age = 1 }
+						1 = { add_age = 2 }
+						1 = { add_age = 3 }
+						1 = { add_age = 4 }
+						1 = { add_age = 5 }
+						1 = { add_age = 6 }
+						1 = { add_age = 7 }
+						1 = { add_age = 8 }
+						1 = { add_age = 9 }
+						1 = { add_age = 10 }
+					}
 				}
 			}
 
@@ -7482,8 +7521,14 @@ narrative_event = {
 					religion = ROOT
 					culture = assyrian
 					female = yes
-					min_age = 16
-					max_age = 17
+					age = 16
+				}
+
+				new_character = {
+					random_list = {
+						1 = { }
+						1 = { add_age = 1 }
+					}
 				}
 			}
 		}

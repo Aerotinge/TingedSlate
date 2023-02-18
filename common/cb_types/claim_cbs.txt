@@ -469,6 +469,7 @@ claim_all = {
 						limit = {
 							has_province_modifier = nomad_agitation
 							has_settlement_construction = no
+							held_under_PREV = yes
 						}
 
 						change_variable = { which = local_WP_nomad_gold_from_china value = 1 }
@@ -785,7 +786,24 @@ claim_on_liege = {
 
 			if = {
 				limit = { primary_title = { title = PREVPREV } }
+
 				imprison = attacker
+
+				# Inform player about switch in feudal hierarchy
+				tooltip = {
+					if = {
+						limit = {
+							NOT = {
+								any_demesne_title = {
+									is_primary_holder_title_tier = yes
+									is_primary_holder_title = no
+								}
+							}
+						}
+
+						set_defacto_liege = attacker
+					}
+				}
 			}
 
 			# If ROOT is now higher tier than FROM, ROOT becomes the liege of FROM
@@ -845,7 +863,7 @@ claim_on_liege = {
 		}
 
 		any_attacker = {
-			limit = { liege = { character = defender } }
+			limit = { vassal_of = defender }
 			hidden_effect = { disband_event_forces = faction_revolters }
 		}
 
@@ -871,7 +889,7 @@ claim_on_liege = {
 		}
 
 		any_attacker = {
-			limit = { liege = { character = defender } }
+			limit = { vassal_of = defender }
 
 			hidden_effect = {
 				disband_event_forces = faction_revolters

@@ -37,10 +37,10 @@ de_jure_laws = {
 
 		effect = {
 			# log = "out_of_realm_inheritance_law_0 ([This.GetFullBaseName])"
+			set_protected_inheritance = no
 			hidden_effect = {
 				revoke_law = out_of_realm_inheritance_law_1
 			}
-			set_protected_inheritance = no
 		}
 
 		ai_will_do = {
@@ -65,10 +65,10 @@ de_jure_laws = {
 
 		effect = {
 			# log = "out_of_realm_inheritance_law_1 ([This.GetFullBaseName])"
+			set_protected_inheritance = yes
 			hidden_effect = {
 				revoke_law = out_of_realm_inheritance_law_0
 			}
-			set_protected_inheritance = yes
 		}
 
 		ai_will_do = {
@@ -110,12 +110,12 @@ de_jure_laws = {
 
 		effect = {
 			# log = "vassal_wars_law_0 ([This.GetFullBaseName])"
+			set_the_kings_peace = no
+			set_the_kings_full_peace = no
 			hidden_effect = {
 				revoke_law = vassal_wars_law_1
 				revoke_law = vassal_wars_law_2
 			}
-			set_the_kings_peace = no
-			set_the_kings_full_peace = no
 		}
 
 		ai_will_do = {
@@ -145,12 +145,12 @@ de_jure_laws = {
 
 		effect = {
 			# log = "vassal_wars_law_1 ([This.GetFullBaseName])"
+			set_the_kings_peace = yes
+			set_the_kings_full_peace = no
 			hidden_effect = {
 				revoke_law = vassal_wars_law_0
 				revoke_law = vassal_wars_law_2
 			}
-			set_the_kings_peace = yes
-			set_the_kings_full_peace = no
 		}
 
 		ai_will_do = {
@@ -176,12 +176,12 @@ de_jure_laws = {
 
 		effect = {
 			# log = "vassal_wars_law_2 ([This.GetFullBaseName])"
+			set_the_kings_peace = yes
+			set_the_kings_full_peace = yes
 			hidden_effect = {
 				revoke_law = vassal_wars_law_0
 				revoke_law = vassal_wars_law_1
 			}
-			set_the_kings_peace = yes
-			set_the_kings_full_peace = yes
 		}
 
 		ai_will_do = {

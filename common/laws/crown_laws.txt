@@ -59,9 +59,6 @@ de_jure_laws = {
 
 		effect = {
 			# log = "crown_authority_0 ([This.GetFullBaseName])"
-			hidden_effect = {
-				revoke_crown_authority_effect = yes
-			}
 
 			set_the_kings_peace = no
 			set_the_kings_full_peace = no
@@ -71,6 +68,10 @@ de_jure_laws = {
 			# set_allow_free_revokation = no
 			# set_appoint_generals = no
 			# set_appoint_regents = no
+
+			hidden_effect = {
+				revoke_crown_authority_effect = yes
+			}
 		}
 
 		ai_will_do = {
@@ -124,10 +125,7 @@ de_jure_laws = {
 
 		effect = {
 			# log = "crown_authority_1 ([This.GetFullBaseName])"
-			hidden_effect = {
-				revoke_crown_authority_effect = yes
-			}
-			
+
 			set_the_kings_peace = no
 			set_the_kings_full_peace = no
 			set_protected_inheritance = no
@@ -136,6 +134,10 @@ de_jure_laws = {
 			# set_allow_free_revokation = no
 			# set_appoint_generals = yes
 			# set_appoint_regents = no
+
+			hidden_effect = {
+				revoke_crown_authority_effect = yes
+			}
 		}
 
 		ai_will_do = {
@@ -211,9 +213,6 @@ de_jure_laws = {
 
 		effect = {
 			# log = "crown_authority_2 ([This.GetFullBaseName])"
-			hidden_effect = {
-				revoke_crown_authority_effect = yes
-			}
 
 			set_the_kings_peace = yes
 			set_the_kings_full_peace = no
@@ -223,6 +222,10 @@ de_jure_laws = {
 			# set_allow_free_revokation = no
 			# set_appoint_generals = yes
 			# set_appoint_regents = no
+
+			hidden_effect = {
+				revoke_crown_authority_effect = yes
+			}
 		}
 
 		ai_will_do = {
@@ -299,9 +302,6 @@ de_jure_laws = {
 
 		effect = {
 			# log = "crown_authority_3 ([This.GetFullBaseName])"
-			hidden_effect = {
-				revoke_crown_authority_effect = yes
-			}
 
 			set_the_kings_peace = yes
 			set_the_kings_full_peace = no
@@ -311,6 +311,10 @@ de_jure_laws = {
 			# set_allow_free_revokation = no
 			# set_appoint_generals = yes
 			# set_appoint_regents = yes
+
+			hidden_effect = {
+				revoke_crown_authority_effect = yes
+			}
 		}
 
 		ai_will_do = {
@@ -379,9 +383,6 @@ de_jure_laws = {
 
 		effect = {
 			# log = "crown_authority_4 ([This.GetFullBaseName])"
-			hidden_effect = {
-				revoke_crown_authority_effect = yes
-			}
 
 			set_the_kings_peace = yes
 			set_the_kings_full_peace = yes
@@ -391,6 +392,10 @@ de_jure_laws = {
 			# set_allow_free_revokation = yes
 			# set_appoint_generals = yes
 			# set_appoint_regents = yes
+
+			hidden_effect = {
+				revoke_crown_authority_effect = yes
+			}
 		}
 
 		ai_will_do = {
@@ -434,10 +439,12 @@ de_jure_laws = {
 
 		effect = {
 			# log = "investiture_law_0 pass ([This.GetFullBaseName])"
+
+			set_investiture = head
+
 			hidden_effect = {
 				revoke_investiture_law_effect = yes
 			}
-			set_investiture = head
 		}
 
 		ai_will_do = {
@@ -471,10 +478,12 @@ de_jure_laws = {
 
 		effect = {
 			# log = "investiture_law_1 pass ([This.GetFullBaseName])"
+
+			set_investiture = any
+
 			hidden_effect = {
 				revoke_investiture_law_effect = yes
 			}
-			set_investiture = any
 		}
 
 		ai_will_do = {

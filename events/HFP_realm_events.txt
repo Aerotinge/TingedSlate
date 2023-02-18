@@ -498,6 +498,7 @@ narrative_event = {
 	major_trigger = {
 		any_demesne_province = {
 			region = world_europe_south_italy
+			owned_by = PREV
 		}
 	}
 
@@ -519,6 +520,7 @@ narrative_event = {
 	major_trigger = {
 		any_demesne_province = {
 			region = world_europe_south_italy
+			owned_by = PREV
 		}
 	}
 

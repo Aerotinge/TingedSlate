@@ -111,7 +111,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_catholic = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_catholic_community }
+					limit = {
+						has_province_modifier = secret_catholic_community
+						owned_by = PREV
+					}
 
 					religion = catholic
 					remove_province_modifier = secret_catholic_community
@@ -122,7 +125,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_cathar = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_cathar_community }
+					limit = {
+						has_province_modifier = secret_cathar_community
+						owned_by = PREV
+					}
 
 					religion = cathar
 					remove_province_modifier = secret_cathar_community
@@ -133,7 +139,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_fraticelli = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_fraticelli_community }
+					limit = {
+						has_province_modifier = secret_fraticelli_community
+						owned_by = PREV
+					}
 
 					religion = fraticelli
 					remove_province_modifier = secret_fraticelli_community
@@ -144,7 +153,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_waldensian = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_waldensian_community }
+					limit = {
+						has_province_modifier = secret_waldensian_community
+						owned_by = PREV
+					}
 
 					religion = waldensian
 					remove_province_modifier = secret_waldensian_community
@@ -155,7 +167,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_lollard = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_lollard_community }
+					limit = {
+						has_province_modifier = secret_lollard_community
+						owned_by = PREV
+					}
 
 					religion = lollard
 					remove_province_modifier = secret_lollard_community
@@ -166,7 +181,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_orthodox = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_orthodox_community }
+					limit = {
+						has_province_modifier = secret_orthodox_community
+						owned_by = PREV
+					}
 
 					religion = orthodox
 					remove_province_modifier = secret_orthodox_community
@@ -177,7 +195,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_miaphysite = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_miaphysite_community }
+					limit = {
+						has_province_modifier = secret_miaphysite_community
+						owned_by = PREV
+					}
 
 					religion = miaphysite
 					remove_province_modifier = secret_miaphysite_community
@@ -188,7 +209,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_monophysite = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_monophysite_community }
+					limit = {
+						has_province_modifier = secret_monophysite_community
+						owned_by = PREV
+					}
 
 					religion = monophysite
 					remove_province_modifier = secret_monophysite_community
@@ -199,7 +223,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_bogomilist = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_bogomilist_community }
+					limit = {
+						has_province_modifier = secret_bogomilist_community
+						owned_by = PREV
+					}
 
 					religion = bogomilist
 					remove_province_modifier = secret_bogomilist_community
@@ -210,7 +237,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_monothelite = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_monothelite_community }
+					limit = {
+						has_province_modifier = secret_monothelite_community
+						owned_by = PREV
+					}
 
 					religion = monothelite
 					remove_province_modifier = secret_monothelite_community
@@ -221,7 +251,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_iconoclast = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_iconoclast_community }
+					limit = {
+						has_province_modifier = secret_iconoclast_community
+						owned_by = PREV
+					}
 
 					religion = iconoclast
 					remove_province_modifier = secret_iconoclast_community
@@ -232,7 +265,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_paulician = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_paulician_community }
+					limit = {
+						has_province_modifier = secret_paulician_community
+						owned_by = PREV
+					}
 
 					religion = paulician
 					remove_province_modifier = secret_paulician_community
@@ -243,7 +279,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_nestorian = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_nestorian_community }
+					limit = {
+						has_province_modifier = secret_nestorian_community
+						owned_by = PREV
+					}
 
 					religion = nestorian
 					remove_province_modifier = secret_nestorian_community
@@ -254,7 +293,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_messalian = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_messalian_community }
+					limit = {
+						has_province_modifier = secret_messalian_community
+						owned_by = PREV
+					}
 
 					religion = messalian
 					remove_province_modifier = secret_messalian_community
@@ -265,7 +307,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_sunni = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_sunni_community }
+					limit = {
+						has_province_modifier = secret_sunni_community
+						owned_by = PREV
+					}
 
 					religion = sunni
 					remove_province_modifier = secret_sunni_community
@@ -276,7 +321,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_zikri = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_zikri_community }
+					limit = {
+						has_province_modifier = secret_zikri_community
+						owned_by = PREV
+					}
 
 					religion = zikri
 					remove_province_modifier = secret_zikri_community
@@ -287,7 +335,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_yazidi = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_yazidi_community }
+					limit = {
+						has_province_modifier = secret_yazidi_community
+						owned_by = PREV
+					}
 
 					religion = yazidi
 					remove_province_modifier = secret_yazidi_community
@@ -298,7 +349,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_ibadi = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_ibadi_community }
+					limit = {
+						has_province_modifier = secret_ibadi_community
+						owned_by = PREV
+					}
 
 					religion = ibadi
 					remove_province_modifier = secret_ibadi_community
@@ -309,7 +363,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_kharijite = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_kharijite_community }
+					limit = {
+						has_province_modifier = secret_kharijite_community
+						owned_by = PREV
+					}
 
 					religion = kharijite
 					remove_province_modifier = secret_kharijite_community
@@ -320,7 +377,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_shiite = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_shiite_community }
+					limit = {
+						has_province_modifier = secret_shiite_community
+						owned_by = PREV
+					}
 
 					religion = shiite
 					remove_province_modifier = secret_shiite_community
@@ -331,7 +391,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_druze = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_druze_community }
+					limit = {
+						has_province_modifier = secret_druze_community
+						owned_by = PREV
+					}
 
 					religion = druze
 					remove_province_modifier = secret_druze_community
@@ -342,7 +405,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_hurufi = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_hurufi_community }
+					limit = {
+						has_province_modifier = secret_hurufi_community
+						owned_by = PREV
+					}
 
 					religion = hurufi
 					remove_province_modifier = secret_hurufi_community
@@ -353,7 +419,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_qarmatian = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_qarmatian_community }
+					limit = {
+						has_province_modifier = secret_qarmatian_community
+						owned_by = PREV
+					}
 
 					religion = qarmatian
 					remove_province_modifier = secret_qarmatian_community
@@ -364,7 +433,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_jewish = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_jewish_community }
+					limit = {
+						has_province_modifier = secret_jewish_community
+						owned_by = PREV
+					}
 
 					religion = jewish
 					remove_province_modifier = secret_jewish_community
@@ -375,7 +447,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_karaite = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_karaite_community }
+					limit = {
+						has_province_modifier = secret_karaite_community
+						owned_by = PREV
+					}
 
 					religion = karaite
 					remove_province_modifier = secret_karaite_community
@@ -386,7 +461,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_samaritan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_samaritan_community }
+					limit = {
+						has_province_modifier = secret_samaritan_community
+						owned_by = PREV
+					}
 
 					religion = samaritan
 					remove_province_modifier = secret_samaritan_community
@@ -397,7 +475,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_zoroastrian = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_zoroastrian_community }
+					limit = {
+						has_province_modifier = secret_zoroastrian_community
+						owned_by = PREV
+					}
 
 					religion = zoroastrian
 					remove_province_modifier = secret_zoroastrian_community
@@ -408,7 +489,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_mazdaki = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_mazdaki_community }
+					limit = {
+						has_province_modifier = secret_mazdaki_community
+						owned_by = PREV
+					}
 
 					religion = mazdaki
 					remove_province_modifier = secret_mazdaki_community
@@ -419,7 +503,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_manichaean = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_manichaean_community }
+					limit = {
+						has_province_modifier = secret_manichaean_community
+						owned_by = PREV
+					}
 
 					religion = manichaean
 					remove_province_modifier = secret_manichaean_community
@@ -430,7 +517,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_khurmazta = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_khurmazta_community }
+					limit = {
+						has_province_modifier = secret_khurmazta_community
+						owned_by = PREV
+					}
 
 					religion = khurmazta
 					remove_province_modifier = secret_khurmazta_community
@@ -441,7 +531,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_bon_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_bon_pagan_community }
+					limit = {
+						has_province_modifier = secret_bon_pagan_community
+						owned_by = PREV
+					}
 
 					religion = bon_pagan
 					remove_province_modifier = secret_bon_pagan_community
@@ -452,7 +545,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_bon_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_bon_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_bon_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = bon_pagan_reformed
 					remove_province_modifier = secret_bon_pagan_reformed_community
@@ -463,7 +559,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_hellenic_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_hellenic_pagan_community }
+					limit = {
+						has_province_modifier = secret_hellenic_pagan_community
+						owned_by = PREV
+					}
 
 					religion = hellenic_pagan
 					remove_province_modifier = secret_hellenic_pagan_community
@@ -474,7 +573,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_hellenic_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_hellenic_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_hellenic_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = hellenic_pagan_reformed
 					remove_province_modifier = secret_hellenic_pagan_reformed_community
@@ -485,7 +587,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_taoist = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_taoist_community }
+					limit = {
+						has_province_modifier = secret_taoist_community
+						owned_by = PREV
+					}
 
 					religion = taoist
 					remove_province_modifier = secret_taoist_community
@@ -496,7 +601,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_hindu = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_hindu_community }
+					limit = {
+						has_province_modifier = secret_hindu_community
+						owned_by = PREV
+					}
 
 					religion = hindu
 					remove_province_modifier = secret_hindu_community
@@ -507,7 +615,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_buddhist = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_buddhist_community }
+					limit = {
+						has_province_modifier = secret_buddhist_community
+						owned_by = PREV
+					}
 
 					religion = buddhist
 					remove_province_modifier = secret_buddhist_community
@@ -518,7 +629,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_jain = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_jain_community }
+					limit = {
+						has_province_modifier = secret_jain_community
+						owned_by = PREV
+					}
 
 					religion = jain
 					remove_province_modifier = secret_jain_community
@@ -529,7 +643,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_norse_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_norse_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_norse_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = norse_pagan_reformed
 					remove_province_modifier = secret_norse_pagan_reformed_community
@@ -540,7 +657,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_norse_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_norse_pagan_community }
+					limit = {
+						has_province_modifier = secret_norse_pagan_community
+						owned_by = PREV
+					}
 
 					religion = norse_pagan
 					remove_province_modifier = secret_norse_pagan_community
@@ -551,7 +671,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_slavic_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_slavic_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_slavic_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = slavic_pagan_reformed
 					remove_province_modifier = secret_slavic_pagan_reformed_community
@@ -562,7 +685,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_slavic_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_slavic_pagan_community }
+					limit = {
+						has_province_modifier = secret_slavic_pagan_community
+						owned_by = PREV
+					}
 
 					religion = slavic_pagan
 					remove_province_modifier = secret_slavic_pagan_community
@@ -573,7 +699,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_tengri_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_tengri_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_tengri_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = tengri_pagan_reformed
 					remove_province_modifier = secret_tengri_pagan_reformed_community
@@ -584,7 +713,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_tengri_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_tengri_pagan_community }
+					limit = {
+						has_province_modifier = secret_tengri_pagan_community
+						owned_by = PREV
+					}
 
 					religion = tengri_pagan
 					remove_province_modifier = secret_tengri_pagan_community
@@ -595,7 +727,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_baltic_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_baltic_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_baltic_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = baltic_pagan_reformed
 					remove_province_modifier = secret_baltic_pagan_reformed_community
@@ -606,7 +741,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_baltic_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_baltic_pagan_community }
+					limit = {
+						has_province_modifier = secret_baltic_pagan_community
+						owned_by = PREV
+					}
 
 					religion = baltic_pagan
 					remove_province_modifier = secret_baltic_pagan_community
@@ -617,7 +755,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_finnish_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_finnish_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_finnish_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = finnish_pagan_reformed
 					remove_province_modifier = secret_finnish_pagan_reformed_community
@@ -628,7 +769,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_finnish_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_finnish_pagan_community }
+					limit = {
+						has_province_modifier = secret_finnish_pagan_community
+						owned_by = PREV
+					}
 
 					religion = finnish_pagan
 					remove_province_modifier = secret_finnish_pagan_community
@@ -639,7 +783,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_west_african_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_west_african_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_west_african_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = west_african_pagan_reformed
 					remove_province_modifier = secret_west_african_pagan_reformed_community
@@ -650,7 +797,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_west_african_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_west_african_pagan_community }
+					limit = {
+						has_province_modifier = secret_west_african_pagan_community
+						owned_by = PREV
+					}
 
 					religion = west_african_pagan
 					remove_province_modifier = secret_west_african_pagan_community
@@ -661,7 +811,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_zun_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_zun_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_zun_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = zun_pagan_reformed
 					remove_province_modifier = secret_zun_pagan_reformed_community
@@ -672,7 +825,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_zun_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_zun_pagan_community }
+					limit = {
+						has_province_modifier = secret_zun_pagan_community
+						owned_by = PREV
+					}
 
 					religion = zun_pagan
 					remove_province_modifier = secret_zun_pagan_community
@@ -683,7 +839,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_aztec_pagan = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_aztec_pagan_community }
+					limit = {
+						has_province_modifier = secret_aztec_pagan_community
+						owned_by = PREV
+					}
 
 					religion = aztec_pagan
 					remove_province_modifier = secret_aztec_pagan_community
@@ -694,7 +853,10 @@ flip_secret_religious_community_provinces = {
 		secret_religious_society_aztec_pagan_reformed = {
 			ROOT = {
 				any_demesne_province = {
-					limit = { has_province_modifier = secret_aztec_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_aztec_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = aztec_pagan_reformed
 					remove_province_modifier = secret_aztec_pagan_reformed_community
@@ -711,7 +873,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_catholic = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_catholic_community }
+					limit = {
+						has_province_modifier = secret_catholic_community
+						owned_by = PREV
+					}
 
 					religion = catholic
 					remove_province_modifier = secret_catholic_community
@@ -722,7 +887,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_cathar = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_cathar_community }
+					limit = {
+						has_province_modifier = secret_cathar_community
+						owned_by = PREV
+					}
 
 					religion = cathar
 					remove_province_modifier = secret_cathar_community
@@ -733,7 +901,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_fraticelli = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_fraticelli_community }
+					limit = {
+						has_province_modifier = secret_fraticelli_community
+						owned_by = PREV
+					}
 
 					religion = fraticelli
 					remove_province_modifier = secret_fraticelli_community
@@ -744,7 +915,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_waldensian = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_waldensian_community }
+					limit = {
+						has_province_modifier = secret_waldensian_community
+						owned_by = PREV
+					}
 
 					religion = waldensian
 					remove_province_modifier = secret_waldensian_community
@@ -755,7 +929,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_lollard = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_lollard_community }
+					limit = {
+						has_province_modifier = secret_lollard_community
+						owned_by = PREV
+					}
 
 					religion = lollard
 					remove_province_modifier = secret_lollard_community
@@ -766,7 +943,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_orthodox = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_orthodox_community }
+					limit = {
+						has_province_modifier = secret_orthodox_community
+						owned_by = PREV
+					}
 
 					religion = orthodox
 					remove_province_modifier = secret_orthodox_community
@@ -777,7 +957,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_miaphysite = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_miaphysite_community }
+					limit = {
+						has_province_modifier = secret_miaphysite_community
+						owned_by = PREV
+					}
 
 					religion = miaphysite
 					remove_province_modifier = secret_miaphysite_community
@@ -788,7 +971,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_monophysite = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_monophysite_community }
+					limit = {
+						has_province_modifier = secret_monophysite_community
+						owned_by = PREV
+					}
 
 					religion = monophysite
 					remove_province_modifier = secret_monophysite_community
@@ -799,7 +985,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_bogomilist = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_bogomilist_community }
+					limit = {
+						has_province_modifier = secret_bogomilist_community
+						owned_by = PREV
+					}
 
 					religion = bogomilist
 					remove_province_modifier = secret_bogomilist_community
@@ -810,7 +999,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_monothelite = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_monothelite_community }
+					limit = {
+						has_province_modifier = secret_monothelite_community
+						owned_by = PREV
+					}
 
 					religion = monothelite
 					remove_province_modifier = secret_monothelite_community
@@ -821,7 +1013,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_iconoclast = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_iconoclast_community }
+					limit = {
+						has_province_modifier = secret_iconoclast_community
+						owned_by = PREV
+					}
 
 					religion = iconoclast
 					remove_province_modifier = secret_iconoclast_community
@@ -832,7 +1027,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_paulician = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_paulician_community }
+					limit = {
+						has_province_modifier = secret_paulician_community
+						owned_by = PREV
+					}
 
 					religion = paulician
 					remove_province_modifier = secret_paulician_community
@@ -843,7 +1041,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_nestorian = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_nestorian_community }
+					limit = {
+						has_province_modifier = secret_nestorian_community
+						owned_by = PREV
+					}
 
 					religion = nestorian
 					remove_province_modifier = secret_nestorian_community
@@ -854,7 +1055,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_messalian = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_messalian_community }
+					limit = {
+						has_province_modifier = secret_messalian_community
+						owned_by = PREV
+					}
 
 					religion = messalian
 					remove_province_modifier = secret_messalian_community
@@ -865,7 +1069,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_sunni = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_sunni_community }
+					limit = {
+						has_province_modifier = secret_sunni_community
+						owned_by = PREV
+					}
 
 					religion = sunni
 					remove_province_modifier = secret_sunni_community
@@ -876,7 +1083,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_zikri = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_zikri_community }
+					limit = {
+						has_province_modifier = secret_zikri_community
+						owned_by = PREV
+					}
 
 					religion = zikri
 					remove_province_modifier = secret_zikri_community
@@ -887,7 +1097,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_yazidi = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_yazidi_community }
+					limit = {
+						has_province_modifier = secret_yazidi_community
+						owned_by = PREV
+					}
 
 					religion = yazidi
 					remove_province_modifier = secret_yazidi_community
@@ -898,7 +1111,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_ibadi = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_ibadi_community }
+					limit = {
+						has_province_modifier = secret_ibadi_community
+						owned_by = PREV
+					}
 
 					religion = ibadi
 					remove_province_modifier = secret_ibadi_community
@@ -909,7 +1125,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_kharijite = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_kharijite_community }
+					limit = {
+						has_province_modifier = secret_kharijite_community
+						owned_by = PREV
+					}
 
 					religion = kharijite
 					remove_province_modifier = secret_kharijite_community
@@ -920,7 +1139,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_shiite = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_shiite_community }
+					limit = {
+						has_province_modifier = secret_shiite_community
+						owned_by = PREV
+					}
 
 					religion = shiite
 					remove_province_modifier = secret_shiite_community
@@ -931,7 +1153,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_druze = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_druze_community }
+					limit = {
+						has_province_modifier = secret_druze_community
+						owned_by = PREV
+					}
 
 					religion = druze
 					remove_province_modifier = secret_druze_community
@@ -942,7 +1167,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_hurufi = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_hurufi_community }
+					limit = {
+						has_province_modifier = secret_hurufi_community
+						owned_by = PREV
+					}
 
 					religion = hurufi
 					remove_province_modifier = secret_hurufi_community
@@ -953,7 +1181,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_qarmatian = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_qarmatian_community }
+					limit = {
+						has_province_modifier = secret_qarmatian_community
+						owned_by = PREV
+					}
 
 					religion = qarmatian
 					remove_province_modifier = secret_qarmatian_community
@@ -964,7 +1195,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_jewish = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_jewish_community }
+					limit = {
+						has_province_modifier = secret_jewish_community
+						owned_by = PREV
+					}
 
 					religion = jewish
 					remove_province_modifier = secret_jewish_community
@@ -975,7 +1209,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_karaite = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_karaite_community }
+					limit = {
+						has_province_modifier = secret_karaite_community
+						owned_by = PREV
+					}
 
 					religion = karaite
 					remove_province_modifier = secret_karaite_community
@@ -986,7 +1223,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_samaritan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_samaritan_community }
+					limit = {
+						has_province_modifier = secret_samaritan_community
+						owned_by = PREV
+					}
 
 					religion = samaritan
 					remove_province_modifier = secret_samaritan_community
@@ -997,7 +1237,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_zoroastrian = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_zoroastrian_community }
+					limit = {
+						has_province_modifier = secret_zoroastrian_community
+						owned_by = PREV
+					}
 
 					religion = zoroastrian
 					remove_province_modifier = secret_zoroastrian_community
@@ -1008,7 +1251,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_mazdaki = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_mazdaki_community }
+					limit = {
+						has_province_modifier = secret_mazdaki_community
+						owned_by = PREV
+					}
 
 					religion = mazdaki
 					remove_province_modifier = secret_mazdaki_community
@@ -1019,7 +1265,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_manichaean = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_manichaean_community }
+					limit = {
+						has_province_modifier = secret_manichaean_community
+						owned_by = PREV
+					}
 
 					religion = manichaean
 					remove_province_modifier = secret_manichaean_community
@@ -1030,7 +1279,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_khurmazta = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_khurmazta_community }
+					limit = {
+						has_province_modifier = secret_khurmazta_community
+						owned_by = PREV
+					}
 
 					religion = khurmazta
 					remove_province_modifier = secret_khurmazta_community
@@ -1041,7 +1293,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_bon_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_bon_pagan_community }
+					limit = {
+						has_province_modifier = secret_bon_pagan_community
+						owned_by = PREV
+					}
 
 					religion = bon_pagan
 					remove_province_modifier = secret_bon_pagan_community
@@ -1052,7 +1307,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_bon_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_bon_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_bon_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = bon_pagan_reformed
 					remove_province_modifier = secret_bon_pagan_reformed_community
@@ -1063,7 +1321,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_hellenic_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_hellenic_pagan_community }
+					limit = {
+						has_province_modifier = secret_hellenic_pagan_community
+						owned_by = PREV
+					}
 
 					religion = hellenic_pagan
 					remove_province_modifier = secret_hellenic_pagan_community
@@ -1074,7 +1335,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_hellenic_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_hellenic_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_hellenic_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = hellenic_pagan_reformed
 					remove_province_modifier = secret_hellenic_pagan_reformed_community
@@ -1085,7 +1349,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_taoist = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_taoist_community }
+					limit = {
+						has_province_modifier = secret_taoist_community
+						owned_by = PREV
+					}
 
 					religion = taoist
 					remove_province_modifier = secret_taoist_community
@@ -1096,7 +1363,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_hindu = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_hindu_community }
+					limit = {
+						has_province_modifier = secret_hindu_community
+						owned_by = PREV
+					}
 
 					religion = hindu
 					remove_province_modifier = secret_hindu_community
@@ -1107,7 +1377,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_buddhist = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_buddhist_community }
+					limit = {
+						has_province_modifier = secret_buddhist_community
+						owned_by = PREV
+					}
 
 					religion = buddhist
 					remove_province_modifier = secret_buddhist_community
@@ -1118,7 +1391,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_jain = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_jain_community }
+					limit = {
+						has_province_modifier = secret_jain_community
+						owned_by = PREV
+					}
 
 					religion = jain
 					remove_province_modifier = secret_jain_community
@@ -1129,7 +1405,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_norse_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_norse_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_norse_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = norse_pagan_reformed
 					remove_province_modifier = secret_norse_pagan_reformed_community
@@ -1140,7 +1419,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_norse_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_norse_pagan_community }
+					limit = {
+						has_province_modifier = secret_norse_pagan_community
+						owned_by = PREV
+					}
 
 					religion = norse_pagan
 					remove_province_modifier = secret_norse_pagan_community
@@ -1151,7 +1433,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_slavic_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_slavic_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_slavic_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = slavic_pagan_reformed
 					remove_province_modifier = secret_slavic_pagan_reformed_community
@@ -1162,7 +1447,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_slavic_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_slavic_pagan_community }
+					limit = {
+						has_province_modifier = secret_slavic_pagan_community
+						owned_by = PREV
+					}
 
 					religion = slavic_pagan
 					remove_province_modifier = secret_slavic_pagan_community
@@ -1173,7 +1461,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_tengri_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_tengri_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_tengri_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = tengri_pagan_reformed
 					remove_province_modifier = secret_tengri_pagan_reformed_community
@@ -1184,7 +1475,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_tengri_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_tengri_pagan_community }
+					limit = {
+						has_province_modifier = secret_tengri_pagan_community
+						owned_by = PREV
+					}
 
 					religion = tengri_pagan
 					remove_province_modifier = secret_tengri_pagan_community
@@ -1195,7 +1489,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_baltic_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_baltic_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_baltic_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = baltic_pagan_reformed
 					remove_province_modifier = secret_baltic_pagan_reformed_community
@@ -1206,7 +1503,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_baltic_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_baltic_pagan_community }
+					limit = {
+						has_province_modifier = secret_baltic_pagan_community
+						owned_by = PREV
+					}
 
 					religion = baltic_pagan
 					remove_province_modifier = secret_baltic_pagan_community
@@ -1217,7 +1517,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_finnish_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_finnish_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_finnish_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = finnish_pagan_reformed
 					remove_province_modifier = secret_finnish_pagan_reformed_community
@@ -1228,7 +1531,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_finnish_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_finnish_pagan_community }
+					limit = {
+						has_province_modifier = secret_finnish_pagan_community
+						owned_by = PREV
+					}
 
 					religion = finnish_pagan
 					remove_province_modifier = secret_finnish_pagan_community
@@ -1239,7 +1545,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_west_african_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_west_african_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_west_african_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = west_african_pagan_reformed
 					remove_province_modifier = secret_west_african_pagan_reformed_community
@@ -1250,7 +1559,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_west_african_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_west_african_pagan_community }
+					limit = {
+						has_province_modifier = secret_west_african_pagan_community
+						owned_by = PREV
+					}
 
 					religion = west_african_pagan
 					remove_province_modifier = secret_west_african_pagan_community
@@ -1261,7 +1573,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_zun_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_zun_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_zun_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = zun_pagan_reformed
 					remove_province_modifier = secret_zun_pagan_reformed_community
@@ -1272,7 +1587,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_zun_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_zun_pagan_community }
+					limit = {
+						has_province_modifier = secret_zun_pagan_community
+						owned_by = PREV
+					}
 
 					religion = zun_pagan
 					remove_province_modifier = secret_zun_pagan_community
@@ -1283,7 +1601,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_aztec_pagan = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_aztec_pagan_community }
+					limit = {
+						has_province_modifier = secret_aztec_pagan_community
+						owned_by = PREV
+					}
 
 					religion = aztec_pagan
 					remove_province_modifier = secret_aztec_pagan_community
@@ -1294,7 +1615,10 @@ flip_all_realm_secret_religious_community_provinces = {
 		secret_religious_society_aztec_pagan_reformed = {
 			top_liege = {
 				any_realm_province = {
-					limit = { has_province_modifier = secret_aztec_pagan_reformed_community }
+					limit = {
+						has_province_modifier = secret_aztec_pagan_reformed_community
+						owned_by = PREV
+					}
 
 					religion = aztec_pagan_reformed
 					remove_province_modifier = secret_aztec_pagan_reformed_community
@@ -1313,7 +1637,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_catholic = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_catholic_community }
+						limit = {
+							has_province_modifier = secret_catholic_community
+							owned_by = PREV
+						}
 
 						religion = catholic
 						remove_province_modifier = secret_catholic_community
@@ -1324,7 +1651,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_cathar = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_cathar_community }
+						limit = {
+							has_province_modifier = secret_cathar_community
+							owned_by = PREV
+						}
 
 						religion = cathar
 						remove_province_modifier = secret_cathar_community
@@ -1335,7 +1665,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_fraticelli = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_fraticelli_community }
+						limit = {
+							has_province_modifier = secret_fraticelli_community
+							owned_by = PREV
+						}
 
 						religion = fraticelli
 						remove_province_modifier = secret_fraticelli_community
@@ -1346,7 +1679,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_waldensian = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_waldensian_community }
+						limit = {
+							has_province_modifier = secret_waldensian_community
+							owned_by = PREV
+						}
 
 						religion = waldensian
 						remove_province_modifier = secret_waldensian_community
@@ -1357,7 +1693,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_lollard = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_lollard_community }
+						limit = {
+							has_province_modifier = secret_lollard_community
+							owned_by = PREV
+						}
 
 						religion = lollard
 						remove_province_modifier = secret_lollard_community
@@ -1368,7 +1707,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_orthodox = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_orthodox_community }
+						limit = {
+							has_province_modifier = secret_orthodox_community
+							owned_by = PREV
+						}
 
 						religion = orthodox
 						remove_province_modifier = secret_orthodox_community
@@ -1379,7 +1721,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_miaphysite = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_miaphysite_community }
+						limit = {
+							has_province_modifier = secret_miaphysite_community
+							owned_by = PREV
+						}
 
 						religion = miaphysite
 						remove_province_modifier = secret_miaphysite_community
@@ -1390,7 +1735,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_monophysite = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_monophysite_community }
+						limit = {
+							has_province_modifier = secret_monophysite_community
+							owned_by = PREV
+						}
 
 						religion = monophysite
 						remove_province_modifier = secret_monophysite_community
@@ -1401,7 +1749,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_bogomilist = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_bogomilist_community }
+						limit = {
+							has_province_modifier = secret_bogomilist_community
+							owned_by = PREV
+						}
 
 						religion = bogomilist
 						remove_province_modifier = secret_bogomilist_community
@@ -1412,7 +1763,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_monothelite = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_monothelite_community }
+						limit = {
+							has_province_modifier = secret_monothelite_community
+							owned_by = PREV
+						}
 
 						religion = monothelite
 						remove_province_modifier = secret_monothelite_community
@@ -1423,7 +1777,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_iconoclast = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_iconoclast_community }
+						limit = {
+							has_province_modifier = secret_iconoclast_community
+							owned_by = PREV
+						}
 
 						religion = iconoclast
 						remove_province_modifier = secret_iconoclast_community
@@ -1434,7 +1791,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_paulician = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_paulician_community }
+						limit = {
+							has_province_modifier = secret_paulician_community
+							owned_by = PREV
+						}
 
 						religion = paulician
 						remove_province_modifier = secret_paulician_community
@@ -1445,7 +1805,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_nestorian = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_nestorian_community }
+						limit = {
+							has_province_modifier = secret_nestorian_community
+							owned_by = PREV
+						}
 
 						religion = nestorian
 						remove_province_modifier = secret_nestorian_community
@@ -1456,7 +1819,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_messalian = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_messalian_community }
+						limit = {
+							has_province_modifier = secret_messalian_community
+							owned_by = PREV
+						}
 
 						religion = messalian
 						remove_province_modifier = secret_messalian_community
@@ -1467,7 +1833,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_sunni = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_sunni_community }
+						limit = {
+							has_province_modifier = secret_sunni_community
+							owned_by = PREV
+						}
 
 						religion = sunni
 						remove_province_modifier = secret_sunni_community
@@ -1478,7 +1847,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_zikri = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_zikri_community }
+						limit = {
+							has_province_modifier = secret_zikri_community
+							owned_by = PREV
+						}
 
 						religion = zikri
 						remove_province_modifier = secret_zikri_community
@@ -1489,7 +1861,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_yazidi = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_yazidi_community }
+						limit = {
+							has_province_modifier = secret_yazidi_community
+							owned_by = PREV
+						}
 
 						religion = yazidi
 						remove_province_modifier = secret_yazidi_community
@@ -1500,7 +1875,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_ibadi = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_ibadi_community }
+						limit = {
+							has_province_modifier = secret_ibadi_community
+							owned_by = PREV
+						}
 
 						religion = ibadi
 						remove_province_modifier = secret_ibadi_community
@@ -1511,7 +1889,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_kharijite = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_kharijite_community }
+						limit = {
+							has_province_modifier = secret_kharijite_community
+							owned_by = PREV
+						}
 
 						religion = kharijite
 						remove_province_modifier = secret_kharijite_community
@@ -1522,7 +1903,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_shiite = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_shiite_community }
+						limit = {
+							has_province_modifier = secret_shiite_community
+							owned_by = PREV
+						}
 
 						religion = shiite
 						remove_province_modifier = secret_shiite_community
@@ -1533,7 +1917,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_druze = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_druze_community }
+						limit = {
+							has_province_modifier = secret_druze_community
+							owned_by = PREV
+						}
 
 						religion = druze
 						remove_province_modifier = secret_druze_community
@@ -1544,7 +1931,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_hurufi = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_hurufi_community }
+						limit = {
+							has_province_modifier = secret_hurufi_community
+							owned_by = PREV
+						}
 
 						religion = hurufi
 						remove_province_modifier = secret_hurufi_community
@@ -1555,7 +1945,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_qarmatian = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_qarmatian_community }
+						limit = {
+							has_province_modifier = secret_qarmatian_community
+							owned_by = PREV
+						}
 
 						religion = qarmatian
 						remove_province_modifier = secret_qarmatian_community
@@ -1566,7 +1959,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_aztec_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_aztec_pagan_community }
+						limit = {
+							has_province_modifier = secret_aztec_pagan_community
+							owned_by = PREV
+						}
 
 						religion = aztec_pagan
 						remove_province_modifier = secret_aztec_pagan_community
@@ -1577,7 +1973,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_aztec_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_aztec_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_aztec_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = aztec_pagan_reformed
 						remove_province_modifier = secret_aztec_pagan_reformed_community
@@ -1588,7 +1987,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_jewish = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_jewish_community }
+						limit = {
+							has_province_modifier = secret_jewish_community
+							owned_by = PREV
+						}
 
 						religion = jewish
 						remove_province_modifier = secret_jewish_community
@@ -1599,7 +2001,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_samaritan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_samaritan_community }
+						limit = {
+							has_province_modifier = secret_samaritan_community
+							owned_by = PREV
+						}
 
 						religion = samaritan
 						remove_province_modifier = secret_samaritan_community
@@ -1610,7 +2015,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_karaite = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_karaite_community }
+						limit = {
+							has_province_modifier = secret_karaite_community
+							owned_by = PREV
+						}
 
 						religion = karaite
 						remove_province_modifier = secret_karaite_community
@@ -1621,7 +2029,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_zoroastrian = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_zoroastrian_community }
+						limit = {
+							has_province_modifier = secret_zoroastrian_community
+							owned_by = PREV
+						}
 
 						religion = zoroastrian
 						remove_province_modifier = secret_zoroastrian_community
@@ -1632,7 +2043,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_mazdaki = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_mazdaki_community }
+						limit = {
+							has_province_modifier = secret_mazdaki_community
+							owned_by = PREV
+						}
 						religion = mazdaki
 						remove_province_modifier = secret_mazdaki_community
 					}
@@ -1642,7 +2056,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_manichaean = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_manichaean_community }
+						limit = {
+							has_province_modifier = secret_manichaean_community
+							owned_by = PREV
+						}
 
 						religion = manichaean
 						remove_province_modifier = secret_manichaean_community
@@ -1653,7 +2070,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_khurmazta = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_khurmazta_community }
+						limit = {
+							has_province_modifier = secret_khurmazta_community
+							owned_by = PREV
+						}
 
 						religion = khurmazta
 						remove_province_modifier = secret_khurmazta_community
@@ -1664,7 +2084,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_bon_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_bon_pagan_community }
+						limit = {
+							has_province_modifier = secret_bon_pagan_community
+							owned_by = PREV
+						}
 
 						religion = bon_pagan
 						remove_province_modifier = secret_bon_pagan_community
@@ -1675,7 +2098,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_bon_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_bon_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_bon_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = bon_pagan_reformed
 						remove_province_modifier = secret_bon_pagan_reformed_community
@@ -1686,7 +2112,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_hellenic_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_hellenic_pagan_community }
+						limit = {
+							has_province_modifier = secret_hellenic_pagan_community
+							owned_by = PREV
+						}
 
 						religion = hellenic_pagan
 						remove_province_modifier = secret_hellenic_pagan_community
@@ -1697,7 +2126,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_hellenic_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_hellenic_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_hellenic_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = hellenic_pagan_reformed
 						remove_province_modifier = secret_hellenic_pagan_reformed_community
@@ -1708,7 +2140,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_taoist = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_taoist_community }
+						limit = {
+							has_province_modifier = secret_taoist_community
+							owned_by = PREV
+						}
 
 						religion = taoist
 						remove_province_modifier = secret_taoist_community
@@ -1719,7 +2154,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_hindu = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_hindu_community }
+						limit = {
+							has_province_modifier = secret_hindu_community
+							owned_by = PREV
+						}
 
 						religion = hindu
 						remove_province_modifier = secret_hindu_community
@@ -1730,7 +2168,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_buddhist = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_buddhist_community }
+						limit = {
+							has_province_modifier = secret_buddhist_community
+							owned_by = PREV
+						}
 
 						religion = buddhist
 						remove_province_modifier = secret_buddhist_community
@@ -1741,7 +2182,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_jain = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_jain_community }
+						limit = {
+							has_province_modifier = secret_jain_community
+							owned_by = PREV
+						}
 
 						religion = jain
 						remove_province_modifier = secret_jain_community
@@ -1752,7 +2196,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_norse_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_norse_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_norse_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = norse_pagan_reformed
 						remove_province_modifier = secret_norse_pagan_reformed_community
@@ -1763,7 +2210,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_norse_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_norse_pagan_community }
+						limit = {
+							has_province_modifier = secret_norse_pagan_community
+							owned_by = PREV
+						}
 
 						religion = norse_pagan
 						remove_province_modifier = secret_norse_pagan_community
@@ -1774,7 +2224,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_slavic_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_slavic_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_slavic_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = slavic_pagan_reformed
 						remove_province_modifier = secret_slavic_pagan_reformed_community
@@ -1785,7 +2238,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_slavic_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_slavic_pagan_community }
+						limit = {
+							has_province_modifier = secret_slavic_pagan_community
+							owned_by = PREV
+						}
 
 						religion = slavic_pagan
 						remove_province_modifier = secret_slavic_pagan_community
@@ -1796,7 +2252,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_tengri_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_tengri_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_tengri_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = tengri_pagan_reformed
 						remove_province_modifier = secret_tengri_pagan_reformed_community
@@ -1807,7 +2266,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_tengri_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_tengri_pagan_community }
+						limit = {
+							has_province_modifier = secret_tengri_pagan_community
+							owned_by = PREV
+						}
 
 						religion = tengri_pagan
 						remove_province_modifier = secret_tengri_pagan_community
@@ -1818,7 +2280,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_baltic_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_baltic_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_baltic_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = baltic_pagan_reformed
 						remove_province_modifier = secret_baltic_pagan_reformed_community
@@ -1829,7 +2294,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_baltic_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_baltic_pagan_community }
+						limit = {
+							has_province_modifier = secret_baltic_pagan_community
+							owned_by = PREV
+						}
 
 						religion = baltic_pagan
 						remove_province_modifier = secret_baltic_pagan_community
@@ -1840,7 +2308,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_finnish_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_finnish_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_finnish_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = finnish_pagan_reformed
 						remove_province_modifier = secret_finnish_pagan_reformed_community
@@ -1851,7 +2322,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_finnish_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_finnish_pagan_community }
+						limit = {
+							has_province_modifier = secret_finnish_pagan_community
+							owned_by = PREV
+						}
 
 						religion = finnish_pagan
 						remove_province_modifier = secret_finnish_pagan_community
@@ -1862,7 +2336,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_west_african_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_west_african_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_west_african_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = west_african_pagan_reformed
 						remove_province_modifier = secret_west_african_pagan_reformed_community
@@ -1873,7 +2350,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_west_african_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_west_african_pagan_community }
+						limit = {
+							has_province_modifier = secret_west_african_pagan_community
+							owned_by = PREV
+						}
 
 						religion = west_african_pagan
 						remove_province_modifier = secret_west_african_pagan_community
@@ -1884,7 +2364,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_zun_pagan_reformed = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_zun_pagan_reformed_community }
+						limit = {
+							has_province_modifier = secret_zun_pagan_reformed_community
+							owned_by = PREV
+						}
 
 						religion = zun_pagan_reformed
 						remove_province_modifier = secret_zun_pagan_reformed_community
@@ -1895,7 +2378,10 @@ root_secret_religion_provinces_convert_effect = {
 			secret_religious_society_zun_pagan = {
 				PREV = {
 					any_demesne_province = {
-						limit = { has_province_modifier = secret_zun_pagan_community }
+						limit = {
+							has_province_modifier = secret_zun_pagan_community
+							owned_by = PREV
+						}
 
 						religion = zun_pagan
 						remove_province_modifier = secret_zun_pagan_community
@@ -3091,7 +3577,13 @@ convert_religion_failsafe_effect = {
 		}
 
 		fallback = {
-			religion = event_target:target_religion
+			if = {
+				limit = { can_change_religion = yes }
+				religion = event_target:target_religion
+			}
+			else = {
+				unsafe_religion = event_target:target_religion
+			}
 			clear_event_target = target_religion
 		}
 	}

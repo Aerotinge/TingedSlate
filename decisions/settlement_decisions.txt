@@ -13,10 +13,11 @@
 settlement_decisions = {
 
 	convert_tribal_to_castle = {
-		is_high_prio = yes
-		filter = owned
+		# filter = owned # CleanSlate: Nonfunctional
 		ai_target_filter = owned
 		ai_check_interval = 12
+
+		is_high_prio = yes
 
 		only_playable = yes
 
@@ -121,10 +122,11 @@ settlement_decisions = {
 	}
 
 	convert_tribal_to_city = {
-		filter = owned
+		# filter = owned # CleanSlate: Nonfunctional
 		ai_target_filter = owned
-		is_high_prio = yes
 		ai_check_interval = 12
+
+		is_high_prio = yes
 
 		only_playable = yes
 
@@ -206,10 +208,11 @@ settlement_decisions = {
 	}
 
 	convert_tribal_to_temple = {
-		is_high_prio = yes
-		filter = owned
+		# filter = owned # CleanSlate: Nonfunctional
 		ai_target_filter = owned
 		ai_check_interval = 12
+
+		is_high_prio = yes
 
 		only_playable = yes
 
@@ -296,7 +299,7 @@ settlement_decisions = {
 	}
 
 	make_primary = {
-		filter = owned
+		# filter = owned # CleanSlate: Nonfunctional
 		ai_target_filter = owned
 		ai_check_interval = 3
 
@@ -356,7 +359,7 @@ settlement_decisions = {
 	}
 
 	revoke_primary = {
-		filter = owned
+		# filter = owned # CleanSlate: Nonfunctional
 		ai_target_filter = owned
 
 		only_playable = yes
@@ -393,10 +396,11 @@ settlement_decisions = {
 	}
 
 	pillage_settlement = {
-		is_high_prio = yes
-		filter = owned
+		# filter = owned # CleanSlate: Nonfunctional
 		ai_target_filter = owned
 		ai_check_interval = 3
+
+		is_high_prio = yes
 
 		only_independent = yes
 
@@ -513,9 +517,9 @@ settlement_decisions = {
 						text = gain_tech_custom_tooltip
 
 						random_list = {
-							10 = { military_techpoints = 5 }
-							10 = { economy_techpoints = 5 }
-							10 = { culture_techpoints = 5 }
+							33 = { military_techpoints = 5 }
+							33 = { economy_techpoints = 5 }
+							33 = { culture_techpoints = 5 }
 						}
 					}
 				}
@@ -545,50 +549,48 @@ settlement_decisions = {
 						years = 10
 					}
 				}
+			}
 
-				FROM = {
-					if = {
-						limit = {
-							NAND = {
-								has_character_modifier = pillage_cooldown
+			FROM = {
+				if = {
+					limit = {
+						NAND = {
+							has_character_modifier = pillage_cooldown
 
-								any_demesne_title = {
-									tier = BARON
-									has_holding_modifier = recently_burnt_the_land
-									NOT = { has_holding_modifier = stop_burning_land }
-								}
+							any_demesne_title = {
+								tier = BARON
+								has_holding_modifier = recently_burnt_the_land
+								NOT = { has_holding_modifier = stop_burning_land }
 							}
 						}
+					}
 
-						character_event = {
-							id = HL.4800
-							months = 6
-						}
+					character_event = {
+						id = HL.4800
+						months = 6
+					}
 
-						add_character_modifier = {
-							name = pillage_cooldown
-							months = 6
-							hidden = yes
-						}
+					add_character_modifier = {
+						name = pillage_cooldown
+						months = 6
+						hidden = yes
 					}
 				}
 			}
 
 			if = {
-				limit = { has_any_building = no }
+				limit = { num_of_buildings == 0 }
 
-				hidden_effect = {
-					location = {
-						province_event = {
-							id = HL.4810
-							days = 1
-						}
+				location = {
+					province_event = {
+						id = HL.4810
+						days = 1
+					}
 
-						province_event = {
-							id = HL.4814
-							days = 2
-							random = 2
-						}
+					province_event = {
+						id = HL.4814
+						days = 2
+						random = 2
 					}
 				}
 
@@ -606,7 +608,7 @@ settlement_decisions = {
 	}
 
 	stop_pillage_settlement = {
-		filter = owned
+		# filter = owned # CleanSlate: Nonfunctional
 
 		ai = no
 
@@ -652,17 +654,18 @@ settlement_decisions = {
 	}
 
 	adopt_tribalism = {
-		filter = sub_realm_owned
+		# filter = sub_realm_owned # CleanSlate: Nonfunctional
 		ai_target_filter = sub_realm_owned
 		ai_check_interval = 6
+
 		is_high_prio = yes
 
 		only_independent = yes
 
 		from_potential = {
+			has_dlc = "Horse Lords"
 			independent = yes
 			is_nomadic = yes
-			has_dlc = "Horse Lords"
 			is_landed = yes
 
 			trigger_if = {
@@ -756,11 +759,10 @@ settlement_decisions = {
 						any_realm_province = {
 							NOT = { culture = ROOT_FROM }
 							num_of_settlements >= 1
+							held_under_PREV = yes
 
 							ROOT = {
-								location = {
-									NOT = { province = PREVPREV } # Another province, not the capital
-								}
+								NOT = { is_capital = PREV } # Another province, not the capital
 							}
 						}
 					}
@@ -813,6 +815,7 @@ settlement_decisions = {
 								limit = {
 									NOT = { culture = ROOT_FROM }
 									num_of_settlements >= 1
+									held_under_PREV = yes
 
 									any_neighbor_province = {
 										culture = ROOT_FROM
@@ -877,6 +880,36 @@ settlement_decisions = {
 
 							usurp_title = ROOT_FROM
 						}
+					}
+				}
+			}
+
+			hidden_effect = {
+				# Change name of Avaria to Hungary if relevant
+				if = {
+					limit = {
+						always = no # Disabled
+						FROM = { culture = hungarian }
+
+						location = {
+							kingdom = { title = k_hungary }
+						}
+
+						k_hungary = {
+							OR = {
+								has_holder = no
+								holder = FROM
+							}
+						}
+					}
+
+					set_global_flag = avar_khaganate_renamed
+
+					k_hungary = {
+						reset_coa = THIS
+						set_name = ""
+						adjective = ""
+						grant_title = FROM
 					}
 				}
 			}
@@ -964,7 +997,10 @@ settlement_decisions = {
 				location = {
 					FROM = {
 						any_realm_province = {
-							limit = { has_tribal = yes }
+							limit = {
+								has_tribal = yes
+								held_under_PREV = yes
+							}
 
 							ROOT_FROM = {
 								spawn_unit = {
@@ -1012,6 +1048,7 @@ settlement_decisions = {
 						count < 7
 
 						region = world_steppe
+						held_under_PREV = yes
 					}
 				}
 			}
@@ -1019,17 +1056,18 @@ settlement_decisions = {
 	}
 
 	nomad_adopt_feudalism = {
-		filter = sub_realm_owned
+		# filter = sub_realm_owned # CleanSlate: Nonfunctional
 		ai_target_filter = sub_realm_owned
 		ai_check_interval = 6
+
 		is_high_prio = yes
 
 		only_independent = yes
 
 		from_potential = {
+			has_dlc = "Horse Lords"
 			independent = yes
 			is_nomadic = yes
-			has_dlc = "Horse Lords"
 
 			trigger_if = {
 				limit = { ai = no }
@@ -1116,11 +1154,10 @@ settlement_decisions = {
 						any_realm_province = {
 							NOT = { culture = ROOT_FROM }
 							num_of_settlements >= 1
+							held_under_PREV = yes
 
 							ROOT = {
-								location = {
-									NOT = { province = PREVPREV } # Another province, not the capital
-								}
+								NOT = { is_capital = PREV } # Another province, not the capital
 							}
 						}
 					}
@@ -1173,6 +1210,7 @@ settlement_decisions = {
 								limit = {
 									NOT = { culture = ROOT_FROM }
 									num_of_settlements >= 1
+									held_under_PREV = yes
 
 									any_neighbor_province = {
 										culture = ROOT_FROM
@@ -1237,15 +1275,14 @@ settlement_decisions = {
 				# Change name of Avaria to Hungary if relevant
 				if = {
 					limit = {
-						FROM = {
-							culture = hungarian
-						}
+						always = no # Disabled
+						FROM = { culture = hungarian }
 
 						location = {
-							kingdom = { title = k_pannonia }
+							kingdom = { title = k_hungary }
 						}
 
-						k_pannonia = {
+						k_hungary = {
 							OR = {
 								has_holder = no
 								holder = FROM
@@ -1255,7 +1292,7 @@ settlement_decisions = {
 
 					set_global_flag = avar_khaganate_renamed
 
-					k_pannonia = {
+					k_hungary = {
 						reset_coa = THIS
 						set_name = ""
 						adjective = ""
@@ -1265,21 +1302,25 @@ settlement_decisions = {
 
 				if = {
 					limit = {
+						always = no # Disabled
 						FROM = {
 							dynasty = 708 # Árpád
-							has_landed_title = k_pannonia
+							has_landed_title = k_hungary
 						}
 					}
 
 					FROM = {
 						any_realm_province = {
-							limit = { culture = avar }
+							limit = {
+								culture = avar
+								held_under_PREV = yes
+							}
 
 							culture = PREV
 							religion = PREV
 						}
 
-						k_pannonia = {
+						k_hungary = {
 							any_direct_de_jure_vassal_title = {
 								limit = { tier = DUKE }
 
@@ -1298,6 +1339,8 @@ settlement_decisions = {
 					FROM = {
 						any_realm_province = {
 							limit = {
+								held_under_PREV = yes
+
 								NOT = {
 									any_province_holding = {
 										NOT = { holding_type = nomad }
@@ -1352,9 +1395,9 @@ settlement_decisions = {
 				}
 
 				if = {
-					limit = { is_government_potential = clan_government }
+					limit = { is_government_potential = muslim_government }
 
-					set_government_type = clan_government
+					set_government_type = muslim_government
 
 					if = {
 						limit = { ai = no }
@@ -1366,9 +1409,9 @@ settlement_decisions = {
 					}
 				}
 				else_if = {
-					limit = { is_government_potential = tibetan_feudal_government }
+					limit = { is_government_potential = theocratic_feudal_government }
 
-					set_government_type = tibetan_feudal_government
+					set_government_type = theocratic_feudal_government
 
 					if = {
 						limit = { ai = no }
@@ -1410,6 +1453,7 @@ settlement_decisions = {
 
 						primary_title = {
 							show_scope_change = no
+
 							add_law = centralization_0
 						}
 					}
@@ -1461,25 +1505,23 @@ settlement_decisions = {
 
 			mult_modifier = {
 				factor = 100
-				FROM = {
-					dynasty = 708 # Árpád
-				}
+				FROM = { dynasty = 708 } # Árpád
 			}
 		}
 	}
 
 	nomad_adopt_republicanism = {
-		filter = sub_realm_owned
+		# filter = sub_realm_owned # CleanSlate: Nonfunctional
 		ai_target_filter = sub_realm_owned
 		ai_check_interval = 6
 
 		is_high_prio = yes
 
-		only_independent = yes
+		only_playable = yes
 
 		from_potential = {
-			independent = yes
 			has_dlc = "Horse Lords"
+			independent = yes
 			is_nomadic = yes
 			is_female = no
 
@@ -1559,14 +1601,15 @@ settlement_decisions = {
 			if = {
 				limit = {
 					FROM = {
-						population_and_manpower = 5000
+						population_and_manpower >= 5000
+
 						any_realm_province = {
 							NOT = { culture = ROOT_FROM }
 							num_of_settlements = 1
+							held_under_PREV = yes
+
 							ROOT = {
-								location = {
-									NOT = { province = PREVPREV } # Another province, not the capital
-								}
+								NOT = { is_capital = PREV } # Another province, not the capital
 							}
 						}
 					}
@@ -1619,6 +1662,7 @@ settlement_decisions = {
 								limit = {
 									NOT = { culture = ROOT_FROM }
 									num_of_settlements >= 1
+									held_under_PREV = yes
 
 									any_neighbor_province = {
 										culture = ROOT_FROM
@@ -1638,15 +1682,13 @@ settlement_decisions = {
 			hidden_effect = {
 				if = {
 					limit = {
-						FROM = {
-							culture = hungarian
-						}
+						FROM = { culture = hungarian }
 
 						location = {
-							kingdom = { title = k_pannonia }
+							kingdom = { title = k_hungary }
 						}
 
-						k_pannonia = {
+						k_hungary = {
 							OR = {
 								has_holder = no
 								holder = FROM
@@ -1656,7 +1698,7 @@ settlement_decisions = {
 
 					set_global_flag = avar_khaganate_renamed
 
-					k_pannonia = {
+					k_hungary = {
 						reset_coa = THIS
 						set_name = ""
 						adjective = ""
@@ -1673,6 +1715,8 @@ settlement_decisions = {
 					FROM = {
 						any_realm_province = {
 							limit = {
+								held_under_PREV = yes
+
 								NOT = {
 									any_province_holding = {
 										NOT = { holding_type = nomad }
@@ -1876,6 +1920,7 @@ settlement_decisions = {
 					limit = {
 						NOT = { character = ROOT_FROM }
 					}
+
 					narrative_event = { id = HL.1 }
 				}
 			}
@@ -1886,7 +1931,7 @@ settlement_decisions = {
 			factor = 1
 
 			trigger = {
-				FROM =	{
+				FROM = {
 					OR = {
 						trait = midas_touched
 						trait = fortune_builder
@@ -1920,32 +1965,25 @@ settlement_decisions = {
 				}
 			}
 
-			modifier = {
+			# TODO: Factor is already 1. Aren't these modifiers useless?
+			mult_modifier = {
 				factor = 5.0
-				FROM = {
-					trait = greedy
-				}
+				FROM = { trait = greedy }
 			}
 
 			mult_modifier = {
 				factor = 2.0
-				FROM = {
-					stewardship >= 12
-				}
+				FROM = { stewardship >= 12 }
 			}
 
 			mult_modifier = {
 				factor = 2.0
-				FROM = {
-					stewardship >= 14
-				}
+				FROM = { stewardship >= 14 }
 			}
 
 			mult_modifier = {
 				factor = 2.0
-				FROM = {
-					stewardship >= 18
-				}
+				FROM = { stewardship >= 18 }
 			}
 		}
 	}
@@ -2000,9 +2038,10 @@ settlement_decisions = {
 	}
 
 	settle_iceland_manually = {
-		filter = sub_realm_owned
+		# filter = sub_realm_owned # CleanSlate: Nonfunctional
 		ai_target_filter = sub_realm_owned
 		ai_check_interval = 60
+
 		is_high_prio = yes
 
 		only_playable = yes
@@ -2016,12 +2055,19 @@ settlement_decisions = {
 			location = {
 				has_province_modifier = incredibly_poor
 			}
+
+			holder_scope = {
+				OR = {
+					character = FROM
+					is_vassal_or_below_of = FROM
+				}
+			}
 		}
 
 		allow = {
 			FROM = {
 				prestige >= 200
-				wealth >= 25
+				wealth   >=  25
 			}
 		}
 

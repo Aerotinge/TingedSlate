@@ -1,4 +1,3 @@
-# TODO: papacy_influence factors
 # ask_for_excommunication_chance
 # ask_for_invasion_chance
 # ask_for_divorce_chance
@@ -6723,7 +6722,7 @@ ask_to_lift_excommunication_chance = {
 
 	# Modifiers vs Virtuous Pope
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_ZEALOUS_TARGET
 
 		FROMFROM = {
@@ -6740,7 +6739,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CHASTE_TARGET
 
 		FROMFROM = {
@@ -6763,7 +6762,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_TEMPERATE_TARGET
 
 		FROMFROM = {
@@ -6778,7 +6777,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CHARITABLE_TARGET
 
 		FROMFROM = {
@@ -6816,7 +6815,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_PATIENT_TARGET
 
 		FROMFROM = {
@@ -6839,7 +6838,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_KIND_TARGET
 
 		FROMFROM = {
@@ -6862,7 +6861,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_HUMBLE_TARGET
 
 		FROMFROM = {
@@ -6885,7 +6884,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 10
+		value = -10
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CYNICAL_TARGET
 
 		FROMFROM = {
@@ -6900,7 +6899,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_LUSTFUL_TARGET
 
 		FROMFROM = {
@@ -6923,7 +6922,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_GLUTTONOUS_TARGET
 
 		FROMFROM = {
@@ -6946,7 +6945,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_GREEDY_TARGET
 
 		FROMFROM = {
@@ -6969,7 +6968,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_SLOTHFUL_TARGET
 
 		FROMFROM = {
@@ -6992,7 +6991,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_WROTH_TARGET
 
 		FROMFROM = {
@@ -7015,7 +7014,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_ENVIOUS_TARGET
 
 		FROMFROM = {
@@ -7038,7 +7037,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_PROUD_TARGET
 
 		FROMFROM = {
@@ -7062,7 +7061,7 @@ ask_to_lift_excommunication_chance = {
 
 	# Modifiers vs Wicked Pope
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_HUMBLE_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -7087,7 +7086,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_KIND_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -7112,7 +7111,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_PATIENT_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -7137,7 +7136,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_DILIGENT_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -7162,7 +7161,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CHARITABLE_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -7187,7 +7186,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_TEMPERATE_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -7204,7 +7203,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CHASTE_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -7229,7 +7228,7 @@ ask_to_lift_excommunication_chance = {
 	}
 
 	additive_modifier = {
-		value = 10
+		value = -10
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_ZEALOUS_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -8247,7 +8246,7 @@ ask_for_money_chance = {
 }
 
 # AI logic for how the Pope should respond to the hardcoded Ask for Crusade action
-# ROOT is the asker, FROM is the Pope, FROMFROM is the target character, FROMFROMFROM is the target title
+# ROOT is the asker, FROM is the Pope
 ask_for_crusade_chance = {
 	additive_modifier = {
 		value = -50
@@ -12301,7 +12300,7 @@ nominate_bishop_chance = {
 
 	# Modifiers vs Virtuous Pope
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_ZEALOUS_TARGET
 
 		FROMFROM = { trait = zealous }
@@ -12313,7 +12312,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CHASTE_TARGET
 
 		FROMFROM = {
@@ -12335,7 +12334,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_TEMPERATE_TARGET
 
 		FROMFROM = { trait = temperate }
@@ -12347,7 +12346,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CHARITABLE_TARGET
 
 		FROMFROM = {
@@ -12369,7 +12368,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_DILIGENT_TARGET
 
 		FROMFROM = { trait = diligent }
@@ -12381,7 +12380,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_PATIENT_TARGET
 
 		FROMFROM = {
@@ -12403,7 +12402,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_KIND_TARGET
 
 		FROMFROM = {
@@ -12425,7 +12424,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = -5
+		value = 5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_HUMBLE_TARGET
 
 		FROMFROM = {
@@ -12447,7 +12446,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 10
+		value = -10
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CYNICAL_TARGET
 
 		FROMFROM = { trait = cynical }
@@ -12459,7 +12458,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_LUSTFUL_TARGET
 
 		FROMFROM = {
@@ -12481,7 +12480,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_GLUTTONOUS_TARGET
 
 		FROMFROM = {
@@ -12503,7 +12502,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_GREEDY_TARGET
 
 		FROMFROM = {
@@ -12525,7 +12524,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_SLOTHFUL_TARGET
 
 		FROMFROM = {
@@ -12547,7 +12546,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_WROTH_TARGET
 
 		FROMFROM = {
@@ -12569,7 +12568,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_ENVIOUS_TARGET
 
 		FROMFROM = {
@@ -12591,7 +12590,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_PROUD_TARGET
 
 		FROMFROM = {
@@ -12614,7 +12613,7 @@ nominate_bishop_chance = {
 
 	# Modifiers vs Wicked Pope
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_HUMBLE_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -12638,7 +12637,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_KIND_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -12662,7 +12661,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_PATIENT_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -12686,7 +12685,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_DILIGENT_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -12710,7 +12709,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CHARITABLE_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -12734,7 +12733,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_TEMPERATE_NEGATIVE_TARGET
 
 		FROMFROM = { trait = temperate }
@@ -12748,7 +12747,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 5
+		value = -5
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_CHASTE_NEGATIVE_TARGET
 
 		FROMFROM = {
@@ -12772,7 +12771,7 @@ nominate_bishop_chance = {
 	}
 
 	additive_modifier = {
-		value = 10
+		value = -10
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_ZEALOUS_NEGATIVE_TARGET
 
 		FROMFROM = { trait = zealous }

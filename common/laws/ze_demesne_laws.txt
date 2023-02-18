@@ -422,11 +422,11 @@ laws = {
 
 		effect = {
 			# log = "revoke_title_law_0 ([This.GetFullBaseName])"
+			set_allow_title_revokation = no
+			set_allow_free_infidel_revokation = no
 			hidden_effect = {
 				revoke_revoke_title_law_effect = yes
 			}
-			set_allow_title_revokation = no
-			set_allow_free_infidel_revokation = no
 		}
 
 		ai_will_do = {
@@ -454,11 +454,11 @@ laws = {
 
 		effect = {
 			# log = "revoke_title_law_1 ([This.GetFullBaseName])"
+			set_allow_title_revokation = yes
+			set_allow_free_infidel_revokation = no
 			hidden_effect = {
 				revoke_revoke_title_law_effect = yes
 			}
-			set_allow_title_revokation = yes
-			set_allow_free_infidel_revokation = no
 		}
 
 		ai_will_do = {
@@ -496,11 +496,11 @@ laws = {
 
 		effect = {
 			# log = "revoke_title_law_2 ([This.GetFullBaseName])"
+			set_allow_title_revokation = yes
+			set_allow_free_infidel_revokation = yes
 			hidden_effect = {
 				revoke_revoke_title_law_effect = yes
 			}
-			set_allow_title_revokation = yes
-			set_allow_free_infidel_revokation = yes
 		}
 
 		ai_will_do = {

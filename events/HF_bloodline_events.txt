@@ -992,6 +992,7 @@ character_event = {
 
 					any_realm_province = {
 						is_coastal = yes
+						held_under_PREV = yes
 					}
 				}
 
@@ -1101,6 +1102,7 @@ character_event = {
 
 					any_realm_province = {
 						is_coastal = yes
+						held_under_PREV = yes
 					}
 				}
 
@@ -11995,6 +11997,7 @@ narrative_event = {
 									region = world_middle_east_jerusalem
 									region = world_middle_east_arabia
 								}
+								held_under_PREV = yes
 							}
 						}
 					}
@@ -15142,7 +15145,7 @@ narrative_event = {
 			}
 
 			if = {
-				limit = {  is_female = no }
+				limit = { is_female = no }
 				give_nickname = nick_the_lion
 			}
 			else = {
@@ -15165,7 +15168,11 @@ narrative_event = {
 		}
 
 		any_player = {
-			limit = { is_within_diplo_range = ROOT }
+			limit = {
+				is_within_diplo_range = ROOT
+				NOT = { character = ROOT }
+			}
+
 			narrative_event = { id = HF.24229 }
 		}
 	}

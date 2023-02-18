@@ -588,9 +588,13 @@ character_event = {
 		any_demesne_province = {
 			region = custom_england
 			culture = anglo-saxon
+			owned_by = PREV
 
-			any_province_holding = {
-				NOT = { holding_type = nomad }
+			OR = {
+				has_castle = yes
+				has_city = yes
+				has_temple = yes
+				has_tribal = yes
 			}
 		}
 
@@ -664,9 +668,13 @@ character_event = {
 			limit = {
 				region = custom_england
 				culture = anglo-saxon
+				owned_by = PREV
 
-				any_province_holding = {
-					NOT = { holding_type = nomad }
+				OR = {
+					has_castle = yes
+					has_city = yes
+					has_temple = yes
+					has_tribal = yes
 				}
 			}
 
@@ -690,14 +698,18 @@ character_event = {
 
 		any_demesne_province = {
 			region = custom_england
+			owned_by = PREV
 
 			OR = {
 				culture = anglo-saxon
 				culture = norman
 			}
 
-			any_province_holding = {
-				NOT = { holding_type = nomad }
+			OR = {
+				has_castle = yes
+				has_city = yes
+				has_temple = yes
+				has_tribal = yes
 			}
 		}
 
@@ -733,14 +745,18 @@ character_event = {
 
 			limit = {
 				region = custom_england
+				owned_by = PREV
 
 				OR = {
 					culture = anglo-saxon
 					culture = norman
 				}
 
-				any_province_holding = {
-					NOT = { holding_type = nomad }
+				OR = {
+					has_castle = yes
+					has_city = yes
+					has_temple = yes
+					has_tribal = yes
 				}
 			}
 

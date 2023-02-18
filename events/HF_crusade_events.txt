@@ -1800,7 +1800,10 @@ character_event = {
 							NOT = { region = world_europe_north }
 						}
 					}
+
+					owned_by = PREV
 				}
+
 				NOT = {
 					any_war = {
 						using_cb = northern_crusade_war

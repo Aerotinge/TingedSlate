@@ -1147,11 +1147,11 @@ laws = {
 		effect = {
 			# log = "vice_royalty_0 ([This.GetFullBaseName])"
 
+			set_allow_vice_royalties = no
+
 			hidden_effect = {
 				revoke_vice_royalty_effect = yes
 			}
-
-			set_allow_vice_royalties = no
 		}
 
 		ai_will_do = {
@@ -1181,11 +1181,11 @@ laws = {
 		effect = {
 			# log = "vice_royalty_1 ([This.GetFullBaseName])"
 
+			set_allow_vice_royalties = KING
+
 			hidden_effect = {
 				revoke_vice_royalty_effect = yes
 			}
-
-			set_allow_vice_royalties = KING
 		}
 
 		ai_will_do = {
@@ -1215,11 +1215,11 @@ laws = {
 		effect = {
 			# log = "vice_royalty_2 ([This.GetFullBaseName])"
 
+			set_allow_vice_royalties = DUKE
+
 			hidden_effect = {
 				revoke_vice_royalty_effect = yes
 			}
-
-			set_allow_vice_royalties = DUKE
 		}
 
 		ai_will_do = {
@@ -1268,7 +1268,6 @@ laws = {
 
 		effect = {
 			# log = "feudal_administration ([This.GetFullBaseName])"
-			revoke_law = imperial_administration
 
 			if = {
 				limit = { has_dlc = "Charlemagne" }
@@ -1277,6 +1276,8 @@ laws = {
 			else = {
 				set_allow_free_duchy_revokation = no
 			}
+
+			revoke_law = imperial_administration
 		}
 
 		ai_will_do = {
@@ -1304,7 +1305,6 @@ laws = {
 
 		effect = {
 			# log = "imperial_administration ([This.GetFullBaseName])"
-			revoke_law = feudal_administration
 
 			if = {
 				limit = { has_dlc = "Charlemagne" }
@@ -1314,6 +1314,8 @@ laws = {
 			else = {
 				set_allow_free_duchy_revokation = yes
 			}
+
+			revoke_law = feudal_administration
 		}
 
 		ai_will_do = {

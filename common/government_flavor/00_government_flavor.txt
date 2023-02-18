@@ -3164,6 +3164,7 @@ government_flavor = {
 
 		any_realm_province = {
 			religion_group = muslim
+			held_under_PREV = yes
 		}
 
 		capital_scope = {
@@ -3208,6 +3209,7 @@ government_flavor = {
 
 		any_realm_province = {
 			religion_group = muslim
+			held_under_PREV = yes
 		}
 
 		OR = {

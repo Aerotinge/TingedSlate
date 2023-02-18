@@ -295,12 +295,12 @@ e_baltia = {
 
 		allow = {
 			can_create_kingdom = yes
-			
+
 			FROM = {
 				show_scope_change = no
 				show_only_failed_conditions = yes
 
-				has_holder = no
+				is_titular = no
 			}
 		}
 	}

@@ -20,13 +20,24 @@ spawn_peasant_army_effect = {
 			religion = THIS
 			culture = THIS
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = peasant_leader
 			add_trait = tough_soldier
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 		}
 	}
@@ -488,13 +499,24 @@ spawn_peasant_reinforcements_effect = {
 			religion = THIS
 			culture = THIS
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = peasant_leader
 			add_trait = tough_soldier
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 		}
 	}
@@ -956,13 +978,24 @@ spawn_heretic_army_effect = {
 			religion = THIS
 			culture = THIS
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = heresiarch
 			add_trait = dutiful_cleric
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 		}
 	}
@@ -1212,13 +1245,24 @@ spawn_heretic_reinforcements_effect = {
 			religion = THIS
 			culture = THIS
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = heresiarch
 			add_trait = dutiful_cleric
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 		}
 	}
@@ -1468,8 +1512,7 @@ spawn_nationalist_army_effect = {
 			religion = ROOT
 			culture = ROOT
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = skilled_tactician
 
 			attributes = {
@@ -1478,6 +1521,18 @@ spawn_nationalist_army_effect = {
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 		}
 	}
@@ -1513,8 +1568,7 @@ spawn_nationalist_reinforcements_effect = {
 			religion = ROOT
 			culture = ROOT
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = skilled_tactician
 
 			attributes = {
@@ -1523,6 +1577,18 @@ spawn_nationalist_reinforcements_effect = {
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 		}
 	}
@@ -1558,13 +1624,24 @@ spawn_religious_army_effect = {
 			religion = THIS
 			culture = THIS
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = zealous
 			add_trait = dutiful_cleric
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 		}
 	}
@@ -1814,13 +1891,24 @@ spawn_religious_reinforcements_effect = {
 			religion = THIS
 			culture = THIS
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = zealous
 			add_trait = dutiful_cleric
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 		}
 	}
@@ -2070,12 +2158,23 @@ spawn_nomadic_army_effect = {
 			religion = THIS
 			culture = THIS
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = tough_soldier
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 			random_list = {
 				10 = { add_trait = cavalry_leader }
@@ -2294,12 +2393,23 @@ spawn_nomadic_reinforcements_effect = {
 			religion = THIS
 			culture = THIS
 			female = no
-			min_age = 23
-			max_age = 31
+			age = 23
 			add_trait = tough_soldier
 		}
 
 		new_character = {
+			random_list = {
+				1 = { }
+				1 = { add_age = 1 }
+				1 = { add_age = 2 }
+				1 = { add_age = 3 }
+				1 = { add_age = 4 }
+				1 = { add_age = 5 }
+				1 = { add_age = 6 }
+				1 = { add_age = 7 }
+				1 = { add_age = 8 }
+			}
+
 			give_minor_title = title_commander
 			random_list = {
 				10 = { add_trait = cavalry_leader }
