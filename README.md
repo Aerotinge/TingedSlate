@@ -6,7 +6,7 @@ And loaded as a submod along with main CleanSlate in the same time
 Ultimately, it will squash back to a branch of CleanSlate.
 # Requirement
 Crusader Kings II 3.3.5.1 [SOHY]  
-CleanSlate Beta 5.0 [69ffb87]
+CleanSlate Beta 6.1 [EZKM]
 # TingedSlate.mod
 ```
 name="TingedSlate"

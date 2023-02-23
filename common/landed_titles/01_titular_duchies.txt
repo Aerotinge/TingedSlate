@@ -119,6 +119,13 @@ d_mainz = {
 	}
 }
 
+d_pechenegs = {
+	color = { 173 150 43 }
+	color2 = { 0 128 128 }
+
+	culture = pecheneg
+}
+
 d_peloponnese = {
 	color = { 196 35 140 }
 	color2 = { 255 255 20 }

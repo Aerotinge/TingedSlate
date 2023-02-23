@@ -1,7 +1,6 @@
 # invasion
 # imperial_reconquest
 # thankmars_rebellion
-# blood_feud
 
 invasion = {
 	name = CB_NAME_INVASION
@@ -312,11 +311,11 @@ invasion = {
 		trigger = {
 			trigger_if = {
 				limit = {
-					attacker = {
+					ROOT = {
 						is_tribal = yes
 					}
 
-					defender = {
+					FROM = {
 						is_nomadic = yes
 					}
 				}
@@ -333,12 +332,12 @@ invasion = {
 			}
 			trigger_else_if = {
 				limit = {
-					attacker = {
+					ROOT = {
 						is_nomadic = no
 						is_tribal = no
 					}
 
-					defender = {
+					FROM = {
 						is_nomadic = yes
 					}
 				}
@@ -912,7 +911,7 @@ abrahamic_antihellenic_revolt = {
 	}
 
 	attacker_ai_victory_worth = {
-		factor = -1 #always accept
+		factor = -1 # always accept
 	}
 
 	attacker_ai_defeat_worth = {
@@ -920,7 +919,7 @@ abrahamic_antihellenic_revolt = {
 	}
 
 	defender_ai_victory_worth = {
-		factor = -1 #always accept
+		factor = -1 # always accept
 	}
 
 	defender_ai_defeat_worth = {
@@ -942,7 +941,16 @@ thankmars_rebellion = {
 	is_permanent = no
 
 	can_use = {
-		always = no
+		always = no # Disabled
+		# Attacker
+		ROOT = {
+			has_character_flag = is_thankmar
+		}
+
+		# Defender
+		FROM = {
+			has_character_flag = is_otto
+		}
 	}
 
 	is_valid = {

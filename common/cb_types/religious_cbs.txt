@@ -72,10 +72,6 @@ crusade = {
 							has_global_flag = muslim_jihads_unlocked
 						}
 					}
-
-					trigger_else = {
-						always = no
-					}
 				}
 			}
 		}
@@ -111,14 +107,17 @@ crusade = {
 				}
 			}
 		}
+
+		# Defender
+		FROM = {
+			# Don't declare Crusades on revolters - chances are high the war will invalidate
+			independent = yes
+		}
 	}
 
 	can_use_title = {
 		# Defender
 		FROM = {
-			# Don't declare Crusades on revolters - chances are high the war will invalidate
-			independent = yes
-
 			num_of_realm_counties = {
 				value >= 6
 				title = PREV
@@ -176,6 +175,8 @@ crusade = {
 			}
 
 			holder_scope = {
+				show_scope_change = no
+
 				gain_settlements_under_title = {
 					title = PREV
 					enemy = defender
@@ -647,21 +648,6 @@ new_crusade = {
 			can_call_crusade = yes
 			uses_new_crusade = yes
 			NOT = { has_character_modifier = cancel_crusade_cooldown }
-
-			# If Pope, controlled by Papal status
-			trigger_if = {
-				limit = {
-					offmap_papacy = {
-						governor = {
-							character = PREVPREV
-						}
-					}
-				}
-
-				offmap_papacy = {
-					has_status = ppc_pastoral
-				}
-			}
 		}
 
 		# Defender
@@ -1378,6 +1364,7 @@ new_crusade = {
 									grant_title_no_opinion = k_trebizond
 								}
 							}
+
 						}
 					}
 
@@ -1394,7 +1381,7 @@ new_crusade = {
 							}
 						}
 					}
-					
+
 					# Find a King for Epirus
 					e_byzantium = {
 						holder_scope = {
@@ -1476,7 +1463,7 @@ new_crusade = {
 							crusade_beneficiary = {
 								grant_title_no_opinion = c_famagusta
 								grant_title_no_opinion = c_limisol
-								#grant_title_no_opinion = d_cyprus
+								grant_title_no_opinion = d_cyprus
 								grant_title_no_opinion = k_cyprus
 
 								d_cyprus = {
@@ -1552,7 +1539,6 @@ new_crusade = {
 								real_tier = KING
 							}
 
-							grant_title_no_opinion = d_krete
 							grant_title_no_opinion = c_kaneia
 							grant_title_no_opinion = c_chandax
 						}
@@ -2240,9 +2226,7 @@ religious = {
 		# Attacker
 		ROOT = {
 			trigger_if = {
-				limit = {
-					religion = buddhist
-				}
+				limit = { religion = buddhist }
 				piety >= 250
 			}
 			trigger_else_if = {
@@ -2271,7 +2255,7 @@ religious = {
 			trigger_else = {
 				NOT = { government = nomadic_tribal_government }
 			}
-			
+
 			pacifist = no
 			mercenary = no
 
@@ -2803,11 +2787,11 @@ religious = {
 		trigger = {
 			trigger_if = {
 				limit = {
-					attacker = {
+					ROOT = {
 						is_tribal = yes
 					}
 
-					defender = {
+					FROM = {
 						is_nomadic = yes
 					}
 				}
@@ -2824,12 +2808,12 @@ religious = {
 			}
 			trigger_else_if = {
 				limit = {
-					attacker = {
+					ROOT = {
 						is_nomadic = no
 						is_tribal = no
 					}
 
-					defender = {
+					FROM = {
 						is_nomadic = yes
 					}
 
@@ -3090,14 +3074,11 @@ liberate_religion = {
 	}
 
 	is_valid_title = {
-		any_direct_de_jure_vassal_title = { # duchies
-			any_direct_de_jure_vassal_title = { # counties
-				holder_scope = {
-					OR = {
-						character = FROM
-						is_vassal_or_below_of = FROM
-					}
-				}
+		# Defender
+		FROM = {
+			num_of_realm_counties = {
+				value >= 1
+				title = PREV
 			}
 		}
 	}
@@ -3233,6 +3214,20 @@ liberate_religion = {
 				usurp_title = {
 					target = event_target:new_ruler
 					type = invasion
+				}
+			}
+			else = {
+				event_target:new_ruler = {
+					create_title = {
+						tier = KING
+						landless = no
+						temporary = no
+						custom_created = yes
+						culture = event_target:new_ruler
+						holder = event_target:new_ruler
+						name = LIBERATED_KINGDOM
+						base_title = PREV
+					}
 				}
 			}
 

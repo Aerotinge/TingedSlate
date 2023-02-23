@@ -13357,6 +13357,7 @@ c_dyrrachion_adj;Dyrrachian;épidamnienne;Dyrrachisch;;Dyrrachiano;;;;;;;;;x
 c_eastern_sayan_adj;Sayani;sayane;Sayanisch;;sayano;;;;;;;;;x
 c_edessa_adj;Edessan;édessoise;Edessisch;;Edessano;;;;;;;;;x
 c_egiin_adj;Egiiner;egiiner;Egiinisch;;eginés;;;;;;;;;x
+c_egitanea_adj;Egitanean;egitanienne;Egitanisch;;Egitaniense;;;;;;;;;x
 c_egrisi_adj;Egrisian;egrisian;Egrisisch;;egrisio;;;;;;;;;x
 c_eichstadt_adj;Eichstadter;eichstadt;Eichstadtisch;;eichstadtés;;;;;;;;;x
 c_eilat_adj;Eilatian;eilatiane;Eilatisch;;Eilatiano;;;;;;;;;x
@@ -13387,6 +13388,7 @@ c_farama_adj;Pelusian;pélusienne;Pelusisch;;pelusano;;;;;;;;;x
 c_farava_adj;Faravan;faravan;Faravanisch;;faravaní;;;;;;;;;x
 c_faro_adj;Faronian;faroniane;Faroisch;;Farense;;;;;;;;;x
 c_farrah_adj;Farrahian;farrahienne;Farrahisch;;Farranés;;;;;;;;;x
+c_farafra_adj;Farafrian;farafrienne;Farafrisch;;Farafranés;;;;;;;;;x
 c_feher_adj;Feherian;fehérienne;Fehérisch;;Feheriano;;;;;;;;;x
 c_fejer_adj;Fejerian;fejerienne;Fejerisch;;Fejeriano;;;;;;;;;x
 c_fergana_adj;Ferganan;fergana;Fergananisch;;;;;;;;;;;x
@@ -13509,6 +13511,7 @@ c_hormuz_adj;Hormuzian;ormuzienne;Hormusisch;;Hormuziano;;;;;;;;;x
 c_hradec_adj;Hradecian;hradecienne;Hradezisch;;Hradeciense;;;;;;;;;x
 c_hradyzk_adj;Hradyzkian;hradyzkienne;Hradyzkisch;;hradyzkita;;;;;;;;;x
 c_hull_adj;Huller;hull;Hullenisch;;hullés;;;;;;;;;x
+c_huelva_adj;Hulvean;onubien;Huelvisch;;huelveño;;;;;;;;;x
 c_hy_many_adj;Mainer;mainer;Mainisch;;mainés;;;;;;;;;x
 c_iarmond_adj;Iarmonder;iarmond;Iarmondisch;;iarmondés;;;;;;;;;x
 c_iasi_adj;Iasian;iasienne;Iasisch;;iasino;;;;;;;;;x
@@ -15880,6 +15883,7 @@ k_anatolia_adj;Anatolian;anatolienne;Anatolisch;;Anatolio;;;;;;;;;x
 k_andalusia;Andalusia;Andalousie;Andalusien;;Andalucía;;;;;;;;;x
 k_andalusia_adj;Andalusian;andalouse;Andalusisch;;Andalusí;;;;;;;;;x
 k_andhra;Andhra;;;;;;;;;;;;;x
+k_andhra_adj;Andhra;andhra;Andhrisch;;andhriense;;;;;;;;;x
 k_aquitaine;Aquitaine;;Aquitanien;;Aquitania;;;;;;;;;x
 k_aquitaine_adj;Aquitanian;aquitaine;Aquitanisch;;Aquitano;;;;;;;;;x
 k_arabia;Arabia;Arabie;Arabien;;Arabia;;;;;;;;;x
@@ -15899,7 +15903,9 @@ k_badajoz_adj;Badajozan;badajozane;Badajozanisch;;pacense;;;;;;;;;x
 k_bavaria;Bavaria;Bavière;Bayern;;Baviera;;;;;;;;;x
 k_bavaria_adj;Bavarian;bavaroise;Bayerisch;;Bávaro;;;;;;;;;x
 k_bengal;Bengal;Bengale;;;;;;;;;;;;x
+e_bengal_adj;Bengal;bengalaise;Bengalisch;;;;;;;;;;;x
 k_bihar;Bihar;;;;;;;;;;;;;x
+k_bihar_adj;Biharian;biharienne;Biharisch;;Biarense;;;;;;;;;x
 k_bohemia;Bohemia;Bohême;Böhmen;;;;;;;;;;;x
 k_bohemia_adj;Bohemian;bohémienne;Böhmisch;;Bohemia;;;;;;;;;x
 k_bosnia;Bosnia;Bosnie;Bosnien;;;;;;;;;;;x
@@ -15931,6 +15937,7 @@ k_daneland_adj;Anglo-Norse;anglo-nordique;Anglo-Nordisch;;Anglonórdico;;;;;;;;;x
 k_daylam;Daylam;;;;;;;;;;;;;x
 k_daylam_adj;Daylamian;daylamite;Daylamisch;;;;;;;;;;;x
 k_delhi;Delhi;;;;;;;;;;;;;x
+k_delhi_adj;Delhi;delhiite;Delhisch;;delhí;;;;;;;;;x
 k_denmark;Denmark;Danemark;Dänemark;;Dinamarca;;;;;;;;;x
 k_denmark_adj;Danish;danoise;Dänisch;;Danesa;;;;;;;;;x
 k_eastern_marches;Austria;Autriche;Österreich;;;;;;;;;;;x
@@ -15965,12 +15972,14 @@ k_germany;Germany;Germanie;Deutschland;;Alemania;;;;;;;;;x
 k_germany_adj;German;allemande;Deutsch;;Alemana;;;;;;;;;x
 k_ghana;Ghana;;;;;;;;;;;;;x
 k_ghana_adj;Ghanan;ghanéenne;Ghanisch;;ghanés;;;;;;;;;x
-k_gondwana;Gondwana;;;;;;;;;;;;;x
+k_gondwana;Gondwana;Gondwâna;;;Gondwâna;;;;;;;;;x
+k_gondwana_adj;Gondwanan;gondwânienne;Gondwanisch;;godwâno;;;;;;;;;x
 k_greece;Greece;Grèce;Griechenland;;Grecia;;;;;;;;;x
 k_greece_adj;Greek;grecque;Griechisch;;Griego;;;;;;;;;x
 k_guge;Guge;Gugé;;;;;;;;;;;;x
 k_guge_adj;Gugese;gugée;Gugisch;;gugués;;;;;;;;;x
-k_gujarat;Gujarat;;;;;;;;;;;;;x
+k_gujarat;Gujarat;;;;Guyarat;;;;;;;;;x
+k_gujarat_adj;Gujarati;gujarati;;;guyaratí;;;;;;;;;x
 k_hansa;The Hansa;La Hanse;Die Hanse;;La Hansa;;;;;;;;;x
 k_hansa_adj;Hanseatic;hanséatique;Hanseatisch;;Hanseática;;;;;;;;;x
 k_hausaland;Hausaland;Haoussa;Hausastaaten;;Hausalandia;;;;;;;;;x
@@ -15991,14 +16000,17 @@ k_kamarupa;Kamarupa;;;;;;;;;;;;;x
 k_kanem;Kanem;;;;;;;;;;;;;x
 k_kanem_adj;Kanemian;kanème;Kanemisch;;kanemio;;;;;;;;;x
 k_karnata;Karnata;;;;;;;;;;;;;x
+k_karnata_adj;Karnatan;karnatienne;Karnatisch;;karnato;;;;;;;;;x
 k_kashmir;Kashmir;;;;Cachemira;;;;;;;;;x
 k_kashmir_adj;Kashmiran;kashmira;Kashmiranisch;;cachemir;;;;;;;;;x
 k_kham;Kham;;;;;;;;;;;;;x
+k_kham_adj;Kham;kham;Khamisch;;khamano;;;;;;;;;x
 k_khazaria;Khazaria;Khazarie;Chasaria;;Jazaria;;;;;;;;;x
 k_khazaria_adj;Khazarian;khazare;Chasarisch;;Jázara;;;;;;;;;x
 k_khorasan;Khorasan;Khorassan;;;;;;;;;;;;x
 k_khorasan_adj;Khorasanian;khorassane;Khorasanisch;;;;;;;;;;;x
-k_khotan;Khotan;Hotan;;;;;;;;;;;;x
+k_khotan;Khotan;;Hotan;;Jotán;;;;;;;;;x
+k_khotan_adj;Khotanese;hotanaise;Hotanisch;;jotanoés;;;;;;;;;x
 k_kosala;Kosala;;;;;;;;;;;;;x
 k_lanka;Lanka;;;;;;;;;;;;;x
 k_leon;León;;;;;;;;;;;;;x
@@ -16040,6 +16052,7 @@ k_nubia_adj;Nubian;nubienne;Nubisch;;Nubia;;;;;;;;;x
 k_oghuz;Oghuz;Oghouzes;;;;;;;;;;;;x
 k_oghuz_adj;Oghuz;oghouze;Oghuzisch;;oghuz;;;;;;;;;x
 k_orissa;Orissa;;;;;;;;;;;;;x
+k_orissa_adj;Orissan;orisienne;Orissanisch;;orisso;;;;;;;;;x
 k_pannonia;Pannonia;Pannonie;Pannonien;;Panonia;;;;;;;;;x
 k_pannonia_adj;Pannonian;pannonienne;Pannonisch;;Pannoniano;;;;;;;;;x
 k_papal_state;Papal States;États pontificaux;Kirchenstaat;;Estados Pontificios;;;;;;;;;x
@@ -16058,8 +16071,10 @@ k_pomerania;Pomerania;Poméranie;Pommern;;;;;;;;;;;x
 k_pomerania_adj;Pomeranian;poméranienne;Pommersch;;pomeraniano;;;;;;;;;x
 k_portugal;Portugal;;;;;;;;;;;;;x
 k_portugal_adj;Portuguese;portugaise;Portugiesisch;;Portuguesa;;;;;;;;;x
-k_punjab;Punjab;Pendjab;;;;;;;;;;;;x
+k_punjab;Punjab;Pendjab;Pandschab;;Punyab;;;;;;;;;x
+k_punjab_adj;Punjabi;pendjabi;Pandschabi;;punyabí;;;;;;;;;x
 k_rajputana;Rajputana;;;;;;;;;;;;;x
+k_rajputana_adj;Rajputana;rajputanaise;Rajputanisch;;rajputanaso;;;;;;;;;x
 k_romagna;Romagna;Romagne;;;Romaña;;;;;;;;;x
 k_romagna_adj;Romagnol;romagnole;Romagnolisch;;romañol;;;;;;;;;x
 k_ruthenia;Ruthenia;Ruthénie;Ruthenien;;Rutenia;;;;;;;;;x
@@ -16104,7 +16119,9 @@ k_switzerland_adj;Swiss;suisse;Schweizerisch;;suizo;;;;;;;;;x
 k_syria;Syria;Syrie;Syrien;;Siria;;;;;;;;;x
 k_syria_adj;Syrian;syrienne;Syrisch;;Siria;;;;;;;;;x
 k_tamilakam;Tamilakam;;;;;;;;;;;;;x
+k_tamilakam_adj;Tamilakam;tamilakam;Tamilakamisch;;tamilakamo;;;;;;;;;x
 k_telingana;Telingana;;;;;;;;;;;;;x
+k_telingana_adj;Telinganan;telinganienne;Telinganisch;;telingano;;;;;;;;;x
 k_thrace;Thrace;;Thrakien;;Tracia;;;;;;;;;x
 k_thrace_adj;Thracian;thrace;Thrakisch;;tracio;;;;;;;;;x
 k_transoxiana;Transoxiana;Transoxiane;;;;;;;;;;;;x
@@ -16218,12 +16235,19 @@ b_yeshayahu;Yeshayahu;;;;;;;;;;;;;x
 d_abyssinian_band;Abyssinian Band;Bande armée d'Abyssinie;Abessinischer Trupp;;Banda Abisinia;;;;;;;;;x
 d_abyssinian_band_adj;Abyssinian;abyssinienne;Abessinisch;;Abisinia;;;;;;;;;x
 d_african_large;Mandekalu Horsemen;Cavaliers mandekalu;Mandekalu-Reiter;;Jinetes mandekalu;;;;;;;;;x
+d_african_large_adj;Mandekalu;mandekalu;Mandekalisch;;mandekalu;;;;;;;;;x
 d_african_low;Band of the Hippo;Bande de l'Hippopotame;Bande des Flusspferdes;;Banda del hipopótamo;;;;;;;;;x
+d_african_low_adj;Hippopotamic;hippopotamique;Flusspferdische;;hipopótamico;;;;;;;;;x
 d_african_massive;Ton-Tigi Army;Armée ton-tigi;Ton-Tigi Armee;;Ejército Ton-Tigi;;;;;;;;;x
+d_african_massive_adj;Ton-Tigi;ton-tigienne;Ton-Tigisch;;Ton-Tígito;;;;;;;;;x
 d_african_mid;Kèlè-Koun Infantry;Infanterie kèlè-koun;Kèlè-Koun-Infanterie;;Infantería Kèlè-Koun;;;;;;;;;x
+d_african_mid_adj;Kèlè-Koun;kèlè-koun;Kèlè-Kounisch;;Kèlè-Koun;;;;;;;;;x
 d_african_mid_low_1;Mandekalu Band;Bande mandekalu;Mandekalu-Bande;;Banda Mandekalu;;;;;;;;;x
+d_african_mid_low_1_adj;Mandekalu;mandekalu;Mandekalu;;mandekalu;;;;;;;;;x
 d_african_mid_low_2;Hausa Company;Compagnie haoussa;Hausa-Kompanie;;Compañía hausa;;;;;;;;;x
+d_african_mid_low_2_adj;Hausan;haoussa;Hausanisch;;hausa;;;;;;;;;x
 d_african_tiny;Crocodile Company;Compagnie du Crocodile;Krokodil-Kompanie;;Banda del cocodrilo;;;;;;;;;x
+d_african_tiny_adj;Crocodilian;crocodilian;Krokodilisch;;cocodriliano;;;;;;;;;x
 d_alan_band;Alan Riders;Bande de cavaliers alains;Alanische Reiter;;Jinetes Alanos;;;;;;;;;x
 d_alan_band_adj;Alan;alaine;Alanisch;;Alana;;;;;;;;;x
 d_bengal_band;Bengal Band;Bande armée bengalaise;Bengalische Bande;; Banda de Bengala;;;;;;;;;x
@@ -16384,6 +16408,7 @@ d_white_company_adj;Mercenary;mercenaire;Weiß-Söldnerisch;;Mercenaria;;;;;;;;;x
 
 ## Holy orders
 d_army_light;Army of Light;Armée de Lumière;Armee des Lichts;;Ejército de la luz;;;;;;;;;x
+d_army_light_adj;Illuminous;illuné;leuchtend;;iluminoso;;;;;;;;;x
 d_ashokas_chosen;Chosen of Ashoka;Élus d'Ashoka;Auserwählte von Ashoka;;Elegido de Asoka;;;;;;;;;x
 d_ashokas_chosen_adj;Ashoka;ashoka;Ashoka;;Asoka;;;;;;;;;x
 d_bektashi;Bektashi Order;Confrérie bektachie;Bektaschi-Orden;;Orden Bektashi;;;;;;;;;x
@@ -16490,6 +16515,7 @@ d_west_african_pagan_reformed_adj;African;africaine;Westafrikanisch;;Africano Oc
 d_zoroastrian;The Zoroastrian Church;Église zoroastrienne;Zoroastrische Kirche;;La Iglesia Zoroastriana;;;;;;;;;x
 d_zoroastrian_adj;Zoroastrian;zoroastrienne;zoroastrisch;;Zoroastriano;;;;;;;;;x
 d_zun_pagan_reformed;The Church of Zun;Église de Zun;Die Zun-Kirche;;La Iglesia de Zun;;;;;;;;;x
+d_zun_pagan_reformed_adj;Zunist;zuniste;Zunistisch;;zunista;;;;;;;;;x
 k_hellenic_pagan_reformed;Collegium Pontificum;Collegium Pontificum;Kardinalskollegium;;Collegium pontificum;;;;;;;;;x
 k_hellenic_pagan_reformed_adj;Pontifical;pontificale;Päpstlich;;pontificio;;;;;;;;;x
 k_orthodox;The Ecumenical Patriarchate;Patriarcat oecuménique;Ökumenische Patriarchat;;El Patriarcado Ecuménico;;;;;;;;;x
@@ -17376,8 +17402,6 @@ d_el-arish;El-Arish;El Arish;El-Arish;;El-Arish;;;;;;;;;x
 d_el-arish_adj;El-Arishan;el arishane;El-Arishisch;;El-Arishano;;;;;;;;;x
 d_el_rif;El Rif;;;;;;;;;;;;;x
 d_el_rif_adj;El Rifan;el rifane;El-Rifisch;;Rifeño;;;;;;;;;x
-d_mafaza;Esfahan;Ispahan;Isfahan;;Isfahán;;;;;;;;;x
-d_mafaza_adj;Esfahanian;ispahanienne;Isfahanisch;;Isfahaní;;;;;;;;;x
 d_galatia;Galatia;Galatie;Galatien;;Galacia;;;;;;;;;x
 d_galatia_adj;Galatian;galate;Galatisch;;Galaciano;;;;;;;;;x
 d_geats;Gauthiod;;;;;;;;;;;;;x
@@ -17408,8 +17432,6 @@ d_kappadokia;Kappadokia;Cappadoce;;;Capadocia;;;;;;;;;x
 d_kappadokia_adj;Kappadokian;cappadocienne;Kappadokisch;;Capadocio;;;;;;;;;x
 d_karnten;Kärnten;;;;;;;;;;;;;x
 d_karnten_adj;Karntenite;karntenite;Kärntnerisch;;Karnteniense;;;;;;;;;x
-d_luristan;Kermanshah;;Kermanschah;;;;;;;;;;;x
-d_luristan_adj;Kermanshahi;kermanshahi;Kermanschahisch;;Kermanshahí;;;;;;;;;x
 d_kexholm;Käkisalmians;Käkisalmi;Käkisalmer;;Kexholm;;;;;;;;;x
 d_kexholm_adj;Käkisalmian;käkisalmienne;Käkisalmisch;;Kexholmiense;;;;;;;;;x
 d_khazars;Khazars;;Khazaren;;;;;;;;;;;x
@@ -17480,8 +17502,6 @@ d_sweden;Svithjod;;Schweden;;Svitjod;;;;;;;;;x
 d_sweden_adj;Swedish;suédoise;Schwedisch;;Sueco;;;;;;;;;x
 d_tavasts;Tavastians;Häme;Tavaster;;Los Tavastianos;;;;;;;;;x
 d_tavasts_adj;Tavastian;hämienne;Tavastisch;;Tavastiana;;;;;;;;;x
-d_khozistan;Tigris;Tigre;;;;;;;;;;;;x
-d_khozistan_adj;Tigran;tigrane;Tigrisch;;Tigrisana;;;;;;;;;x
 d_tivertsi;Tivertsi;Tivertses;;;;;;;;;;;;x
 d_tivertsi_adj;Tivertsi;tivertsi;Tivertsisch;;tivertsita;;;;;;;;;x
 d_turkmens;Turkmens;Turkménistan;Turkmenen;;Los Turcomanos;;;;;;;;;x
