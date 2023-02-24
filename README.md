@@ -16,4 +16,6 @@ tags=
 {
 }
 picture="banner.jpg"
+replace_path = "gfx/loadingscreens"
+replace_path = "common/buildings"
 ```
