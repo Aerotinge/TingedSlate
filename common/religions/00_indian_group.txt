@@ -30,9 +30,6 @@ indian_group = {
 
 		color = { 0.8 0.4 0.0 }
 
-		religious_clothing_head = 10
-		religious_clothing_priest = 10
-
 		piety_name = KARMA
 		priest_title = BHIKKHU
 		scripture_name = THE_BUDDHACAVANA
@@ -77,9 +74,6 @@ indian_group = {
 		heresy_icon = 45
 
 		color = { 1.0 0.0 0.0 }
-
-		religious_clothing_head = 8
-		religious_clothing_priest = 8
 
 		piety_name = KARMA
 		priest_title = PUJARI
@@ -128,9 +122,6 @@ indian_group = {
 
 		color = { 1.0 1.0 0.4 }
 
-		religious_clothing_head = 9
-		religious_clothing_priest = 9
-
 		piety_name = PURITY
 		priest_title = NIRGRANTHA
 		scripture_name = THE_ANGAS_SUTRAS
@@ -178,9 +169,6 @@ indian_group = {
 		heresy_icon = 54
 
 		color = { 226 241 182 }
-
-		religious_clothing_head = 10
-		religious_clothing_priest = 10
 
 		interface_skin = {
 			taoist_interface

@@ -50,9 +50,6 @@ jewish_group = {
 
 		color = { 0.1 0.7 1.0 }
 
-		religious_clothing_head = 7
-		religious_clothing_priest = 7
-
 		crusade_name = GREAT_HOLY_WAR
 		priest_title = RABBI
 		scripture_name = THE_TORAH
@@ -94,9 +91,6 @@ jewish_group = {
 		heresy_icon = 39
 
 		color = { 0.1 0.5 0.9 }
-
-		religious_clothing_head = 7
-		religious_clothing_priest = 7
 		
 		crusade_name = GREAT_HOLY_WAR
 		priest_title = RABBI
@@ -139,9 +133,6 @@ jewish_group = {
 		heresy_icon = 39
 
 		color = { 0.1 0.8 0.8 }
-
-		religious_clothing_head = 7
-		religious_clothing_priest = 7
 
 		crusade_name = GREAT_HOLY_WAR
 		priest_title = RABBI

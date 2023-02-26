@@ -4332,10 +4332,11 @@
 					value = on
 				}
 			}
-
-			NOR = {
-				has_minor_title = title_cardinal
-				has_minor_title = title_fraticelli_cardinal
+			trigger_else = {
+				NOR = {
+					government = theocracy_government
+					has_job_title = job_spiritual
+				}
 			}
 		}
 	}
@@ -4459,6 +4460,167 @@
 			has_portrait_property = { layer = 19 index = 15 }
 		}
 	}
+
+	16 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 16 }
+		}
+	}
+
+	17 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 17 }
+		}
+	}
+
+	18 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 18 }
+		}
+	}
+
+	19 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 19 }
+		}
+	}
+
+	20 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 20 }
+		}
+	}
+
+	21 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 21 }
+		}
+	}
+
+	22 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 22 }
+		}
+	}
+
+	23 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 23 }
+		}
+	}
+
+	23 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 23 }
+		}
+	}
+
+	24 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 24 }
+		}
+	}
+
+	25 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 25 }
+		}
+	}
+
+	26 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 26 }
+		}
+	}
+
+	27 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 27 }
+		}
+	}
+
+	28 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 28 }
+		}
+	}
+
+	29 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 29 }
+		}
+	}
+
+	30 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 30 }
+		}
+	}
+
+	31 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 31 }
+		}
+	}
+
+	32 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 32 }
+		}
+	}
+
+	33 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 33 }
+		}
+	}
+
+	34 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 34 }
+		}
+	}
+
 }
 
 # p19 Special crowns
@@ -4467,8 +4629,7 @@
 		factor = 100
 
 		trigger = {
-			# Has to wear helmet instead
-			trigger_if = {
+			trigger_if = {	# Has to wear helmet instead
 				limit = {
 					OR = {
 						# Dead kings don't have artifacts
@@ -4514,10 +4675,11 @@
 					value = on
 				}
 			}
-
-			NOR = {
-				has_minor_title = title_cardinal
-				has_minor_title = title_fraticelli_cardinal
+			trigger_else = {
+				NOR = {
+					government = theocracy_government
+					has_job_title = job_spiritual
+				}
 			}
 		}
 	}
@@ -4891,29 +5053,537 @@
 
 		trigger = {
 			OR = {
-				has_minor_title = title_cardinal
-				has_minor_title = title_fraticelli_cardinal
+				government = theocracy_government
+				has_job_title = job_spiritual
 			}
 
-			NOT = {
-				offmap_papacy = { has_offmap_tmp_flag = papacy_decree_red_cardinal }
+			
+			trigger_if = {
+				limit = { # Workarounds for P.P.
+					is_save_game = no
+					has_game_started = yes
+					is_alive = no
+				}
+				k_papacy = {
+					any_previous_holder = { character = PREVPREV }
+				}
+			}
+			trigger_else = {
+				rightful_religious_head = THIS
+			}
+
+			OR = {
+				#graphical_culture = catholicgfx
+				religion = catholic
+				religion = fraticelli
+				religion = lollard
+				religion = waldensian
+			}
+		}
+	}
+	
+	15 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = catholicgfx
+				religion = catholic
+				religion = fraticelli
+				religion = lollard
+				religion = waldensian
+			}
+
+			NOR = {
+				has_minor_title = title_cardinal
+				has_minor_title = title_fraticelli_cardinal
 			}
 		}
 	}
 
-	15 = {
+	16 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			NOT = { has_global_flag = fourth_crusade_launched } # circa 13th century
+
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = catholicgfx
+				religion = catholic
+				religion = fraticelli
+				religion = lollard
+				religion = waldensian
+			}
+
+			OR = {
+				has_minor_title = title_cardinal
+				has_minor_title = title_fraticelli_cardinal
+			}
+		}
+	}
+
+	17 = {
 		factor = 100
 
 		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
+			has_global_flag = fourth_crusade_launched # circa 13th century
+
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
 			OR = {
 				has_minor_title = title_cardinal
 				has_minor_title = title_fraticelli_cardinal
 			}
+		}
+	}
+	
+	18 = {
+		factor = 100
 
-			offmap_papacy = { has_offmap_tmp_flag = papacy_decree_red_cardinal }
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			OR = {
+				#graphical_culture = orthodoxgfx
+				#graphical_culture = miaphysitegfx
+				#graphical_culture = nestoriangfx
+				religion = orthodox
+				religion = bogomilist
+				religion = iconoclast
+				religion = monothelite
+				religion = paulician
+			}
+		}
+	}
+
+	19 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			is_female = no
+
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = finnishgfx
+				#graphical_culture = nordicgfx
+				#graphical_culture = pagangfx
+				religion = finnish_pagan
+				religion = finnish_pagan_reformed
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+		}
+	}
+
+	20 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			is_female = yes
+
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = finnishgfx
+				#graphical_culture = nordicgfx
+				#graphical_culture = pagangfx
+				religion = finnish_pagan
+				religion = finnish_pagan_reformed
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+		}
+	}
+
+	21 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			is_female = no
+
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = bongfx
+				#graphical_culture = tengrigfx
+				religion = bon_pagan
+				religion = bon_pagan_reformed
+				religion = tengri_pagan
+				religion = tengri_pagan_reformed
+			}
+		}
+	}
+
+	22 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			is_female = yes
+
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+			
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = bongfx
+				#graphical_culture = tengrigfx
+				religion = bon_pagan
+				religion = bon_pagan_reformed
+				religion = tengri_pagan
+				religion = tengri_pagan_reformed
+			}
+		}
+	}
+
+	23 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			is_female = no
+
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			OR = {
+				#graphical_culture = khurmaztagfx
+				#graphical_culture = manichaeangfx
+				#graphical_culture = mazdakigfx
+				#graphical_culture = zoroastriangfx
+				religion = khurmazta
+				religion = manichaean
+				religion = mazdaki
+				religion = zoroastrian
+			}
+		}
+	}
+
+	24 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			is_female = yes
+
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			OR = {
+				#graphical_culture = khurmaztagfx
+				#graphical_culture = manichaeangfx
+				#graphical_culture = mazdakigfx
+				#graphical_culture = zoroastriangfx
+				religion = khurmazta
+				religion = manichaean
+				religion = mazdaki
+				religion = zoroastrian
+			}
+		}
+	}
+
+	25 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = balticgfx
+				#graphical_culture = slavicgfx
+				religion = baltic_pagan
+				religion = baltic_pagan_reformed
+				religion = slavic_pagan
+				religion = slavic_pagan_reformed
+			}
+		}
+	}
+
+	26 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			OR = {
+				#graphical_culture = judaicgfx
+				#graphical_culture = karaitegfx
+				#graphical_culture = samaritangfx
+				religion = jewish
+				religion = karaite
+				religion = samaritan
+			}
+		}
+	}
+
+	27 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			OR = {
+				#graphical_culture = hindugfx
+				#graphical_culture = zungfx
+				religion = hindu
+				religion = zun_pagan
+				religion = zun_pagan_reformed
+			}
+		}
+	}
+
+	28 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			OR = {
+				#graphical_culture = jaingfx
+				religion = jain
+			}
+		}
+	}
+
+	29 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			rightful_religious_head = THIS
+
+			OR = {
+				#graphical_culture = hellenicgfx
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+			}
+		}
+	}
+
+	30 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			rightful_religious_head = THIS
+
+			OR = {
+				#graphical_culture = bongfx
+				#graphical_culture = tengrigfx
+				religion = bon_pagan
+				religion = bon_pagan_reformed
+				religion = tengri_pagan
+				religion = tengri_pagan_reformed
+			}
+		}
+	}
+
+	31 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			rightful_religious_head = THIS
+
+			OR = {
+				#graphical_culture = balticgfx
+				#graphical_culture = slavicgfx
+				religion = baltic_pagan
+				religion = baltic_pagan_reformed
+				religion = slavic_pagan
+				religion = slavic_pagan_reformed
+			}
+		}
+	}
+
+	32 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			rightful_religious_head = THIS
+
+			OR = {
+				#graphical_culture = finnishgfx
+				#graphical_culture = nordicgfx
+				#graphical_culture = pagangfx
+				religion = finnish_pagan
+				religion = finnish_pagan_reformed
+				religion = norse_pagan
+				religion = norse_pagan_reformed
+			}
+		}
+	}
+
+	33 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			rightful_religious_head = THIS
+
+			OR = {
+				#graphical_culture = africanpagangfx
+				#graphical_culture = aztecgfx
+				religion = west_african_pagan
+				religion = west_african_pagan_reformed
+				religion = aztec_pagan
+				religion = aztec_pagan_reformed
+			}
+		}
+	}
+
+	34 = {
+		factor = 100
+
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			trigger_if = {
+				limit = {
+					rightful_religious_head = THIS
+				}
+				OR = {
+					#graphical_culture = buddhistgfx
+					#graphical_culture = chinesegfx
+					religion = buddhist
+					religion = taoist
+				}
+			}
+			trigger_else = {
+				OR = {
+					#graphical_culture = africangfx
+					#graphical_culture = buddhistgfx
+					#graphical_culture = chinesegfx
+					#graphical_culture = hellenicgfx
+					religion = buddhist
+					religion = hellenic_pagan
+					religion = hellenic_pagan_reformed
+					religion = taoist
+					religion = west_african_pagan
+					religion = west_african_pagan_reformed
+				}
+			}
 		}
 	}
 }
@@ -6931,7 +7601,6 @@
 		}
 	}
 }
-
 
 # p35 Special Masks
 35 = {
