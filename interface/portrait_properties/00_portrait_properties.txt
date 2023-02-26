@@ -5049,6 +5049,7 @@
 	14 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5057,7 +5058,6 @@
 				has_job_title = job_spiritual
 			}
 
-			
 			trigger_if = {
 				limit = { # Workarounds for P.P.
 					is_save_game = no
@@ -5081,10 +5081,11 @@
 			}
 		}
 	}
-	
+
 	15 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5113,6 +5114,7 @@
 	16 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5166,6 +5168,7 @@
 	18 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5190,6 +5193,7 @@
 	19 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5217,6 +5221,7 @@
 	20 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5244,6 +5249,7 @@
 	21 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5270,6 +5276,7 @@
 	22 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5296,6 +5303,7 @@
 	23 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5322,6 +5330,7 @@
 	24 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5348,6 +5357,7 @@
 	25 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5372,6 +5382,7 @@
 	26 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5394,6 +5405,7 @@
 	27 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5415,6 +5427,7 @@
 	28 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5433,6 +5446,50 @@
 	29 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			OR = {
+				#graphical_culture = buddhistgfx
+				#graphical_culture = chinesegfx
+				religion = buddhist
+				religion = taoist
+			}
+		}
+	}
+
+	30 = {
+		factor = 100
+
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = hellenicgfx
+				religion = hellenic_pagan
+				religion = hellenic_pagan_reformed
+			}
+		}
+	}
+
+	31 = {
+		factor = 100
+
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5451,9 +5508,10 @@
 		}
 	}
 
-	30 = {
+	32 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5475,9 +5533,10 @@
 		}
 	}
 
-	31 = {
+	33 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5499,9 +5558,10 @@
 		}
 	}
 
-	32 = {
+	34 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5524,9 +5584,35 @@
 		}
 	}
 
-	33 = {
+	35 = {
 		factor = 100
 
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
+		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
+
+		trigger = {
+			OR = {
+				government = theocracy_government
+				has_job_title = job_spiritual
+			}
+
+			NOT = { rightful_religious_head = THIS }
+
+			OR = {
+				#graphical_culture = africanpagangfx
+				#graphical_culture = aztecgfx
+				religion = west_african_pagan
+				religion = west_african_pagan_reformed
+				religion = aztec_pagan
+				religion = aztec_pagan_reformed
+			}
+		}
+	}
+
+	36 = {
+		factor = 100
+
+		hide_layers = { 3 = { } } # Hide layer 3 (clothes) when this frame is picked
 		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
 
 		trigger = {
@@ -5544,45 +5630,6 @@
 				religion = west_african_pagan_reformed
 				religion = aztec_pagan
 				religion = aztec_pagan_reformed
-			}
-		}
-	}
-
-	34 = {
-		factor = 100
-
-		hide_layers = { 5 = { } } # Hide layer 5 (headgear) when this frame is picked
-
-		trigger = {
-			OR = {
-				government = theocracy_government
-				has_job_title = job_spiritual
-			}
-
-			trigger_if = {
-				limit = {
-					rightful_religious_head = THIS
-				}
-				OR = {
-					#graphical_culture = buddhistgfx
-					#graphical_culture = chinesegfx
-					religion = buddhist
-					religion = taoist
-				}
-			}
-			trigger_else = {
-				OR = {
-					#graphical_culture = africangfx
-					#graphical_culture = buddhistgfx
-					#graphical_culture = chinesegfx
-					#graphical_culture = hellenicgfx
-					religion = buddhist
-					religion = hellenic_pagan
-					religion = hellenic_pagan_reformed
-					religion = taoist
-					religion = west_african_pagan
-					religion = west_african_pagan_reformed
-				}
 			}
 		}
 	}
