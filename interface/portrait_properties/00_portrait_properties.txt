@@ -4621,6 +4621,21 @@
 		}
 	}
 
+	35 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 35 }
+		}
+	}
+
+	36 = {
+		factor = 1
+
+		trigger = {
+			has_portrait_property = { layer = 19 index = 36 }
+		}
+	}
 }
 
 # p19 Special crowns
