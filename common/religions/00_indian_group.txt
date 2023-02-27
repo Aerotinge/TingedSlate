@@ -1,6 +1,6 @@
 indian_group = {
 	color = { 0.8 0.4 0.0 }
-	graphical_culture = indiangfx
+	graphical_culture = dharmicgfx
 
 	ai_peaceful = yes
 	has_coa_on_barony_only = no
@@ -150,8 +150,6 @@ indian_group = {
 
 		intermarry = buddhist
 		intermarry = hindu
-		intermarry = zun_pagan
-		intermarry = zun_pagan_reformed
 
 		max_consorts = 3
 		short_reign_opinion_year_mult = 0
@@ -170,7 +168,7 @@ indian_group = {
 	}
 
 	taoist = {
-		graphical_culture = chinesegfx
+		graphical_culture = taoistgfx
 		secondary_event_pictures = sunni
 		has_coa_on_barony_only = yes
 
