@@ -49,7 +49,7 @@ christian = {
 		graphical_culture = catholicgfx
 
 		icon = 1
-		heresy_icon = 6
+		heresy_icon = 2
 
 		color = { 0.8 0.8 0.6 }
 
@@ -101,7 +101,7 @@ christian = {
 		graphical_culture = catholicgfx
 
 		icon = 1
-		heresy_icon = 6
+		heresy_icon = 2
 
 		color = { 0.5 0.5 0.9 }
 
@@ -130,7 +130,7 @@ christian = {
 		graphical_culture = catholicgfx
 
 		icon = 1
-		heresy_icon = 6
+		heresy_icon = 2
 
 		color = { 0.7 0.7 0.4 }
 
@@ -166,7 +166,7 @@ christian = {
 		graphical_culture = catholicgfx
 
 		icon = 1
-		heresy_icon = 6
+		heresy_icon = 2
 
 		color = { 0.5 0.8 0.8 }
 
@@ -193,7 +193,7 @@ christian = {
 		graphical_culture = catholicgfx
 
 		icon = 1
-		heresy_icon = 6
+		heresy_icon = 2
 
 		color = { 0.4 0.4 0.7 }
 
@@ -214,8 +214,8 @@ christian = {
 	miaphysite = {
 		graphical_culture = miaphysitegfx
 
-		icon = 11
-		heresy_icon = 13
+		icon = 5
+		heresy_icon = 6
 
 		color = { 0.7 0.7 0.1 }
 
@@ -261,8 +261,8 @@ christian = {
 
 		graphical_culture = miaphysitegfx
 
-		icon = 11
-		heresy_icon = 13
+		icon = 5
+		heresy_icon = 6
 
 		color = { 0.8 0.4 0.1 }
 
@@ -288,8 +288,8 @@ christian = {
 	nestorian = {
 		graphical_culture = nestoriangfx
 
-		icon = 46
-		heresy_icon = 47
+		icon = 7
+		heresy_icon = 8
 
 		color = { 0.8 0.3 0.5 }
 
@@ -335,8 +335,8 @@ christian = {
 
 		graphical_culture = nestoriangfx
 
-		icon = 46
-		heresy_icon = 47
+		icon = 7
+		heresy_icon = 8
 
 		color = { 0.6 0.1 0.4 }
 
@@ -374,8 +374,8 @@ christian = {
 	orthodox = {
 		graphical_culture = orthodoxgfx
 
-		icon = 2
-		heresy_icon = 7
+		icon = 3
+		heresy_icon = 4
 
 		color = { 0.7 0 0.5 }
 
@@ -422,8 +422,8 @@ christian = {
 
 		graphical_culture = orthodoxgfx
 
-		icon = 2
-		heresy_icon = 7
+		icon = 3
+		heresy_icon = 4
 
 		color = { 0.7 0 0.2 }
 
@@ -451,8 +451,8 @@ christian = {
 
 		graphical_culture = orthodoxgfx
 
-		icon = 2
-		heresy_icon = 7
+		icon = 3
+		heresy_icon = 4
 
 		color = { 0.5 0.2 0.4 }
 
@@ -484,8 +484,8 @@ christian = {
 
 		graphical_culture = orthodoxgfx
 
-		icon = 2
-		heresy_icon = 7
+		icon = 3
+		heresy_icon = 4
 
 		color = { 0.5 0 0.3 }
 
@@ -517,8 +517,8 @@ christian = {
 
 		graphical_culture = orthodoxgfx
 
-		icon = 2
-		heresy_icon = 7
+		icon = 3
+		heresy_icon = 4
 
 		color = { 0.5 0 0.3 }
 
