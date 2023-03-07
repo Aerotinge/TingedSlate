@@ -2,7 +2,7 @@ hre_elector_modifier = {
 	is_visible = {
 		always = no
 	}
-	icon = 10
+	icon = 19
 }
 
 papacy_curia_controller_modifier = {
@@ -10,7 +10,7 @@ papacy_curia_controller_modifier = {
 	rel_head_opinion = 5
 	monthly_character_prestige = 0.3
 	temple_vassal_tax_modifier = 0.05
-	icon = 17
+	icon = 33
 }
 
 papal_sanction = {
@@ -19,11 +19,11 @@ papal_sanction = {
 	build_cost_temple_modifier = -0.05
 	build_time_temple_modifier = -0.1
 	# saintly_monastic_bloodline = 1
-	icon = 17
+	icon = 33
 }
 
 nomad_population = {
-	icon = 57
+	icon = 60
 	tribal_tax_modifier = -1
 	#tech_growth_modifier = -1
 }
@@ -32,13 +32,13 @@ hidden_nomad_horde_mp = {
 	is_visible = {
 		#always = no
 	}
-	icon = 56
+	icon = 59
 	retinuesize = 25
 	monthly_character_wealth = 0.01
 }
 
 pet_warhorse = {
-	icon = 56
+	icon = 59
 	combat_rating = 6
 	command_modifier = {
 		speed = 0.01
