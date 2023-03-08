@@ -668,7 +668,7 @@ laws = {
 			if = {
 				limit = { has_dlc = "Charlemagne" }
 
-				add_law = vice_royalty_2
+				add_law = vice_royalty_1
 				set_allow_free_vice_royalty_revokation = yes
 			}
 			else = {

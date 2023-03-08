@@ -706,7 +706,6 @@ TECH_GROUP_CULTURE = {
 		}
 
 		8 = {
-			add_decision = vice_royalty_2
 		}
 	}
 }

@@ -515,12 +515,9 @@ vice_royalty_desc;Emperors can grant kingdoms or duchies to vassals as Viceroyal
 vice_royalty_0;No Viceroyalties;Pas de vice-royautés;Keine Vizekönigreiche;;No Virreinatos;;;;;;;;;x
 vice_royalty_0_desc;Disables Viceroyalties.;Ne permet pas de vice-royautés.;Deaktiviert jeden Gebrauch von Vizekönigswürden;;Inhabilita cualquier uso de virreinatos.;;;;;;;;;x
 vice_royalty_0_option;None;Aucune;Keine;;Ninguno;;;;;;;;;x
-vice_royalty_1;Kingdom Viceroyalties;Vice-royautés de rang royal;Vizekönigswürden;;Reino Virreinato;;;;;;;;;x
-vice_royalty_1_desc;Enables Kingdom Viceroyalties.;Autorise la création de vice-royautés à partir de royaumes.;Ermöglicht Vizekönigswürden.;;Posibilita Virreinatos en el Reino.;;;;;;;;;x
-vice_royalty_1_option;Kingdoms;Royaumes;König;;Reinos;;;;;;;;;x
-vice_royalty_2;Duchy Viceroyalties;Vice-royautés de rang ducal;Vizeherzogswürden;;Virreinatos Ducado;;;;;;;;;x
-vice_royalty_2_desc;Enables Kingdom and Duchy Viceroyalties.;Autorise la création de vice-royautés à partir de duchés et de royaumes.;Schaltet das Einsetzen von Vizeherrschern in Königreichen und Herzogtümern frei.;;Activa los virreinatos en reinos y ducados.;;;;;;;;;x
-vice_royalty_2_option;Duchies;Duchés;Herzog;;Ducados;;;;;;;;;x
+vice_royalty_1;Enact Viceroyalties;Promulgation des vice-royautés;Vizekönige erlassen;;Virreinatos Promulgan;;;;;;;;;x
+vice_royalty_1_desc;Enables Kingdom and Duchy Viceroyalties.;Autorise la création de vice-royautés à partir de duchés et de royaumes.;Schaltet das Einsetzen von Vizeherrschern in Königreichen und Herzogtümern frei.;;Activa los virreinatos en reinos y ducados.;;;;;;;;;x
+vice_royalty_1_option;Enable;Activer;Ermöglichen;;Permitir;;;;;;;;;x
 war_voting_power;War Declaration;Déclaration de guerre;Kriegserklärung;;Declaración de guerra;;;;;;;;;x
 war_voting_power_0;Ruler War Declaration Sovereignty;Souveraineté du dirigeant pour les déclarations de guerre;Herrscher entscheidet über Kriegserklärungen;;Soberanía del gobernante en declaraciones;;;;;;;;;x
 war_voting_power_0_desc;The Ruler has full authority on War Declarations.\n;Le dirigeant décide seul des déclarations de guerre.\n;Der Herrscher hat bei Kriegserklärungen die volle Entscheidungsbefugnis.\n;;El gobernante tiene plena autoridad sobre las declaraciones de guerra.\n;;;;;;;;;x

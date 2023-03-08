@@ -621,10 +621,7 @@ succession_laws = {
 						independent = no
 
 						top_liege = {
-							OR = {
-								has_law = vice_royalty_1
-								has_law = vice_royalty_2
-							}
+							has_law = vice_royalty_1
 						}
 					}
 				}

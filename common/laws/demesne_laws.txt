@@ -1127,7 +1127,7 @@ laws = {
 
 		potential = {
 			has_dlc = "Charlemagne"
-			real_tier = EMPEROR
+			higher_real_tier_than = DUKE
 
 			holder_scope = {
 				is_feudal = yes
@@ -1162,15 +1162,22 @@ laws = {
 	vice_royalty_1 = {
 		group = vice_royalty
 
-		vassal_limit = -5
+		vassal_limit = -10
 
 		potential = {
 			is_law_potential = vice_royalty_0
-		}
-
-		allow = {
-			holder_scope = {
-				NOT = {	government = roman_imperial_government }
+			trigger_if = {
+				limit = {
+					NOT = { has_law = crown_authority_4 }
+				}
+				has_law = crown_authority_3
+				has_law = centralization_4
+			}
+			trigger_else = {
+				OR = {
+					has_law = centralization_3
+					has_law = centralization_4
+				}
 			}
 		}
 
@@ -1180,40 +1187,6 @@ laws = {
 
 		effect = {
 			# log = "vice_royalty_1 ([This.GetFullBaseName])"
-
-			set_allow_vice_royalties = KING
-
-			hidden_effect = {
-				revoke_vice_royalty_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 2
-
-			trigger = {
-				# Must have enough vassal limit left over
-				has_law = vice_royalty_0
-				over_vassal_limit <= -5
-			}
-		}
-	}
-
-	vice_royalty_2 = {
-		group = vice_royalty
-
-		vassal_limit = -10
-
-		potential = {
-			is_law_potential = vice_royalty_0
-		}
-
-		pass_effect = {
-			# log = "vice_royalty_2 pass ([This.GetFullBaseName])"
-		}
-
-		effect = {
-			# log = "vice_royalty_2 ([This.GetFullBaseName])"
 
 			set_allow_vice_royalties = DUKE
 
@@ -1308,7 +1281,7 @@ laws = {
 
 			if = {
 				limit = { has_dlc = "Charlemagne" }
-				add_law = vice_royalty_2
+				add_law = vice_royalty_1
 				set_allow_free_vice_royalty_revokation = yes
 			}
 			else = {

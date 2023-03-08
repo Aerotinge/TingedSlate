@@ -5,7 +5,7 @@
 	law = centralization_3
 	law = imperial_administration
 	law = ze_administration_laws_2
-	law = vice_royalty_2
+	law = vice_royalty_1
 	law = revoke_title_law_1
 }
 
