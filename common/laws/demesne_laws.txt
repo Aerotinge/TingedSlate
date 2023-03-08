@@ -1166,6 +1166,9 @@ laws = {
 
 		potential = {
 			is_law_potential = vice_royalty_0
+		}
+
+		allow = {
 			trigger_if = {
 				limit = {
 					NOT = { has_law = crown_authority_4 }
@@ -1174,6 +1177,7 @@ laws = {
 				has_law = centralization_4
 			}
 			trigger_else = {
+				has_law = crown_authority_4
 				OR = {
 					has_law = centralization_3
 					has_law = centralization_4
@@ -1200,14 +1204,8 @@ laws = {
 
 			trigger = {
 				# Must have enough vassal limit left over
-				trigger_if = {
-					limit = { has_law = vice_royalty_0 }
-					over_vassal_limit <= -10
-				}
-				trigger_else = {
-					has_law = vice_royalty_1
-					over_vassal_limit <= -5
-				}
+				has_law = vice_royalty_0
+				over_vassal_limit <= -10
 			}
 		}
 	}
@@ -1244,6 +1242,13 @@ laws = {
 
 			if = {
 				limit = { has_dlc = "Charlemagne" }
+
+				if = {
+					limit = {
+						NOT = { is_law_allowed = vice_royalty_1 }
+					}
+					add_law = vice_royalty_0
+				}
 				set_allow_free_vice_royalty_revokation = no
 			}
 			else = {
