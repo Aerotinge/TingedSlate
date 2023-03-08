@@ -29,6 +29,8 @@
 
 #Muhallabids
 768.1.1 = {
+	liege = e_arabia
+	vice_royalty = yes
 	holder = 210014
 }
 
@@ -62,11 +64,9 @@
 
 #Aghlabids
 800.1.1 = {
-	holder = 163140
-}
-
-800.1.1 = {
 	liege = 0
+	vice_royalty = no
+	holder = 163140
 }
 
 812.1.1 = {
