@@ -231,7 +231,6 @@ decisions = {
 		}
 
 		effect = {
-			set_global_flag = mongol_horde_arrival
 			set_global_flag = mongol_horde_united
 			set_special_character_title = GENGHIS_KHAN
 			prestige = 1000
@@ -280,6 +279,7 @@ decisions = {
 				any_demesne_title = {
 					limit = {
 						real_tier = EMPEROR
+						is_titular = yes
 						NOT = { title = e_mongol_empire }
 					}
 
@@ -330,7 +330,6 @@ decisions = {
 		}
 
 		effect = {
-			set_global_flag = mongol_horde_arrival
 			set_global_flag = mongol_horde_united
 			set_special_character_title = GENGHIS_KHAN
 			prestige = 1000
