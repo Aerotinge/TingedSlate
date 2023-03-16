@@ -1,0 +1,18 @@
+# b_tephric, b_arca
+
+843.1.1 = {
+	holder = 20565 # Karbeas
+	set_tribute_suzerain = {
+		who = d_coloneia
+		type = permanent
+	}
+}
+
+863.1.1 = {
+	holder = 20566 # Chrysocheres
+}
+
+879.1.1 = {
+	holder = 0
+	clear_tribute_suzerain = d_coloneia
+}
