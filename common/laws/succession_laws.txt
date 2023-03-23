@@ -43,7 +43,6 @@ succession_laws = {
 
 				NOR = {
 					is_vice_royalty = yes
-					religion_group = muslim
 					government = order_government
 					government = roman_imperial_government
 					government = pronoia_government
@@ -169,7 +168,6 @@ succession_laws = {
 
 				NOR = {
 					is_vice_royalty = yes
-					religion_group = muslim
 					government = order_government
 					government = roman_imperial_government
 					government = chinese_imperial_government
@@ -555,13 +553,6 @@ succession_laws = {
 			}
 
 			holder_scope = {
-				trigger_if = {
-					limit = { is_feudal = no }
-
-					is_tribal = yes
-					religion_group = muslim
-				}
-
 				NOR = {
 					government = iqta_government
 					government = order_government
@@ -602,6 +593,7 @@ succession_laws = {
 				}
 				has_law = crown_authority_4
 			}
+
 			trigger_if = {
 				limit = {
 					AND = {
@@ -645,10 +637,6 @@ succession_laws = {
 					NAND = {
 						has_law = succ_feudal_elective
 						is_offmap_tag = offmap_hre
-					}
-					
-					holder_scope = {
-						NOT = { religion_group = muslim }
 					}
 				}
 
@@ -1078,7 +1066,6 @@ succession_laws = {
 
                 NOR = {
                     is_vice_royalty = yes
-                    religion_group = muslim
                     government = order_government
 					government = roman_imperial_government
 					government = pronoia_government

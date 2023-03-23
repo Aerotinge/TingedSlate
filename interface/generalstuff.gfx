@@ -1492,6 +1492,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_icon_arabic_caliphal_government"
+		textureFile = "gfx\\interface\\government_icon_iqta.dds"
+	}
+
+	spriteType = {
 		name = "GFX_icon_clan_government"
 		textureFile = "gfx\\interface\\government_icon_clan.dds"
 	}

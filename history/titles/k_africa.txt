@@ -27,46 +27,14 @@
 	holder = 0
 }
 
-#Muhallabids
-768.1.1 = {
-	liege = e_arabia
-	vice_royalty = yes
-	holder = 210014
-}
-
-771.1.1 = {
-	holder = 210015
-}
-
-771.1.6 = {
-	holder = 210014
-}
-
-772.1.1 = {
-	holder = 210009
-}
-
-787.1.1 = {
-	holder = 210010
-}
-
-787.1.10 = {
-	holder = 210016
-}
-
-791.1.1 = {
-	holder = 210017
-}
-
-793.1.1 = {
-	holder = 210018
-}
-
 #Aghlabids
 800.1.1 = {
 	liege = 0
-	vice_royalty = no
 	holder = 163140
+	set_tribute_suzerain = {
+		who = e_arabia
+		type = permanent
+	}
 }
 
 812.1.1 = {
@@ -99,6 +67,7 @@
 
 # Fatimids
 909.1.1 = {
+	clear_tribute_suzerain = e_arabia
 	holder = 32900
 }
 

@@ -1,10 +1,22 @@
-935.1.1 = {
-	holder = 260819
+762.1.1 = {
+	liege = d_aswan
 }
 
-966.10.13 = {
-	set_global_flag = fatimid_invasion_egypt
-	law = crown_authority_1
+762.1.1 = {
+	holder = 210022
+}
+
+866.1.1 = {
+	liege = d_damietta
+	holder = 163183
+}
+
+936.1.1 = {
+	holder = 260819
+	#liege = k_egypt
+}
+
+996.10.13 = {
 	holder = 3092
 }
 
@@ -14,6 +26,10 @@
 
 1036.6.13 = {
 	holder = 3096
+}
+
+1066.1.1 = {
+	holder = 3100
 }
 
 1094.1.10 = {
@@ -40,7 +56,6 @@
 	holder = 32910
 }
 
-# Fall of the Fatimid Caliphate
 1171.1.1 = {
 	holder = 226000
 }
@@ -58,7 +73,7 @@
 }
 
 1218.8.1 = {
-	holder = 32924
+	holder = 32925
 }
 
 1238.1.1 = {
@@ -97,11 +112,11 @@
 	holder = 32934
 }
 
-1279.1.1 = {
-	holder = 32949
-}
+#1279.1.1 = {
+#	holder = 32942
+#}
 
-1279.7.1 = {
+1279.1.1 = { #Should be 1279.7.1, above 	holder does not exist
 	holder = 32936
 }
 

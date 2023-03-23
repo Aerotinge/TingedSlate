@@ -15,6 +15,7 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			tibetan_feudal_government
+			arabic_caliphal_government
 			thema_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
@@ -38,6 +39,7 @@ feudal_governments = {
 				is_government_potential = iqta_government
 				is_government_potential = tibetan_feudal_government
 				is_government_potential = mandala_government
+				is_government_potential = arabic_caliphal_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = pronoia_government
@@ -74,6 +76,7 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			arabic_caliphal_government
 		}
 
 		frame_suffix = "_manorial"
@@ -239,6 +242,7 @@ feudal_governments = {
 			patrimonial_government
 			mandala_government
 			tibetan_feudal_government
+			arabic_caliphal_government
 			thema_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
@@ -262,6 +266,7 @@ feudal_governments = {
 				is_government_potential = iqta_government
 				is_government_potential = patrimonial_government
 				is_government_potential = mandala_government
+				is_government_potential = arabic_caliphal_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = chinese_imperial_government
@@ -298,6 +303,9 @@ feudal_governments = {
 		}
 		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
 			TRIBAL
+		}
+		accepts_liege_governments = {
+			arabic_caliphal_government
 		}
 		vassal_call_to_arms = {
 			patrimonial_government
@@ -371,6 +379,7 @@ feudal_governments = {
 
 			NOR = {
 				is_government_potential = mandala_government
+				is_government_potential = arabic_caliphal_government
 				is_government_potential = roman_imperial_government
 				is_government_potential = chinese_imperial_government
 				is_government_potential = band_government
@@ -526,6 +535,87 @@ feudal_governments = {
 		character_modifier = {
 			castle_vassal_max_levy = -0.15
 		}
+	}
+
+	arabic_caliphal_government = {
+		preferred_holdings = {
+			TEMPLE
+		}
+		allowed_holdings = {
+			CASTLE
+			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = {
+			patrimonial_government
+		}
+		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
+			tribal_government
+		}
+		free_revoke_on_tiers = {
+			DUKE
+		}
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+		}
+
+		frame_suffix = "_iqta"
+		color = { 118 255 163 }
+
+		potential = {
+			culture = bedouin_arabic
+			religion_group = muslim
+			NOT = { religion = yazidi }
+
+			trigger_if = {
+				limit = {
+					NOR = {
+						controls_religion = yes
+						religion_authority >= 0.50
+					}
+				}
+
+				is_save_game = no
+				has_game_started = no
+			}
+			trigger_else = {
+				controls_religion = yes
+				religion_authority >= 0.50
+			}
+
+			primary_title = {
+				title = e_arabia
+			}
+
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
+		}
+
+		allow = {
+		}
+
+		allows_matrilineal_marriage = no
+		barons_need_dynasty = yes
+		can_build_tribal = no
+		can_create_empires = no
+		can_create_kingdoms = no
+		can_grant_kingdoms_and_empires_to_other_government = no
+		ignores_de_jure_laws = yes
+		free_retract_vassalage = yes
+		free_levies_in_offensive_war = yes # Took away the hardcoded stuff for muslims where they could raise levies without pissing off vassals if in an offensive war.
+		have_gender_laws = no
+		#uses_decadence = yes
+		uses_piety_for_law_change = yes
+
+		capital_move_delay = 600
+
+		## Modifiers
+		court_size_modifier = 10
 	}
 
 	roman_imperial_government = {
@@ -715,6 +805,7 @@ feudal_governments = {
 				}
 			}
 
+			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
 			could_be_order_trigger = no
 		}

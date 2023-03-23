@@ -1,10 +1,24 @@
-935.1.1 = {
+762.1.1 = {
+	holder = 210009
+	liege = d_damietta
+	adjective = FUSTAT_ADJ
+}
+
+866.1.1 = {
+	holder = 163187
+}
+
+936.1.1 = {
 	holder = 260819
 }
 
-966.10.13 = {
-	set_global_flag = fatimid_invasion_egypt
-	law = crown_authority_1
+969.1.1 = {
+	adjective = c_cairo_adj
+	set_global_flag = established_cairo
+	liege = k_egypt
+}
+
+996.10.13 = {
 	holder = 3092
 }
 
@@ -40,7 +54,6 @@
 	holder = 32910
 }
 
-# Fall of the Fatimid Caliphate
 1171.1.1 = {
 	holder = 226000
 }
@@ -85,51 +98,19 @@
 	holder = 32931
 }
 
-1259.1.1 = {
-	holder = 32932
+1258.2.20 = {
+	liege = d_sunni
 }
 
-1260.10.24 = {
-	holder = 32933
+1258.2.20 = {
+	holder = 34032
 }
 
-1277.7.1 = {
-	holder = 32934
+1262.1.1 = {
+	holder = 34033
 }
 
-1279.1.1 = {
-	holder = 32949
-}
-
-1279.7.1 = {
-	holder = 32936
-}
-
-1291.11.10 = {
-	holder = 32937
-}
-
-1293.12.14 = {
-	holder = 485000
-}
-
-1294.7.1 = {
-	holder = 32938
-}
-
-1296.1.1 = {
-	holder = 32939
-}
-
-1299.1.1 = {
-	holder = 485000
-}
-
-1309.1.1 = {
-	holder = 32940
-}
-
-1309.11.1 = {
-	holder = 485000
+1302.1.1 = {
+	holder = 34034
 }
 

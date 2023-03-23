@@ -6837,7 +6837,7 @@
 }
 
 163096 = {
-	name = Muhammad
+	name = "Muhammad"
 	dynasty = 807
 	religion = sunni
 	culture = bedouin_arabic # Banu Tamim tribe

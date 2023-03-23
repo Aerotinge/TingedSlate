@@ -2,7 +2,6 @@
 	law = crown_authority_1
 	law = centralization_0
 	law = revoke_title_law_1
-	law = vice_royalty_1
 	holder = 163014
 }
 

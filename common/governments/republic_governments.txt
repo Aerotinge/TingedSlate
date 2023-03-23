@@ -165,6 +165,7 @@ republic_governments = {
 			patrimonial_government
 			tibetan_feudal_government
 			mandala_government
+			arabic_caliphal_government
 			republic_government
 			merchant_republic_government
 			theocracy_government

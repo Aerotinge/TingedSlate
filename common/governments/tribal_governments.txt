@@ -21,6 +21,7 @@ tribal_governments = {
 			theocracy_government
 		}
 		accepts_liege_governments_culture_and_religion = { # Tribals have no opinion penalty towards their liege if of the same culture and religion
+			arabic_caliphal_government
 			order_government
 		}
 		vassal_call_to_arms = {

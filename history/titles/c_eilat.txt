@@ -1,18 +1,25 @@
-935.1.1 = {
-	holder = 260819
+762.1.1 = {
+	liege = d_damietta
 }
 
-966.10.13 = {
-	set_global_flag = fatimid_invasion_egypt
-	law = crown_authority_1
-	holder = 3092
+762.1.1 = {
+	holder = 210027
 }
 
-1021.2.12 = {
-	holder = 3094
+866.1.1 = {
+	holder = 163115
 }
 
-1036.6.13 = {
+936.1.1 = {
+	holder = 260848
+}
+
+1066.1.1 = {
+	holder = 20788
+	liege = k_egypt
+}
+
+1089.1.1 = {
 	holder = 3096
 }
 
@@ -24,23 +31,38 @@
 	holder = 32905
 }
 
-1130.1.1 = {
-	holder = 32907
+1112.1.1 = {
+	liege = d_jerusalem
+	holder = 10073 #Badouin I de Boulogne
 }
 
-1149.1.1 = {
-	holder = 32908
+1118.4.2 = {
+	liege = d_oultrejourdain
 }
 
-1154.1.1 = {
-	holder = 32909
+1118.4.2 = {
+	holder = 93000
 }
 
-1160.1.1 = {
-	holder = 32910
+1126.1.1 = {
+	holder = 93003
 }
 
-# Fall of the Fatimid Caliphate
+1147.1.1 = {
+	holder = 93005
+}
+
+1161.1.1 = {
+	holder = 232700
+}	
+1168.1.1 = {
+	holder = 223561
+}
+
+1171.1.1 = {
+	liege = k_egypt
+}
+
 1171.1.1 = {
 	holder = 226000
 }
@@ -58,10 +80,6 @@
 }
 
 1218.8.1 = {
-	holder = 32924
-}
-
-1238.1.1 = {
 	holder = 32926
 }
 

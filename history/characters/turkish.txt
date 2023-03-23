@@ -3335,7 +3335,6 @@
 
 478050 = {
 	name = "Tolui"
-	dynasty = 100628
 	martial = 8
 	diplomacy = 4
 	intrigue = 8
@@ -7854,11 +7853,119 @@
 	dynasty = 7521
 	culture = turkish
 	religion = sunni
+	father = 163136
 	837.1.1 = {
 		birth = yes
 	}
 	896.1.1 = {
 		death = yes
+	}
+}
+
+163182 = {
+	name = "Ulugh"
+	dynasty = 100628
+	culture = turkish
+	religion = sunni
+	794.1.1 = {
+		birth = yes
+	}
+	857.1.1 = {
+		death = yes
+	}
+}
+
+163183 = {
+	name = "Arkhuz"
+	dynasty = 100628
+	culture = turkish
+	religion = sunni
+	father = 163182
+	823.1.1 = {
+		birth = yes
+	}
+	880.1.1 = {
+		death = yes
+	}
+}
+
+163184 = {
+	name = "Urtuj"
+	dynasty = 7345
+	culture = turkish
+	religion = sunni
+	773.1.1 = {
+		birth = yes
+	}
+	830.1.1 = {
+		death = yes
+	}
+}
+
+163185 = {
+	name = "Khaqan"
+	dynasty = 7345
+	culture = turkish
+	religion = sunni
+	father = 163184
+	792.1.1 = {
+		birth = yes
+	}
+	854.1.1 = {
+		death = yes
+	}
+}
+
+163186 = {
+	name = "Al-Fath"
+	dynasty = 7345
+	culture = turkish
+	religion = sunni
+	father = 163185
+	817.1.1 = {
+		birth = yes
+	}
+	861.12.11 = {
+		death = {
+			death_reason = death_murder
+			killer = 34012
+		}
+	}
+}
+
+163187 = {
+	name = "Muzahim"
+	dynasty = 7345
+	culture = turkish
+	religion = sunni
+	father = 163185
+	820.1.1 = {
+		birth = yes
+	}
+	867.1.1 = {
+		add_trait = ill
+	}
+	868.1.1 = {
+		death = {
+			death_reason = death_trait
+		}
+	}
+}
+
+163188 = {
+	name = "Ahmad"
+	dynasty = 7345
+	culture = turkish
+	religion = sunni
+	father = 163187
+	843.1.1 = {
+		birth = yes
+	}
+	868.4.1 = {
+		death = {
+			death_reason = death_murder_unknown
+			killer = 163183
+		}
 	}
 }
 
