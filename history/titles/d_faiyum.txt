@@ -1,7 +1,7 @@
 #Muhallabids
 762.1.1 = {
 	liege = e_arabia
-	holder = 210016
+	holder = 210009
 }
 
 771.1.1 = {
