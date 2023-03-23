@@ -1,29 +1,24 @@
-762.1.1 = {
-	liege = e_arabia
+769.1.1 = {
+	liege = d_asyut
+	holder = 210011
 }
 
-762.1.1 = {
-	holder = 210023
-}
-
-780.1.1 = {
-	holder = 0
-}
-
-866.1.1 = {
+867.1.1 = {
+	liege = d_aswan
 	holder = 163187
 }
 
 936.1.1 = {
-	holder = 260919
-	liege = k_egypt
+	liege = d_asyut
+	holder = 260915
 }
 
 1066.1.1 = {
-	holder = 3098
+	holder = 20790
+	liege = d_alexandria
 }
 
-1097.1.1 = {
+1089.1.1 = {
 	holder = 34979
 }
 

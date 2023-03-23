@@ -1,13 +1,14 @@
+
 762.1.1 = {
-	liege = e_arabia
+	liege = d_faiyum
 }
 
 762.1.1 = {
-	holder = 210023
+	holder = 210016
 }
 
-780.1.1 = {
-	holder = 0
+866.1.1 = {
+	liege = d_alexandria
 }
 
 866.1.1 = {
@@ -15,12 +16,12 @@
 }
 
 936.1.1 = {
-	holder = 260919
-	liege = k_egypt
+	holder = 260921
 }
 
 1066.1.1 = {
 	holder = 3098
+	liege = d_alexandria
 }
 
 1097.1.1 = {
