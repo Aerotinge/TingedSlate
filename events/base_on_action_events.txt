@@ -3448,7 +3448,7 @@ diploresponse_event = {
 	}
 }
 
-# MAKE_CONSORT_INTERACTION_ACCEPT_EVENT =
+# ASK_TO_EMBARGO_INTERACTION_ACCEPT_EVENT =
 diploresponse_event = {
 	id = 295
 	desc = EVTDESC295
@@ -3463,7 +3463,7 @@ diploresponse_event = {
 	}
 }
 
-# MAKE_CONSORT_INTERACTION_DECLINE_EVENT =
+# ASK_TO_EMBARGO_INTERACTION_DECLINE_EVENT =
 diploresponse_event = {
 	id = 296
 	desc = EVTDESC296
@@ -3477,7 +3477,7 @@ diploresponse_event = {
 	}
 }
 
-# ASK_TO_EMBARGO_INTERACTION_ACCEPT_EVENT =
+# MAKE_CONSORT_INTERACTION_ACCEPT_EVENT =
 diploresponse_event = {
 	id = 297
 	desc = EVTDESC297

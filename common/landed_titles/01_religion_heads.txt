@@ -12,9 +12,6 @@ k_hellenic_pagan_reformed = {
 	foa = POPE_FOA
 	short_name = yes
 
-	# Always exists
-	landless = yes
-
 	creation_requires_capital = no
 
 	dignity = 100 # Counted as having this many more counties than it does
@@ -117,9 +114,6 @@ d_aztec_pagan_reformed = {
 
 	short_name = yes
 
-	# Always exists
-	landless = yes
-
 	dignity = 100 # Counted as having this many more counties than it does
 
 	# Controls a religion
@@ -144,9 +138,6 @@ d_baltic_pagan_reformed = {
 	foa = HEAD_PRIEST_FOA
 
 	short_name = yes
-
-	# Always exists
-	landless = yes
 
 	dignity = 100 # Counted as having this many more counties than it does
 
@@ -199,9 +190,6 @@ d_finnish_pagan_reformed = {
 	foa = HEAD_PRIEST_FOA
 
 	short_name = yes
-
-	# Always exists
-	landless = yes
 
 	dignity = 100 # Counted as having this many more counties than it does
 
@@ -650,9 +638,6 @@ d_norse_pagan_reformed = {
 
 	short_name = yes
 
-	# Always exists
-	landless = yes
-
 	dignity = 100 # Counted as having this many more counties than it does
 
 	# Controls a religion
@@ -847,9 +832,6 @@ d_slavic_pagan_reformed = {
 
 	short_name = yes
 
-	# Always exists
-	landless = yes
-
 	dignity = 100 # Counted as having this many more counties than it does
 
 	# Controls a religion
@@ -942,9 +924,6 @@ d_tengri_pagan_reformed = {
 
 	short_name = yes
 
-	# Always exists
-	landless = yes
-
 	dignity = 100 # Counted as having this many more counties than it does
 
 	# Controls a religion
@@ -969,9 +948,6 @@ d_west_african_pagan_reformed = {
 	foa = HEAD_PRIEST_FOA
 
 	short_name = yes
-
-	# Always exists
-	landless = yes
 
 	dignity = 100 # Counted as having this many more counties than it does
 
@@ -1052,9 +1028,6 @@ d_zun_pagan_reformed = {
 	foa = HEAD_PRIEST_FOA
 
 	short_name = yes
-
-	# Always exists
-	landless = yes
 
 	dignity = 100 # Counted as having this many more counties than it does
 
