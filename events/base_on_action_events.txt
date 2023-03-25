@@ -4057,12 +4057,16 @@ narrative_event = {
 			hellenic_pagan_reformed     = { hellenic_pagan = { set_flag = has_been_reformed } }
 		}
 
-		# Set religion head title as landless if religion has theocratic religion head
 		if = {
 			limit = {
 				OR = {
 					has_religion_feature = religion_theocratic_head
 					has_religion_feature = religion_autocephaly
+					AND = {
+						is_reformed_religion = yes
+						has_religion_features = no
+						NOT = { religion = norse_pagan_reformed }
+					}
 				}
 			}
 
@@ -4081,9 +4085,198 @@ narrative_event = {
 				hellenic_pagan_reformed     = { k_hellenic_pagan_reformed = { save_event_target_as = religious_head_title } }
 			}
 
+			# Set religion head title as landless if religion has theocratic religion head
 			set_title_landless = {
 				title = event_target:religious_head_title
 				status = yes
+			}
+
+			if = {
+				limit = {
+					has_religion_feature = religion_matriarchal
+				}
+
+				if = {
+					limit = {
+						any_vassal = {
+							is_female = yes
+							OR = {
+								government = theocracy_government
+								AND = {
+									is_landed = no
+									has_job_title = job_spiritual
+								}
+							}
+						}
+					}
+
+					random_vassal = {
+						limit = {
+							is_female = yes
+						}
+						preferred_limit = {
+							has_job_title = job_spiritual
+						}
+						preferred_limit = {
+							any_demesne_title = {
+								is_holy_site = ROOT
+							}
+						}
+						preferred_limit = {
+							government = theocracy_government
+						}
+
+						# Workaround for automatic usurption of theocratic characters
+						set_character_flag = convert_abandon_heresy
+						convert_religion_failsafe_effect = yes
+						event_target:religious_head_title = {
+							copy_title_history = d_dummy # Clean up history...
+							grant_title_no_opinion = {
+								target = PREV
+								type = created
+							}
+						}
+					}
+				}
+				else = {
+					create_random_priest = {
+						random_traits = yes
+						religion = THIS
+						culture = THIS
+						female = yes
+					}
+					new_character = {
+						event_target:religious_head_title = {
+							copy_title_history = d_dummy # Clean up history...
+							grant_title_no_opinion = {
+								target = PREV
+								type = created
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_religion_feature = religion_patriarchal
+				}
+
+				if = {
+					limit = {
+						any_vassal = {
+							is_female = no
+							OR = {
+								government = theocracy_government
+								AND = {
+									is_landed = no
+									has_job_title = job_spiritual
+								}
+							}
+						}
+					}
+
+					random_vassal = {
+						limit = {
+							is_female = no
+						}
+						preferred_limit = {
+							has_job_title = job_spiritual
+						}
+						preferred_limit = {
+							any_demesne_title = {
+								is_holy_site = ROOT
+							}
+						}
+						preferred_limit = {
+							government = theocracy_government
+						}
+
+						# Workaround for automatic usurption of theocratic characters
+						set_character_flag = convert_abandon_heresy
+						convert_religion_failsafe_effect = yes
+						event_target:religious_head_title = {
+							copy_title_history = d_dummy # Clean up history...
+							grant_title_no_opinion = {
+								target = PREV
+								type = created
+							}
+						}
+					}
+				}
+				else = {
+					create_random_priest = {
+						random_traits = yes
+						religion = THIS
+						culture = THIS
+						female = no
+					}
+					new_character = {
+						event_target:religious_head_title = {
+							copy_title_history = d_dummy # Clean up history...
+							grant_title_no_opinion = {
+								target = PREV
+								type = created
+							}
+						}
+					}
+				}
+			}
+			else = {
+				if = {
+					limit = {
+						any_vassal = {
+							OR = {
+								government = theocracy_government
+								AND = {
+									is_landed = no
+									has_job_title = job_spiritual
+								}
+							}
+						}
+					}
+
+					random_vassal = {
+						limit = {}
+						preferred_limit = {
+							has_job_title = job_spiritual
+						}
+						preferred_limit = {
+							any_demesne_title = {
+								is_holy_site = ROOT
+							}
+						}
+						preferred_limit = {
+							government = theocracy_government
+						}
+
+						# Workaround for automatic usurption of theocratic characters
+						set_character_flag = convert_abandon_heresy
+						convert_religion_failsafe_effect = yes
+						event_target:religious_head_title = {
+							copy_title_history = d_dummy # Clean up history...
+							grant_title_no_opinion = {
+								target = PREV
+								type = created
+							}
+						}
+					}
+				}
+				else = {
+					create_random_priest = {
+						random_traits = yes
+						religion = THIS
+						culture = THIS
+					}
+					new_character = {
+						event_target:religious_head_title = {
+							copy_title_history = d_dummy # Clean up history...
+							grant_title_no_opinion = {
+								target = PREV
+								type = created
+							}
+						}
+					}
+				}
 			}
 		}
 
@@ -4653,6 +4846,26 @@ narrative_event = {
 			limit = {
 				is_heresy_of = ROOT
 				is_playable = no
+				is_vassal_or_below_of = ROOT
+
+				trigger_if = {
+					limit = {
+						is_ruler = yes
+						parent_religion = {
+							has_religion_feature = religion_matriarchal
+						}
+					}
+					is_female = yes
+				}
+				trigger_else_if = {
+					limit = {
+						is_ruler = yes
+						parent_religion = {
+							has_religion_feature = religion_patriarchal
+						}
+					}
+					is_female = no
+				}
 			}
 
 			# Workaround for automatic usurption of theocratic characters
@@ -4665,6 +4878,25 @@ narrative_event = {
 			limit = {
 				is_heresy_of = ROOT
 				is_playable = no
+
+				trigger_if = {
+					limit = {
+						is_ruler = yes
+						parent_religion = {
+							has_religion_feature = religion_matriarchal
+						}
+					}
+					is_female = yes
+				}
+				trigger_else_if = {
+					limit = {
+						is_ruler = yes
+						parent_religion = {
+							has_religion_feature = religion_patriarchal
+						}
+					}
+					is_female = no
+				}
 			}
 
 			# Workaround for automatic usurption of theocratic characters
@@ -4724,6 +4956,8 @@ narrative_event = {
 					unsafe_religion = norse_pagan_reformed
 				}
 			}
+
+			# What if the holder is male while the reformed norse is matriarchal...meh
 		}
 
 		# Opinion boost to new religious head (if any) and Reformer.
@@ -5112,6 +5346,26 @@ narrative_event = {
 				limit = {
 					is_heresy_of = ROOT
 					is_playable = no
+					is_vassal_or_below_of = ROOT
+
+					trigger_if = {
+						limit = {
+							is_ruler = yes
+							parent_religion = {
+								has_religion_feature = religion_matriarchal
+							}
+						}
+						is_female = yes
+					}
+					trigger_else_if = {
+						limit = {
+							is_ruler = yes
+							parent_religion = {
+								has_religion_feature = religion_patriarchal
+							}
+						}
+						is_female = no
+					}
 				}
 
 				# Workaround for automatic usurption of theocratic characters
@@ -5124,6 +5378,25 @@ narrative_event = {
 				limit = {
 					is_playable = no
 					is_heresy_of = ROOT
+
+					trigger_if = {
+						limit = {
+							is_ruler = yes
+							parent_religion = {
+								has_religion_feature = religion_matriarchal
+							}
+						}
+						is_female = yes
+					}
+					trigger_else_if = {
+						limit = {
+							is_ruler = yes
+							parent_religion = {
+								has_religion_feature = religion_patriarchal
+							}
+						}
+						is_female = no
+					}
 				}
 
 				# Workaround for automatic usurption of theocratic characters
@@ -5174,6 +5447,18 @@ narrative_event = {
 			mult_modifier = {
 				factor = 0.5
 				trait = content
+			}
+
+			mult_modifier = {
+				factor = 0
+				parent_religion = { has_religion_feature = religion_patriarchal }
+				is_female = yes
+			}
+
+			mult_modifier = {
+				factor = 0
+				parent_religion = { has_religion_feature = religion_matriarchal }
+				is_female = no
 			}
 		}
 	}
@@ -6120,6 +6405,11 @@ character_event = {
 		OR = {
 			has_religion_feature = religion_theocratic_head
 			has_religion_feature = religion_autocephaly
+			AND = {
+				is_reformed_religion = yes
+				has_religion_features = no
+				NOT = { religion = norse_pagan_reformed }
+			}
 		}
 	}
 
