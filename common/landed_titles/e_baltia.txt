@@ -281,30 +281,6 @@ e_baltia = {
 		}
 	}
 
-	k_bohemia = {
-		color = { 176 110 32 }
-		color2 = { 255 255 255 }
-
-		culture = bohemian
-
-		capital = 718 # Praha
-
-		catholic = 400 # Crusade target weight
-		slavic_pagan_reformed = 100 # Crusade target weight
-		baltic_pagan_reformed = 50 # Crusade target weight
-
-		allow = {
-			can_create_kingdom = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
-		}
-	}
-
 	k_lithuania = {
 		color = { 90 10 0 }
 		color2 = { 255 255 255 }
