@@ -4,8 +4,11 @@
 
 966.10.13 = {
 	set_global_flag = fatimid_invasion_egypt
-	law = crown_authority_1
+}
+
+996.10.13 = {
 	holder = 3092
+	law = crown_authority_1
 }
 
 1021.2.12 = {

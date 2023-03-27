@@ -319,6 +319,92 @@ e_armenia = {
 	religion = miaphysite
 }
 
+k_papal_state = {
+	color = { 215 141 152 }
+	color2 = { 255 255 255 }
+
+	capital = 464 # Roma
+
+	short_name = yes
+
+	christian = 10000 # Crusade target weight
+	hellenic_pagan_reformed = 5000 # Crusade target weight
+
+	allow = {
+		can_create_kingdom = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+
+		trigger_if = {
+			limit = { ai = yes }
+
+			trigger_if = { # Only non-Catholic AI can usurp the Papal States/Romagna from the Pope
+				limit = {
+					FROM = {
+						holder_scope = {
+							has_landed_title = k_papacy
+						}
+					}
+				}
+
+				NOT = { religion = catholic }
+			}
+			trigger_else = {
+				has_landed_title = d_latium
+				has_landed_title = c_roma
+			}
+		}
+	}
+
+	gain_effect = {
+		if = {
+			limit = { culture = greek }
+
+			custom_tooltip = {
+				text = ravenna_TT
+			}
+		}
+		else = {
+			custom_tooltip = {
+				text = romagna_TT
+			}
+		}
+
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_landed_title = k_papacy }
+				}
+
+				grant_title_no_opinion = k_romagna
+				destroy_landed_title = k_papal_state
+
+				activate_title = {
+					title = k_papal_state
+					status = no
+				}
+
+				k_papal_state = {
+					any_direct_de_jure_vassal_title = {
+						de_jure_liege = k_romagna
+					}
+
+					empire = {
+						k_romagna = {
+							de_jure_liege = PREV
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
 k_sina = { #placeholder for the Chinese Empire itself, for V4 map is yet prepared
 	color = { 245 240 10 }
 	color2 = { 220 220 0 }

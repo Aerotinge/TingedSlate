@@ -69,7 +69,7 @@ e_italia = {
 			limit = {
 				k_romagna = {
 					is_titular = no
-					NOT = { de_jure_liege = e_italia}
+					NOT = { de_jure_liege = e_italia }
 				}
 			}
 			has_landed_title = k_romagna
@@ -162,6 +162,227 @@ e_italia = {
 				}
 
 				de_jure_liege = e_italia
+			}
+		}
+	}
+
+	k_carinthia = {
+		color = { 140 240 200 }
+		color2 = { 255 255 255 }
+
+		capital = 220 # Krain/Carniola/Krainburg/Chreina
+
+		carantanian = "Carantania"
+
+		allow = {
+			can_create_kingdom = yes
+
+			trigger_if = {
+				limit = { ai = yes }
+
+				culture_group = south_slavic
+			}
+		}
+
+		d_carinthia = {
+			color = { 165 255 250 }
+			color2 = { 255 255 255 }
+
+			capital = 218 # Villach
+
+			german = "Kärnten"
+			carantanian = "Carantania"
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			c_friesach = {
+				color = { 150 240 250 }
+				color2 = { 255 255 255 }
+
+				carantanian = "Breze"
+
+				b_petersberg = {}
+				b_sankt_veit = {}
+				b_sankt_lambrecht = {}
+				b_wolfsberg = {}
+				b_micheldorf = {}
+				b_althofen = {}
+				b_st_nicholas_friesach = {}
+			}
+
+			c_villach = {
+				color = { 125 225 195 }
+				color2 = { 255 255 255 }
+
+				carantanian = "Beljak"
+
+				b_villach = {
+					carantanian = "Beljak"
+				}
+				b_klagenfurt = {
+					carantanian = "Celovec"
+				}
+				b_treffen = {}
+				b_lienz = {}
+				b_spittl = {}
+				b_greifenburg = {}
+				b_vorelach = {}
+			}
+		}
+
+		d_carniola = {
+			color = { 150 200 230 }
+			color2 = { 255 255 255 }
+
+			capital = 220 # Krain
+
+			croatian = "Kranj"
+			carantanian = "Kranj"
+			bosnian = "Kranj"
+			german = "Krain"
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			c_istria = {
+				color = { 165 245 200 }
+				color2 = { 255 255 255 }
+
+				b_mitterburg = {
+					croatian = "Pazin"
+					serbian = "Pazin"
+					carantanian = "Pazin"
+					bosnian = "Pazin"
+					italian = "Pisino"
+					greek = "Pisino"
+				}
+				b_fiume = {
+					croatian = "Rijeka"
+					carantanian = "Reka"
+					bosnian = "Rijeka"
+				}
+				b_lovrana = {}
+				b_wolauska = {}
+				b_karstberg = {}
+				b_duino = {}
+				b_pula = {}
+			}
+
+			c_krain = {
+				color = { 145 225 190 }
+				color2 = { 255 255 255 }
+
+				croatian = "Kranj"
+				carantanian = "Kranj"
+				bosnian = "Kranj"
+				german = "Krain"
+
+				b_gorz = {
+					carantanian = "Gorica"
+					croatian = "Gorizia"
+					bosnian = "Gorizia"
+				}
+				b_krainburg = {
+					croatian = "Kranj"
+					carantanian = "Kranj"
+					bosnian = "Kranj"
+				}
+				b_gurk = {}
+				b_stain = {}
+				b_guetenegg = {}
+				b_auersperg = {}
+				b_zerknitz = {}
+				b_stveit = {}
+			}
+
+			c_pettau = {
+				color = { 140 200 220 }
+				color2 = { 255 255 255 }
+
+				croatian = "Ptuj"
+				carantanian = "Ptuj"
+				bosnian = "Ptuj"
+				roman = "Poetovio"
+				greek = "Poetovio"
+				dalmatian = "Poetovio"
+
+				b_marburg_pettau = {}
+				b_pettau = {}
+				b_friedau = {}
+				b_bistrica = {}
+				b_weitenstein = {}
+				b_studenitz = {}
+				b_seitz = {}
+			}
+		}
+
+		d_friuli = {
+			color = { 160 255 220 }
+			color2 = { 255 255 255 }
+
+			capital = 222 # Aquileia
+
+			allow = {
+				can_create_duchy = yes
+			}
+
+			c_aquileia = {
+				color = { 115 205 175 }
+				color2 = { 255 255 255 }
+
+				carantanian = "Oglej"
+
+				b_aquileia = {
+					carantanian = "Oglej"
+				}
+				b_grado = {
+					carantanian = "Gradez"
+				}
+				b_trieste = {
+					german = "Triest"
+					croatian = "Trst"
+					serbian = "Trst"
+					carantanian = "Trst"
+					bosnian = "Trst"
+				}
+				b_concordia = {}
+				b_portoguaro = {}
+				b_sacile = {}
+				b_sistiana = {}
+			}
+
+			c_treviso = {
+				color = { 251 226 226 }
+				color2 = { 255 255 255 }
+
+				b_treviso = {}
+				b_bassano = {}
+				b_oderzo = {}
+				b_castelfranco = {}
+				b_asola = {}
+				b_citadella = {}
+				b_ceneda = {}
+				b_paese = {}
+			}
+
+			c_udine = {
+				color = { 120 190 180 }
+				color2 = { 255 255 255 }
+
+				carantanian = "Videm"
+
+				b_udine = {
+					carantanian = "Videm"
+				}
+				b_friuli = {}
+				b_ciridale = {}
+				b_tarcento = {}
+				b_gemona = {}
+				b_tolmezzo = {}
+				b_maniago = {}
 			}
 		}
 	}
@@ -690,16 +911,39 @@ e_italia = {
 		}
 	}
 
-	k_papal_state = {
+	k_pisa = {
+		color = { 196 192 140 }
+		color2 = { 255 255 255 }
+
+		capital = 460 # Pisa
+
+		culture = italian
+
+		dignity = 200 # Never want the Republic of Pisa to change primary title
+
+		allow = {
+			can_create_kingdom = yes
+
+			is_republic = yes
+
+			FROM = {
+				show_scope_change = no
+				show_only_failed_conditions = yes
+
+				is_titular = no
+			}
+		}
+	}
+
+	k_romagna = {
 		color = { 215 141 152 }
 		color2 = { 255 255 255 }
 
 		capital = 464 # Roma
 
-		short_name = yes
+		greek = "Ravenna"
 
 		christian = 10000 # Crusade target weight
-		hellenic_pagan_reformed = 5000 # Crusade target weight
 
 		allow = {
 			can_create_kingdom = yes
@@ -709,69 +953,6 @@ e_italia = {
 				show_only_failed_conditions = yes
 
 				is_titular = no
-			}
-
-			trigger_if = {
-				limit = { ai = yes }
-
-				trigger_if = { # Only non-Catholic AI can usurp the Papal States/Romagna from the Pope
-					limit = {
-						FROM = {
-							holder_scope = {
-								has_landed_title = k_papacy
-							}
-						}
-					}
-
-					NOT = { religion = catholic }
-				}
-				trigger_else = {
-					has_landed_title = d_latium
-					has_landed_title = c_roma
-				}
-			}
-		}
-
-		gain_effect = {
-			if = {
-				limit = { culture = greek }
-
-				custom_tooltip = {
-					text = ravenna_TT
-				}
-			}
-			else = {
-				custom_tooltip = {
-					text = romagna_TT
-				}
-			}
-
-			hidden_effect = {
-				if = {
-					limit = {
-						NOT = { has_landed_title = k_papacy }
-					}
-
-					grant_title_no_opinion = k_romagna
-					destroy_landed_title = k_papal_state
-
-					activate_title = {
-						title = k_papal_state
-						status = no
-					}
-
-					k_papal_state = {
-						any_direct_de_jure_vassal_title = {
-							de_jure_liege = k_romagna
-						}
-
-						empire = {
-							k_romagna = {
-								de_jure_liege = PREV
-							}
-						}
-					}
-				}
 			}
 		}
 
@@ -1018,52 +1199,6 @@ e_italia = {
 				b_terni = {}
 				b_foligno = {}
 				b_cascia = {}
-			}
-		}
-	}
-
-	k_pisa = {
-		color = { 196 192 140 }
-		color2 = { 255 255 255 }
-
-		capital = 460 # Pisa
-
-		culture = italian
-
-		dignity = 200 # Never want the Republic of Pisa to change primary title
-
-		allow = {
-			can_create_kingdom = yes
-
-			is_republic = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
-			}
-		}
-	}
-
-	k_romagna = {
-		color = { 215 141 152 }
-		color2 = { 255 255 255 }
-
-		capital = 464 # Roma
-
-		greek = "Ravenna"
-
-		christian = 10000 # Crusade target weight
-
-		allow = {
-			can_create_kingdom = yes
-
-			FROM = {
-				show_scope_change = no
-				show_only_failed_conditions = yes
-
-				is_titular = no
 			}
 		}
 	}

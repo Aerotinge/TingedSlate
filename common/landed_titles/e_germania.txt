@@ -27,11 +27,18 @@ e_germania = {
 
 		trigger_if = {
 			limit = {
+				k_lotharingia = {
+					is_titular = no
+					NOT = { de_jure_liege = e_germania }
+				}
+			}
+			has_landed_title = k_lotharingia
+		}
+
+		trigger_if = {
+			limit = {
 				e_hre = {
-					OR = {
-						is_title_active = no
-						has_holder = yes
-					}
+					is_title_active = yes
 				}
 			}
 
@@ -518,227 +525,6 @@ e_germania = {
 				show_only_failed_conditions = yes
 
 				is_titular = no
-			}
-		}
-	}
-
-	k_carinthia = {
-		color = { 140 240 200 }
-		color2 = { 255 255 255 }
-
-		capital = 220 # Krain/Carniola/Krainburg/Chreina
-
-		carantanian = "Carantania"
-
-		allow = {
-			can_create_kingdom = yes
-
-			trigger_if = {
-				limit = { ai = yes }
-
-				culture_group = south_slavic
-			}
-		}
-
-		d_carinthia = {
-			color = { 165 255 250 }
-			color2 = { 255 255 255 }
-
-			capital = 218 # Villach
-
-			german = "Kärnten"
-			carantanian = "Carantania"
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			c_friesach = {
-				color = { 150 240 250 }
-				color2 = { 255 255 255 }
-
-				carantanian = "Breze"
-
-				b_petersberg = {}
-				b_sankt_veit = {}
-				b_sankt_lambrecht = {}
-				b_wolfsberg = {}
-				b_micheldorf = {}
-				b_althofen = {}
-				b_st_nicholas_friesach = {}
-			}
-
-			c_villach = {
-				color = { 125 225 195 }
-				color2 = { 255 255 255 }
-
-				carantanian = "Beljak"
-
-				b_villach = {
-					carantanian = "Beljak"
-				}
-				b_klagenfurt = {
-					carantanian = "Celovec"
-				}
-				b_treffen = {}
-				b_lienz = {}
-				b_spittl = {}
-				b_greifenburg = {}
-				b_vorelach = {}
-			}
-		}
-
-		d_carniola = {
-			color = { 150 200 230 }
-			color2 = { 255 255 255 }
-
-			capital = 220 # Krain
-
-			croatian = "Kranj"
-			carantanian = "Kranj"
-			bosnian = "Kranj"
-			german = "Krain"
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			c_istria = {
-				color = { 165 245 200 }
-				color2 = { 255 255 255 }
-
-				b_mitterburg = {
-					croatian = "Pazin"
-					serbian = "Pazin"
-					carantanian = "Pazin"
-					bosnian = "Pazin"
-					italian = "Pisino"
-					greek = "Pisino"
-				}
-				b_fiume = {
-					croatian = "Rijeka"
-					carantanian = "Reka"
-					bosnian = "Rijeka"
-				}
-				b_lovrana = {}
-				b_wolauska = {}
-				b_karstberg = {}
-				b_duino = {}
-				b_pula = {}
-			}
-
-			c_krain = {
-				color = { 145 225 190 }
-				color2 = { 255 255 255 }
-
-				croatian = "Kranj"
-				carantanian = "Kranj"
-				bosnian = "Kranj"
-				german = "Krain"
-
-				b_gorz = {
-					carantanian = "Gorica"
-					croatian = "Gorizia"
-					bosnian = "Gorizia"
-				}
-				b_krainburg = {
-					croatian = "Kranj"
-					carantanian = "Kranj"
-					bosnian = "Kranj"
-				}
-				b_gurk = {}
-				b_stain = {}
-				b_guetenegg = {}
-				b_auersperg = {}
-				b_zerknitz = {}
-				b_stveit = {}
-			}
-
-			c_pettau = {
-				color = { 140 200 220 }
-				color2 = { 255 255 255 }
-
-				croatian = "Ptuj"
-				carantanian = "Ptuj"
-				bosnian = "Ptuj"
-				roman = "Poetovio"
-				greek = "Poetovio"
-				dalmatian = "Poetovio"
-
-				b_marburg_pettau = {}
-				b_pettau = {}
-				b_friedau = {}
-				b_bistrica = {}
-				b_weitenstein = {}
-				b_studenitz = {}
-				b_seitz = {}
-			}
-		}
-
-		d_friuli = {
-			color = { 160 255 220 }
-			color2 = { 255 255 255 }
-
-			capital = 222 # Aquileia
-
-			allow = {
-				can_create_duchy = yes
-			}
-
-			c_aquileia = {
-				color = { 115 205 175 }
-				color2 = { 255 255 255 }
-
-				carantanian = "Oglej"
-
-				b_aquileia = {
-					carantanian = "Oglej"
-				}
-				b_grado = {
-					carantanian = "Gradez"
-				}
-				b_trieste = {
-					german = "Triest"
-					croatian = "Trst"
-					serbian = "Trst"
-					carantanian = "Trst"
-					bosnian = "Trst"
-				}
-				b_concordia = {}
-				b_portoguaro = {}
-				b_sacile = {}
-				b_sistiana = {}
-			}
-
-			c_treviso = {
-				color = { 251 226 226 }
-				color2 = { 255 255 255 }
-
-				b_treviso = {}
-				b_bassano = {}
-				b_oderzo = {}
-				b_castelfranco = {}
-				b_asola = {}
-				b_citadella = {}
-				b_ceneda = {}
-				b_paese = {}
-			}
-
-			c_udine = {
-				color = { 120 190 180 }
-				color2 = { 255 255 255 }
-
-				carantanian = "Videm"
-
-				b_udine = {
-					carantanian = "Videm"
-				}
-				b_friuli = {}
-				b_ciridale = {}
-				b_tarcento = {}
-				b_gemona = {}
-				b_tolmezzo = {}
-				b_maniago = {}
 			}
 		}
 	}
