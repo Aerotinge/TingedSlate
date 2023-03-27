@@ -8,10 +8,19 @@ e_baltia = {
 
 	allow = {
 		can_create_empire = yes
+
+		trigger_if = {
+			limit = { ai = yes }
+
+			OR = {
+				culture_group = west_slavic
+				culture_group = baltic
+			}
+		}
 	}
 	
 	
-	k_estonia = {			# new with HF
+	k_estonia = {
 		color = { 125 75 75 }
 		color2 = { 255 255 255 }
 
@@ -165,7 +174,7 @@ e_baltia = {
 			}
 		}
 
-		d_sakala = {		# New with HF
+		d_sakala = {
 			color = { 140 60 60 }
 			color2 = { 255 255 255 }
 
@@ -352,7 +361,7 @@ e_baltia = {
 			}
 		}
 
-		d_latgale = {					# New with HF
+		d_latgale = {		
 			color = { 165 70 45 }
 			color2 = { 255 255 255 }
 
@@ -1004,7 +1013,7 @@ e_baltia = {
 				can_create_duchy = yes
 			}
 
-			c_dobrzyn = {		# New with HF
+			c_dobrzyn = {
 				color = { 200 60 20 }
 				color2 = { 255 255 255 }
 
@@ -1030,7 +1039,7 @@ e_baltia = {
 				b_inowroclaw = {}
 			}
 
-			c_sieradz = {				# new with HF
+			c_sieradz = {	
 				color = { 210 75 10 }
 				color2 = { 255 255 255 }
 
@@ -1055,7 +1064,7 @@ e_baltia = {
 				b_rozprza = {}
 			}
 
-			c_wielun = {				# new with HF
+			c_wielun = {	
 				color = { 180 60 25 }
 				color2 = { 255 255 255 }
 
@@ -1104,7 +1113,7 @@ e_baltia = {
 				b_czestochowa = {}
 			}
 
-			c_lublin = {			# New with HF
+			c_lublin = {
 				color = { 147 40 2 }
 				color2 = { 255 255 255 }
 
@@ -1192,7 +1201,7 @@ e_baltia = {
 				b_tluszoz = {}
 			}
 
-			c_lomza = {			# New with HF
+			c_lomza = {
 				color = { 127 0 70 }
 				color2 = { 255 255 255 }
 

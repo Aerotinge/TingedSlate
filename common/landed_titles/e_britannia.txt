@@ -2726,7 +2726,6 @@ e_britannia = {
 					is_titular = no
 				}
 
-
 				trigger_if = {
 					limit = { ai = yes }
 

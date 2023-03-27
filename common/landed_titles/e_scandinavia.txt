@@ -592,7 +592,7 @@ e_scandinavia = {
 				b_hiittenharju = {}
 			}
 
-			c_karjaa = {		# New with HF
+			c_karjaa = {
 				color = { 188 73 78 }
 				color2 = { 255 255 255 }
 
@@ -657,7 +657,7 @@ e_scandinavia = {
 			norwegian = "Karelen"
 			russian = "Kareliya"
 
-			c_pomorye = {		# new with HF
+			c_pomorye = {
 				color = { 145 35 35 }
 				color2 = { 255 255 255 }
 
@@ -767,7 +767,7 @@ e_scandinavia = {
 				b_pryazha = {}
 			}
 
-			c_sortavala = {		# new with HF
+			c_sortavala = {
 				color = { 192 76 76 }
 				color2 = { 255 255 255 }
 
@@ -822,7 +822,7 @@ e_scandinavia = {
 			sami = Pohjanmaa
 			estonian = Pohjanmaa
 
-			c_kainuu = {		# New with HF
+			c_kainuu = {
 				color = { 152 86 86 }
 				color2 = { 255 255 255 }
 
@@ -876,7 +876,7 @@ e_scandinavia = {
 				b_veteli = {}
 			}
 
-			c_oulu = {		# New with HF
+			c_oulu = {
 				color = { 152 76 76 }
 				color2 = { 255 255 255 }
 
@@ -921,7 +921,7 @@ e_scandinavia = {
 			}
 		}
 
-		d_savonia = {		# New with HF
+		d_savonia = {
 			color = { 110 5 5 }
 			color2 = { 255 255 255 }
 
@@ -931,7 +931,7 @@ e_scandinavia = {
 				can_create_duchy = yes
 			}
 
-			c_joensuu = {		# New with HF
+			c_joensuu = {
 				color = { 140 10 10 }
 				color2 = { 255 255 255 }
 
@@ -964,7 +964,7 @@ e_scandinavia = {
 				b_pyhaselka = {}
 			}
 
-			c_kuopio = {		# New with HF
+			c_kuopio = {
 				color = { 150 10 10 }
 				color2 = { 255 255 255 }
 
@@ -977,7 +977,7 @@ e_scandinavia = {
 				b_ruokovesi = {} # lake name
 			}
 
-			c_laukaa = {		# New with HF
+			c_laukaa = {
 				color = { 130 10 10 }
 				color2 = { 255 255 255 }
 

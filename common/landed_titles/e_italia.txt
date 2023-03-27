@@ -397,9 +397,8 @@ e_italia = {
 		dignity = 200 # Never want the Republic of Genoa to change primary title
 
 		allow = {
-			can_create_kingdom = yes
-
 			is_republic = yes
+			can_create_kingdom = yes
 
 			k_genoa = {
 				show_scope_change = no
@@ -922,9 +921,8 @@ e_italia = {
 		dignity = 200 # Never want the Republic of Pisa to change primary title
 
 		allow = {
-			can_create_kingdom = yes
-
 			is_republic = yes
+			can_create_kingdom = yes
 
 			FROM = {
 				show_scope_change = no
@@ -1419,9 +1417,8 @@ e_italia = {
 		dignity = 200 # Never want the Republic of Venice to change primary title
 
 		allow = {
-			can_create_kingdom = yes
-
 			is_republic = yes
+			can_create_kingdom = yes
 
 			FROM = {
 				show_scope_change = no
