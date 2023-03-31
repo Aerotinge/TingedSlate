@@ -197,12 +197,12 @@ on_offmap_monthly_pulse = {
 	events = {
 		EMP.12220 # pulse event for princes
 		# offmap_papacy
-		EMP.13251 # Preparing of an Ecumenical Synod - Failsafe check
-		EMP.13260 # Preparing of an Ecumenical Synod - Summon bishops
-		EMP.13270 # Opening of an Ecumenical Synod
-		EMP.13271 # Ecumenical Tombola
-		EMP.13290 # Closing of an Ecumenical Synod
-		EMP.13250 # Status changes to 'Synod'
+		# EMP.13251 # Preparing of an Ecumenical Synod - Failsafe check # Disabled, reopen this when event chain finished
+		# EMP.13260 # Preparing of an Ecumenical Synod - Summon bishops # Disabled, reopen this when event chain finished
+		# EMP.13270 # Opening of an Ecumenical Synod					# Disabled, reopen this when event chain finished
+		# EMP.13271 # Ecumenical Tombola								# Disabled, reopen this when event chain finished
+		# EMP.13290 # Closing of an Ecumenical Synod					# Disabled, reopen this when event chain finished
+		# EMP.13250 # Status changes to 'Synod'							# Disabled, reopen this when event chain finished
 	}
 }
 
@@ -211,7 +211,6 @@ on_offmap_monthly_pulse = {
 # FROM is offmap
 on_offmap_yearly_pulse = {
 	events = {
-		#EMP.13250 # Status changes to 'Synod'
 	}
 }
 

@@ -262,7 +262,7 @@ narrative_event = {
 	border = GFX_event_narrative_frame_religion
 	show_root = yes
 
-	is_triggered_only = yes # on_offmap_yearly_pulse, random_events
+	is_triggered_only = yes # on_offmap_yearly_pulse, random_events # Disabled
 	major = yes
 
 	min_age = 16
@@ -462,7 +462,7 @@ narrative_event = {
 	border = GFX_event_narrative_frame_religion
 	show_root = yes
 
-	is_triggered_only = yes # on_offmap_monthly_pulse
+	is_triggered_only = yes # on_offmap_monthly_pulse # Disabled
 	major = yes
 
 	trigger = {
@@ -529,7 +529,7 @@ narrative_event = {
 character_event = {
 	id = EMP.13260
 
-	is_triggered_only = yes # on_offmap_monthly_pulse
+	is_triggered_only = yes # on_offmap_monthly_pulse # Disabled
 	hide_window = yes
 
 	trigger = {
@@ -662,7 +662,7 @@ narrative_event = {
 	border = GFX_event_narrative_frame_religion
 	show_root = yes
 
-	is_triggered_only = yes # on_offmap_monthly_pulse
+	is_triggered_only = yes # on_offmap_monthly_pulse # Disabled
 	major = yes
 
 	trigger = {
@@ -769,7 +769,7 @@ narrative_event = {
 character_event = {
 	id = EMP.13271
 
-	is_triggered_only = yes # on_offmap_monthly_pulse
+	is_triggered_only = yes # on_offmap_monthly_pulse # Disabled
 	hide_window = yes
 
 	trigger = {
@@ -1169,7 +1169,7 @@ narrative_event = {
 	border = GFX_event_narrative_frame_religion
 	show_root = yes
 
-	is_triggered_only = yes # on_offmap_monthly_pulse
+	is_triggered_only = yes # on_offmap_monthly_pulse # Disabled
 	major = yes
 
 	trigger = {
@@ -1216,5 +1216,3 @@ narrative_event = {
 		# more
 	}
 }
-
-# Most beloved brethren,\nUrged by necessity, I, [Root.GetTitledName] by the permission of God chief bishop and prelate over the whole world, have come into these parts as an ambassador with a divine admonition to you, the servants of God.\nFreshly quickened by the divine correction, you must apply the strength of your righteousness concerns you as well as God.\nFor your brethren are in urgent need of your help.\nFor, as the most of you have heard, the [crusade_target.holder.Culture.GetName] and [crusade_target.holder.Religion.GetName] have conquered the territory of [crusade_target.GetBaseName]\nThey have killed and captured many christian, and have destroyed the churches.\n\nOn this account I, or rather the Lord, beseech you as Christ's heralds to  persuade all people of whatever rank, foot-soldiers and knights, poor and rich, to carry aid promptly to those Christians and to destroy that vile race from the lands of our friends.\nI say this to those who are present, it meant also for those who are absent.\nMoreover, Christ commands it.
