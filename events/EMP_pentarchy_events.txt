@@ -20,7 +20,10 @@ character_event = {
 
 	immediate = {
 		any_landed_title = {
-			limit = { tier = KING }
+			limit = {
+				tier = KING
+				is_primary_type_title = no
+			}
 
 			save_event_target_as = ecclesiastical_eparchy
 			set_de_jure_pentarch_title_effect = yes

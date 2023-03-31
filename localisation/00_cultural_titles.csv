@@ -354,12 +354,14 @@ pronoia_count_female_roman;Praetor;Praetor;Praetor;;Praetor;;;;;;;;;x
 pronoia_count_female_turkish;Zaim;Zaim;Zaim;;Zaim;;;;;;;;;x
 temple_baron_aztec;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
 temple_baron_aztec_reformed;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
-temple_baron_baltic_pagan;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
-temple_baron_baltic_pagan_reformed;Shaman;Chamane;Schamane;;Chamán;;;;;;;;;x
+temple_baron_baltic_pagan;Vaidila;Vaidila;Vaidila;;Vaidila;;;;;;;;x
+temple_baron_baltic_pagan_reformed;Vaidila;Vaidila;Vaidila;;Vaidila;;;;;;;;x
 temple_baron_bon_pagan;Lama;Lama;Lama;;Lama;;;;;;;;;x
 temple_baron_bon_pagan_reformed;Lama;Lama;Lama;;Lama;;;;;;;;;x
 temple_baron_buddhist;Bhikkhu;Bhikkhu;Bhikkhu;;Bhikkhu;;;;;;;;;x
 temple_baron_christian;Bishop;Évêque;Abt;;Obispo;;;;;;;;;x
+temple_baron_female_baltic_pagan;Vaidilute;Vaidilute;Vaidilut;;Vaidilute;;;;;;;;x
+temple_baron_female_baltic_pagan_reformed;Vaidilute;Vaidilute;Vaidilut;;Vaidilute;;;;;;;;x
 temple_baron_female_buddhist;Bhikshuni;Bhikshuni;Bhikshuni;;Bhikshuni;;;;;;;;;x
 temple_baron_female_christian;Bishop;Évêque;Bischof;;Obispo;;;;;;;;;x
 temple_baron_female_hellenic_pagan;Vestal;Vestale;Vestal;;Vestal;;;;;;;;;x

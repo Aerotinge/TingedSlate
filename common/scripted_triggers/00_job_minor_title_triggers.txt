@@ -504,14 +504,18 @@ can_be_spiritual_trigger = {
 		trigger_else_if = {
 			limit = {
 				has_pentarchy = yes
-				liege = {
-					any_vassal = {
-						liege = { rightful_religious_head = PREV }
-					}
+				OR = {
+					has_landed_title = b_alexandria
+					has_landed_title = b_antioch
+					has_landed_title = b_hagiasophia
+					has_landed_title = b_jerusalem
+					has_landed_title = b_roma
 				}
 			}
 
-			rightful_religious_head = THIS
+			liege = {
+				rightful_religious_head = PREV
+			}
 		}
 		trigger_else_if = {
 			limit = {
@@ -526,11 +530,12 @@ can_be_spiritual_trigger = {
 				}
 			}
 
-			liege = {
-				primary_title = {
-					any_de_jure_vassal_title = {
-						holder = PREVPREVPREV
-						is_primary_holder_title = yes
+			primary_title = {
+				kingdom = {
+					holder = FROMFROM
+					is_primary_holder_title = yes
+					persistent_event_target:pentarch_de_facto = {
+						title = THIS
 					}
 				}
 			}
@@ -565,6 +570,20 @@ can_be_spiritual_trigger = {
 			}
 			trigger_else = {
 				is_ruler = no
+			}
+		}
+
+		trigger_if = {
+			limit = {
+				has_pentarchy = yes
+				NOT = { has_global_flag = de_jure_pentarch_init }
+			}
+			liege = {
+				primary_title = {
+					any_de_jure_vassal_title = {
+						holder = PREVPREVPREV
+					}
+				}
 			}
 		}
 

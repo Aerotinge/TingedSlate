@@ -10,7 +10,7 @@
 # export_reformer_to_title_effect
 # rebuild_god_name_effect
 # convert_religion_failsafe_effect
-# abdicate_all_primary_type_titles_effect
+# abdicate_all_primary_type_titles_effect # Gotta remove this later, CleanSlate meh stuff
 
 add_sympathy_for_prevs_true_religion_effect = {
 	if = {

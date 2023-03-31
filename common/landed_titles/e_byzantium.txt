@@ -3437,7 +3437,8 @@ e_byzantium = {
 					pentarchy = orthodox
 					pentarchy = iconoclast
 					pentarchy = monothelite
-					pentarchy = paulician
+					pentarchy = miaphysite
+					pentarchy = monophysite
 					turkish = "Ayasofya"
 				}
 				b_galata = {}

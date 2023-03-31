@@ -249,6 +249,7 @@ christian = {
 		can_grant_invasion_cb = invasion
 		can_call_crusade = no
 		can_retire_to_monastery = yes
+		pentarchy = yes
 		priests_can_inherit = no
 	}
 	monophysite = {
@@ -281,6 +282,7 @@ christian = {
 		can_grant_invasion_cb = invasion
 		can_call_crusade = no
 		can_retire_to_monastery = yes
+		pentarchy = yes
 		priests_can_inherit = no
 	}
 
@@ -404,12 +406,12 @@ christian = {
 		intermarry = christian
 
 		autocephaly = yes
-		pentarchy = yes
 		can_call_crusade = no
 		can_excommunicate = yes
 		can_grant_divorce = yes
 		can_grant_invasion_cb = invasion
 		can_retire_to_monastery = yes
+		pentarchy = yes
 		priests_can_inherit = no
 	}
 	bogomilist = {
@@ -545,7 +547,6 @@ christian = {
 		can_grant_divorce = yes
 		can_grant_invasion_cb = invasion
 		can_retire_to_monastery = yes
-		pentarchy = yes
 		priests_can_inherit = no
 	}
 }

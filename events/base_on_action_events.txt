@@ -4115,6 +4115,16 @@ narrative_event = {
 							is_female = yes
 						}
 						preferred_limit = {
+							event_target:religious_head_title = {
+								capital_scope = {
+									any_province_holding = {
+										is_holy_site = ROOT
+										holder = PREVPREVPREV
+									}
+								}
+							}
+						}
+						preferred_limit = {
 							has_job_title = job_spiritual
 						}
 						preferred_limit = {
@@ -4180,6 +4190,16 @@ narrative_event = {
 							is_female = no
 						}
 						preferred_limit = {
+							event_target:religious_head_title = {
+								capital_scope = {
+									any_province_holding = {
+										is_holy_site = ROOT
+										holder = PREVPREVPREV
+									}
+								}
+							}
+						}
+						preferred_limit = {
 							has_job_title = job_spiritual
 						}
 						preferred_limit = {
@@ -4237,6 +4257,16 @@ narrative_event = {
 
 					random_vassal = {
 						limit = {}
+						preferred_limit = {
+							event_target:religious_head_title = {
+								capital_scope = {
+									any_province_holding = {
+										is_holy_site = ROOT
+										holder = PREVPREVPREV
+									}
+								}
+							}
+						}
 						preferred_limit = {
 							has_job_title = job_spiritual
 						}
@@ -4435,7 +4465,7 @@ narrative_event = {
 		if = {
 			limit = { religion = hellenic_pagan_reformed }
 
-			# If hellenic reformer owns Rome, Catholic faith loses MA.
+			# If hellenic reformer owns Rome, Catholic/Fraticelli faith loses MA.
 			if = {
 				limit = { completely_controls = c_roma }
 
@@ -4445,13 +4475,49 @@ narrative_event = {
 						years = 100
 					}
 				}
+				fraticelli = {
+					religion_authority = {
+						name = hellenic_resurgence
+						years = 100
+					}
+				}
 			}
 
-			# If hellenic reformer owns Constantinople, Orthodox faith loses MA.
+			# If hellenic reformer owns Constantinople, Orthodox/Iconoclast/Monothelite faith loses MA.
 			if = {
 				limit = { completely_controls = c_constantinopolis }
 
 				orthodox = {
+					religion_authority = {
+						name = hellenic_resurgence
+						years = 100
+					}
+				}
+				iconoclast = {
+					religion_authority = {
+						name = hellenic_resurgence
+						years = 100
+					}
+				}
+				monothelite = {
+					religion_authority = {
+						name = hellenic_resurgence
+						years = 100
+					}
+				}
+			}
+
+			# If hellenic reformer owns Alexandria, Miaphysite/Monophysite faith loses MA.
+			if = {
+				limit = { completely_controls = c_alexandria }
+
+				miaphysite = {
+					religion_authority = {
+						name = hellenic_resurgence
+						years = 100
+					}
+				}
+				monophysite = {
 					religion_authority = {
 						name = hellenic_resurgence
 						years = 100

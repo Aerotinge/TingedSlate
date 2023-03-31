@@ -622,10 +622,13 @@ targeted_decisions = {
 		}
 	}
 
-	give_child_special_baptism = {
+	give_child_special_baptism = { # ROOT is receiver, FROM is taker, FROMFROM is 3rd
 		filter = court
 		ai_target_filter = court
+		third_party_filter = all
 		ai_check_interval = 12
+
+		show_third_party_potential = no
 
 		is_high_prio = yes
 
@@ -633,7 +636,6 @@ targeted_decisions = {
 
 		from_potential = {
 			has_dlc = "Holy Fury"
-			independent = yes
 			higher_real_tier_than = DUKE
 
 			OR = {
@@ -650,13 +652,101 @@ targeted_decisions = {
 			religion = FROM
 			is_child_of = FROM
 			age < 2
-			prisoner = no
 
 			NOR = {
 				trait = baptized_by_bishop
 				trait = baptized_by_pope
 				trait = baptized_by_patriarch
 				trait = baptized_by_satan
+			}
+		}
+
+		third_party_potential = {
+			FROMFROM = {
+				trigger_if = {
+					limit = {
+						ROOT_FROM = {
+							society_member_of = the_satanists
+							has_society_currency_medium_trigger = yes
+						}
+					}
+					society_member_of = the_satanists
+					society_rank == 4
+				}
+				trigger_else_if = {
+					limit = {
+						#is_vassal_or_below_of = ROOT_FROM
+						vassal_of = ROOT_FROM
+					}
+					OR = {
+						is_cardinal = yes
+						is_antipope = yes
+						is_patriarch = yes
+						AND = {
+							government = theocracy_government
+							higher_real_tier_than = BARON
+						}
+					}
+					religion = ROOT_FROM
+				}
+				trigger_else_if = {
+					limit = { has_autocephaly = yes }
+					controls_religion = yes
+					religion = ROOT_FROM
+				}
+				trigger_else = {
+					ROOT = {
+						rightful_religious_head = FROMFROM
+					}
+				}
+			}
+		}
+
+		third_party_allow = {
+			show_only_failed_conditions = yes
+
+			FROMFROM = {
+				show_scope_change = no
+
+				block_general_event_trigger = no
+				is_ill = no
+			}
+		}
+
+		third_party_score = {
+			factor = 100
+
+			additive_modifier = {
+				value = 5
+				FROMFROM = {
+					higher_real_tier_than = BARON
+				}
+			}
+			additive_modifier = {
+				value = 5
+				FROMFROM = {
+					higher_real_tier_than = COUNT
+				}
+			}
+			additive_modifier = {
+				value = 5
+				FROMFROM = {
+					higher_real_tier_than = DUKE
+				}
+			}
+			additive_modifier = {
+				value = 20
+				FROMFROM = {
+					OR = {
+						is_cardinal = yes
+						is_antipope = yes
+						is_patriarch = yes
+					}
+				}
+			}
+			additive_modifier = {
+				value = 20
+				rightful_religious_head = FROMFROM
 			}
 		}
 
@@ -668,44 +758,15 @@ targeted_decisions = {
 				text = tooltip_baptizing_priest_exists
 
 				FROM = {
-					trigger_if = {
-						limit = { society_member_of = the_satanists }
-						has_society_currency_major_trigger = yes
-					}
-					trigger_else = {
+					OR = {
+						AND = {
+							society_member_of = the_satanists
+							has_society_currency_major_trigger = yes
+						}
+
 						NOR = {
 							trait = excommunicated
 							spouse = { trait = excommunicated }
-						}
-
-						OR = {
-							rightful_religious_head_scope = {
-								controls_religion = yes
-
-								OR = {
-									religion = catholic
-									religion = orthodox
-									religion = fraticelli
-								}
-
-								block_general_event_trigger = no
-							}
-
-							any_realm_character = {
-								is_theocracy = yes
-								religion = FROM
-								controls_religion = no
-								block_general_event_trigger = no
-
-								trigger_if = {
-									limit = { real_tier = BARON }
-
-									OR = {
-										is_cardinal = yes
-										is_antipope = yes
-									}
-								}
-							}
 						}
 					}
 				}
@@ -713,9 +774,61 @@ targeted_decisions = {
 		}
 
 		effect = {
+			save_event_target_as = baptizing_child
+
+			FROMFROM = {
+				save_event_target_as = scoped_baptizer
+				if = {
+					limit = {
+						ROOT_FROM = {
+							society_member_of = the_satanists
+						}
+						society_member_of = the_satanists
+						society_rank == 4
+					}
+					ROOT = { set_character_flag = flag_baptized_by_satan }
+				}
+				else_if = {
+					limit = {
+						OR = {
+							ROOT = {
+								rightful_religious_head = FROMFROM
+							}
+							is_patriarch = yes
+							AND = {
+								has_autocephaly = yes
+								controls_religion = yes
+							}
+						}
+					}
+					ROOT = { set_character_flag = flag_baptized_by_pope }
+				}
+				else = {
+					ROOT = { set_character_flag = flag_baptized_by_bishop }
+				}
+			}
+
 			FROM = {
-				set_character_flag = flag_baptizing_child
-				character_event = { id = HF.20108 }
+				if = {
+					limit = {
+						any_realm_character = {
+							religion = ROOT
+							is_theocracy = no
+							block_general_event_trigger = no
+
+							NOR = {
+								is_parent_of = ROOT_FROM
+								has_any_opinion_modifier = opinion_godfather
+								has_any_opinion_modifier = opinion_godmother
+							}
+						}
+					}
+
+					character_event = { id = HF.20101 } # Godparent pick
+				}
+				else = {
+					character_event = { id = HF.20103 } # Skip to baptism if no potential godparents are available.
+				}
 			}
 		}
 

@@ -1,0 +1,1048 @@
+# principal_holy_site_selection_score
+
+# AI logic for how far a holy site to the capital of ROOT
+# ROOT is the reformer, THIS is a holy_site
+# distance per step	:	50
+# Max distance		:	3950
+# steps				:	80
+principal_holy_site_selection_score = {
+	additive_modifier = {
+		value = 1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value == 0
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 50
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 100
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 150
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 200
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 250
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 300
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 350
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 400
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 450
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 500
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 550
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 600
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 650
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 700
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 750
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 800
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 850
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 900
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 950
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1000
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1050
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1100
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1150
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1200
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1250
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1300
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1350
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1400
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1450
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1500
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1550
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1600
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1650
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1700
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1750
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1800
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1850
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1900
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 1950
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2000
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2050
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2100
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2150
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2200
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2250
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2300
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2350
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2400
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2450
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2500
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2550
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2600
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2650
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2700
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2750
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2800
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2850
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2900
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 2950
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3000
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3050
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3100
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3150
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3200
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3250
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3300
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3350
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3400
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3450
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3500
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3550
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3600
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3650
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3700
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3750
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3800
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3850
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3900
+				}
+			}
+		}
+	}
+
+	additive_modifier = {
+		value = -1
+
+		ROOT = {
+			capital_scope = {
+				distance = {
+					target = PREVPREV
+					value > 3950
+				}
+			}
+		}
+	}
+}

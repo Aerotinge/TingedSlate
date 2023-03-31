@@ -1133,7 +1133,11 @@ e_italia = {
 				saxon = "Rom"
 
 				b_roma = {
-					pentarchy = yes
+					pentarchy = orthodox
+					pentarchy = iconoclast
+					pentarchy = monothelite
+					pentarchy = miaphysite
+					pentarchy = monophysite
 					used_for_dynasty_names = no
 
 					italian = "Roma"

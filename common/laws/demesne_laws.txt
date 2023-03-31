@@ -1222,7 +1222,10 @@ laws = {
 			real_tier = EMPEROR
 
 			holder_scope = {
-				government = feudal_government
+				OR = {
+					government = feudal_government
+					government = roman_imperial_government
+				}
 			}
 		}
 
