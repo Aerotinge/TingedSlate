@@ -636,6 +636,7 @@ targeted_decisions = {
 
 		from_potential = {
 			has_dlc = "Holy Fury"
+			independent = yes
 			higher_real_tier_than = DUKE
 
 			OR = {
@@ -652,6 +653,7 @@ targeted_decisions = {
 			religion = FROM
 			is_child_of = FROM
 			age < 2
+			prisoner = no
 
 			NOR = {
 				trait = baptized_by_bishop
