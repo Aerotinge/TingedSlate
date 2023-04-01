@@ -4136,7 +4136,7 @@ narrative_event = {
 					}
 
 					random_vassal = {
-						limit = {}
+						limit = { is_heresy_of = ROOT }
 						preferred_limit = {
 							event_target:religious_head_title = {
 								capital_scope = {
@@ -4211,6 +4211,7 @@ narrative_event = {
 
 					random_vassal = {
 						limit = {
+							is_heresy_of = ROOT
 							is_female = yes
 						}
 						preferred_limit = {
@@ -4287,6 +4288,7 @@ narrative_event = {
 
 					random_vassal = {
 						limit = {
+							is_heresy_of = ROOT
 							is_female = no
 						}
 						preferred_limit = {
