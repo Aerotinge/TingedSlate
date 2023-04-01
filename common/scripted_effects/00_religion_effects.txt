@@ -2961,7 +2961,7 @@ rebuild_god_name_effect = {
 				}
 			}
 
-			# Runs in religion title scope, for persistent_event_target stored inside
+			# Runs in religion title scope, for the sack of persistent_event_target is stored in it
 			persistent_event_target:religion_title = {
 				if = {
 					limit = { # Reformer himself, but only if he is not becoming the High God due to synergy

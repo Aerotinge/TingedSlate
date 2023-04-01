@@ -4045,16 +4045,46 @@ narrative_event = {
 		trigger_switch = {
 			on_trigger = religion
 
-			norse_pagan_reformed        = { norse_pagan = { set_flag = has_been_reformed } }
-			tengri_pagan_reformed       = { tengri_pagan = { set_flag = has_been_reformed } }
-			baltic_pagan_reformed       = { baltic_pagan = { set_flag = has_been_reformed } }
-			finnish_pagan_reformed      = { finnish_pagan = { set_flag = has_been_reformed } }
-			aztec_pagan_reformed        = { aztec_pagan = { set_flag = has_been_reformed } }
-			slavic_pagan_reformed       = { slavic_pagan = { set_flag = has_been_reformed } }
-			west_african_pagan_reformed = { west_african_pagan = { set_flag = has_been_reformed } }
-			zun_pagan_reformed          = { zun_pagan = { set_flag = has_been_reformed } }
-			bon_pagan_reformed          = { bon_pagan = { set_flag = has_been_reformed } }
-			hellenic_pagan_reformed     = { hellenic_pagan = { set_flag = has_been_reformed } }
+			norse_pagan_reformed = {
+				norse_pagan = { set_flag = has_been_reformed }
+				d_norse_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			tengri_pagan_reformed = {
+				tengri_pagan = { set_flag = has_been_reformed }
+				d_tengri_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			baltic_pagan_reformed = {
+				baltic_pagan = { set_flag = has_been_reformed }
+				d_baltic_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			finnish_pagan_reformed = {
+				finnish_pagan = { set_flag = has_been_reformed }
+				d_finnish_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			aztec_pagan_reformed = {
+				aztec_pagan = { set_flag = has_been_reformed }
+				d_aztec_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			slavic_pagan_reformed = {
+				slavic_pagan = { set_flag = has_been_reformed }
+				d_slavic_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			west_african_pagan_reformed = {
+				west_african_pagan = { set_flag = has_been_reformed }
+				d_west_african_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			zun_pagan_reformed = {
+				zun_pagan = { set_flag = has_been_reformed }
+				d_zun_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			bon_pagan_reformed = {
+				bon_pagan = { set_flag = has_been_reformed }
+				d_bon_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
+			hellenic_pagan_reformed = {
+				hellenic_pagan = { set_flag = has_been_reformed }
+				k_hellenic_pagan_reformed = { save_event_target_as = religious_head_title }
+			}
 		}
 
 		if = {
@@ -4070,35 +4100,104 @@ narrative_event = {
 				}
 			}
 
-			trigger_switch  = {
-				on_trigger = religion
-
-				norse_pagan_reformed        = { d_norse_pagan_reformed = { save_event_target_as = religious_head_title } }
-				tengri_pagan_reformed       = { d_tengri_pagan_reformed = { save_event_target_as = religious_head_title } }
-				baltic_pagan_reformed       = { d_baltic_pagan_reformed = { save_event_target_as = religious_head_title } }
-				finnish_pagan_reformed      = { d_finnish_pagan_reformed = { save_event_target_as = religious_head_title } }
-				aztec_pagan_reformed        = { d_aztec_pagan_reformed = { save_event_target_as = religious_head_title } }
-				slavic_pagan_reformed       = { d_slavic_pagan_reformed = { save_event_target_as = religious_head_title } }
-				west_african_pagan_reformed = { d_west_african_pagan_reformed = { save_event_target_as = religious_head_title } }
-				zun_pagan_reformed          = { d_zun_pagan_reformed = { save_event_target_as = religious_head_title } }
-				bon_pagan_reformed          = { d_bon_pagan_reformed = { save_event_target_as = religious_head_title } }
-				hellenic_pagan_reformed     = { k_hellenic_pagan_reformed = { save_event_target_as = religious_head_title } }
-			}
-
 			# Set religion head title as landless if religion has theocratic religion head
 			set_title_landless = {
 				title = event_target:religious_head_title
 				status = yes
 			}
+		}
+
+		if = {
+			limit = {
+				OR = {
+					has_religion_feature = religion_theocratic_head
+					has_religion_feature = religion_autocephaly
+				}
+			}
 
 			if = {
 				limit = {
-					has_religion_feature = religion_matriarchal
+					religion_allows_female_temple_holders = yes
+					religion_allows_male_temple_holders = yes
 				}
 
 				if = {
 					limit = {
 						any_vassal = {
+							is_heresy_of = ROOT
+							OR = {
+								government = theocracy_government
+								AND = {
+									is_landed = no
+									has_job_title = job_spiritual
+								}
+							}
+						}
+					}
+
+					random_vassal = {
+						limit = {}
+						preferred_limit = {
+							event_target:religious_head_title = {
+								capital_scope = {
+									any_province_holding = {
+										is_holy_site = ROOT
+										holder = PREVPREVPREV
+									}
+								}
+							}
+						}
+						preferred_limit = {
+							has_job_title = job_spiritual
+						}
+						preferred_limit = {
+							any_demesne_title = {
+								is_holy_site = ROOT
+							}
+						}
+						preferred_limit = {
+							government = theocracy_government
+						}
+
+						# Workaround for automatic usurption of theocratic characters
+						set_character_flag = convert_abandon_heresy
+						convert_religion_failsafe_effect = yes
+						event_target:religious_head_title = {
+							copy_title_history = d_dummy # Clean up history...
+							grant_title_no_opinion = {
+								target = PREV
+								type = created
+							}
+						}
+					}
+				}
+				else = {
+					create_random_priest = {
+						random_traits = yes
+						religion = THIS
+						culture = THIS
+						female = random
+					}
+					new_character = {
+						event_target:religious_head_title = {
+							copy_title_history = d_dummy # Clean up history...
+							grant_title_no_opinion = {
+								target = PREV
+								type = created
+							}
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					religion_allows_male_temple_holders = no
+				}
+
+				if = {
+					limit = {
+						any_vassal = {
+							is_heresy_of = ROOT
 							is_female = yes
 							OR = {
 								government = theocracy_government
@@ -4168,12 +4267,13 @@ narrative_event = {
 			}
 			else_if = {
 				limit = {
-					has_religion_feature = religion_patriarchal
+					religion_allows_female_temple_holders = no
 				}
 
 				if = {
 					limit = {
 						any_vassal = {
+							is_heresy_of = ROOT
 							is_female = no
 							OR = {
 								government = theocracy_government
@@ -4229,73 +4329,6 @@ narrative_event = {
 						religion = THIS
 						culture = THIS
 						female = no
-					}
-					new_character = {
-						event_target:religious_head_title = {
-							copy_title_history = d_dummy # Clean up history...
-							grant_title_no_opinion = {
-								target = PREV
-								type = created
-							}
-						}
-					}
-				}
-			}
-			else = {
-				if = {
-					limit = {
-						any_vassal = {
-							OR = {
-								government = theocracy_government
-								AND = {
-									is_landed = no
-									has_job_title = job_spiritual
-								}
-							}
-						}
-					}
-
-					random_vassal = {
-						limit = {}
-						preferred_limit = {
-							event_target:religious_head_title = {
-								capital_scope = {
-									any_province_holding = {
-										is_holy_site = ROOT
-										holder = PREVPREVPREV
-									}
-								}
-							}
-						}
-						preferred_limit = {
-							has_job_title = job_spiritual
-						}
-						preferred_limit = {
-							any_demesne_title = {
-								is_holy_site = ROOT
-							}
-						}
-						preferred_limit = {
-							government = theocracy_government
-						}
-
-						# Workaround for automatic usurption of theocratic characters
-						set_character_flag = convert_abandon_heresy
-						convert_religion_failsafe_effect = yes
-						event_target:religious_head_title = {
-							copy_title_history = d_dummy # Clean up history...
-							grant_title_no_opinion = {
-								target = PREV
-								type = created
-							}
-						}
-					}
-				}
-				else = {
-					create_random_priest = {
-						random_traits = yes
-						religion = THIS
-						culture = THIS
 					}
 					new_character = {
 						event_target:religious_head_title = {
@@ -4396,8 +4429,7 @@ narrative_event = {
 					zun_pagan_reformed          = {}
 				}
 			}
-			else_if = { # Else
-				limit = { has_religion_features = yes }
+			else = { # Else
 				trigger_switch = {
 					on_trigger = religion
 
