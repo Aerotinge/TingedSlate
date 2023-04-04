@@ -521,7 +521,12 @@ laws = {
 		potential = {
 			has_dlc = "Conclave"
 
-			holder_scope = { is_feudal = yes }
+			holder_scope = {
+				OR = {
+					government = feudal_government
+					government = roman_imperial_government
+				}
+			}
 		}
 
 		allow = {
@@ -634,10 +639,7 @@ laws = {
 			trigger_if = {
 				limit = {
 					holder_scope = {
-						NOR = {
-							government = chinese_imperial_government
-							has_religion_feature = religion_cosmopolitan
-						}
+						NOT = { has_religion_feature = religion_cosmopolitan }
 					}
 				}
 

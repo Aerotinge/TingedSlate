@@ -225,6 +225,15 @@ de_jure_laws = {
 
 			hidden_effect = {
 				revoke_crown_authority_effect = yes
+
+				# Abolish viceroyalty law if CA is lowered
+				if = {
+					limit = {
+						has_law = vice_royalty_1
+						is_law_allowed = vice_royalty_0
+					}
+					add_law = vice_royalty_0
+				}
 			}
 		}
 
@@ -314,6 +323,16 @@ de_jure_laws = {
 
 			hidden_effect = {
 				revoke_crown_authority_effect = yes
+				
+				# Abolish viceroyalty law if CA is lowered
+				if = {
+					limit = {
+						has_law = vice_royalty_1
+						is_law_allowed = vice_royalty_0
+						NOT = { has_law = centralization_4 }
+					}
+					add_law = vice_royalty_0
+				}
 			}
 		}
 

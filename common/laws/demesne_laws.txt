@@ -220,6 +220,15 @@ laws = {
 			# log = "centralization_2 ([This.GetFullBaseName])"
 			hidden_effect = {
 				revoke_centralization_effect = yes
+
+				# Abolish viceroyalty law if centralization is lowered
+				if = {
+					limit = {
+						has_law = vice_royalty_1
+						is_law_allowed = vice_royalty_0
+					}
+					add_law = vice_royalty_0
+				}
 			}
 		}
 
@@ -278,6 +287,16 @@ laws = {
 			# log = "centralization_3 ([This.GetFullBaseName])"
 			hidden_effect = {
 				revoke_centralization_effect = yes
+
+				# Abolish viceroyalty law if centralization is lowered
+				if = {
+					limit = {
+						has_law = vice_royalty_1
+						is_law_allowed = vice_royalty_0
+						NOT = { has_law = crown_authority_4 }
+					}
+					add_law = vice_royalty_0
+				}
 			}
 		}
 
@@ -1278,7 +1297,21 @@ laws = {
 		}
 
 		allow = {
-			has_law = crown_authority_4
+			trigger_if = {
+				limit = {
+					holder_scope = {
+						NOT = { has_religion_feature = religion_cosmopolitan }
+					}
+				}
+
+				has_law = crown_authority_4
+			}
+			trigger_else = {
+				OR = {
+					has_law = crown_authority_3
+					has_law = crown_authority_4
+				}
+			}
 		}
 
 		pass_effect = {

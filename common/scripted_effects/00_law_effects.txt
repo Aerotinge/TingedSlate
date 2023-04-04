@@ -236,33 +236,7 @@ increased_council_power_effect = {
 
 # Crown Authority
 decreased_crown_authority_effect = {
-	# Abolish viceroyalty law if CA is lowered
-	if = {
-		limit = {
-			is_law_potential = vice_royalty_0
-			OR = {
-				has_law = crown_authority_3
-				AND = {
-					has_law = crown_authority_4
-					has_law = centralization_3
-				}
-			}
-		}
-		add_law = vice_royalty_0
-	}
-	else_if = {
-		limit = {
-			NOT = { is_law_potential = vice_royalty_0 }
-			OR = {
-				has_law = crown_authority_3
-				AND = {
-					has_law = crown_authority_4
-					has_law = centralization_3
-				}
-			}
-		}
-		revoke_vice_royalty_effect = yes
-	}
+	# Nothing here in Vanilla
 }
 
 increased_crown_authority_effect = {
