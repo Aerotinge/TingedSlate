@@ -972,6 +972,8 @@ religion_doctrine = {
 				has_selected_religion_feature = religion_equal
 				has_selected_religion_feature = religion_feature_bon
 				has_selected_religion_feature = religion_meritocratic
+
+				FROM = { has_minor_deity_female_trigger = yes }
 			}
 		}
 
@@ -1115,6 +1117,8 @@ religion_doctrine = {
 						government = merchant_republic_government
 					}
 				}
+
+				FROM = { has_minor_deity_male_trigger = yes }
 			}
 		}
 
