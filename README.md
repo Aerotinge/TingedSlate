@@ -17,5 +17,9 @@ tags=
 }
 picture="banner.jpg"
 replace_path = "gfx/loadingscreens"
+replace_path = "common/job_actions"
+replace_path = "common/job_titles"
 replace_path = "common/buildings"
+replace_path = "history/offmap_powers"
+replace_path = "interface/coat_of_arms"
 ```
