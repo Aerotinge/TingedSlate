@@ -15853,6 +15853,7 @@ character_event = {
 					}
 				}
 
+				#log = "[This.GetName] is going to transfer to [Root.GetBestName]"
 				transfer_artifact = {
 					from = PREV
 					to = ROOT
@@ -15946,127 +15947,127 @@ character_event = {
 		# Add special dead_crown trait to make the dead Emperors wear their special artifacts even after they've given up the artifact itself
 		if = {
 			limit = {
-				is_feudal = yes
-				primary_title = { title = e_hre }
-				OR = {
-					religion = catholic
-					religion = fraticelli
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_hre
 				}
-				any_artifact = { artifact_type = crown_hre }
 			}
 			add_trait = dead_crown_hre
 		}
 		else_if = {
 			limit = {
-				is_feudal = yes
-				primary_title = {
-					OR = {
-						title = e_byzantium
-						title = e_nicaea
-					}
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_byzantine
 				}
-				any_artifact = { artifact_type = crown_byzantine }
 			}
 			add_trait = dead_crown_byzantine
 		}
 		else_if = {
 			limit = {
-				is_feudal = yes
-				primary_title = { title = e_persia }
-				any_artifact = { artifact_type = crown_pahlavi }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_pahlavi
+				}
 			}
 			add_trait = dead_crown_pahlavi
 		}
 		else_if = {
 			limit = {
-				primary_title = {
-					OR = {
-						title = k_italy
-						title = k_lombardy
-					}
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = iron_crown_of_lombardy
 				}
-				religion_group = christian
-				any_artifact = { artifact_type = iron_crown_of_lombardy }
 			}
 			add_trait = dead_iron_crown_lombardy
 		}
 		else_if = {
 			limit = {
-				has_landed_title = k_hellenic_pagan_reformed
-				religion = hellenic_pagan_reformed
-				any_artifact = { artifact_type = scepter_hellenic_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = scepter_hellenic_fylkir
+				}
 			}
 			add_trait = dead_scepter_hellenic_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_norse_pagan_reformed
-				religion = norse_pagan_reformed
-				any_artifact = { artifact_type = crown_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_fylkir
+				}
 			}
 			add_trait = dead_crown_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_tengri_pagan_reformed
-				religion = tengri_pagan_reformed
-				any_artifact = { artifact_type = crown_tengri_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_tengri_fylkir
+				}
 			}
 			add_trait = dead_crown_tengri_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_finnish_pagan_reformed
-				religion = finnish_pagan_reformed
-				any_artifact = { artifact_type = crown_finnish_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_finnish_fylkir
+				}
 			}
 			add_trait = dead_crown_finnish_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_west_african_pagan_reformed
-				religion = west_african_pagan_reformed
-				any_artifact = { artifact_type = crown_west_african_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_west_african_fylkir
+				}
 			}
 			add_trait = dead_crown_west_african_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_slavic_pagan_reformed
-				religion = slavic_pagan_reformed
-				any_artifact = { artifact_type = crown_slavic_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_slavic_fylkir
+				}
 			}
 			add_trait = dead_crown_slavic_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_baltic_pagan_reformed
-				religion = baltic_pagan_reformed
-				any_artifact = { artifact_type = crown_romuva_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_romuva_fylkir
+				}
 			}
 			add_trait = dead_crown_romuva_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_bon_pagan_reformed
-				religion = bon_pagan_reformed
-				any_artifact = { artifact_type = scepter_bon_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = scepter_bon_fylkir
+				}
 			}
 			add_trait = dead_scepter_bon_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_zun_pagan_reformed
-				religion = zun_pagan_reformed
-				any_artifact = { artifact_type = crown_zun_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_zun_fylkir
+				}
 			}
 			add_trait = dead_crown_zun_fylkir
 		}
 		else_if = {
 			limit = {
-				has_landed_title = d_aztec_pagan_reformed
-				religion = aztec_pagan_reformed
-				any_artifact = { artifact_type = crown_aztec_fylkir }
+				any_artifact = {
+					is_artifact_equipped = yes
+					artifact_type = crown_aztec_fylkir
+				}
 			}
 			add_trait = dead_crown_aztec_fylkir
 		}
@@ -16092,36 +16093,25 @@ character_event = {
 					title = d_zun_pagan_reformed
 					title = d_aztec_pagan_reformed
 				}
-
-				current_heir = {
-					NOT = { dynasty = ROOT }
-				}
 			}
 
 			current_heir = {
-				save_event_target_as = worthy_crown
+				save_event_target_as = crown_heir
+				#log = "[Prev.GetName] has [This.GetBestName] as crown_heir"
 			}
 
 			ROOT = {
 				any_artifact = {
 					limit = {
 						trigger_if = {
-							limit = {
-								PREVPREV = {
-									title = e_hre
-								}
-							}
+							limit = { PREVPREV = { title = e_hre } }
 							artifact_type = crown_hre
 						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = e_persia
-								}
-							}
+						trigger_if = {
+							limit = { PREVPREV = { title = e_persia } }
 							artifact_type = crown_pahlavi
 						}
-						trigger_else_if = {
+						trigger_if = {
 							limit = {
 								PREVPREV = {
 									OR = {
@@ -16132,7 +16122,43 @@ character_event = {
 							}
 							artifact_type = crown_byzantine
 						}
-						trigger_else_if = {
+						trigger_if = {
+							limit = { PREVPREV = { title = d_norse_pagan_reformed }}
+							artifact_type = crown_fylkir
+						}
+						trigger_if = {
+							limit = { PREVPREV = { title = d_tengri_pagan_reformed }}
+							artifact_type = crown_tengri_fylkir
+						}
+						trigger_if = {
+							limit = { PREVPREV = { title = d_west_african_pagan_reformed } }
+							artifact_type = crown_west_african_fylkir
+						}
+						trigger_if = {
+							limit = { PREVPREV = { title = d_zun_pagan_reformed } }
+							artifact_type = crown_zun_fylkir
+						}
+						trigger_if = {
+							limit = { PREVPREV = { title = d_slavic_pagan_reformed }}
+							artifact_type = crown_slavic_fylkir
+						}
+						trigger_if = {
+							limit = { PREVPREV = { title = d_baltic_pagan_reformed } }
+							artifact_type = crown_romuva_fylkir
+						}
+						trigger_if = {
+							limit = { PREVPREV = { title = d_aztec_pagan_reformed } }
+							artifact_type = crown_aztec_fylkir
+						}
+						trigger_if = {
+							limit = { PREVPREV = { title = d_bon_pagan_reformed } }
+							artifact_type = scepter_bon_fylkir
+						}
+						trigger_if = {
+							limit = { PREVPREV = { title = k_hellenic_pagan_reformed } }
+							artifact_type = scepter_hellenic_fylkir
+						}
+						trigger_if = {
 							limit = {
 								PREVPREV = {
 									OR = {
@@ -16143,83 +16169,17 @@ character_event = {
 							}
 							artifact_type = iron_crown_of_lombardy
 						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = d_norse_pagan_reformed
-								}
-							}
-							artifact_type = crown_fylkir
-						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = d_tengri_pagan_reformed
-								}
-							}
-							artifact_type = crown_tengri_fylkir
-						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = d_west_african_pagan_reformed
-								}
-							}
-							artifact_type = crown_west_african_fylkir
-						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = d_zun_pagan_reformed
-								}
-							}
-							artifact_type = crown_zun_fylkir
-						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = d_slavic_pagan_reformed
-								}
-							}
-							artifact_type = crown_slavic_fylkir
-						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = d_baltic_pagan_reformed
-								}
-							}
-							artifact_type = crown_romuva_fylkir
-						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = d_aztec_pagan_reformed
-								}
-							}
-							artifact_type = crown_aztec_fylkir
-						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = d_bon_pagan_reformed
-								}
-							}
-							artifact_type = scepter_bon_fylkir
-						}
-						trigger_else_if = {
-							limit = {
-								PREVPREV = {
-									title = k_hellenic_pagan_reformed
-								}
-							}
-							artifact_type = scepter_hellenic_fylkir
-						}
 					}
 
-					transfer_artifact = {
-						from = ROOT
-						to = event_target:worthy_crown
+					if = {
+						limit = { event_target:crown_heir = { always = yes } }
+						
+						#log = "[This.GetName] is going to transfer to [crown_heir.GetBestName]"
+						transfer_artifact = {
+							from = ROOT
+							to = event_target:crown_heir
+						}
+						clear_event_target = crown_heir
 					}
 				}
 			}
@@ -16397,10 +16357,12 @@ character_event = {
 					}
 				}
 
+				#log = "[This.GetName] is going to transfer to [Root.GetBestName]"
 				transfer_artifact = {
 					from = ROOT_FROMFROM
 					to = ROOT
 				}
+				break = yes # Run once per title
 			}
 		}
 	}

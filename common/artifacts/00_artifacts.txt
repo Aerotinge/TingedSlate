@@ -1651,24 +1651,20 @@ crown_byzantine = {
 
 		trigger_if = {
 			limit = {
-				e_byzantium = { is_titular = no }
+				has_landed_title = e_nicaea
 			}
 
-			has_landed_title = e_byzantium
+			has_landed_title = e_nicaea
 		}
 		trigger_else_if = {
 			limit = {
-				e_roman_empire = { is_titular = no }
+				has_landed_title = e_roman_empire
 			}
 
 			has_landed_title = e_roman_empire
 		}
-		trigger_else_if = {
-			limit = {
-				e_nicaea = { is_titular = no }
-			}
-
-			has_landed_title = e_nicaea
+		trigger_else = {
+			has_landed_title = e_byzantium
 		}
 	}
 
@@ -1717,6 +1713,7 @@ crown_fylkir = {
 
 	active = {
 		has_landed_title = d_norse_pagan_reformed
+		religion = norse_pagan_reformed
 	}
 
 	allowed_gift = {
@@ -1741,6 +1738,7 @@ crown_tengri_fylkir = {
 
 	active = {
 		has_landed_title = d_tengri_pagan_reformed
+		religion = tengri_pagan_reformed
 	}
 
 	allowed_gift = {
@@ -1765,6 +1763,7 @@ crown_finnish_fylkir = {
 
 	active = {
 		has_landed_title = d_finnish_pagan_reformed
+		religion = finnish_pagan_reformed
 	}
 
 	allowed_gift = {
@@ -1789,6 +1788,7 @@ crown_west_african_fylkir = {
 	quality = 4
 	active = {
 		has_landed_title = d_west_african_pagan_reformed
+		religion = west_african_pagan_reformed
 	}
 	flags = { religious unique crown jewelry crown_jewel }
 	stacking = no
@@ -1809,6 +1809,7 @@ crown_zun_fylkir = {
 
 	active = {
 		has_landed_title = d_zun_pagan_reformed
+		religion = zun_pagan_reformed
 	}
 
 	allowed_gift = {
@@ -1833,6 +1834,7 @@ crown_slavic_fylkir = {
 
 	active = {
 		has_landed_title = d_slavic_pagan_reformed
+		religion = slavic_pagan_reformed
 	}
 
 	allowed_gift = {
@@ -1857,6 +1859,7 @@ crown_romuva_fylkir = {
 
 	active = {
 		has_landed_title = d_baltic_pagan_reformed
+		religion = baltic_pagan_reformed
 	}
 
 	allowed_gift = {
@@ -1881,6 +1884,7 @@ crown_aztec_fylkir = {
 
 	active = {
 		has_landed_title = d_aztec_pagan_reformed
+		religion = aztec_pagan_reformed
 	}
 
 	allowed_gift = {
@@ -1905,6 +1909,7 @@ scepter_bon_fylkir = {
 
 	active = {
 		has_landed_title = d_bon_pagan_reformed
+		religion = bon_pagan_reformed
 	}
 
 	allowed_gift = {
@@ -1929,6 +1934,7 @@ scepter_hellenic_fylkir = {
 
 	active = {
 		has_landed_title = k_hellenic_pagan_reformed
+		religion = hellenic_pagan_reformed
 	}
 
 	allowed_gift = {

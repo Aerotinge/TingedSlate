@@ -335,7 +335,10 @@ save_beloved_character_effect = {
 transfer_crown_on_abdication_effect = {
 	current_heir = {
 		save_event_target_as = crown_heir
+		wealth = PREV # Transfer gold to crown_heir
 	}
+
+	clear_wealth = yes
 
 	any_artifact = {
 		limit = {
@@ -346,12 +349,27 @@ transfer_crown_on_abdication_effect = {
 
 			trigger_if = {
 				limit = { artifact_type = crown_byzantine }
-				PREV = { has_landed_title = e_byzantium }
+				PREV = {
+					OR = {
+						has_landed_title = e_byzantium
+						has_landed_title = e_nicaea
+					}
+				}
 			}
 
 			trigger_if = {
 				limit = { artifact_type = crown_pahlavi }
 				PREV = { has_landed_title = e_persia }
+			}
+
+			trigger_if = {
+				limit = { artifact_type = iron_crown_of_lombardy }
+				PREV = {
+					OR = {
+						has_landed_title = k_italy
+						has_landed_title = k_lombardy
+					}
+				}
 			}
 
 			trigger_if = {
