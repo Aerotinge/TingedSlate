@@ -90,3 +90,71 @@ character_event = {
 		recalc_succession = yes
 	}
 }
+
+character_event = {
+	id = EMP.20120
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_new_holder_inheritance
+
+	trigger = {
+		is_priest = yes
+		religion_head = {
+			OR = {
+				has_landed_title = k_papacy
+				has_landed_title = d_fraticelli
+			}
+			current_heir = {
+				character = FROMFROM
+			}
+		}
+	}
+
+	immediate = {
+		#log = "[This.GetBestName] fires EMP.20120"
+		#FROMFROM = { log = "FROMFROM: [This.GetBestName]" }
+		# FROMFROM is probably going to be new Pope
+		# Give ROOT an one day dummy opnion as a token so FROMFROM can resolve later.
+		add_character_modifier = {
+			name = pope_ex_see_successor
+			days = 1
+		}
+	}
+}
+
+character_event = {
+	id = EMP.20121
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_new_holder_inheritance
+
+	trigger = {
+		controls_religion = yes
+		FROM = {
+			OR = {
+				title = k_papacy
+				title = d_fraticelli
+			}
+		}
+		any_claim = {
+			holder_scope = {
+				has_character_modifier = pope_ex_see_successor
+			}
+		}
+	}
+
+	immediate = {
+		any_claim = {
+			limit = {
+				holder_scope = {
+					has_character_modifier = pope_ex_see_successor
+				}
+			}
+			#log = "Claim - [This.GetFullName] is going to be removed"
+			ROOT = { remove_claim = PREV }
+		}
+		# event_target:ex_see_successor = { remove_character_modifier = pope_ex_see_successor } # Just leave it fade by time
+	}
+}

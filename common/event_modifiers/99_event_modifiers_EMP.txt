@@ -46,3 +46,10 @@ pet_warhorse = {
 		retreat = 0.05
 	}
 }
+
+pope_ex_see_successor = {
+	is_visible = {
+		#always = no
+	}
+	icon = 19
+}

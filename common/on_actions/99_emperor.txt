@@ -101,7 +101,11 @@ on_new_holder = {
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder_inheritance = {
 	events = {
-		EMP.20520 # Reevaluate Pentarchy if FROM is the five sees
+		# Fix for new Pope still claims his ex seat
+		EMP.20120
+		EMP.20121
+		# Reevaluate Pentarchy if FROM is the five sees
+		EMP.20520
 		# Holy Roman Empire
 		EMP.12020
 		EMP.12021	#
