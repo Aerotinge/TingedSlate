@@ -1,41 +1,4 @@
-43.1.1 = {
-	holder = 161518 #Markos I
-	government = theocracy_government
-}
-
-328.1.1 = {
-	holder = 161520 #Athanasios I
-}
-
-412.1.1 = {
-	holder = 161508 #Kyril I
-}
-
-490.1.1 = {
-	holder = 161521 #Athanasios II
-}
-
-496.1.1 = {
-	holder = 161514 #Yohannes I
-}
-
-505.4.29 = {
-	holder = 161515 #Yohannes II
-}
-
-535.1.1 = {
-	holder = 161522 #Theodosios I
-}
-
-622.1.1 = {
-	holder = 161524 #Benjamin II
-}
-
-641.3.1 = {
-	liege = e_arabia # Arab conquest
-}
-
-677.1.1 = {
+680.1.1 = { # Pope Yohannes III rebuilt the church
 	holder = 161516 #Yohannes III
 }
 
@@ -123,34 +86,6 @@
 	holder = 161499 #Kyril III
 }
 
-1243.1.1 = {
-	holder = 161500 #Athanasios III
-}
-
-1261.1.1 = {
-	holder = 161502 #Yohannes VII
-}
-
-1267.1.1 = {
-	holder = 161503 #Gabriel III
-}
-
-1270.1.1 = {
-	holder = 161502 #Yohannes VII
-}
-
-1293.1.1 = {
-	holder = 161504 #Theodosios III
-}
-
-1300.1.1 = {
-	holder = 161505 #Yohannes VIII
-}
-
-1320.5.29 = {
-	holder = 161506 #Yohannes IX
-}
-
-1327.1.1 = {
-	holder = 161507 #Benjamin II
+1219.1.1 = {
+	holder = 0 # Destroyed by the crusaders
 }
