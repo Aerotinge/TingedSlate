@@ -99,14 +99,13 @@ character_event = {
 	is_triggered_only = yes # on_new_holder_inheritance
 
 	trigger = {
-		is_priest = yes
+		government = theocracy_government
 		religion_head = {
-			OR = {
-				has_landed_title = k_papacy
-				has_landed_title = d_fraticelli
-			}
-			current_heir = {
-				character = FROMFROM
+			any_demesne_title = {
+				has_law = succ_papal_succession
+				current_heir = {
+					character = FROMFROM
+				}
 			}
 		}
 	}
@@ -133,10 +132,7 @@ character_event = {
 	trigger = {
 		controls_religion = yes
 		FROM = {
-			OR = {
-				title = k_papacy
-				title = d_fraticelli
-			}
+			has_law = succ_papal_succession
 		}
 		any_claim = {
 			holder_scope = {
