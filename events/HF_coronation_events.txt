@@ -14928,7 +14928,7 @@ character_event = {
 character_event = {
     id = HF.20407
 
-    is_triggered_only = yes # on_new_holder_inheritance, on_new_holder_usurpation
+    is_triggered_only = yes # on_new_holder_*
     hide_window = yes
 
     trigger = {

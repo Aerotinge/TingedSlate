@@ -5019,6 +5019,9 @@ narrative_event = {
 				religion = norse_pagan_reformed
 			}
 			add_artifact = crown_fylkir
+			new_artifact = {
+				save_persistent_event_target = { name = binding_title scope = event_target:religious_head_title }
+			}
 		}
 		else_if = {
 			limit = { has_religion_feature = religion_temporal_head }

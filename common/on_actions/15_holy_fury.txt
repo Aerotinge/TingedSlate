@@ -422,7 +422,7 @@ on_loot_province = {
 # FROMFROM is the old holder
 on_new_holder = {
 	events = {
-		HF.20407 # Inherit special crowns on grant
+		HF.20407 # Transfer special crowns on grant
 		HF.23700 # Apply proper succession laws tied to gender Doctrines when creating a new vassal
 		HF.25510 # Clear loot province mission if province has fallen under your control
 		# HF.49205 # Reconquista Beneficiary
