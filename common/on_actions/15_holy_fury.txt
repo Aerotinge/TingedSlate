@@ -5,6 +5,7 @@ on_startup = {
 		HF.2     # Set up Primogeniture in Shattered World
 		HF.5     # Alternate Start General maintenance
 		HF.20372 # Apply crowned_by_traits
+		HF.20414 # Apply title_binding artifact
 		HF.23205 # Altstart Dogmatic/Cosmopolitan effects
 		HF.25057 # Give West African Grand Masters some Masks
 		HF.23472 # Add Irminsul special building on Charlemagne start
@@ -421,6 +422,7 @@ on_loot_province = {
 # FROMFROM is the old holder
 on_new_holder = {
 	events = {
+		HF.20407 # Inherit special crowns on grant
 		HF.23700 # Apply proper succession laws tied to gender Doctrines when creating a new vassal
 		HF.25510 # Clear loot province mission if province has fallen under your control
 		# HF.49205 # Reconquista Beneficiary
@@ -455,7 +457,7 @@ on_new_holder_inheritance = {
 # FROMFROM is the old holder
 on_new_holder_usurpation = {
 	events = {
-		HF.20414 # Hidden check to move special crowns to holder of the title they are tied to
+		HF.20407 # Inherit special crowns on usurpation
 		HF.25510 # Clear loot province mission if province has fallen under your control
 		# HF.49205 # Reconquista Beneficiary
 		HF.20417 # Clear uncrowned modifier

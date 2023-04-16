@@ -4,7 +4,7 @@
 
 crown_hre = {
 	max_amount = 1
-	spawn_date = 962.2.2 # Not Charlemagne's, which created on 800.12.25
+	spawn_date = 962.2.2
 
 	artifacts = {
 		crown_hre = {
@@ -17,6 +17,7 @@ crown_hre = {
 
 		trigger = {
 			has_dlc = "Holy Fury"
+			is_alternate_start = no
 		}
 	}
 
@@ -34,7 +35,7 @@ crown_hre = {
 
 iron_crown_of_lombardy = {
 	max_amount = 1
-	spawn_date = -1.1.1
+	spawn_date = 312.10.28
 
 	artifacts = {
 		iron_crown_of_lombardy = {
@@ -57,23 +58,11 @@ iron_crown_of_lombardy = {
 		additive_modifier = {
 			value = 100
 			primary_title = {
-				title = k_lombardy
+				OR = {
+					title = k_lombardy
+					title = k_italy
+				}
 			}
-			year >= 769
-		}
-		additive_modifier = {
-			value = 100
-			primary_title = {
-				title = k_italy
-			}
-			year < 1066
-		}
-		additive_modifier = {
-			value = 100
-			primary_title = {
-				title = e_hre
-			}
-			year >= 1066
 		}
 	}
 }
@@ -93,6 +82,7 @@ crown_byzantine = {
 
 		trigger = {
 			has_dlc = "Holy Fury"
+			is_alternate_start = no
 		}
 	}
 

@@ -332,133 +332,33 @@ save_beloved_character_effect = {
 	}
 }
 
-transfer_crown_on_abdication_effect = {
-	current_heir = {
-		save_event_target_as = crown_heir
-		wealth = PREV # Transfer gold to crown_heir
-	}
-
-	clear_wealth = yes
-
-	any_artifact = {
+transfer_title_binding_artifact_effect = {
+	owner = { save_event_target_as = current_artifact_owner }
+	if = { # on_death
 		limit = {
-			trigger_if = {
-				limit = { artifact_type = crown_hre }
-				PREV = { has_landed_title = e_hre }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_byzantine }
-				PREV = {
-					OR = {
-						has_landed_title = e_byzantium
-						has_landed_title = e_nicaea
-					}
-				}
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_pahlavi }
-				PREV = { has_landed_title = e_persia }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = iron_crown_of_lombardy }
-				PREV = {
-					OR = {
-						has_landed_title = k_italy
-						has_landed_title = k_lombardy
-					}
-				}
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_fylkir }
-				PREV = { has_landed_title = d_norse_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_tengri_fylkir }
-				PREV = { has_landed_title = d_tengri_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_slavic_fylkir }
-				PREV = { has_landed_title = d_slavic_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_romuva_fylkir }
-				PREV = { has_landed_title = d_baltic_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_finnish_fylkir }
-				PREV = { has_landed_title = d_finnish_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_west_african_fylkir }
-				PREV = { has_landed_title = d_west_african_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_zun_fylkir }
-				PREV = { has_landed_title = d_zun_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = scepter_bon_fylkir }
-				PREV = { has_landed_title = d_bon_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = crown_aztec_fylkir }
-				PREV = { has_landed_title = d_aztec_pagan_reformed }
-			}
-
-			trigger_if = {
-				limit = { artifact_type = scepter_hellenic_fylkir }
-				PREV = { has_landed_title = k_hellenic_pagan_reformed }
-			}
-
+			event_target:current_artifact_owner = { is_dying = yes }
 		}
 
+		persistent_event_target:binding_title = {
+			current_heir = {
+				save_event_target_as = crown_heir
+			}
+		}
 		transfer_artifact = {
-			from = PREV
+			from = event_target:current_artifact_owner
 			to = event_target:crown_heir
 		}
 	}
-
-	# Now transfer all other remaining artifacts to the player_heir, who may or may not be the current_heir
-	player_heir = {
-		save_event_target_as = scoped_player_heir
-	}
-
-	any_artifact = {
-		limit = {
-			NOR = {
-				artifact_type = crown_hre
-				artifact_type = crown_byzantine
-				artifact_type = crown_pahlavi
-				artifact_type = crown_fylkir
-				artifact_type = crown_tengri_fylkir
-				artifact_type = crown_slavic_fylkir
-				artifact_type = crown_romuva_fylkir
-				artifact_type = crown_finnish_fylkir
-				artifact_type = crown_west_african_fylkir
-				artifact_type = crown_zun_fylkir
-				artifact_type = scepter_bon_fylkir
-				artifact_type = crown_aztec_fylkir
-				artifact_type = scepter_hellenic_fylkir
-			}
-		}
-
+	else = { # on_new_holder_*
 		transfer_artifact = {
-			from = PREV
-			to = event_target:scoped_player_heir
+			from = event_target:current_artifact_owner
+			to = ROOT
 		}
 	}
+}
+
+transfer_crown_on_abdication_effect = {
+	# Dummy
 }
 
 # Chance of Education trait improvement or burnout case

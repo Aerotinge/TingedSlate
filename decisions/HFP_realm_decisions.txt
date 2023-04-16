@@ -1575,7 +1575,7 @@ decisions = {
 		}
 
 		allow = {
-			has_landed_title = c_constantinopolis
+			completely_controls = c_constantinopolis
 			completely_controls = d_opsikion
 			completely_controls = d_abydos
 			completely_controls = d_adrianopolis
@@ -1627,6 +1627,21 @@ decisions = {
 
 					primary_title = {
 						copy_title_history = e_nicaea
+					}
+				}
+
+				if = {
+					limit = {
+						any_artifact = {
+							artifact_type = crown_byzantine
+						}
+					}
+
+					any_artifact = {
+						limit = {
+							artifact_type = crown_byzantine
+						}
+						save_persistent_event_target = { name = binding_title scope = e_byzantium }
 					}
 				}
 

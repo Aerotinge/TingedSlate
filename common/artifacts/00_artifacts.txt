@@ -168,6 +168,35 @@ iron_crown_of_lombardy = {
 
 	active = {
 		religion_group = christian
+
+		trigger_if = {
+			limit = {
+				has_landed_title = k_lombardy
+			}
+
+			primary_title = { title = k_lombardy }
+		}
+		trigger_else = {
+			primary_title = { title = k_italy }
+		}
+
+		trigger_if = {
+			limit = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+			}
+			custom_tooltip = {
+				text = crowned_by_trigger
+				OR = {
+					trait = crowned_by_myself
+					trait = crowned_by_pope
+					trait = crowned_by_bishop
+					trait = crowned_by_priest
+				}
+			}
+		}
 	}
 
 	allowed_gift = {
@@ -1611,6 +1640,9 @@ crown_hre = {
 
 	active = {
 		is_feudal = yes
+
+		primary_title = { title = e_hre }
+
 		OR = {
 			religion = catholic
 			religion = fraticelli
@@ -1618,6 +1650,7 @@ crown_hre = {
 
 		custom_tooltip = {
 			text = crowned_by_trigger
+
 			OR = {
 				trait = crowned_by_myself
 				trait = crowned_by_pope
@@ -1647,24 +1680,42 @@ crown_byzantine = {
 	stacking = no
 
 	active = {
-		is_feudal = yes
+		government = roman_imperial_government
 
 		trigger_if = {
 			limit = {
 				has_landed_title = e_nicaea
 			}
 
-			has_landed_title = e_nicaea
+			primary_title = { title = e_nicaea }
 		}
 		trigger_else_if = {
 			limit = {
 				has_landed_title = e_roman_empire
 			}
 
-			has_landed_title = e_roman_empire
+			primary_title = { title = e_roman_empire }
 		}
 		trigger_else = {
-			has_landed_title = e_byzantium
+			primary_title = { title = e_byzantium }
+		}
+
+		trigger_if = {
+			limit = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+			}
+			custom_tooltip = {
+				text = crowned_by_trigger
+				OR = {
+					trait = crowned_by_myself
+					trait = crowned_by_pope
+					trait = crowned_by_bishop
+					trait = crowned_by_priest
+				}
+			}
 		}
 	}
 
@@ -1687,8 +1738,27 @@ crown_pahlavi = {
 	stacking = no
 
 	active = {
-		has_landed_title = e_persia
 		is_feudal = yes
+
+		primary_title = { title = e_persia }
+
+		trigger_if = {
+			limit = {
+				OR = {
+					religion = catholic
+					religion = fraticelli
+				}
+			}
+			custom_tooltip = {
+				text = crowned_by_trigger
+				OR = {
+					trait = crowned_by_myself
+					trait = crowned_by_pope
+					trait = crowned_by_bishop
+					trait = crowned_by_priest
+				}
+			}
+		}
 	}
 
 	allowed_gift = {

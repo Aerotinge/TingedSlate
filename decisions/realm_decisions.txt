@@ -1337,6 +1337,7 @@ decisions = {
 
 				new_artifact = {
 					set_name = crown_pahlavi_name
+					save_persistent_event_target = { name = binding_title scope = e_persia }
 				}
 			}
 
@@ -2381,6 +2382,9 @@ decisions = {
 			}
 			else = {
 				add_artifact = crown_hre
+				new_artifact = {
+					save_persistent_event_target = { name = binding_title scope = e_hre }
+				}
 				narrative_event = { id = CM.510 } # Spread the news
 			}
 

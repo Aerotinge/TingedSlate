@@ -4006,7 +4006,7 @@ narrative_event = {
 	desc = {
 		text = EVTDESC670_HF
 		trigger = {
-			has_dlc = "Holy Fury"
+			has_religion_features = yes
 
 			NOT = {
 				has_alternate_start_parameter = {
@@ -4019,7 +4019,7 @@ narrative_event = {
 	desc = {
 		text = EVTDESC670_HF_B
 		trigger = {
-			has_dlc = "Holy Fury"
+			has_religion_features = yes
 
 			has_alternate_start_parameter = {
 				key = religion_names
@@ -4030,7 +4030,7 @@ narrative_event = {
 	desc = {
 		text = EVTDESC670
 		trigger = {
-			NOT = { has_dlc = "Holy Fury" }
+			has_religion_features = no
 		}
 	}
 
@@ -4759,7 +4759,7 @@ narrative_event = {
 		# Apply Defaults if the player doesn't have Holy Fury
 		if = {
 			limit = {
-				NOT = { has_dlc = "Holy Fury" }
+				has_religion_features = no
 			}
 
 			trigger_switch = {
@@ -5015,7 +5015,7 @@ narrative_event = {
 		# Religion Head Crowns
 		if = {
 			limit = {
-				NOT = { has_dlc = "Holy Fury" }
+				has_religion_features = no
 				religion = norse_pagan_reformed
 			}
 			add_artifact = crown_fylkir
@@ -5033,8 +5033,12 @@ narrative_event = {
 				hellenic_pagan_reformed     = { add_artifact = scepter_hellenic_fylkir }
 				norse_pagan_reformed        = { add_artifact = crown_fylkir }
 				slavic_pagan_reformed       = { add_artifact = crown_slavic_fylkir }
+				tengri_pagan_reformed		= { add_artifact = crown_tengri_fylkir }
 				west_african_pagan_reformed = { add_artifact = crown_west_african_fylkir }
 				zun_pagan_reformed          = { add_artifact = crown_zun_fylkir }
+			}
+			new_artifact = {
+				save_persistent_event_target = { name = binding_title scope = event_target:religious_head_title }
 			}
 		}
 
@@ -5063,8 +5067,6 @@ narrative_event = {
 		# Opinion boost to new religious head (if any) and Reformer.
 		if = {
 			limit = {
-				has_dlc = "Holy Fury"
-
 				OR = {
 					has_religion_feature = religion_theocratic_head
 					has_religion_feature = religion_autocephaly
