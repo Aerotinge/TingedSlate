@@ -358,112 +358,112 @@ character_event = {
 }
 
 # Debug event
-character_event = {
-	id = EMP.20540
+#character_event = {
+#	id = EMP.20540
 
-	is_triggered_only = yes
-	hide_window = yes
+#	is_triggered_only = yes
+#	hide_window = yes
 
-	trigger = {
-		offmap_papacy = {
-			is_offmap_tag = offmap_papacy
+#	trigger = {
+#		offmap_papacy = {
+#			is_offmap_tag = offmap_papacy
+#
+#			has_status = ppc_synod
+#			persistent_event_target:cathedral_helding_council = {
+#				OR = {
+#					owner = {
+#						OR = {
+#							NOT = { rightful_religious_head = ROOT }
+#							war = yes
+#						}
+#					}
+#					has_siege = yes
+#					has_holder = no
+#				}
+#			}
+#		}
+#	}
 
-			has_status = ppc_synod
-			persistent_event_target:cathedral_helding_council = {
-				OR = {
-					owner = {
-						OR = {
-							NOT = { rightful_religious_head = ROOT }
-							war = yes
-						}
-					}
-					has_siege = yes
-					has_holder = no
-				}
-			}
-		}
-	}
-
-	immediate = {
-		log = "[This.GetBestName] fires EMP.20540"
-	}
-}
-
-# Debug event
-character_event = {
-	id = EMP.20550
-
-	hide_window = yes
-
-	religion_group = christian
-	only_men = yes
-	has_job_title = yes
-
-	trigger = {
-		rightful_religious_head = THIS
-		controls_religion = no
-		has_pentarchy = yes
-		has_job_title = job_spiritual
-		NOR = {
-			has_landed_title = b_roma
-			has_landed_title = b_alexandria
-			has_landed_title = b_antioch
-			has_landed_title = b_jerusalem
-			has_landed_title = b_hagiasophia
-		}
-		liege = {
-			primary_title = {
-				NOT = {
-					persistent_event_target:pentarch_de_facto = {
-						title = THIS
-					}
-				}
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		liege = {
-			log = "[This.PrimaryTitle.GetBaseName] has Autocephalous Patriarch: [Root.GetBestName]"
-			log = "While missing persistent_event_target:pentarch_de_facto set to title itself"
-		}
-	}
-}
+#	immediate = {
+#		log = "[This.GetBestName] fires EMP.20540"
+#	}
+#}
 
 # Debug event
-character_event = {
-	id = EMP.20551
+#character_event = {
+#	id = EMP.20550
 
-	hide_window = yes
+#	hide_window = yes
 
-	religion_group = christian
-	only_rulers = yes
-	only_independent = no
+#	religion_group = christian
+#	only_men = yes
+#	has_job_title = yes
 
-	trigger = {
-		rightful_religious_head = THIS
-		has_pentarchy = yes
-		OR = {
-			has_landed_title = b_roma
-			has_landed_title = b_alexandria
-			has_landed_title = b_antioch
-			has_landed_title = b_jerusalem
-			has_landed_title = b_hagiasophia
-		}
-		is_theocracy = yes
-		NOT = { government = theocracy_government }
-	}
+#	trigger = {
+#		rightful_religious_head = THIS
+#		controls_religion = no
+#		has_pentarchy = yes
+#		has_job_title = job_spiritual
+#		NOR = {
+#			has_landed_title = b_roma
+#			has_landed_title = b_alexandria
+#			has_landed_title = b_antioch
+#			has_landed_title = b_jerusalem
+#			has_landed_title = b_hagiasophia
+#		}
+#		liege = {
+#			primary_title = {
+#				NOT = {
+#					persistent_event_target:pentarch_de_facto = {
+#						title = THIS
+#					}
+#				}
+#			}
+#		}
+#	}
 
-	mean_time_to_happen = {
-		days = 1
-	}
+#	mean_time_to_happen = {
+#		days = 1
+#	}
 
-	immediate = {
-		log = "[This.GetBestName] become a patriarch of the five sees"
-		log = "While having [This.Government.GetName] Government"
-	}
-}
+#	immediate = {
+#		liege = {
+#			log = "[This.PrimaryTitle.GetBaseName] has Autocephalous Patriarch: [Root.GetBestName]"
+#			log = "While missing persistent_event_target:pentarch_de_facto set to title itself"
+#		}
+#	}
+#}
+
+# Debug event
+#character_event = {
+#	id = EMP.20551
+
+#	hide_window = yes
+
+#	religion_group = christian
+#	only_rulers = yes
+#	only_independent = no
+
+#	trigger = {
+#		rightful_religious_head = THIS
+#		has_pentarchy = yes
+#		OR = {
+#			has_landed_title = b_roma
+#			has_landed_title = b_alexandria
+#			has_landed_title = b_antioch
+#			has_landed_title = b_jerusalem
+#			has_landed_title = b_hagiasophia
+#		}
+#		is_theocracy = yes
+#		NOT = { government = theocracy_government }
+#	}
+
+#	mean_time_to_happen = {
+#		days = 1
+#	}
+
+#	immediate = {
+#		log = "[This.GetBestName] become a patriarch of the five sees"
+#		log = "While having [This.Government.GetName] Government"
+#	}
+#}
