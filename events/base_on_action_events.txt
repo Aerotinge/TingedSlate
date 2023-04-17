@@ -5046,6 +5046,20 @@ narrative_event = {
 		}
 
 		if = {
+			limit = {
+				OR = {
+					has_religion_feature = religion_warlike
+					has_religion_feature = religion_adventuring
+					has_religion_feature = religion_feature_aztec
+					has_religion_feature = religion_feature_norse
+					has_religion_feature = religion_feature_tengri
+					has_religion_feature = religion_relentless
+				}
+			}
+			add_trait = heresiarch
+		}
+
+		if = {
 			limit = { religion = norse_pagan_reformed }
 
 			set_global_flag = jomsvikings_reformed

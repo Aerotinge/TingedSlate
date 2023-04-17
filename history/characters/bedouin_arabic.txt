@@ -2075,7 +2075,7 @@
 	stewardship = 8
 	learning = 10
 	add_trait = mastermind_theologian
-	add_trait = sayyid
+	add_trait = heresiarch
 	add_trait = mystic
 	add_trait = zealous
 	add_trait = patient

@@ -573,18 +573,29 @@ feudal_governments = {
 
 			trigger_if = {
 				limit = {
-					NOR = {
-						controls_religion = yes
-						religion_authority >= 0.50
+					NOT = {
+						religion_head = ( character = THIS }
 					}
 				}
-
+				any_demesne_title = {
+					controls_religion = yes
+				}
 				is_save_game = no
 				has_game_started = no
 			}
 			trigger_else = {
-				controls_religion = yes
-				religion_authority >= 0.50
+				religion_head = ( character = THIS }
+			}
+
+			trigger_if = {
+				limit = {
+					is_shiite_branch = yes
+				}
+
+				OR = {
+					trait = mirza
+					trait = sayyid
+				}
 			}
 
 			primary_title = {
