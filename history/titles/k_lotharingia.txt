@@ -1,4 +1,5 @@
 #Merovingians
+#Austrasia
 481.1.1 = {
 	law = centralization_0
 	holder = 168673 #Clovis Ier
@@ -105,10 +106,6 @@
 768.9.24 = {
 	holder = 144999 #Carloman I
 	law = agnatic_succession
-}
-
-769.1.1 = {
-	de_jure_liege = e_francia
 }
 
 771.12.4 = {

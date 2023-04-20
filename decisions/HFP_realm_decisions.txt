@@ -1674,17 +1674,10 @@ decisions = {
 		only_playable = yes
 
 		potential = {
-			OR = {
-				has_landed_title = d_thurgau
-				has_landed_title = d_raetia
-			}
+			has_landed_title = d_swiss
 
 			lower_real_tier_than = KING
-			religion_group = christian
-
-			top_liege = {
-				has_landed_title = e_hre
-			}
+			is_catholic_branch = yes
 
 			OR = {
 				culture = german
@@ -1721,8 +1714,8 @@ decisions = {
 		allow = {
 			is_adult = yes
 			war = no
-			prestige = 3000
-			wealth = 500
+			prestige = 2000
+			wealth = 400
 
 			completely_controls = c_bern
 			completely_controls = c_schwyz
@@ -1732,54 +1725,28 @@ decisions = {
 			completely_controls = c_thurgau
 			completely_controls = c_vaud
 			completely_controls = c_chur
-
-			has_landed_title = d_thurgau
-			has_landed_title = d_raetia
-
-			custom_tooltip = {
-				text = emperor_has_hre
-
-				liege = {
-					has_landed_title = e_hre
+			
+			trigger_if = {
+				limit = {
+					OR = {
+						has_landed_title = d_thurgau
+						has_landed_title = d_raetia
+					}
 				}
+				has_landed_title = d_thurgau
+				has_landed_title = d_raetia
+			}
+			trigger_else = {
+				d_thurgau = { has_holder = no }
+				d_raetia = { has_holder = no }
 			}
 		}
 
 		effect = {
-			wealth = -500
+			wealth = -400
 
 			custom_tooltip = {
 				text = custom_create_switzerland_tooltip
-
-				d_transjurania = {
-					de_jure_liege = k_switzerland
-				}
-
-				k_switzerland = {
-					de_jure_liege = e_hre
-				}
-
-				e_hre = {
-					holder_scope = {
-						k_switzerland = {
-							grant_title = PREV
-						}
-					}
-				}
-
-				primary_title = {
-					k_switzerland = {
-						copy_title_laws = PREV
-					}
-				}
-
-				k_switzerland = {
-					grant_title_no_opinion = ROOT
-				}
-
-				destroy_landed_title = d_raetia
-				destroy_landed_title = d_thurgau
-				grant_title_no_opinion = d_swiss
 
 				d_thurgau = {
 					any_direct_de_jure_vassal_title = {
@@ -1791,21 +1758,35 @@ decisions = {
 					any_direct_de_jure_vassal_title = {
 						de_jure_liege = d_swiss
 					}
+					kingdom = {
+						d_swiss = {
+							de_jure_liege = PREV
+						}
+					}
 				}
 
-				d_swiss = {
-					de_jure_liege = k_switzerland
+				k_switzerland = {
+					copy_title_laws = d_swiss
+					grant_title_no_opinion = ROOT
 				}
+
+				if = {
+					limit = {
+						has_landed_title = d_raetia
+					}
+					destroy_landed_title = d_raetia
+					destroy_landed_title = d_thurgau
+				}
+				destroy_landed_title = d_swiss
 
 				narrative_event = { id = HFP.40010 } # Notify
 
 				any_player = {
 					limit = {
-						top_liege = {
-							has_landed_title = e_hre
+						OR = {
+							same_liege = ROOT
+							shares_realm_border_with = ROOT
 						}
-
-						NOT = { has_landed_title = k_switzerland }
 					}
 
 					narrative_event = { id = HFP.40012 } # Notify

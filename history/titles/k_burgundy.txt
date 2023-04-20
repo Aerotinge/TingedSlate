@@ -1,5 +1,38 @@
-751.1.1 = {
+411.1.1 = {
+	holder = 168742 # Gundahar
 	law = agnatic_succession
+}
+
+#435.1.1 = { holder = 0 } # The Burgundian capital Worms was destroyed by the Huns.
+
+436.1.1 = {
+	holder = 168743 # Gundioc 
+}
+
+# divided into four
+# Gundobad in Lyon c_lyon
+# Chilpéric in Valence c_vienne
+# Gondemar 168747 in Vienne c_vienne
+# Godegisel 168745 in Geneva c_genevois
+
+473.1.1 = {
+	holder = 168746 # Chilpéric
+}
+
+480.1.1 = {
+	holder = 168744 # Gundobad
+}
+
+516.1.1 = {
+	holder = 168750
+}
+
+523.1.1 = {
+	holder = 168751
+}
+
+534.1.1 = {
+	holder = 0
 }
 
 771.12.4 = {

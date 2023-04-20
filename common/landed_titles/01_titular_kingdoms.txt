@@ -189,6 +189,129 @@ k_tekke = {
 	culture = turkish
 }
 
+k_austria = {
+	color = { 240 240 240 }
+	color2 = { 255 255 255 }
+
+	capital = 213 # Wien
+
+	roman = "Noricum"
+
+	title = archduchy_title
+	title_female = archduchy_title_female
+	foa = archduchy_foa
+	title_prefix = archduchy_prefix
+
+	allow = {
+		can_create_kingdom = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+	}
+}
+
+k_bohemia = {
+	color = { 176 110 32 }
+	color2 = { 255 255 255 }
+
+	culture = bohemian
+
+	capital = 718 # Praha
+
+	catholic = 400 # Crusade target weight
+	slavic_pagan_reformed = 100 # Crusade target weight
+	baltic_pagan_reformed = 50 # Crusade target weight
+
+	allow = {
+		can_create_kingdom = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+	}
+}
+
+k_germany = {
+	color = { 160 160 160 }
+	color2 = { 220 220 20 }
+
+	dignity = 30 # Counted as having this many more counties than it does
+
+	culture = german
+
+	capital = 198 # Würzburg
+
+	catholic = 5000 # Crusade target weight
+
+	norse_pagan_reformed = 200 # Crusade target weight
+	slavic_pagan_reformed = 50 # Crusade target weight
+	baltic_pagan_reformed = 50 # Crusade target weight
+
+	allow = {
+		can_create_kingdom = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+	}
+}
+
+k_hansa = {
+	color = { 210 210 210 }
+	color2 = { 255 255 255 }
+
+	capital = 728 # Lübeck
+
+	dignity = 200 # Never want the Hanseatic League to change primary title
+
+	allow = {
+		is_republic = yes
+		can_create_kingdom = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+	}
+}
+
+k_switzerland = {
+	color = { 255 80 80 }
+	color2 = { 200 50 50 }
+
+	capital = 348 # Bern
+
+	short_name = yes
+
+	french = "Helvetia"
+	occitan = "Helvetia"
+	italian = "Helvetia"
+	lombard = "Helvetia"
+
+	allow = {
+		can_create_kingdom = yes
+
+		FROM = {
+			show_scope_change = no
+			show_only_failed_conditions = yes
+
+			is_titular = no
+		}
+	}
+}
+
 k_magyar = {
 	color = { 187 70 70 }
 	culture = hungarian

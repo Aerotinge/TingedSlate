@@ -1,9 +1,10 @@
 #Merovingians
+#Neustria
 481.1.1 = {
 	law = centralization_0
 	holder = 168673 #Clovis Ier
-	name = WEST_FRANCIA
-	adjective = WEST_FRANCIA_ADJ
+	name = AUSTRASIA
+	adjective = AUSTRASIA_ADJ
 }
 
 511.11.27 = {

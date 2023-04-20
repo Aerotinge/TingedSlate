@@ -282,7 +282,6 @@ christian = {
 		can_grant_invasion_cb = invasion
 		can_call_crusade = no
 		can_retire_to_monastery = yes
-		pentarchy = yes
 		priests_can_inherit = no
 	}
 

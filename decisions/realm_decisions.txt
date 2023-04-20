@@ -2328,30 +2328,6 @@ decisions = {
 				}
 			}
 
-			# Give lands to the Pope
-			any_title_under = {
-				show_scope_change = no
-
-				limit = {
-					OR = {
-						title = c_roma
-						title = c_ravenna
-						title = c_ferrara
-						title = c_urbino
-						title = c_perugia
-					}
-
-					holder_scope = {
-						trigger_if = {
-							limit = { ai = no }
-							num_of_count_titles > 1
-						}
-					}
-				}
-
-				grant_title = event_target:the_pope
-			}
-
 			e_byzantium = {
 				show_scope_change = no
 

@@ -1,3 +1,7 @@
+907.7.4 = {
+	de_jure_liege = e_germania
+}
+
 1085.6.15 = { # Vratislav II
 	law = agnatic_succession
 	law = succ_seniority

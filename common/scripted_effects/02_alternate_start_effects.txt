@@ -3053,18 +3053,18 @@ randomize_religion_names_effect = {
 		}
 	}
 
-	if = {
-		limit = {
-			monophysite = {
-				is_name_randomized = yes
-			}
-		}
+	#if = {
+	#	limit = {
+	#		monophysite = {
+	#			is_name_randomized = yes
+	#		}
+	#	}
 
-		d_monophysite = {
-			set_name = ALT_MONO
-			adjective = ALT_MONO_ADJ
-		}
-	}
+	#	d_monophysite = {
+	#		set_name = ALT_MONO
+	#		adjective = ALT_MONO_ADJ
+	#	}
+	#}
 
 	if = {
 		limit = {

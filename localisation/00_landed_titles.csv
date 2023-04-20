@@ -15584,7 +15584,7 @@ d_sutiya;Sutiya;;;;;;;;;;;;;x
 d_sutiya_adj;Sutiyan;sutiya;Sutiyanisch;;sutiyano;;;;;;;;;x
 d_swabia;Swabia;Souabe;Schwaben;;Suabia;;;;;;;;;x
 d_swabia_adj;Swabian;souabienne;Schwäbisch;;Suaba;;;;;;;;;x
-d_swiss;Switzerland;Suisse;Schweiz;;Suiza;;;;;;;;;x
+
 d_swiss_adj;Swiss;suisse;Schweizerisch;;Suizo;;;;;;;;;x
 d_syr_darya;Syr Darya;Syr-Daria;Syrdarja;;Sir Daria;;;;;;;;;x
 d_syr_darya_adj;Syr Daryan;syr-darienne;Syrdarjanisch;;;;;;;;;;;x
@@ -16124,7 +16124,7 @@ k_swabia_otto;Swabia;Souabe;Schwaben;;Suabia;;;;;;;;;x
 k_swabia_otto_adj;Swabian;souabienne;Schwäbisch;;suabio;;;;;;;;;x
 k_sweden;Sweden;Suède;Schweden;;Suecia;;;;;;;;;x
 k_sweden_adj;Swedish;suédoise;Schwedisch;;Sueca;;;;;;;;;x
-k_switzerland;Swiss Confederation;Confédération suisse;Schweizerische Eidgenossenschaft;;Confederación suiza;;;;;;;;;x
+k_switzerland;Switzerland;Suisse;Schweiz;;Suiza;;;;;;;;;x
 k_switzerland_adj;Swiss;suisse;Schweizerisch;;suizo;;;;;;;;;x
 k_syria;Syria;Syrie;Syrien;;Siria;;;;;;;;;x
 k_syria_adj;Syrian;syrienne;Syrisch;;Siria;;;;;;;;;x
@@ -17518,6 +17518,7 @@ d_sorbs;Sorbs;Sorabes;Sorben;;Sorbios;;;;;;;;;x
 d_sorbs_adj;Sorbian;sorabe;Sorbisch;;Sorbio;;;;;;;;;x
 d_sweden;Svithjod;;Schweden;;Svitjod;;;;;;;;;x
 d_sweden_adj;Swedish;suédoise;Schwedisch;;Sueco;;;;;;;;;x
+d_swiss;Swiss Confederation;Confédération suisse;Schweizerische Eidgenossenschaft;;Confederación suiza;;;;;;;;;x
 d_tavasts;Tavastians;Häme;Tavaster;;Los Tavastianos;;;;;;;;;x
 d_tavasts_adj;Tavastian;hämienne;Tavastisch;;Tavastiana;;;;;;;;;x
 d_tivertsi;Tivertsi;Tivertses;;;;;;;;;;;;x

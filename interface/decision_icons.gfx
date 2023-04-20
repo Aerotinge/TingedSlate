@@ -646,7 +646,7 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_vassalize_knights_hospitaler"
+		name = "GFX_vassalize_knights_hospitaller"
 		textureFile = "gfx\\interface\\decision_icon_vassalize_holy_order.dds"
 	}
 
@@ -1093,6 +1093,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_create_archduchy_of_austria"
 		textureFile = "gfx\\interface\\decision_icon_create_archduchy_of_austria.dds"
+	}
+
+	spriteType = {
+		name = "GFX_create_switzerland"
+		textureFile = "gfx\\interface\\decision_icon_create_switzerland.dds"
 	}
 
 	spriteType = {
