@@ -52728,7 +52728,7 @@
 190180 = {
 	name = "Gundoald" #descendents become kings of Italy
 	dynasty = 1044046 #Bavarae
-	religion = catholic
+	religion = monophysite # Arianism placeholder
 	culture = german
 	father = 190178
 	571.1.1 = {
