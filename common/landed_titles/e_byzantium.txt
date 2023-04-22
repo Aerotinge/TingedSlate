@@ -748,6 +748,7 @@ e_byzantium = {
 
 				holy_site = miaphysite
 				holy_site = monophysite
+				holy_site = yazidi # Quba Mêrê Dîwanê temple, quite a modern site but we need placeholder
 
 				b_dvin = {}
 				b_etchmiadzin = {}
@@ -2108,6 +2109,8 @@ e_byzantium = {
 			c_tiflis = {
 				color = { 196 121 121 }
 				color2 = { 255 255 255 }
+
+				holy_site = yazidi # Sultan Ezid Temple, quite a modern site but we need placeholder
 
 				b_narikala = {}
 				b_tbilisi = {}

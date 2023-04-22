@@ -2,8 +2,10 @@
 on_startup = {
 	effect = {
 		setup_province_pulse = yes
+		setup_religion_title_scope = yes
 		setup_reformed_religion_scope = yes
 		setup_holy_order_religion_scopes = yes
+		setup_antipope_religion_effect = yes
 	}
 
 	events = {

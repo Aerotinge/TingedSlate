@@ -7,6 +7,7 @@
 # apply_cosmopolian_on_start_effect
 # apply_dogmatic_on_start_effect
 # setup_reformed_religion_scope
+# setup_antihead_religion_effect
 # export_reformer_to_title_effect
 # rebuild_god_name_effect
 # convert_religion_failsafe_effect
@@ -317,20 +318,6 @@ flip_secret_religious_community_provinces = {
 			}
 		}
 
-		secret_religious_society_zikri = {
-			ROOT = {
-				any_demesne_province = {
-					limit = {
-						has_province_modifier = secret_zikri_community
-						owned_by = PREV
-					}
-
-					religion = zikri
-					remove_province_modifier = secret_zikri_community
-				}
-			}
-		}
-
 		secret_religious_society_yazidi = {
 			ROOT = {
 				any_demesne_province = {
@@ -397,20 +384,6 @@ flip_secret_religious_community_provinces = {
 
 					religion = druze
 					remove_province_modifier = secret_druze_community
-				}
-			}
-		}
-
-		secret_religious_society_hurufi = {
-			ROOT = {
-				any_demesne_province = {
-					limit = {
-						has_province_modifier = secret_hurufi_community
-						owned_by = PREV
-					}
-
-					religion = hurufi
-					remove_province_modifier = secret_hurufi_community
 				}
 			}
 		}
@@ -1079,20 +1052,6 @@ flip_all_realm_secret_religious_community_provinces = {
 			}
 		}
 
-		secret_religious_society_zikri = {
-			top_liege = {
-				any_realm_province = {
-					limit = {
-						has_province_modifier = secret_zikri_community
-						owned_by = PREV
-					}
-
-					religion = zikri
-					remove_province_modifier = secret_zikri_community
-				}
-			}
-		}
-
 		secret_religious_society_yazidi = {
 			top_liege = {
 				any_realm_province = {
@@ -1159,20 +1118,6 @@ flip_all_realm_secret_religious_community_provinces = {
 
 					religion = druze
 					remove_province_modifier = secret_druze_community
-				}
-			}
-		}
-
-		secret_religious_society_hurufi = {
-			top_liege = {
-				any_realm_province = {
-					limit = {
-						has_province_modifier = secret_hurufi_community
-						owned_by = PREV
-					}
-
-					religion = hurufi
-					remove_province_modifier = secret_hurufi_community
 				}
 			}
 		}
@@ -1843,20 +1788,6 @@ root_secret_religion_provinces_convert_effect = {
 				}
 			}
 
-			secret_religious_society_zikri = {
-				PREV = {
-					any_demesne_province = {
-						limit = {
-							has_province_modifier = secret_zikri_community
-							owned_by = PREV
-						}
-
-						religion = zikri
-						remove_province_modifier = secret_zikri_community
-					}
-				}
-			}
-
 			secret_religious_society_yazidi = {
 				PREV = {
 					any_demesne_province = {
@@ -1923,20 +1854,6 @@ root_secret_religion_provinces_convert_effect = {
 
 						religion = druze
 						remove_province_modifier = secret_druze_community
-					}
-				}
-			}
-
-			secret_religious_society_hurufi = {
-				PREV = {
-					any_demesne_province = {
-						limit = {
-							has_province_modifier = secret_hurufi_community
-							owned_by = PREV
-						}
-
-						religion = hurufi
-						remove_province_modifier = secret_hurufi_community
 					}
 				}
 			}
@@ -2477,6 +2394,270 @@ apply_dogmatic_on_start_effect = {
 }
 
 # Fires on_startup
+setup_antipope_religion_effect = {
+	if = {
+		limit = {
+			is_multiplayer_host_character = yes
+			is_save_game = no
+		}
+
+		sunni = {
+			if = {
+				limit = {
+					NOT = { has_flag = has_antipope }
+				}
+				set_can_have_antipopes = no
+			}
+		}
+
+		log = "Set-up antipope on target religion(s)"
+	}
+}
+
+setup_religion_title_scope = {
+	if = {
+		limit = {
+			is_multiplayer_host_character = yes
+		}
+
+		orthodox = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = k_orthodox
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		catholic = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = k_papacy
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		fraticelli = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_fraticelli
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		ibadi = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_ibadi
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		iconoclast = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_iconoclast
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		jewish = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_jewish
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		kharijite = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_kharijite
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		manichaean = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_manichaean
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		miaphysite = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_miaphysite
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		monothelite = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_monothelite
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		nestorian = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_nestorian
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		monothelite = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_monothelite
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		paulician = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_paulician
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		qarmatian = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_qarmatian
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		shiite = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_shiite
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		sunni = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_sunni
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		yazidi = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_yazidi
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		zoroastrian = {
+			save_persistent_event_target = {
+				name = religion_title
+				scope = d_zoroastrian
+			}
+			persistent_event_target:religion_title = {
+				save_persistent_event_target = {
+					name = religion_scope
+					scope = PREV
+				}
+			}
+		}
+
+		log = "Set-up non-pagan persistent event target titles"
+	}
+}
+
 setup_reformed_religion_scope = {
 	if = {
 		limit = {
@@ -3481,6 +3662,22 @@ convert_religion_failsafe_effect = {
 
 			set_character_flag = needs_temporary_fake_theocracy_government
 			set_government_type = temporary_fake_theocracy_government
+		}
+
+		# Trigger Antipope cleanup process once
+		# Since on_character_convert_religion is too late to catch
+		
+		if = {
+			limit = {
+				religion_scope = {
+					has_flag = has_antipope
+					persistent_event_target:religion_title = {
+						claimed_by = PREVPREV
+					}
+				}
+			}
+
+			set_character_flag = needs_antipope_cleanup
 		}
 	}
 

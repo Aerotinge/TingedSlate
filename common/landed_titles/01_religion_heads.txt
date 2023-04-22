@@ -9,7 +9,7 @@ k_hellenic_pagan_reformed = {
 
 	title = PONTIFEX_MAXIMUS
 	title_female = PONTIFEX_MAXIMA
-	foa = POPE_FOA
+	foa = HEAD_PRIEST_FOA
 	short_name = yes
 
 	creation_requires_capital = no
@@ -159,7 +159,7 @@ d_bon_pagan_reformed = {
 
 	title = HEAD_DALAI_LAMA
 	title_female = HEAD_DALAI_LAMA
-	foa = POPE_FOA
+	foa = GRANDMASTER_FOA
 
 	short_name = yes
 
@@ -237,60 +237,6 @@ d_fraticelli = {
 		Alexander Anastasius Benedictus Caelestinus Callistus Clemens Eugenius Franciscus Leo
 		Gregorius Hadrianus Honorius Innocentius Ioannes Lucius Marinus Martinus
 		Nicolaus Sergius Silvester Stephanus Urbanus Victor
-	}
-}
-
-d_hurufi = {
-	color = { 80 220 80 }
-	color2 = { 220 220 0 }
-
-	capital = 1533 # Mecca
-
-	creation_requires_capital = no
-
-	dignity = 100 # Counted as having this many more counties than it does
-
-	title = CALIPH
-	title_female = CALIPHA
-	foa = CALIPH_FOA
-	short_name = yes
-
-	religion = hurufi
-
-	# Controls a religion
-	controls_religion = hurufi
-
-	allow = {
-		religion = hurufi
-		can_create_duchy = yes
-
-		trigger_if = {
-			limit = { piety < 1000 }
-			OR = {
-				trait = mirza
-				trait = sayyid
-			}
-		}
-
-		trigger_if = {
-			limit = {
-				has_alternate_start_parameter = {
-					key = religion_names
-					value = random
-				}
-			}
-			can_usurp_religion_head = yes
-		}
-		trigger_else = {
-			muslim_religion_head_trigger = yes
-		}
-	}
-
-	caliphate = yes
-
-	coat_of_arms = {
-		data = { 0 0 0 7 1 7 7 }
-		religion = hurufi
 	}
 }
 
@@ -392,7 +338,7 @@ d_jewish = {
 	capital = 1514 # Jerusalem
 
 	title = HEAD_KOHEN_GADOL
-	foa = POPE_FOA
+	foa = HEAD_PRIEST_FOA
 
 	short_name = yes
 
@@ -424,6 +370,7 @@ d_kharijite = {
 	title_female = CALIPHA
 	foa = CALIPH_FOA
 	short_name = yes
+	location_ruler_title = yes
 
 	religion = kharijite
 
@@ -471,7 +418,7 @@ d_manichaean = {
 	capital = 1086 # Samarkand
 
 	title = YAMAG
-	foa = POPE_FOA # needs new graphics
+	foa = WESTERN_GOVERNOR_TITLE_FOA # needs new graphics
 	short_name = yes
 
 	# Always exists
@@ -658,7 +605,7 @@ d_paulician = {
 	capital = 541 # Constantinople
 
 	title = PATRIARCH_CAP
-	foa = ECUMENICAL_PATRIARCH_FOA
+	foa = PRINCE_BISHOP_FOA
 
 	short_name = yes
 
@@ -686,61 +633,62 @@ d_paulician = {
 	}
 }
 
-d_qarmatian = {
-	color = { 60 190 60 }
-	color2 = { 220 220 0 }
-
-	capital = 1542 # Al - Hasa
-
-	creation_requires_capital = no
-
-	dignity = 100 # Counted as having this many more counties than it does
-
-	title = CALIPH
-	title_female = CALIPHA
-	foa = CALIPH_FOA
-	short_name = yes
-
-	religion = qarmatian
-
-	# Controls a religion
-	controls_religion = qarmatian
-
-	allow = {
-		religion = qarmatian
-		can_create_duchy = yes
-
-		trigger_if = {
-			limit = {
-				NOT = {
-					any_owned_bloodline = {
-						has_bloodline_flag = bloodline_qarmatian_leader
-						bloodline_is_active_for = PREV
-					}
-				}
-			}
-
-			trigger_if = {
-				limit = { piety < 1000 }
-				OR = {
-					trait = mirza
-					trait = sayyid
-				}
-			}
-			can_usurp_religion_head = yes
-		}
-		trigger_else = {
-			piety >= 500
-		}
-	}
-
-	caliphate = yes
-
-	coat_of_arms = {
-		data = { 0 0 0 9 1 7 7 }
-		religion = qarmatian
-	}
-}
+#d_qarmatian = {
+#	color = { 60 190 60 }
+#	color2 = { 220 220 0 }
+#
+#	capital = 1542 # Al - Hasa
+#
+#	creation_requires_capital = no
+#
+#	dignity = 100 # Counted as having this many more counties than it does
+#
+#	title = CALIPH
+#	title_female = CALIPHA
+#	foa = CALIPH_FOA
+#	short_name = yes
+#	location_ruler_title = yes
+#
+#	religion = qarmatian
+#
+#	# Controls a religion
+#	controls_religion = qarmatian
+#
+#	allow = {
+#		religion = qarmatian
+#		can_create_duchy = yes
+#
+#		trigger_if = {
+#			limit = {
+#				NOT = {
+#					any_owned_bloodline = {
+#						has_bloodline_flag = bloodline_qarmatian_leader
+#						bloodline_is_active_for = PREV
+#					}
+#				}
+#			}
+#
+#			trigger_if = {
+#				limit = { piety < 1000 }
+#				OR = {
+#					trait = mirza
+#					trait = sayyid
+#				}
+#			}
+#			can_usurp_religion_head = yes
+#		}
+#		trigger_else = {
+#			piety >= 500
+#		}
+#	}
+#
+#	caliphate = yes
+#
+#	coat_of_arms = {
+#		data = { 0 0 0 9 1 7 7 }
+#		religion = qarmatian
+#	}
+#}
 
 d_shiite = {
 	color = { 60 190 60 }
@@ -756,6 +704,7 @@ d_shiite = {
 	title_female = CALIPHA
 	foa = CALIPH_FOA
 	short_name = yes
+	location_ruler_title = yes
 
 	religion = shiite
 
@@ -859,6 +808,7 @@ d_sunni = {
 	title_female = CALIPHA
 	foa = CALIPH_FOA
 	short_name = yes
+	location_ruler_title = yes
 
 	religion = sunni
 
@@ -920,7 +870,7 @@ d_tengri_pagan_reformed = {
 
 	title = TENGRIKUT
 	title_female = TENGRIKIZ
-	foa = HEAD_PRIEST_FOA
+	foa = GRANDMASTER_FOA
 
 	short_name = yes
 
@@ -972,24 +922,20 @@ d_yazidi = {
 
 	title = SHEIKH
 	title_female = SHEIKHA
-	foa = CALIPH_FOA
+	foa = HEAD_PRIEST_FOA
 	short_name = yes
-
-	religion = yazidi
 
 	# Controls a religion
 	controls_religion = yazidi
 
-	allow = {
-		piety >= 1000
-	}
-
-	caliphate = yes
+	religion = yazidi
 
 	coat_of_arms = {
 		data = { 0 0 3 0 0 11 11 }
 		religion = yazidi
 	}
+
+	dynasty_title_names = no 	# Will not be named "Seljuk", etc.
 }
 
 d_zoroastrian = {
@@ -999,7 +945,7 @@ d_zoroastrian = {
 	capital = 1449 # Esfahan
 
 	title = HEAD_MOABADAN_MOABAD
-	foa = POPE_FOA
+	foa = HEAD_PRIEST_FOA
 
 	short_name = yes
 
@@ -1025,7 +971,7 @@ d_zun_pagan_reformed = {
 
 	title = HEAD_ZUN_PRIEST
 	title_female = HEAD_ZUN_PRIESTESS
-	foa = HEAD_PRIEST_FOA
+	foa = GRANDMASTER_FOA
 
 	short_name = yes
 

@@ -320,8 +320,10 @@ ANNEX;They demand our full Annexation.  (Game Over);Ils demandent notre annexion
 ANNEX_NATION;Annex;Annexer;Annektieren;Anektuj;Anexionarse;Annettere;Bekebelezés;Anektovat;;;;;;x
 ANSWER_NO;No.;Non.;Nein.;;No.;;;;;;;;;x
 ANSWER_YES;Yes.;Oui.;Ja.;;Sí.;;;;;;;;;x
-ANTI_POPE_CESSATION_LOG;The Anti-Papacy of §Y$ANTIPOPE$§! has ended.;L'Anti-papauté du §Y$ANTIPOPE$§! a pris fin.;Gegenpapsttum von §Y$ANTIPOPE$§! ist beendet.;;El antipapado de §Y$ANTIPOPE$§! ha terminado.;;;;;;;;;x
-ANTI_POPE_CESSATION_SETUP;Anti-Papacy Ends;Fin de l'anti papauté;Gegenpapsttum beendet;;Fin del Antipapado;;;;;;;;;x
+ANTI_POPE_CESSATION_LOG;The [GetAntiPapacyName] of §Y$ANTIPOPE$§! has ended.;L'[GetAntiPapacyName] du §Y$ANTIPOPE$§! a pris fin.;[GetAntiPapacyName] von §Y$ANTIPOPE$§! ist beendet.;;El [GetAntiPapacyName] de §Y$ANTIPOPE$§! ha terminado.;;;;;;;;;x
+ANTI_POPE_CESSATION_SETUP;[GetAntiPapacyName] Ends;Fin de l'[GetAntiPapacyName];[GetAntiPapacyName] beendet;;Fin del [GetAntiPapacyName];;;;;;;;;x
+
+# Catholic/Fratelli exclusive, hardcoded mechanism
 ANTI_POPE_CREATION_DESC;Creating an Antipope will allow us to excommunicate any character in our realm, and protect them from excommunication by the official Pope. Bishops who like the Antipope better than the Pope will pay taxes to us instead. However, creating an Antipope will cost §R$PRESTIGE_COST$§! Prestige and will lower the Moral Authority of the Church by §R$AUTHORITY_LOSS$§!.;La création d'un antipape nous permet d'excommunier des personnages de notre pays et les protège d'une excommunication par le pape officiel. Les évêques préférant l'antipape au pape nous paieront des impôts. Cependant, la création d'un antipape coûte §R$PRESTIGE_COST$§! de prestige et affaiblit l'autorité morale de l'Église de §R$AUTHORITY_LOSS$§!.;Die Einsetzung eines Gegenpapstes ermöglicht uns die Exkommunizierung jedes Charakters in unserem Reich und schützt sie vor der Exkommunizierung durch den offiziellen Papst. Bischöfe, die den Gegenpapst dem Papst vorziehen, werden an uns Steuern zahlen. Die Einsetzung eines Gegenpapstes kostet jedoch §R$PRESTIGE_COST$§! Prestige und senkt die Moralische Autorität der Kirche um §R$AUTHORITY_LOSS$§!.;;Un antipapa nos permitirá excomulgar a cualquier personaje de nuestro reino y protegerlo de la excomunión del papa oficial. Los obispos que prefieran al Antipapa antes que al papa nos pagarán sus impuestos a nosotros. Sin embargo, el nombramiento de un antipapa costará §R$PRESTIGE_COST$§! de Prestigio y bajará la Autoridad moral de la Iglesia en §R$AUTHORITY_LOSS$§!.;;;;;;;;;x
 ANTI_POPE_CREATION_LOG;§Y$CREATOR$§! has set up §Y$BISHOP$§! as an Anti-$REL_HEAD_TITLE$ named §Y$REGNAL_NAME$§!.;§Y$CREATOR$§! a placé §Y$BISHOP$§! comme Anti-$REL_HEAD_TITLE$, dorénavant appelé §Y$REGNAL_NAME$§!.;§Y$CREATOR$§! hat §Y$BISHOP$§! als Anti-$REL_HEAD_TITLE$ namens §Y$REGNAL_NAME$§! aufgestellt.;;§Y$CREATOR$§! establece a §Y$BISHOP$§! como un Anti$REL_HEAD_TITLE$ con el nombre de §Y$REGNAL_NAME$§!.;;;;;;;;;x
 ANTI_POPE_CREATION_SETUP;An Anti-Pope;Un antipape;Ein Gegenpapst;;Un Antipapa;;;;;;;;;x
@@ -336,6 +338,7 @@ ANTIPOPE_POPE_VASSAL;§RCan't create an antipope when the Pope is your vassal§!;§
 ANTIPOPE_RECENTLY_DEPOSED;§RAn antipope was recently forcibly deposed§!;§RUn antipape a été récemment déposé par la force§!;§REin Gegenpapst wurde erst kürzlich abgesetzt§!;;§RUn Antipapa fue depuesto recientemente por la fuerza de las armas§!;;;;;;;;;x
 ANTIPOPE_TOO_LOW_OPINION;§RHe likes the Pope (§Y$POPE$§R) more than us (§Y$US$§R)§!;§RIl préfère le Pape (§Y$POPE$§R) à nous (§Y$US$§R)§!;§REr zieht den Papst (§Y$POPE$§R) uns (§Y$US$§R) vor§!;;§RPrefiere al Papa (§Y$POPE$§R) antes que a nosotros (§Y$US$§R).§!;;;;;;;;;x
 APPOINT;Appoint;Nommer;Ernennen;;Designar;;;;;;;;;x
+
 APPOINT_A_NEW;Appoint a new §Y$JOB$§!;Choisir un autre §Y$JOB$§!;Neuen §Y$JOB$§! ernennen;;Nombra un nuevo §Y$JOB$§!;;;;;;;;;x
 APPOINTREGENT_LETTER;I have been appointed as your Regent.;J'ai été nommé[From.Get_E] pour être votre régent[From.Get_E].;Ich wurde zu Eurem Regent ernannt.;;He sido nombrado tu regente.;;;;;;;;;x
 APPOINTREGENT_LOG;§Y$NAME$§! was appointed Regent for §Y$MONARCHNAME$§!.;§Y$NAME$§! devient régent de §Y$MONARCHNAME$§!.;§Y$NAME$§! wurde zum Regent von §Y$MONARCHNAME$§! ernannt.;;§Y$NAME$§! ha sido nombrado regente de §Y$MONARCHNAME$§!.;;;;;;;;;x
@@ -4122,7 +4125,7 @@ NOTIFICATION_EVENT_SETUP;Notification Events;Alertes d'évènements;Mitteilung Ere
 NOTOOLTIP;No tooltip defined;Pas d'infobulle définie;Kein Tooltip definiert;;Sin sugerencia definida;;;;;;;;;x
 Nov;Nov;Nov;Nov;;Nov;Nov;;;;;;;;x
 November;November;novembre;November;Listopad;Noviembre;Novembre;November;Listopad;;;;;;x
-NR_OF_ANTIPOPES;Antipopes;Antipapes;Gegenpapst;;Antipapas;;;;;;;;;x
+NR_OF_ANTIPOPES;Anti-[Root.RelHead.GetTitle];Anti-[Root.RelHead.GetTitle];Gegen-[Root.RelHead.GetTitle];;Anti-[Root.RelHead.GetTitle];;;;;;;;;x
 NUBILE_CONSORTS;Nubile Concubines (x§Y$NUM$§!): §G+$PRESTIGE$§!;Concubines nubiles (x§Y$NUM$§!) : §G+$PRESTIGE$§!;Ehemündige Konkubinen (x§Y$NUM$§!): §G+$PRESTIGE$§!;;Concubinas Núbiles (x§Y$NUM$§!): §G+$PRESTIGE$§!;;;;;;;;;x
 NUDGE;Nudge;;nudge;;;;;;;;;;;x
 NUDGE_0;City;Cité;Stadt;;Villa;;;;;;;;;x
@@ -4974,7 +4977,7 @@ REL_ACQUAINTANCE;acquaintance;connaissance;Bekannte/r;;conocido;;;;;;;;;x
 REL_ACQUAINTANCE_FEMALE;acquaintance;connaissance;Bekannte;;conocida;;;;;;;;;x
 REL_ACQUAINTANCE_MALE;acquaintance;connaissance;Bekannter;;conocido;;;;;;;;;x
 REL_ALWAYS_A_HEAD_DESC;There is always a $HEAD_TITLE$, landed or not;Un chef religieux ($HEAD_TITLE$) existe toujours, qu'il dispose d'un titre foncier ou non;Es gibt immer einen $HEAD_TITLE$, auch ohne eigenen Landbesitz;;Siempre hay un $HEAD_TITLE$, conseguido o no;;;;;;;;;x
-REL_ANTIPOPES_DESC;$NAME$ Rulers can set up Antipopes;Les seigneurs de religion $NAME$ peuvent désigner des antipapes;$NAME$e Herrscher können Gegenpäpste ausrufen;;Gobernantes $NAME$ pueden crear antipapas;;;;;;;;;x
+REL_ANTIPOPES_DESC;$NAME$ Rulers can set up Anti-[Root.RelHead.GetTitle];Les seigneurs de religion $NAME$ peuvent désigner des anti-[Root.RelHead.GetTitle];$NAME$e Herrscher können Gegenpäpste ausrufen;;Gobernantes $NAME$ pueden crear anti-[Root.RelHead.GetTitle];;;;;;;;;x
 REL_APPOINT_SUCCESSOR;Appoint Successor;Nommer un successeur;Nachfolger ernennen;;Nombrar sucesor;;;;;;;;;x
 REL_AUNT_WIFE;Wife;femme;Gattin;;Esposa;;;;;;;;;x
 REL_AUTOCEPHALY_DESC;Autocephalous Patriarchs under Kings;Patriarches autocéphales sous les rois;Autokephale Patriarchen unter Königen;;Patriarcas autocéfalos bajo reyes;;;;;;;;;x

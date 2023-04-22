@@ -840,9 +840,12 @@
 		birth = yes
 	}
 	929.1.1 = {
-		piety = 300
-		prestige = 400
-		wealth = 300
+		add_claim = d_sunni
+		effect_even_if_dead = {
+			sunni = {
+				set_flag = has_antipope
+			}
+		}
 	}
 	961.10.15 = {
 		death = yes
@@ -910,6 +913,11 @@
 	}
 	1036.1.1 = {
 		death = yes
+		effect_even_if_dead = {
+			sunni = {
+				clr_flag = has_antipope
+			}
+		}
 	}
 }
 
@@ -1392,7 +1400,6 @@
 	father = 159422
 	1000.1.1 = {
 		birth = yes
-		add_claim = d_shiite
 	}
 	1050.1.1 = {
 		death = yes
@@ -1412,7 +1419,6 @@
 	father = 45048
 	1040.1.1 = {
 		birth = yes
-		add_claim = d_shiite
 	}
 	1068.1.1 = {
 		death = yes
@@ -1432,7 +1438,6 @@
 	father = 45048
 	1045.1.1 = {
 		birth = yes
-		add_claim = d_shiite
 	}
 	1099.1.1 = {
 		death = yes
@@ -9616,6 +9621,9 @@
 	culture = bedouin_arabic
 	1034.1.1 = {
 		birth = yes
+	}
+	1043.1.1 = {
+		prestige = 200
 	}
 	1085.1.1 = {
 		death = yes

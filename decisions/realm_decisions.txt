@@ -2094,6 +2094,175 @@ decisions = {
 		}
 	}
 
+	form_the_cordoba = {
+		ai_check_interval = 24
+
+		is_high_prio = yes
+
+		only_independent = yes
+
+		potential = {
+			independent = yes
+			is_feudal = yes
+
+			is_sunni_branch = yes
+			controls_religion = no
+
+			e_cordoba = {
+				NOT = {
+					any_previous_holder = {
+						always = yes
+					}
+				}
+			}
+
+			capital_scope = {
+				region = world_europe_west_iberia
+			}
+
+			NOR = { is_alternate_start = yes }
+			
+		}
+
+		allow = {
+			realm_size >= 180
+			prestige >= 1000
+			is_adult = yes
+			prisoner = no
+			is_incapable = no
+
+			trigger_if = {
+				limit = {
+					primary_title = {
+						OR = {
+							title = e_hispania
+							title = k_andalusia
+						}
+					}
+				}
+
+				any_demesne_title = {
+					tier = KING
+					empire = {
+						title = e_maghreb
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					real_tier = KING
+				}
+
+				primary_title = {
+					empire = {
+						title = e_maghreb
+					}
+				}
+
+				has_landed_title = k_andalusia
+			}
+			trigger_else = {
+				primary_title = {
+					title = e_maghreb
+				}
+
+				has_landed_title = k_andalusia
+			}
+
+			trigger_if = {
+				limit = { ai = no }
+
+				scaled_wealth = 2
+			}
+
+			rightful_religious_head_scope = { character = THIS }
+		}
+
+		effect = {
+			hidden_effect = {
+				activate_title = {
+					title = e_cordoba
+					status = yes
+				}
+
+				religion_head = {
+					save_event_target_as = the_caliph
+				}
+			}
+
+			if = {
+				limit = { ai = no }
+				scaled_wealth = -2
+			}
+
+			if = {
+				limit = { has_nickname = no }
+				give_nickname = nick_the_sword_of_god
+			}
+
+			primary_title = {
+				show_scope_change = no
+
+				e_cordoba = {
+					show_scope_change = no
+
+					grant_title = ROOT
+					copy_title_laws = PREV
+				}
+			}
+
+			any_demesne_title = {
+				show_scope_change = no
+
+				if = {
+					limit = {
+						higher_real_tier_than = DUKE
+						NOT = { title = e_cordoba }
+					}
+
+					destroy_landed_title = THIS
+				}
+			}
+
+			e_arabia = {
+				show_scope_change = no
+
+				holder_scope = {
+					show_scope_change = no
+
+					opinion = {
+						name = opinion_unhappy
+						who = ROOT
+						years = 100
+					}
+
+					event_target:the_caliph = {
+						if = {
+							limit = {
+								NOT = { character = PREV }
+							}
+
+							opinion = {
+								name = opinion_unhappy
+								who = ROOT
+								years = 100
+							}
+						}
+					}
+				}				
+			}
+
+			chronicle = {
+				entry = CHRONICLE_FOUNDED_NEW_KINGDOM_OR_EMPIRE
+				portrait = [Root.GetID]
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 	form_the_hre = {
 		ai_check_interval = 24
 

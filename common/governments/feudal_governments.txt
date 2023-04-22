@@ -567,14 +567,19 @@ feudal_governments = {
 		color = { 118 255 163 }
 
 		potential = {
-			culture = bedouin_arabic
+			trigger_if = {
+				limit = {
+					NOT = { is_ibadi_branch = yes }
+				}
+
+				culture = bedouin_arabic
+			}
 			religion_group = muslim
-			NOT = { religion = yazidi }
 
 			trigger_if = {
 				limit = {
 					NOT = {
-						religion_head = ( character = THIS }
+						rightful_religious_head_scope = { character = THIS }
 					}
 				}
 				any_demesne_title = {
@@ -584,7 +589,7 @@ feudal_governments = {
 				has_game_started = no
 			}
 			trigger_else = {
-				religion_head = ( character = THIS }
+				rightful_religious_head_scope = { character = THIS }
 			}
 
 			trigger_if = {
@@ -599,7 +604,10 @@ feudal_governments = {
 			}
 
 			primary_title = {
-				title = e_arabia
+				OR = {
+					title = e_arabia
+					title = e_cordoba
+				}
 			}
 
 			is_patrician = no

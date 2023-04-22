@@ -283,6 +283,7 @@ christian = {
 		can_call_crusade = no
 		can_retire_to_monastery = yes
 		priests_can_inherit = no
+		investiture = yes
 	}
 
 	# Nestorian Group

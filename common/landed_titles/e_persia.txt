@@ -703,7 +703,6 @@ e_persia = {
 				color = { 16 135 12 }
 				color2 = { 255 255 255 }
 
-				holy_site = sunni
 				holy_site = nestorian # Metropolitan site and important for missionaries
 				holy_site = manichaean # Patriarch of the west
 
@@ -1042,7 +1041,6 @@ e_persia = {
 				color2 = { 255 255 255 }
 
 				holy_site = zoroastrian # The Great Fire of Adur Burzen-Mehr
-				holy_site = yazidi
 				holy_site = zun_pagan
 				holy_site = zun_pagan_reformed
 				holy_site = qarmatian
@@ -1233,7 +1231,7 @@ e_persia = {
 				color = { 9 236 89 }
 				color2 = { 255 255 255 }
 
-				holy_site = yazidi
+				holy_site = yazidi # Lalish
 
 				assyrian = "Niniveh"
 
@@ -1250,6 +1248,8 @@ e_persia = {
 			c_nisibin = {
 				color = { 133 170 52 }
 				color2 = { 255 255 255 }
+
+				holy_site = yazidi # Temple of Khatuna Fekhra
 
 				b_nusaybin = {}
 				b_savur = {}
@@ -1278,6 +1278,8 @@ e_persia = {
 			c_sinjar = {
 				color = { 61 160 70 }
 				color2 = { 255 255 255 }
+
+				holy_site = yazidi # Sharfadin temple, and Chel Mera temple located on the highest peak in Sinjar mountains
 
 				b_sinjar = {}
 				b_hatra = {}
@@ -1377,7 +1379,6 @@ e_persia = {
 				color2 = { 255 255 255 }
 
 				holy_site = zoroastrian # The Great Fire of Adur Farnbag
-				holy_site = yazidi
 				holy_site = qarmatian
 
 				b_perozabad = {}

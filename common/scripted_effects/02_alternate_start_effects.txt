@@ -3172,19 +3172,6 @@ randomize_religion_names_effect = {
 
 	if = {
 		limit = {
-			hurufi = {
-				is_name_randomized = yes
-			}
-		}
-
-		d_hurufi = {
-			set_name = ALT_HURUFI
-			adjective = ALT_HURUFI_ADJ
-		}
-	}
-
-	if = {
-		limit = {
 			tengri_pagan_reformed = {
 				is_name_randomized = yes
 			}

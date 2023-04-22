@@ -1,0 +1,30 @@
+#Antipapacy...etc
+defined_text = {
+	name = GetAntiPapacyName
+	use_first_valid = yes
+
+	text = {
+		trigger = {
+			religion_group = christian
+		}
+		localisation_key = ANTIPAPACY
+	}
+	text = {
+		trigger = {
+			religion_group = muslim
+		}
+		localisation_key = ANTICALIPHATE
+	}
+	text = {
+		trigger = {
+			religion = norse_pagan_reformed
+		}
+		localisation_key = ANTIFYLKIRATE
+	}
+	text = {
+		trigger = {
+			religion_group = pagan_group
+		}
+		localisation_key = ANTICHURCH
+	}
+}

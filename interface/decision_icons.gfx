@@ -801,6 +801,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_form_the_cordoba"
+		textureFile = "gfx\\interface\\decision_icon_form_the_cordoba.dds"
+	}
+
+	spriteType = {
 		name = "GFX_form_the_hre"
 		textureFile = "gfx\\interface\\decision_icon_form_the_hre.dds"
 	}

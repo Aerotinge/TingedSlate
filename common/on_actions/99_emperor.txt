@@ -28,6 +28,12 @@ on_yearly_pulse = {
 	}
 }
 
+on_bi_yearly_pulse = {
+	events = {
+		EMP.20630 # antipope aftermath cleanup
+	}
+}
+
 # ROOT is the owner of the winning unit
 # FROM is the taken holding title
 on_siege_over_winner = {
@@ -63,6 +69,8 @@ on_death = {
 		EMP.20110
 		# Papacy
 		EMP.13144
+		# Antipope
+		EMP.20610 # antipope aftermath
 	}
 }
 
@@ -74,6 +82,7 @@ on_heresy_takeover = {
 		EMP.20512 #
 	}
 }
+
 
 # ROOT is the character, FROM is the title, FROMFROM is the old holder
 on_new_holder = {
@@ -148,6 +157,7 @@ on_unlanded = {
 	events = {
 		# Holy Roman Empire
 		EMP.12120
+		EMP.20610 # antipope aftermath
 	}
 }
 
@@ -159,6 +169,7 @@ on_character_convert_religion = {
 		EMP.20530 # Reevaluate Pentarchy if FROM is the five sees
 		# Papacy
 		EMP.13143
+		EMP.20615 # converted antipope aftermath
 	}
 	random_events = {
 		dismiss_job_spiritual = { # Dismiss your job_spiritual of old religion when conversion, with an one-day grace period

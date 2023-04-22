@@ -1464,8 +1464,6 @@ decisions = {
 						d_sunni     = { has_holder = yes }
 						d_ibadi     = { has_holder = yes }
 						d_kharijite = { has_holder = yes }
-						d_yazidi    = { has_holder = yes }
-						d_hurufi    = { has_holder = yes }
 					}
 				}
 
@@ -1476,8 +1474,6 @@ decisions = {
 					destroy_landed_title = d_sunni
 					destroy_landed_title = d_ibadi
 					destroy_landed_title = d_kharijite
-					destroy_landed_title = d_yazidi
-					destroy_landed_title = d_hurufi
 				}
 			}
 

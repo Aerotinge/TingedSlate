@@ -208,4 +208,49 @@ zoroastrian_group = {
 		can_grant_invasion_cb = invasion
 		join_crusade_if_bordering_hostile = yes
 	}
+
+	yazidi = {
+		alternate_start = {
+			has_alternate_start_parameter = {
+				key = religion
+				value = full_random
+			}
+		}
+
+		graphical_culture = sunnigfx
+
+		icon = 9
+		heresy_icon = 10
+
+		color = { 0.2 0.2 0.7 }
+
+		crusade_name = GREAT_HOLY_WAR
+		priest_title = SHEIKH_PRIEST
+		scripture_name = THE_BOOK_OF_ILLUMINATION
+
+		high_god_name = GOD_SHAYTAN
+
+		god_names = {
+			GOD_THE_PEACOCK_ANGEL
+			GOD_TAWUSE_MELEK
+			GOD_SHAYTAN
+		}
+
+		evil_god_names = {
+			THE_DARK_SPIRITS
+		}
+
+		parent = zoroastrian
+
+		max_wives = 4
+
+		#intermarry = muslim
+
+		attacking_same_religion_piety_loss = yes
+		can_call_crusade = yes
+		can_excommunicate = yes
+		landed_kin_prestige_bonus = yes
+		matrilineal_marriages = no
+		priests_can_marry = yes
+	}
 }

@@ -1156,11 +1156,6 @@ character_event = {
 		}
 
 		if = {
-			limit = { hurufi = { is_name_randomized = yes } }
-			d_hurufi = { set_random_coa_effect = yes }
-		}
-
-		if = {
 			limit = {
 				tengri_pagan_reformed = { is_name_randomized = yes }
 			}
