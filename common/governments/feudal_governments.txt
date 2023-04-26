@@ -572,7 +572,8 @@ feudal_governments = {
 					NOT = { is_ibadi_branch = yes }
 				}
 
-				culture = bedouin_arabic
+				#culture = bedouin_arabic
+				culture_group = arabic
 			}
 			religion_group = muslim
 

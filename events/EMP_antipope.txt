@@ -1,73 +1,36 @@
 namespace = EMP
 
-# Extended Antipope
-# controlled by religion_scope = { has_flag = has_antipope }, it should be seperated from vanilla Catholic/Fraticelli Antipopes
-# require "investiture = yes" pre defined in religion to display properly
-
 # Check Antipope shall be 
 character_event = {
 	id = EMP.20610
 
-	is_triggered_only = yes # on_unlanded, on_death
+	is_triggered_only = yes # on_death
 	hide_window = yes
 
 	trigger = {
 		religion_scope = {
-			has_flag = has_antipope
 			persistent_event_target:religion_title = {
-				claimed_by = ROOT
+				persistent_event_target:religion_title_placeholder = {
+					claimed_by = ROOT
+				}
 			}
 		}
 		rightful_religious_head_scope = { character = ROOT }
 	}
-	
+
 	immediate = {
+		primary_title = {
+			if = {
+				limit = {
+					current_heir = { always = yes } # In case of fallback
+				}
+				set_title_flag = antipapacy_residential
+			}
+		}
 		religion_scope = {
 			persistent_event_target:religion_title = {
-				remove_claim = ROOT
-
-				if = {
-					limit = {
-						NOT = {
-							any_claimant = { always = yes }
-						}
-						PREV = { religion_authority >= 0.5 }
-					}
-
-					PREV = { set_can_have_antipopes = no }
-				}
-			}
-		}
-	}
-}
-
-# Character converts religion, for whatever reason
-# ROOT is the character after conversion
-# FROM scope has the old religion
-character_event = {
-	id = EMP.20615
-
-	is_triggered_only = yes # on_character_convert_religion
-	hide_window = yes
-
-	has_character_flag = needs_antipope_cleanup
-
-	trigger = {}
-	
-	immediate = {
-		clr_character_flag = needs_antipope_cleanup
-
-		FROM = {
-			persistent_event_target:religion_title = {
-				if = {
-					limit = {
-						NOT = {
-							any_claimant = { always = yes }
-						}
-						PREV = { religion_authority >= 0.5 }
-					}
-
-					ROOT_FROM = { set_can_have_antipopes = no }
+				persistent_event_target:religion_title_placeholder = {
+					remove_claim = ROOT
 				}
 			}
 		}
@@ -75,30 +38,56 @@ character_event = {
 }
 
 character_event = {
-	id = EMP.20630
+	id = EMP.20611
 
-	is_triggered_only = yes # on_decade_pulse
+	is_triggered_only = yes # on_new_holder_inheritance
 	hide_window = yes
 
 	only_playable = yes
 
 	trigger = {
-		controls_religion = yes # So...If the orthodox temporal religion head title is destroyed, the religion tab stays in "antipopes" one
-		religion_scope = {
-			has_flag = has_antipope
-			persistent_event_target:religion_title = {
-				NOT = {
-					any_claimant = { always = yes }
-				}
-			}
-		}
-		religion_authority >= 0.5
+		FROM = { has_title_flag = antipapacy_residential }
 	}
 
 	immediate = {
-		religion_scope = {
-			clr_flag = has_antipope
-			set_can_have_antipopes = no
+		FROM = { clr_title_flag = antipapacy_residential }
+		if = {
+			limit = {
+				#dynasty = FROMFROM
+				religion = FROMFROM
+			}
+			religion_scope = {
+				persistent_event_target:religion_title = {
+					persistent_event_target:religion_title_placeholder = {
+						add_weak_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = EMP.20620
+
+	is_triggered_only = yes # on_new_holder_*
+	hide_window = yes
+
+	only_playable = yes
+
+	trigger = {
+		FROM = {
+			persistent_event_target:religion_title_placeholder = {
+				is_title_active = yes
+			}
+		}
+	}
+
+	immediate = {
+		FROM = {
+			persistent_event_target:religion_title_placeholder = {
+				copy_title_history = PREV
+			}
 		}
 	}
 }

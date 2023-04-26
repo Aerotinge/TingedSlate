@@ -1,4 +1,6 @@
 632.6.8 = {
+	#law = succ_feudal_elective
+	law = agnatic_succession
 	holder = 163014
 }
 
@@ -28,6 +30,7 @@
 
 684.6.1 = {
 	holder = 163003
+	#law = succ_primogeniture
 }
 
 685.5.7 = {
@@ -201,6 +204,7 @@
 1157.5.8 = {
 	liege = 0
 }
+
 1160.1.1 = {
 	holder = 144063
 }
@@ -240,4 +244,3 @@
 1302.1.1 = {
 	holder = 34034
 }
-

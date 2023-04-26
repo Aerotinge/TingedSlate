@@ -166,6 +166,9 @@
 	1090.1.1 = {
 		birth = yes
 	}
+	1154.1.1 = {
+		add_claim = d_ibadi
+	}
 	1161.1.1 = {
 		death = yes
 	}
@@ -306,6 +309,9 @@
 	1140.1.1 = {
 		birth = yes
 	}
+	1161.1.1 = {
+		add_claim = d_ibadi
+	}
 	1210.1.1 = {
 		death = yes
 	}
@@ -319,6 +325,9 @@
 	father = 144560
 	1190.1.1 = {
 		birth = yes
+	}
+	1210.1.1 = {
+		add_claim = d_ibadi
 	}
 	1250.1.1 = {
 		death = yes
@@ -334,6 +343,9 @@
 	1220.1.1 = {
 		birth = yes
 	}
+	1250.1.1 = {
+		add_claim = d_ibadi
+	}
 	1278.1.1 = {
 		death = yes
 	}
@@ -348,6 +360,9 @@
 	1250.1.1 = {
 		birth = yes
 	}
+	1278.1.1 = {
+		add_claim = d_ibadi
+	}
 	1285.1.1 = {
 		death = yes
 	}
@@ -361,6 +376,9 @@
 	father = 144563
 	1280.1.1 = {
 		birth = yes
+	}
+	1285.1.1 = {
+		add_claim = d_ibadi
 	}
 	1338.1.1 = {
 		death = yes
@@ -842,8 +860,11 @@
 	929.1.1 = {
 		add_claim = d_sunni
 		effect_even_if_dead = {
-			sunni = {
-				set_flag = has_antipope
+			d_sunni = {
+				save_persistent_event_target = {
+					name = religion_title_placeholder
+					scope = d_sunni_placeholder
+				}
 			}
 		}
 	}
@@ -914,8 +935,8 @@
 	1036.1.1 = {
 		death = yes
 		effect_even_if_dead = {
-			sunni = {
-				clr_flag = has_antipope
+			d_sunni = {
+				clear_persistent_event_target = religion_title_placeholder
 			}
 		}
 	}
@@ -1420,6 +1441,9 @@
 	1040.1.1 = {
 		birth = yes
 	}
+	1066.1.1 = {
+		add_claim = d_shiite
+	}
 	1068.1.1 = {
 		death = yes
 	}
@@ -1439,6 +1463,9 @@
 	1045.1.1 = {
 		birth = yes
 	}
+	1068.1.1 = {
+		add_claim = d_shiite
+	}
 	1099.1.1 = {
 		death = yes
 	}
@@ -1455,6 +1482,9 @@
 	culture = bedouin_arabic
 	1070.1.1 = {
 		birth = yes
+	}
+	1099.1.1 = {
+		add_claim = d_shiite
 	}
 	1109.1.1 = {
 		death = yes
@@ -1473,6 +1503,9 @@
 	father = 45051
 	1090.1.1 = {
 		birth = yes
+	}
+	1109.1.1 = {
+		add_claim = d_shiite
 	}
 	1111.1.1 = {
 		death = yes
@@ -1493,6 +1526,9 @@
 	1091.1.1 = {
 		birth = yes
 	}
+	1111.1.1 = {
+		add_claim = d_shiite
+	}
 	1116.1.1 = {
 		death = yes
 	}
@@ -1510,6 +1546,9 @@
 	father = 220870
 	1085.1.1 = {
 		birth = yes
+	}
+	1116.1.1 = {
+		add_claim = d_shiite
 	}
 	1124.1.1 = {
 		death = yes
@@ -1530,6 +1569,8 @@
 	father = 45050
 	1080.1.1 = {
 		birth = yes
+	}
+	1117.1.1 = {
 		add_claim = d_shiite
 	}
 	1137.1.1 = {
@@ -1550,7 +1591,6 @@
 	father = 45050
 	1075.1.1 = {
 		birth = yes
-		add_claim = d_shiite
 	}
 	1115.1.1 = {
 		death = yes
@@ -1570,7 +1610,6 @@
 	father = 45050
 	1076.1.1 = {
 		birth = yes
-		add_claim = d_shiite
 	}
 	1115.1.1 = {
 		death = yes
@@ -1591,6 +1630,8 @@
 	father = 45056
 	1100.1.1 = {
 		birth = yes
+	}
+	1137.1.1 = {
 		add_claim = d_shiite
 	}
 	1138.1.1 = {
@@ -1611,6 +1652,8 @@
 	father = 45057
 	1110.1.1 = {
 		birth = yes
+	}
+	1138.1.1 = {
 		add_claim = d_shiite
 	}
 	#1171.1.1 = {
@@ -1912,6 +1955,16 @@
 	623.1.1 = {
 		add_spouse = 33921 # Fatimah
 	}
+	632.6.8 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 1st_imam
+					scope = ROOT
+				}
+			}
+		}
+	}
 	661.2.28 = {
 		death = yes
 	}
@@ -1928,6 +1981,16 @@
 	626.1.8 = {
 		birth = yes
 	}
+	670.3.6 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 3rd_imam
+					scope = ROOT
+				}
+			}
+		}
+	}
 	680.10.10 = {
 		death = yes
 	}
@@ -1942,6 +2005,16 @@
 	add_trait = sayyid
 	659.1.1 = {
 		birth = yes
+	}
+	680.10.10 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 4th_imam
+					scope = ROOT
+				}
+			}
+		}
 	}
 	712.1.1 = {
 		death = yes
@@ -1958,6 +2031,16 @@
 	676.1.1 = {
 		birth = yes
 	}
+	712.1.1 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 5th_imam
+					scope = ROOT
+				}
+			}
+		}
+	}
 	733.1.1 = {
 		death = yes
 	}
@@ -1972,6 +2055,16 @@
 	add_trait = sayyid
 	702.4.20 = {
 		birth = yes
+	}
+	733.1.1 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 6th_imam
+					scope = ROOT
+				}
+			}
+		}
 	}
 	765.12.14 = {
 		death = yes
@@ -2147,6 +2240,20 @@
 	add_trait = sayyid
 	625.3.1 = {
 		birth = yes
+	}
+	661.6.1 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = religion_title_placeholder
+					scope = d_shiite_placeholder
+				}
+				save_persistent_event_target = {
+					name = 2nd_imam
+					scope = ROOT
+				}
+			}
+		}
 	}
 	670.3.6 = {
 		death = yes
@@ -6490,6 +6597,16 @@
 	745.11.6 = {
 		birth = yes
 	}
+	765.12.14 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 7th_imam
+					scope = ROOT
+				}
+			}
+		}
+	}
 	799.9.1 = {
 		death = yes
 	}
@@ -6504,6 +6621,16 @@
 	add_trait = sayyid
 	765.12.9 = {
 		birth = yes
+	}
+	799.9.1 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 8th_imam
+					scope = ROOT
+				}
+			}
+		}
 	}
 	818.8.23 = {
 		death = yes
@@ -6520,6 +6647,16 @@
 	811.4.8 = {
 		birth = yes
 	}
+	818.8.23 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 9th_imam
+					scope = ROOT
+				}
+			}
+		}
+	}
 	835.11.24 = {
 		death = yes
 	}
@@ -6534,6 +6671,25 @@
 	add_trait = sayyid
 	828.1.1 = {
 		birth = yes
+	}
+	835.11.24 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 10th_imam
+					scope = ROOT
+				}
+			}
+		}
+	}
+	848.5.1 = {
+		effect = {
+			imprison = 34014
+			add_character_modifier = { 
+				name = house_arrest
+				duration = -1
+			}
+		}
 	}
 	868.1.1 = {
 		death = yes
@@ -6550,6 +6706,25 @@
 	846.12.1 = {
 		birth = yes
 	}
+	848.5.1 = {
+		effect = {
+			imprison = 34014
+			add_character_modifier = { 
+				name = house_arrest
+				duration = -1
+			}
+		}
+	}
+	868.1.1 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 11th_imam
+					scope = ROOT
+				}
+			}
+		}
+	}
 	874.1.1 = {
 		death = yes
 	}
@@ -6565,8 +6740,21 @@
 	869.7.29 = {
 		birth = yes
 	}
+	874.1.1 = {
+		effect_even_if_dead = {
+			d_shiite = {
+				save_persistent_event_target = {
+					name = 12th_imam
+					scope = ROOT
+				}
+			}
+		}
+	}
 	909.1.1 = {
-		death = yes
+		death = {
+			death_reason = death_vanished
+			killer = 34021
+		}
 	}
 }
 
@@ -7184,6 +7372,9 @@
 	845.1.1 = {
 		birth = yes #Unknown
 	}
+	897.1.1 = {
+		add_claim = d_shiite
+	}
 	911.1.1 = {
 		death = yes
 	}
@@ -7198,6 +7389,9 @@
 	father = 159399
 	880.1.1 = {
 		birth = yes #Unknown
+	}
+	911.1.1 = {
+		add_claim = d_shiite
 	}
 	922.1.1 = {
 		death = yes
@@ -7214,6 +7408,9 @@
 	881.1.1 = {
 		birth = yes #Unknown
 	}
+	922.1.1 = {
+		add_claim = d_shiite
+	}
 	934.1.1 = {
 		death = yes
 	}
@@ -7229,6 +7426,9 @@
 	901.1.1 = {
 		birth = yes #Unknown
 	}
+	934.1.1 = {
+		add_claim = d_shiite
+	}
 	939.1.1 = {
 		death = yes
 	}
@@ -7243,6 +7443,9 @@
 	father = 159401
 	902.1.1 = {
 		birth = yes #Unknown
+	}
+	937.1.1 = {
+		add_claim = d_shiite
 	}
 	956.1.1 = {
 		death = yes
@@ -7273,6 +7476,9 @@
 	father = 159404
 	938.1.1 = {
 		birth = yes #Unknown
+	}
+	968.1.1 = {
+		add_claim = d_shiite
 	}
 	1012.1.1 = {
 		death = yes
@@ -7310,7 +7516,7 @@
 }
 
 159408 = {
-	name = "Ali"#
+	name = "Ali" #
 	dynasty = 576
 	religion = shiite
 	culture = bedouin_arabic
@@ -7325,7 +7531,7 @@
 }
 
 159409 = {
-	name = "al-Mansur al-Qasim al-Iyyani"#
+	name = "al-Mansur al-Qasim al-Iyyani" #
 	dynasty = 576
 	religion = shiite
 	culture = bedouin_arabic
@@ -7334,13 +7540,16 @@
 	920.1.1 = {
 		birth = yes #Unknown
 	}
+	998.1.1 = {
+		add_claim = d_shiite
+	}
 	1002.1.1 = {
 		death = yes
 	}
 }
 
 159410 = {
-	name = "al-Mahdi al-Husayn"#
+	name = "al-Mahdi al-Husayn" #
 	dynasty = 576
 	religion = shiite
 	culture = bedouin_arabic
@@ -7348,6 +7557,9 @@
 	father = 159409
 	950.1.1 = {
 		birth = yes #Unknown
+	}
+	1010.1.1 = {
+		add_claim = d_shiite
 	}
 	1013.1.1 = {
 		death = yes
@@ -7483,7 +7695,6 @@
 	father = 159418
 	1045.1.1 = {
 		birth = yes #Unknown
-		add_claim = d_shiite
 	}
 	1100.1.1 = {
 		death = yes
@@ -7499,7 +7710,6 @@
 	father = 159419
 	1100.1.1 = {
 		birth = yes #Unknown
-		add_claim = d_shiite
 	}
 	1171.1.1 = {
 		death = yes
@@ -7993,6 +8203,9 @@
 	religion = ibadi
 	818.1.1 = {
 		birth = yes
+	}
+	851.1.1 = {
+		add_claim = d_ibadi
 	}
 	886.1.1 = {
 		death = yes
@@ -12484,6 +12697,17 @@
 	711.1.1 = {
 		birth = yes
 	}
+	751.1.1 = {
+		add_claim = d_ibadi
+		effect_even_if_dead = {
+			d_ibadi = {
+				save_persistent_event_target = {
+					name = religion_title_placeholder
+					scope = d_ibadi_placeholder
+				}
+			}
+		}
+	}
 	775.1.1 = {
 		death = yes
 	}
@@ -12498,7 +12722,10 @@
 	734.1.1 = {
 		birth = yes
 	}
-	790.1.1 = {
+	775.1.1 = {
+		add_claim = d_ibadi
+	}
+	801.1.1 = {
 		death = yes
 	}
 }
@@ -12511,7 +12738,10 @@
 	733.1.1 = {
 		birth = yes
 	}
-	785.1.1 = {
+	801.1.1 = {
+		add_claim = d_ibadi
+	}
+	807.1.1 = {
 		death = yes
 	}
 }
@@ -15114,6 +15344,9 @@
 	father = 260980
 	901.1.1 = {
 		birth = yes
+	}
+	930.1.1 = {
+		add_claim = d_ibadi
 	}
 	939.1.1 = {
 		death = yes

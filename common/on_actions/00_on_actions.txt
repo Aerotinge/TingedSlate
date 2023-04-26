@@ -5,7 +5,7 @@ on_startup = {
 		setup_religion_title_scope = yes
 		setup_reformed_religion_scope = yes
 		setup_holy_order_religion_scopes = yes
-		setup_antipope_religion_effect = yes
+		setup_antipope_religion_effect = yes # req. setup_religion_title_scope
 	}
 
 	events = {

@@ -2734,8 +2734,11 @@
 		remove_claim = k_maghreb
 		add_claim = d_sunni
 		effect_even_if_dead = {
-			sunni = {
-				set_flag = has_antipope
+			d_sunni = {
+				save_persistent_event_target = {
+					name = religion_title_placeholder
+					scope = d_sunni_placeholder
+				}
 			}
 		}
 	}
@@ -2944,8 +2947,8 @@
 	1269.1.1 = {
 		death = yes
 		effect_even_if_dead = {
-			sunni = {
-				clr_flag = has_antipope
+			d_sunni = {
+				clear_persistent_event_target = religion_title_placeholder
 			}
 		}
 	}

@@ -1273,16 +1273,9 @@ religion_has_incest = {
 }
 
 is_antipope = {
-	religion_scope = {
-		trigger_if = {
-			limit = {
-				NOT = { religion_group = christian }
-			}
-			has_flag = has_antipope
-		}
-		persistent_event_target:religion_title = {
-			claimed_by = PREVPREV
-		}
+	OR = {
+		has_claim = k_papacy
+		has_claim = d_fraticelli
 	}
 }
 

@@ -16534,6 +16534,17 @@ k_orthodox_adj;Patriarchal;patriarcale;Patriarchisch;;Patriarcal;;;;;;;;;x
 k_papacy;The Papacy;Papauté;Kirchenstaat;;El Papado;;;;;;;;;x
 k_papacy_adj;Papal;papale;Vatikanisch;;Pontifícia;;;;;;;;;x
 
+## Placeholder titles for antipapacy religion_heads
+d_sunni_placeholder;The Sunni Caliphate;Califat sunnite;Das Sunni-Kalifat;;El Califato Suni;;;;;;;;;x
+d_sunni_placeholder_adj;Caliphal;califale;Sunnitisch-Kalifisch;;Califal;;;;;;;;;x
+d_shiite_placeholder;The Shia Caliphate;Califat chiite;Das Schia-Kalifat;;El Califato Chií;;;;;;;;;x
+d_shiite_placeholder_adj;Caliphal;califale;Shiitisch-Kalifisch;;Califal;;;;;;;;;x
+d_kharijite_placeholder;The Kharijite Caliphate;Califat kharidjite;Charidschitisches Kalifat;;El Califato Jariyita;;;;;;;;;x
+d_ibadi_placeholder;The Ibadi Caliphate;Califat ibadite;Das Ibadi-Kalifat;;El Califato ibadí;;;;;;;;;x
+d_ibadi_placeholder_adj;Ibadi Caliphal;ibadite;Ibadi-Kalifat;;del Califato ibadí;;;;;;;;;x
+d_kharijite_placeholder_adj;Kharijite Caliphal;califale kharidjite;Charidschitisch;;Califa Jariyita;;;;;;;;;x
+
+
 ## Turkish kingdoms in Anatolia
 k_aydin;Aydin;Aydin;Aydin;;Aydín;;;;;;;;;x
 k_aydin_adj;Aydin;aydin;Aydinisch;;aydina;;;;;;;;;x

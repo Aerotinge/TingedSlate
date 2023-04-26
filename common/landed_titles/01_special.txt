@@ -441,3 +441,117 @@ k_sina = { #placeholder for the Chinese Empire itself, for V4 map is yet prepare
 	extra_ai_eval_troops = 7500
 	monthly_income = 12 # (Must be an integer between 1 and 512)
 }
+
+# religion_heads placeholder for antipapacy
+
+d_sunni_placeholder = {
+	color = { 40 160 40 }
+	color2 = { 220 220 0 }
+
+	capital = 1533 # Mecca
+
+	creation_requires_capital = no
+
+	dignity = 100 # Counted as having this many more counties than it does
+
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	location_ruler_title = yes
+
+	religion = sunni
+
+	allow = { always = no }
+
+	caliphate = yes
+
+	coat_of_arms = {
+		data = { 0 0 0 3 0 2 2 }
+		religion = sunni
+	}
+}
+
+d_shiite_placeholder = {
+	color = { 60 190 60 }
+	color2 = { 220 220 0 }
+
+	capital = 1533 # Mecca
+
+	creation_requires_capital = no
+
+	dignity = 100 # Counted as having this many more counties than it does
+
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	location_ruler_title = yes
+
+	religion = shiite
+
+	allow = { always = no}
+
+	caliphate = yes
+
+	coat_of_arms = {
+		data = { 0 0 0 9 1 7 7 }
+		religion = shiite
+	}
+}
+
+d_kharijite_placeholder = {
+	color = { 10 110 10 }
+	color2 = { 220 220 0 }
+
+	capital = 1533 # Mecca
+
+	creation_requires_capital = no
+
+	dignity = 80 # Counted as having this many more counties than it does
+
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	location_ruler_title = yes
+
+	religion = kharijite
+
+	allow = { always = no }
+
+	caliphate = yes
+
+	coat_of_arms = {
+		data = { 0 0 0 8 0 2 2 }
+		religion = kharijite
+	}
+}
+
+d_ibadi_placeholder = {
+	color = { 20 130 20 }
+	color2 = { 220 220 0 }
+
+	capital = 1533 # Mecca
+
+	creation_requires_capital = no
+
+	dignity = 80 # Counted as having this many more counties than it does
+
+	title = CALIPH
+	title_female = CALIPHA
+	foa = CALIPH_FOA
+	short_name = yes
+	location_ruler_title = yes
+
+	religion = ibadi
+
+	allow = { always = no }
+
+	caliphate = yes
+
+	coat_of_arms = {
+		data = { 0 0 0 8 0 2 2 }
+		religion = ibadi
+	}
+}

@@ -265,14 +265,6 @@ d_ibadi = {
 		can_create_duchy = yes
 
 		trigger_if = {
-			limit = { piety < 1000 }
-			OR = {
-				trait = mirza
-				trait = sayyid
-			}
-		}
-
-		trigger_if = {
 			limit = {
 				has_alternate_start_parameter = {
 					key = religion_names
@@ -282,7 +274,18 @@ d_ibadi = {
 			can_usurp_religion_head = yes
 		}
 		trigger_else = {
-			muslim_religion_head_trigger = yes
+			piety >= 1000
+			trigger_if = {
+				limit = {
+					any_independent_ruler = {
+						religion = ibadi
+					}
+				}
+				any_independent_ruler = {
+					religion = ibadi
+					is_vassal_or_below_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -370,7 +373,6 @@ d_kharijite = {
 	title_female = CALIPHA
 	foa = CALIPH_FOA
 	short_name = yes
-	location_ruler_title = yes
 
 	religion = kharijite
 
@@ -382,14 +384,6 @@ d_kharijite = {
 		can_create_duchy = yes
 
 		trigger_if = {
-			limit = { piety < 1000 }
-			OR = {
-				trait = mirza
-				trait = sayyid
-			}
-		}
-
-		trigger_if = {
 			limit = {
 				has_alternate_start_parameter = {
 					key = religion_names
@@ -399,7 +393,18 @@ d_kharijite = {
 			can_usurp_religion_head = yes
 		}
 		trigger_else = {
-			muslim_religion_head_trigger = yes
+			piety >= 1000
+			trigger_if = {
+				limit = {
+					any_independent_ruler = {
+						religion = kharijite
+					}
+				}
+				any_independent_ruler = {
+					religion = kharijite
+					is_vassal_or_below_of = ROOT
+				}
+			}
 		}
 	}
 
@@ -647,7 +652,6 @@ d_paulician = {
 #	title_female = CALIPHA
 #	foa = CALIPH_FOA
 #	short_name = yes
-#	location_ruler_title = yes
 #
 #	religion = qarmatian
 #
@@ -704,7 +708,6 @@ d_shiite = {
 	title_female = CALIPHA
 	foa = CALIPH_FOA
 	short_name = yes
-	location_ruler_title = yes
 
 	religion = shiite
 
@@ -713,15 +716,8 @@ d_shiite = {
 
 	allow = {
 		religion = shiite
+		culture_group = arabic
 		can_create_duchy = yes
-
-		trigger_if = {
-			limit = { piety < 1000 }
-			OR = {
-				trait = mirza
-				trait = sayyid
-			}
-		}
 
 		trigger_if = {
 			limit = {
@@ -733,31 +729,11 @@ d_shiite = {
 			can_usurp_religion_head = yes
 		}
 		trigger_else = {
-			custom_tooltip = {
-				text = shia_creation_independent
-
-				trigger_if = {
-					limit = { independent = no }
-					NOT = {
-						any_liege = {
-							NOT = { religion = shiite }
-						}
-					}
-				}
-			}
-
-			trigger_if = {
-				limit = {
-					NOT = {
-						any_owned_bloodline = {
-							has_bloodline_flag = bloodline_shiite_leader
-							bloodline_is_active_for = PREV
-						}
-					}
-				}
-
-				muslim_religion_head_trigger = yes
-			}
+			#any_owned_bloodline = {
+			#	has_bloodline_flag = bloodline_shiite_leader
+			#	bloodline_is_active_for = PREV
+			#}
+			always = no # No unified shiite head after 941, to simulate branches of Twelver, Fivers, Sevener, Whatever.
 		}
 	}
 
@@ -808,7 +784,6 @@ d_sunni = {
 	title_female = CALIPHA
 	foa = CALIPH_FOA
 	short_name = yes
-	location_ruler_title = yes
 
 	religion = sunni
 
@@ -817,15 +792,8 @@ d_sunni = {
 
 	allow = {
 		religion = sunni
+		culture_group = arabic
 		can_create_duchy = yes
-
-		trigger_if = {
-			limit = { piety < 1000 }
-			OR = {
-				trait = mirza
-				trait = sayyid
-			}
-		}
 
 		trigger_if = {
 			limit = {
@@ -838,19 +806,66 @@ d_sunni = {
 		}
 		trigger_else = {
 			custom_tooltip = {
-				text = sunni_creation_independent
+				text = controls_mecca_medina
 
-				trigger_if = {
-					limit = { independent = no }
-					NOT = {
-						any_liege = {
-							NOT = { religion = sunni }
+				c_mecca = {
+					holder_scope = {
+						OR = {
+							character = ROOT
+							is_vassal_or_below_of = ROOT
+						}
+					}
+				}
+
+				c_medina = {
+					holder_scope = {
+						OR = {
+							character = ROOT
+							is_vassal_or_below_of = ROOT
 						}
 					}
 				}
 			}
 
-			muslim_religion_head_trigger = yes
+			OR = {
+				custom_tooltip = {
+					text = controls_jerusalem_damascus_baghdad
+
+					c_jerusalem = {
+						holder_scope = {
+							OR = {
+								character = ROOT
+								is_vassal_or_below_of = ROOT
+							}
+						}
+					}
+
+					c_damascus = {
+						holder_scope = {
+							OR = {
+								character = ROOT
+								is_vassal_or_below_of = ROOT
+							}
+						}
+					}
+
+					c_baghdad = {
+						holder_scope = {
+							OR = {
+								character = ROOT
+								is_vassal_or_below_of = ROOT
+							}
+						}
+					}
+				}
+
+				AND = {
+					trait = sayyid
+					piety >= 1000
+				}
+
+				has_claim = FROM
+			}
 		}
 	}
 

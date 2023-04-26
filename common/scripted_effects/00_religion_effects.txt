@@ -6,8 +6,8 @@
 # reset_religion_features_effect
 # apply_cosmopolian_on_start_effect
 # apply_dogmatic_on_start_effect
+# setup_religion_title_scope
 # setup_reformed_religion_scope
-# setup_antihead_religion_effect
 # export_reformer_to_title_effect
 # rebuild_god_name_effect
 # convert_religion_failsafe_effect
@@ -2401,16 +2401,51 @@ setup_antipope_religion_effect = {
 			is_save_game = no
 		}
 
-		sunni = {
-			if = {
-				limit = {
-					NOT = { has_flag = has_antipope }
-				}
-				set_can_have_antipopes = no
-			}
-		}
+		#any_landed_title = {
+		#	limit = {
+		#		persistent_event_target:religion_scope = {
+		#			always = yes
+		#			OR = {
+		#				religion_group = muslim
+		#				religion_group = pagan_group
+		#			}
+		#			NOT = { has_flag = has_antipope }
+		#		}
+		#	}
+		#	persistent_event_target:religion_scope = {
+		#		set_can_have_antipopes = no
+		#		log = "[This.GetName] had antipope disabled"
+		#	}
+		#}
 
-		log = "Set-up antipope on target religion(s)"
+		any_landed_title = {
+			limit = {
+				persistent_event_target:religion_title_placeholder = {
+					always = yes
+				}
+			}
+
+			persistent_event_target:religion_title_placeholder = {
+				save_event_target_as = religion_title_placeholder
+				copy_title_history = PREV
+			}
+
+			persistent_event_target:religion_scope = { set_religion_head = event_target:religion_title_placeholder }
+
+			if = {
+				limit = { has_holder = yes }
+				holder_scope = { add_weak_claim = event_target:religion_title_placeholder }
+			}
+			any_claimant = {
+				limit = {
+					is_playable = yes
+				}
+				remove_claim = PREV
+				add_weak_claim = event_target:religion_title_placeholder
+			}
+
+			log = "[This.GetFullBaseName] placeholder title init"
+		}
 	}
 }
 
@@ -3662,22 +3697,6 @@ convert_religion_failsafe_effect = {
 
 			set_character_flag = needs_temporary_fake_theocracy_government
 			set_government_type = temporary_fake_theocracy_government
-		}
-
-		# Trigger Antipope cleanup process once
-		# Since on_character_convert_religion is too late to catch
-		
-		if = {
-			limit = {
-				religion_scope = {
-					has_flag = has_antipope
-					persistent_event_target:religion_title = {
-						claimed_by = PREVPREV
-					}
-				}
-			}
-
-			set_character_flag = needs_antipope_cleanup
 		}
 	}
 
