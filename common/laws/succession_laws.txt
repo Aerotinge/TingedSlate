@@ -676,16 +676,26 @@ succession_laws = {
 			}
 			trigger_else_if = {
 				limit = {
-					NAND = {
-						has_law = succ_feudal_elective
-						is_offmap_tag = offmap_hre
-					}
-
 					holder_scope = {
-						NOR = {
+						OR = {
 							religion_group = muslim
 							religion_group = jewish_group
 						}
+					}
+				}
+
+				holder_scope = {
+					OR = {
+						is_tribal = yes
+						is_feudal = yes
+					}
+				}
+			}
+			trigger_else_if = {
+				limit = {
+					NAND = {
+						has_law = succ_feudal_elective
+						is_offmap_tag = offmap_hre
 					}
 				}
 
@@ -1086,6 +1096,9 @@ succession_laws = {
 
 					OR = {
 						is_tribal = yes
+						is_feudal = yes
+					}
+					OR = {
 						religion_group = pagan_group
 						religion_group = muslim
 					}

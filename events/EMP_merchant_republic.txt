@@ -1,0 +1,90 @@
+namespace = EMP
+
+# Generates patritians if there's less than five families on_startup
+# Quick and Dirty fix for PDX's dumb lossy history setup
+character_event = {
+	id = EMP.20410
+
+	is_triggered_only = yes # on_startup
+	
+	hide_window = yes
+
+	only_playable = yes
+	is_patrician = yes
+ 
+	trigger = {
+		primary_title = { has_law = succ_patrician_elective }
+		num_of_government_vassals = {
+			government = merchant_republic_government
+			value < 4
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = { has_children = no }
+			generate_familes_effect = yes
+		}
+
+		while = {
+			limit = {
+				num_of_government_vassals = {
+					government = merchant_republic_government
+					value < 4
+				}
+			}
+
+			if = {
+				limit = {
+					any_vassal = {
+						government = republic_government
+					}
+				}
+
+				random_vassal = {
+					limit = {
+						government = republic_government
+					}
+					preferred_limit = {
+						higher_real_tier_than = COUNT
+					}
+					preferred_limit = {
+						higher_real_tier_than = BARON
+					}
+
+					#log = "[This.GetBestName] is a candidate"
+
+					if = {
+						limit = { is_lowborn = yes }
+						dynasty = father_bastard
+					}
+
+					create_family_palace = yes
+					generate_familes_effect = yes
+				}
+				else = {
+					create_random_steward = {
+						age = 35
+						religion = ROOT
+						culture = ROOT
+						dynasty = actually_culture
+						random_traits = yes
+					}
+					new_character = {
+						#log = "Patrician [This.GetBestName] spawned"
+						while = {
+							count = 9
+							random = {
+								chance = 10
+								add_age = 1
+							}
+						}
+
+						create_family_palace = yes
+						generate_familes_effect = yes
+					}
+				}
+			}
+		}
+	}
+}

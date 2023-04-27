@@ -1,6 +1,1 @@
-732.1.1 = {
-	government = merchant_republic_government
-	holding_dynasty = 1022229
-	liege = d_ragusa
-	holder = 260394
-}
+# Dummy

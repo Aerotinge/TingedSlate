@@ -1,10 +1,10 @@
 #character
 on_startup = {
 	events = {
+		# Merchant republic setup
+		EMP.20410
 		# Pentarchy Setup
 		EMP.20510
-		# Antipope history setup
-		#EMP.20601
 		# Title Status Setup
 		EMP.20210
 		# Governor title Setup
