@@ -6,7 +6,7 @@ character_event = {
 	id = EMP.20410
 
 	is_triggered_only = yes # on_startup
-	
+
 	hide_window = yes
 
 	only_playable = yes
@@ -62,27 +62,27 @@ character_event = {
 					create_family_palace = yes
 					generate_familes_effect = yes
 				}
-				else = {
-					create_random_steward = {
-						age = 35
-						religion = ROOT
-						culture = ROOT
-						dynasty = actually_culture
-						random_traits = yes
-					}
-					new_character = {
-						#log = "Patrician [This.GetBestName] spawned"
-						while = {
-							count = 9
-							random = {
-								chance = 10
-								add_age = 1
-							}
+			}
+			else = {
+				create_random_steward = {
+					age = 35
+					religion = ROOT
+					culture = ROOT
+					dynasty = actually_culture
+					random_traits = yes
+				}
+				new_character = {
+					#log = "Patrician [This.GetBestName] spawned"
+					while = {
+						count = 9
+						random = {
+							chance = 10
+							add_age = 1
 						}
-
-						create_family_palace = yes
-						generate_familes_effect = yes
 					}
+
+					create_family_palace = yes
+					generate_familes_effect = yes
 				}
 			}
 		}
