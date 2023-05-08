@@ -1179,7 +1179,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "sort_liege_piety"
-			quadTextureSprite = "GFX_icon_piety"
+			quadTextureSprite = "GFX_sort_piety"
 			position = { x = 395 y = 320 }
 			clickSound = click_03
 		}

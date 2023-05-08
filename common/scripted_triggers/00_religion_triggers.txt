@@ -107,7 +107,18 @@ could_be_temporal_religious_head_trigger = {
 			religion = yazidi
 			trigger_if = {
 				limit = { has_religion_features = yes }
-				has_religion_feature = religion_temporal_head
+				OR = {
+					has_religion_feature = religion_temporal_head
+					# For a reformation on on-going midway, do not reevaluate government type
+					AND = {
+						has_religion_feature = religion_theocratic_head
+						NOT = { religion_scope = { has_flag = has_been_reformed } }
+					}
+					AND = {
+						has_religion_feature = religion_autocephaly
+						NOT = { religion_scope = { has_flag = has_been_reformed } }
+					}
+				}
 			}
 			trigger_else = {
 				religion = norse_pagan_reformed

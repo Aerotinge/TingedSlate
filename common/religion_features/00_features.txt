@@ -2077,7 +2077,7 @@ religion_leadership = {
 			custom_tooltip = { text = tooltip_religion_feature_theocratic_head }
 
 			hidden_effect = {
-				make_reformer_head_of_religion = yes # To overwrite hardcoded title distrbution
+				make_reformer_head_of_religion = yes # To override hardcoded title distribution, also check could_be_temporal_religious_head_trigger
 				set_can_excommunicate = yes
 				set_can_grant_divorce = yes
 				set_can_grant_invasion_cb = yes
@@ -2117,7 +2117,7 @@ religion_leadership = {
 			}
 
 			hidden_effect = {
-				make_reformer_head_of_religion = yes # To overwrite hardcoded title distrbution
+				make_reformer_head_of_religion = yes # To override hardcoded title distribution, also check could_be_temporal_religious_head_trigger
 				set_can_excommunicate = yes
 				set_can_grant_divorce = yes
 				set_can_grant_invasion_cb = yes
