@@ -29,7 +29,10 @@
 
 851.1.1 = {
 	holder = 74037 # al-Salt bin Malik
-	liege = e_arabia
+	set_tribute_suzerain = {
+		who = e_arabia
+		type = permanent
+	}
 }
 
 #886.1.1 = {
@@ -70,7 +73,7 @@
 
 930.1.1 = {
 	holder = 260981 # Al-Hakm bin Al-Milaa Al-Bahri
-	liege = 0
+	clear_tribute_suzerain = e_arabia
 }
 
 #939.1.1 = {
