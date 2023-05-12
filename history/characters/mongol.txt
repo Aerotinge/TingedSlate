@@ -615,9 +615,6 @@
 	culture = mongol
 	father = 125508
 	add_trait = sympathy_indian
-	add_trait = sympathy_christendom
-	add_trait = sympathy_judaism
-	add_trait = sympathy_zoroastrianism
 	1265.1.1 = {
 		birth = yes
 	}

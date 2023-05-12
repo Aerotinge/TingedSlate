@@ -64,7 +64,6 @@ portuguese_FEATURES;[GetIberianFeatures];[GetIberianFeatures];[GetIberianFeature
 byzantine;Byzantine;byzantin;Byzantinisch;;Bizantina;;;;;;;;;x
 byzantine_FEATURES;§Y*§! Can Blind prisoners.\n§Y*§! Can Castrate prisoners.;§Y*§! Peut aveugler des prisonniers.\n§Y*§! Peut castrer des prisonniers.;§Y*§! Kann Gefangene blenden.\n§Y*§! Kann Gefangene kastrieren.;;§Y*§! Puede cegar prisioneros.\n§Y*§! Puede castrar prisioneros.;;;;;;;;;x
 
-alan;Alan;alaine;Alanisch;;Alana;;;;;;;;;x
 armenian;Armenian;arménienne;Armenisch;;Armenia;;;;;;;;;x
 arberian;Arberian;albanaise;Albanisch;;albanés;;;;;;;;;x
 georgian;Georgian;géorgienne;Georgisch;;Georgiana;;;;;;;;;x
@@ -113,7 +112,7 @@ prussian;Prussian;prussienne;Preußisch;;Prusiana;;;;;;;;;x
 altaic;Altaic;altaïque;Altaisch;;Altaica;;;;;;;;;x
 altaic_FEATURES;§Y*§! Has access to the Ultimogeniture succession law.;§Y*§! Permet la loi de succession par Ultimogéniture.;§Y*§! Hat Zugang zur Erbfolge durch Ultimogenitur.;;§Y*§! Tiene acceso a la ley de sucesión de Ultimogenitura.;;;;;;;;;x
 
-turkish;Turkish;turque;Türkisch;;Turca;;;;;;;;;x
+turkish;Oghuz;oghouzes;Oghusen;;Oguz;;;;;;;;;x
 pecheneg;Pecheneg;petchénègue;Petschenegisch;;Pechenega;;;;;;;;;x
 cuman;Cuman;coumane;Kumanisch;;Cumana;;;;;;;;;x
 khazar;Khazar;khazare;Khazarisch;;Khazar;;;;;;;;;x
@@ -178,6 +177,7 @@ hungarian;Hungarian;hongroise;Ungarisch;;Húngara;;;;;;;;;x
 
 iranian;Iranian;iranien;Iranisch;;Iraní;;;;;;;;;x
 
+alan;Alan;alaine;Alanisch;;Alana;;;;;;;;;x
 persian;Persian;perse;Persisch;;Persa;;;;;;;;;x
 sogdian;Sogdian;sogdienne;Sogdien;;Sogdiano;;;;;;;;;x
 tocharian;Tocharian;tokharienne;Tocharisch;;Tocharian;;;;;;;;;x
