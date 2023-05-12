@@ -32,6 +32,7 @@ kow_tow_travels = {
 	random = no
 
 	monthly_character_wealth = -0.2
+	fertility = -10.0
 	health = -0.5
 }
 
@@ -70,6 +71,7 @@ on_hajj = { # Muslim performing hajj.
 	}
 
 	monthly_character_piety = 0.2
+	fertility = -10.0
 	muslim_opinion = 10
 }
 
@@ -84,6 +86,7 @@ on_indian_pilgrimage = { # Dharmic pilgrim while doing pilgrimage
 	}
 
 	monthly_character_piety = 0.2
+	fertility = -10.0
 	same_religion_opinion = 5
 }
 
@@ -98,6 +101,7 @@ on_pilgrimage = { # Christian pilgrim while doing pilgrimage
 	}
 
 	monthly_character_piety = 0.2
+	fertility = -10.0
 	same_religion_opinion = 5
 }
 
@@ -117,4 +121,6 @@ travelling = {
 	cached = yes # Keep a cache of all trait holders, to use with the corresponding event trigger
 	pilgrimage = yes # Will need a regent, but can still be guardian to children.
 	customizer = no
+
+	fertility = -10.0
 }
