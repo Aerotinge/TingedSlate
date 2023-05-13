@@ -1,0 +1,118 @@
+# South Slavic
+
+south_slavic = {
+	bosnian = {
+		graphical_cultures = { croatsouthslavicgfx }
+		color = { 0.3 0.1 0.1 }
+
+		male_names = {
+			Andrija_Andrew
+			Batalo Batic Bogisa Bogut Boric Brailo Brajko
+			Dabisa Danis Dragonja
+			Grgur
+			Hran Hrana Hrvoje Hval
+			Ivanis
+			Juraj_George
+			Krsmir Kulin
+			"Matej Ninoslav" Matej_Matthew Mihajlo_Michael Milovan Miroslav
+			Nikola_Nicholas Ninoslav
+			Ostoja
+			Pavle Petar_Peter Priboje Prijezda
+			Radic Radislav Radivoj Radogost
+			Sandalj Sanko Sibislav Stjepan
+			Tisemir Tomas Tvrtko
+			Vladislav Vlatko Vuk Vukac Vukasin Vukmir
+		}
+
+		female_names = {
+			Andrijana_Andrea
+			Doroteja
+			Elizabeta_Elisabeth
+			Gojslava Gruba
+			Jelena_Helena
+			Katarina_Catherine Kujava
+			Mara_Maria Marija_Mary Mateja Milisa Miroslava
+			Nika Nikolena_Nicola
+			Pavica Petra
+			Radislava Resa
+			Stana
+			Teodora_Theodora
+			Vitaca Vojaca Vojislava
+		}
+
+		parent = croatian
+		parent = serbian
+
+		from_dynasty_prefix = "od "
+
+		male_patronym = "ic"
+
+		# Chance of male children being named after their paternal or maternal grandfather, or their father. Sum must not exceed 100.
+		pat_grf_name_chance = 40
+		mat_grf_name_chance = 10
+		father_name_chance = 10
+
+		# Chance of female children being named after their paternal or maternal grandmother, or their mother. Sum must not exceed 100.
+		pat_grm_name_chance = 10
+		mat_grm_name_chance = 40
+		mother_name_chance = 5
+	}
+
+	bulgarian = {
+		graphical_cultures = { serbsouthslavicgfx }
+		color = { 0.7 0.5 0.5 }
+
+		male_names = {
+			Aleksii_Alexis
+			Balin Bernardin_Bernard Bertalan_Bartolomeus Bogoris_Boris Boril Bozidar_Theodat Braslav
+			Dan Dionisii_Dionysus Dominik_Dominic Dragoman Dragshan Drzislav
+			Evtimii
+			Frujin
+			German_Germanus
+			Grgur_Gregory
+			Hranimir
+			Ioakim_Joakim Ivan_John
+			Jerolim
+			Kalojan Kocelj Kozma_Cosmas Kresimir Kulin
+			Ljubomir Ljutomisl
+			Marko_Marcus Mihail_Michael Mikica Miroslav_Miroslav Momchil
+			Nikola_Nicholas
+			Ognen
+			Petar_Peter Prijezda
+			Radislav Radu
+			Sava Sermon Slavac Soimir Stracimir Svetislav
+			Tomislav Trpimir
+			Vasilii_Basil Viseslav Vladislav_Vladislav Vojnomir
+				Zdeslav
+		}
+
+		female_names = {
+			Aleksandra_Alexandra Aleksandrina
+			Bilyana Bisera Bogdana Bogna Borislava Boyana
+			Dana Desislava Donka
+			Elisaveta_Elizabeth Emiliya_Emily Evdokiya_Eudocia
+			Filipa_Philippa
+			Gergana
+			Hristina_Christina
+			Iskra Iva_Joan Ivana_Joan Ivanka_Joan Ivet
+			Lala Lidiya Lilyana_Lillian Lyudmila_Liudmila
+			Maya
+			Nadejda Nevena Nikolina
+			Penka
+			Rada Radka Raina_Raina Raya Rayna_Raina Rosa_Rosa Rositsa
+			Silva Silviya_Silvia Snezhana Stoyanka
+			Tereza_Teresa Todorka Tsveta_Tsvetanka Tsvetanka_Tsvetanka
+			Vasilka_Basilica Violeta_Yolanda Yana_Joan Yoanan_Joan Yordanka
+			Zhivka
+		}
+
+		parent = bolghar
+		parent = serbian
+
+		from_dynasty_prefix = "ot "
+
+		male_patronym = "ov"
+		female_patronym = "ova"
+		prefix = no # The patronym is added as a suffix
+	}
+}

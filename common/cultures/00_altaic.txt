@@ -250,10 +250,9 @@ altaic = {
 		dynasty_title_names = no
 		founder_named_dynasties = yes
 		horde = yes
-		nomadic_in_alt_start = yes
 	}
 
-	karluk = { Karluk Turks
+	karluk = { # Karluk Turks
 		graphical_cultures = { karlukgfx cumangfx turkishgfx } # cumangfx turkishgfx
 		secondary_event_pictures = bedouin_arabic
 		color = { 0.65 0.50 0.15 }

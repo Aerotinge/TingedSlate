@@ -317,6 +317,7 @@ iranian = {
 		female_patronym = "duda "
 
 		dukes_called_kings = yes
+		nomadic_in_alt_start = yes
 	}
 
 	sogdian = {
