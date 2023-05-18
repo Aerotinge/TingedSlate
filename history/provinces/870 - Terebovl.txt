@@ -25,10 +25,7 @@ religion = slavic_pagan
 	culture = pecheneg
 	religion = tengri_pagan
 }
-
 988.1.1 = {
-	culture = russian
-	religion = orthodox
 	b_terebovl = castle
 	b_mykulyn = city
 	b_onut = temple

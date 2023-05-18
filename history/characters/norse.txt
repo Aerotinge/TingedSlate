@@ -62,6 +62,516 @@
 	}
 }
 
+601 = {
+	name = "Olga"
+	female = yes
+	religion = slavic_pagan
+	culture = norse
+	903.1.2 = {
+		birth = yes
+	}
+	957.1.1 = {
+		religion = orthodox
+	}
+	969.1.2 = {
+		death = yes
+	}
+}
+
+602 = {
+	name = "Sviatoslav"
+	# AKA: Svyatoslav
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	add_trait = tough_soldier
+	father = 600
+	mother = 601
+	942.1.2 = {
+		birth = yes
+	}
+	957.1.2 = {
+		add_spouse = 599
+	}
+	972.1.2 = {
+		death = yes
+	}
+}
+
+603 = {
+	name = "Malusha"
+	female = yes
+	religion = norse_pagan
+	culture = norse
+	944.1.2 = {
+		birth = yes
+	}
+	1015.1.2 = {
+		death = yes
+	}
+}
+
+604 = {
+	name = "Yaropolk"
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 602
+	mother = 599
+	958.1.2 = {
+		birth = yes
+	}
+	980.1.2 = {
+		death = yes
+	}
+}
+
+606 = {
+	name = "Oleg"
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 602
+	mother = 599
+	959.1.2 = {
+		birth = yes
+	}
+	977.1.2 = {
+		death = yes
+	}
+}
+
+608 = {
+	name = "Vladimir"
+	dynasty = 705
+	martial = 6
+	diplomacy = 8
+	intrigue = 7
+	stewardship = 7
+	religion = norse_pagan
+	culture = norse
+	add_trait = envious
+	add_trait = zealous
+	add_trait = bastard
+	add_trait = skilled_tactician
+	father = 602
+	mother = 603
+	960.1.2 = {
+		birth = yes
+	}
+	977.1.2 = {
+		add_spouse = 609
+	}
+	980.1.1 = {
+		give_nickname = nick_the_great
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	989.1.2 = {
+		remove_spouse = 609
+		add_spouse = 41100
+	}
+	1015.7.15 = {
+		death = yes
+	}
+}
+
+609 = {
+	name = "Rogneda"
+	# AKA: Ragnhild
+	female = yes
+	dynasty = 703
+	religion = norse_pagan
+	culture = norse
+	960.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	989.1.2 = {
+		death = yes
+	}
+}
+
+610 = {
+	name = "Sviatopolk"
+	# AKA: Svyatopolk
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	add_trait = envious
+	add_trait = wroth
+	add_trait = kinslayer
+	add_trait = misguided_warrior
+	father = 604
+	979.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1015.7.15 = {
+		give_nickname = nick_the_accursed
+	}
+	1016.1.2 = {
+		add_claim = d_kiev
+		add_claim = c_kiev
+		add_claim = c_korsun
+	}
+	1019.1.2 = {
+		death = yes
+	}
+}
+
+612 = {
+	name = "Yaroslav"
+	dynasty = 705
+	martial = 8
+	diplomacy = 7
+	intrigue = 7
+	stewardship = 10
+	religion = norse_pagan
+	culture = norse
+	add_trait = scholar
+	add_trait = midas_touched
+	father = 608
+	mother = 609
+	983.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1015.1.2 = {
+		add_claim = d_kiev
+	}
+	1016.1.2 = {
+		give_nickname = nick_the_wise
+	}
+	1019.1.2 = {
+		add_spouse = 100511
+	}
+	1054.2.20 = {
+		death = yes
+	}
+}
+
+616 = {
+	name = "Iziaslav"
+	# AKA: Izyaslav
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	mother = 609
+	978.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1001.1.2 = {
+		death = yes
+	}
+}
+
+618 = {
+	name = "Mstislav"
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	983.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1020.1.2 = {
+		add_spouse = 122502
+	}
+	1036.1.2 = {
+		death = yes
+	}
+}
+
+620 = {
+	name = "Sudislav"
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	987.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1063.1.2 = {
+		death = yes
+	}
+}
+
+622 = {
+	name = "Vysheslav"
+	# AKA: Vycheslav
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	977.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1010.1.2 = {
+		death = yes
+	}
+}
+
+624 = {
+	name = "Boris"
+	# AKA: St
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	986.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1015.7.24 = {
+		death = yes
+	}
+}
+
+625 = {
+	name = "Gleb"
+	# AKA: St
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	987.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1015.9.9 = {
+		death = yes
+	}
+}
+
+626 = {
+	name = "Iziaslav"
+	# AKA: Izyaslav
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	father = 612
+	mother = 100511
+	1024.1.2 = {
+		birth = yes
+	}
+	1045.1.2 = {
+		add_spouse = 761
+	}
+	1050.11.8 = {
+		culture = russian
+	}
+	1078.10.3 = {
+		death = yes
+	}
+}
+
+627 = {
+	name = "Anna"
+	female = yes
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	father = 612
+	mother = 100511
+	1032.1.2 = {
+		birth = yes
+	}
+	1075.1.2 = {
+		death = yes
+	}
+}
+
+628 = {
+	name = "Sviatoslav"
+	# AKA: Svyatoslav
+	dynasty = 705
+	diplomacy = 8
+	stewardship = 7
+	religion = orthodox
+	culture = norse
+	father = 612
+	mother = 100511
+	1027.1.2 = {
+		birth = yes
+	}
+	1045.1.2 = {
+		add_spouse = 125044
+	}
+	1046.1.2 = {
+		culture = russian
+	}
+	1070.1.2 = {
+		add_spouse = 1353
+	}
+	1076.12.27 = {
+		death = yes
+	}
+}
+
+630 = {
+	name = "Vsevolod"
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	add_trait = scholar
+	father = 612
+	mother = 100511
+	1030.1.2 = {
+		birth = yes
+	}
+	1046.1.2 = {
+		add_spouse = 1727
+	}
+	1053.1.2 = {
+		culture = russian
+	}
+	1068.1.2 = {
+		add_spouse = 125092
+	}
+	1093.4.13 = {
+		death = yes
+	}
+}
+
+633 = {
+	name = "Yelizaveta"
+	# AKA: Elizaveta
+	female = yes
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	father = 612
+	mother = 100511
+	1025.1.2 = {
+		birth = yes
+	}
+	1067.1.5 = {
+		death = yes
+	}
+}
+
+634 = {
+	name = "Vladimir"
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	father = 612
+	mother = 100511
+	1020.1.2 = {
+		birth = yes
+	}
+	1052.10.4 = {
+		death = yes
+	}
+}
+
+637 = {
+	name = "Anastasia"
+	female = yes
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	father = 612
+	mother = 100511
+	1023.1.2 = {
+		birth = yes
+	}
+	1074.1.2 = {
+		death = yes
+	}
+}
+
+638 = {
+	name = "Igor"
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	father = 612
+	mother = 100511
+	1037.1.2 = {
+		birth = yes
+	}
+	1060.1.2 = {
+		death = yes
+	}
+}
+
+642 = {
+	name = "Briachislav"
+	# AKA: Bryachislav
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	father = 616
+	997.1.2 = {
+		birth = yes
+	}
+	1044.1.2 = {
+		death = yes
+	}
+}
+
+644 = {
+	name = "Yevstafiy"
+	# AKA: Yevstafyi
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	father = 618
+	mother = 122502
+	1021.1.2 = {
+		birth = yes
+	}
+	1033.1.2 = {
+		death = yes
+	}
+}
+
+650 = {
+	name = "Vseslav"
+	dynasty = 705
+	religion = orthodox
+	culture = norse
+	add_trait = cynical
+	add_trait = skilled_tactician
+	father = 642
+	1030.1.2 = {
+		birth = yes
+	}
+	1053.1.2 = {
+		culture = russian
+		add_spouse = 40603
+	}
+	1101.4.14 = {
+		death = yes
+	}
+}
+
 5789 = {
 	name = "Sihtric Caech"
 	# AKA: Sihtric Caech

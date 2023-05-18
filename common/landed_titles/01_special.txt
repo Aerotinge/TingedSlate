@@ -140,15 +140,27 @@ e_india = { # Titular, created by special decision only if entire India is unite
 	}
 }
 
-e_slavic_union = {
-	color = { 0 90 30 }
+e_rus = {
+	color = { 147 164 104 }
 	color2 = { 255 255 255 }
-	short_name = yes
 
 	capital = 863 # Kiev
 
+	culture = russian
+
+	short_name = yes
+
 	allow = {
 		can_create_empire = yes
+
+		trigger_if = {
+			limit = { ai = yes }
+
+			OR = {
+				culture = russian
+				culture = norse
+			}
+		}
 
 		FROM = {
 			show_scope_change = no
@@ -157,6 +169,14 @@ e_slavic_union = {
 			is_titular = no
 		}
 	}
+
+	finnish = "Suomi"
+	sami = "Suomi"
+	estonian = "Suomi"
+	komi = "Suomi"
+	nenets = "Suomi"
+	mordvin = "Suomi"
+	meshchera = "Suomi"
 }
 
 e_mongol_empire = {

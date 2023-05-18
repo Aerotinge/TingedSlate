@@ -54,7 +54,7 @@
 }
 
 1136.1.2 = {
-	holder = 144634
+	clear_tribute_suzerain = d_kiev
 	set_tribute_suzerain = {
 		who = d_novgorod
 		type = permanent
@@ -76,4 +76,3 @@
 1305.1.1 = {
 	holder = 260321
 }
-

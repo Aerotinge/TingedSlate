@@ -16,15 +16,11 @@ b_suceava = tribal
 #b_putna = castle
 
 # Misc
-culture = volhynian
+culture = vlach
 religion = slavic_pagan
 
 # History
 936.1.1 = {
 	culture = pecheneg
 	religion = tengri_pagan
-}
-1171.1.1 = {
-	culture = russian
-	religion = orthodox
 }

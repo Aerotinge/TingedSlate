@@ -26,8 +26,6 @@ religion = slavic_pagan
 }
 
 988.1.1 = {
-	culture = russian
-	religion = orthodox
 	b_zvenyhorod = castle
 	b_lvov = city
 	b_butsk = temple

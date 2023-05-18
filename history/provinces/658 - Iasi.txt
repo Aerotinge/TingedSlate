@@ -16,7 +16,7 @@ b_iasi = tribal
 #b_ungheni = castle
 
 # Misc
-culture = volhynian
+culture = vlach
 religion = slavic_pagan
 
 # History

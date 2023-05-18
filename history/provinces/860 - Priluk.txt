@@ -29,10 +29,6 @@ religion = tengri_pagan
 902.1.1 = {
 	b_romny = temple
 }
-988.1.1 = {
-	culture = russian
-	religion = orthodox
-}
 1150.1.1 = {
 	b_priluk = castle
 	b_bobrovytsia = city

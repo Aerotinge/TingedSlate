@@ -1,0 +1,30 @@
+# 817 - Kashin
+
+# County Title
+title = c_kashin
+
+# Settlements
+max_settlements = 2
+
+b_kashin = tribal	#1238
+
+#b_kaliazin	#1434
+#b_kimry	#1546
+#b_likhoslavl
+#b_kesova_gora
+#b_goritsy
+#b_ustinovo
+
+
+#Misc
+culture = meshchera
+religion = finnish_pagan
+
+# History
+1060.1.1 = {
+	culture = russian
+	# religion = slavic_pagan # keeping finnish_pagan is fine here
+}
+1200.1.1 = {
+	b_kashin = castle
+}

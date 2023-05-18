@@ -1,0 +1,10 @@
+769.1.1 = {
+	name = SEVERIA
+	adjective = SEVERIA_ADJ
+}
+
+1024.1.2 = {
+	reset_name = yes
+	reset_adjective = yes
+	de_jure_liege = e_rus
+}

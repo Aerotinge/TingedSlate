@@ -16,7 +16,7 @@ b_soroca = tribal
 #b_rautu = temple
 
 # Misc
-culture = volhynian
+culture = vlach
 religion = slavic_pagan
 
 # History

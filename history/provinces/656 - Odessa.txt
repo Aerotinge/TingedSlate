@@ -16,7 +16,7 @@ b_odessa = tribal	#1794
 #b_yuzhne		#modern
 
 # Misc
-culture = volhynian
+culture = severian
 religion = slavic_pagan
 
 # History
@@ -28,5 +28,3 @@ religion = slavic_pagan
 	culture = pecheneg
 }
 1171.1.1 = { culture = cuman }
-1238.1.1 = { culture = russian }
-1238.1.1 = { religion = orthodox }

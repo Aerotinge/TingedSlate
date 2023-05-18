@@ -1,3 +1,5 @@
+DNIEPERIA;Dnieperia;Dnieprie;Dnieprien;;Dniéperia;;;;;;;;;x
+DNIEPERIA_ADJ;Dnieperian;Dnieprienne;Dnieprienisch;;Dniepério;;;;;;;;;x
 DUCHY_CHAMAVIA;Chamavia;Chamavie;Chamavia;;Chamavia;;;;;;;;;x
 DUCHY_CHAMAVIA_ADJ;Chamavian;chamavienne;Chamavisch;;chamavo;;;;;;;;;x
 DUCHY_GELRE;Gelre;Gueldre;Geldern;;Gelre;;;;;;;;;x
@@ -6,6 +8,8 @@ DUCHY_HOLLAND;Holland;Hollande;Holland;;Holanda;;;;;;;;;x
 DUCHY_HOLLAND_ADJ;Hollander;hollandaise;Holländisch;;Holandesa;;;;;;;;;x
 EAST_FRANCIA;East Francia;Francie orientale;Ostfranken;;Francia Oriental;;;;;;;;;x
 EAST_FRANCIA_ADJ;East Francian;franque orientale;Ostfränkisch;;Francés Oriental;;;;;;;;;x
+ERZYA;Erzya;Erzya;Ersja;;Erzia;;;;;;;;;x
+ERZYA_ADJ;Erzyan;ersyanne;Ersjanisch;;Erziano;;;;;;;;;x
 ALEMANNIA;Alemannia;Alémanie;Alemannen;;Alamannia;;;;;;;;;x
 ALEMANNIA_ADJ;Alemannian;alamane;Alemannisch;;Alamanes;;;;;;;;;x
 AVAR_KHAGANATE;Avaria;Avarie;Awaren;;Avaria;;;;;;;;;x
@@ -25,16 +29,22 @@ BERNICIA_ADJ;Bernician;bernicienne;Bernicisch;;berniciano;;;;;;;;;x
 FUSTAT_ADJ;Fustatian;fustate;Fustatisch;;fustatí;;;;;;;;;x
 GLYWYSING;Glywysing;Glywysing;Glywysing;;Glywysing;;;;;;;;;x
 GLYWYSING_ADJ;Glywysingian;glywysing;Glywysingisch;;glywysingio;;;;;;;;;x
+ILMENIA;Ilmenia;Ilménie;Ilmenien;;Ilmenia;;;;;;;;;x
+ILMENIA_ADJ;Ilmenian;ilmenian;Ilmenisch;;Ilmeniano;;;;;;;;;x
 KIEVAN_RUS;Kievan Rus;Rus' de Kiev;Kiewer Rus;;;;;;;x
 KIEVAN_RUS_ADJ;Kievan Rus;rus';Kiewer Rus;;rus de Kiev;;;;;x
 LOCHA_LEIN;Locha Léin;Locha Léin;Locha Léin;;Locha Léin;;;;;;;;;x
 LOCHA_LEIN_ADJ;Locha Léin;locha-léin;Locha Léinisch;;leinlacustre;;;;;;;;;x
+MORDVINIA;Mordvinia;Mordvinie;Mordvinien;;Mordvinia;;;;;;;;;x
+MORDVINIA_ADJ;Mordvinian;Mordvinienne;Mordvinienisch;;Mordvinio;;;;;;;;;x
 MORGANNWG;Morgannwg;Morgannwg;Morgannwg;;Morgannwg;;;;;;;;;x
 MORGANNWG_ADJ;Morgannwgian;morgannwg;Morgannwgisch;;morganwgio;;;;;;;;;x
 RHOS;Rhos;Rhos;Rhos;;Rhos;;;;;;;;;x
 RHOS_ADJ;Rhosian;rhos;Rhosisch;;rhosio;;;;;;;;;x
 SEISYLLWG;Seisyllwg;Seisyllwg;Seisyllwg;;Seisyllwg;;;;;;;;;x
 SEISYLLWG_ADJ;Seisyllwgian;seisyllwg;Seisyllwgisch;;seisyllwgio;;;;;;;;;x
+SEVERIA;Severia;Sévérie;Sewerjan;;Severia;;;;;;;;;x
+SEVERIA_ADJ;Severian;sévériane;Sewerjanisch;;Severiano;;;;;;;;;x
 GUGE;Guge;Guge;Guge;;Guge;;;;;;;;;x
 GUGE_ADJ;Guge;guge;Gugeisch;;guge;;;;;;;;;x
 PHAGMODRUPA;Phagmodrupa;Phagmodrupa;Phagmodrupa;;Phagmodrupa;;;;;;;;;x
@@ -53,6 +63,8 @@ COUNTY_KLEVE;Kleve;Clèves;Kleve;;Cléveris;;;;;;;;;x
 COUNTY_KLEVE_ADJ;Klevian;clévoise;Klevisch;;Clevereño;;;;;;;;;x
 COUNTY_WESTFRIESLAND;Westfriesland;Frise occidentale;Westfriesland;;Westfriesland;;;;;;;;;x
 COUNTY_WESTFRIESLAND_ADJ;Westfrieslander;frisonne occidentale;Westfriesisch;;Frisio;;;;;;;;;x
+CHERNIGOV;Chernigov;Tchernigov;Tscherngov;;Chernígov;;;;;;;;;x
+CHERNIGOV_adj;Chernigovian;tchernigovienne;Tscherngovisch;;chernigovita;;;;;;;;;x
 HAMALAND;Hamaland;Hamaland;Hamaland;;Hamaland;;;;;;;;;x
 HAMALAND_ADJ;Hamalander;hamalander;Hamalandisch;;hamalandés;;;;;;;;;x
 HATTUARIA;Hattuaria;Hattuarie;Hattuarien;;Chatuaria;;;;;;;;;x

@@ -1,0 +1,13 @@
+769.1.1 = {
+	name = ILMENIA
+	adjective = ILMENIA_ADJ
+}
+
+988.1.2 = {
+	reset_name = yes
+	reset_adjective = yes
+}
+
+1024.1.1 = {
+	de_jure_liege = e_rus
+}

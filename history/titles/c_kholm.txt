@@ -28,6 +28,7 @@
 }
 
 988.1.2 = {
+	liege = d_novgorod
 	holder = 622
 }
 
@@ -37,7 +38,6 @@
 
 1034.1.2 = {
 	holder = 256074
-	liege = d_novgorod
 }
 
 1064.1.1 = {
@@ -185,7 +185,6 @@
 }
 
 1219.7.2 = {
-	liege = d_novgorod
 	holder = 194184
 }
 

@@ -16,6 +16,12 @@
 	holder = 6826
 }
 
+890.1.1 = {
+	holder = 0
+}
+
+# Rus' Chernigov
+
 1024.1.2 = {
 	holder = 618
 #	law = agnatic_succession
@@ -168,4 +174,3 @@
 1330.1.2 = {
 	holder = 472510
 }
-

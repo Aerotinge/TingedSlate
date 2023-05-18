@@ -16182,35 +16182,30 @@ b_gaulo;Gaulo;;;;;;;;;;;;;x
 b_silvio;Silvio;;;;;;;;;;;;;x
 b_mastropiero;Mastropiero;;;;;;;;;;;;;x
 b_tiepolo;Tiepolo;;;;;;;;;;;;;x
-
 # Genoa
 b_doria;Doria;;;;;;;;;;;;;x
 b_spinola;Spinola;;;;;;;;;;;;;x
 b_grimaldi;Grimaldi;;;;;;;;;;;;;x
 b_fieschi;Fieschi;;;;;;;;;;;;;x
 b_embriaco;Embriaco;;;;;;;;;;;;;x
-
 # Pisa
 b_dappiano;Dappiano;;;;;;;;;;;;;x
 b_della_gherardesca;Della Gherardesca;;;;;;;;;;;;;x
 b_visconti;Visconti;;;;;;;;;;;;;x
 b_alliata;Alliata;;;;;;;;;;;;;x
 b_caetani;Caetani;;;;;;;;;;;;;x
-
 # Lübeck
 b_bardewik;Bardewik;;;;;;;;;;;;;x
 b_vorrade;Vorrade;;;;;;;;;;;;;x
 b_warendorp;Warendorp;;;;;;;;;;;;;x
 b_pat_luneburg;Lüneburg;;;;;;;;;;;;;x
 b_wittenborg;Wittenborg;;;;;;;;;;;;;x
-
 # Gotland
 b_stenkyrka;Stenkyrka;;;;;;;;;;;;;x
 b_guldsmed;Guldsmed;;;;;;;;;;;;;x
 b_hejnum;Hejnum;;;;;;;;;;;;;x
 b_gildehusen;Gildehusen;;;;;;;;;;;;;x
 b_strabain;Strabain;;;;;;;;;;;;;x
-
 # Amalfi
 b_konstantios;Konstantios;;;;;;;;;;;;;x
 b_mauro;Mauro;;;;;;;;;;;;;x
@@ -16222,14 +16217,12 @@ b_manginos;Manginos;;Manginer;;;;;;;;;;;x
 b_kanakares;Kanakares;;Kanakaren;;;;;;;;;;;x
 b_sorrenti;Sorrenti;;;;;;;;;;;;;x
 b_ravelli;Ravelli;;;;;;;;;;;;;x
-
 # Ancona
 b_kastriotis;Kastriotis;;;;;;;;;;;;;x
 b_skleros;Skleros;;;;;;;;;;;;;x
 b_monomachos;Monomachos;;;;;;;;;;;;;x
 b_kourkoas;Kourkoas;;;;;;;;;;;;;x
 b_scarponnois;Scarponnois;;;;;;;;;;;;;x
-
 # Regusa
 b_babalio;Babalio;;;;;;;;;x
 b_benessa;Benessa;;;;;;;;;x
@@ -16242,6 +16235,16 @@ b_ruayn;Ru'ayn;;;;;;;;;;;;;x
 b_banu_sarray;Banu Sarray;;;;Abencerraje;;;;;x
 b_aswadid;Aswadid;;;;;;;;;;;;;x
 b_yeshayahu;Yeshayahu;;;;;;;;;;;;;x
+# Novgorod
+b_andreievich;Andreievich;;;;;;;;;;;;;x
+b_feofilaktovich;Feofilaktovich;;;;;;;;;;;;;x
+b_danilovich;Danilovich;;;;;;;;;;;;;x
+b_kikin;Kikin;;;;;;;;;;;;;x
+b_klimovich;Klimovich;;;;;;;;;;;;;x
+b_miroslavich;Miroslavich;;;;;;;;;;;;;x
+b_mstislavich;Mstislavich;;;;;;;;;;;;;x
+b_stepanovich;Stepanovich;;;;;;;;;;;;;x
+b_artamonovich;Artamonovich;;;;;;;;;;;;;x
 
 ## Mercenaries
 d_abyssinian_band;Abyssinian Band;Bande armée d'Abyssinie;Abessinischer Trupp;;Banda Abisinia;;;;;;;;;x
@@ -17517,6 +17520,8 @@ d_sami;Sami;;Samen;;;;;;;;;;;x
 d_sami_adj;Sami;same;Samisch;;;;;;;;;;;x
 d_satakunta;Satakuntans;Satakunta;Satakuntaner;;Satakunda;;;;;;;;;x
 d_satakunta_adj;Satakuntan;satakuntane;Satakuntanisch;;Satakundesa;;;;;;;;;x
+d_severia;Severia;Sévérie;Sewerjan;;Severia;;;;;;;;;x
+d_severia_adj;Severian;sévériane;Sewerjanisch;;Severiano;;;;;;;;;x
 d_severians;Severians;Sévérianes;Sewerjanen;;Severianos;;;;;;;;;x
 d_severians_adj;Severian;sévériane;Sewerjanisch;;Severiano;;;;;;;;;x
 d_shiraz;Shiraz;;;;;;;;;;;;;x

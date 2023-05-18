@@ -373,3 +373,50 @@ b_yeshayahu = {
 	culture = sephardi
 	religion = jewish
 }
+
+# NOVGOROD: # dyn11110~
+
+b_kikin = {
+	culture = russian
+	religion = orthodox
+}
+
+b_feofilaktovich = {
+	culture = russian
+	religion = orthodox
+}
+
+b_stepanovich = {
+	culture = russian
+	religion = orthodox
+}
+
+b_andreievich = {
+	culture = russian
+	religion = orthodox
+}
+
+b_klimovich = {
+	culture = russian
+	religion = orthodox
+}
+
+b_danilovich = {
+	culture = russian
+	religion = orthodox
+}
+
+b_miroslavich = {
+	culture = russian
+	religion = orthodox
+}
+
+b_artamonovich = {
+	culture = russian
+	religion = orthodox
+}
+
+b_mstislavich = {
+	culture = russian
+	religion = orthodox
+}

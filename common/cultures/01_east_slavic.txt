@@ -54,11 +54,7 @@ east_slavic = {
 		}
 
 		parent = ilmenian
-		parent = severian
-		parent = volhynian
-		#parent = meshchera
-		#parent = khazar
-		#parent = norse
+		parent = norse
 
 		from_dynasty_prefix = "of "
 

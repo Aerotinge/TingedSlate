@@ -45244,7 +45244,7 @@
 1061063 = {
 	name = "Orekhid"
 	culture = meshchera
-	religion = orthodox
+	religion = finnish_pagan
 }
 
 1059036 = {

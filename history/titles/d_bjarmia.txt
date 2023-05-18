@@ -28,14 +28,14 @@
 
 1136.1.2 = {
 	holder = 260297
-	set_tribute_suzerain = {
-		who = d_novgorod
-		type = permanent
-	}
 }
 
 1186.1.1 = {
 	holder = 260298
+	set_tribute_suzerain = {
+		who = d_novgorod
+		type = permanent
+	}
 }
 
 1220.1.1 = {

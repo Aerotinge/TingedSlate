@@ -51,7 +51,7 @@
 1073.1.2 = {
 	holder = 660
 	set_tribute_suzerain = {
-		who = k_ruthenia
+		who = d_kiev
 		type = permanent
 	}
 }
@@ -93,7 +93,7 @@
 }
 
 1154.1.2 = {		#Volhynia becomes independent
-	clear_tribute_suzerain = k_ruthenia
+	clear_tribute_suzerain = d_kiev
 }
 
 1158.1.2 = {

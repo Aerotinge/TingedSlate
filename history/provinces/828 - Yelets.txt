@@ -21,12 +21,9 @@ religion = finnish_pagan
 terrain = plains
 
 # History
-867.1.1 = {
+1060.1.1 = {
 	culture = russian
-	religion = slavic_pagan
-}
-988.1.1 = {
-	religion = orthodox
+	# religion = slavic_pagan # keeping finnish_pagan is fine here
 }
 1150.1.1 = {
 	b_yelets = castle

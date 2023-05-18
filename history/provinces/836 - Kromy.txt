@@ -20,9 +20,11 @@ culture = meshchera
 religion = finnish_pagan
 
 # History
-867.1.1 = {
+936.1.1 = {
+	culture = severian
+}
+1036.1.1 = {
 	culture = russian
-	religion = slavic_pagan
 }
 1150.1.1 = {
 	b_kromy = castle

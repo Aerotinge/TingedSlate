@@ -6,6 +6,9 @@
 	holder = 0
 }
 
+# Rurikovo Gorodische established in 859
+# Novgorod, "new town", hasn't established yet
+
 862.1.2 = {
 	holder = 40605
 #	law = agnatic_succession
@@ -28,8 +31,12 @@
 	holder = 608
 }
 
+# Novgorod, "new city", was dating back to the late 10th century.
+
 988.1.2 = {
 	holder = 622
+#	law = agnatic_succession
+#	law = succ_gavelkind
 }
 
 1010.1.2 = {
@@ -89,10 +96,10 @@
 
 1136.1.2 = {		#Novgorod becomes independent from Kiev
 	clear_tribute_suzerain = d_kiev
-	government = merchant_republic_government
 }
 
 1137.1.2 = {
+	#government = republic_government
 	holder = 125225
 }
 
@@ -180,10 +187,6 @@
 	holder = 125234
 }
 
-1196.1.1 = {
-	#law = succ_feudal_elective
-}
-
 1204.1.2 = {
 	holder = 125233
 }
@@ -246,6 +249,10 @@
 
 1243.1.2 = {
 	holder = 125245
+}
+
+1249.1.1 = {
+	capital = 789 # Ingria, for playable MR
 }
 
 1250.1.2 = {

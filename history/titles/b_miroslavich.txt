@@ -1,0 +1,10 @@
+1328.1.2 = {
+	government = merchant_republic_government
+	holding_dynasty = 11102
+	liege = d_novgorod
+	holder = 125258
+}
+
+1340.1.2 = {
+	holder = 0
+}

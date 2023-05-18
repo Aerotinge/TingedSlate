@@ -1,5 +1,12 @@
+769.1.1 = {
+	name = ERZYA
+	adjective = ERZYA_ADJ
+}
+
 1157.5.15 = {
 	holder = 222676
+	reset_name = yes
+	reset_adjective = yes
 #	law = agnatic_succession
 #	law = succ_gavelkind
 	set_tribute_suzerain = {
@@ -99,4 +106,3 @@
 1327.1.2 = {
 	holder = 472840
 }
-

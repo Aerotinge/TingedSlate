@@ -18,13 +18,6 @@
 	holder = 260108
 }
 
-1145.1.1 = {
-	set_tribute_suzerain = {
-		who = d_novgorod
-		type = permanent
-	}
-}
-
 1150.1.1 = {
 	holder = 260109
 }

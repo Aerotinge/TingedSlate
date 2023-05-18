@@ -20,12 +20,11 @@ culture = meshchera
 religion = finnish_pagan
 
 # History
-867.1.1 = {
-	culture = russian
-	religion = slavic_pagan
+936.1.1 = {
+	culture = ilmenian
 }
-988.1.1 = {
-	religion = orthodox
+1024.1.1 = {
+	culture = russian
 }
 1150.1.1 = {
 	b_karachev = castle

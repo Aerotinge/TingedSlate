@@ -1,0 +1,14 @@
+769.1.1 = {
+	de_jure_liege = e_idel-ural
+	name = MORDVINIA
+	adjective = MORDVINIA_ADJ
+}
+
+1157.5.15 = {
+	reset_name = yes
+	reset_adjective = yes
+}
+
+1169.1.2 = {
+	de_jure_liege = e_rus
+}

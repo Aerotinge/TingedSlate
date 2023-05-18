@@ -24,9 +24,12 @@ religion = finnish_pagan
 	culture = khazar
 	religion = tengri_pagan
 }
-988.1.1 = {
+936.1.1 = {
+	culture = meshchera
+}
+1060.1.1 = {
 	culture = russian
-	religion = orthodox
+	# religion = slavic_pagan # keeping finnish_pagan is fine here
 }
 1150.1.1 = {
 	b_kursk = castle

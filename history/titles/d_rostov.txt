@@ -1,5 +1,5 @@
 750.1.1 = {
-	holder = 194155
+	holder = 194150
 }
 
 860.1.1 = {
@@ -96,7 +96,7 @@
 }
 
 1169.1.2 = {		#When Kiev lost too much legitimacy to be a proper suzerain of the Rus principalities
-	clear_tribute_suzerain = k_ruthenia
+	clear_tribute_suzerain = d_kiev
 }
 
 1174.6.29 = {

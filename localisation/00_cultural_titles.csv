@@ -50,6 +50,8 @@ city_barony_roman;City;Cité;Stadt;;Ciudad;;;;;;;;;x
 city_count;Lord Mayor;Bourgmestre;Oberbürgermeister;;Gran Alcalde;;;;;;;;;x
 city_count_female;Lady Mayor;Bourgmestre;Oberbürgermeisterin;;Gran Alcalde;;;;;;;;;x
 city_count_female_roman;Praefect;Praefect;Präfekt;;Prefecta;;;;;;;;;x
+city_count_female_east_slavic;Princess;Princesse;Fürstin;;Princesa;;;;;;;;;x
+city_count_east_slavic;Prince;Prince;Fürst;;Príncipe;;;;;;;;;x
 city_count_muslim;Wali;Wali;Wali;;Valí;;;;;;;;;x
 city_count_roman;Praefect;Praefect;Präfekt;;Prefecto;;;;;;;;;x
 city_county;Grand City;Grande cité;Prachtvolle Stadt;;Gran Ciudad;;;;;;;;;x
@@ -63,6 +65,8 @@ city_duchy_roman;League;Ligue;Liga;;Liga;;;;;;;;;x
 city_duke;Grand Mayor;Grand maire;Großregent;;Gran Alcalde;;;;;;;;;x
 city_duke_byzantine;Doge;Doge;Doge;;Dux;;;;;;;;;x
 city_duke_female_roman;Tribune;Tribun;Tribun;;Tribuna;;;;;;;;;x
+city_duke_female_east_slavic;Grand Princess;Grande-princesse;Großfürstin;;Gran Princesa;;;;;;;;;x
+city_duke_east_slavic;Grand Prince;Grand-prince;Großfürst;;Gran Príncipe;;;;;;;;;x
 city_duke_latin;Doge;Doge;Doge;;Dux;;;;;;;;;x
 city_duke_muslim;Wali-Emir;Wali Émir;Wali-Emir;;Emir-Valí;;;;;;;;;x
 city_duke_roman;Tribune;Tribun;Tribun;;Tribuno;;;;;;;;;x
@@ -318,7 +322,7 @@ nomadic_duchy_of_magyar;Chiefdom Confederacy of;Confédération de la chefferie de
 manorial_duke;Grand Prince;Grand-prince;Großfürst;;Gran príncipe;;;;;;;;;x
 manorial_duke_female;Grand-Princess;Grande princesse;Großfürstin;;Gran princesa;;;;;;;;;x
 manorial_count;Prince;Prince;Fürst;;Príncipe;;;;;;;;;x
-manorial_count_female;Princess;Princesse;Fürstin;;Princesa;;;;;x
+manorial_count_female;Princess;Princesse;Fürstin;;Princesa;;;;;;;;;x
 manorial_baron_east_slavic;Pomeshchik;Pomeshchik;Pomeshchik;;Pomeshchik;;;;;x
 manorial_baron_female_east_slavic;Pomeshchika;Pomeshchika;Pomeshchika;;Pomeshchika;;;;;x
 manorial_county;Principality;Principauté;Fürstentum;;Principado;;;;;;;;;x
