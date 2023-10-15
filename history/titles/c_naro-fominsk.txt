@@ -1,30 +1,33 @@
 760.1.1 = {
+	liege = d_vladimir
 	holder = 256052
-	liege = d_ryazan
 }
 
 855.1.1 = {
-	liege = d_vologda
 	holder = 159714
 }
 
 860.1.1 = {
+	liege = d_tver
 	holder = 6834
-	liege = d_polotsk
 }
 
 936.1.1 = {
-	holder = 260737
 	liege = d_ryazan
+	holder = 260737
+}
+
+975.1.1 = {
+	liege = 0
+}
+
+1010.1.2 = {
+	liege = d_kiev
 }
 
 1054.2.20 = {
-	liege = d_pereyaslavl
+	liege = d_smolensk
 	holder = 256101
-}
-
-1087.1.2 = {
-	liege = d_rostov
 }
 
 1087.1.2 = {

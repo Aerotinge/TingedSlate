@@ -26,6 +26,7 @@ religion = finnish_pagan
 }
 936.1.1 = {
 	culture = severian
+	religion = finnish_pagan
 }
 988.1.1 = {
 	b_vyr = temple

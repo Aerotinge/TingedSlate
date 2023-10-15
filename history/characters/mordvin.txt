@@ -51,20 +51,6 @@
 	}
 }
 
-6853 = {
-	name = "Turush"
-	dynasty = 1045027
-	religion = finnish_pagan
-	culture = mordvin
-	father = 194167
-	835.1.1 = {
-		birth = yes
-	}
-	890.1.1 = {
-		death = yes
-	}
-}
-
 6854 = {
 	name = "Velmayka"
 	dynasty = 1053013
@@ -704,36 +690,8 @@
 	}
 }
 
-194166 = {
-	name = "Dergun"
-	dynasty = 1045027
-	religion = finnish_pagan
-	culture = mordvin
-	father = 194165
-	770.1.1 = {
-		birth = yes
-	}
-	822.1.1 = {
-		death = yes
-	}
-}
-
-194167 = {
-	name = "Parush"
-	dynasty = 1045027
-	religion = finnish_pagan
-	culture = mordvin
-	father = 194166
-	810.1.1 = {
-		birth = yes
-	}
-	866.1.1 = {
-		death = yes
-	}
-}
-
 256103 = { 		#fictional Vladimir/Pereyaslavl vassal in 1066
-	name = Dergun
+	name = "Dergun"
 	dynasty = 1061058	#Chudivid
 	religion = finnish_pagan
 	culture = mordvin
@@ -746,7 +704,7 @@
 }
 
 256104 = {
-	name = Tylze
+	name = "Tylze"
 	dynasty = 1061058	#Chudivid
 	father = 256103
 	religion = finnish_pagan
@@ -760,7 +718,7 @@
 }
 
 256115 = { 		#fictional Vladimir/Pereyaslavl vassal in 1066
-	name = Shkay
+	name = "Shkay"
 	dynasty = 1029104	#Muromid
 	father = 256128
 	religion = finnish_pagan
@@ -774,7 +732,7 @@
 }
 
 256116 = {
-	name = Andyamo
+	name = "Andyamo"
 	dynasty = 1029104	#Muromid
 	father = 256115
 	religion = finnish_pagan
@@ -788,7 +746,7 @@
 }
 
 256117 = {
-	name = Kezhapa
+	name = "Kezhapa"
 	dynasty = 1029104	#Muromid
 	father = 256115
 	religion = finnish_pagan
@@ -802,7 +760,7 @@
 }
 
 256126 = { 		#fictional tribe vassal in Murom for Chernigov 1066
-	name = Koshel
+	name = "Koshel"
 	dynasty = 1029104	#Muromid
 	father = 256129
 	religion = finnish_pagan
@@ -816,7 +774,7 @@
 }
 
 256127 = {
-	name = Nuyanza
+	name = "Nuyanza"
 	dynasty = 1029104	#Muromid
 	father = 256126
 	religion = finnish_pagan
@@ -830,7 +788,7 @@
 }
 
 256128 = { 		#fictional
-	name = Shindyay
+	name = "Shindyay"
 	dynasty = 1029104	#Muromid
 	father = 256130
 	religion = finnish_pagan
@@ -844,7 +802,7 @@
 }
 
 256129 = { 		#fictional
-	name = Kubrat
+	name = "Kubrat"
 	dynasty = 1029104	#Muromid
 	father = 256130
 	religion = finnish_pagan
@@ -858,7 +816,7 @@
 }
 
 256130 = { 		#fictional
-	name = Purysho
+	name = "Purysho"
 	dynasty = 1029104	#Muromid
 	religion = finnish_pagan
 	culture = mordvin
@@ -916,10 +874,10 @@
 	dynasty = 1062363
 	religion = finnish_pagan
 	culture = mordvin
-	911.1.1 = {
+	731.1.1 = {
 		birth = yes
 	}
-	963.1.1 = {
+	793.1.1 = {
 		death = yes
 	}
 }
@@ -929,10 +887,10 @@
 	dynasty = 1062364
 	religion = finnish_pagan
 	culture = mordvin
-	901.1.1 = {
+	839.1.1 = {
 		birth = yes
 	}
-	949.1.1 = {
+	887.1.1 = {
 		death = yes
 	}
 }

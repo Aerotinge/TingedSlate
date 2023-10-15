@@ -1,6 +1,5 @@
 750.1.1 = {
 	holder = 194134
-	liege = d_turov
 }
 
 799.1.1 = {
@@ -12,12 +11,32 @@
 }
 
 865.1.1 = {
+	liege = d_turov
 	holder = 159720
 }
 
-936.1.1 = {
+900.1.1 = {
+	holder = 160101
+}
+
+918.1.1 = {
+	holder = 160102
+}
+
+948.1.1 = {
+	holder = 160137
+}
+
+973.1.1 = {
 	holder = 260711
-	liege = d_minsk
+}
+
+979.1.2 = { # Vladimir Conquest of Polotsk
+	liege = d_novgorod
+}
+
+997.1.1 = {
+	holder = 260712
 }
 
 1020.1.1 = {

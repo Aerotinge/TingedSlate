@@ -11,7 +11,7 @@
 }
 
 882.1.1 = {
-	holder = 40606	#Oleg the Seer
+	holder = 40618	#Oleg the Seer
 	law = agnatic_succession
 	law = succ_seniority
 
@@ -52,7 +52,7 @@
 }
 
 1054.2.20 = {
-	holder = 626		#death of Yaroslav the Wise, Iziaslav to the throne
+	holder = 626	#death of Yaroslav the Wise, Iziaslav to the throne
 }
 
 1068.9.14 = {
@@ -81,6 +81,10 @@
 
 1093.4.13 = {
 	holder = 652
+}
+
+1097.1.1. = { # Council of Liubech, Kievan Rus broken its Rota system
+	law = succ_elective_gavelkind
 }
 
 1113.4.16 = {

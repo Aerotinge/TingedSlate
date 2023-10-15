@@ -17,7 +17,7 @@ b_zhytomyr = temple		#884
 #b_fastiv = castle		#1390
 
 # Misc
-culture = volhynian
+culture = severian
 religion = slavic_pagan
 terrain = plains
 

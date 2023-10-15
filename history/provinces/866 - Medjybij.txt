@@ -16,7 +16,7 @@ b_medjybij = tribal	#1146
 #b_chudniv			#1440
 
 # Misc
-culture = volhynian
+culture = severian
 religion = slavic_pagan
 terrain = plains
 

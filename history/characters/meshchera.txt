@@ -1,3 +1,5 @@
+## Meshchera
+
 159710 = {
 	name = "Vechkas"
 	religion = finnish_pagan
@@ -21,7 +23,7 @@
 	861.1.1 = {
 		birth = yes
 	}
-	905.1.1 = {
+	915.1.1 = {
 		death = yes
 	}
 }
@@ -31,11 +33,11 @@
 	religion = finnish_pagan
 	culture = meshchera
 	dynasty = 1029106
-	father = 159710
-	862.1.1 = {
+	father = 160121
+	883.1.1 = {
 		birth = yes
 	}
-	905.1.1 = {
+	937.1.1 = {
 		death = yes
 	}
 }
@@ -45,11 +47,11 @@
 	religion = finnish_pagan
 	culture = meshchera
 	dynasty = 1029106
-	father = 159710
-	863.1.1 = {
+	father = 160122
+	906.1.1 = {
 		birth = yes
 	}
-	905.1.1 = {
+	964.1.1 = {
 		death = yes
 	}
 }
@@ -95,6 +97,22 @@
 	}
 }
 
+## Inzhay
+
+6853 = {
+	name = "Turush"
+	dynasty = 1045027
+	religion = finnish_pagan
+	culture = meshchera
+	father = 194167
+	835.1.1 = {
+		birth = yes
+	}
+	890.1.1 = {
+		death = yes
+	}
+}
+
 194165 = {
 	name = "Inzhay"
 	dynasty = 1045027
@@ -108,8 +126,38 @@
 	}
 }
 
-256052 = { 			#fictional, tribal chief in Meshchera
-	name = Pinyas
+194166 = {
+	name = "Dergun"
+	dynasty = 1045027
+	religion = finnish_pagan
+	culture = meshchera
+	father = 194165
+	770.1.1 = {
+		birth = yes
+	}
+	822.1.1 = {
+		death = yes
+	}
+}
+
+194167 = {
+	name = "Parush"
+	dynasty = 1045027
+	religion = finnish_pagan
+	culture = meshchera
+	father = 194166
+	810.1.1 = {
+		birth = yes
+	}
+	866.1.1 = {
+		death = yes
+	}
+}
+
+## Misc Ryazans
+
+256052 = { 	#fictional, tribal chief in Meshchera
+	name = "Pinyas"
 	dynasty = 1061032	#Okich
 	religion = finnish_pagan
 	culture = meshchera
@@ -121,150 +169,8 @@
 	}
 }
 
-256105 = { 			#fictional, Meshchera tribal vassal in Pereyaslavl in 1066
-	name = Ovtay
-	dynasty = 1029106	#Meshcheravid
-	religion = finnish_pagan
-	culture = meshchera
-	1032.7.13 = {
-		birth = yes
-	}
-	1084.6.23 = {
-		death = yes
-	}
-}
-
-256106 = {
-	name = Valdava
-	dynasty = 1029106	#Meshcheravid
-	father = 256105
-	female = yes
-	religion = finnish_pagan
-	culture = meshchera
-	1050.9.20 = {
-		birth = yes
-	}
-	1119.2.4 = {
-		death = yes
-	}
-}
-
-256107 = {
-	name = Uzhara
-	dynasty = 1029106	#Meshcheravid
-	father = 256105
-	religion = finnish_pagan
-	culture = meshchera
-	1052.4.30 = {
-		birth = yes
-	}
-	1106.11.7 = {
-		death = yes
-	}
-}
-
-256108 = {
-	name = Azyren
-	dynasty = 1029106	#Meshcheravid
-	father = 256107
-	religion = finnish_pagan
-	culture = meshchera
-	1074.8.18 = {
-		birth = yes
-	}
-	1133.12.1 = {
-		death = yes
-	}
-}
-
-256109 = {
-	name = Erziya
-	dynasty = 1029106	#Meshcheravid
-	father = 256108
-	religion = finnish_pagan
-	culture = meshchera
-	1098.10.10 = {
-		birth = yes
-	}
-	1160.7.6 = {
-		death = yes
-	}
-}
-
-256110 = {
-	name = Surt
-	dynasty = 1029106	#Meshcheravid
-	father = 256108
-	religion = finnish_pagan
-	culture = meshchera
-	1101.8.20 = {
-		birth = yes
-	}
-	1165.1.19 = {
-		death = yes
-	}
-}
-
-256111 = {
-	name = Varmanpaz
-	dynasty = 1029106	#Meshcheravid
-	father = 256109
-	religion = finnish_pagan
-	culture = meshchera
-	1122.9.9 = {
-		birth = yes
-	}
-	1190.7.7 = {
-		death = yes
-	}
-}
-
-256112 = {
-	name = Viryas
-	dynasty = 1029106	#Meshcheravid
-	father = 256111
-	religion = finnish_pagan
-	culture = meshchera
-	1150.6.21 = {
-		birth = yes
-	}
-	1238.2.4 = {
-		death = yes
-	}
-}
-
-256113 = {
-	name = Litava
-	dynasty = 1029106	#Meshcheravid
-	father = 256112
-	female = yes
-	religion = finnish_pagan
-	culture = meshchera
-	1173.2.19 = {
-		birth = yes
-	}
-	1255.7.7 = {
-		death = yes
-	}
-}
-
-256114 = {
-	name = Liyava
-	dynasty = 1029106	#Meshcheravid
-	father = 256112
-	female = yes
-	religion = finnish_pagan
-	culture = meshchera
-	1174.11.14 = {
-		birth = yes
-	}
-	1201.2.2 = {
-		death = yes
-	}
-}
-
-256124 = { 		#fictional tribe vassal in Orekhovo-Zuyevo for Chernigov 1066
-	name = Koshel
+256124 = { #fictional tribe vassal in Orekhovo-Zuyevo for Chernigov 1066
+	name = "Koshel"
 	dynasty = 1061063	#Orekhid
 	religion = finnish_pagan
 	culture = meshchera
@@ -277,7 +183,7 @@
 }
 
 256125 = {
-	name = Nuyanza
+	name = "Nuyanza"
 	dynasty = 1061063	#Orekhid
 	father = 256124
 	religion = finnish_pagan
@@ -290,9 +196,20 @@
 	}
 }
 
-# Ryazans
+258085 = {	#fictional tribe vassal in Karachev for Meshchera 769
+	name = "Mishar"
+	dynasty = 1100006
+	religion = finnish_pagan
+	culture = meshchera
+	744.1.1 = {
+		birth = yes
+	}
+	780.1.1 = {
+		death = yes
+	}
+}
 
-260737 = {
+260737 = {	#fictional tribe vassal in Mozhaysk for Meshchera 936
 	name = "Volodar"
 	dynasty = 1062358
 	religion = finnish_pagan
@@ -331,7 +248,7 @@
 	}
 }
 
-260740 = {
+260740 = {	#fictional tribe vassal in Mochkava 936
 	name = "Yelisey"
 	dynasty = 1062361
 	religion = finnish_pagan
@@ -344,8 +261,21 @@
 	}
 }
 
+260745 = {
+	name = "Paksyay"
+	dynasty = 1062366
+	religion = finnish_pagan
+	culture = meshchera
+	868.1.1 = {
+		birth = yes
+	}
+	915.1.1 = {
+		death = yes
+	}
+}
+
 260747 = {
-	name = "Davyd"
+	name = "Kezhevat"
 	dynasty = 1062366
 	religion = finnish_pagan
 	culture = meshchera
@@ -359,14 +289,14 @@
 }
 
 260748 = {
-	name = "Vyshata"
+	name = "Velmayka"
 	dynasty = 1062367
 	religion = finnish_pagan
 	culture = meshchera
 	909.1.1 = {
 		birth = yes
 	}
-	946.1.1 = {
+	966.1.1 = {
 		death = yes
 	}
 }

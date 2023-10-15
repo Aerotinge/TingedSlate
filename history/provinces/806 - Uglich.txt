@@ -19,7 +19,9 @@ culture = mordvin
 religion = finnish_pagan
 
 # History
-1050.1.1 = {
+1054.2.20 = {
+	culture = russian
+	religion = orthodox
 	b_uglich = castle
 	b_ustyuzhna = temple
 	b_ugliche_pole = city

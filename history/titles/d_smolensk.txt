@@ -14,33 +14,42 @@
 	holder = 6826
 }
 
-988.1.2 = {
-	holder = 125018
-#	law = agnatic_succession
-#	law = succ_gavelkind
+885.1.1 = {
+	set_tribute_suzerain = {
+		who = d_kiev
+		type = permanent
+	}
 }
 
-1014.1.2 = {
-	holder = 608
+890.1.1 = {
+	holder = 160099
 }
 
-1015.7.15 = {
-	holder = 610
+910.1.1 = {
+	holder = 160100
 }
 
-1016.1.2 = {
-	holder = 612
+940.1.1 = {
+	holder = 260733
 }
 
-1018.1.2 = {
-	holder = 610
+961.1.1 = {
+	holder = 260734
 }
 
-1019.1.2 = {
-	holder = 612
+984.1.1 = { # tried to break away from the Kievan Rus
+	clear_tribute_suzerain = d_kiev
+}
+
+985.1.1 = {
+	holder = 0
 }
 
 1054.2.20 = {
+	set_tribute_suzerain = {
+		who = d_kiev
+		type = permanent
+	}
 	holder = 9132
 }
 
@@ -49,15 +58,12 @@
 }
 
 1060.1.2 = {
+	
 	holder = 626
 }
 
 1068.9.14 = {
 	holder = 650
-}
-
-1069.1.2 = {		#When Kiev lost too much legitimacy to be a proper suzerain of the Rus principalities
-	clear_tribute_suzerain = d_kiev
 }
 
 1069.4.15 = {

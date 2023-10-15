@@ -6,36 +6,37 @@
 	holder = 6859
 }
 
-936.1.1 = {
-	holder = 260714
+895.1.1 = {
+	holder = 160107
+}
+
+917.1.1 = {
+	holder = 160108
+}
+
+918.1.1 = {
 	set_tribute_suzerain = {
 		who = d_kiev
 		type = permanent
 	}
 }
 
-989.1.2 = {
+950.1.1 = { # Rögnvaldr Conquest of Polotsk
 	clear_tribute_suzerain = d_kiev
-	holder = 616
+	holder = 614
 }
 
-1001.1.2 = {
-	holder = 125000
+979.1.2 = { # Vladimir Conquest of Polotsk
+	holder = 0
 }
 
-1003.1.2 = {
-	holder = 642
-}
-
-1044.1.2 = {
-	holder = 650
-}
-
-1054.2.20 = {		#Death of Yaroslav the Wise, Rus' was pretty much less united than before but still governed by Kiev
+1044.1.2 = { # Vseslav profited from the civil wars in Kiev in order to assert his own semi-independence
 	set_tribute_suzerain = {
 		who = d_kiev
 		type = permanent
 	}
+	liege = d_polotsk
+	holder = 650
 }
 
 1101.4.14 = {

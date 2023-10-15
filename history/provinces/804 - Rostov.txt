@@ -25,6 +25,10 @@ terrain = plains
 	b_sarskoyegorodishche = castle
 	b_rostov = city
 }
+1054.2.20 = {
+	culture = russian
+	religion = orthodox
+}
 1150.1.1 = {
 	b_spasoyakovlevsky = temple
 }

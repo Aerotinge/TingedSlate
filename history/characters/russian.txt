@@ -27,20 +27,6 @@
 	}
 }
 
-125000 = {
-	name = "Vseslav"
-	dynasty = 705
-	religion = orthodox
-	culture = russian
-	father = 616
-	994.1.2 = {
-		birth = yes
-	}
-	1003.1.2 = {
-		death = yes
-	}
-}
-
 125001 = {
 	name = "Iziaslav"
 	dynasty = 705
@@ -278,49 +264,6 @@
 		birth = yes
 	}
 	1320.1.2 = {
-		death = yes
-	}
-}
-
-125017 = {
-	name = "Vsevolod"
-	dynasty = 705
-	religion = orthodox
-	culture = russian
-	father = 608
-	mother = 609
-	983.1.2 = {
-		birth = yes
-	}
-	1008.1.2 = {
-		death = yes
-	}
-}
-
-125018 = {
-	name = "Stanislav"
-	dynasty = 705
-	religion = orthodox
-	culture = russian
-	father = 608
-	986.1.2 = {
-		birth = yes
-	}
-	1014.1.2 = {
-		death = yes
-	}
-}
-
-125019 = {
-	name = "Sviatoslav"
-	dynasty = 705
-	religion = orthodox
-	culture = russian
-	father = 608
-	982.1.2 = {
-		birth = yes
-	}
-	1015.9.1 = {
 		death = yes
 	}
 }
@@ -7437,7 +7380,7 @@
 
 472450 = {
 	name = "Sbyslav"
-	dynasty = 100555
+	dynasty = 186
 	martial = 7
 	diplomacy = 5
 	intrigue = 7
@@ -9256,7 +9199,7 @@
 	dynasty = 705
 	religion = orthodox
 	culture = russian
-	add_trait = legit_bastard
+	add_trait = child_of_consort
 	father = 626
 	1050.11.8 = {
 		birth = yes
@@ -9403,12 +9346,15 @@
 672 = {
 	name = "Gleb"
 	dynasty = 705
-	religion = orthodox
+	religion = norse_pagan
 	culture = russian
 	father = 650
 	mother = 40603
 	1053.1.2 = {
 		birth = yes
+	}
+	1056.1.1 = {
+		religion = orthodox
 	}
 	1090.1.2 = {
 		add_spouse = 125095
@@ -9421,12 +9367,15 @@
 674 = {
 	name = "Roman"
 	dynasty = 705
-	religion = orthodox
+	religion = norse_pagan
 	culture = russian
 	father = 650
 	mother = 40603
 	1055.1.2 = {
 		birth = yes
+	}
+	1056.1.1 = {
+		religion = orthodox
 	}
 	1116.1.2 = {
 		death = yes
@@ -9655,7 +9604,7 @@
 
 90141 = {
 	name = "Ratibor"
-	dynasty = 100555
+	dynasty = 181
 	martial = 5
 	diplomacy = 6
 	intrigue = 6
@@ -10084,32 +10033,6 @@
 	}
 }
 
-256047 = { 			#fictional, Polesia
-	name = "Radovan"
-	dynasty = 1061024	#Drutskich
-	religion = slavic_pagan
-	culture = russian
-	840.1.1 = {
-		birth = yes
-	}
-	920.1.1 = {
-		death = yes
-	}
-}
-
-256051 = { 			#fictional, early Galich
-	name = "Grigorii"
-	dynasty = 1061027	#Ulich
-	religion = slavic_pagan
-	culture = russian
-	830.1.1 = {
-		birth = yes
-	}
-	900.1.1 = {
-		death = yes
-	}
-}
-
 256060 = {
 	name = "Alexei"
 	dynasty = 1061040	#Hrodnich
@@ -10460,7 +10383,7 @@
 
 256087 = { 		#fictional Kievan vassal in 1066
 	name = "Konstantin"
-	dynasty = 1061053	#Konstantinid
+	dynasty = 1045035	#Tyvertsky
 	religion = orthodox
 	culture = russian
 	1022.1.1 = {
@@ -10473,7 +10396,7 @@
 
 256088 = {
 	name = "Konstantin"
-	dynasty = 1061053	#Konstantinid
+	dynasty = 1045035	#Tyvertsky
 	father = 256087
 	religion = orthodox
 	culture = russian
@@ -10500,7 +10423,7 @@
 
 256090 = { 		#fictional Kievan vassal in 1066
 	name = "Iliya"
-	dynasty = 1061027	#Ulich
+	dynasty = 1045031	#Ulich
 	religion = orthodox
 	culture = russian
 	1045.1.1 = {
@@ -10525,7 +10448,7 @@
 }
 
 256098 = {
-	name = "Dmitriy		#fictional Pereyaslavl vassal in 1066"
+	name = "Dmitriy"		#fictional Pereyaslavl vassal in 1066
 	dynasty = 1061055	#Ves
 	religion = orthodox
 	culture = russian
@@ -10613,6 +10536,148 @@
 		birth = yes
 	}
 	1103.1.1 = {
+		death = yes
+	}
+}
+
+256105 = { 			#fictional, Rus-Meshchera tribal vassal in Pereyaslavl in 1066
+	name = "Ovtay"
+	dynasty = 100555
+	religion = finnish_pagan
+	culture = russian
+	1032.7.13 = {
+		birth = yes
+	}
+	1084.6.23 = {
+		death = yes
+	}
+}
+
+256106 = {
+	name = "Valdava"
+	dynasty = 100555
+	father = 256105
+	female = yes
+	religion = finnish_pagan
+	culture = russian
+	1050.9.20 = {
+		birth = yes
+	}
+	1119.2.4 = {
+		death = yes
+	}
+}
+
+256107 = {
+	name = "Uzhara"
+	dynasty = 100555
+	father = 256105
+	religion = finnish_pagan
+	culture = russian
+	1052.4.30 = {
+		birth = yes
+	}
+	1106.11.7 = {
+		death = yes
+	}
+}
+
+256108 = {
+	name = "Azyren"
+	dynasty = 100555
+	father = 256107
+	religion = finnish_pagan
+	culture = russian
+	1074.8.18 = {
+		birth = yes
+	}
+	1133.12.1 = {
+		death = yes
+	}
+}
+
+256109 = {
+	name = "Erziya"
+	dynasty = 100555
+	father = 256108
+	religion = finnish_pagan
+	culture = russian
+	1098.10.10 = {
+		birth = yes
+	}
+	1160.7.6 = {
+		death = yes
+	}
+}
+
+256110 = {
+	name = "Surt"
+	dynasty = 100555
+	father = 256108
+	religion = finnish_pagan
+	culture = russian
+	1101.8.20 = {
+		birth = yes
+	}
+	1165.1.19 = {
+		death = yes
+	}
+}
+
+256111 = {
+	name = "Varmanpaz"
+	dynasty = 100555
+	father = 256109
+	religion = finnish_pagan
+	culture = russian
+	1122.9.9 = {
+		birth = yes
+	}
+	1190.7.7 = {
+		death = yes
+	}
+}
+
+256112 = {
+	name = "Viryas"
+	dynasty = 100555
+	father = 256111
+	religion = finnish_pagan
+	culture = russian
+	1150.6.21 = {
+		birth = yes
+	}
+	1238.2.4 = {
+		death = yes
+	}
+}
+
+256113 = {
+	name = "Litava"
+	dynasty = 100555
+	father = 256112
+	female = yes
+	religion = finnish_pagan
+	culture = russian
+	1173.2.19 = {
+		birth = yes
+	}
+	1255.7.7 = {
+		death = yes
+	}
+}
+
+256114 = {
+	name = "Liyava"
+	dynasty = 100555
+	father = 256112
+	female = yes
+	religion = finnish_pagan
+	culture = russian
+	1174.11.14 = {
+		birth = yes
+	}
+	1201.2.2 = {
 		death = yes
 	}
 }
@@ -10771,19 +10836,6 @@
 		birth = yes
 	}
 	964.1.1 = {
-		death = yes
-	}
-}
-
-260745 = {
-	name = "Alexandr"
-	dynasty = 1062366
-	religion = slavic_pagan
-	culture = russian
-	868.1.1 = {
-		birth = yes
-	}
-	915.1.1 = {
 		death = yes
 	}
 }

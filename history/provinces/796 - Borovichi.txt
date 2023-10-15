@@ -23,9 +23,6 @@ religion = slavic_pagan
 859.1.1 = {
 	culture = russian
 }
-988.1.1 = {
-	religion = orthodox
-}
 1200.1.1 = {
 	b_borovichi = castle
 }

@@ -20,10 +20,6 @@ religion = finnish_pagan
 terrain = plains
 
 # History
-1060.1.1 = {
-	culture = russian
-	# religion = slavic_pagan # keeping finnish_pagan is fine here
-}
 1186.1.1 = {
 	b_pronsk = castle
 	b_skopin = temple

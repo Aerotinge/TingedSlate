@@ -20,10 +20,6 @@ religion = finnish_pagan
 terrain = plains
 
 # History
-1060.1.1 = {
-	culture = russian
-	# religion = slavic_pagan # keeping finnish_pagan is fine here
-}
 1150.1.1 = {
 	b_ryazan = castle
 	b_pereyaslavl_ryazanski = city
@@ -33,6 +29,7 @@ terrain = plains
 	b_ryazan = ca_wall_1
 }
 1237.12.21 = {
+	b_pereyaslavl_ryazanski = castle
 	capital = b_pereyaslavl_ryazanski
 	remove_settlement = b_ryazan	#sacked by Batu Khan
 }

@@ -19,44 +19,12 @@
 	holder = 260771
 }
 
-945.1.2 = {
-	liege = d_kiev
-}
-
-945.1.2 = {
-	holder = 602
-}
-
-972.1.2 = {
-	holder = 604
-}
-
-978.1.2 = {
-	holder = 608
-}
-
-988.1.2 = {
-	liege = d_novgorod
-}
-
-988.1.2 = {
-	holder = 622
-}
-
-1010.1.2 = {
-	holder = 612
-}
-
-1036.1.2 = {
-	holder = 634
-}
-
-1052.10.4 = {
-	holder = 626
+987.1.2 = {
+	liege = 0
 }
 
 1054.2.20 = {
-	liege = d_pereyaslavl
+	liege = d_rostov
 	holder = 256103
 }
 

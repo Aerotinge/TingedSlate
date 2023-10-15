@@ -15,30 +15,28 @@
 }
 
 900.1.1 = {
-	holder = 0
+	holder = 160101
 }
 
-936.1.1 = {
-	holder = 260708
+918.1.1 = {
 	set_tribute_suzerain = {
 		who = d_kiev
 		type = permanent
 	}
+	holder = 160102
 }
 
-965.1.1 = {
-	holder = 0
+948.1.1 = {
+	holder = 160137
+}
+
+950.1.1 = { # Rögnvaldr Conquest of Polotsk
 	clear_tribute_suzerain = d_kiev
+	holder = 614
 }
 
-970.1.2 = {
-	holder = 606
-#	law = agnatic_succession
-#	law = succ_gavelkind
-}
-
-977.1.2 = {
-	holder = 608
+979.1.2 = { # Vladimir Conquest of Polotsk
+	holder = 0
 }
 
 988.1.2 = {

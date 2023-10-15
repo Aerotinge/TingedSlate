@@ -1,0 +1,104 @@
+750.1.1 = {
+	liege = d_turov
+	holder = 194134
+}
+
+799.1.1 = {
+	holder = 194135
+}
+
+822.1.1 = {
+	holder = 160064
+}
+
+860.1.1 = {
+	holder = 6825
+}
+
+890.1.1 = {
+	holder = 160103
+}
+
+919.1.1 = {
+	holder = 160104
+}
+
+944.1.1 = {
+	holder = 160138
+	#holder = 260751
+}
+
+950.1.1 = { # Rögnvaldr Conquest of Polotsk
+	holder = 614
+}
+
+979.1.2 = { # Vladimir Conquest of Polotsk
+	liege = d_novgorod
+	holder = 608
+}
+
+989.1.2 = {
+	holder = 616
+}
+
+1001.1.2 = {
+	holder = 125000
+}
+
+1003.1.2 = {
+	holder = 642
+}
+
+1044.1.2 = {
+	liege = d_polotsk
+	holder = 650
+}
+
+1101.4.14 = {
+	holder = 672
+}
+
+1119.9.13 = {
+	holder = 222795
+}
+
+1165.1.2 = {
+	holder = 222792
+}
+
+1167.1.2 = {
+	holder = 222790
+}
+
+1216.1.2 = {
+	liege = d_minsk
+}
+
+1216.1.2 = {
+	holder = 222560
+}
+
+1221.1.2 = {
+	holder = 125010
+}
+
+1232.1.2 = {
+	holder = 125012
+}
+
+1264.1.2 = {
+	holder = 125014
+}
+
+1280.1.2 = {
+	holder = 125015
+}
+
+1297.1.2 = {
+	holder = 125016
+}
+
+1320.1.2 = {
+	holder = 473506
+}
+

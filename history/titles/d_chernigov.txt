@@ -1,28 +1,68 @@
 # Bryansk / Severians
 
 750.1.1 = {
-	holder = 194142
+	holder = 6860
 }
 
-799.1.1 = {
-	holder = 194143
+780.1.1 = {
+	set_tribute_suzerain = {
+		who = k_khazaria
+		type = nomadic
+	}
 }
 
-822.1.1 = {
+784.1.1 = {
+	holder = 159721
+}
+
+802.1.1 = {
+	holder = 160089
+}
+
+818.1.1 = {
+	holder = 160090
+}
+
+833.1.1 = {
+	holder = 160111
+}
+
+854.1.1 = {
+	holder = 160112
+}
+
+877.1.1 = {
+	holder = 160113
+}
+
+884.1.1 = {
+	clear_tribute_suzerain = k_khazaria
+	set_tribute_suzerain = {
+		who = d_kiev
+		type = permanent
+	}
+}
+
+895.1.1 = {
 	holder = 194144
 }
 
-860.1.1 = {
-	holder = 6826
+916.1.1 = {
+	holder = 256055
 }
 
-890.1.1 = {
+940.1.1 = {
 	holder = 0
+	clear_tribute_suzerain = d_kiev
 }
 
 # Rus' Chernigov
 
 1024.1.2 = {
+	set_tribute_suzerain = {
+		who = d_kiev
+		type = permanent
+	}
 	holder = 618
 #	law = agnatic_succession
 #	law = succ_seniority
@@ -30,13 +70,6 @@
 
 1036.1.2 = {
 	holder = 612
-}
-
-1054.2.20 = {		#Death of Yaroslav the Wise, Rus' was pretty much less united than before but still governed by Kiev
-	set_tribute_suzerain = {
-		who = d_kiev
-		type = permanent
-	}
 }
 
 1054.2.20 = {

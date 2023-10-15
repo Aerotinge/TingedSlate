@@ -16,7 +16,7 @@ b_ushytsia	 = tribal
 #b_ushiyin	#fictional
 
 # Misc
-culture = volhynian
+culture = severian
 religion = slavic_pagan
 
 # History
@@ -24,8 +24,10 @@ religion = slavic_pagan
 	culture = hungarian
 	religion = tengri_pagan
 }
-892.1.1 = {
-	culture = pecheneg
+892.1.1 = { culture = pecheneg }
+1066.1.1 = {
+	culture = volhynian
+	religion = slavic_pagan
 }
 1144.1.1 = {
 	b_ushytsia = city

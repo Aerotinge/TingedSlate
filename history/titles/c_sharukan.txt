@@ -24,7 +24,7 @@
 
 864.1.1 = {
 	holder = 180226
-	liege = d_pereyaslavl
+	liege = k_khazaria
 }
 
 889.1.1 = {

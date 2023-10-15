@@ -22,7 +22,7 @@ NDefines.NEngine.MISSING_SCRIPTED_SUCCESSOR_ERROR_CUTOFF_DAY = 1
 NDefines.NEngine.COURT_PRUNE_SIZE = 12								-- Courts larger than this will be checked for pruning each month
 NDefines.NEngine.HEALTH_IMMUNITY_TO_PRUNING = 5						-- If a character has that much health, they won't be pruned
 NDefines.NFrontend.MAX_ZOOM_LEVEL = 3000
--- Since Frontend Fading is broken by the promotion splash introduce in 3.3.x, it is removed here to save time.
 NDefines.NFrontend.TIME_FROZEN = 0									-- Time before initial animation starts (some delay here so it should NOT be 0, then the animation starts before you can see it)
+																	-- Since Frontend Fading is broken by the promotion splash introduced in 3.3.x, it is removed here to save time.
 NDefines.NFrontend.FADE_IN_DONE_TIME = 0.1
 NDefines.NFrontend.GUI_START_MOVE_TIME = 0.9

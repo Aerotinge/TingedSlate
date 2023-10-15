@@ -892,21 +892,8 @@
 	}
 }
 
-256042 = {
-	name = Oleg		#fictional, d_tivertsi
-	dynasty = 1061019	#Tiveri
-	religion = slavic_pagan
-	culture = vlach
-	745.1.1 = {
-		birth = yes
-	}
-	800.1.1 = {
-		death = yes
-	}
-}
-
 256043 = { 			#fictional, d_tivertsi
-	name = Mstislav
+	name = "Mstislav"
 	dynasty = 1061020	#Dniprich
 	religion = slavic_pagan
 	culture = vlach

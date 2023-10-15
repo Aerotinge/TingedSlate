@@ -21,37 +21,16 @@
 }
 
 987.1.2 = {
-	liege = d_rostov
-}
-
-987.1.2 = {
-	holder = 612
-}
-
-1010.1.2 = {
-	holder = 624
-}
-
-1015.7.24 = {
-	holder = 612
-}
-
-1034.1.2 = {
-	holder = 634
-}
-
-1052.1.2 = {
-	holder = 670
+	liege = 0
 }
 
 1054.2.20 = {
+	liege = d_rostov
 	holder = 256103
-	liege = d_pereyaslavl
 }
 
 1087.1.2 = {
 	holder = 222574
-	liege = d_rostov
 }
 
 1097.1.2 = {

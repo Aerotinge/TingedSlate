@@ -16,7 +16,7 @@ b_bratslav = tribal	#1362
 #b_kryzhopil	#1866
 
 # Misc
-culture = volhynian
+culture = severian
 religion = slavic_pagan
 terrain = steppe
 

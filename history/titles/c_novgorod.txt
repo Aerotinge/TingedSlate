@@ -7,7 +7,7 @@
 }
 
 879.1.2 = {
-	holder = 40606
+	holder = 40618
 }
 
 912.1.2 = {
@@ -22,13 +22,27 @@
 	holder = 608
 }
 
+976.1.1 = {
+	# liege = 0 # Vladimir of Novgorod and Oleg of Drelinia rebellion
+
+}
+
+977.1.1 = { # Vladimir defeated
+	holder = 604	#Yaropolk
+}
+
+978.1.2 = { # Vladimir strikes back
+	liege = d_novgorod
+	holder = 608	#Vladimir the Great
+}
+
 988.1.2 = {
 	liege = d_novgorod
-	holder = 622
+	#holder = 622
 }
 
 1010.1.2 = {
-	holder = 612
+	#holder = 612
 }
 
 1034.1.2 = {

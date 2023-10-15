@@ -24,8 +24,11 @@ religion = slavic_pagan
 	culture = pecheneg
 	religion = tengri_pagan
 }
-
-988.1.1 = {
+1066.1.1 = {
+	culture = volhynian
+	religion = slavic_pagan
+}
+1124.3.19 = {
 	b_zvenyhorod = castle
 	b_lvov = city
 	b_butsk = temple

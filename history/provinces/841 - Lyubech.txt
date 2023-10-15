@@ -23,8 +23,10 @@ religion = slavic_pagan
 936.1.1 = {
 	culture = russian
 }
-1150.1.1 = {
+1024.1.2 = {
+	religion = orthodox
 	b_lyubech = castle
+}
+1335.1.1 = {
 	b_dobrouch = temple
 }
-

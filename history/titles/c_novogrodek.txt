@@ -12,12 +12,33 @@
 }
 
 860.1.1 = {
+	liege = d_turov
 	holder = 6825
 }
 
-936.1.1 = {
-	holder = 260751
-	liege = d_minsk
+890.1.1 = {
+	holder = 160103
+}
+
+919.1.1 = {
+	holder = 160104
+}
+
+944.1.1 = {
+	holder = 160138
+	#holder = 260751
+}
+
+974.1.1 = {
+	holder = 260711
+}
+
+979.1.2 = { # Vladimir Conquest of Polotsk
+	liege = d_novgorod
+}
+
+997.1.1 = {
+	holder = 260712
 }
 
 1020.1.1 = {

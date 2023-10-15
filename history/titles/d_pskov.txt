@@ -2,14 +2,6 @@
 	effect = { set_coa = c_pskov }
 }
 
-860.1.1 = {
-	holder = 6835
-}
-
-912.1.2 = {
-	holder = 0
-}
-
 936.1.1 = {
 	holder = 260717
 	set_tribute_suzerain = {

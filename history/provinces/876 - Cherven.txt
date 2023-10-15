@@ -20,7 +20,7 @@ culture = volhynian
 religion = slavic_pagan
 
 # History
-989.1.1 = {
+1170.8.19 = {
 	b_cherven = castle
 	b_volyn = city
 	b_hrubeshiv = temple

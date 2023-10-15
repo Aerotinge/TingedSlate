@@ -30,33 +30,52 @@
 }
 
 1014.1.2 = {
-	holder = 608
+	#holder = 608
 }
 
 1015.7.15 = {
-	holder = 610
+	#holder = 610
 }
 
 1016.1.2 = {
-	holder = 612
+	#holder = 612
 }
 
 1018.1.2 = {
-	holder = 610
+	#holder = 610
 }
 
 1019.1.2 = {
-	holder = 612
+	#holder = 612
 }
 
 1054.2.20 = {
-	holder = 256091
-	liege = d_kiev
+	liege = d_smolensk
+	holder = 9132
+}
+
+1057.1.2 = {
+	holder = 638
+}
+
+1060.1.2 = {
+	holder = 626
+}
+
+1068.9.14 = {
+	holder = 650
+}
+
+1069.1.2 = {		#When Kiev lost too much legitimacy to be a proper suzerain of the Rus principalities
+	clear_tribute_suzerain = d_kiev
+}
+
+1069.4.15 = {
+	holder = 626
 }
 
 1073.1.2 = {
 	holder = 666
-	liege = d_smolensk
 }
 
 1077.1.1 = {

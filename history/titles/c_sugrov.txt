@@ -25,8 +25,8 @@
 }
 
 867.1.1 = {
+	liege = k_khazaria
 	holder = 256057
-	liege = d_bryansk
 }
 
 889.1.1 = {

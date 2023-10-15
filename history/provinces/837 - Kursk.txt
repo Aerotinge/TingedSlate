@@ -26,6 +26,7 @@ religion = finnish_pagan
 }
 936.1.1 = {
 	culture = meshchera
+	religion = finnish_pagan
 }
 1060.1.1 = {
 	culture = russian

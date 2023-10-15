@@ -1,6 +1,6 @@
 750.1.1 = {
-	holder = 194133
 	liege = d_polotsk
+	holder = 194133
 }
 
 799.1.1 = {
@@ -11,13 +11,26 @@
 	holder = 160050
 }
 
-862.1.2 = {
+860.1.1 = {
 	holder = 6859
-	liege = d_polotsk
 }
 
-936.1.1 = {
-	holder = 260714
+895.1.1 = {
+	holder = 160107
+}
+
+917.1.1 = {
+	holder = 160108
+}
+
+950.1.1 = { # Rögnvaldr Conquest of Polotsk
+	clear_tribute_suzerain = d_kiev
+	holder = 614
+}
+
+979.1.2 = { # Vladimir Conquest of Polotsk
+	liege = d_novgorod
+	holder = 608
 }
 
 989.1.2 = {
@@ -33,6 +46,7 @@
 }
 
 1044.1.2 = {
+	liege = d_polotsk
 	holder = 650
 }
 

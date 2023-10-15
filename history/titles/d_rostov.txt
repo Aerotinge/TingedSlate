@@ -8,41 +8,15 @@
 }
 
 936.1.1 = {
-	holder = 260726
 	set_tribute_suzerain = {
 		who = d_kiev
 		type = permanent
 	}
+	holder = 260726
 }
 
 983.1.1 = {
 	clear_tribute_suzerain = d_kiev
-}
-
-987.1.2 = {
-	holder = 612
-#	law = agnatic_succession
-#	law = succ_gavelkind
-}
-
-1010.1.2 = {
-	holder = 624
-}
-
-1015.7.24 = {
-	holder = 612
-}
-
-1034.1.2 = {
-	holder = 634
-}
-
-1052.1.2 = {
-	holder = 670
-}
-
-1054.2.20 = {
-	holder = 630
 }
 
 1054.2.20 = {		#Death of Yaroslav the Wise, Rus' was pretty much less united than before but still governed by Kiev
@@ -50,6 +24,7 @@
 		who = d_kiev
 		type = permanent
 	}
+	holder = 630
 }
 
 1073.1.2 = {
@@ -57,8 +32,8 @@
 }
 
 1076.12.27 = {
-	holder = 630
 	clear_tribute_suzerain = d_kiev
+	holder = 630
 }
 
 1077.1.2 = {

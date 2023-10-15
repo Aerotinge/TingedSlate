@@ -156,22 +156,8 @@
 	}
 }
 
-194139 = {
-	name = "Dobrava"
-	female = yes
-	dynasty = 1045024
-	religion = slavic_pagan
-	culture = volhynian
-	750.1.1 = {
-		birth = yes
-	}
-	799.1.1 = {
-		death = yes
-	}
-}
-
 256044 = { 			#fictional, d_drevliania
-	name = Dobroslav
+	name = "Dobroslav"
 	dynasty = 1061021	#Halyc
 	religion = slavic_pagan
 	culture = volhynian
@@ -184,7 +170,7 @@
 }
 
 256045 = { 			#fictional, d_drevliania
-	name = Dobroslav
+	name = "Dobroslav"
 	dynasty = 1061022	#Medvjedich
 	religion = slavic_pagan
 	culture = volhynian
@@ -197,7 +183,7 @@
 }
 
 256046 = { 			#fictional, Polesia
-	name = Lyubomir
+	name = "Lyubomir"
 	dynasty = 1061023	#Pripyatich
 	religion = slavic_pagan
 	culture = volhynian
@@ -210,7 +196,7 @@
 }
 
 256048 = { 			#fictional, early Galich
-	name = Premysl
+	name = "Premysl"
 	dynasty = 1061025	#Peremich
 	religion = slavic_pagan
 	culture = volhynian
@@ -222,21 +208,8 @@
 	}
 }
 
-256050 = { 			#fictional, early Galich
-	name = Milodrag
-	dynasty = 1061027	#Ulich
-	religion = slavic_pagan
-	culture = volhynian
-	720.1.1 = {
-		birth = yes
-	}
-	781.1.1 = {
-		death = yes
-	}
-}
-
 256049 = { 			#fictional, early Galich
-	name = Vsevolod
+	name = "Vsevolod"
 	dynasty = 1061026	#Dnistri
 	religion = slavic_pagan
 	culture = volhynian
@@ -287,19 +260,6 @@
 	}
 }
 
-260711 = {
-	name = "Simeon"
-	dynasty = 1062337
-	religion = slavic_pagan
-	culture = volhynian
-	902.1.1 = {
-		birth = yes
-	}
-	951.1.1 = {
-		death = yes
-	}
-}
-
 260770 = {
 	name = "Varopolk"
 	dynasty = 1062381
@@ -346,6 +306,33 @@
 	}
 }
 
+194134 = {
+	name = "Igor"
+	religion = slavic_pagan
+	culture = volhynian
+	dynasty = 1029117
+	738.1.1 = {
+		birth = yes
+	}
+	799.1.1 = {
+		death = yes
+	}
+}
+
+194135 = {
+	name = "Igor"
+	religion = slavic_pagan
+	culture = volhynian
+	dynasty = 1029117
+	father = 194134
+	764.1.1 = {
+		birth = yes
+	}
+	822.1.1 = {
+		death = yes
+	}
+}
+
 159720 = {
 	name = "Bogdan"
 	religion = slavic_pagan
@@ -386,7 +373,7 @@
 	860.1.1 = {
 		birth = yes
 	}
-	900.1.1 = {
+	918.1.1 = {
 		death = yes
 	}
 }
@@ -396,11 +383,11 @@
 	religion = slavic_pagan
 	culture = volhynian
 	dynasty = 1029117
-	father = 159720
-	861.1.1 = {
+	father = 160101
+	886.1.1 = {
 		birth = yes
 	}
-	900.1.1 = {
+	948.1.1 = {
 		death = yes
 	}
 }
@@ -414,7 +401,7 @@
 	860.1.1 = {
 		birth = yes
 	}
-	900.1.1 = {
+	919.1.1 = {
 		death = yes
 	}
 }
@@ -424,11 +411,11 @@
 	religion = slavic_pagan
 	culture = volhynian
 	dynasty = 1029117
-	father = 6825
-	861.1.1 = {
+	father = 160103
+	889.1.1 = {
 		birth = yes
 	}
-	900.1.1 = {
+	944.1.1 = {
 		death = yes
 	}
 }
@@ -438,11 +425,11 @@
 	religion = slavic_pagan
 	culture = volhynian
 	dynasty = 1029117
-	father = 6868
-	862.1.1 = {
+	father = 160102
+	907.1.1 = {
 		birth = yes
 	}
-	905.1.1 = {
+	973.1.1 = {
 		death = yes
 	}
 }
@@ -452,20 +439,47 @@
 	religion = slavic_pagan
 	culture = volhynian
 	dynasty = 1029117
-	father = 6868
-	863.1.1 = {
+	father = 160104
+	912.1.1 = {
 		birth = yes
 	}
-	905.1.1 = {
+	974.1.1 = {
+		death = yes
+	}
+}
+
+256047 = { 			#fictional, Polesia
+	name = "Radovan"
+	dynasty = 1061024	#Drutskich
+	religion = slavic_pagan
+	culture = volhynian
+	840.1.1 = {
+		birth = yes
+	}
+	920.1.1 = {
+		death = yes
+	}
+}
+
+256051 = { 			#fictional
+	name = "Rostislav"
+	dynasty = 1045024 # Turov
+	religion = slavic_pagan
+	culture = volhynian
+	830.1.1 = {
+		birth = yes
+	}
+	900.1.1 = {
 		death = yes
 	}
 }
 
 256092 = { 		#fictional Kievan vassal in 1066
-	name = Volodar
+	name = "Volodar"
 	dynasty = 1029117	#Dregovich
 	religion = orthodox
 	culture = volhynian
+	father = 260712
 	add_trait = ambitious
 	add_trait = tough_soldier
 	998.1.1 = {
@@ -477,7 +491,7 @@
 }
 
 256094 = {
-	name = Irina
+	name = "Irina"
 	dynasty = 1029117	#Dregovich
 	father = 256092
 	female = yes
@@ -494,7 +508,7 @@
 }
 
 256095 = {
-	name = Simeon
+	name = "Simeon"
 	dynasty = 1029117	#Dregovich
 	father = 256093
 	religion = orthodox
@@ -510,7 +524,7 @@
 }
 
 256096 = {
-	name = Liubava
+	name = "Liubava"
 	dynasty = 1029117	#Dregovich
 	father = 256093
 	female = yes
@@ -527,7 +541,7 @@
 }
 
 256097 = {
-	name = Volodar
+	name = "Volodar"
 	dynasty = 1029117	#Dregovich
 	mother = 256094
 	religion = orthodox
@@ -543,7 +557,7 @@
 }
 
 256093 = {
-	name = Yuriy
+	name = "Yuriy"
 	dynasty = 1029117	#Dregovich
 	father = 256092
 	religion = orthodox
@@ -555,6 +569,40 @@
 		birth = yes
 	}
 	1089.1.1 = {
+		death = yes
+	}
+}
+
+260711 = {
+	name = "Simeon"
+	dynasty = 1029117	#Dregovich
+	religion = slavic_pagan
+	culture = volhynian
+	father = 160137
+	936.1.1 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	997.1.1 = {
+		death = yes
+	}
+}
+
+260712 = {
+	name = "Oleg"
+	dynasty = 1029117	#Dregovich
+	religion = slavic_pagan
+	culture = volhynian
+	father = 260711
+	967.1.1 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+	}
+	1020.1.1 = {
 		death = yes
 	}
 }

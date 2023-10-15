@@ -20,10 +20,8 @@ culture = volhynian
 religion = slavic_pagan
 
 # History
-989.1.1 = {
+1170.8.19 = {
 	b_belz = castle
-}
-1035.1.1 = {
 	b_horodlo = city
 }
 1214.1.1 = {

@@ -17,7 +17,7 @@ b_korosten = tribal		#705
 #b_louhyny = castle		#later
 
 # Misc
-culture = volhynian
+culture = severian
 religion = slavic_pagan
 terrain = plains
 

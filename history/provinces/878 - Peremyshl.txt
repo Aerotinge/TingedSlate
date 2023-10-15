@@ -20,7 +20,7 @@ culture = volhynian
 religion = slavic_pagan
 
 # History
-989.1.1 = {
+1170.8.19 = {
 	b_peremyshl = castle
 	b_sanok = city
 	b_jaroslav = temple

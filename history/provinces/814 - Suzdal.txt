@@ -23,7 +23,9 @@ religion = finnish_pagan
 	b_suzdal = tb_hillfort_1
 	b_suzdal = tb_market_town_1
 }
-1024.1.1 = {
+1054.2.20 = {
+	culture = russian
+	religion = orthodox
 	b_suzdal = castle
 	b_sudalyvka = temple
 

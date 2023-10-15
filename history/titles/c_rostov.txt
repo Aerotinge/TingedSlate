@@ -1,6 +1,6 @@
 750.1.1 = {
-	holder = 194150
 	liege = d_rostov
+	holder = 194150
 }
 
 818.1.1 = {
@@ -21,28 +21,12 @@
 	liege = 0
 }
 
-987.1.2 = {
-	liege = d_rostov
-	holder = 612
-}
-
 1010.1.2 = {
-	holder = 624
-}
-
-1015.7.24 = {
-	holder = 612
-}
-
-1034.1.2 = {
-	holder = 634
-}
-
-1052.1.2 = {
-	holder = 670
+	liege = d_kiev
 }
 
 1054.2.20 = {
+	liege = d_rostov
 	holder = 630
 }
 

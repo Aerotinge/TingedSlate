@@ -20,11 +20,7 @@ culture = ilmenian
 religion = slavic_pagan
 
 # History
-1036.1.1 = {
-	culture = russian
-}
-1150.1.1 = {
-	b_orsha = castle
-	b_talachyn = city
-}
+1036.1.1 = { culture = russian }
+1067.1.1 = { b_orsha = castle }
+1150.1.1 = { b_talachyn = city }
 

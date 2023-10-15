@@ -23,9 +23,15 @@ religion = finnish_pagan
 	b_timerevo = castle
 	b_yaroslavl = city
 }
-1066.1.1 = {
-	b_petropavlovsky = temple
+1054.2.20 = {
+	culture = russian
+	religion = orthodox
+}
+1071.1.1 = {
 	b_rybinsk = city
+}
+1100.1.1 = {
+	b_petropavlovsky = temple
 }
 1150.1.1 = {
 	b_spaso-preobrazhensky = temple

@@ -151,15 +151,41 @@
 	religion = norse_pagan
 	culture = norse
 	add_trait = envious
-	add_trait = zealous
-	add_trait = bastard
+	#add_trait = bastard
+	add_trait = child_of_consort
 	add_trait = skilled_tactician
 	father = 602
 	mother = 603
 	960.1.2 = {
 		birth = yes
 	}
-	977.1.2 = {
+	977.1.1 = {
+		employer = 163112
+	}
+	978.1.2 = {
+		effect = {
+			spawn_unit = {
+				province = c_novgorod
+				owner = ROOT
+				#leader = ROOT
+				troops = {
+					light_infantry = { 507 507 }
+					heavy_infantry = { 50 50 }
+					archers = { 119 119 }
+				}
+				attrition = 1.0
+			}
+			spawn_fleet = {
+				province = closest # closest sea zone
+				owner = ROOT
+				cannot_inherit = yes # disbands on inheritance
+				troops = {
+					galleys = { 40 40 }
+				}
+			}
+		}
+	}
+	979.1.2 = {
 		add_spouse = 609
 	}
 	980.1.1 = {
@@ -167,6 +193,7 @@
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = zealous
 	}
 	989.1.2 = {
 		remove_spouse = 609
@@ -181,16 +208,15 @@
 	name = "Rogneda"
 	# AKA: Ragnhild
 	female = yes
-	dynasty = 703
+	dynasty = 1062044
 	religion = norse_pagan
 	culture = norse
-	960.1.2 = {
+	father = 614
+	961.1.2 = {
 		birth = yes
 	}
-	988.1.1 = {
+	1002.1.1 = {
 		religion = orthodox
-	}
-	989.1.2 = {
 		death = yes
 	}
 }
@@ -211,6 +237,7 @@
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1015.7.15 = {
 		give_nickname = nick_the_accursed
@@ -221,6 +248,19 @@
 		add_claim = c_korsun
 	}
 	1019.1.2 = {
+		death = yes
+	}
+}
+
+611 = {
+	name = "Rögnhildr"
+	dynasty = 1062044
+	religion = norse_pagan
+	culture = norse
+	887.1.1 = {
+		birth = yes
+	}
+	945.1.1 = {
 		death = yes
 	}
 }
@@ -243,6 +283,7 @@
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1015.1.2 = {
 		add_claim = d_kiev
@@ -258,6 +299,85 @@
 	}
 }
 
+613 = {
+	name = "Þórvar" # Trurov
+	dynasty = 1062044
+	religion = norse_pagan
+	culture = norse
+	father = 611
+	920.1.1 = {
+		birth = yes
+	}
+	950.1.1 = {
+		effect = {
+			spawn_unit = {
+				province = c_turov
+				owner = ROOT
+				troops = {
+					light_infantry = { 507 507 }
+					heavy_infantry = { 50 50 }
+					archers = { 119 119 }
+				}
+				attrition = 1.0
+			}
+		}
+	}
+	979.1.2 = {
+		death = {
+			death_reason = death_battle
+			killer = 608
+		}
+	}
+}
+
+614 = {
+	name = "Rögnvaldr" # Polotsk
+	dynasty = 1062044
+	religion = norse_pagan
+	culture = norse
+	father = 611
+	916.1.1 = {
+		birth = yes
+	}
+	950.1.1 = {
+		effect = {
+			spawn_unit = {
+				province = c_polotsk
+				owner = ROOT
+				troops = {
+					light_infantry = { 507 507 }
+					heavy_infantry = { 50 50 }
+					archers = { 119 119 }
+				}
+				attrition = 1.0
+			}
+		}
+	}
+	979.1.2 = {
+		death = {
+			death_reason = death_battle
+			killer = 608
+		}
+	}
+}
+
+615 = {
+	name = "Rodiaud" # name fictional
+	dynasty = 1062044
+	religion = norse_pagan
+	culture = norse
+	father = 614
+	954.1.1 = {
+		birth = yes
+	}
+	979.1.2 = {
+		death = {
+			death_reason = death_battle
+			killer = 608
+		}
+	}
+}
+
 616 = {
 	name = "Iziaslav"
 	# AKA: Izyaslav
@@ -266,11 +386,12 @@
 	culture = norse
 	father = 608
 	mother = 609
-	978.1.2 = {
+	981.1.2 = {
 		birth = yes
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1001.1.2 = {
 		death = yes
@@ -288,6 +409,7 @@
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1020.1.2 = {
 		add_spouse = 122502
@@ -308,6 +430,7 @@
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1063.1.2 = {
 		death = yes
@@ -326,6 +449,7 @@
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1010.1.2 = {
 		death = yes
@@ -344,6 +468,7 @@
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1015.7.24 = {
 		death = yes
@@ -362,6 +487,7 @@
 	}
 	988.1.1 = {
 		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1015.9.9 = {
 		death = yes
@@ -424,6 +550,9 @@
 	}
 	1046.1.2 = {
 		culture = russian
+	}
+	1054.2.20 = {
+		capital = c_chernigov
 	}
 	1070.1.2 = {
 		add_spouse = 1353
@@ -516,6 +645,9 @@
 	1037.1.2 = {
 		birth = yes
 	}
+	1053.1.2 = {
+		culture = russian
+	}
 	1060.1.2 = {
 		death = yes
 	}
@@ -525,7 +657,7 @@
 	name = "Briachislav"
 	# AKA: Bryachislav
 	dynasty = 705
-	religion = orthodox
+	religion = norse_pagan
 	culture = norse
 	father = 616
 	997.1.2 = {
@@ -553,9 +685,9 @@
 }
 
 650 = {
-	name = "Vseslav"
+	name = "Vseslav" # the Sorcerer
 	dynasty = 705
-	religion = orthodox
+	religion = norse_pagan
 	culture = norse
 	add_trait = cynical
 	add_trait = skilled_tactician
@@ -563,9 +695,13 @@
 	1030.1.2 = {
 		birth = yes
 	}
-	1053.1.2 = {
+	1044.1.2 = {
 		culture = russian
 		add_spouse = 40603
+	}
+	1056.1.1 = {
+		religion = orthodox
+		add_trait = sympathy_pagans
 	}
 	1101.4.14 = {
 		death = yes
@@ -1121,7 +1257,7 @@
 
 40605 = {
 	name = "Rurik" # Rurik, legendary founder of Rus. Probably known as Hrörekr by his Norse contemporaries.
-	dynasty = 705
+	dynasty = 705 # Rurikid
 	dna = tczeyfghtom
 	properties = th0ebd000000
 	religion = norse_pagan
@@ -1174,18 +1310,38 @@
 	}
 }
 
-40606 = {
-	name = "Helgi"
-	dynasty = 705
+40616 = {
+	name = "Signjótr" # Sineus, brother of Rurik
+	dynasty = 9619
 	religion = slavic_pagan
 	culture = norse
-	father = 40605 # "kinsman of Rurik"
-	diplomacy = 9
-	martial = 9
-	add_trait = quick
-	add_trait = legit_bastard
-	add_trait = proud
-	add_trait = skilled_tactician
+	832.1.1 = {
+		birth = yes
+	}
+	865.1.1 = {
+		death = yes
+	}
+}
+
+40617 = {
+	name = "Þórvar" # Truvor, brother of Rurik
+	dynasty = 9620
+	religion = slavic_pagan
+	culture = norse
+	835.1.1 = {
+		birth = yes
+	}
+	878.1.1 = {
+		death = yes
+	}
+}
+
+40618 = {
+	name = "Helgi" # Oleg the Seer
+	dynasty = 9619
+	religion = slavic_pagan
+	culture = norse
+	father = 40616 # kinsman of Rurik, assuming he's son of Sineus
 	850.1.1 = {
 		birth = yes
 	}
@@ -3435,6 +3591,76 @@
 		birth = yes
 	}
 	1018.1.2 = {
+		death = yes
+	}
+}
+
+125000 = {
+	name = "Vseslav"
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 616
+	994.1.2 = {
+		birth = yes
+	}
+	1003.1.2 = {
+		death = yes
+	}
+}
+
+
+125017 = {
+	name = "Vsevolod"
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	mother = 609
+	983.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+		add_trait = sympathy_pagans
+	}
+	1008.1.2 = {
+		death = yes
+	}
+}
+
+125018 = {
+	name = "Stanislav"
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	986.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+		add_trait = sympathy_pagans
+	}
+	1014.1.2 = {
+		death = yes
+	}
+}
+
+125019 = {
+	name = "Sviatoslav"
+	dynasty = 705
+	religion = norse_pagan
+	culture = norse
+	father = 608
+	982.1.2 = {
+		birth = yes
+	}
+	988.1.1 = {
+		religion = orthodox
+		add_trait = sympathy_pagans
+	}
+	1015.9.1 = {
 		death = yes
 	}
 }

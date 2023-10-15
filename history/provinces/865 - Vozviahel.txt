@@ -17,7 +17,7 @@ b_vozvyahel = tribal	#1257	#Now "Novohrad-Volynsky"
 #b_hrud = city	#late and small
 
 # Misc
-culture = volhynian
+culture = severian
 religion = slavic_pagan
 terrain = plains
 

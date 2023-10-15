@@ -4635,7 +4635,6 @@
 703 = {
 	name = "Vyatich"
 	culture = ilmenian
-	religion = orthodox
 }
 
 704 = {
@@ -4646,7 +4645,7 @@
 
 705 = {
 	name = "Rurikid"
-	culture = russian
+	culture = norse
 	religion = norse_pagan
 	coat_of_arms = {
 		data = { 0 3 0 39 0 0 0 }
@@ -39277,6 +39276,18 @@
 	religion = norse_pagan
 }
 
+9619 = {
+	name = "Signjótr"
+	culture = norse
+	religion = norse_pagan
+}
+
+9620 = {
+	name = "Þórvar"
+	culture = norse
+	religion = norse_pagan
+}
+
 9306 = {
 	name = "Bouvinid"
 	culture = frankish
@@ -40073,11 +40084,13 @@
 1045030 = {
 	name = "Polan"
 	culture = severian
+	religion = slavic_pagan
 }
 
 1045031 = {
 	name = "Ulich"
-	culture = severian
+	culture = russian
+	religion = orthodox
 }
 
 1045032 = {
@@ -45045,7 +45058,7 @@
 
 1061027 = {
 	name = "Ulich"
-	culture = volhynian
+	culture = severian
 	religion = slavic_pagan
 }
 

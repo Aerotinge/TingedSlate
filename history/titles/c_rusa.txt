@@ -7,7 +7,7 @@
 }
 
 879.1.2 = {
-	holder = 40606
+	holder = 40618
 }
 
 912.1.2 = {
@@ -16,24 +16,22 @@
 
 936.1.1 = {
 	holder = 260721
-	liege = d_pskov
 }
 
 945.1.2 = {
-	liege = 0
-	holder = 602
+	#holder = 602
 }
 
 970.1.2 = {
-	holder = 608
+	#holder = 608
 }
 
 988.1.2 = {
-	holder = 622
+	#holder = 622
 }
 
 1010.1.2 = {
-	holder = 612
+	#holder = 612
 }
 
 1034.1.2 = {

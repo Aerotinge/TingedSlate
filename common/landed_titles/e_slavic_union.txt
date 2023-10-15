@@ -784,7 +784,7 @@ e_slavic_union = {
 			color = { 107 164 64 }
 			color2 = { 255 255 255 }
 
-			dignity = 10
+			dignity = 5
 
 			capital = 797 # Novgorod
 
@@ -1460,6 +1460,7 @@ e_slavic_union = {
 			}
 
 			ilmenian = "Dregovichia"
+			volhynian = "Dregovichia"
 
 			c_pinsk = {
 				color = { 120 155 80 }

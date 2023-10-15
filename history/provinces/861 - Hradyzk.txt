@@ -27,6 +27,10 @@ religion = tengri_pagan
 892.1.1 = {
 	culture = pecheneg
 }
+1066.1.1 = {
+	culture = russian
+	religion = slavic_pagan
+}
 1083.1.1 = {
 	b_khorol = temple
 }

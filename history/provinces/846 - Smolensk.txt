@@ -20,15 +20,16 @@ culture = ilmenian
 religion = slavic_pagan
 
 # History
-867.1.1 = {
-	b_smolensk = ca_keep_1
-	b_smolensk = ca_wall_1
-}
 936.1.1 = {
 	culture = russian
 }
-1150.1.1 = {
+1054.2.20 = {
 	b_smolensk = castle
-	b_krasny = temple
+	b_smolensk = ca_keep_1
+	b_smolensk = ca_wall_1
 	b_gnyozdovo = city
+	religion = orthodox
+}
+1165.1.1 = {
+	b_krasny = temple
 }

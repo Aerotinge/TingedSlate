@@ -16,7 +16,7 @@
 
 864.1.1 = {
 	holder = 180226
-	liege = d_pereyaslavl
+	liege = k_khazaria
 }
 
 896.1.1 = {
@@ -29,12 +29,12 @@
 }
 
 1024.1.2 = {
-	holder = 618
+	#holder = 618
 	liege = d_pereyaslavl
 }
 
 1036.1.2 = {
-	holder = 612
+	#holder = 612
 }
 
 1054.2.20 = {

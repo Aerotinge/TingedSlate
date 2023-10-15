@@ -20,11 +20,11 @@ culture = volhynian
 religion = slavic_pagan
 
 # History
-1048.1.1 = {
-	culture = russian
-}
 989.1.1 = {
 	b_lutsk = castle
 	b_dubno = city
 	b_peresopnytsia = temple
+}
+1048.1.1 = {
+	culture = russian
 }

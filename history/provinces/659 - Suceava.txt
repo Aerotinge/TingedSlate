@@ -16,7 +16,7 @@ b_suceava = tribal
 #b_putna = castle
 
 # Misc
-culture = vlach
+culture = croatian
 religion = slavic_pagan
 
 # History

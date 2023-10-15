@@ -19,20 +19,20 @@
 }
 
 945.1.2 = {
-	holder = 602
+	#holder = 602
 	liege = d_tver
 }
 
 970.1.2 = {
-	holder = 608
+	#holder = 608
 }
 
 988.1.2 = {
-	holder = 622
+	#holder = 622
 }
 
 1010.1.2 = {
-	holder = 612
+	#holder = 612
 }
 
 1034.1.2 = {

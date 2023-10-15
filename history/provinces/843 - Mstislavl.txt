@@ -23,10 +23,12 @@ religion = slavic_pagan
 936.1.1 = {
 	culture = russian
 }
-1150.1.1 = {
+1136.1.1 = {
 	b_mstitslavl = castle
 	b_propoysk = city
 	b_krychaw = temple
+}
+1142.1.1 = {
 	b_rahacou = castle
 }
 1159.1.1 = {

@@ -20,13 +20,7 @@ culture = ilmenian
 religion = slavic_pagan
 
 # History
-947.1.1 = {
-	b_vitebsk = tb_hillfort_1
-}
-1024.1.1 = {
-	culture = russian
-}
-1150.1.1 = {
-	b_vitebsk = castle
-	b_sianno = city
-}
+947.1.1 = { b_vitebsk = tb_hillfort_1 }
+1024.1.1 = { culture = russian }
+1044.1.2 = { b_vitebsk = castle }
+1150.1.1 = { b_sianno = city }
