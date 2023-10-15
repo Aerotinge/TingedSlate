@@ -373,6 +373,7 @@ feudal_elective = {
 
 		# Ageism
 		elector_candidate_age_vote = yes
+		elector_candidate_age_children_vote = yes
 
 		# Culturism
 		elector_candidate_culture_vote = yes
