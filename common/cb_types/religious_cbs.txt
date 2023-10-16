@@ -779,18 +779,6 @@ new_crusade = {
 				name = won_crusade
 				years = 20
 			}
-
-			crusade_target_title = {
-				save_event_target_as = new_crusade_title
-			}
-
-			official_crusade_recipient = {
-				save_event_target_as = new_crusade_recipient
-			}
-
-			crusade_target_char = {
-				save_event_target_as = new_crusade_target_char
-			}
 		}
 
 		most_participating_crusader = {
@@ -810,38 +798,52 @@ new_crusade = {
 		}
 
 		hidden_effect = {
-			if = { # Achievement
+			# Achievement
+			any_attacker = {
 				limit = {
-					event_target:new_crusade_target_char = {
-						has_landed_title = e_byzantium
-						religion_group = defender
-					}
+					ai = no
+					is_ironman = yes
 				}
 
-				any_attacker = {
+				if = {
 					limit = {
-						ai = no
-						is_ironman = yes
+						NOT = { has_character_flag = achievement_crusader }
 					}
+					set_character_flag = achievement_crusader
+				}
 
+				if = {
+					limit = {
+						crusade_target_char = {
+							has_landed_title = e_byzantium
+							religion_group = attacker
+						}
+					}
 					set_character_flag = achievement_venetian_guile
 				}
 			}
 
+			# Find a backup beneficiary for AI Crusaders, if they don't have one already selected
 			any_attacker = {
-				if = {
-					limit = {
-						ai = yes
+				limit = {
+					ai = yes
 
-						NOT = {
-							crusade_beneficiary = {
-								always = yes
+					NOT = {
+						crusade_beneficiary = {
+							is_alive = yes
+							is_ruler = no
+
+							NOT = {
+								any_heir_title = {
+									always = yes
+								}
 							}
 						}
 					}
-
-					character_event = { id = HFP.41007 } # Beneficiary event - AI only
 				}
+
+				# save_event_target_as = crusade_attacker
+				character_event = { id = HFP.41007 } # Beneficiary event - AI only
 			}
 
 			# Should we give the seized land to the Official Crusade Recipient?
@@ -863,6 +865,7 @@ new_crusade = {
 				most_participating_crusader = {
 					official_crusade_recipient = {
 						set_crusader_king = THIS
+						set_character_flag = crusader_king_flag
 					}
 				}
 			}
@@ -872,11 +875,23 @@ new_crusade = {
 				limit = {
 					most_participating_crusader = {
 						trigger_if = {
-							limit = { ai = yes }
+							limit = { has_character_flag = crusade_beneficiary_stance }
 
 							crusade_beneficiary = {
 								is_alive = yes
+								is_ruler = no
+
+								NOT = {
+									any_heir_title = {
+										always = yes
+									}
+								}
 							}
+						}
+
+						OR = {
+							has_character_flag = crusade_selfish_stance
+							has_character_flag = crusade_beneficiary_stance
 						}
 
 						holy_order = no
@@ -892,94 +907,9 @@ new_crusade = {
 				most_participating_crusader = {
 					# Give the title to your Beneficiary
 					if = {
-						limit = {
-							crusade_beneficiary = {
-								is_alive = yes
-								is_ruler = no
-
-								NOT = {
-									any_heir_title = {
-										always = yes
-									}
-								}
-
-								mercenary = no
-								holy_order = no
-							}
-
-							NOT = { has_character_flag = crusade_selfish_stance }
-						}
+						limit = { has_character_flag = crusade_beneficiary_stance }
 
 						crusade_beneficiary = {
-							set_crusader_king = THIS
-							set_character_flag = crusader_king_flag
-						}
-					}
-
-					# Find an appropriate replacement Beneficiary if there is none selected, or the currently selected one is improper in one way or another
-					else_if = {
-						limit = {
-							ai = yes
-							NOT = { has_character_flag = crusade_selfish_stance }
-
-							any_dynasty_member = {
-								is_adult = yes
-								religion = PREV
-								is_ruler = no
-
-								NOT = {
-									any_heir_title = {
-										always = yes
-									}
-								}
-
-								mercenary = no
-								holy_order = no
-							}
-						}
-
-						any_dynasty_member = {
-							limit = {
-								is_adult = yes
-								religion = PREV
-								is_ruler = no
-
-								NOT = {
-									any_heir_title = {
-										always = yes
-									}
-								}
-							}
-
-							score_value = {
-								value = 1
-
-								additive_modifier = {
-									value = 1000
-									preferred_gender_based_on_laws_trigger = yes
-								}
-
-								additive_modifier = {
-									value = 500
-									is_child_of = PREV
-								}
-
-								additive_modifier = {
-									value = 250
-									is_vassal_or_below_of = PREV
-								}
-
-								additive_modifier = {
-									value = 125
-									practical_age < 45
-								}
-
-								additive_modifier = {
-									value = 62
-									culture = PREV
-								}
-							}
-
 							set_crusader_king = THIS
 							set_character_flag = crusader_king_flag
 						}
@@ -1020,6 +950,7 @@ new_crusade = {
 
 								crusade_beneficiary = {
 									is_alive = yes
+									is_dying = no
 									is_ruler = no
 									age >= 12
 
@@ -1043,8 +974,9 @@ new_crusade = {
 
 								crusade_beneficiary = {
 									is_alive = yes
-									age >= 12
+									is_dying = no
 									is_ruler = no
+									age >= 12
 
 									NOT = {
 										any_heir_title = {
@@ -1126,9 +1058,11 @@ new_crusade = {
 									any_dynasty_member = {
 										is_alive = yes
 										is_dying = no
-										mercenary = no
+										is_ruler = no
 										holy_order = no
+										mercenary = no
 										age >= 12
+										religion = attacker
 
 										NOT = {
 											any_heir_title = {
@@ -1145,10 +1079,12 @@ new_crusade = {
 
 									any_dynasty_member = {
 										is_alive = yes
-										age >= 12
 										is_dying = no
-										mercenary = no
+										is_ruler = no
 										holy_order = no
+										mercenary = no
+										age >= 12
+										religion = attacker
 
 										NOT = {
 											any_heir_title = {
@@ -1206,6 +1142,7 @@ new_crusade = {
 									}
 
 									set_crusader_king = THIS
+									set_character_flag = crusader_king_flag
 								}
 							}
 						}
@@ -1257,7 +1194,18 @@ new_crusade = {
 			# Make sure selfish Crusaders get as little as possible (reduce the pot for Selfish Crusaders)
 			any_attacker = {
 				limit = { has_character_flag = crusade_selfish_stance }
-				set_crusade_pot_multiplier = 0
+				if = {
+					limit = {
+						any_owned_bloodline = {
+							has_bloodline_flag = grand_crusader_bloodline
+							bloodline_is_active_for = PREV
+						}
+					}
+					set_crusade_pot_multiplier = 0.2
+				}
+				else = {
+					set_crusade_pot_multiplier = 0
+				}
 			}
 
 			# Distribute the Pot and Titles
@@ -1269,7 +1217,7 @@ new_crusade = {
 						ai = no
 
 						most_participating_crusader = {
-							NOT = {	character = PREV }
+							NOT = { character = PREV }
 						}
 					}
 
@@ -1324,14 +1272,21 @@ new_crusade = {
 							title = k_thrace
 						}
 
+						crusade_target_char = {
+							has_landed_title = e_byzantium
+						}
+
 						defender = {
 							religion_group = attacker
 							NOT = { religion = attacker }
 						}
+					}
 
-						crusade_target_char = {
-							has_landed_title = e_byzantium
-						}
+					distribute_crusade_target_title = yes
+
+					# The Crusader King becomes an Emperor and gets a bloodline
+					crusader_king = {
+						grant_title_no_opinion = e_latin_empire
 					}
 
 					# Find a King for Trebizond
@@ -1364,7 +1319,6 @@ new_crusade = {
 									grant_title_no_opinion = k_trebizond
 								}
 							}
-
 						}
 					}
 
@@ -1374,7 +1328,9 @@ new_crusade = {
 							e_byzantium = {
 								holder_scope = {
 									any_vassal = {
-										limit = { de_jure_liege = k_trebizond }
+										limit = {
+											primary_title = { de_jure_liege_or_above = k_trebizond }
+										}
 										set_defacto_liege = PREVPREVPREV
 									}
 								}
@@ -1421,7 +1377,9 @@ new_crusade = {
 							e_byzantium = {
 								holder_scope = {
 									any_vassal = {
-										limit = { de_jure_liege = k_epirus }
+										limit = {
+											primary_title = { de_jure_liege_or_above = k_epirus }
+										}
 										set_defacto_liege = PREVPREVPREV
 									}
 								}
@@ -1435,28 +1393,62 @@ new_crusade = {
 							c_famagusta = {
 								holder_scope = {
 									ai = yes
-									is_vassal_or_below_of = defender
+									OR = {
+										character = defender
+										is_vassal_or_below_of = defender
+									}
 								}
 							}
 
 							c_limisol = {
 								holder_scope = {
 									ai = yes
-									is_vassal_or_below_of = defender
+									OR = {
+										character = defender
+										is_vassal_or_below_of = defender
+									}
 								}
 							}
 
 							k_cyprus = {
 								has_holder = no
 							}
+
+							any_crusade_participant = {
+								crusade_beneficiary = {
+									is_alive = yes
+									is_dying = no
+									is_ruler = no
+									age >= 12
+
+									NOT = {
+										any_heir_title = {
+											always = yes
+										}
+									}
+								}
+							}
 						}
 
-						any_crusade_participant = {
+						random_crusade_participant = {
 							limit = {
 								ai = yes
 
 								most_participating_crusader = {
 									NOT = { character = PREV }
+								}
+
+								crusade_beneficiary = {
+									is_alive = yes
+									is_dying = no
+									is_ruler = no
+									age >= 12
+
+									NOT = {
+										any_heir_title = {
+											always = yes
+										}
+									}
 								}
 							}
 
@@ -1500,14 +1492,20 @@ new_crusade = {
 							c_kaneia = {
 								holder_scope = {
 									ai = yes
-									is_vassal_or_below_of = defender
+									OR = {
+										character = defender
+										is_vassal_or_below_of = defender
+									}
 								}
 							}
 
 							c_chandax = {
 								holder_scope = {
 									ai = yes
-									is_vassal_or_below_of = defender
+									OR = {
+										character = defender
+										is_vassal_or_below_of = defender
+									}
 								}
 							}
 
@@ -1544,13 +1542,6 @@ new_crusade = {
 						}
 					}
 
-					distribute_crusade_target_title = yes
-
-					# The Crusader King becomes an Emperor and gets a bloodline
-					crusader_king = {
-						grant_title_no_opinion = e_latin_empire
-					}
-
 					# Find random vassal and make tributary state out of them
 					e_byzantium = {
 						holder_scope = {
@@ -1583,11 +1574,26 @@ new_crusade = {
 					# All Byzantine vassals go independent except those neighboring the old Emperor, and he/she gets an inferior Empire title while the Byzantine title is broken
 					e_byzantium = {
 						holder_scope = {
+							grant_title = e_nicaea
+
 							capital_scope = {
 								kingdom = {
-									save_event_target_as = metropolitan_kingdom
+									save_event_target_as = nicaea_core
+								}
+
+								county = {
+									e_nicaea = {
+										set_name = PREV_NAME
+										set_short_name = no
+										adjective = PREV_ADJ
+										set_preferred_capital = PREV
+										copy_title_laws = e_byzantium
+										copy_title_history = e_byzantium
+										make_primary_title = yes
+									}
 								}
 							}
+
 							any_vassal = {
 								limit = {
 									higher_real_tier_than = BARON
@@ -1603,39 +1609,12 @@ new_crusade = {
 													owned_by = PREVPREVPREV
 												}
 											}
-											primary_title = {
-												de_jure_liege = event_target:metropolitan_kingdom
-											}
+											primary_title = { de_jure_liege_or_above = event_target:nicaea_core }
 										}
 									}
 								}
 
 								set_defacto_liege = THIS
-							}
-
-							grant_title = e_nicaea
-
-							if = {
-								limit = {
-									NOT = { has_landed_title = c_nikaea }
-								}
-
-								capital_scope = {
-									county = {
-										e_nicaea = {
-											set_name = PREV_NAME
-											set_short_name = no
-											adjective = PREV_ADJ
-											set_preferred_capital = PREV
-										}
-									}
-								}
-							}
-
-							e_nicaea = {
-								copy_title_laws = e_byzantium
-								copy_title_history = e_byzantium
-								make_primary_title = yes
 							}
 
 							any_demesne_title = {
@@ -1684,9 +1663,9 @@ new_crusade = {
 					defender = {
 						any_player = {
 							limit = {
+								higher_real_tier_than = BARON
 								is_vassal_or_below_of = PREV
 								religion = attacker
-								higher_real_tier_than = BARON
 							}
 
 							set_defacto_liege = THIS
@@ -1714,7 +1693,7 @@ new_crusade = {
 						add_dynasty_modifier = ruling_in_crusader_kingdom
 					}
 
-					any_realm_character = {
+					any_realm_lord = {
 						limit = {
 							has_character_flag = beneficiary_who_received_titles
 							NOT = { has_dynasty_modifier = ruling_in_crusader_kingdom }
@@ -1783,37 +1762,33 @@ new_crusade = {
 
 			# Nickname and effects for the new Crusader King, if it is a Beneficiary or the Official Crusade Recipient (not for Selfish Crusaders)
 			crusader_king = {
-				hidden_effect = {
-					if = {
-						limit = {
-							OR = {
-								most_participating_crusader = {
-									NOT = { character = PREV }
-								}
+				if = {
+					limit = {
+						most_participating_crusader = {
+							trigger_if = {
+								limit = { character = PREV }
 
-								attacker = {
-									official_crusade_recipient = {
-										character = PREV
-									}
+								official_crusade_recipient = {
+									character = PREV
 								}
 							}
 						}
-
-						opinion = {
-							name = opinion_granted_crusader_kingdom
-							who = most_participating_crusader
-							years = 15
-						}
-
-						crusader_king = {
-							setting_up_the_crusader_kingdom_effect = yes
-							create_crusader_king_crown_effect = yes
-						}
 					}
+
+					opinion = {
+						name = opinion_granted_crusader_kingdom
+						who = most_participating_crusader
+						years = 15
+					}
+
+					setting_up_the_crusader_kingdom_effect = yes
+					create_crusader_king_crown_effect = yes
 				}
 			}
 
+			# Release the CK if they are in jail
 			crusader_king = {
+				imprison = no # an unconditional release?
 				save_event_target_as = new_crusader_king
 			}
 
@@ -1853,14 +1828,11 @@ new_crusade = {
 				}
 			}
 
-			# Release the CK if they are in jail
-			crusader_king = {
-				imprison = no
-			}
-
 			# Special bloodline for the recipient of the first Crusade
 			if = {
 				limit = {
+					has_dlc = "Holy Fury"
+
 					NOT = { has_global_flag = first_crusade_complete }
 
 					most_participating_crusader = {
@@ -1870,29 +1842,25 @@ new_crusade = {
 					}
 				}
 
-				if = {
-					limit = { has_dlc = "Holy Fury" }
+				crusader_king = {
+					if = {
+						limit = { is_female = yes }
 
-					crusader_king = {
-						if = {
-							limit = { is_female = yes }
-
-							create_bloodline = {
-								type = crusade_lord
-								religion = THIS
-								inheritance = matrilineal
-							}
+						create_bloodline = {
+							type = crusade_lord
+							religion = THIS
+							inheritance = matrilineal
 						}
-						else = {
-							create_bloodline = {
-								type = crusade_lord
-								religion = THIS
-								inheritance = patrilineal
-							}
-						}
-
-						set_bloodline_founder_religion_flag_effect = yes
 					}
+					else = {
+						create_bloodline = {
+							type = crusade_lord
+							religion = THIS
+							inheritance = patrilineal
+						}
+					}
+
+					set_bloodline_founder_religion_flag_effect = yes
 				}
 			}
 
