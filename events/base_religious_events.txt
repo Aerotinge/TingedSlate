@@ -8319,9 +8319,7 @@ character_event = {
 		trigger = { trait = possessed }
 
 		capital_scope = {
-			name = peasant_crisis
 			show_scope_change = no
-			years = 5
 
 			add_province_modifier = {
 				name = peasant_crisis
@@ -8353,9 +8351,7 @@ character_event = {
 		trigger = { trait = zealous }
 
 		capital_scope = {
-			name = inspired_warriors
 			show_scope_change = no
-			years = 5
 
 			add_province_modifier = {
 				name = inspired_warriors
