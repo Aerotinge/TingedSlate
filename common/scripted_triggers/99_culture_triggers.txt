@@ -3,19 +3,23 @@ has_clan_culture = {
 		text = HAS_CLAN_CULTURE
 
 		OR = {
+			# altaic (part of)
 			culture = turkish
 			culture = karluk
 			culture = uyghur
 			culture = mongol
 			culture = khitan
+			# arabic
 			culture = bedouin_arabic
 			culture = maghreb_arabic
 			culture = levantine_arabic
 			culture = egyptian_arabic
 			culture = andalusian_arabic
+			# dravidian_group
 			culture = tamil
 			culture = telugu
 			culture = kannada
+			# indo_aryan_group
 			culture = bengali
 			culture = oriya
 			culture = assamese
@@ -26,6 +30,7 @@ has_clan_culture = {
 			culture = sindhi
 			culture = marathi
 			culture = sinhala
+			# iranian (part of)
 			culture = persian
 			culture = kurdish
 			culture = afghan

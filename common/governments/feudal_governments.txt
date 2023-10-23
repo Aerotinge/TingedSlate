@@ -62,7 +62,7 @@ feudal_governments = {
 		court_size_modifier = 10
 	}
 
-	manorial_government = { # Semi-feudal, e.g. Muscovite Manorialism
+	manorial_government = { # Proto-feudal or Semi-feudal, e.g. Muscovite Manorialism
 		preferred_holdings = {
 			CASTLE
 		}
@@ -291,7 +291,7 @@ feudal_governments = {
 		court_size_modifier = 10
 	}
 
-	patrimonial_government = {
+	patrimonial_government = { # Family as a model for the state
 		preferred_holdings = {
 			CASTLE
 		}
@@ -331,42 +331,48 @@ feudal_governments = {
 					independent = no
 				}
 
-				trigger_if = {
-					limit = {
-						is_save_game = no
-						has_game_started = no
-					}
+				#trigger_if = { # If this type of government goes too stronk, uncomment this
+				#	limit = {
+				#		is_save_game = no
+				#		has_game_started = no
+				#	}
 
-					#among_most_powerful_vassals = 1 # Not working
-					always = no
-				}
-				trigger_else = {
-					is_powerful_vassal = yes
-				}
+				#	#among_most_powerful_vassals = 1 # Not working
+				#	always = no
+				#}
+				#trigger_else = {
+				#	is_powerful_vassal = yes
+				#}
 
 				liege = {
 					independent = yes
 					government = patrimonial_government
+					is_close_relative = PREV
 					OR = {
-						is_close_relative = PREV
+						is_ancestor_of = PREV
 						is_aunt_uncle_of = PREV
-						#is_cousin_of = PREV
-					}
-					#is_older_than = PREV
-					dynasty = PREV
-
-					trigger_if = {
-						limit = {
-							PREV = {
-								NOT = { government = patrimonial_government }
+						AND = {
+							is_older_than = PREV
+							OR = {
+								#is_cousin_of = PREV
+								sibling = PREV
 							}
 						}
-
-						num_of_government_vassals = {
-							government = patrimonial_government
-							value == 0
-						}
 					}
+					family = PREV
+
+					#trigger_if = { # Optional: This made one patrimonial_government vassal in the realm only.
+					#	limit = {
+					#		PREV = {
+					#			NOT = { government = patrimonial_government }
+					#		}
+					#	}
+
+					#	num_of_government_vassals = {
+					#		government = patrimonial_government
+					#		value == 0
+					#	}
+					#}
 				}
 			}
 			trigger_else = {
