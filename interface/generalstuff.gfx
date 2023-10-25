@@ -1482,8 +1482,8 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_icon_manorial_government"
-		textureFile = "gfx\\interface\\government_icon_manorial.dds"
+		name = "GFX_icon_clientelistic_government"
+		textureFile = "gfx\\interface\\government_icon_clientelistic.dds"
 	}
 
 	spriteType = {
@@ -1591,39 +1591,39 @@ spriteTypes = {
 		textureFile = "gfx\\interface\\checkmark.dds"
 	}
 
-	# Manorial Government
+	# Clientelistic Government
 
 	spriteType = {
-		name = "GFX_charframe_150_manorial"
-		textureFile = "gfx\\interface\\charframe_150_manorial.dds"
+		name = "GFX_charframe_150_clientelistic"
+		textureFile = "gfx\\interface\\charframe_150_clientelistic.dds"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
 
 	spriteType = {
-		name = "GFX_charframe_100_manorial"
-		textureFile = "gfx\\interface\\charframe_100_manorial.dds"
+		name = "GFX_charframe_100_clientelistic"
+		textureFile = "gfx\\interface\\charframe_100_clientelistic.dds"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
 
 	spriteType = {
-		name = "GFX_charframe_75_manorial"
-		textureFile = "gfx\\interface\\charframe_75_manorial.dds"
+		name = "GFX_charframe_75_clientelistic"
+		textureFile = "gfx\\interface\\charframe_75_clientelistic.dds"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
 
 	spriteType = {
-		name = "GFX_charframe_50_manorial"
-		textureFile = "gfx\\interface\\charframe_50_manorial.dds"
+		name = "GFX_charframe_50_clientelistic"
+		textureFile = "gfx\\interface\\charframe_50_clientelistic.dds"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
 
 	spriteType = {
-		name = "GFX_charframe_34_manorial"
-		textureFile = "gfx\\interface\\charframe_34_manorial.dds"
+		name = "GFX_charframe_34_clientelistic"
+		textureFile = "gfx\\interface\\charframe_34_clientelistic.dds"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}

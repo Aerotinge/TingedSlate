@@ -1,12 +1,67 @@
 feudal_governments = {
 
-	feudal_government = {
+	clientelistic_government = { # Proto-feudal
 		preferred_holdings = {
 			CASTLE
 		}
 		allowed_holdings = {
 			CASTLE
 			TEMPLE
+			FORT
+			HOSPITAL
+		}
+		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
+			TRIBAL
+		}
+		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			arabic_caliphal_government
+		}
+
+		frame_suffix = "_clientelistic"
+		title_prefix = "clientelistic_"
+		color = { 56 105 191 }
+
+		potential = {
+			is_patrician = no
+			could_be_temporal_religious_head_trigger = yes
+			could_be_order_trigger = no
+
+			NOR = {
+				is_government_potential = feudal_government
+				is_government_potential = clan_government
+				is_government_potential = patrimonial_government
+				is_government_potential = iqta_government
+				is_government_potential = tibetan_feudal_government
+				is_government_potential = mandala_government
+				is_government_potential = arabic_caliphal_government
+				is_government_potential = roman_imperial_government
+				is_government_potential = thema_government
+				is_government_potential = pronoia_government
+				is_government_potential = chinese_imperial_government
+				is_government_potential = band_government
+			}
+		}
+
+		allow = {
+		}
+
+		barons_need_dynasty = yes
+		can_create_empires = no
+		#can_create_kingdoms = no
+		can_usurp_kingdoms_and_empires = no
+		can_build_tribal = no
+		dukes_called_kings = yes
+
+		capital_move_delay = 600
+	}
+
+	feudal_government = {
+		preferred_holdings = {
+			CASTLE
+		}
+		allowed_holdings = {
+			CASTLE
+			#TEMPLE
 			FORT
 			HOSPITAL
 		}
@@ -28,19 +83,89 @@ feudal_governments = {
 		color = { 91 133 207 }
 
 		potential = {
+			trigger_if = {
+				limit = {
+					NOR = {
+						has_law = feudal_contract_0
+						has_law = feudal_contract_1
+						has_law = feudal_contract_2
+						has_law = feudal_contract_3
+					}
+					is_save_game = no
+					has_game_started = no
+				}
+
+				trigger_if = {
+					limit = {
+						OR = {
+							culture = frankish	# Merovingians
+							culture = french	# Carolingians
+							culture = dutch		# Inherited from the Franks
+							culture = norman	# Inherited from the Franks
+							culture = outremer	# Inherited from the French
+							culture = english	# Inherited from the Norman
+						}
+					}
+
+					#year >= 600
+				}
+				trigger_else_if = {
+					limit = {
+						OR = {
+							culture_group = latin
+							culture_group = iberian
+							culture_group = central_germanic
+						}
+					}
+
+					year >= 800
+				}
+				trigger_else_if = {
+					limit = {
+						culture_group = south_slavic
+					}
+
+					year >= 900
+				}
+				trigger_else_if = {
+					limit = {
+						OR = {
+							culture_group = west_slavic
+							culture_group = north_germanic
+							culture_group = magyar
+						}
+					}
+
+					year >= 1000
+				}
+				trigger_else = {
+					government = feudal_government
+				}
+			}
+			trigger_else = {
+				OR = {
+					has_law = feudal_contract_0
+					has_law = feudal_contract_1
+					has_law = feudal_contract_2
+					has_law = feudal_contract_3
+
+					# TODO: Implement culture innovation, like CK3 had
+					# TODO: And since we can not access culture modifier with set_unit_modifier
+					# TODO: some workaround have to be done
+					culture_scope = { has_flag = innovation_feudalism }
+				}
+			}
+
+			is_catholic_branch = yes
+
 			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes
 			could_be_order_trigger = no
 
 			NOR = {
-				is_government_potential = manorial_government
 				is_government_potential = clan_government
 				is_government_potential = patrimonial_government
 				is_government_potential = iqta_government
-				is_government_potential = tibetan_feudal_government
-				is_government_potential = mandala_government
-				is_government_potential = arabic_caliphal_government
-				is_government_potential = roman_imperial_government
 				is_government_potential = thema_government
 				is_government_potential = pronoia_government
 				is_government_potential = chinese_imperial_government
@@ -60,100 +185,6 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
-	}
-
-	manorial_government = { # Proto-feudal or Semi-feudal, e.g. Muscovite Manorialism
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			TEMPLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			arabic_caliphal_government
-		}
-
-		frame_suffix = "_manorial"
-		title_prefix = "manorial_"
-		color = { 207 145 90 }
-
-		potential = {
-			trigger_if = {
-				limit = { # Have to limit culture while in the lobby, or else some other culture may pass trigger_else block even before any law applied
-					is_save_game = no
-					has_game_started = no
-				}
-
-				has_regionalism_culture = yes
-			}
-			trigger_else_if = {
-				limit = {
-					has_regionalism_culture = yes
-				}
-
-				NOR = {
-					has_law = feudal_contract_0
-					has_law = feudal_contract_1
-					has_law = feudal_contract_2
-					has_law = feudal_contract_3
-				}
-			}
-			trigger_else = {
-				OR = {
-					has_law = manorial_contract_0
-					has_law = manorial_contract_1
-					has_law = manorial_contract_2
-					has_law = manorial_contract_3
-				}
-			}
-
-			trigger_if = {
-				limit = {
-					independent = no
-				}
-				top_liege = {
-					NOR = {
-						government = feudal_government
-						government = tibetan_feudal_government
-						government = roman_imperial_government
-						government = chinese_imperial_government
-					}
-				}
-			}
-
-			NOT = { higher_real_tier_than = DUKE }
-
-			is_patrician = no
-			could_be_temporal_religious_head_trigger = yes
-			could_be_order_trigger = no
-
-			NOR = {
-				is_government_potential = clan_government
-				is_government_potential = patrimonial_government
-				is_government_potential = iqta_government
-				is_government_potential = mandala_government
-				is_government_potential = thema_government
-				is_government_potential = band_government
-			}
-		}
-
-		allow = {
-		}
-
-		barons_need_dynasty = yes
-		can_create_empires = no
-		can_create_kingdoms = no
-		can_usurp_kingdoms_and_empires = no
-		can_build_tribal = no
-		dukes_called_kings = yes
-
-		capital_move_delay = 600
 	}
 
 	tibetan_feudal_government = {

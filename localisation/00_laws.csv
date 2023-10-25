@@ -120,20 +120,20 @@ feudal_contract_3;Maximum Noble Levies;Levée noble maximale;Maximale edel Aufgeb
 feudal_contract_3_desc;Vassal lords are obliged to provide their entire levy.;Les seigneurs sont tenus de mettre à disposition toutes leurs forces.;Vasallenfürsten müssen ihrem Lehnsherrn alle ihre Aufgebote zur Verfügung stellen.;;Los señores vasallos están obligados a proporcionar todas sus levas.;;;;;;;;;x
 feudal_contract_3_option;Max;Max.;Max;;Máx.;;;;;;;;;x
 feudal_contract_desc;Noble Levy Laws control the proportion of their levies that vassal lords nominally have to provide their liege.;Les lois relatives aux levées nobles déterminent le pourcentage de troupes que les vassaux doivent fournir à leur seigneur lige.;Das edel Wehrpflichtigenrecht regelt, welchen Teil ihrer Wehrpflichtigen Vasallenfürsten nominell ihrem Lehnsherrn zur Verfügung stellen müssen.;;La ley de leva nobles determina la proporción de leva que los señores vasallos deben proporcionar a su feudo.;;;;;;;;;x
-manorial_contract;Noble Levies;Levée noble;Edel Aufgebote;;Leva nobles;;;;;;;;;x
-manorial_contract_0;Minimal Noble Levies;Levée noble minimale;Minimale edel Aufgebote;;Leva nobles mínima;;;;;;;;;x
-manorial_contract_0_desc;Vassal lords must only provide you with a majority of their levies.;Les vassaux doivent mettre à votre disposition le minimum de leurs troupes.;Vasallenfürsten müssen Euch nur einen Großteil ihrer Wehrpflichtigen zur Verfügung stellen.;;Los señores vasallos deben proporcionar la mayoría de sus levas.;;;;;;;;;x
-manorial_contract_0_option;Min;Min.;Min;;Mín.;;;;;;;;;x
-manorial_contract_1;Small Noble Levies;Levée noble faible;Kleine edel Aufgebote;;Leva nobles pequeña;;;;;;;;;x
-manorial_contract_1_desc;Vassal lords may retain a significant portion of their levies for themselves.;Les vassaux peuvent conserver sous leurs ordres un nombre important de troupes.; Vasallenfürsten behalten einen Großteil ihrer Wehrpflichtigen für sich selbst.;;Los señores vasallos pueden conservar una parte significativa de sus levas.;;;;;;;;;x
-manorial_contract_1_option;Small;Faible;Wenig;;Pequeña;;;;;;;;;x
-manorial_contract_2;Normal Noble Levies;Levée noble normale;Normale edel Aufgebote;;Leva nobles mediana;;;;;;;;;x
-manorial_contract_2_desc;Vassal lords retain small mobile retinues in addition to their garrisons.;Les vassaux ne conservent que de petites escortes, en plus de leurs garnisons.;Vasallenfürsten behalten zusätzlich zu ihren Garnisonen ein kleines mobiles Gefolge.;;Los señores vasallos conservan un pequeño séquito itinerante además de sus tropas.;;;;;;;;;x
-manorial_contract_2_option;Normal;Normale;Normal;;Normal;;;;;;;;;x
-manorial_contract_3;Maximum Noble Levies;Levée noble maximale;Maximale edel Aufgebote;;Leva nobles máxima;;;;;;;;;x
-manorial_contract_3_desc;Vassal lords are obliged to provide their entire levy.;Les seigneurs sont tenus de mettre à disposition toutes leurs forces.;Vasallenfürsten müssen ihrem Lehnsherrn alle ihre Aufgebote zur Verfügung stellen.;;Los señores vasallos están obligados a proporcionar todas sus levas.;;;;;;;;;x
-manorial_contract_3_option;Max;Max.;Max;;Máx.;;;;;;;;;x
-manorial_contract_desc;Noble Levy Laws control the proportion of their levies that vassal lords nominally have to provide their liege.;Les lois relatives aux levées nobles déterminent le pourcentage de troupes que les vassaux doivent fournir à leur seigneur lige.;Das edel Wehrpflichtigenrecht regelt, welchen Teil ihrer Wehrpflichtigen Vasallenfürsten nominell ihrem Lehnsherrn zur Verfügung stellen müssen.;;La ley de leva nobles determina la proporción de leva que los señores vasallos deben proporcionar a su feudo.;;;;;;;;;x
+castle_contract;Noble Levies;Levée noble;Edel Aufgebote;;Leva nobles;;;;;;;;;x
+castle_contract_0;Minimal Noble Levies;Levée noble minimale;Minimale edel Aufgebote;;Leva nobles mínima;;;;;;;;;x
+castle_contract_0_desc;Vassal lords must only provide you with a majority of their levies.;Les vassaux doivent mettre à votre disposition le minimum de leurs troupes.;Vasallenfürsten müssen Euch nur einen Großteil ihrer Wehrpflichtigen zur Verfügung stellen.;;Los señores vasallos deben proporcionar la mayoría de sus levas.;;;;;;;;;x
+castle_contract_0_option;Min;Min.;Min;;Mín.;;;;;;;;;x
+castle_contract_1;Small Noble Levies;Levée noble faible;Kleine edel Aufgebote;;Leva nobles pequeña;;;;;;;;;x
+castle_contract_1_desc;Vassal lords may retain a significant portion of their levies for themselves.;Les vassaux peuvent conserver sous leurs ordres un nombre important de troupes.; Vasallenfürsten behalten einen Großteil ihrer Wehrpflichtigen für sich selbst.;;Los señores vasallos pueden conservar una parte significativa de sus levas.;;;;;;;;;x
+castle_contract_1_option;Small;Faible;Wenig;;Pequeña;;;;;;;;;x
+castle_contract_2;Normal Noble Levies;Levée noble normale;Normale edel Aufgebote;;Leva nobles mediana;;;;;;;;;x
+castle_contract_2_desc;Vassal lords retain small mobile retinues in addition to their garrisons.;Les vassaux ne conservent que de petites escortes, en plus de leurs garnisons.;Vasallenfürsten behalten zusätzlich zu ihren Garnisonen ein kleines mobiles Gefolge.;;Los señores vasallos conservan un pequeño séquito itinerante además de sus tropas.;;;;;;;;;x
+castle_contract_2_option;Normal;Normale;Normal;;Normal;;;;;;;;;x
+castle_contract_3;Maximum Noble Levies;Levée noble maximale;Maximale edel Aufgebote;;Leva nobles máxima;;;;;;;;;x
+castle_contract_3_desc;Vassal lords are obliged to provide their entire levy.;Les seigneurs sont tenus de mettre à disposition toutes leurs forces.;Vasallenfürsten müssen ihrem Lehnsherrn alle ihre Aufgebote zur Verfügung stellen.;;Los señores vasallos están obligados a proporcionar todas sus levas.;;;;;;;;;x
+castle_contract_3_option;Max;Max.;Max;;Máx.;;;;;;;;;x
+castle_contract_desc;Noble Levy Laws control the proportion of their levies that vassal lords nominally have to provide their liege.;Les lois relatives aux levées nobles déterminent le pourcentage de troupes que les vassaux doivent fournir à leur seigneur lige.;Das edel Wehrpflichtigenrecht regelt, welchen Teil ihrer Wehrpflichtigen Vasallenfürsten nominell ihrem Lehnsherrn zur Verfügung stellen müssen.;;La ley de leva nobles determina la proporción de leva que los señores vasallos deben proporcionar a su feudo.;;;;;;;;;x
 feudal_elective;Elective;Monarchie élective;Wahlmonarchie;;Elección;;;;;;;;;x
 feudal_tax;Noble Taxation;Impôt noble;Edelbesteuerung;;Impuesto nobles;;;;;;;;;x
 feudal_tax_0;Tax Exemption;Exonération de la noblesse;Steuerbefreiung;;Exención de impuestos;;;;;;;;;x

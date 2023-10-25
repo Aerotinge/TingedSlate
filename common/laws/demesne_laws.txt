@@ -13,10 +13,10 @@ law_groups = {
 	administration = {
 		law_type = realm
 	}
-	feudal_contract = {
+	castle_contract = {
 		law_type = realm
 	}
-	manorial_contract = {
+	feudal_contract = {
 		law_type = realm
 	}
 	feudal_tax = {
@@ -1338,6 +1338,103 @@ laws = {
 		}
 	}
 
+	# CASTLE VASSAL LEVY SIZE LAWS
+	##############################
+
+	castle_contract_0 = {
+		group = castle_contract
+
+		feudal_opinion = 10
+		castle_vassal_max_levy = -0.40
+
+		potential = {
+			NOT = { has_dlc = "Conclave" }
+
+			holder_scope = {
+				is_playable = yes
+			}
+
+			NOR = {
+				is_law_potential = feudal_contract_0
+				is_law_potential = muslim_contract_0
+			}
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_castle_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	castle_contract_1 = {
+		group = castle_contract
+
+		feudal_opinion = 5
+		castle_vassal_max_levy = -0.30
+
+		potential = {
+			is_law_potential = castle_contract_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_castle_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	castle_contract_2 = {
+		group = castle_contract
+		default = yes
+
+		castle_vassal_max_levy = -0.20
+
+		potential = {
+			is_law_potential = castle_contract_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_feudal_contract_effect = yes
+				revoke_castle_contract_effect = yes
+				revoke_muslim_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	castle_contract_3 = {
+		group = castle_contract
+
+		feudal_opinion = -5
+
+		potential = {
+			is_law_potential = castle_contract_0
+		}
+
+		effect = {
+			hidden_effect = {
+				revoke_castle_contract_effect = yes
+			}
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
 	# FEUDAL VASSAL LEVY SIZE LAWS
 	##############################
 
@@ -1410,7 +1507,7 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_feudal_contract_effect = yes
-				revoke_manorial_contract_effect = yes
+				revoke_castle_contract_effect = yes
 				revoke_muslim_contract_effect = yes
 			}
 		}
@@ -1433,103 +1530,6 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_feudal_contract_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	# MANORIAL VASSAL LEVY SIZE LAWS
-	##############################
-
-	manorial_contract_0 = {
-		group = manorial_contract
-
-		feudal_opinion = 10
-		castle_vassal_max_levy = -0.40
-
-		potential = {
-			NOT = { has_dlc = "Conclave" }
-
-			holder_scope = {
-				is_playable = yes
-			}
-
-			NOR = {
-				is_law_potential = feudal_contract_0
-				is_law_potential = muslim_contract_0
-			}
-		}
-
-		effect = {
-			hidden_effect = {
-				revoke_manorial_contract_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	manorial_contract_1 = {
-		group = manorial_contract
-
-		feudal_opinion = 5
-		castle_vassal_max_levy = -0.30
-
-		potential = {
-			is_law_potential = manorial_contract_0
-		}
-
-		effect = {
-			hidden_effect = {
-				revoke_manorial_contract_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 0
-		}
-	}
-
-	manorial_contract_2 = {
-		group = manorial_contract
-		default = yes
-
-		castle_vassal_max_levy = -0.20
-
-		potential = {
-			is_law_potential = manorial_contract_0
-		}
-
-		effect = {
-			hidden_effect = {
-				revoke_feudal_contract_effect = yes
-				revoke_manorial_contract_effect = yes
-				revoke_muslim_contract_effect = yes
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-		}
-	}
-
-	manorial_contract_3 = {
-		group = manorial_contract
-
-		feudal_opinion = -5
-
-		potential = {
-			is_law_potential = manorial_contract_0
-		}
-
-		effect = {
-			hidden_effect = {
-				revoke_manorial_contract_effect = yes
 			}
 		}
 
@@ -1684,7 +1684,7 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_feudal_contract_effect = yes
-				revoke_manorial_contract_effect = yes
+				revoke_castle_contract_effect = yes
 				revoke_muslim_contract_effect = yes
 			}
 		}

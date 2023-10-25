@@ -702,7 +702,7 @@ TECH_GROUP_CULTURE = {
 			add_decision = city_contract_3
 			add_decision = temple_contract_3
 			add_decision = muslim_contract_3
-			add_decision = manorial_contract_3
+			add_decision = castle_contract_3
 		}
 
 		8 = {

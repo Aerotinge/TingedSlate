@@ -48,11 +48,11 @@ revoke_feudal_tax_effect = {
 	revoke_law = feudal_tax_3
 }
 
-revoke_manorial_contract_effect = {
-	revoke_law = manorial_contract_0
-	revoke_law = manorial_contract_1
-	revoke_law = manorial_contract_2
-	revoke_law = manorial_contract_3
+revoke_castle_contract_effect = {
+	revoke_law = castle_contract_0
+	revoke_law = castle_contract_1
+	revoke_law = castle_contract_2
+	revoke_law = castle_contract_3
 }
 
 revoke_muslim_contract_effect = {

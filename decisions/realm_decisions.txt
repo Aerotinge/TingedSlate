@@ -3110,7 +3110,9 @@ decisions = {
 			}
 			trigger_if = {
 				limit = {
-					has_regionalism_culture = no
+					culture_scope = {
+						NOT = { has_flag = innovation_feudalism }
+					}
 				}
 
 				TECH_MAJESTY >= 2
@@ -3125,7 +3127,9 @@ decisions = {
 						trigger_if = {
 							limit = {
 								ROOT = {
-									has_regionalism_culture = yes
+									culture_scope = {
+										has_flag = innovation_feudalism
+									}
 								}
 							}
 
@@ -3178,8 +3182,8 @@ decisions = {
 				set_government_type = clan_government
 			}
 			else_if = {
-				limit = { is_government_potential = manorial_government }
-				set_government_type = manorial_government
+				limit = { is_government_potential = clientelistic_government }
+				set_government_type = clientelistic_government
 			}
 			else_if = {
 				limit = { is_government_potential = tibetan_feudal_government }
@@ -3326,7 +3330,7 @@ decisions = {
 								limit = {
 									liege = {
 										culture = ROOT
-										government = manorial_government
+										government = clientelistic_government
 									}
 								}
 								OR = {
@@ -3355,10 +3359,10 @@ decisions = {
 					limit = {
 						liege = {
 							culture = ROOT
-							government = manorial_government
+							government = clientelistic_government
 						}
 					}
-					set_government_type = manorial_government # If muslim? Gov overhaual v2 required
+					set_government_type = clientelistic_government # If muslim? Gov overhaual v2 required
 				}
 				else = {
 					set_government_type = feudal_government # It will switch to right government type automatically
@@ -3389,7 +3393,7 @@ decisions = {
 					if = {
 						limit = {
 							ROOT = {
-								NOT = { government = manorial_government }
+								NOT = { government = clientelistic_government }
 							}
 						}
 
