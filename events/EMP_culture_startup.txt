@@ -1,0 +1,102 @@
+# landed_title setup
+character_event = {
+	id = EMP.20710
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_startup
+
+	trigger = {
+		is_multiplayer_host_character = yes
+		is_save_game = no
+	}
+
+	immediate = {
+		if = {
+			limit = { year >= 769 }
+
+			roman		= { set_flag = innovation_feudalism }
+			dalmatian	= { set_flag = innovation_feudalism }
+			
+			frankish	= { set_flag = innovation_feudalism }
+			french		= { set_flag = innovation_feudalism }
+			dutch		= { set_flag = innovation_feudalism }
+			outremer	= { set_flag = innovation_feudalism }
+		}
+		
+		if = {
+			limit = { year >= 867 }
+
+			german		= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 936 }
+
+			norman		= { set_flag = innovation_feudalism }
+			english		= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1066 }
+
+			polish		= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1187 }
+
+			danish		= { set_flag = innovation_feudalism }
+			italian		= { set_flag = innovation_feudalism }
+			sardinian	= { set_flag = innovation_feudalism }
+			occitan		= { set_flag = innovation_feudalism }
+			portuguese	= { set_flag = innovation_feudalism }
+			catalan		= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1241 }
+
+			hungarian	= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1300 }
+
+			norwegian	= { set_flag = innovation_feudalism }
+			swedish		= { set_flag = innovation_feudalism }
+			basque		= { set_flag = innovation_feudalism }
+			castilian	= { set_flag = innovation_feudalism }
+			bohemian	= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1337 }
+
+			any_independent_ruler = {
+				limit = {
+					OR = {
+						culture_group = central_germanic
+						culture_group = west_germanic
+						culture_group = north_germanic
+						culture_group = celtic
+						culture_group = west_slavic
+						culture_group = latin
+						culture_group = iberian
+						culture_group = magyar
+					}
+				}
+
+				if = {
+					limit = {
+						culture_group = {
+							NOT = { has_flag = innovation_feudalism }
+
+							set_flag = innovation_feudalism
+						}
+					}
+				}
+			}
+		}
+	}
+}

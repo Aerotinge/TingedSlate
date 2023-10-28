@@ -35,6 +35,14 @@ has_clan_culture = {
 			culture = kurdish
 			culture = afghan
 			culture = baloch
+
+			# Experimental
+			# celtic (part of)
+			culture = irish # In 1586, the English Crown passed the Plantation of Ulster, which confiscated land from Gaelic clans in Ulster and gave it to English settlers.
+			culture = welsh # In 1536, the English Crown passed the Laws in Wales Acts, which abolished the Welsh clan system and replaced it with English feudal law.
+			culture = pictish
+			culture = scottish # Collapse of the scottish clan system began in 1493 by James IV of Scotland
+			# And these events are out of the playable timeframe of CK2
 		}
 	}
 }

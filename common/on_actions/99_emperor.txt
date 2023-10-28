@@ -7,6 +7,8 @@ on_startup = {
 		EMP.20510
 		# Title Status Setup
 		EMP.20210
+		# Culture Innovation Setup
+		EMP.20710
 		# Governor title Setup
 		EMP.15010
 		# Nomadic tribal

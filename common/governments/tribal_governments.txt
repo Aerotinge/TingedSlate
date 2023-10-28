@@ -13,7 +13,7 @@ tribal_governments = {
 			clan_government
 			patrimonial_government
 			tibetan_feudal_government
-			clientelistic_government
+			seigneurial_government
 			mandala_government
 			thema_government
 			republic_government

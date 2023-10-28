@@ -10,7 +10,7 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -58,7 +58,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -103,7 +103,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -216,7 +216,7 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -260,7 +260,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -299,7 +299,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -338,7 +338,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -374,7 +374,7 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -430,7 +430,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -482,7 +482,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -534,7 +534,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -676,7 +676,7 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -736,7 +736,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -790,7 +790,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -844,7 +844,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -898,7 +898,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -949,7 +949,7 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -990,7 +990,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1028,7 +1028,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1120,7 +1120,7 @@ government_flavor = {
 	trigger = {
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1161,7 +1161,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1197,7 +1197,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1233,7 +1233,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1277,7 +1277,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1318,7 +1318,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1357,7 +1357,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1396,7 +1396,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1494,7 +1494,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1532,7 +1532,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1570,7 +1570,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1638,7 +1638,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1700,7 +1700,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1757,7 +1757,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1814,7 +1814,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -1963,7 +1963,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2022,7 +2022,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2073,7 +2073,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2126,7 +2126,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2168,7 +2168,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2210,7 +2210,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2252,7 +2252,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2359,7 +2359,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2404,7 +2404,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2449,7 +2449,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2658,7 +2658,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2700,7 +2700,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2741,7 +2741,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2790,7 +2790,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2837,7 +2837,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2870,7 +2870,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2916,7 +2916,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -2940,7 +2940,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -3061,7 +3061,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -3086,7 +3086,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -3108,7 +3108,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -3136,7 +3136,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -3180,7 +3180,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government
@@ -3225,7 +3225,7 @@ government_flavor = {
 
 		OR = {
 			government = feudal_government
-			government = clientelistic_government
+			government = seigneurial_government
 			government = tibetan_feudal_government
 			government = clan_government
 			government = patrimonial_government

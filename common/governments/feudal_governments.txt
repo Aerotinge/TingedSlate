@@ -1,6 +1,6 @@
 feudal_governments = {
 
-	clientelistic_government = { # Proto-feudal
+	seigneurial_government = { # Proto-feudal
 		preferred_holdings = {
 			CASTLE
 		}
@@ -14,12 +14,18 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
+			feudal_government
+			thema_government
+		}
+		accepts_liege_governments_religion = {
 			arabic_caliphal_government
+			theocracy_government
+			order_government
 		}
 
-		frame_suffix = "_clientelistic"
-		title_prefix = "clientelistic_"
-		color = { 56 105 191 }
+		frame_suffix = ""
+		title_prefix = "seigneurial_"
+		color = { 91 133 207 }
 
 		potential = {
 			is_patrician = no
@@ -47,7 +53,7 @@ feudal_governments = {
 
 		barons_need_dynasty = yes
 		can_create_empires = no
-		#can_create_kingdoms = no
+		can_create_kingdoms = no
 		can_usurp_kingdoms_and_empires = no
 		can_build_tribal = no
 		dukes_called_kings = yes
@@ -69,8 +75,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			tibetan_feudal_government
-			arabic_caliphal_government
 			thema_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
@@ -80,7 +84,8 @@ feudal_governments = {
 			tribal_government
 		}
 
-		color = { 91 133 207 }
+		frame_suffix = "_feudal"
+		color = { 18 10 143 } # Ultramarine
 
 		potential = {
 			trigger_if = {
@@ -101,42 +106,133 @@ feudal_governments = {
 							culture = frankish	# Merovingians
 							culture = french	# Carolingians
 							culture = dutch		# Inherited from the Franks
-							culture = norman	# Inherited from the Franks
 							culture = outremer	# Inherited from the French
+						}
+					}
+
+					OR = {
+						character = c_131722	# Pepin 'le Bref'
+						character = c_6392		# Charlemagne
+						character = c_469500	# Charles of Hungary
+						primary_title = {
+							any_previous_holder = {
+								government = feudal_government
+								culture = ROOT
+							}
+						}
+						liege = { government = feudal_government }
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						#culture_group = central_germanic
+						culture = german
+					}
+
+					OR = {
+						character = c_90107		#Ludwig 'the German'
+						character = c_1282		#Otto I
+						character = c_98009		#Otto of Hungary
+						primary_title = {
+							any_previous_holder = {
+								government = feudal_government
+								culture = ROOT
+							}
+						}
+						liege = { government = feudal_government }
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						OR = {
+							culture = norman	# Inherited from the Franks
 							culture = english	# Inherited from the Norman
 						}
 					}
 
-					#year >= 600
+					OR = {
+						character = c_244		# William "Longsword"
+						primary_title = {
+							any_previous_holder = {
+								government = feudal_government
+								culture = ROOT
+							}
+						}
+						liege = { government = feudal_government }
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						culture_group = north_germanic
+					}
+
+					OR = {
+						character = c_6905		#Magnus 'Lagaböter'
+						character = c_201510	#Valdemar 'the Great'
+						character = c_450502	#Magnus 'Ladulås'
+						primary_title = {
+							any_previous_holder = {
+								government = feudal_government
+								culture = ROOT
+							}
+						}
+						liege = { government = feudal_government }
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						culture_group = west_slavic
+					}
+
+					OR = {
+						character = c_756		#Boleslaw
+						character = c_96002		#Vaclav I
+						primary_title = {
+							any_previous_holder = {
+								government = feudal_government
+								culture = ROOT
+							}
+						}
+						liege = { government = feudal_government }
+					}
 				}
 				trigger_else_if = {
 					limit = {
 						OR = {
 							culture_group = latin
 							culture_group = iberian
-							culture_group = central_germanic
 						}
 					}
 
-					year >= 800
-				}
-				trigger_else_if = {
-					limit = {
-						culture_group = south_slavic
-					}
-
-					year >= 900
-				}
-				trigger_else_if = {
-					limit = {
-						OR = {
-							culture_group = west_slavic
-							culture_group = north_germanic
-							culture_group = magyar
+					OR = {
+						character = c_70233		#Ramiro II 'el Monje'
+						character = c_70233		#Alfonso VII 'el Emperador'
+						character = c_209503	#Afonso I Henriques 'the Conqueror'
+						character = c_457540 	#Alfonso X de Borgoña
+						primary_title = {
+							any_previous_holder = {
+								government = feudal_government
+								culture = ROOT
+							}
 						}
+						liege = { government = feudal_government }
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						culture_group = magyar
 					}
 
-					year >= 1000
+					OR = {
+						character = c_219500	#Béla III
+						primary_title = {
+							any_previous_holder = {
+								government = feudal_government
+								culture = ROOT
+							}
+						}
+						liege = { government = feudal_government }
+					}
 				}
 				trigger_else = {
 					government = feudal_government
@@ -185,6 +281,7 @@ feudal_governments = {
 
 		## Modifiers
 		court_size_modifier = 10
+		vassal_limit = 5
 	}
 
 	tibetan_feudal_government = {
@@ -201,8 +298,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			thema_government
 		}
 		accepts_liege_governments_religion = {
 			theocracy_government
@@ -216,10 +311,25 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_tibetanfeudal"
-		color = { 0 146 250 }
+		color = { 128 0 0 } # Maroon
 
 		potential = {
-			culture_group = tibetan_group
+			trigger_if = {
+				limit = {
+					is_save_game = no
+					has_game_started = no
+				}
+
+				culture_group = tibetan_group
+			}
+			trigger_else = {
+				OR = {
+					# TODO: Implement culture innovation, like CK3 had
+					# TODO: And since we can not access culture modifier with set_unit_modifier
+					# TODO: some workaround have to be done
+					culture_scope = { has_flag = innovation_caesaropapism }
+				}
+			}
 			OR = {
 				religion_openly_bon_or_reformed_trigger = yes
 				religion = buddhist
@@ -392,7 +502,7 @@ feudal_governments = {
 					}
 					family = PREV
 
-					#trigger_if = { # Optional: This made one patrimonial_government vassal in the realm only.
+					#trigger_if = { # Optional: This made one patrimonial_government vassal in a realm only.
 					#	limit = {
 					#		PREV = {
 					#			NOT = { government = patrimonial_government }
@@ -588,7 +698,6 @@ feudal_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = {
-			patrimonial_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -855,9 +964,7 @@ feudal_governments = {
 					is_feudal = yes
 				}
 				trigger_else = {
-					primary_title = {
-						#has_law = chinese_codex_contract
-					}
+					#has_law = bureaucratic_administration
 					government = chinese_imperial_government
 				}
 			}

@@ -414,6 +414,128 @@ spriteTypes = {
 		alwaysTransparent = yes
 	}
 
+	# Feudal Government
+
+	spriteType = {
+		name = "GFX_charframe_150_feudal"
+		textureFile = "gfx\\interface\\charframe_150_feudal.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_100_feudal"
+		textureFile = "gfx\\interface\\charframe_100_feudal.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_75_feudal"
+		textureFile = "gfx\\interface\\charframe_75_feudal.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_50_feudal"
+		textureFile = "gfx\\interface\\charframe_50_feudal.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_34_feudal"
+		textureFile = "gfx\\interface\\charframe_34_feudal.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	# Roman Imperial Government
+
+	spriteType = {
+		name = "GFX_icon_roman_imperial_government"
+		textureFile = "gfx\\interface\\government_icon_roman_imperial.dds"
+	}
+
+	spriteType = {
+		name = "GFX_hints_roman_imperial_government"
+		textureFile = "gfx\\interface\\hints_splashscreen_image_feudal.dds"
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_150_romanimperial"
+		textureFile = "gfx\\interface\\charframe_150_romanimperial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_100_romanimperial"
+		textureFile = "gfx\\interface\\charframe_100_romanimperial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_75_romanimperial"
+		textureFile = "gfx\\interface\\charframe_75_romanimperial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_50_romanimperial"
+		textureFile = "gfx\\interface\\charframe_50_romanimperial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_34_romanimperial"
+		textureFile = "gfx\\interface\\charframe_34_romanimperial.dds"
+		noOfFrames = 6
+		alwaysTransparent = yes
+	}
+
+	# Tibetan Feudal Government
+
+	spriteType = {
+		name = "GFX_charframe_150_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_150_tibetanfeudal.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_100_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_100_tibetanfeudal.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_75_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_75_tibetanfeudal.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_50_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_50_tibetanfeudal.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+
+	spriteType = {
+		name = "GFX_charframe_34_tibetanfeudal"
+		texturefile = "gfx\\interface\\charframe_34_tibetanfeudal.dds"
+		noOfFrames = 6
+		allwaystransparent = yes
+	}
+
 	spriteType = {
 		name = "GFX_charframe_150_republic"
 		textureFile = "gfx\\interface\\charframe_150_republic.tga"
@@ -1482,8 +1604,8 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_icon_clientelistic_government"
-		textureFile = "gfx\\interface\\government_icon_clientelistic.dds"
+		name = "GFX_icon_seigneurial_government"
+		textureFile = "gfx\\interface\\government_icon_seigneurial.dds"
 	}
 
 	spriteType = {
@@ -1589,164 +1711,5 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_checkmark"
 		textureFile = "gfx\\interface\\checkmark.dds"
-	}
-
-	# Clientelistic Government
-
-	spriteType = {
-		name = "GFX_charframe_150_clientelistic"
-		textureFile = "gfx\\interface\\charframe_150_clientelistic.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_clientelistic"
-		textureFile = "gfx\\interface\\charframe_100_clientelistic.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_75_clientelistic"
-		textureFile = "gfx\\interface\\charframe_75_clientelistic.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_50_clientelistic"
-		textureFile = "gfx\\interface\\charframe_50_clientelistic.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_34_clientelistic"
-		textureFile = "gfx\\interface\\charframe_34_clientelistic.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	# Roman Imperial Government
-
-	spriteType = {
-		name = "GFX_icon_roman_imperial_government"
-		textureFile = "gfx\\interface\\government_icon_roman_imperial.dds"
-	}
-
-	spriteType = {
-		name = "GFX_hints_roman_imperial_government"
-		textureFile = "gfx\\interface\\hints_splashscreen_image_feudal.dds"
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_150_romanimperial"
-		textureFile = "gfx\\interface\\charframe_150_romanimperial.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_romanimperial"
-		textureFile = "gfx\\interface\\charframe_100_romanimperial.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_75_romanimperial"
-		textureFile = "gfx\\interface\\charframe_75_romanimperial.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_50_romanimperial"
-		textureFile = "gfx\\interface\\charframe_50_romanimperial.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_34_romanimperial"
-		textureFile = "gfx\\interface\\charframe_34_romanimperial.dds"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	# Tibetan Feudal Government
-
-	spriteType = {
-		name = "GFX_charframe_150_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_150_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_100_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_75_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_75_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_50_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_50_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_34_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_34_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	# Band Government
-
-	spriteType = {
-		name = "GFX_charframe_150_band"
-		texturefile = "gfx\\interface\\charframe_150_band.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_band"
-		texturefile = "gfx\\interface\\charframe_100_band.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_75_band"
-		texturefile = "gfx\\interface\\charframe_75_band.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_50_band"
-		texturefile = "gfx\\interface\\charframe_50_band.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_34_band"
-		texturefile = "gfx\\interface\\charframe_34_band.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
 	}
 }

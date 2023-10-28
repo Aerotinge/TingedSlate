@@ -3182,8 +3182,8 @@ decisions = {
 				set_government_type = clan_government
 			}
 			else_if = {
-				limit = { is_government_potential = clientelistic_government }
-				set_government_type = clientelistic_government
+				limit = { is_government_potential = seigneurial_government }
+				set_government_type = seigneurial_government
 			}
 			else_if = {
 				limit = { is_government_potential = tibetan_feudal_government }
@@ -3330,7 +3330,7 @@ decisions = {
 								limit = {
 									liege = {
 										culture = ROOT
-										government = clientelistic_government
+										government = seigneurial_government
 									}
 								}
 								OR = {
@@ -3359,10 +3359,10 @@ decisions = {
 					limit = {
 						liege = {
 							culture = ROOT
-							government = clientelistic_government
+							government = seigneurial_government
 						}
 					}
-					set_government_type = clientelistic_government # If muslim? Gov overhaual v2 required
+					set_government_type = seigneurial_government # If muslim? Gov overhaual v2 required
 				}
 				else = {
 					set_government_type = feudal_government # It will switch to right government type automatically
@@ -3393,7 +3393,7 @@ decisions = {
 					if = {
 						limit = {
 							ROOT = {
-								NOT = { government = clientelistic_government }
+								NOT = { government = seigneurial_government }
 							}
 						}
 

@@ -24,7 +24,6 @@ theocracy_governments = {
 			clan_government
 			patrimonial_government
 			tibetan_feudal_government
-			clientelistic_government
 			mandala_government
 			thema_government
 			republic_government
@@ -81,7 +80,7 @@ theocracy_governments = {
 			clan_government
 			patrimonial_government
 			tibetan_feudal_government
-			clientelistic_government
+			seigneurial_government
 			mandala_government
 			arabic_caliphal_government
 			thema_government
@@ -264,7 +263,7 @@ theocracy_governments = {
 			feudal_government
 			clan_government
 			patrimonial_government
-			clientelistic_government
+			seigneurial_government
 			arabic_caliphal_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free

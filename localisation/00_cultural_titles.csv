@@ -315,16 +315,16 @@ nomadic_duchy_magyar;Chiefdom Confederacy;Confédération de la chefferie;Chiefdom
 nomadic_duchy_of;High Chiefdom of;Grande chefferie de;Großhäuptlingstum von;;Grande chefferie de;;;;;;;;;x
 nomadic_duchy_of_altaic;Khanate of;Khanat de;Khanat von;;Kanato de;;;;;;;;;x
 nomadic_duchy_of_magyar;Chiefdom Confederacy of;Confédération de la chefferie de;Chiefdom Konföderation von;;Confederación de cacicazgos de;;;;;;;;;x
-clientelistic_duke;Grand Prince;Grand-prince;Großfürst;;Gran príncipe;;;;;;;;;x
-clientelistic_duke_female;Grand-Princess;Grande princesse;Großfürstin;;Gran princesa;;;;;;;;;x
-clientelistic_count;Prince;Prince;Fürst;;Príncipe;;;;;;;;;x
-clientelistic_count_female;Princess;Princesse;Fürstin;;Princesa;;;;;x
-clientelistic_baron_east_slavic;Pomeshchik;Pomeshchik;Pomeshchik;;Pomeshchik;;;;;x
-clientelistic_baron_female_east_slavic;Pomeshchika;Pomeshchika;Pomeshchika;;Pomeshchika;;;;;x
-clientelistic_county;Principality;Principauté;Fürstentum;;Principado;;;;;;;;;x
-clientelistic_county_of;Principality of;Principauté de;Fürstentum von;;Principado de;;;;;;;;;x
-clientelistic_duchy;Grand Principality;Grande-principauté;Großfürstentum;;Gran principado;;;;;;;;;x
-clientelistic_duchy_of;Grand Principality of;Grande-principauté de;Großfürstentum von;;Gran Principado de;;;;;;;;;x
+seigneurial_duke_south_slavic;Grand Prince;Grand-prince;Großfürst;;Gran príncipe;;;;;;;;;x
+seigneurial_duke_female_south_slavic;Grand-Princess;Grande princesse;Großfürstin;;Gran princesa;;;;;;;;;x
+seigneurial_count_south_slavic;Prince;Prince;Fürst;;Príncipe;;;;;;;;;x
+seigneurial_count_female_south_slavic;Princess;Princesse;Fürstin;;Princesa;;;;;x
+seigneurial_baron_east_slavic;Pomeshchik;Pomeshchik;Pomeshchik;;Pomeshchik;;;;;x
+seigneurial_baron_female_east_slavic;Pomeshchika;Pomeshchika;Pomeshchika;;Pomeshchika;;;;;x
+seigneurial_county;Principality;Principauté;Fürstentum;;Principado;;;;;;;;;x
+seigneurial_county_of;Principality of;Principauté de;Fürstentum von;;Principado de;;;;;;;;;x
+seigneurial_duchy;Grand Principality;Grande-principauté;Großfürstentum;;Gran principado;;;;;;;;;x
+seigneurial_duchy_of;Grand Principality of;Grande-principauté de;Großfürstentum von;;Gran Principado de;;;;;;;;;x
 order_baron;Knight;Sieur;Ritter;;Caballero;;;;;x
 order_baron_female;Dame;Dame;Ritterin;;Dama;;;;;x
 order_barony_of;Garrison Town of;Ville de garnison de;Garnisonsstadt von;;Pueblo guarnicionado de;;;;;x
