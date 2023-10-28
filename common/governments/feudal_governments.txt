@@ -90,12 +90,6 @@ feudal_governments = {
 		potential = {
 			trigger_if = {
 				limit = {
-					NOR = {
-						has_law = feudal_contract_0
-						has_law = feudal_contract_1
-						has_law = feudal_contract_2
-						has_law = feudal_contract_3
-					}
 					is_save_game = no
 					has_game_started = no
 				}
@@ -121,13 +115,13 @@ feudal_governments = {
 							}
 						}
 						liege = { government = feudal_government }
+						liege = {
+							liege = { government = feudal_government }
+						}
 					}
 				}
 				trigger_else_if = {
-					limit = {
-						#culture_group = central_germanic
-						culture = german
-					}
+					limit = { culture = german }
 
 					OR = {
 						character = c_90107		#Ludwig 'the German'
@@ -140,6 +134,9 @@ feudal_governments = {
 							}
 						}
 						liege = { government = feudal_government }
+						liege = {
+							liege = { government = feudal_government }
+						}
 					}
 				}
 				trigger_else_if = {
@@ -159,12 +156,13 @@ feudal_governments = {
 							}
 						}
 						liege = { government = feudal_government }
+						liege = {
+							liege = { government = feudal_government }
+						}
 					}
 				}
 				trigger_else_if = {
-					limit = {
-						culture_group = north_germanic
-					}
+					limit = { culture_group = north_germanic }
 
 					OR = {
 						character = c_6905		#Magnus 'Lagaböter'
@@ -177,12 +175,13 @@ feudal_governments = {
 							}
 						}
 						liege = { government = feudal_government }
+						liege = {
+							liege = { government = feudal_government }
+						}
 					}
 				}
 				trigger_else_if = {
-					limit = {
-						culture_group = west_slavic
-					}
+					limit = { culture_group = west_slavic }
 
 					OR = {
 						character = c_756		#Boleslaw
@@ -194,6 +193,9 @@ feudal_governments = {
 							}
 						}
 						liege = { government = feudal_government }
+						liege = {
+							liege = { government = feudal_government }
+						}
 					}
 				}
 				trigger_else_if = {
@@ -219,9 +221,7 @@ feudal_governments = {
 					}
 				}
 				trigger_else_if = {
-					limit = {
-						culture_group = magyar
-					}
+					limit = { culture_group = magyar }
 
 					OR = {
 						character = c_219500	#Béla III
@@ -232,6 +232,9 @@ feudal_governments = {
 							}
 						}
 						liege = { government = feudal_government }
+						liege = {
+							liege = { government = feudal_government }
+						}
 					}
 				}
 				trigger_else = {
@@ -311,6 +314,7 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_tibetanfeudal"
+		#title_prefix = "tibetanfeudal_"
 		color = { 128 0 0 } # Maroon
 
 		potential = {
@@ -320,19 +324,54 @@ feudal_governments = {
 					has_game_started = no
 				}
 
-				culture_group = tibetan_group
-			}
-			trigger_else = {
-				OR = {
-					# TODO: Implement culture innovation, like CK3 had
-					# TODO: And since we can not access culture modifier with set_unit_modifier
-					# TODO: some workaround have to be done
-					culture_scope = { has_flag = innovation_caesaropapism }
+				
+				trigger_if = {
+					limit = { culture = bodpa }
+
+					OR = {
+						character = c_247075	#Songtsen Gampo
+						primary_title = {
+							any_previous_holder = {
+								government = tibetan_feudal_government
+								culture = ROOT
+							}
+						}
+						liege = { government = tibetan_feudal_government }
+						liege = {
+							liege = { government = tibetan_feudal_government }
+						}
+					}
+				}
+				trigger_else = {
+					government = tibetan_feudal_government
 				}
 			}
-			OR = {
-				religion_openly_bon_or_reformed_trigger = yes
-				religion = buddhist
+			trigger_else = {
+				# TODO: Implement culture innovation, like CK3 had
+				# TODO: And since we can not access culture modifier with set_unit_modifier
+				# TODO: some workaround have to be done
+				culture_scope = { has_flag = innovation_lamaism }
+
+				# Tanguts, Mongols, Jurchens and Nepalians are capable of unlock this innovation to access tibetan_feudal_government
+				# tibetanfeudal_emperor_jurchen is Emperor Manjushri
+			}
+
+			trigger_if = {
+				limit = {
+					NOT = { religion = buddhist }
+				}
+
+				OR = {
+					religion = bon_pagan_reformed
+					religion = tengri_pagan_reformed
+					religion = zun_pagan_reformed
+				}
+				has_religion_feature = religion_monastic
+				has_religion_feature = religion_stable
+				OR = {
+					has_religion_feature = religion_autocephaly
+					has_religion_feature = religion_no_leader
+				}
 			}
 
 			primary_title = {
@@ -459,7 +498,7 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_patrimonial"
-		color = { 10 138 57 }
+		color = { 118 255 163 }
 
 		potential = {
 			is_tributary = no
@@ -710,7 +749,7 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_iqta"
-		color = { 118 255 163 }
+		color = { 10 138 57 }
 
 		potential = {
 			trigger_if = {
@@ -729,14 +768,10 @@ feudal_governments = {
 						rightful_religious_head_scope = { character = THIS }
 					}
 				}
-				any_demesne_title = {
-					controls_religion = yes
-				}
+
+				any_demesne_title = { controls_religion = yes }
 				is_save_game = no
 				has_game_started = no
-			}
-			trigger_else = {
-				rightful_religious_head_scope = { character = THIS }
 			}
 
 			trigger_if = {

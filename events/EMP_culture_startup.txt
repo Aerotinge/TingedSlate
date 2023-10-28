@@ -17,11 +17,12 @@ character_event = {
 
 			roman		= { set_flag = innovation_feudalism }
 			dalmatian	= { set_flag = innovation_feudalism }
-			
 			frankish	= { set_flag = innovation_feudalism }
 			french		= { set_flag = innovation_feudalism }
 			dutch		= { set_flag = innovation_feudalism }
 			outremer	= { set_flag = innovation_feudalism }
+
+			bodpa		= { set_flag = innovation_lamaism }
 		}
 		
 		if = {
@@ -73,7 +74,7 @@ character_event = {
 		if = {
 			limit = { year >= 1337 }
 
-			any_independent_ruler = {
+			any_province = {
 				limit = {
 					OR = {
 						culture_group = central_germanic
@@ -89,12 +90,31 @@ character_event = {
 
 				if = {
 					limit = {
-						culture_group = {
+						culture_scope = {
 							NOT = { has_flag = innovation_feudalism }
-
-							set_flag = innovation_feudalism
 						}
 					}
+
+					set_flag = innovation_feudalism
+				}
+			}
+
+			any_province = {
+				limit = {
+					OR = {
+						culture_group = tibetan_group
+						culture = nepali
+					}
+				}
+
+				if = {
+					limit = {
+						culture_scope = {
+							NOT = { has_flag = innovation_lamaism }
+						}
+					}
+
+					set_flag = innovation_lamaism
 				}
 			}
 		}
