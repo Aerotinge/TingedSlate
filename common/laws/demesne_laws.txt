@@ -1150,7 +1150,14 @@ laws = {
 
 			holder_scope = {
 				is_feudal = yes
-				NOT = { government = arabic_caliphal_government }
+				NOR = {
+					government = arabic_caliphal_government
+					government = clan_government
+					government = patrimonial_government
+					government = mandala_government
+					government = chinese_imperial_government
+					government = seigneurial_government
+				}
 			}
 		}
 

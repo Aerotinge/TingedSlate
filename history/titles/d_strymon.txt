@@ -5,8 +5,12 @@
 
 753.1.1 = {
 	liege = k_bulgaria
-	vice_royalty = no
+	vice_royalty = no # flag before DONT_EXECUTE_TECH_BEFORE would caused wierd problem
 	holder = 145818
+}
+
+769.1.1 = {
+	vice_royalty = no
 }
 
 814.1.1 = {

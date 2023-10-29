@@ -6,7 +6,7 @@
 
 637.1.1 = {
 	liege = e_arabia
-	vice_royalty = no
+	vice_royalty = no # flag before DONT_EXECUTE_TECH_BEFORE would caused wierd problem
 	clr_global_flag = pat_antioch
 }
 
@@ -16,6 +16,10 @@
 
 758.1.1 = {
 	holder = 146049
+}
+
+769.1.1 = {
+	vice_royalty = no
 }
 
 791.1.1 = {

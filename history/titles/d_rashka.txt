@@ -5,11 +5,15 @@
 
 610.1.1 = {
 	liege = 0
-	vice_royalty = no
+	vice_royalty = no # flag before DONT_EXECUTE_TECH_BEFORE would caused wierd problem
 }
 
 768.1.1 = {
 	holder = 167858
+}
+
+769.1.1 = {
+	vice_royalty = no
 }
 
 814.1.1 = {

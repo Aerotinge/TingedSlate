@@ -5,6 +5,10 @@
 
 640.1.1 = {
 	liege = 0
+	vice_royalty = no # flag before DONT_EXECUTE_TECH_BEFORE would caused wierd problem
+}
+
+769.1.1 = {
 	vice_royalty = no
 }
 
