@@ -1,3 +1,5 @@
+# Holding type, e.g family_palace, (castle)barony, city_barony, etc. would not accept a government title prefix
+# Religion and culture suffix are supported
 baron;Lord;Seigneur;Herr;;Señor;;;;;x
 baron_arabic;Wâli;Wâli;Wâli;;Valí;;;;;;;;;x
 baron_dravidian_group;Damapati;Damapati;Damapati;;Damapati;;;;;;;;;x
@@ -29,14 +31,13 @@ baron_norse_pagan_reformed;Þegn;Þegn;Þegn;;Þegn;;;;;;;;;x
 baron_roman;Legatus;Legatus;Legatus;;Legado;;;;;;;;;x
 baron_turkish;Agha;Agha;Agha;;Agha;;;;;;;;;x
 barony;Castle;Château;Burg;;Castillo;;;;;;;;;x
-barony_of;Castle of;Château de;Burg von;;Castillo de;;;;;;;;;x
 barony_arabic;Wilayah;Wilaya;Wilayah;;Vilayato;;;;;;;;;x
 barony_dravidian_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_indo_aryan_group;Dama;Dama;Dama;;Dama;;;;;;;;;x
 barony_iranian;Arg;Arg;Arg;;Arg;;;;;;;;;x
 barony_mongol;Taishi;Taïshi;Taishi;;Taishi;;;;;;;;;x
 barony_muslim;Wilayah;Wilaya;Wilayah;;Vilayato;;;;;;;;;x
-barony_of;Seigneury of;Seigneurie de;Grundherrschaft von;;Señorío de;;;;;;;;;x
+barony_of;Castle of;Château de;Burg von;;Castillo de;;;;;;;;;x
 barony_of_arabic;Wilayah of;Wilaya de;Wilayah von;;Vilayato de;;;;;;;;;x
 barony_of_dravidian_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
 barony_of_indo_aryan_group;Dama of;Dama de;Dama von;;Dama de;;;;;;;;;x
