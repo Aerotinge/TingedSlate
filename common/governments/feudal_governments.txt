@@ -262,6 +262,7 @@ feudal_governments = {
 			}
 
 			is_catholic_branch = yes
+			religion_allows_temple_holders = yes # Has Clergy estate
 
 			is_patrician = no
 			could_be_temporal_religious_head_trigger = yes

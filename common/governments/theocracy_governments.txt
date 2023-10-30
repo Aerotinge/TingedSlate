@@ -21,11 +21,7 @@ theocracy_governments = {
 		}
 		accepts_liege_governments_religion = {
 			feudal_government
-			clan_government
-			patrimonial_government
 			tibetan_feudal_government
-			mandala_government
-			thema_government
 			republic_government
 			merchant_republic_government
 			order_government
@@ -76,11 +72,11 @@ theocracy_governments = {
 			HOSPITAL
 		}
 		accepts_liege_governments_religion = { # Gets the wrong religion modifier instead
+			seigneurial_government
 			feudal_government
 			clan_government
 			patrimonial_government
 			tibetan_feudal_government
-			seigneurial_government
 			mandala_government
 			arabic_caliphal_government
 			thema_government
@@ -260,11 +256,6 @@ theocracy_governments = {
 			TRIBAL
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			feudal_government
-			clan_government
-			patrimonial_government
-			seigneurial_government
-			arabic_caliphal_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government

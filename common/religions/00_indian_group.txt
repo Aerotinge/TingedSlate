@@ -115,6 +115,7 @@ indian_group = {
 		can_grant_divorce = yes
 		caste_opinions = yes
 		castes = yes
+		landed_kin_prestige_bonus = yes
 		priests_can_inherit = no
 		priests_can_marry = yes
 	}

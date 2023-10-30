@@ -63,6 +63,7 @@ zoroastrian_group = {
 		can_grant_invasion_cb = invasion
 		divine_blood = yes
 		join_crusade_if_bordering_hostile = yes
+		landed_kin_prestige_bonus = yes
 		pc_marriage = yes
 	}
 
@@ -207,6 +208,7 @@ zoroastrian_group = {
 		can_grant_divorce = yes
 		can_grant_invasion_cb = invasion
 		join_crusade_if_bordering_hostile = yes
+		landed_kin_prestige_bonus = yes
 	}
 
 	yazidi = {

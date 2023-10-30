@@ -1,4 +1,4 @@
-religion_allows_temple_holders = {
+religion_allows_temple_holders = { # Theoretically, the following religions does not have a clergy estate separated from the layperson
 	NOR = {
 		religion = mazdaki
 		religion_group = muslim
