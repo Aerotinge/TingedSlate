@@ -261,7 +261,6 @@ d_ibadi = {
 	controls_religion = ibadi
 
 	allow = {
-		religion = ibadi
 		can_create_duchy = yes
 
 		trigger_if = {
@@ -271,7 +270,7 @@ d_ibadi = {
 					value = random
 				}
 			}
-			can_usurp_religion_head = yes
+			num_of_holy_sites >= 3
 		}
 		trigger_else = {
 			piety >= 1000
@@ -380,7 +379,6 @@ d_kharijite = {
 	controls_religion = kharijite
 
 	allow = {
-		religion = kharijite
 		can_create_duchy = yes
 
 		trigger_if = {
@@ -390,7 +388,8 @@ d_kharijite = {
 					value = random
 				}
 			}
-			can_usurp_religion_head = yes
+			num_of_holy_sites >= 3
+			piety >= 500
 		}
 		trigger_else = {
 			piety >= 1000
@@ -583,9 +582,16 @@ d_norse_pagan_reformed = {
 	creation_requires_capital = no
 
 	allow = {
-		religion = norse_pagan_reformed
 		can_create_duchy = yes
-		can_usurp_religion_head = yes
+		num_of_holy_sites >= 3
+		piety >= 500
+		trigger_if = {
+			limit = {
+				NOT = { has_religion_feature = religion_temporal_head }
+			}
+
+			has_religion_features = no
+		}
 	}
 
 	short_name = yes
@@ -715,7 +721,6 @@ d_shiite = {
 	controls_religion = shiite
 
 	allow = {
-		religion = shiite
 		culture_group = arabic
 		can_create_duchy = yes
 
@@ -726,7 +731,8 @@ d_shiite = {
 					value = random
 				}
 			}
-			can_usurp_religion_head = yes
+			num_of_holy_sites >= 3
+			piety >= 500
 		}
 		trigger_else = {
 			#any_owned_bloodline = {
@@ -791,7 +797,6 @@ d_sunni = {
 	controls_religion = sunni
 
 	allow = {
-		religion = sunni
 		culture_group = arabic
 		can_create_duchy = yes
 
@@ -802,7 +807,8 @@ d_sunni = {
 					value = random
 				}
 			}
-			can_usurp_religion_head = yes
+			num_of_holy_sites >= 3
+			piety >= 500
 		}
 		trigger_else = {
 			custom_tooltip = {

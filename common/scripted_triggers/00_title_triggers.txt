@@ -5,8 +5,6 @@
 # can_create_kingdom
 # can_create_empire
 
-# can_usurp_religion_head
-
 # has_cultural_titular_requirements
 # has_titular_requirements
 
@@ -30,11 +28,6 @@ can_create_kingdom = {
 can_create_empire = {
 	can_create_title = yes
 	# empty for vanilla
-}
-
-can_usurp_religion_head = {
-	num_of_holy_sites >= 3
-	piety >= 500
 }
 
 has_cultural_titular_requirements = {
