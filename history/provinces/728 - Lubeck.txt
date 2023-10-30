@@ -37,9 +37,10 @@ religion = slavic_pagan
 1157.1.1 = { remove_settlement = b_starigard }
 
 # Christianity only arrived with the Danish king Valdemar I
-1168.1.1 = { religion = catholic }
-
-1168.1.1 = { culture = german }
+1168.1.1 = {
+	religion = catholic
+	culture = saxon
+}
 
 1227.1.1 = {
 	capital = b_lubeck

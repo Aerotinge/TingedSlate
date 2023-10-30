@@ -21,7 +21,7 @@ religion = norse_pagan
 
 # History
 800.1.1 = {
-	culture = pomeranian
+	#culture = pomeranian
 	religion = slavic_pagan
 }
 929.1.1 = {
@@ -30,5 +30,4 @@ religion = norse_pagan
 	b_halberstedt = temple
 }
 1125.1.1 = { religion = catholic }
-1125.1.1 = { culture = german }
 1181.1.1 = { b_salzwedel = castle }
