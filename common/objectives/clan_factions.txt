@@ -1,0 +1,1964 @@
+faction_clan_one = {
+	type = character
+	cancel_on_leader_death = yes # The faction will not automatically continue under a new leader
+
+	# Plotter scope
+	potential = {
+		#among_most_powerful_vassals = 6
+		#is_powerful_vassal = yes
+		is_landed = yes
+		higher_real_tier_than = BARON
+		#is_adult = yes
+		age >= 12
+		independent = no
+		#prisoner = no
+		#is_incapable = no
+		NOT = { trait = bastard }
+		OR = {
+			government = clan_government
+			government = patrimonial_government
+			trigger_if = {
+				limit = {
+					has_clan_culture = yes
+				}
+				government = tribal_government
+			}
+		}
+
+		NOR = {
+			#leads_faction = faction_clan_one
+			leads_faction = faction_clan_two
+			leads_faction = faction_clan_three
+			leads_faction = faction_clan_four
+			leads_faction = faction_clan_five
+		}
+
+		liege = {
+			NOT = { dynasty = ROOT }
+		}
+
+		# No duplicated dynasty clan factions if there was one
+		trigger_if = {
+			limit = {
+				liege = {
+					any_vassal = {
+						OR = {
+							#leads_faction = faction_clan_one
+							leads_faction = faction_clan_two
+							leads_faction = faction_clan_three
+							leads_faction = faction_clan_four
+							leads_faction = faction_clan_five
+						}
+						dynasty = ROOT
+					}
+				}
+			}
+
+			always = no
+		}
+	}
+
+	# Target scope
+	allow = {
+		trigger_if = {
+			limit = {
+				NOR = {
+					leads_faction = faction_clan_one
+					leads_faction = faction_clan_two
+					leads_faction = faction_clan_three
+					leads_faction = faction_clan_four
+					leads_faction = faction_clan_five
+				}
+			}
+
+			liege = {
+				trigger_if = {
+					limit = {
+						calc_true_if = {						# Has 4 clan faction already
+							amount >= 4
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = KING				# Emperor
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 3 clan faction already
+							amount >= 3
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = DUKE				# King or above
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 2 clan factions already
+							amount >= 2
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						higher_real_tier_than = DUKE
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has a clan faction already
+							amount >= 1
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						AND = {									# A Human Duke
+							ai = no
+							higher_real_tier_than = COUNT
+						}
+						higher_real_tier_than = DUKE			# King or above
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# A clan faction at least has to be in a duchy
+							amount >= 0
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = COUNT				# Duke or above
+				}
+			}
+
+			trigger_if = {
+				limit = { ai = no }
+
+				always = no # Human player had the clan faction formed via events
+			}
+		}
+	}
+
+	# Faction member scope
+	# ROOT is joiner
+	# FROM is target
+	allow_join = {
+		ROOT = {
+			is_ruler = yes
+			#is_adult = yes
+			age >= 12
+			independent = no
+			#prisoner = no
+			#is_incapable = no
+			has_clan_culture = yes # altaic, arabic, dravidian_group, indo_aryan_group, persian, kurdish, afghan, baloch # TODO: chinese_group, other iranian?, japanese_group?
+		}
+
+		FROM = {
+			# In-law Clan model
+			trigger_if = {
+				limit = {
+					OR = {
+						AND = {
+							culture_group = chinese_group
+
+							# Chinese clan originated in mid 11th century, as a means to unite and protect the family's interests in the imperial examination.
+							# and it survived only in southern China due to Jurchens/Mongols overrun northern China from the 12th century
+							# to the mid 14th century. By the time the northern chinese has no longer practice this kind of kinship.
+							# has_dynasty_flag = lineage_established # Dirty-and-quick unlock this flag with year >= 1100
+						}
+						culture_group = dravidian_group # Taking wives in Kerala as an example, wives are considered to be full members of their husbands' clans.
+					}
+				}
+
+				OR = {
+					any_close_relative = {
+						trigger_if = {
+							limit = {											# This applies to all but your lineage
+								NOT = { is_ancestor_of = ROOT_FROM }
+							}
+							dynasty = ROOT_FROM									# In the same dynasty,
+						}
+						OR = {
+							character = ROOT									# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+							any_close_relative = {
+								trigger_if = {
+									limit = {									# This applies to all but your lineage
+										NOT = { is_ancestor_of = ROOT_FROM }
+									}
+									dynasty = ROOT_FROM							# In the same dynasty,
+								}
+								character = ROOT								# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+							}
+						}
+					}
+
+					# It's possible to become a member of a clan by marriage or adoption in this clan system
+					# Chinese: A chinese wife prepended her husband's surname to hers. So she becomes a clan member of her husband.
+					# Ocassionally a chinese husband prepended her wife's surname to his, if married matrilineally. But it's really rare in a patriarchal mainstream society.
+
+					spouse = {
+						character = ROOT										# Your primary spouse
+						trigger_if = {
+							limit = { is_female = no }							# If he is a male,
+							is_married_matrilineally = yes						# he must be married matrilineally
+						}
+						trigger_else = {										# Else...
+							ROOT_FROM = { is_married_matrilineally = no	}		# You mustn't be married matrilineally
+						}
+					}
+				}
+			}
+
+			# Pragmatic Clan model
+
+			# In principle, one has to be born into a tribe, but Afghan pragmatism allows exceptions.
+			# If such outsiders...
+			# succeed to intermarry with the tribe. they may be accepted as members after a generation or two.
+			# The Pashtun Tribal System, https://www.nps.edu/documents/105988371/107571254/glatzer_pashtun_tribal_system.pdf/b0004d32-a1c2-4ade-94b5-a0d54d1b08b9
+			trigger_else_if = {
+				limit = {
+					culture = afghan # a.k.a. Pashtun
+				}
+
+				any_close_relative = {
+					trigger_if = {
+						limit = {												# This applies to all but your lineage
+							NOT = { is_ancestor_of = ROOT_FROM }
+						}
+						dynasty = ROOT_FROM										# In the same dynasty,
+					}
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							trigger_if = {
+								limit = {										# This applies to all but your lineage
+									NOT = { is_ancestor_of = ROOT_FROM }
+								}
+								dynasty = ROOT									# In the same dynasty,
+							}
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+
+			# Generic patrilineal/matrilineal Clan model
+
+			# In a patriarchal clan system, the wife NEVER joins the husband’s clan.
+			# Even in marriage she always remains a member of her clan. She doesn’t take her husband’s name.
+			# And if something goes wrong in the marriage, she returns to her family clan where she is still a member.
+			# Islams patriarchal clan system, https://missionexus.org/islams-patriarchal-clan-system/
+
+			# Among the subcaste kin, we should also include those related to a person
+			# through marriage. Here, generally a person’s kin through mother are called
+			# uterine kin and those through spouse are known as affinal kin. These relatives
+			# are not members of one’s family or lineage or clan. They are expected to
+			# help and support each other and, actually do so when an occasion arises for
+			# such an action. While a person belongs to only one lineage, one clan or one
+			# subcaste, he would always have a string of relatives who do not belong to his
+			# lineage/clan/subcaste.
+			# Kinship System in North India, https://msbrijuniversity.ac.in/assets/uploads/newsupdate/Unit-8.pdf
+
+			# Since endogamy is practiced among Iranians(Xwedodah) and Arabians(bint al-'amm), uterine kins are likely your clan members already.
+			trigger_else = {
+				any_close_relative = {
+					dynasty = ROOT_FROM											# In the same dynasty,
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							dynasty = ROOT_FROM									# In the same dynasty,
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# AI creation weight
+	# ROOT is faction creator
+	chance = {
+		factor = 4
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 2 }
+		}
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 4 }
+		}
+
+		mult_modifier = {
+			factor = 0.5
+
+			NOT = { among_most_powerful_vassals = 6 }
+		}
+	}
+
+	# AI membership weight
+	# ROOT is the prospective member
+	# FROM is the faction leader
+	# FROMFROM is the target title or character
+	membership = {
+		factor = 1000
+
+		trigger = {
+			in_seclusion = no
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				trait = zealous
+				government = theocracy_government
+			}
+			FROM = { excommunicated_for = ROOT }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			FROM = { is_any_kinslayer_trigger = yes }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				is_rival = FROM
+				persistent_event_target:antagonize_target = { character = FROM }
+			}
+		}
+	}
+
+	success = {
+		always = no
+	}
+
+	effect = {
+	}
+
+	abort = {
+		always = no	# Factions will abort if the Potential or Allow trigger is no longer valid
+	}
+
+	abort_effect = {
+	}
+}
+
+faction_clan_two = {
+	type = character
+	cancel_on_leader_death = yes # The faction will not automatically continue under a new leader
+
+	# Plotter scope
+	potential = {
+		#among_most_powerful_vassals = 6
+		#is_powerful_vassal = yes
+		is_landed = yes
+		higher_real_tier_than = BARON
+		#is_adult = yes
+		age >= 12
+		independent = no
+		#prisoner = no
+		#is_incapable = no
+		NOT = { trait = bastard }
+		OR = {
+			government = clan_government
+			government = patrimonial_government
+			trigger_if = {
+				limit = {
+					has_clan_culture = yes
+				}
+				government = tribal_government
+			}
+		}
+
+		NOR = {
+			leads_faction = faction_clan_one
+			#leads_faction = faction_clan_two
+			leads_faction = faction_clan_three
+			leads_faction = faction_clan_four
+			leads_faction = faction_clan_five
+		}
+
+		liege = {
+			NOT = { dynasty = ROOT }
+		}
+
+		# No duplicated dynasty clan factions if there was one
+		trigger_if = {
+			limit = {
+				liege = {
+					any_vassal = {
+						OR = {
+							leads_faction = faction_clan_one
+							#leads_faction = faction_clan_two
+							leads_faction = faction_clan_three
+							leads_faction = faction_clan_four
+							leads_faction = faction_clan_five
+						}
+						dynasty = ROOT
+					}
+				}
+			}
+
+			always = no
+		}
+	}
+
+	# Target scope
+	allow = {
+		trigger_if = {
+			limit = {
+				NOR = {
+					leads_faction = faction_clan_one
+					leads_faction = faction_clan_two
+					leads_faction = faction_clan_three
+					leads_faction = faction_clan_four
+					leads_faction = faction_clan_five
+				}
+			}
+
+			liege = {
+				trigger_if = {
+					limit = {
+						calc_true_if = {						# Has 4 clan faction already
+							amount >= 4
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = KING				# Emperor
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 3 clan faction already
+							amount >= 3
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = DUKE				# King or above
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 2 clan factions already
+							amount >= 2
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						higher_real_tier_than = DUKE
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has a clan faction already
+							amount >= 1
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						AND = {									# A Human Duke
+							ai = no
+							higher_real_tier_than = COUNT
+						}
+						higher_real_tier_than = DUKE			# King or above
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# A clan faction at least has to be in a duchy
+							amount >= 0
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = COUNT				# Duke or above
+				}
+			}
+
+			trigger_if = {
+				limit = { ai = no }
+
+				always = no # Human player had the clan faction formed via events
+			}
+		}
+	}
+
+	# Faction member scope
+	# ROOT is joiner
+	# FROM is target
+	allow_join = {
+		ROOT = {
+			is_ruler = yes
+			#is_adult = yes
+			age >= 12
+			independent = no
+			#prisoner = no
+			#is_incapable = no
+			has_clan_culture = yes # altaic, arabic, dravidian_group, indo_aryan_group, persian, kurdish, afghan, baloch # TODO: chinese_group, other iranian?, japanese_group?
+		}
+
+		FROM = {
+			# In-law Clan model
+			trigger_if = {
+				limit = {
+					OR = {
+						AND = {
+							culture_group = chinese_group
+
+							# Chinese clan originated in mid 11th century, as a means to unite and protect the family's interests in the imperial examination.
+							# and it survived only in southern China due to Jurchens/Mongols overrun northern China from the 12th century
+							# to the mid 14th century. By the time the northern chinese has no longer practice this kind of kinship.
+							# has_dynasty_flag = lineage_established # Dirty-and-quick unlock this flag with year >= 1100
+						}
+						culture_group = dravidian_group # Taking wives in Kerala as an example, wives are considered to be full members of their husbands' clans.
+					}
+				}
+
+				OR = {
+					any_close_relative = {
+						trigger_if = {
+							limit = {											# This applies to all but your lineage
+								NOT = { is_ancestor_of = ROOT_FROM }
+							}
+							dynasty = ROOT_FROM									# In the same dynasty,
+						}
+						OR = {
+							character = ROOT									# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+							any_close_relative = {
+								trigger_if = {
+									limit = {									# This applies to all but your lineage
+										NOT = { is_ancestor_of = ROOT_FROM }
+									}
+									dynasty = ROOT_FROM							# In the same dynasty,
+								}
+								character = ROOT								# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+							}
+						}
+					}
+
+					# It's possible to become a member of a clan by marriage or adoption in this clan system
+					# Chinese: A chinese wife prepended her husband's surname to hers. So she becomes a clan member of her husband.
+					# Ocassionally a chinese husband prepended her wife's surname to his, if married matrilineally. But it's really rare in a patriarchal mainstream society.
+
+					spouse = {
+						character = ROOT										# Your primary spouse
+						trigger_if = {
+							limit = { is_female = no }							# If he is a male,
+							is_married_matrilineally = yes						# he must be married matrilineally
+						}
+						trigger_else = {										# Else...
+							ROOT_FROM = { is_married_matrilineally = no	}		# You mustn't be married matrilineally
+						}
+					}
+				}
+			}
+
+			# Pragmatic Clan model
+
+			# In principle, one has to be born into a tribe, but Afghan pragmatism allows exceptions.
+			# If such outsiders...
+			# succeed to intermarry with the tribe. they may be accepted as members after a generation or two.
+			# The Pashtun Tribal System, https://www.nps.edu/documents/105988371/107571254/glatzer_pashtun_tribal_system.pdf/b0004d32-a1c2-4ade-94b5-a0d54d1b08b9
+			trigger_else_if = {
+				limit = {
+					culture = afghan # a.k.a. Pashtun
+				}
+
+				any_close_relative = {
+					trigger_if = {
+						limit = {												# This applies to all but your lineage
+							NOT = { is_ancestor_of = ROOT_FROM }
+						}
+						dynasty = ROOT_FROM										# In the same dynasty,
+					}
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							trigger_if = {
+								limit = {										# This applies to all but your lineage
+									NOT = { is_ancestor_of = ROOT_FROM }
+								}
+								dynasty = ROOT									# In the same dynasty,
+							}
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+
+			# Generic patrilineal/matrilineal Clan model
+
+			# In a patriarchal clan system, the wife NEVER joins the husband’s clan.
+			# Even in marriage she always remains a member of her clan. She doesn’t take her husband’s name.
+			# And if something goes wrong in the marriage, she returns to her family clan where she is still a member.
+			# Islams patriarchal clan system, https://missionexus.org/islams-patriarchal-clan-system/
+
+			# Among the subcaste kin, we should also include those related to a person
+			# through marriage. Here, generally a person’s kin through mother are called
+			# uterine kin and those through spouse are known as affinal kin. These relatives
+			# are not members of one’s family or lineage or clan. They are expected to
+			# help and support each other and, actually do so when an occasion arises for
+			# such an action. While a person belongs to only one lineage, one clan or one
+			# subcaste, he would always have a string of relatives who do not belong to his
+			# lineage/clan/subcaste.
+			# Kinship System in North India, https://msbrijuniversity.ac.in/assets/uploads/newsupdate/Unit-8.pdf
+
+			# Since endogamy is practiced among Iranians(Xwedodah) and Arabians(bint al-'amm), uterine kins are likely your clan members already.
+			trigger_else = {
+				any_close_relative = {
+					dynasty = ROOT_FROM											# In the same dynasty,
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							dynasty = ROOT_FROM									# In the same dynasty,
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# AI creation weight
+	# ROOT is faction creator
+	chance = {
+		factor = 4
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 2 }
+		}
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 4 }
+		}
+
+		mult_modifier = {
+			factor = 0.5
+
+			NOT = { among_most_powerful_vassals = 6 }
+		}
+	}
+
+	# AI membership weight
+	# ROOT is the prospective member
+	# FROM is the faction leader
+	# FROMFROM is the target title or character
+	membership = {
+		factor = 1000
+
+		trigger = {
+			in_seclusion = no
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				trait = zealous
+				government = theocracy_government
+			}
+			FROM = { excommunicated_for = ROOT }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			FROM = { is_any_kinslayer_trigger = yes }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				is_rival = FROM
+				persistent_event_target:antagonize_target = { character = FROM }
+			}
+		}
+	}
+
+	success = {
+		always = no
+	}
+
+	effect = {
+	}
+
+	abort = {
+		always = no	# Factions will abort if the Potential or Allow trigger is no longer valid
+	}
+
+	abort_effect = {
+	}
+}
+
+faction_clan_three = {
+	type = character
+	cancel_on_leader_death = yes # The faction will not automatically continue under a new leader
+
+	# Plotter scope
+	potential = {
+		#among_most_powerful_vassals = 6
+		#is_powerful_vassal = yes
+		is_landed = yes
+		higher_real_tier_than = BARON
+		#is_adult = yes
+		age >= 12
+		independent = no
+		#prisoner = no
+		#is_incapable = no
+		NOT = { trait = bastard }
+		OR = {
+			government = clan_government
+			government = patrimonial_government
+			trigger_if = {
+				limit = {
+					has_clan_culture = yes
+				}
+				government = tribal_government
+			}
+		}
+
+		NOR = {
+			leads_faction = faction_clan_one
+			leads_faction = faction_clan_two
+			#leads_faction = faction_clan_three
+			leads_faction = faction_clan_four
+			leads_faction = faction_clan_five
+		}
+
+		liege = {
+			NOT = { dynasty = ROOT }
+		}
+
+		# No duplicated dynasty clan factions if there was one
+		trigger_if = {
+			limit = {
+				liege = {
+					any_vassal = {
+						OR = {
+							leads_faction = faction_clan_one
+							leads_faction = faction_clan_two
+							#leads_faction = faction_clan_three
+							leads_faction = faction_clan_four
+							leads_faction = faction_clan_five
+						}
+						dynasty = ROOT
+					}
+				}
+			}
+
+			always = no
+		}
+	}
+
+	# Target scope
+	allow = {
+		trigger_if = {
+			limit = {
+				NOR = {
+					leads_faction = faction_clan_one
+					leads_faction = faction_clan_two
+					leads_faction = faction_clan_three
+					leads_faction = faction_clan_four
+					leads_faction = faction_clan_five
+				}
+			}
+
+			liege = {
+				trigger_if = {
+					limit = {
+						calc_true_if = {						# Has 4 clan faction already
+							amount >= 4
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = KING				# Emperor
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 3 clan faction already
+							amount >= 3
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = DUKE				# King or above
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 2 clan factions already
+							amount >= 2
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						higher_real_tier_than = DUKE
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has a clan faction already
+							amount >= 1
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						AND = {									# A Human Duke
+							ai = no
+							higher_real_tier_than = COUNT
+						}
+						higher_real_tier_than = DUKE			# King or above
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# A clan faction at least has to be in a duchy
+							amount >= 0
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = COUNT				# Duke or above
+				}
+			}
+
+			trigger_if = {
+				limit = { ai = no }
+
+				always = no # Human player had the clan faction formed via events
+			}
+		}
+	}
+
+	# Faction member scope
+	# ROOT is joiner
+	# FROM is target
+	allow_join = {
+		ROOT = {
+			is_ruler = yes
+			#is_adult = yes
+			age >= 12
+			independent = no
+			#prisoner = no
+			#is_incapable = no
+			has_clan_culture = yes # altaic, arabic, dravidian_group, indo_aryan_group, persian, kurdish, afghan, baloch # TODO: chinese_group, other iranian?, japanese_group?
+		}
+
+		FROM = {
+			# In-law Clan model
+			trigger_if = {
+				limit = {
+					OR = {
+						AND = {
+							culture_group = chinese_group
+
+							# Chinese clan originated in mid 11th century, as a means to unite and protect the family's interests in the imperial examination.
+							# and it survived only in southern China due to Jurchens/Mongols overrun northern China from the 12th century
+							# to the mid 14th century. By the time the northern chinese has no longer practice this kind of kinship.
+							# has_dynasty_flag = lineage_established # Dirty-and-quick unlock this flag with year >= 1100
+						}
+						culture_group = dravidian_group # Taking wives in Kerala as an example, wives are considered to be full members of their husbands' clans.
+					}
+				}
+
+				OR = {
+					any_close_relative = {
+						trigger_if = {
+							limit = {											# This applies to all but your lineage
+								NOT = { is_ancestor_of = ROOT_FROM }
+							}
+							dynasty = ROOT_FROM									# In the same dynasty,
+						}
+						OR = {
+							character = ROOT									# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+							any_close_relative = {
+								trigger_if = {
+									limit = {									# This applies to all but your lineage
+										NOT = { is_ancestor_of = ROOT_FROM }
+									}
+									dynasty = ROOT_FROM							# In the same dynasty,
+								}
+								character = ROOT								# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+							}
+						}
+					}
+
+					# It's possible to become a member of a clan by marriage or adoption in this clan system
+					# Chinese: A chinese wife prepended her husband's surname to hers. So she becomes a clan member of her husband.
+					# Ocassionally a chinese husband prepended her wife's surname to his, if married matrilineally. But it's really rare in a patriarchal mainstream society.
+
+					spouse = {
+						character = ROOT										# Your primary spouse
+						trigger_if = {
+							limit = { is_female = no }							# If he is a male,
+							is_married_matrilineally = yes						# he must be married matrilineally
+						}
+						trigger_else = {										# Else...
+							ROOT_FROM = { is_married_matrilineally = no	}		# You mustn't be married matrilineally
+						}
+					}
+				}
+			}
+
+			# Pragmatic Clan model
+
+			# In principle, one has to be born into a tribe, but Afghan pragmatism allows exceptions.
+			# If such outsiders...
+			# succeed to intermarry with the tribe. they may be accepted as members after a generation or two.
+			# The Pashtun Tribal System, https://www.nps.edu/documents/105988371/107571254/glatzer_pashtun_tribal_system.pdf/b0004d32-a1c2-4ade-94b5-a0d54d1b08b9
+			trigger_else_if = {
+				limit = {
+					culture = afghan # a.k.a. Pashtun
+				}
+
+				any_close_relative = {
+					trigger_if = {
+						limit = {												# This applies to all but your lineage
+							NOT = { is_ancestor_of = ROOT_FROM }
+						}
+						dynasty = ROOT_FROM										# In the same dynasty,
+					}
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							trigger_if = {
+								limit = {										# This applies to all but your lineage
+									NOT = { is_ancestor_of = ROOT_FROM }
+								}
+								dynasty = ROOT									# In the same dynasty,
+							}
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+
+			# Generic patrilineal/matrilineal Clan model
+
+			# In a patriarchal clan system, the wife NEVER joins the husband’s clan.
+			# Even in marriage she always remains a member of her clan. She doesn’t take her husband’s name.
+			# And if something goes wrong in the marriage, she returns to her family clan where she is still a member.
+			# Islams patriarchal clan system, https://missionexus.org/islams-patriarchal-clan-system/
+
+			# Among the subcaste kin, we should also include those related to a person
+			# through marriage. Here, generally a person’s kin through mother are called
+			# uterine kin and those through spouse are known as affinal kin. These relatives
+			# are not members of one’s family or lineage or clan. They are expected to
+			# help and support each other and, actually do so when an occasion arises for
+			# such an action. While a person belongs to only one lineage, one clan or one
+			# subcaste, he would always have a string of relatives who do not belong to his
+			# lineage/clan/subcaste.
+			# Kinship System in North India, https://msbrijuniversity.ac.in/assets/uploads/newsupdate/Unit-8.pdf
+
+			# Since endogamy is practiced among Iranians(Xwedodah) and Arabians(bint al-'amm), uterine kins are likely your clan members already.
+			trigger_else = {
+				any_close_relative = {
+					dynasty = ROOT_FROM											# In the same dynasty,
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							dynasty = ROOT_FROM									# In the same dynasty,
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# AI creation weight
+	# ROOT is faction creator
+	chance = {
+		factor = 4
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 2 }
+		}
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 4 }
+		}
+
+		mult_modifier = {
+			factor = 0.5
+
+			NOT = { among_most_powerful_vassals = 6 }
+		}
+	}
+
+	# AI membership weight
+	# ROOT is the prospective member
+	# FROM is the faction leader
+	# FROMFROM is the target title or character
+	membership = {
+		factor = 1000
+
+		trigger = {
+			in_seclusion = no
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				trait = zealous
+				government = theocracy_government
+			}
+			FROM = { excommunicated_for = ROOT }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			FROM = { is_any_kinslayer_trigger = yes }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				is_rival = FROM
+				persistent_event_target:antagonize_target = { character = FROM }
+			}
+		}
+	}
+
+	success = {
+		always = no
+	}
+
+	effect = {
+	}
+
+	abort = {
+		always = no	# Factions will abort if the Potential or Allow trigger is no longer valid
+	}
+
+	abort_effect = {
+	}
+}
+
+faction_clan_four = {
+	type = character
+	cancel_on_leader_death = yes # The faction will not automatically continue under a new leader
+
+	# Plotter scope
+	potential = {
+		#among_most_powerful_vassals = 6
+		#is_powerful_vassal = yes
+		is_landed = yes
+		higher_real_tier_than = BARON
+		#is_adult = yes
+		age >= 12
+		independent = no
+		#prisoner = no
+		#is_incapable = no
+		NOT = { trait = bastard }
+		OR = {
+			government = clan_government
+			government = mandala_government
+			trigger_if = {
+				limit = {
+					has_clan_culture = yes
+				}
+				government = tribal_government
+			}
+		}
+
+		NOR = {
+			leads_faction = faction_clan_one
+			leads_faction = faction_clan_two
+			leads_faction = faction_clan_three
+			#leads_faction = faction_clan_four
+			leads_faction = faction_clan_five
+		}
+
+		liege = {
+			NOT = { dynasty = ROOT }
+		}
+
+		# No duplicated dynasty clan factions if there was one
+		trigger_if = {
+			limit = {
+				liege = {
+					any_vassal = {
+						OR = {
+							leads_faction = faction_clan_one
+							leads_faction = faction_clan_two
+							leads_faction = faction_clan_three
+							#leads_faction = faction_clan_four
+							leads_faction = faction_clan_five
+						}
+						dynasty = ROOT
+					}
+				}
+			}
+
+			always = no
+		}
+	}
+
+	# Target scope
+	allow = {
+		trigger_if = {
+			limit = {
+				NOR = {
+					leads_faction = faction_clan_one
+					leads_faction = faction_clan_two
+					leads_faction = faction_clan_three
+					leads_faction = faction_clan_four
+					leads_faction = faction_clan_five
+				}
+			}
+
+			liege = {
+				trigger_if = {
+					limit = {
+						calc_true_if = {						# Has 4 clan faction already
+							amount >= 4
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = KING				# Emperor
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 3 clan faction already
+							amount >= 3
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = DUKE				# King or above
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 2 clan factions already
+							amount >= 2
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						higher_real_tier_than = DUKE
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has a clan faction already
+							amount >= 1
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						AND = {									# A Human Duke
+							ai = no
+							higher_real_tier_than = COUNT
+						}
+						higher_real_tier_than = DUKE			# King or above
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# A clan faction at least has to be in a duchy
+							amount >= 0
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = COUNT				# Duke or above
+				}
+			}
+
+			trigger_if = {
+				limit = { ai = no }
+
+				always = no # Human player had the clan faction formed via events
+			}
+		}
+	}
+
+	# Faction member scope
+	# ROOT is joiner
+	# FROM is target
+	allow_join = {
+		ROOT = {
+			is_ruler = yes
+			#is_adult = yes
+			age >= 12
+			independent = no
+			#prisoner = no
+			#is_incapable = no
+			has_clan_culture = yes # altaic, arabic, dravidian_group, indo_aryan_group, persian, kurdish, afghan, baloch # TODO: chinese_group, other iranian?, japanese_group?
+		}
+
+		FROM = {
+			# In-law Clan model
+			trigger_if = {
+				limit = {
+					OR = {
+						AND = {
+							culture_group = chinese_group
+
+							# Chinese clan originated in mid 11th century, as a means to unite and protect the family's interests in the imperial examination.
+							# and it survived only in southern China due to Jurchens/Mongols overrun northern China from the 12th century
+							# to the mid 14th century. By the time the northern chinese has no longer practice this kind of kinship.
+							# has_dynasty_flag = lineage_established # Dirty-and-quick unlock this flag with year >= 1100
+						}
+						culture_group = dravidian_group # Taking wives in Kerala as an example, wives are considered to be full members of their husbands' clans.
+					}
+				}
+
+				OR = {
+					any_close_relative = {
+						trigger_if = {
+							limit = {											# This applies to all but your lineage
+								NOT = { is_ancestor_of = ROOT_FROM }
+							}
+							dynasty = ROOT_FROM									# In the same dynasty,
+						}
+						OR = {
+							character = ROOT									# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+							any_close_relative = {
+								trigger_if = {
+									limit = {									# This applies to all but your lineage
+										NOT = { is_ancestor_of = ROOT_FROM }
+									}
+									dynasty = ROOT_FROM							# In the same dynasty,
+								}
+								character = ROOT								# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+							}
+						}
+					}
+
+					# It's possible to become a member of a clan by marriage or adoption in this clan system
+					# Chinese: A chinese wife prepended her husband's surname to hers. So she becomes a clan member of her husband.
+					# Ocassionally a chinese husband prepended her wife's surname to his, if married matrilineally. But it's really rare in a patriarchal mainstream society.
+
+					spouse = {
+						character = ROOT										# Your primary spouse
+						trigger_if = {
+							limit = { is_female = no }							# If he is a male,
+							is_married_matrilineally = yes						# he must be married matrilineally
+						}
+						trigger_else = {										# Else...
+							ROOT_FROM = { is_married_matrilineally = no	}		# You mustn't be married matrilineally
+						}
+					}
+				}
+			}
+
+			# Pragmatic Clan model
+
+			# In principle, one has to be born into a tribe, but Afghan pragmatism allows exceptions.
+			# If such outsiders...
+			# succeed to intermarry with the tribe. they may be accepted as members after a generation or two.
+			# The Pashtun Tribal System, https://www.nps.edu/documents/105988371/107571254/glatzer_pashtun_tribal_system.pdf/b0004d32-a1c2-4ade-94b5-a0d54d1b08b9
+			trigger_else_if = {
+				limit = {
+					culture = afghan # a.k.a. Pashtun
+				}
+
+				any_close_relative = {
+					trigger_if = {
+						limit = {												# This applies to all but your lineage
+							NOT = { is_ancestor_of = ROOT_FROM }
+						}
+						dynasty = ROOT_FROM										# In the same dynasty,
+					}
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							trigger_if = {
+								limit = {										# This applies to all but your lineage
+									NOT = { is_ancestor_of = ROOT_FROM }
+								}
+								dynasty = ROOT									# In the same dynasty,
+							}
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+
+			# Generic patrilineal/matrilineal Clan model
+
+			# In a patriarchal clan system, the wife NEVER joins the husband’s clan.
+			# Even in marriage she always remains a member of her clan. She doesn’t take her husband’s name.
+			# And if something goes wrong in the marriage, she returns to her family clan where she is still a member.
+			# Islams patriarchal clan system, https://missionexus.org/islams-patriarchal-clan-system/
+
+			# Among the subcaste kin, we should also include those related to a person
+			# through marriage. Here, generally a person’s kin through mother are called
+			# uterine kin and those through spouse are known as affinal kin. These relatives
+			# are not members of one’s family or lineage or clan. They are expected to
+			# help and support each other and, actually do so when an occasion arises for
+			# such an action. While a person belongs to only one lineage, one clan or one
+			# subcaste, he would always have a string of relatives who do not belong to his
+			# lineage/clan/subcaste.
+			# Kinship System in North India, https://msbrijuniversity.ac.in/assets/uploads/newsupdate/Unit-8.pdf
+
+			# Since endogamy is practiced among Iranians(Xwedodah) and Arabians(bint al-'amm), uterine kins are likely your clan members already.
+			trigger_else = {
+				any_close_relative = {
+					dynasty = ROOT_FROM											# In the same dynasty,
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							dynasty = ROOT_FROM									# In the same dynasty,
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# AI creation weight
+	# ROOT is faction creator
+	chance = {
+		factor = 4
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 2 }
+		}
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 4 }
+		}
+
+		mult_modifier = {
+			factor = 0.5
+
+			NOT = { among_most_powerful_vassals = 6 }
+		}
+	}
+
+	# AI membership weight
+	# ROOT is the prospective member
+	# FROM is the faction leader
+	# FROMFROM is the target title or character
+	membership = {
+		factor = 1000
+
+		trigger = {
+			in_seclusion = no
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				trait = zealous
+				government = theocracy_government
+			}
+			FROM = { excommunicated_for = ROOT }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			FROM = { is_any_kinslayer_trigger = yes }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				is_rival = FROM
+				persistent_event_target:antagonize_target = { character = FROM }
+			}
+		}
+	}
+
+	success = {
+		always = no
+	}
+
+	effect = {
+	}
+
+	abort = {
+		always = no	# Factions will abort if the Potential or Allow trigger is no longer valid
+	}
+
+	abort_effect = {
+	}
+}
+
+faction_clan_five = {
+	type = character
+	cancel_on_leader_death = yes # The faction will not automatically continue under a new leader
+
+	# Plotter scope
+	potential = {
+		#among_most_powerful_vassals = 6
+		#is_powerful_vassal = yes
+		is_landed = yes
+		higher_real_tier_than = BARON
+		#is_adult = yes
+		age >= 12
+		independent = no
+		#prisoner = no
+		#is_incapable = no
+		NOT = { trait = bastard }
+		OR = {
+			government = clan_government
+			government = patrimonial_government
+			trigger_if = {
+				limit = {
+					has_clan_culture = yes
+				}
+				government = tribal_government
+			}
+		}
+
+		NOR = {
+			leads_faction = faction_clan_one
+			leads_faction = faction_clan_two
+			leads_faction = faction_clan_three
+			leads_faction = faction_clan_four
+			#leads_faction = faction_clan_five
+		}
+
+		liege = {
+			NOT = { dynasty = ROOT }
+		}
+
+		# No duplicated dynasty clan factions if there was one
+		trigger_if = {
+			limit = {
+				liege = {
+					any_vassal = {
+						OR = {
+							leads_faction = faction_clan_one
+							leads_faction = faction_clan_two
+							leads_faction = faction_clan_three
+							leads_faction = faction_clan_four
+							#leads_faction = faction_clan_five
+						}
+						dynasty = ROOT
+					}
+				}
+			}
+
+			always = no
+		}
+	}
+
+	# Target scope
+	allow = {
+		trigger_if = {
+			limit = {
+				NOR = {
+					leads_faction = faction_clan_one
+					leads_faction = faction_clan_two
+					leads_faction = faction_clan_three
+					leads_faction = faction_clan_four
+					leads_faction = faction_clan_five
+				}
+			}
+
+			liege = {
+				trigger_if = {
+					limit = {
+						calc_true_if = {						# Has 4 clan faction already
+							amount >= 4
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = KING				# Emperor
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 3 clan faction already
+							amount >= 3
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = DUKE				# King or above
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has 2 clan factions already
+							amount >= 2
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						higher_real_tier_than = DUKE
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# Has a clan faction already
+							amount >= 1
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					OR = {
+						AND = {
+							real_tier = DUKE
+							any_demesne_title = {				# A Grand Duke
+								is_primary_holder_title = no
+								is_primary_holder_title_tier = yes
+							}
+						}
+						AND = {									# A Human Duke
+							ai = no
+							higher_real_tier_than = COUNT
+						}
+						higher_real_tier_than = DUKE			# King or above
+					}
+				}
+				trigger_else_if = {
+					limit = {
+						calc_true_if = {						# A clan faction at least has to be in a duchy
+							amount >= 0
+
+							faction_exists = { faction = faction_clan_one }
+							faction_exists = { faction = faction_clan_two }
+							faction_exists = { faction = faction_clan_three }
+							faction_exists = { faction = faction_clan_four }
+							faction_exists = { faction = faction_clan_five }
+						}
+					}
+
+					higher_real_tier_than = COUNT				# Duke or above
+				}
+			}
+
+			trigger_if = {
+				limit = { ai = no }
+
+				always = no # Human player had the clan faction formed via events
+			}
+		}
+	}
+
+	# Faction member scope
+	# ROOT is joiner
+	# FROM is target
+	allow_join = {
+		ROOT = {
+			is_ruler = yes
+			#is_adult = yes
+			age >= 12
+			independent = no
+			#prisoner = no
+			#is_incapable = no
+			has_clan_culture = yes # altaic, arabic, dravidian_group, indo_aryan_group, persian, kurdish, afghan, baloch # TODO: chinese_group, other iranian?, japanese_group?
+		}
+
+		FROM = {
+			# In-law Clan model
+			trigger_if = {
+				limit = {
+					OR = {
+						AND = {
+							culture_group = chinese_group
+
+							# Chinese clan originated in mid 11th century, as a means to unite and protect the family's interests in the imperial examination.
+							# and it survived only in southern China due to Jurchens/Mongols overrun northern China from the 12th century
+							# to the mid 14th century. By the time the northern chinese has no longer practice this kind of kinship.
+							# has_dynasty_flag = lineage_established # Dirty-and-quick unlock this flag with year >= 1100
+						}
+						culture_group = dravidian_group # Taking wives in Kerala as an example, wives are considered to be full members of their husbands' clans.
+					}
+				}
+
+				OR = {
+					any_close_relative = {
+						trigger_if = {
+							limit = {											# This applies to all but your lineage
+								NOT = { is_ancestor_of = ROOT_FROM }
+							}
+							dynasty = ROOT_FROM									# In the same dynasty,
+						}
+						OR = {
+							character = ROOT									# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+							any_close_relative = {
+								trigger_if = {
+									limit = {									# This applies to all but your lineage
+										NOT = { is_ancestor_of = ROOT_FROM }
+									}
+									dynasty = ROOT_FROM							# In the same dynasty,
+								}
+								character = ROOT								# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+							}
+						}
+					}
+
+					# It's possible to become a member of a clan by marriage or adoption in this clan system
+					# Chinese: A chinese wife prepended her husband's surname to hers. So she becomes a clan member of her husband.
+					# Ocassionally a chinese husband prepended her wife's surname to his, if married matrilineally. But it's really rare in a patriarchal mainstream society.
+
+					spouse = {
+						character = ROOT										# Your primary spouse
+						trigger_if = {
+							limit = { is_female = no }							# If he is a male,
+							is_married_matrilineally = yes						# he must be married matrilineally
+						}
+						trigger_else = {										# Else...
+							ROOT_FROM = { is_married_matrilineally = no	}		# You mustn't be married matrilineally
+						}
+					}
+				}
+			}
+
+			# Pragmatic Clan model
+
+			# In principle, one has to be born into a tribe, but Afghan pragmatism allows exceptions.
+			# If such outsiders...
+			# succeed to intermarry with the tribe. they may be accepted as members after a generation or two.
+			# The Pashtun Tribal System, https://www.nps.edu/documents/105988371/107571254/glatzer_pashtun_tribal_system.pdf/b0004d32-a1c2-4ade-94b5-a0d54d1b08b9
+			trigger_else_if = {
+				limit = {
+					culture = afghan # a.k.a. Pashtun
+				}
+
+				any_close_relative = {
+					trigger_if = {
+						limit = {												# This applies to all but your lineage
+							NOT = { is_ancestor_of = ROOT_FROM }
+						}
+						dynasty = ROOT_FROM										# In the same dynasty,
+					}
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							trigger_if = {
+								limit = {										# This applies to all but your lineage
+									NOT = { is_ancestor_of = ROOT_FROM }
+								}
+								dynasty = ROOT									# In the same dynasty,
+							}
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+
+			# Generic patrilineal/matrilineal Clan model
+
+			# In a patriarchal clan system, the wife NEVER joins the husband’s clan.
+			# Even in marriage she always remains a member of her clan. She doesn’t take her husband’s name.
+			# And if something goes wrong in the marriage, she returns to her family clan where she is still a member.
+			# Islams patriarchal clan system, https://missionexus.org/islams-patriarchal-clan-system/
+
+			# Among the subcaste kin, we should also include those related to a person
+			# through marriage. Here, generally a person’s kin through mother are called
+			# uterine kin and those through spouse are known as affinal kin. These relatives
+			# are not members of one’s family or lineage or clan. They are expected to
+			# help and support each other and, actually do so when an occasion arises for
+			# such an action. While a person belongs to only one lineage, one clan or one
+			# subcaste, he would always have a string of relatives who do not belong to his
+			# lineage/clan/subcaste.
+			# Kinship System in North India, https://msbrijuniversity.ac.in/assets/uploads/newsupdate/Unit-8.pdf
+
+			# Since endogamy is practiced among Iranians(Xwedodah) and Arabians(bint al-'amm), uterine kins are likely your clan members already.
+			trigger_else = {
+				any_close_relative = {
+					dynasty = ROOT_FROM											# In the same dynasty,
+					OR = {
+						character = ROOT										# Your siblings, children, grandchildren, parents, grandparents, piblings and niblings...
+						any_close_relative = {
+							dynasty = ROOT_FROM									# In the same dynasty,
+							character = ROOT									# and their siblings, children, grandchildren, parents, grandparents, piblings and niblings
+						}
+					}
+				}
+			}
+		}
+	}
+
+	# AI creation weight
+	# ROOT is faction creator
+	chance = {
+		factor = 4
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 2 }
+		}
+
+		mult_modifier = {
+			factor = 0.75
+
+			NOT = { among_most_powerful_vassals = 4 }
+		}
+
+		mult_modifier = {
+			factor = 0.5
+
+			NOT = { among_most_powerful_vassals = 6 }
+		}
+	}
+
+	# AI membership weight
+	# ROOT is the prospective member
+	# FROM is the faction leader
+	# FROMFROM is the target title or character
+	membership = {
+		factor = 1000
+
+		trigger = {
+			in_seclusion = no
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				trait = zealous
+				government = theocracy_government
+			}
+			FROM = { excommunicated_for = ROOT }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			FROM = { is_any_kinslayer_trigger = yes }
+		}
+
+		mult_modifier = {
+			factor = 0.025
+
+			OR = {
+				is_rival = FROM
+				persistent_event_target:antagonize_target = { character = FROM }
+			}
+		}
+	}
+
+	success = {
+		always = no
+	}
+
+	effect = {
+	}
+
+	abort = {
+		always = no	# Factions will abort if the Potential or Allow trigger is no longer valid
+	}
+
+	abort_effect = {
+	}
+}

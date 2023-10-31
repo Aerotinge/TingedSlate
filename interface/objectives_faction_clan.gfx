@@ -1,0 +1,42 @@
+spriteTypes = {
+	#FACTIONS
+	spriteType = {
+		name = "GFX_faction_clan_one"
+		texturefile = "gfx/ambitions/obj_forge_bloodline.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+
+	spriteType = {
+		name = "GFX_faction_clan_two"
+		texturefile = "gfx/ambitions/obj_forge_bloodline.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+
+	spriteType = {
+		name = "GFX_faction_clan_three"
+		texturefile = "gfx/ambitions/obj_forge_bloodline.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+
+	spriteType = {
+		name = "GFX_faction_clan_four"
+		texturefile = "gfx/ambitions/obj_forge_bloodline.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+
+	spriteType = {
+		name = "GFX_faction_clan_five"
+		texturefile = "gfx/ambitions/obj_forge_bloodline.dds"
+		noOfFrames = 1
+		norefcount = yes
+		effectFile = "gfx/FX/buttonstate_linear.lua"
+	}
+}
