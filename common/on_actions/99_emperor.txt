@@ -32,6 +32,12 @@ on_yearly_pulse = {
 	}
 }
 
+on_decade_pulse = {
+	events = {
+		EMP.20740 # Government Innovation spreading - passive
+	}
+}
+
 # ROOT is the owner of the winning unit
 # FROM is the taken holding title
 on_siege_over_winner = {

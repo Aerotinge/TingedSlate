@@ -1,0 +1,336 @@
+# initiate culture innovations
+character_event = {
+	id = EMP.20710
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_startup
+
+	only_playable = yes
+
+	trigger = {
+		is_multiplayer_host_character = yes
+		is_save_game = no
+	}
+
+	immediate = {
+		if = {
+			limit = { year >= 769 }
+
+			roman		= { set_flag = innovation_feudalism }
+			dalmatian	= { set_flag = innovation_feudalism }
+			frankish	= { set_flag = innovation_feudalism }
+			french		= { set_flag = innovation_feudalism }
+			dutch		= { set_flag = innovation_feudalism }
+			outremer	= { set_flag = innovation_feudalism }
+
+			bodpa		= { set_flag = innovation_lamaism }
+		}
+		
+		if = {
+			limit = { year >= 867 }
+
+			german		= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 936 }
+
+			norman		= { set_flag = innovation_feudalism }
+			english		= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1066 }
+
+			polish		= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1187 }
+
+			danish		= { set_flag = innovation_feudalism }
+			italian		= { set_flag = innovation_feudalism }
+			sardinian	= { set_flag = innovation_feudalism }
+			occitan		= { set_flag = innovation_feudalism }
+			portuguese	= { set_flag = innovation_feudalism }
+			catalan		= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1241 }
+
+			hungarian	= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1300 }
+
+			norwegian	= { set_flag = innovation_feudalism }
+			swedish		= { set_flag = innovation_feudalism }
+			basque		= { set_flag = innovation_feudalism }
+			castilian	= { set_flag = innovation_feudalism }
+			bohemian	= { set_flag = innovation_feudalism }
+		}
+
+		if = {
+			limit = { year >= 1337 }
+
+			any_province = {
+				limit = {
+					OR = {
+						culture_group = central_germanic
+						culture_group = west_germanic
+						culture_group = north_germanic
+						culture_group = celtic
+						culture_group = west_slavic
+						culture_group = latin
+						culture_group = iberian
+						culture_group = magyar
+					}
+				}
+
+				if = {
+					limit = {
+						culture_scope = {
+							NOT = { has_flag = innovation_feudalism }
+						}
+					}
+
+					set_flag = innovation_feudalism
+				}
+			}
+
+			any_province = {
+				limit = {
+					OR = {
+						culture_group = tibetan_group
+						culture = nepali
+					}
+				}
+
+				if = {
+					limit = {
+						culture_scope = {
+							NOT = { has_flag = innovation_lamaism }
+						}
+					}
+
+					set_flag = innovation_lamaism
+				}
+			}
+		}
+	}
+}
+
+# Innovation spreading - passive
+character_event = {
+	id = EMP.20740
+
+	hide_window = yes
+
+	is_triggered_only = yes # on_decade_pulse
+
+	only_playable = yes
+
+	trigger = {
+		trigger_if = {
+			limit = { government = feudal_government }
+			culture_scope = {
+				NOT = { has_flag = innovation_feudalism }
+				OR = {
+					had_flag = {
+						flag = innovation_feudalism_progressing
+						years >= 10
+					}
+					NOT = { has_flag = innovation_feudalism_progressing }
+				}
+			}
+			any_demesne_province = { culture = ROOT }
+		}
+		trigger_else_if = {
+			limit = { government = tibetan_feudal_government }
+			culture_scope = {
+				NOT = { has_flag = innovation_lamaism }
+				OR = {
+					had_flag = {
+						flag = innovation_lamaism_progressing
+						years >= 10
+					}
+					NOT = { has_flag = innovation_lamaism_progressing }
+				}
+			}
+			any_demesne_province = { culture = ROOT }
+		}
+		trigger_else = {
+			government = tibetan_feudal_government
+			culture_scope = {
+				NOT = { has_flag = innovation_lamaism }
+				OR = {
+					had_flag = {
+						flag = innovation_lamaism_progressing
+						years >= 10
+					}
+					NOT = { has_flag = innovation_lamaism_progressing }
+				}
+			}
+			any_demesne_province = { culture = ROOT }
+		}
+	}
+
+	immediate = {
+		culture_scope = {
+			set_variable = {
+				which = temp_prov_affected
+				value = 0
+			}
+			set_variable = {
+				which = temp_prov_unaffected
+				value = 1
+			}
+			any_province = {
+				limit = {
+					culture = ROOT
+					owner = { government = ROOT }
+				}
+				PREV = {
+					change_variable = {
+						which = temp_prov_affected
+						value = 1
+					}
+				}
+			}
+			any_province = {
+				limit = {
+					culture = ROOT
+					owner = {
+						NOT = { government = ROOT }
+					}
+				}
+				PREV = {
+					change_variable = {
+						which = temp_prov_unaffected
+						value = 1
+					}
+				}
+			}
+
+			divide_variable = {
+				which = temp_prov_affected
+				which = temp_prov_unaffected
+			}
+
+			log = "[Prev.GetBestName] fired EMP.20740"
+			log = "[This.GetName] jackpot ongoing..."
+
+			random_list = { # Succ
+				50 = {
+					mult_modifier = {
+						factor = 0.1
+						NOT = {
+							check_variable = {
+								which = temp_prov_affected
+								value >= 0.2
+							}
+						}
+					}
+					mult_modifier = {
+						factor = 0.25
+						NOT = {
+							check_variable = {
+								which = temp_prov_affected
+								value >= 0.5
+							}
+						}
+					}
+					mult_modifier = {
+						factor = 1.2
+						check_variable = {
+							which = temp_prov_affected
+							value >= 1
+						}
+					}
+
+					if = {
+						limit = {
+							ROOT = { government = feudal_government }
+							has_flag = innovation_feudalism_progressing
+						}
+						# Cleanup timer
+						clr_flag = innovation_feudalism_progressing
+						# Unlock innovation
+						set_flag = innovation_feudalism
+
+						# notify event
+						log = "[This.GetName] unlocked feudalism!"
+					}
+					else_if = {
+						limit = {
+							ROOT = { government = tibetan_feudal_government }
+							has_flag = innovation_lamaism_progressing
+						}
+						# Cleanup timer
+						clr_flag = innovation_lamaism_progressing
+						# Unlock innovation
+						set_flag = innovation_lamaism
+
+						# notify event
+						log = "[This.GetName] unlocked lamaism!"
+					}
+					else = { # Always failed the first shot
+						if = {
+							limit = {
+								ROOT = { government = feudal_government }
+							}
+							# Reset timer
+							clr_flag = innovation_feudalism_progressing
+							set_flag = innovation_feudalism_progressing
+						}
+						else_if = {
+							limit = {
+								ROOT = { government = tibetan_feudal_government }
+							}
+							# Reset timer
+							clr_flag = innovation_lamaism_progressing
+							set_flag = innovation_lamaism_progressing
+						}
+						log = "[This.GetName] failed from unlocking anything(first shot)"
+					}
+				}
+				100 = { # Failed
+					if = {
+						limit = {
+							ROOT = { government = feudal_government }
+						}
+						# Reset timer
+						clr_flag = innovation_feudalism_progressing
+						set_flag = innovation_feudalism_progressing
+					}
+					else_if = {
+						limit = {
+							ROOT = { government = tibetan_feudal_government }
+						}
+						# Reset timer
+						clr_flag = innovation_lamaism_progressing
+						set_flag = innovation_lamaism_progressing
+					}
+					log = "[This.GetName] failed from unlocking anything"
+				}
+			}
+		}
+	}
+
+	after = {
+		culture_scope = {
+			# Cleanup
+			set_variable = {
+				which = temp_prov_affected
+				value = 0
+			}
+			set_variable = {
+				which = temp_prov_unaffected
+				value = 0
+			}
+		}
+	}
+}
