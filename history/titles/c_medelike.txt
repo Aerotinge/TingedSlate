@@ -4,7 +4,7 @@
 }
 
 867.1.1 = {
-	liege = k_bavaria
+	liege = d_bavaria
 	holder = 260028 	# Place	holder
 }
 

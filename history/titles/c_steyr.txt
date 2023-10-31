@@ -4,13 +4,12 @@
 }
 
 867.1.1 = {
-	liege = k_bavaria
+	liege = d_bavaria
 	holder = 260026		# Place	holder
 }
 
 891.1.1 = {
 	holder = 260589
-	liege = d_bavaria
 }
 
 937.1.1 = {

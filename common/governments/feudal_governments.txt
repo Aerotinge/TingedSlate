@@ -130,9 +130,10 @@ feudal_governments = {
 					limit = { culture = german }
 
 					OR = {
-						character = c_90107		#Ludwig 'the German'
-						character = c_1282		#Otto I
-						character = c_98009		#Otto of Hungary
+						character = c_190228	# Tassilo III, Duke of Bavaria
+						character = c_90107		# Ludwig 'the German'
+						character = c_1282		# Otto I
+						character = c_98009		# Otto of Hungary
 						primary_title = {
 							any_previous_holder = {
 								government = feudal_government

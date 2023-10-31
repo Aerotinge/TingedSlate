@@ -1,5 +1,5 @@
 769.1.1 = {
-	holder = 260391
+	holder = 260390
 	liege = d_carinthia
 }
 
@@ -25,83 +25,74 @@
 }
 
 853.1.16 = {
-	holder = 167796 #Wilhelm II
+	holder = 167798 #Engelschalk I
 }
 
 871.1.1 = {
-	holder = 167797 #Megingoz
+	holder = 167799 #Poppo I
 }
 
 884.1.1 = {
-	holder = 167800 #Wilhelm III
+	holder = 167800 #Wilhelm II
 }
 
 893.1.1 = {
-	holder = 167801 #Engelschalk I
+	holder = 167801 #Engelschalk II
 }
 
 895.1.1 = {
 	holder = 7969
 }
 
-907.1.1 = {
-	holder = 10097
+900.1.1 = {
+	liege = d_carinthia
 }
 
-936.1.1 = {
-	liege = d_ungvar
-	holder = 260666
+900.1.1 = {
+	holder = 32000
 }
 
-938.1.1 = {
-	holder = 7971
+907.1.2 = {
+	holder = 32001
 }
 
-948.1.1 = {
-	holder = 1292
+930.1.2 = {
+	holder = 260633
 }
 
-955.1.1 = {
-	holder = 1294
+976.1.2 = {
+	holder = 32003
 }
 
-976.1.1 = {
-	liege = d_osterreich
+1020.5.3 = {
+	holder = 32005
 }
 
-976.1.1 = {
-	holder = 10084
+1025.5.1 = {
+	holder = 1620
 }
 
-994.1.1 = {
-	holder = 7973
+1075.3.29 = {
+	holder = 40719
 }
 
-1018.6.23 = {
-	holder = 10093
+1082.1.1 = {
+	holder = 1615
 }
 
-1055.5.26 = {
-	holder = 7200
+1122.11.28 = {
+	holder = 7677
 }
 
-1075.6.10 = {
-	holder = 212548
+1129.10.24 = {
+	holder = 7678
 }
 
-1095.10.12 = {
-	holder = 212546
+1164.12.13 = {
+	holder = 7680
 }
 
-1136.1.31 = {
-	holder = 7685
-}
-
-1141.10.18 = {
-	holder = 212540
-}
-
-1177.1.13 = {
+1192.5.8 = {
 	holder = 212530
 }
 
@@ -146,6 +137,6 @@
 }
 
 1330.2.14 = {
-	holder = 462020
+	holder = 462035
 }
 
