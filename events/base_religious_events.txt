@@ -5461,12 +5461,16 @@ narrative_event = {
 
 	trigger = {
 		higher_real_tier_than = DUKE
-		uses_decadence = yes
 		is_landed = yes
 
 		NOR = {
 			religion = shiite
-			has_global_flag = shia_caliphate_revolt_ongoing
+			any_independent_ruler = {
+				any_war = {
+					using_cb = shia_caliphate_rising
+				}
+			}
+			#has_global_flag = shia_caliphate_revolt_ongoing
 
 			has_alternate_start_parameter = {
 				key = religion_names
@@ -5477,8 +5481,6 @@ narrative_event = {
 		d_shiite = {
 			has_holder = no
 		}
-
-		decadence >= 10
 
 		any_realm_province = {
 			held_under_PREV = yes
@@ -5535,32 +5537,57 @@ narrative_event = {
 
 		mult_modifier = {
 			factor = 2
-			decadence >= 90
+			#There's no shia pretender
+			d_shiite_placeholder = {
+				NOT = {
+					any_claimant = { always = yes }
+				}
+			}
 		}
 
 		mult_modifier = {
 			factor = 0.25
-			decadence < 25
+			any_realm_province = {
+				NOT = { religion = shiite }
+			}
 		}
 
 		mult_modifier = {
 			factor = 0.5
-			year >= 1100
+			NOT = {
+				any_realm_province = {
+					count >= 1
+					religion = shiite
+				}
+			}
 		}
 
 		mult_modifier = {
 			factor = 0.5
-			year >= 1200
+			NOT = {
+				any_realm_province = {
+					count >= 3
+					religion = shiite
+				}
+			}
 		}
 
 		mult_modifier = {
 			factor = 0.5
-			year >= 1300
+			NOT = {
+				any_realm_province = {
+					count >= 5
+					religion = shiite
+				}
+			}
 		}
 
 		mult_modifier = {
 			factor = 0.25
-			year >= 1400
+			# There're other Ismaili imams already
+			d_shiite_placeholder = {
+				any_claimant = { always = yes }
+			}
 		}
 
 		mult_modifier = {
@@ -5576,9 +5603,7 @@ narrative_event = {
 
 	immediate = {
 		set_character_flag = shia_caliphate_revolt
-		set_global_flag = shia_caliphate_revolt_ongoing
-
-		decadence = -30 # Do not want to be hit with a decadence revolt as well!
+		#set_global_flag = shia_caliphate_revolt_ongoing
 
 		random_realm_province = {
 			limit = {
@@ -5603,6 +5628,10 @@ narrative_event = {
 			}
 
 			preferred_limit = {
+				religion = shiite
+			}
+
+			preferred_limit = {
 				ROOT = { is_capital = PREV }
 			}
 
@@ -5615,7 +5644,7 @@ narrative_event = {
 
 					num_title_realm_provs = {
 						who = ROOT
-						value >= 10
+						value >= 8
 					}
 				}
 			}
@@ -5630,140 +5659,292 @@ narrative_event = {
 				}
 				religion = shiite
 			}
-		}
 
-		create_character = {
-			dynasty = random
-			religion = shiite
-			culture = ROOT
-			female = no
-			age = 3
-			health = 6.5
-			fertility = 0.6
-			flag = shia_caliphate_pretender
+			create_random_priest = {
+				dynasty = random
+				religion = shiite
+				culture = THIS
+				female = no
+				health = 6.5
+				fertility = 0.6
+				age = 23
+				flag = shia_caliphate_pretender
 
-			attributes = {
-				learning = 1
-				diplomacy = 2
-				martial = 1
-				stewardship = 1
-				intrigue = 1
+				#add_trait = sayyid
+				add_trait = quick
+				add_trait = attractive
 			}
 
-			add_trait = sayyid
-			add_trait = quick
-			add_trait = attractive
-		}
+			new_character = {
+				save_event_target_as = shia_caliphate_pretender
 
-		new_character = {
-			save_event_target_as = shia_caliphate_pretender
+				random_list = {
+					1 = { }
+					1 = { add_age = 1 }
+					1 = { add_age = 2 }
+					1 = { add_age = 3 }
+					1 = { add_age = 4 }
+					1 = { add_age = 5 }
+					1 = { add_age = 6 }
+					1 = { add_age = 7 }
+					1 = { add_age = 8 }
+					1 = { add_age = 9 }
+				}
 
-			if = {
-				limit = { ROOT = { ai = yes } }
-				wealth = 1000
-			}
-			else = {
-				wealth = 250
-			}
+				create_title = {
+					tier = DUKE
+					landless = yes
+					temporary = yes
+					culture = THIS
+					name = SHIA_CALIPHATE_REVOLT
+					holder = THIS
+				}
 
-			create_title = {
-				tier = DUKE
-				landless = yes
-				temporary = yes
-				culture = ROOT
-				name = SHIA_CALIPHATE_REVOLT
-				holder = THIS
-			}
+				create_random_priest = {
+					dynasty = THIS
+					religion = shiite
+					culture = THIS
+					female = no
+					health = 2
+					age = 50
+				}
 
-			while = {
-				count = 6
+				new_character = {
+					event_target:shia_caliphate_pretender = {
+						set_father = PREV
 
-				if = {
-					limit = { ROOT = { ai = yes } }
-
-					spawn_unit = {
-						province = event_target:spawn_province
-						home = event_target:spawn_province
-						owner = THIS
-						match_character = ROOT
-						match_mult = 0.25
-						attrition = 0.5
-						cannot_inherit = yes
-						reinforces = yes
-						reinforce_rate_multiplier = 0.33
+						d_shiite = {
+							if = {
+								limit = {
+									persistent_event_target:1st_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:1st_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:2nd_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:2nd_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:3rd_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:3rd_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:4th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:4th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:5th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:5th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:6th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:6th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:7th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:7th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:8th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:8th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:9th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:9th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:10th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:10th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:11th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:11th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+							else_if = {
+								limit = {
+									persistent_event_target:12th_imam = {
+										could_be_parent_of = PREVPREV
+										is_alive = no
+									}
+								}
+								persistent_event_target:12th_imam = {
+									save_event_target_as = cloistered_lineage_fork
+								}
+							}
+						}
 					}
 				}
-				else = {
+
+				save_persistent_event_target = {
+					name = my_grandpa_a_mahdi
+					scope = event_target:cloistered_lineage_fork
+				}
+
+				while = {
+					count = 6
+
+					if = {
+						limit = { ROOT = { ai = yes } }
+
+						spawn_unit = {
+							province = event_target:spawn_province
+							home = event_target:spawn_province
+							owner = THIS
+							match_character = ROOT
+							match_mult = 0.25
+							attrition = 0.5
+							cannot_inherit = yes
+							reinforces = yes
+							reinforce_rate_multiplier = 0.33
+						}
+					}
+					else = {
+						spawn_unit = {
+							province = event_target:spawn_province
+							home = event_target:spawn_province
+							owner = THIS
+							match_character = ROOT
+							match_mult = 0.15
+							attrition = 0.5
+							cannot_inherit = yes
+							reinforces = yes
+							reinforce_rate_multiplier = 0.25
+						}
+					}
+				}
+
+				while = {
+					count = 3
+
 					spawn_unit = {
 						province = event_target:spawn_province
 						home = event_target:spawn_province
 						owner = THIS
 						match_character = ROOT
-						match_mult = 0.15
-						attrition = 0.5
+						match_mult = 0.2
+						attrition = 0.0
 						cannot_inherit = yes
+						disband_on_peace = yes
 						reinforces = yes
 						reinforce_rate_multiplier = 0.25
 					}
 				}
-			}
 
-			while = {
-				count = 3
+				while = {
+					count = 9
 
-				spawn_unit = {
-					province = event_target:spawn_province
-					home = event_target:spawn_province
-					owner = THIS
-					match_character = ROOT
-					match_mult = 0.2
-					attrition = 0.0
-					cannot_inherit = yes
-					disband_on_peace = yes
-					reinforces = yes
-					reinforce_rate_multiplier = 0.25
-				}
-			}
-
-			while = {
-				count = 9
-
-				create_random_soldier = {
-					random_traits = yes
-					dynasty = none
-					religion = THIS
-					culture = THIS
-					female = no
-					age = 23
-				}
-
-				new_character = {
-					clear_education_trait = yes
-
-					random_list = {
-						67 = { add_trait = skilled_tactician }
-						33 = { add_trait = brilliant_strategist }
+					create_random_soldier = {
+						random_traits = yes
+						dynasty = none
+						religion = THIS
+						culture = THIS
+						female = no
+						age = 23
 					}
 
-					random_list = {
-						1 = { }
-						1 = { add_age = 1 }
-						1 = { add_age = 2 }
-						1 = { add_age = 3 }
-						1 = { add_age = 4 }
-						1 = { add_age = 5 }
-						1 = { add_age = 6 }
-						1 = { add_age = 7 }
-						1 = { add_age = 8 }
-						1 = { add_age = 9 }
+					new_character = {
+						clear_education_trait = yes
+
+						random_list = {
+							67 = { add_trait = skilled_tactician }
+							33 = { add_trait = brilliant_strategist }
+						}
+
+						random_list = {
+							1 = { }
+							1 = { add_age = 1 }
+							1 = { add_age = 2 }
+							1 = { add_age = 3 }
+							1 = { add_age = 4 }
+							1 = { add_age = 5 }
+							1 = { add_age = 6 }
+							1 = { add_age = 7 }
+							1 = { add_age = 8 }
+							1 = { add_age = 9 }
+						}
 					}
 				}
-			}
 
-			war = {
-				target = ROOT
-				casus_belli = shia_caliphate_rising
-				thirdparty_title = event_target:spawn_kingdom
+				war = {
+					target = ROOT
+					casus_belli = shia_caliphate_rising
+					thirdparty_title = event_target:spawn_kingdom
+				}
 			}
 		}
 	}
