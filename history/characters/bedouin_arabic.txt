@@ -6685,7 +6685,7 @@
 	848.5.1 = {
 		effect = {
 			imprison = 34014
-			add_character_modifier = { 
+			add_character_modifier = {
 				name = house_arrest
 				duration = -1
 			}

@@ -482,15 +482,15 @@ d_shiite_placeholder = {
 
 	dignity = 100 # Counted as having this many more counties than it does
 
-	title = CALIPH
-	title_female = CALIPHA
+	title = IMAM
+	title_female = IMAM
 	foa = CALIPH_FOA
 	short_name = yes
 	location_ruler_title = yes
 
 	religion = shiite
 
-	allow = { always = no}
+	allow = { always = no }
 
 	caliphate = yes
 

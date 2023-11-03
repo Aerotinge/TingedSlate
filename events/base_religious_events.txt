@@ -5478,8 +5478,24 @@ narrative_event = {
 			}
 		}
 
-		d_shiite = {
-			has_holder = no
+		d_shiite_placeholder = {
+			NOT = {
+				any_claimant = { count = 3 }
+			}
+		}
+
+		any_bloodline = {
+			has_bloodline_flag = bloodline_shiite_leader
+
+			any_bloodline_member = {
+				father_even_if_dead = {
+					is_alive = no
+					father_even_if_dead = {
+						religion = shiite
+						is_alive = no
+					}
+				}
+			}
 		}
 
 		any_realm_province = {
@@ -5514,30 +5530,6 @@ narrative_event = {
 		mult_modifier = {
 			factor = 4
 
-			OR = {
-				c_cairo = {
-					holder_scope = {
-						same_realm = ROOT
-					}
-				}
-
-				c_damascus = {
-					holder_scope = {
-						same_realm = ROOT
-					}
-				}
-
-				c_tunis = {
-					holder_scope = {
-						same_realm = ROOT
-					}
-				}
-			}
-		}
-
-		mult_modifier = {
-			factor = 2
-			#There's no shia pretender
 			d_shiite_placeholder = {
 				NOT = {
 					any_claimant = { always = yes }
@@ -5583,16 +5575,42 @@ narrative_event = {
 		}
 
 		mult_modifier = {
-			factor = 0.25
-			# There're other Ismaili imams already
+			factor = 0.5
+			NOT = { religion = sunni }
+		}
+
+		mult_modifier = {
+			factor = 0.5
 			d_shiite_placeholder = {
-				any_claimant = { always = yes }
+				any_claimant = { # Historical Shi'a Imamates
+					NOR = {
+						dynasty = 576 # Rassid
+						dynasty = 589 # Fatimid
+						dynasty = 7505 # Hatimi
+					}
+				}
 			}
 		}
 
 		mult_modifier = {
 			factor = 0.5
-			NOT = { religion = sunni }
+			d_shiite_placeholder = {
+				any_claimant = { # Zaydi
+					dynasty = 576 # Rassid
+				}
+			}
+		}
+
+		mult_modifier = {
+			factor = 0.25
+			d_shiite_placeholder = {
+				any_claimant = { # Isma'ili
+					OR = {
+						dynasty = 589 # Fatimid
+						dynasty = 7505 # Hatimi
+					}
+				}
+			}
 		}
 
 		mult_modifier = {
@@ -5660,19 +5678,15 @@ narrative_event = {
 				religion = shiite
 			}
 
-			create_random_priest = {
-				dynasty = random
+			create_character = {
+				dynasty = 0
 				religion = shiite
 				culture = THIS
 				female = no
 				health = 6.5
 				fertility = 0.6
-				age = 23
+				age = 9
 				flag = shia_caliphate_pretender
-
-				#add_trait = sayyid
-				add_trait = quick
-				add_trait = attractive
 			}
 
 			new_character = {
@@ -5686,10 +5700,14 @@ narrative_event = {
 					1 = { add_age = 4 }
 					1 = { add_age = 5 }
 					1 = { add_age = 6 }
-					1 = { add_age = 7 }
-					1 = { add_age = 8 }
-					1 = { add_age = 9 }
 				}
+
+				remove_all_negative_congenital_traits_effect = yes
+				clear_education_trait = yes
+
+				add_trait = mastermind_theologian
+				add_trait = quick
+				add_trait = attractive
 
 				create_title = {
 					tier = DUKE
@@ -5700,159 +5718,31 @@ narrative_event = {
 					holder = THIS
 				}
 
-				create_random_priest = {
-					dynasty = THIS
+				create_character = {
+					random_traits = yes
+					dynasty = random
 					religion = shiite
 					culture = THIS
 					female = no
 					health = 2
-					age = 50
+					age = 31 # 9+16+6
 				}
 
 				new_character = {
 					event_target:shia_caliphate_pretender = {
 						set_father = PREV
-
-						d_shiite = {
-							if = {
-								limit = {
-									persistent_event_target:1st_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:1st_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:2nd_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:2nd_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:3rd_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:3rd_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:4th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:4th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:5th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:5th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:6th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:6th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:7th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:7th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:8th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:8th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:9th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:9th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:10th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:10th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:11th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:11th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
-							}
-							else_if = {
-								limit = {
-									persistent_event_target:12th_imam = {
-										could_be_parent_of = PREVPREV
-										is_alive = no
-									}
-								}
-								persistent_event_target:12th_imam = {
-									save_event_target_as = cloistered_lineage_fork
-								}
+						dynasty = PREV
+					}
+					character_event = { id = 39641 } # Aging this character and find him a possible Alids lineage
+					persistent_event_target:parent_candidate = { # If 39641 returns a valid parent_candidate
+						event_target:shia_caliphate_pretender = {
+							save_persistent_event_target = {
+								name = my_grandpa_a_mahdi
+								scope = PREV
 							}
 						}
 					}
-				}
-
-				save_persistent_event_target = {
-					name = my_grandpa_a_mahdi
-					scope = event_target:cloistered_lineage_fork
+					clear_persistent_event_target = parent_candidate
 				}
 
 				while = {
@@ -5978,6 +5868,256 @@ narrative_event = {
 
 		trigger = {
 			NOT = { has_character_flag = shia_caliphate_revolt }
+		}
+	}
+}
+
+character_event = {
+	id = 39641
+
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		d_shiite = {
+			#It's unlikely to be a child of the first three Imams even in a 769 start
+			#persistent_event_target:1st_imam = {
+			#	ROOT = {
+			#		save_persistent_event_target = {
+			#			name = parent_candidate
+			#			scope = PREV
+			#		}
+			#	}
+			#}
+			#persistent_event_target:2nd_imam = {
+			#	ROOT = {
+			#		save_persistent_event_target = {
+			#			name = parent_candidate
+			#			scope = PREV
+			#		}
+			#	}
+			#}
+			#persistent_event_target:3rd_imam = {
+			#	ROOT = {
+			#		save_persistent_event_target = {
+			#			name = parent_candidate
+			#			scope = PREV
+			#		}
+			#	}
+			#}
+			persistent_event_target:4th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			persistent_event_target:5th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			persistent_event_target:6th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			persistent_event_target:7th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			persistent_event_target:8th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			persistent_event_target:9th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			persistent_event_target:10th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			persistent_event_target:11th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			persistent_event_target:12th_imam = {
+				ROOT = {
+					save_persistent_event_target = {
+						name = parent_candidate
+						scope = PREV
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+			}
+
+			# Fallback
+			any_bloodline = {
+				limit = {
+					has_bloodline_flag = bloodline_shiite_leader
+
+					any_bloodline_member = {
+						father_even_if_dead = {
+							is_alive = no
+							father_even_if_dead = {
+								religion = shiite
+								is_alive = no
+							}
+						}
+					}
+				}
+				any_bloodline_member = {
+					father_even_if_dead = {
+						father_even_if_dead = {
+							ROOT = {
+								save_persistent_event_target = {
+									name = parent_candidate
+									scope = PREV
+								}
+							}
+						}
+					}
+				}
+			}
+			ROOT = {
+				attempt_aging_THIS = yes
+
+				if = {
+					limit = {
+						persistent_event_target:parent_candidate = { always = yes }
+					}
+					break = yes
+				}
+				else = {
+					log = "Exception: 39641 can't find any descendant of Ali"
+					log = "Mu'awiya wins"
+				}
+			}
 		}
 	}
 }

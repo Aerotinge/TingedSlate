@@ -1334,14 +1334,40 @@ shia_caliphate_rising = {
 				add_trait = sayyid
 				father_even_if_dead = {
 					add_trait = sayyid
+
+					create_character = {
+						dynasty = THIS
+						religion = shiite
+						culture = THIS
+						female = no
+						age = 0
+					}
+					new_character = {
+						set_father = PREV
+						random_list = {
+							1 = { }
+							1 = { add_age = 1 }
+							1 = { add_age = 2 }
+							1 = { add_age = 3 }
+							1 = { add_age = 4 }
+							1 = { add_age = 5 }
+							1 = { add_age = 6 }
+							1 = { add_age = 7 }
+							1 = { add_age = 8 }
+							1 = { add_age = 9 }
+						}
+					}
 				}
 				if = {
 					limit = {
 						persistent_event_target:my_grandpa_a_mahdi = { always = yes }
 					}
-					persistent_event_target:my_grandpa_a_mahdi = { save_event_target_as = my_father_a_mahdi }
-					father_even_if_dead = {
-						set_father = event_target:my_father_a_mahdi
+					persistent_event_target:my_grandpa_a_mahdi = {
+						attacker = {
+							father_even_if_dead = {
+								set_father = PREVPREV
+							}
+						}
 					}
 					clear_persistent_event_target = my_grandpa_a_mahdi
 				}

@@ -1,0 +1,236 @@
+# could_be_child_of, could_be_parent_of is partly broken
+# And I need a function that determinted how many ages a character should be to be a child of historical dead character
+# if can_add_up_age_max returns a value >= 0, it is possible that THIS could be parent of event_target:child_candidate
+attempt_aging_THIS = {
+	if = {
+		limit = {
+			persistent_event_target:parent_candidate = { 
+				NOT = { age = 16 }
+			}
+		}
+
+		clear_persistent_event_target = parent_candidate
+	}
+	else = {
+		export_to_variable = {
+			which = birth_y					# e.g 765
+			value = year_of_birth
+			who = persistent_event_target:parent_candidate
+		}
+		change_variable = {
+			which = birth_y					# 781
+			value = 16
+		}
+
+		if = {
+			limit = {
+				persistent_event_target:parent_candidate = {
+					is_female = yes
+					age = 45
+				}
+			}
+			set_variable = {
+				which = death_y
+				value = 45
+			}
+		}
+		else = {
+			export_to_variable = {
+				which = death_y				# e.g 53
+				value = age
+				who = persistent_event_target:parent_candidate
+			}
+		}
+
+		change_variable = {
+			which = death_y					# e.g 818
+			which = birth_y
+		}
+		log = "[parent_candidate.GetBestName] is capable of having a child after [This.birth_y.GetValue]"
+		log = "[parent_candidate.GetBestName] is incapable of having a child after [This.death_y.GetValue]"
+
+		export_to_variable = {
+			which = birth_diff_max			# e.g 867
+			value = year_of_birth
+		}
+
+		subtract_variable = {
+			which = birth_diff_max			# e.g 86, the max possible
+			which = birth_y
+		}
+
+		export_to_variable = {
+			which = birth_diff_min			# e.g 867
+			value = year_of_birth
+		}
+
+		subtract_variable = {
+			which = birth_diff_min			# e.g 49, the min possible diff between ROOT and parent_candidate
+			which = death_y
+		}
+
+		if = {
+			limit = {
+				OR = {
+					NOT = {
+						check_variable = {
+							which = birth_diff_min
+							value = 1
+						}
+					}
+					check_variable = {
+						which = birth_diff_max
+						value = 60
+					}
+				}
+			}
+
+			set_variable = {
+				which = birth_diff_max
+				value = 0
+			}
+			set_variable = {
+				which = birth_diff_min
+				value = 0
+			}
+			log = "There can't be child:[This.GetBestName] and parent:[parent_candidate.GetBestName]"
+			clear_persistent_event_target = parent_candidate
+		}
+		else = {
+			log = "There're potential child:[This.GetBestName] and parent:[parent_candidate.GetBestName]"
+			log = "[This.GetBestName] can be between [This.birth_diff_min.GetValue] and [This.birth_diff_max.GetValue] age"
+
+			set_variable = {
+				which = birth_y
+				value = 0
+			}
+			set_variable = {
+				which = death_y
+				value = 0
+			}
+
+			log = "Aging [This.GetBestName]"
+			if = {
+				limit = {
+					check_variable = {
+						which = birth_diff_min
+						value = 1
+					}
+				}
+
+				subtract_variable = {
+					which = birth_diff_max
+					which = birth_diff_min
+				}
+				while = {
+					limit = {
+						check_variable = {
+							which = birth_diff_min
+							value = 1
+						}
+					}
+
+					add_age = 1
+					subtract_variable = {
+						which = birth_diff_min
+						value = 1
+					}
+				}
+				while = {
+					limit = {
+						NOT = { age = 60 }
+						check_variable = {
+							which = birth_diff_max
+							value = 2
+						}
+					}
+
+					random_list = {
+						2 = {}
+						3 = { add_age = 1 }
+						1 = { add_age = 2 }
+					}
+					subtract_variable = {
+						which = birth_diff_max
+						value = 2
+					}
+				}
+			}
+		}
+	}
+}
+
+# could_be_child_of, could_be_parent_of is partly broken
+check_parent_of_THIS = {
+	if = {
+		limit = {
+			persistent_event_target:parent_candidate = { 
+				NOT = { age = 16 }
+			}
+		}
+
+		clear_persistent_event_target = parent_candidate
+	}
+	else = {
+		export_to_variable = {
+			which = birth_after_y_min					# 765
+			value = year_of_birth
+			who = persistent_event_target:parent_candidate
+		}
+		log = "[parent_candidate.GetBestName] born in [This.birth_after_y_min.GetValue]"
+
+		export_to_variable = {
+			which = birth_after_y_max
+			value = age									# 55
+			who = persistent_event_target:parent_candidate
+		}
+
+		if = {
+			limit = {
+				persistent_event_target:parent_candidate = {
+					is_female = yes
+					age = 45
+				}
+			}
+			set_variable = {
+				which = birth_after_y_max
+				value = 45
+			}
+		}
+
+		change_variable = {
+			which = birth_after_y_max					# 820
+			which = birth_after_y_min
+		}
+
+		change_variable = {
+			which = birth_after_y_min					# 781
+			value = 16
+		}
+		log = "[parent_candidate.GetBestName] is capable of having a child after [This.birth_after_y_min.GetValue]"
+		log = "[parent_candidate.GetBestName] is incapable of having a child after [This.birth_after_y_max.GetValue]"
+
+		if = {
+			limit = {
+				OR = {
+					check_variable = {
+						which = birth_after_y_min		# 781
+						value = year_of_birth			# 813
+					}
+					NOT = {
+						check_variable = {
+							which = birth_after_y_max		# 820
+							value = year_of_birth			# 813
+						}
+					}
+				}
+			}
+
+			log = "There can't be child:[This.GetBestName] and parent:[parent_candidate.GetBestName]"
+			clear_persistent_event_target = parent_candidate
+		}
+		else = {
+			log = "There're potential child:[This.GetBestName] and parent:[parent_candidate.GetBestName]"
+		}
+	}
+}

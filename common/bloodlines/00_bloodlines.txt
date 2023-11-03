@@ -1,0 +1,11 @@
+fatimid = {
+	bloodline_effect_great_heroes_appear = 1
+	bloodline_effect_shiite_leader = 1
+	inheritance = patrilineal
+	allow_bastards = no
+	picture = GFX_bloodlines_placeholder_symbol_2
+	flags = { historical_bloodline bloodline_heroes bloodline_shiite_leader }
+	active = {
+		religion = shiite
+	}
+}

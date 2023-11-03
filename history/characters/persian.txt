@@ -119,6 +119,9 @@
 	1050.1.1 = {
 		birth = yes
 	}
+	1090.1.1 = {
+		#add_claim = d_shiite
+	}
 	1124.1.1 = {
 		death = yes
 	}
@@ -130,6 +133,9 @@
 	culture = persian
 	1070.1.1 = {
 		birth = yes
+	}
+	1124.1.1 = {
+		#add_claim = d_shiite
 	}
 	1138.1.1 = {
 		death = yes
@@ -143,6 +149,9 @@
 	1100.1.1 = {
 		birth = yes
 	}
+	1138.1.1 = {
+		#add_claim = d_shiite
+	}
 	1162.1.1 = {
 		death = yes
 	}
@@ -154,6 +163,9 @@
 	culture = persian
 	1130.1.1 = {
 		birth = yes
+	}
+	1192.1.1 = {
+		#add_claim = d_shiite
 	}
 	1210.1.1 = {
 		death = yes
@@ -167,6 +179,9 @@
 	1170.1.1 = {
 		birth = yes
 	}
+	1210.1.1 = {
+		#add_claim = d_shiite
+	}
 	1221.1.1 = {
 		death = yes
 	}
@@ -179,6 +194,9 @@
 	1190.1.1 = {
 		birth = yes
 	}
+	1221.1.1 = {
+		#add_claim = d_shiite
+	}
 	1255.1.1 = {
 		death = yes
 	}
@@ -190,6 +208,9 @@
 	culture = persian
 	1210.1.1 = {
 		birth = yes
+	}
+	1255.1.1 = {
+		#add_claim = d_shiite
 	}
 	1256.1.1 = {
 		death = yes
@@ -593,6 +614,9 @@
 	add_trait = skilled_tactician
 	1129.1.1 = {
 		birth = yes
+	}
+	1162.1.1 = {
+		#add_claim = d_shiite
 	}
 	1192.1.1 = {
 		death = yes
