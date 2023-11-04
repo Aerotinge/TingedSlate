@@ -2112,11 +2112,17 @@ decisions = {
 			}
 
 			capital_scope = {
-				region = world_europe_west_iberia
+				OR = {
+					region = world_europe_west_iberia
+					region = world_africa_north_west
+				}
 			}
 
-			NOR = { is_alternate_start = yes }
-			
+			NOR = {
+				has_landed_title = e_arabia
+
+				is_alternate_start = yes
+			}			
 		}
 
 		allow = {
@@ -2138,9 +2144,7 @@ decisions = {
 
 				any_demesne_title = {
 					tier = KING
-					empire = {
-						title = e_maghreb
-					}
+					empire = { title = e_maghreb }
 				}
 			}
 			trigger_else_if = {
@@ -2149,19 +2153,45 @@ decisions = {
 				}
 
 				primary_title = {
-					empire = {
-						title = e_maghreb
-					}
+					empire = { title = e_maghreb }
 				}
 
 				has_landed_title = k_andalusia
 			}
 			trigger_else = {
-				primary_title = {
-					title = e_maghreb
-				}
+				primary_title = { title = e_maghreb }
 
 				has_landed_title = k_andalusia
+			}
+
+			custom_tooltip = {
+				text = form_the_cordoba_tooltip
+
+				e_hispania = {
+					trigger_if = {
+						limit = { has_holder = yes }
+
+						holder_scope = {
+							OR = {
+								character = ROOT
+								NOT = { religion_group = muslim }
+							}
+						}
+					}
+				}
+
+				e_maghreb = {
+					trigger_if = {
+						limit = { has_holder = yes }
+
+						holder_scope = {
+							OR = {
+								character = ROOT
+								NOT = { religion_group = muslim }
+							}
+						}
+					}
+				}
 			}
 
 			trigger_if = {
@@ -2170,7 +2200,7 @@ decisions = {
 				scaled_wealth = 2
 			}
 
-			rightful_religious_head_scope = { character = THIS }
+			rightful_religious_head_scope = { character = PREV }
 		}
 
 		effect = {
@@ -2192,7 +2222,7 @@ decisions = {
 
 			if = {
 				limit = { has_nickname = no }
-				give_nickname = nick_the_sword_of_god
+				give_nickname = nick_the_great
 			}
 
 			primary_title = {
@@ -2244,7 +2274,7 @@ decisions = {
 							}
 						}
 					}
-				}				
+				}
 			}
 
 			chronicle = {
@@ -3350,18 +3380,7 @@ decisions = {
 			}
 
 			hidden_effect = {
-				if = {
-					limit = {
-						liege = {
-							culture = ROOT
-							government = seigneurial_government
-						}
-					}
-					set_government_type = seigneurial_government # If muslim? Gov overhaual v2 required
-				}
-				else = {
-					set_government_type = feudal_government # It will switch to right government type automatically
-				}
+				set_government_type = seigneurial_government # It will switch to right government type automatically
 
 				any_demesne_title = {
 					limit = {
