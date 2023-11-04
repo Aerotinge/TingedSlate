@@ -19,13 +19,13 @@ law_groups = {
 	feudal_contract = {
 		law_type = realm
 	}
+	secular_contract = {
+		law_type = realm
+	}
 	feudal_tax = {
 		law_type = realm
 	}
-	muslim_contract = {
-		law_type = realm
-	}
-	muslim_tax = {
+	secular_tax = {
 		law_type = realm
 	}
 	city_contract = {
@@ -1363,7 +1363,7 @@ laws = {
 
 			NOR = {
 				is_law_potential = feudal_contract_0
-				is_law_potential = muslim_contract_0
+				is_law_potential = secular_contract_0
 			}
 		}
 
@@ -1413,7 +1413,7 @@ laws = {
 			hidden_effect = {
 				revoke_feudal_contract_effect = yes
 				revoke_castle_contract_effect = yes
-				revoke_muslim_contract_effect = yes
+				revoke_secular_contract_effect = yes
 			}
 		}
 
@@ -1464,7 +1464,7 @@ laws = {
 				}
 			}
 
-			NOT = { is_law_potential = muslim_contract_0 }
+			NOT = { is_law_potential = secular_contract_0 }
 		}
 
 		effect = {
@@ -1515,7 +1515,7 @@ laws = {
 			hidden_effect = {
 				revoke_feudal_contract_effect = yes
 				revoke_castle_contract_effect = yes
-				revoke_muslim_contract_effect = yes
+				revoke_secular_contract_effect = yes
 			}
 		}
 
@@ -1569,13 +1569,13 @@ laws = {
 				}
 			}
 
-			NOT = { is_law_potential = muslim_tax_0 }
+			NOT = { is_law_potential = secular_tax_0 }
 		}
 
 		effect = {
 			hidden_effect = {
 				revoke_feudal_tax_effect = yes
-				revoke_muslim_tax_effect = yes
+				revoke_secular_tax_effect = yes
 			}
 		}
 
@@ -1646,11 +1646,11 @@ laws = {
 		}
 	}
 
-	# MUSLIM VASSAL LEVY SIZE LAWS
+	# SECULAR VASSAL LEVY SIZE LAWS
 	##############################
 
-	muslim_contract_0 = {
-		group = muslim_contract
+	secular_contract_0 = {
+		group = secular_contract
 
 		feudal_opinion = 5
 		temple_opinion = 5
@@ -1662,13 +1662,13 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				religion_group = muslim
+				religion_allows_temple_holders = no
 			}
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_muslim_contract_effect = yes
+				revoke_secular_contract_effect = yes
 			}
 		}
 
@@ -1677,22 +1677,22 @@ laws = {
 		}
 	}
 
-	muslim_contract_1 = {
-		group = muslim_contract
+	secular_contract_1 = {
+		group = secular_contract
 		default = yes
 
 		castle_vassal_max_levy = -0.30
 		temple_vassal_max_levy = -0.40
 
 		potential = {
-			is_law_potential = muslim_contract_0
+			is_law_potential = secular_contract_0
 		}
 
 		effect = {
 			hidden_effect = {
 				revoke_feudal_contract_effect = yes
 				revoke_castle_contract_effect = yes
-				revoke_muslim_contract_effect = yes
+				revoke_secular_contract_effect = yes
 			}
 		}
 
@@ -1701,8 +1701,8 @@ laws = {
 		}
 	}
 
-	muslim_contract_2 = {
-		group = muslim_contract
+	secular_contract_2 = {
+		group = secular_contract
 
 		feudal_opinion = -5
 		temple_opinion = -5
@@ -1710,12 +1710,12 @@ laws = {
 		temple_vassal_max_levy = -0.30
 
 		potential = {
-			is_law_potential = muslim_contract_0
+			is_law_potential = secular_contract_0
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_muslim_contract_effect = yes
+				revoke_secular_contract_effect = yes
 			}
 		}
 
@@ -1724,20 +1724,20 @@ laws = {
 		}
 	}
 
-	muslim_contract_3 = {
-		group = muslim_contract
+	secular_contract_3 = {
+		group = secular_contract
 
 		feudal_opinion = -10
 		temple_opinion = -10
 		temple_vassal_max_levy = -0.20
 
 		potential = {
-			is_law_potential = muslim_contract_0
+			is_law_potential = secular_contract_0
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_muslim_contract_effect = yes
+				revoke_secular_contract_effect = yes
 			}
 		}
 
@@ -1746,11 +1746,11 @@ laws = {
 		}
 	}
 
-	# MUSLIM VASSAL TAX SIZE LAWS
+	# SECULAR VASSAL TAX SIZE LAWS
 	##############################
 
-	muslim_tax_0 = {
-		group = muslim_tax
+	secular_tax_0 = {
+		group = secular_tax
 		default = yes
 
 		castle_vassal_tax_modifier = 0.05
@@ -1761,7 +1761,7 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				religion_group = muslim
+				religion_allows_temple_holders = no
 
 				trigger_if = {
 					limit = { is_tribal = yes }
@@ -1778,7 +1778,7 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_feudal_tax_effect = yes
-				revoke_muslim_tax_effect = yes
+				revoke_secular_tax_effect = yes
 			}
 		}
 
@@ -1787,8 +1787,8 @@ laws = {
 		}
 	}
 
-	muslim_tax_1 = {
-		group = muslim_tax
+	secular_tax_1 = {
+		group = secular_tax
 
 		feudal_opinion = -10
 		temple_opinion = -10
@@ -1796,12 +1796,12 @@ laws = {
 		temple_vassal_tax_modifier = 0.35
 
 		potential = {
-			is_law_potential = muslim_tax_0
+			is_law_potential = secular_tax_0
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_muslim_tax_effect = yes
+				revoke_secular_tax_effect = yes
 			}
 		}
 
@@ -1810,8 +1810,8 @@ laws = {
 		}
 	}
 
-	muslim_tax_2 = {
-		group = muslim_tax
+	secular_tax_2 = {
+		group = secular_tax
 
 		feudal_opinion = -20
 		temple_opinion = -20
@@ -1819,12 +1819,12 @@ laws = {
 		temple_vassal_tax_modifier = 0.45
 
 		potential = {
-			is_law_potential = muslim_tax_0
+			is_law_potential = secular_tax_0
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_muslim_tax_effect = yes
+				revoke_secular_tax_effect = yes
 			}
 		}
 
@@ -1833,8 +1833,8 @@ laws = {
 		}
 	}
 
-	muslim_tax_3 = {
-		group = muslim_tax
+	secular_tax_3 = {
+		group = secular_tax
 
 		feudal_opinion = -30
 		temple_opinion = -30
@@ -1842,12 +1842,12 @@ laws = {
 		temple_vassal_tax_modifier = 0.55
 
 		potential = {
-			is_law_potential = muslim_tax_0
+			is_law_potential = secular_tax_0
 		}
 
 		effect = {
 			hidden_effect = {
-				revoke_muslim_tax_effect = yes
+				revoke_secular_tax_effect = yes
 			}
 		}
 
@@ -2068,7 +2068,7 @@ laws = {
 				is_playable = yes
 			}
 
-			NOT = { is_law_potential = muslim_contract_0 }
+			NOT = { is_law_potential = secular_contract_0 }
 		}
 
 		effect = {
@@ -2095,7 +2095,7 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_temple_contract_effect = yes
-				revoke_muslim_contract_effect = yes
+				revoke_secular_contract_effect = yes
 			}
 		}
 
@@ -2171,7 +2171,7 @@ laws = {
 				}
 			}
 
-			NOT = { is_law_potential = muslim_tax_0 }
+			NOT = { is_law_potential = secular_tax_0 }
 		}
 
 		effect = {
@@ -2199,7 +2199,7 @@ laws = {
 		effect = {
 			hidden_effect = {
 				revoke_temple_tax_effect = yes
-				revoke_muslim_tax_effect = yes
+				revoke_secular_tax_effect = yes
 			}
 		}
 

@@ -55,18 +55,18 @@ revoke_castle_contract_effect = {
 	revoke_law = castle_contract_3
 }
 
-revoke_muslim_contract_effect = {
-	revoke_law = muslim_contract_0
-	revoke_law = muslim_contract_1
-	revoke_law = muslim_contract_2
-	revoke_law = muslim_contract_3
+revoke_secular_contract_effect = {
+	revoke_law = secular_contract_0
+	revoke_law = secular_contract_1
+	revoke_law = secular_contract_2
+	revoke_law = secular_contract_3
 }
 
-revoke_muslim_tax_effect = {
-	revoke_law = muslim_tax_0
-	revoke_law = muslim_tax_1
-	revoke_law = muslim_tax_2
-	revoke_law = muslim_tax_3
+revoke_secular_tax_effect = {
+	revoke_law = secular_tax_0
+	revoke_law = secular_tax_1
+	revoke_law = secular_tax_2
+	revoke_law = secular_tax_3
 }
 
 revoke_city_contract_effect = {

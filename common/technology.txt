@@ -686,7 +686,7 @@ TECH_GROUP_CULTURE = {
 			add_decision = feudal_tax_3
 			add_decision = city_tax_3
 			add_decision = temple_tax_3
-			add_decision = muslim_tax_3
+			add_decision = secular_tax_3
 			add_decision = tax_levy_law_feudal_0
 			add_decision = tax_levy_law_feudal_8
 			add_decision = tax_levy_law_iqta_0
@@ -701,7 +701,7 @@ TECH_GROUP_CULTURE = {
 			add_decision = feudal_contract_3
 			add_decision = city_contract_3
 			add_decision = temple_contract_3
-			add_decision = muslim_contract_3
+			add_decision = secular_contract_3
 			add_decision = castle_contract_3
 		}
 

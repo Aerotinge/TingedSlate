@@ -622,7 +622,7 @@ feudal_governments = {
 		}
 
 		frame_suffix = "_mandala"
-		color = { 183 93 64 }
+		color = { 207 145 90 }
 
 		potential = {
 			is_tributary = no
