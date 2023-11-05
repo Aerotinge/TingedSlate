@@ -15,7 +15,6 @@ feudal_governments = {
 		}
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			feudal_government
-			tibetan_feudal_government
 			thema_government
 		}
 		accepts_liege_governments_religion = {
@@ -38,7 +37,6 @@ feudal_governments = {
 				is_government_potential = clan_government
 				is_government_potential = patrimonial_government
 				is_government_potential = iqta_government
-				is_government_potential = tibetan_feudal_government
 				is_government_potential = mandala_government
 				is_government_potential = arabic_caliphal_government
 				is_government_potential = roman_imperial_government
@@ -295,122 +293,6 @@ feudal_governments = {
 		vassal_limit = 5
 	}
 
-	tibetan_feudal_government = {
-		preferred_holdings = {
-			CASTLE
-		}
-		allowed_holdings = {
-			CASTLE
-			TEMPLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-		}
-		accepts_liege_governments_religion = {
-			theocracy_government
-			order_government
-		}
-		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
-			tribal_government
-		}
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
-
-		frame_suffix = "_tibetanfeudal"
-		#title_prefix = "tibetanfeudal_"
-		color = { 128 0 0 } # Maroon
-
-		potential = {
-			trigger_if = {
-				limit = {
-					is_save_game = no
-					has_game_started = no
-				}
-
-				trigger_if = {
-					limit = { culture = bodpa }
-
-					OR = {
-						character = c_247075	#Songtsen Gampo
-						primary_title = {
-							any_previous_holder = {
-								government = tibetan_feudal_government
-								culture = ROOT
-							}
-						}
-						liege = { government = tibetan_feudal_government }
-						liege = {
-							liege = { government = tibetan_feudal_government }
-						}
-					}
-				}
-				trigger_else = {
-					government = tibetan_feudal_government
-				}
-			}
-			trigger_else = {
-				# TODO: Implement culture innovation, like CK3 had
-				# TODO: And since we can not access culture modifier with set_unit_modifier
-				# TODO: some workaround have to be done
-				culture_scope = { has_flag = innovation_lamaism }
-
-				# Tanguts, Mongols, Jurchens and Nepalians are capable of unlock this innovation to access tibetan_feudal_government
-				# tibetanfeudal_emperor_jurchen is Emperor Manjushri
-			}
-
-			trigger_if = {
-				limit = {
-					NOT = { religion = buddhist }
-				}
-
-				OR = {
-					religion = bon_pagan_reformed
-					religion = tengri_pagan_reformed
-					religion = zun_pagan_reformed
-				}
-				has_religion_feature = religion_monastic
-				has_religion_feature = religion_stable
-				OR = {
-					has_religion_feature = religion_autocephaly
-					has_religion_feature = religion_no_leader
-				}
-			}
-
-			primary_title = {
-				NOT = { has_law = succ_open_elective }
-			}
-
-			is_patrician = no
-			could_be_temporal_religious_head_trigger = yes
-			could_be_order_trigger = no
-
-			NOR = {
-				is_government_potential = roman_imperial_government
-				is_government_potential = thema_government
-				is_government_potential = chinese_imperial_government
-				is_government_potential = band_government
-			}
-		}
-
-		allow = {
-		}
-
-		barons_need_dynasty = yes
-		can_build_tribal = no
-		dukes_called_kings = yes
-		uses_piety_for_law_change = yes
-
-		capital_move_delay = 600
-
-		## Modifiers
-		court_size_modifier = 10
-	}
-
 	clan_government = {
 		preferred_holdings = {
 			CASTLE
@@ -428,7 +310,6 @@ feudal_governments = {
 			feudal_government
 			patrimonial_government
 			mandala_government
-			tibetan_feudal_government
 			arabic_caliphal_government
 			thema_government
 		}

@@ -21,7 +21,6 @@ theocracy_governments = {
 		}
 		accepts_liege_governments_religion = {
 			feudal_government
-			tibetan_feudal_government
 			republic_government
 			merchant_republic_government
 			order_government
@@ -46,8 +45,6 @@ theocracy_governments = {
 			trigger_else = {
 				religion_allows_male_temple_holders = yes
 			}
-
-			NOT = { is_government_potential = tibetan_feudal_government	}
 		}
 
 		allow = {}
@@ -76,7 +73,6 @@ theocracy_governments = {
 			feudal_government
 			clan_government
 			patrimonial_government
-			tibetan_feudal_government
 			mandala_government
 			arabic_caliphal_government
 			thema_government

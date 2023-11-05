@@ -499,43 +499,6 @@ spriteTypes = {
 		alwaysTransparent = yes
 	}
 
-	# Tibetan Feudal Government
-
-	spriteType = {
-		name = "GFX_charframe_150_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_150_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_100_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_75_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_75_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_50_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_50_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_34_tibetanfeudal"
-		texturefile = "gfx\\interface\\charframe_34_tibetanfeudal.dds"
-		noOfFrames = 6
-		allwaystransparent = yes
-	}
-
 	spriteType = {
 		name = "GFX_charframe_150_republic"
 		textureFile = "gfx\\interface\\charframe_150_republic.tga"
@@ -1686,11 +1649,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_icon_order_government"
 		textureFile = "gfx\\interface\\government_icon_order.dds"
-	}
-	
-	spriteType = {
-		name = "GFX_icon_tibetan_feudal_government"
-		texturefile = "gfx\\interface\\government_icon_tibetan_feudal.dds"
 	}
 
 	spriteType = {

@@ -23,8 +23,6 @@ character_event = {
 			french		= { set_flag = innovation_feudalism }
 			dutch		= { set_flag = innovation_feudalism }
 			outremer	= { set_flag = innovation_feudalism }
-
-			bodpa		= { set_flag = innovation_lamaism }
 		}
 		
 		if = {
@@ -100,25 +98,6 @@ character_event = {
 					set_flag = innovation_feudalism
 				}
 			}
-
-			any_province = {
-				limit = {
-					OR = {
-						culture_group = tibetan_group
-						culture = nepali
-					}
-				}
-
-				if = {
-					limit = {
-						culture_scope = {
-							NOT = { has_flag = innovation_lamaism }
-						}
-					}
-
-					set_flag = innovation_lamaism
-				}
-			}
 		}
 	}
 }
@@ -134,48 +113,17 @@ character_event = {
 	only_playable = yes
 
 	trigger = {
-		trigger_if = {
-			limit = { government = feudal_government }
-			culture_scope = {
-				NOT = { has_flag = innovation_feudalism }
-				OR = {
-					had_flag = {
-						flag = innovation_feudalism_progressing
-						years >= 10
-					}
-					NOT = { has_flag = innovation_feudalism_progressing }
+		culture_scope = {
+			NOT = { has_flag = innovation_feudalism }
+			OR = {
+				had_flag = {
+					flag = innovation_feudalism_progressing
+					years >= 10
 				}
+				NOT = { has_flag = innovation_feudalism_progressing }
 			}
-			any_demesne_province = { culture = ROOT }
 		}
-		trigger_else_if = {
-			limit = { government = tibetan_feudal_government }
-			culture_scope = {
-				NOT = { has_flag = innovation_lamaism }
-				OR = {
-					had_flag = {
-						flag = innovation_lamaism_progressing
-						years >= 10
-					}
-					NOT = { has_flag = innovation_lamaism_progressing }
-				}
-			}
-			any_demesne_province = { culture = ROOT }
-		}
-		trigger_else = {
-			government = tibetan_feudal_government
-			culture_scope = {
-				NOT = { has_flag = innovation_lamaism }
-				OR = {
-					had_flag = {
-						flag = innovation_lamaism_progressing
-						years >= 10
-					}
-					NOT = { has_flag = innovation_lamaism_progressing }
-				}
-			}
-			any_demesne_province = { culture = ROOT }
-		}
+		any_demesne_province = { culture = ROOT }
 	}
 
 	immediate = {
@@ -264,56 +212,17 @@ character_event = {
 						# notify event
 						log = "[This.GetName] unlocked feudalism!"
 					}
-					else_if = {
-						limit = {
-							ROOT = { government = tibetan_feudal_government }
-							has_flag = innovation_lamaism_progressing
-						}
-						# Cleanup timer
-						clr_flag = innovation_lamaism_progressing
-						# Unlock innovation
-						set_flag = innovation_lamaism
-
-						# notify event
-						log = "[This.GetName] unlocked lamaism!"
-					}
 					else = { # Always failed the first shot
-						if = {
-							limit = {
-								ROOT = { government = feudal_government }
-							}
-							# Reset timer
-							clr_flag = innovation_feudalism_progressing
-							set_flag = innovation_feudalism_progressing
-						}
-						else_if = {
-							limit = {
-								ROOT = { government = tibetan_feudal_government }
-							}
-							# Reset timer
-							clr_flag = innovation_lamaism_progressing
-							set_flag = innovation_lamaism_progressing
-						}
+						clr_flag = innovation_feudalism_progressing
+						set_flag = innovation_feudalism_progressing
+
 						log = "[This.GetName] failed from unlocking anything(first shot)"
 					}
 				}
 				100 = { # Failed
-					if = {
-						limit = {
-							ROOT = { government = feudal_government }
-						}
-						# Reset timer
-						clr_flag = innovation_feudalism_progressing
-						set_flag = innovation_feudalism_progressing
-					}
-					else_if = {
-						limit = {
-							ROOT = { government = tibetan_feudal_government }
-						}
-						# Reset timer
-						clr_flag = innovation_lamaism_progressing
-						set_flag = innovation_lamaism_progressing
-					}
+					clr_flag = innovation_feudalism_progressing
+					set_flag = innovation_feudalism_progressing
+
 					log = "[This.GetName] failed from unlocking anything"
 				}
 			}

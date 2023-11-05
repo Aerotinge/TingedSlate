@@ -46,3 +46,18 @@ has_clan_culture = {
 		}
 	}
 }
+
+can_has_monastic_building = {
+	trigger_if = {
+		limit = { has_religion_features = yes }
+		has_religion_feature = religion_monastic
+	}
+	trigger_else = {
+		OR = {
+			religion = buddhist
+			religion = bon_pagan_reformed
+		}
+	}
+	culture_group = tibetan_group
+	is_feudal = yes
+}

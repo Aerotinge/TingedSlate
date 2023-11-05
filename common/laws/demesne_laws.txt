@@ -1153,7 +1153,6 @@ laws = {
 				NOR = {
 					government = arabic_caliphal_government
 					government = clan_government
-					government = patrimonial_government
 					government = mandala_government
 					government = chinese_imperial_government
 					government = seigneurial_government
@@ -1457,11 +1456,7 @@ laws = {
 
 			holder_scope = {
 				is_playable = yes
-				OR = {
-					government = feudal_government
-					government = tibetan_feudal_government
-					government = thema_government
-				}
+				government = feudal_government
 			}
 
 			NOT = { is_law_potential = secular_contract_0 }

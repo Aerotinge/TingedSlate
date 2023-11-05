@@ -3207,15 +3207,11 @@ decisions = {
 				set_government_type = clan_government
 			}
 			else_if = {
-				limit = { is_government_potential = seigneurial_government }
-				set_government_type = seigneurial_government
-			}
-			else_if = {
-				limit = { is_government_potential = tibetan_feudal_government }
-				set_government_type = tibetan_feudal_government
+				limit = { is_government_potential = feudal_government }
+				set_government_type = feudal_government
 			}
 			else = {
-				set_government_type = feudal_government # Fallback, will switch to right government type automatically
+				set_government_type = seigneurial_government # Fallback, will switch to right government type automatically
 			}
 
 			hidden_effect = {
