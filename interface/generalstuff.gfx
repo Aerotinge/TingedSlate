@@ -713,72 +713,35 @@ spriteTypes = {
 
 	spriteType = {
 		name = "GFX_charframe_150_clan"
-		textureFile = "gfx\\interface\\charframe_150_clan.tga"
+		textureFile = "gfx\\interface\\charframe_150_theocraticfeudal.tga"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_charframe_100_clan"
-		textureFile = "gfx\\interface\\charframe_100_clan.tga"
+		textureFile = "gfx\\interface\\charframe_100_theocraticfeudal.tga"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_charframe_75_clan"
-		textureFile = "gfx\\interface\\charframe_75_clan.tga"
+		textureFile = "gfx\\interface\\charframe_75_theocraticfeudal.tga"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_charframe_50_clan"
-		textureFile = "gfx\\interface\\charframe_50_clan.tga"
+		textureFile = "gfx\\interface\\charframe_50_theocraticfeudal.tga"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
 
 	spriteType = {
 		name = "GFX_charframe_34_clan"
-		textureFile = "gfx\\interface\\charframe_34_clan.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	# PATRIMONIAL GOVERNMENT
-
-	spriteType = {
-		name = "GFX_charframe_150_patrimonial"
-		textureFile = "gfx\\interface\\charframe_150_patrimonial.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_patrimonial"
-		textureFile = "gfx\\interface\\charframe_100_patrimonial.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_75_patrimonial"
-		textureFile = "gfx\\interface\\charframe_75_patrimonial.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_50_patrimonial"
-		textureFile = "gfx\\interface\\charframe_50_patrimonial.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_34_patrimonial"
-		textureFile = "gfx\\interface\\charframe_34_patrimonial.tga"
+		textureFile = "gfx\\interface\\charframe_34_theocraticfeudal.tga"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
@@ -816,43 +779,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_charframe_34_confucian"
 		textureFile = "gfx\\interface\\charframe_34_confucian_bureaucracy.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	# FEUDAL THEOCRACY
-
-	spriteType = {
-		name = "GFX_charframe_150_theocraticfeudal"
-		textureFile = "gfx\\interface\\charframe_150_theocraticfeudal.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_100_theocraticfeudal"
-		textureFile = "gfx\\interface\\charframe_100_theocraticfeudal.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_75_theocraticfeudal"
-		textureFile = "gfx\\interface\\charframe_75_theocraticfeudal.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_50_theocraticfeudal"
-		textureFile = "gfx\\interface\\charframe_50_theocraticfeudal.tga"
-		noOfFrames = 6
-		alwaysTransparent = yes
-	}
-
-	spriteType = {
-		name = "GFX_charframe_34_theocraticfeudal"
-		textureFile = "gfx\\interface\\charframe_34_theocraticfeudal.tga"
 		noOfFrames = 6
 		alwaysTransparent = yes
 	}
@@ -1562,13 +1488,13 @@ spriteTypes = {
 	### government icons
 
 	spriteType = {
-		name = "GFX_icon_feudal_government"
-		textureFile = "gfx\\interface\\government_icon_feudal.dds"
+		name = "GFX_icon_seigneurial_government"
+		textureFile = "gfx\\interface\\government_icon_seigneurial.dds"
 	}
 
 	spriteType = {
-		name = "GFX_icon_seigneurial_government"
-		textureFile = "gfx\\interface\\government_icon_seigneurial.dds"
+		name = "GFX_icon_feudal_government"
+		textureFile = "gfx\\interface\\government_icon_feudal.dds"
 	}
 
 	spriteType = {

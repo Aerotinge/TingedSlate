@@ -144,6 +144,31 @@ character_event = {
 	}
 }
 
+# Fix viceroy title not being primary_title
+character_event = {
+    id = EMP.21031
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+		FROM = {
+			real_tier = DUKE
+			is_primary_holder_title = no
+			is_primary_holder_title_tier = yes
+			is_vice_royalty = yes
+		}
+		FROMFROM = {
+			government = roman_imperial_government
+		}
+    }
+
+	immediate = {
+		FROM = { make_primary_title = yes }
+		set_government_type = thema_government
+	}
+}
+
 character_event = {
     id = EMP.21112
     hide_window = yes

@@ -98,6 +98,7 @@ on_new_holder = {
 		EMP.21011 # Nomadic
 		EMP.21012 # Pronoia
 		EMP.21013 # Iqta
+		EMP.21031 # Theme, sometimes viceroy_title not being primary_title. fix that.
 		# Papacy
 		EMP.13200 # New Pope
 		EMP.13142 # Curia Controller Maintenance
